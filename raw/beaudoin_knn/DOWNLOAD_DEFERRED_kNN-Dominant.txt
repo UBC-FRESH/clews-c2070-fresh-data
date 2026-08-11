@@ -20,3 +20,98 @@ Mirror / content status as of 2026-08-10:
     archive is not on the SAFORAH server.
 
 Leaving this stub here rather than touching the broken URL further.
+
+Re-probe 2026-08-11 — STATUS ESCALATED: gap now PERMANENT
+========================================================
+Audit performed: 2026-08-11 (re-probe of both SAFORAH 1.0 and SAFORAH 2.0).
+
+SAFORAH 1.0 (legacy) re-probe:
+  URL: http://tree.pfc.forestry.ca/kNN-Dominant.tar
+  HTTP status: 302 Found (consistent with 2026-08-10 record)
+  Redirect target: http://nfis.org/notfound_bi.html
+  Placeholder body: 621 bytes; text/html; Last-Modified Wed, 22 Jul 2015
+  Index page audit (http://tree.pfc.forestry.ca/, full HTML inspected)
+  enumerates exactly 8 grouped kNN-*.tar archives. kNN-Dominant.tar is
+  NOT in the index table. The 302 redirect is therefore a hardcoded
+  placeholder for a slot that was never filled with a real tar.
+
+  7 alternate capitalisations probed (Knn-Dominant.tar,
+  KNN-Dominant.tar, knn_Dominant.tar, kNN-DOMINANT.tar,
+  KNN-Dominant.tar, kNN_Dominant.tar, knn-Dominant.tar) — all
+  yielded the same 302 → notfound_bi.html placeholder. The redirect
+  is therefore not a casing-sensitive slug issue.
+
+  Conclusion: kNN-Dominant.tar is NORMINATIVE-EMPTY on SAFORAH 1.0.
+
+SAFORAH 2.0 (HTTPS + GeoNetwork 4.x) probe:
+  Index query: https://saforah2.nfis.org/geonetwork-main/srv/api/records?any=kNN&type=dataset
+  Total records matched: 43 (full enumeration paginates 1-10/11-20/21-30/31-40/41-43).
+  Only one record pertains to a "Dominant..." layer:
+  UUID de39ef283de2d96e7bfabf0a789b5f95458d5aae
+  Title: ca_kNN_DominantGenus_250m_r
+  All on-line resources: 2 (WMS GetMap endpoint + WMS GetLegendGraphic).
+    [1] protocol=OGC:WMS-1.3.0-http-get-map
+        url=https://nfi.nfis.org/mapserver/cgi-bin/nfis-kNN.cgi?
+    [2] protocol=image/png
+        url=https://nfi.nfis.org/mapserver/cgi-bin/nfis-kNN.cgi?...&request=GetLegendGraphic&...&layer=kNN_DominantGenus_250m
+  WFS = DISABLED — GetCapabilities returns:
+        "msWFSDispatch(): WFS server error. WFS request not enabled.
+         Check wfs/ows_enable_request settings."
+  WCS = DISABLED — same error response.
+  No HTTP bulk-download URL (no .tar, no .zip, no GeoTIFF, no plain file).
+
+Acquisition — proxy replacement downloaded
+=========================================
+Action taken: downloaded the SAFORAH 2.0 ca_kNN_DominantGenus_250m_r
+WMS layer visualization as a proxy for the missing kNN-Dominant.tar.
+Stored under data/raw/beaudoin_knn_v2/ (NEW annex directory; legacy
+beaudoin_knn/ untouched). Spec compliance:
+
+  Decision matrix scenario 2 (302 on SAFORAH 1.0 + DominantGenus on
+  SAFORAH 2.0) → "download the SAFORAH 2.0 layer; record as
+  proxy-replacement; note the lineage difference from Beaudoin 2014/2017".
+
+  Files downloaded (sha256 / bytes):
+    WMS_GetCapabilities_nfis-kNN.full.xml
+       37c9997424bb9445663dd1f1434df5b562e1967100fb2295dd65bee3f9b743a2 / 81246
+    catalogue_record_de39ef283de2d96e7bfabf0a789b5f95458d5aae.json
+       093c6b4fbdfd28e78fae14c3d12d85b7a798c39d7df76d26b6886909ecc7e02f / 15118
+    ca_kNN_DominantGenus_250m_canada_2048.png
+       7497904e1a7957d48a501412d9ff3a645ad16857d54b4a526c0756fc29223586 / 16387
+    ca_kNN_DominantGenus_250m_canada_512.png
+       074065f07e35265d9695cced0f42844dbb02e5766c4ed185d0a372b2d033b093 /  1096
+    ca_kNN_DominantGenus_250m_legend.png
+       4a54c6dec4c16902aa7490529241f073544016f0040a75521cb5218e307782cf / 56550
+
+  Files recorded:
+    data/raw/beaudoin_knn_v2/PROVENANCE.csv
+    data/raw/beaudoin_knn_v2/PROXY_REPLACEMENT_kNN-Dominant.txt
+
+Lineage difference (must be documented by downstream consumers)
+==============================================================
+  Beaudoin 2014/2017 lineage (legacy kNN-Dominant.tar — never existed):
+    - Hypothetical: flat InVEST-style aggregation combining species
+      dominance with CFO photo-plot support; not published as a single
+      tar on SAFORAH 1.0.
+  SAFORAH 2.0 lineage (ca_kNN_DominantGenus_250m_r):
+    - Single-layer WMS visualization of "dominant genus" for the 2001
+      base year. Pub 2.0 publication pipeline (MapServer 6.4.1).
+    - Categorical raster served as PNG/SLD; underlying integer codes
+      not exposed.
+  Equivalence: NEITHER content-equivalent NOR byte-equivalent.
+  Use only as a categorical visualization reference, not as a data
+  substitution.
+
+Residual gap acknowledgement
+============================
+  Bulk GeoTIFF data for the dominant-genus attribute remain
+  unavailable from public-facing SAFORAH 2.0 endpoints. Affected
+  scenarios:
+    (a) Any compute pipeline that needs the raw categorical raster
+        for the dominant-genus attribute cannot proceed against any
+        public source.
+    (b) The legacy "missing tar" pointer remains broken; SAFORAH 2.0
+        SST path (WFS, WCS) is administratively locked down.
+    (c) Data Manager contact: Dr. Alex Song (alex.song@canada.ca,
+        506 West Burnside Rd., Victoria BC V8Z 1M5) — engage via
+        data-transfer agreement if bulk rasters are required.
