@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:WFS_Capabilities xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:ms="http://mapserver.gis.umn.edu/mapserver" xmlns="http://www.opengis.net/wfs/2.0" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd">
+  <ows:ServiceIdentification>
+    <ows:Title>MAGPlot Sites and Trees</ows:Title>
+    <ows:Abstract>This WFS provides access to data products from the Multi-Agency Ground Plot (MAGPlot) dataset, v1.2.0. This nationally harmonized collection of forest ground plots was created through data submissions from collaborating jurisdictions and other agencies. Collaborators include the Government of Alberta, Government of British Columbia, Government of New Brunswick, Government of Northwestern Territories, Government of Ontario, Government of Prince Edward Island, Government of Quebec, Government of Yukon, and the National Forest Inventory.</ows:Abstract>
+    <ows:Keywords>
+      <ows:Keyword>National Forest Inventory System</ows:Keyword>
+      <ows:Keyword>NFIS</ows:Keyword>
+      <ows:Keyword>MAGPlot</ows:Keyword>
+      <ows:Keyword>Ground Plot</ows:Keyword>
+      <ows:Keyword>Forests</ows:Keyword>
+      <ows:Keyword>Natural Resources</ows:Keyword>
+      <ows:Keyword>GIS</ows:Keyword>
+      <ows:Keyword>Map</ows:Keyword>
+    </ows:Keywords>
+    <ows:ServiceType codeSpace="OGC">WFS</ows:ServiceType>
+    <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+    <ows:Fees>none</ows:Fees>
+    <ows:AccessConstraints>None</ows:AccessConstraints>
+  </ows:ServiceIdentification>
+  <ows:ServiceProvider>
+    <ows:ProviderName>National Forest Information System</ows:ProviderName>
+    <ows:ProviderSite xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi"/>
+    <ows:ServiceContact>
+      <ows:IndividualName>NFIS Support</ows:IndividualName>
+      <ows:PositionName>Point of Contact</ows:PositionName>
+      <ows:ContactInfo>
+        <ows:Phone>
+          <ows:Voice>(250) 363-0600</ows:Voice>
+          <ows:Facsimile>(250) 363-0797</ows:Facsimile>
+        </ows:Phone>
+        <ows:Address>
+          <ows:DeliveryPoint>506 West Burnside Rd.</ows:DeliveryPoint>
+          <ows:City>Victoria</ows:City>
+          <ows:AdministrativeArea>British Columbia</ows:AdministrativeArea>
+          <ows:PostalCode>V8Z 1M5</ows:PostalCode>
+          <ows:Country>CANADA</ows:Country>
+          <ows:ElectronicMailAddress>admin@nfis.org</ows:ElectronicMailAddress>
+        </ows:Address>
+        <ows:OnlineResource xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi"/>
+        <ows:HoursOfService>0800-1700 PST</ows:HoursOfService>
+        <ows:ContactInstructions>Email</ows:ContactInstructions>
+      </ows:ContactInfo>
+      <ows:Role>Support</ows:Role>
+    </ows:ServiceContact>
+  </ows:ServiceProvider>
+  <ows:OperationsMetadata>
+    <ows:Operation name="GetCapabilities">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="AcceptVersions">
+        <ows:AllowedValues>
+          <ows:Value>2.0.0</ows:Value>
+          <ows:Value>1.1.0</ows:Value>
+          <ows:Value>1.0.0</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="AcceptFormats">
+        <ows:AllowedValues>
+          <ows:Value>text/xml</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+      <ows:Parameter name="Sections">
+        <ows:AllowedValues>
+          <ows:Value>ServiceIdentification</ows:Value>
+          <ows:Value>ServiceProvider</ows:Value>
+          <ows:Value>OperationsMetadata</ows:Value>
+          <ows:Value>FeatureTypeList</ows:Value>
+          <ows:Value>Filter_Capabilities</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="DescribeFeatureType">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetFeature">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+          <ows:Value>application/json; subtype=geojson</ows:Value>
+          <ows:Value>text/csv</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="GetPropertyValue">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+        </ows:HTTP>
+      </ows:DCP>
+      <ows:Parameter name="outputFormat">
+        <ows:AllowedValues>
+          <ows:Value>application/gml+xml; version=3.2</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+          <ows:Value>text/xml; subtype=gml/2.1.2</ows:Value>
+        </ows:AllowedValues>
+      </ows:Parameter>
+    </ows:Operation>
+    <ows:Operation name="ListStoredQueries">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Operation name="DescribeStoredQueries">
+      <ows:DCP>
+        <ows:HTTP>
+          <ows:Get xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+          <ows:Post xlink:type="simple" xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?"/>
+        </ows:HTTP>
+      </ows:DCP>
+    </ows:Operation>
+    <ows:Parameter name="version">
+      <ows:AllowedValues>
+        <ows:Value>2.0.0</ows:Value>
+        <ows:Value>1.1.0</ows:Value>
+        <ows:Value>1.0.0</ows:Value>
+      </ows:AllowedValues>
+    </ows:Parameter>
+    <ows:Constraint name="ImplementsBasicWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsTransactionalWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsLockingWFS">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="KVPEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="XMLEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="SOAPEncoding">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsInheritance">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsRemoteResolve">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsResultPaging">
+      <ows:NoValues/>
+      <ows:DefaultValue>TRUE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsStandardJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsSpatialJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsTemporalJoins">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ImplementsFeatureVersioning">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="ManageStoredQueries">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="PagingIsTransactionSafe">
+      <ows:NoValues/>
+      <ows:DefaultValue>FALSE</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="CountDefault">
+      <ows:NoValues/>
+      <ows:DefaultValue>100000</ows:DefaultValue>
+    </ows:Constraint>
+    <ows:Constraint name="QueryExpressions">
+      <ows:AllowedValues>
+        <ows:Value>wfs:Query</ows:Value>
+        <ows:Value>wfs:StoredQuery</ows:Value>
+      </ows:AllowedValues>
+    </ows:Constraint>
+  </ows:OperationsMetadata>
+  <FeatureTypeList>
+    <FeatureType>
+      <Name>ms:Sites_Summary</Name>
+      <Title>Site Summaries</Title>
+      <Abstract>A summary of all measured MAGPlot sites, including the leading genus by stem count, most recent treatments applied, most recent disturbances reported, count of trees for the baseline measurement, and number of measurements. Sites requiring a signed data use agreement have been excluded from this view, contact nfisupport@nfis.org for access to those sites</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-148.371696 36.626410</ows:LowerCorner>
+        <ows:UpperCorner>-35.170728 72.475981</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=Sites_Summary"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_0_pre_1972</Name>
+      <Title>BC Trees Measurement 0 before 1972</Title>
+      <Abstract>Trees measured at British Columbia sites for the baseline measurement of the site before 1972. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_0_pre_1972"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_0_1972_1995</Name>
+      <Title>BC Trees Measurement 0 - 1972_1995</Title>
+      <Abstract>Trees measured at British Columbia sites for the baseline measurement of the site between 1972_1995. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_0_1972_1995"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_0_post_1995</Name>
+      <Title>BC Trees Measurement 0 after 1995</Title>
+      <Abstract>Trees measured at British Columbia sites for the baseline measurement of the site after 1995. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_0_post_1995"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_1_pre_1975</Name>
+      <Title>BC Trees Measurement 1 before 1975</Title>
+      <Abstract>Trees measured at British Columbia sites for the first re-measurement of the site before 1975. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_1_pre_1975"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_1_1975_1985</Name>
+      <Title>BC Trees Measurement 1 1975_1985</Title>
+      <Abstract>Trees measured at British Columbia sites for the first re-measurement of the site between 1975-1985. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_1_1975_1985"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_1_1985_1995</Name>
+      <Title>BC Trees Measurement 1 1985-1995</Title>
+      <Abstract>Trees measured at British Columbia sites for the first re-measurement of the site between 1985-1995. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_1_1985_1995"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_1_1995_2005</Name>
+      <Title>BC Trees Measurement 1 1995-2005</Title>
+      <Abstract>Trees measured at British Columbia sites for the first re-measurement of the site between 1995-2005. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_1_1995_2005"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_1_post_2005</Name>
+      <Title>BC Trees Measurement 1 after 2005</Title>
+      <Abstract>Trees measured at British Columbia sites for the first re-measurement of the site after 2005. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_1_post_2005"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_2_pre_1985</Name>
+      <Title>BC Trees Measurement 2 before 1985</Title>
+      <Abstract>Trees measured at British Columbia sites for the second re-measurement of the site before 1985. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_2_pre_1985"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_2_1985_1995</Name>
+      <Title>BC Trees Measurement 2 1985-1995</Title>
+      <Abstract>Trees measured at British Columbia sites for the second re-measurement of the site between 1985-1995. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_2_1985_1995"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_2_1995_2010</Name>
+      <Title>BC Trees Measurement 2 1995-2010</Title>
+      <Abstract>Trees measured at British Columbia sites for the second re-measurement of the site between 1995-2010. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_2_1995_2010"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_2_post_2010</Name>
+      <Title>BC Trees Measurement 2 after 2010</Title>
+      <Abstract>Trees measured at British Columbia sites for the second re-measurement of the site after 2010. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_2_post_2010"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_3</Name>
+      <Title>BC Trees Measurement 3</Title>
+      <Abstract>Trees measured at British Columbia sites for the third re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_3"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_4</Name>
+      <Title>BC Trees Measurement 4</Title>
+      <Abstract>Trees measured at British Columbia sites for the fourth re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_4"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_5</Name>
+      <Title>BC Trees Measurement 5</Title>
+      <Abstract>Trees measured at British Columbia sites for the fifth re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_5"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_6</Name>
+      <Title>BC Trees Measurement 6</Title>
+      <Abstract>Trees measured at British Columbia sites for the sixth measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_6"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_7</Name>
+      <Title>BC Trees Measurement 7</Title>
+      <Abstract>Trees measured at British Columbia sites for the seventh measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_7"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_8</Name>
+      <Title>BC Trees Measurement 8</Title>
+      <Abstract>Trees measured at British Columbia sites for the eighth measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_8"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_9</Name>
+      <Title>BC Trees Measurement 9</Title>
+      <Abstract>Trees measured at British Columbia sites for the ninth re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_9"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_10</Name>
+      <Title>BC Trees Measurement 10</Title>
+      <Abstract>Trees measured at British Columbia sites for the tenth re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_10"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_11</Name>
+      <Title>BC Trees Measurement 11</Title>
+      <Abstract>Trees measured at British Columbia sites for the eleventh re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_11"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:BC_Trees_Measure_Num_12</Name>
+      <Title>BC Trees Measurements 12</Title>
+      <Abstract>Trees measured at British Columbia sites for the twelfth re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-132.630176 45.817612</ows:LowerCorner>
+        <ows:UpperCorner>-114.294753 57.397816</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=BC_Trees_Measure_Num_12"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:NB_Trees_Measure_Num_0</Name>
+      <Title>NB Trees Measurements 0</Title>
+      <Abstract>Trees measured at New Brunswick sites for the baseline measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-69.392109 44.713040</ows:LowerCorner>
+        <ows:UpperCorner>-63.889041 48.370843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=NB_Trees_Measure_Num_0"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:NB_Trees_Measure_Num_1</Name>
+      <Title>NB Trees Measurements 1</Title>
+      <Abstract>Trees measured at New Brunswick sites for the first re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-69.392109 44.713040</ows:LowerCorner>
+        <ows:UpperCorner>-63.889041 48.370843</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=NB_Trees_Measure_Num_1"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:NFM_Trees_Measure_Num_0</Name>
+      <Title>NorthForM Trees Measurements 0</Title>
+      <Abstract>Trees measured at NorthForM project sites for the baseline measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-140.649110 48.168366</ows:LowerCorner>
+        <ows:UpperCorner>-50.004134 69.443615</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=NFM_Trees_Measure_Num_0"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:NL_Trees_Measure_Num_0_2</Name>
+      <Title>Newfoundland &amp; Labrador Trees Measurements 0 - 2</Title>
+      <Abstract>Trees measured at Newfoundland sites for the baseline measurement, first and second re-measurements of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-64.606316 45.846787</ows:LowerCorner>
+        <ows:UpperCorner>-49.323635 54.948289</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=NL_Trees_Measure_Num_0_2"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:NL_Trees_Measure_Num_3_9</Name>
+      <Title>NL Trees Measurements 3 - 9</Title>
+      <Abstract>Trees measured at Newfoundland &amp; Labrador sites for the third and sub-sequent re-measurements of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-64.564350 45.893051</ows:LowerCorner>
+        <ows:UpperCorner>-50.226268 54.169161</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=NL_Trees_Measure_Num_3_9"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:PEI_Trees_Measure_Num_0_11</Name>
+      <Title>PEI Trees Measurement 0-11</Title>
+      <Abstract>Trees measured at Prince Edward Island sites for the baseline measurement and subsequent re-measurements 1-11, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-64.524792 45.799983</ows:LowerCorner>
+        <ows:UpperCorner>-61.991462 47.219706</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=PEI_Trees_Measure_Num_0_11"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:QC_Trees_Measure_Num_0</Name>
+      <Title>QC Trees Measurement 0</Title>
+      <Abstract>Trees measured at Quebec sites for the baseline measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-81.215673 42.346605</ows:LowerCorner>
+        <ows:UpperCorner>-57.320821 57.240128</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=QC_Trees_Measure_Num_0"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:QC_Trees_Measure_Num_1</Name>
+      <Title>QC Trees Measurement 1</Title>
+      <Abstract>Trees measured at Quebec sites for measurement one, first re-measurement, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-81.215673 42.346605</ows:LowerCorner>
+        <ows:UpperCorner>-57.320821 57.240128</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=QC_Trees_Measure_Num_1"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:QC_Trees_Measure_Num_2</Name>
+      <Title>QC Trees Measurement 2</Title>
+      <Abstract>Trees measured at Quebec sites for measurement two, second re-measurement, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-81.215673 42.346605</ows:LowerCorner>
+        <ows:UpperCorner>-57.320821 57.240128</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=QC_Trees_Measure_Num_2"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:QC_Trees_Measure_Num_3</Name>
+      <Title>QC Trees Measurement 3</Title>
+      <Abstract>Trees measured at Quebec sites for measurement three, third re-measurement, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-80.996610 42.346605</ows:LowerCorner>
+        <ows:UpperCorner>-57.320821 57.194199</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=QC_Trees_Measure_Num_3"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:QC_Trees_Measure_Num_4</Name>
+      <Title>QC Trees Measurement 4</Title>
+      <Abstract>Trees measured at Quebec sites for measurement four, fourth re-measurement, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-80.996610 43.224009</ows:LowerCorner>
+        <ows:UpperCorner>-62.573820 54.413320</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=QC_Trees_Measure_Num_4"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:QC_Trees_Measure_Num_5_6</Name>
+      <Title>QC Trees Measurement 5 - 6</Title>
+      <Abstract>Trees measured at Quebec sites for measurement five and six, fifth and sixth re-measurement, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-80.996610 43.224009</ows:LowerCorner>
+        <ows:UpperCorner>-62.573820 54.413320</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=QC_Trees_Measure_Num_5_6"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:SK_Trees_Measure_Num_0</Name>
+      <Title>SK Trees Measurement 0</Title>
+      <Abstract>Trees measured at Saskatchewan sites for the baseline measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-110.237073 51.583812</ows:LowerCorner>
+        <ows:UpperCorner>-101.623893 56.360092</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=SK_Trees_Measure_Num_0"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:SK_Trees_Measure_Num_1</Name>
+      <Title>SK Trees Measurement 1</Title>
+      <Abstract>Trees measured at Saskatchewan sites for the first re-measurement of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-110.151986 51.584158</ows:LowerCorner>
+        <ows:UpperCorner>-101.630049 56.163102</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=SK_Trees_Measure_Num_1"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:SK_Trees_Measure_Num_2_8</Name>
+      <Title>SK Trees Measurement 2 - 8</Title>
+      <Abstract>Trees measured at Saskatchewan sites for the second re-measurement and subsequent re-measurements 2-8, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-110.144432 51.619919</ows:LowerCorner>
+        <ows:UpperCorner>-101.639184 56.144749</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=SK_Trees_Measure_Num_2_8"/>
+    </FeatureType>
+    <FeatureType>
+      <Name>ms:YT_Trees_Measure_Num_0_6</Name>
+      <Title>YT Trees Measurement 0 - 6</Title>
+      <Abstract>Trees measured at Yukon Territory sites for the baseline measurement through to sixth re-measurement, of the site. Each site will have many overlapping points, each representing information for a single tree. Plots requiring signed Data Use Agreements for access have been excluded from this layer, submit requests to the NFI (nfisupport@nfis.org) team for access to these plots. Sources excluded: NFI, AB, NT.</Abstract>
+      <ows:Keywords>
+        <ows:Keyword>MAGPlot</ows:Keyword>
+        <ows:Keyword>Forest</ows:Keyword>
+        <ows:Keyword>Inventory</ows:Keyword>
+        <ows:Keyword>Ground Plot</ows:Keyword>
+        <ows:Keyword>National</ows:Keyword>
+        <ows:Keyword>Natural Resources</ows:Keyword>
+        <ows:Keyword>Geographic data</ows:Keyword>
+        <ows:Keyword>Maps</ows:Keyword>
+      </ows:Keywords>
+      <DefaultCRS>urn:ogc:def:crs:EPSG::3978</DefaultCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::4269</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::42304</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3979</OtherCRS>
+      <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+      <OutputFormats>
+        <Format>application/gml+xml; version=3.2</Format>
+        <Format>text/xml; subtype=gml/3.2.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/2.1.2</Format>
+        <Format>application/json; subtype=geojson</Format>
+        <Format>text/csv</Format>
+      </OutputFormats>
+      <ows:WGS84BoundingBox dimensions="2">
+        <ows:LowerCorner>-142.385590 57.882885</ows:LowerCorner>
+        <ows:UpperCorner>-127.513694 65.521784</ows:UpperCorner>
+      </ows:WGS84BoundingBox>
+      <MetadataURL xlink:href="https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi?request=GetMetadata&amp;layer=YT_Trees_Measure_Num_0_6"/>
+    </FeatureType>
+  </FeatureTypeList>
+  <fes:Filter_Capabilities>
+    <fes:Conformance>
+      <fes:Constraint name="ImplementsQuery">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsAdHocQuery">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsFunctions">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsResourceId">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinStandardFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsStandardFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinSpatialFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSpatialFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinTemporalFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsTemporalFilter">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsVersionNav">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSorting">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsExtendedOperators">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsMinimumXPath">
+        <ows:NoValues/>
+        <ows:DefaultValue>TRUE</ows:DefaultValue>
+      </fes:Constraint>
+      <fes:Constraint name="ImplementsSchemaElementFunc">
+        <ows:NoValues/>
+        <ows:DefaultValue>FALSE</ows:DefaultValue>
+      </fes:Constraint>
+    </fes:Conformance>
+    <fes:Id_Capabilities>
+      <fes:ResourceIdentifier name="fes:ResourceId"/>
+    </fes:Id_Capabilities>
+    <fes:Scalar_Capabilities>
+      <fes:LogicalOperators/>
+      <fes:ComparisonOperators>
+        <fes:ComparisonOperator name="PropertyIsEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsNotEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsLessThan"/>
+        <fes:ComparisonOperator name="PropertyIsGreaterThan"/>
+        <fes:ComparisonOperator name="PropertyIsLessThanOrEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsGreaterThanOrEqualTo"/>
+        <fes:ComparisonOperator name="PropertyIsLike"/>
+        <fes:ComparisonOperator name="PropertyIsBetween"/>
+      </fes:ComparisonOperators>
+    </fes:Scalar_Capabilities>
+    <fes:Spatial_Capabilities>
+      <fes:GeometryOperands>
+        <fes:GeometryOperand name="gml:Point"/>
+        <fes:GeometryOperand name="gml:MultiPoint"/>
+        <fes:GeometryOperand name="gml:LineString"/>
+        <fes:GeometryOperand name="gml:MultiLineString"/>
+        <fes:GeometryOperand name="gml:Curve"/>
+        <fes:GeometryOperand name="gml:MultiCurve"/>
+        <fes:GeometryOperand name="gml:Polygon"/>
+        <fes:GeometryOperand name="gml:MultiPolygon"/>
+        <fes:GeometryOperand name="gml:Surface"/>
+        <fes:GeometryOperand name="gml:MultiSurface"/>
+        <fes:GeometryOperand name="gml:Box"/>
+        <fes:GeometryOperand name="gml:Envelope"/>
+      </fes:GeometryOperands>
+      <fes:SpatialOperators>
+        <fes:SpatialOperator name="Equals"/>
+        <fes:SpatialOperator name="Disjoint"/>
+        <fes:SpatialOperator name="Touches"/>
+        <fes:SpatialOperator name="Within"/>
+        <fes:SpatialOperator name="Overlaps"/>
+        <fes:SpatialOperator name="Crosses"/>
+        <fes:SpatialOperator name="Intersects"/>
+        <fes:SpatialOperator name="Contains"/>
+        <fes:SpatialOperator name="DWithin"/>
+        <fes:SpatialOperator name="Beyond"/>
+        <fes:SpatialOperator name="BBOX"/>
+      </fes:SpatialOperators>
+    </fes:Spatial_Capabilities>
+    <fes:Temporal_Capabilities>
+      <fes:TemporalOperands>
+        <fes:TemporalOperand name="gml:TimePeriod"/>
+        <fes:TemporalOperand name="gml:TimeInstant"/>
+      </fes:TemporalOperands>
+      <fes:TemporalOperators>
+        <fes:TemporalOperator name="During"/>
+      </fes:TemporalOperators>
+    </fes:Temporal_Capabilities>
+  </fes:Filter_Capabilities>
+</wfs:WFS_Capabilities>

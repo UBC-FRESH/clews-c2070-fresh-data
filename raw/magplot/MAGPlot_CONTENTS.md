@@ -342,3 +342,75 @@ Supporting evidence:
 - **Disturbance:** harvest, fire, insect/disease, wind and removals are coded, enabling disturbance-aware calibration and mortality attribution, but events are site-level and not interval-keyed.
 - **Critical gaps:** no age, site-index, soil or ecological tables in v1.2; no Alberta, Ontario, PEI or Nova Scotia records; all coordinates are approximate (±10 km) and 1,027 BC sites have no coordinates; NFM TSP records are single-visit. A national FVS-CA calibration still requires the NFI DUA data (and provincial supplements for AB/ON/PE/NS) plus a site-index/age source.
 - **Immediate next step:** build a calibration extract restricted to tracked trees with ≥2 measurements and fixed-area plots, pair consecutive measurements by `tree_id`/`tree_id_meas`, compute annual DBH and height increments, and preserve `tree_status`, `tree_removed.reason`, `magp_treatment`, and `magp_disturbance` as event covariates. Do not use the 8M/9M untracked records for individual-tree growth.
+
+---
+
+# WFS supplement — Sites_Summary, SK, PEI, and NL tree layers — 2026-11-14
+
+The open ZIP above is not the full live MAGPlot population. The NFIS MAGPlot
+WFS (`https://ca.nfis.org/mapserver/cgi-bin/magplot_trees_eng.cgi`, WFS 2.0.0)
+was queried on 2026-11-14 and the province-level site summaries plus the
+Saskatchewan, Prince Edward Island, and Newfoundland and Labrador tree layers
+were archived under `wfs/`. Full retrieval notes, schemas, hashes, and
+limitations are in `wfs/ACQUISITION.md` and `wfs/PROVENANCE.csv`.
+
+## WFS payloads
+
+| File | Layer | Features |
+|------|-------|---------:|
+| `wfs/sites_summary.csv.gz` | `ms:Sites_Summary` | 41,840 |
+| `wfs/sk_trees_measure_num_0.csv.gz` | `ms:SK_Trees_Measure_Num_0` | 403,953 |
+| `wfs/sk_trees_measure_num_1.csv.gz` | `ms:SK_Trees_Measure_Num_1` | 269,189 |
+| `wfs/sk_trees_measure_num_2_8.csv.gz` | `ms:SK_Trees_Measure_Num_2_8` | 339,429 |
+| `wfs/pei_trees_measure_num_0_11.csv.gz` | `ms:PEI_Trees_Measure_Num_0_11` | 275,204 |
+| `wfs/nl_trees_measure_num_0_2.csv.gz` | `ms:NL_Trees_Measure_Num_0_2` | 313,531 |
+| `wfs/nl_trees_measure_num_3_9.csv.gz` | `ms:NL_Trees_Measure_Num_3_9` | 298,786 |
+
+Total tree-measurement features: 1,900,092. Capabilities snapshot:
+`wfs/wfs_capabilities.xml` (39 feature types).
+
+## Site-count reconciliation
+
+| Province | ZIP `magp_sites` | WFS `Sites_Summary` | Difference | Common IDs | ZIP-only | WFS-only |
+|----------|-----------------:|--------------------:|-----------:|-----------:|---------:|---------:|
+| BC | 16,517 | 16,517 | 0 | 16,517 | 0 | 0 |
+| QC | 12,892 | 12,892 | 0 | 12,892 | 0 | 0 |
+| NB | 7,609 | 7,609 | 0 | 7,609 | 0 | 0 |
+| NL | 1,350 | 1,321 | −29 | 1,282 | 68 | 39 |
+| YT | 327 | 327 | 0 | 327 | 0 | 0 |
+| NT | 262 | 262 | 0 | 262 | 0 | 0 |
+| SK | 171 | 2,219 | +2,048 | 171 | 0 | 2,048 |
+| MB | 2 | 2 | 0 | 2 | 0 | 0 |
+| PE | 0 | 691 | +691 | 0 | 0 | 691 |
+| **Total** | **39,130** | **41,840** | **+2,710** | **39,062** | **68** | **2,778** |
+
+The WFS supplement therefore adds 2,048 Saskatchewan sites, 691 Prince Edward
+Island sites, and 39 Newfoundland and Labrador site IDs. It is not a strict
+superset: 68 ZIP NL site IDs are absent from the WFS, so the NL site count
+falls by a net 29.
+
+## Tree-layer coverage
+
+| Layer | Features | Distinct sites | Measurement years |
+|-------|---------:|---------------:|-------------------|
+| SK meas 0 | 403,953 | 2,046 | 1949–1999 |
+| SK meas 1 | 269,189 | 1,433 | 1954–2019 |
+| SK meas 2–8 | 339,429 | 983 | 1959–2019 |
+| PEI meas 0–11 | 275,204 | 687 | 1976–2018 |
+| NL meas 0–2 | 313,531 | 1,297 | 1985–2022 |
+| NL meas 3–9 | 298,786 | 1,220 | 1985–2022 |
+
+The SK tree layers cover 2,046 of 2,219 WFS SK site records (all 171 ZIP SK
+site IDs are present). The PEI layer covers 687 of 691 WFS PEI site records.
+The NL layers cover 1,297 distinct site IDs, of which 28 are absent from the
+WFS site summary; 92 ZIP NL site IDs are not represented in the WFS tree
+layers.
+
+## Schema note
+
+WFS site records (41 columns) add geometry, disturbance/treatment blocks, and
+per-measurement tree counts, but omit ZIP `latitude`, `longitude`, and
+`flag_sites`. WFS tree records (25 columns) add `WKT` and `magp_web_key`, use
+`meas_year`/`meas_month` instead of `meas_num`, and omit the ZIP tree-ID
+crosswalk and `flag_*` QA columns. WFS-only records cannot inherit ZIP QA
+flags. Reconcile and flag any WFS-derived calibration records explicitly.
