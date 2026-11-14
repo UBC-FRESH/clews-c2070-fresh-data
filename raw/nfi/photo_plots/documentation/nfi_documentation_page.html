@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>NFI </title>
+    <!-- Javascript -->
+    <script type="text/javascript" src="https://nfi.nfis.org/js/display_en.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/NFI_tooltips.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/nfi_portal_config.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/NFIPortal_menu_access_helper.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/jquery.img.preload.js"></script>
+<script type="text/javascript" src="https://nfi.nfis.org/js/main.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/NFI_MapLayers.css" media="screen, print"/>
+    <link rel="shortcut icon" href="https://nfi.nfis.org/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/ajax-client/css/smoothness/jquery-ui-1.10.4.custom.min.css" />
+    <link type="text/css" rel="stylesheet" href="/ajax-client/css/style.css" />
+    <!--script src="https://nfi.nfis.org/js/display_en.js" type="text/javascript"></script>
+    <script src="https://nfi.nfis.org/js/NFI_tooltips.js" type="text/javascript"></script>
+    <script src="https://nfi.nfis.org/js/NFIPortal_menu_access_helper.js" type="text/javascript"></script-->
+
+    <!--[if (lt IE 9)]>
+            <script type="text/javascript">
+                "'article aside footer header nav section time'".replace(/\w+/g,function(n){document.createElement(n)})
+            </script>
+    <![endif]-->
+
+    <!-- Setting the base url in Javascript for future usage -->
+    <script type="text/javascript">
+        var url = "https://nfi.nfis.org/";
+        var language = "en";
+        var expertiseNetworkUrl = "";
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="https://nfi.nfis.org/css/bootstrap.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="https://nfi.nfis.org/css/style.css" media="screen" />
+
+<link rel='stylesheet' type='text/css' href='https://ca.nfis.org/css/cookieconsent.min.css' /></head>
+
+<body onload="makeWrlCall(&quot;en&quot;)">
+
+<div id="top-header">
+    <div class="container">
+
+        <!-- Begin header -->
+        <header class="banner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="float-left" style="color: #CCCCCC; margin-top: 30px;">
+                        <a href="https://nfi.nfis.org/en/"><img src="https://nfi.nfis.org/img/nfi-logo-en.png" title="Menu.nfi" alt="NFI Logo"></a>
+                    </div>
+                    <div id="top-links" class="float-right">
+                        <ul>
+                            <li>
+                                <a href="https://nfi.nfis.org/en/">HOME</a>
+                            </li>
+                            <li>
+                                <a href="https://nfi.nfis.org/en/contact">Contact</a>
+                            </li><li>
+                                <a href="https://nfi.nfis.org/fr/documentation">Français</a>
+                            </li><li>
+                                <a href="https://nfi.nfis.org/en/login" id="signIn" class="" style="color: #0033ff; text-decoration: underline">Collaborator Login</a>
+                            </li><li>
+                                <a href="https://nfi.nfis.org/en/" id="search" data-toggle="modal" data-target=".search-modal"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End header -->
+    </div>
+</div>
+
+<!-- Begin top menu -->
+<nav id="top-menu" class="navbar" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nfi-navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand visible-xs" href="#">NFI</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nfi-navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                	<a href="https://nfi.nfis.org/en/about">ABOUT</a><a href="" class="submenu-icon expand-action" data-toggle="dropdown"><span class="glyphicon glyphicon-plus-sign"></span></a><a href="" class="submenu-icon collapse-action" data-toggle="dropdown"><span class="glyphicon glyphicon-minus-sign"></span></a>
+					<ul class="dropdown-menu">
+						
+						<li><a href="https://nfi.nfis.org/en/faq">FAQ</a></li>
+                        <li><a href="https://nfi.nfis.org/en/history">History</a></li>
+                        <li><a href="https://nfi.nfis.org/en/contact">Contact</a></li>
+                        <li><a href="https://nfi.nfis.org/en/notices">Notices</a></li>
+						<li><a href="https://nfi.nfis.org/en/collaborators">Collaborators</a></li>
+					 </ul>
+                </li><li class="menu-separator"><span></span>
+                </li><li class="dropdown">
+                    <a href="https://nfi.nfis.org/en/data_and_tools">DATA  &amp; TOOLS</a><a href="" class="submenu-icon expand-action" data-toggle="dropdown"><span class="glyphicon glyphicon-plus-sign"></span></a><a href="" class="submenu-icon collapse-action" data-toggle="dropdown"><span class="glyphicon glyphicon-minus-sign"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://nfi.nfis.org/en/customized_report">Reports Generator</a></li>
+                        <li><a href="https://nfi.nfis.org/en/maps">Maps</a></li>
+                        <li><a href="https://nfi.nfis.org/en/biomass">Biomass Calculators</a></li>
+
+						<li id="data_request" ><a href="https://nfi.nfis.org/en/datarequest">data request</a></li>
+                        <li id="meta_data" class="login-required"><a href="https://nfi.nfis.org/en/login" title="The following tools are for NFI collaborators (and other authorized users) only." ><span class="glyphicon glyphicon-ban-circle" ></span>Metadata Tools</a></li>
+                        <li id="data_entry" class="login-required"><a href="https://nfi.nfis.org/en/login" title="The following tools are for NFI collaborators (and other authorized users) only." ><span class="glyphicon glyphicon-ban-circle"></span>Data Entry &amp; QA Tools</a></li>
+                        <li id="data_download" class="login-required"><a href="https://nfi.nfis.org/en/login" title="The following tools are for NFI collaborators (and other authorized users) only." ><span class="glyphicon glyphicon-ban-circle"></span>Data Download Tools</a></li>
+						<li id="data_submission_tool" class="login-required"><a href="https://nfi.nfis.org/en/login" title="The following tools are for NFI collaborators (and other authorized users) only." ><span class="glyphicon glyphicon-ban-circle"></span>Data Submission Tool</a></li>
+						<li id="data_t2dashboard" class="login-required"><a href="https://nfi.nfis.org/en/login" title="The following tools are for NFI collaborators (and other authorized users) only." ><span class="glyphicon glyphicon-ban-circle"></span>T2 Dashboard</a></li>
+                    </ul>
+                </li><li class="menu-separator"><span></span>
+                </li><li class="dropdown active">
+                    <a href="https://nfi.nfis.org/en/documentation">DOCUMENTATION</a><a href="" class="submenu-icon expand-action" data-toggle="dropdown"><span class="glyphicon glyphicon-plus-sign"></span></a><a href="" class="submenu-icon collapse-action" data-toggle="dropdown"><span class="glyphicon glyphicon-minus-sign"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://nfi.nfis.org/en/general">General</a></li>
+                        <li><a href="https://nfi.nfis.org/en/ground_plot">Ground Plot</a></li>
+                        <li><a href="https://nfi.nfis.org/en/photo_plot">Photo Plot</a></li>
+                        <li><a href="https://nfi.nfis.org/en/estimation">Estimation</a></li>
+                        <li><a href="https://nfi.nfis.org/en/others">Others</a></li>
+                    </ul>
+                </li><li class="menu-separator"><span></span>
+                </li><li class="dropdown">
+                    <a href="https://nfi.nfis.org/en/resources">RESOURCES</a><a href="" class="submenu-icon expand-action" data-toggle="dropdown"><span class="glyphicon glyphicon-plus-sign"></span></a><a href="" class="submenu-icon collapse-action" data-toggle="dropdown"><span class="glyphicon glyphicon-minus-sign"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://nfi.nfis.org/en/standardreports">Standard Reports</a></li>
+                        <!--<li><a href="https://nfi.nfis.org/en/documentation">Documentation</a></li>-->
+                        <li><a href="https://nfi.nfis.org/en/articles">Publications</a></li>
+                    </ul>
+                </li><li class="menu-separator"><span></span>
+                </li><li><a href="https://nfi.nfis.org/en/quickfacts">QUICK FACTS</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End top menu -->
+
+<!-- Begin Page Content -->
+<!-- Begin article -->
+
+<!-- Begin article -->
+<article class="article-page">
+    <div class="container">
+        <header>
+            <h2>Documentation</h2>
+        </header>
+        <section>
+            <div class="row">
+                <div class="col-md-9 space-bottom">
+					<!-- Genera -->
+                    <h3>General</h3>
+					<!-- Begin general body -->
+<section>
+	<div class="row">
+	<div class="col-md-9 space-bottom">
+
+		<!-- The business process -->
+		<h5>NFI Business Process</h5>
+		<p>The Business Process document describes the procedure and means by which the NFI collects, validates, stores, uses and disseminates national forest inventory data.<br>
+		<a target="_blank" href="https://nfi.nfis.org/resources/general/NFI-Business-Process-Version-8.0.pdf">Version 8.0</a> (PDF, 1.91MB)</p>
+		
+		<!-- The brochure -->
+		<h5>NFI Brochure</h5>
+		<p>The NFI brochure provides a succinct overview of the purpose and design of Canada's National Forest Inventory.<br>
+		<a target="_blank" href="https://nfi.nfis.org/resources/general/NFI Brochure.pdf">NFI Brochure.pdf</a> (PDF, 4.5MB)</p>
+		
+		<!-- The tree species list -->
+		<h5>Tree Species List</h5>
+		<p>The tree species recognized by the National Forest Inventory with scientific names, and codes for genus, species, and variant.<br>
+		<a target="_blank" href="https://nfi.nfis.org/resources/general/3-TreeSpeciesList-Version4.5.pdf">Version 4.5</a> (PDF, 437KB)</p>
+	</div>
+	</div>
+</section>
+<!-- End general body -->
+					<!-- Ground Plot -->
+		            <h3>Ground Plot</h3>
+					<!-- Begin ground plot body -->
+<section>
+	<div class="row">
+	<div class="col-md-9 space-bottom">
+		<!-- ground plot data dictionary -->
+		<h5>Data Dictionary </h5>
+		<p>The NFI Ground Plot Data Dictionary describes the structure of the NFI ground plot database and documents the definition, format and reporting rules for each attribute within.<br>
+		<p>Data Dictionary 		<a target="_blank" href="https://nfi.nfis.org/resources/groundplot/4a-GPDataDictionary5.2.3.pdf">Version 5.2.3</a> (PDF, 2.66MB)<br>
+		Data Dictionary 		<a target="_blank" href="https://nfi.nfis.org/resources/groundplot/4a-GPDataDictionary5.3.2.pdf">Version 5.3.2</a> (PDF, 3.46MB)</p>
+
+		<h5>Ground Plot Guidelines</h5>
+		<p>Describes the recommended field sampling procedures for the establishment and ongoing measurement of NFI ground plots.<br>
+		<a target="_blank" href="https://nfi.nfis.org/resources/groundplot/Gp_guidelines_v5.0.pdf">Version 5.0</a> (PDF, 3.65MB)</p>
+
+		<!-- The ground plot compilation procedure -->
+		<h5>National Standards for Ground Plots Compilation Procedures</h5>
+		<p>This document outlines the equations and rules that have been developed to compile the NFI ground plot raw data.<br>
+		<a target="_blank" href="https://nfi.nfis.org/resources/groundplot/GP_compilation_procedures_2.4.pdf">Version 2.4</a> (PDF, 1.47MB)</p>
+
+		<!-- The climate models -->
+		<h5>Customized Spatial Climate Models for North America</h5>
+		<p>The climate data reported for NFI ground plots are generated using spatial climate models developed for Canada and the United States by researchers at Natural Resources Canada's Canadian Forest Service, in collaboration with the Australian National University, Environment Canada, and the National Oceanic and Atmospheric Administration. <br>
+		<a target="_blank" href="https://journals.ametsoc.org/view/journals/bams/92/12/2011bams3132_1.xml"> This article, </a>which was published by the American Meteorological Society in 2011, outlines the methods used to generate those models.<br>
+		 
+	</div>
+	</div>
+</section>
+<!-- End ground plot body -->					
+					<!--Photo plot  -->
+                    <h3>Photo Plot</h3>
+					<!-- Begin photo plot body -->
+<section>
+	<div class="row">
+		<div class="col-md-9 space-bottom">
+			<!-- photo plot data dictionary, baseline -->
+			<h5>Photo Plot Data Dictionary (plot establishment, 2000 - 2006)</h5>
+			<p>This document provides a data model and data dictionary for NFI attributes from photo plots and to facilitate a standard input format for national compilation.<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/photoplot/Pp_data_dictionary_4.2.4.pdf">Version 4.2.4</a> (PDF, 296KB)</p>
+
+			<!-- photo plot data dictionary, remeasurement -->
+			<h5>Photo Plot Data Dictionary (plot re-measurement)</h5>
+			<p>These documents provide a data model and data dictionary for data collected during the first and second remeasurement phases of the NFI photo plot program.<br>
+			First Remeasurement (2007 – 2017)<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/photoplot/Pp_data_dictionary_5.2.pdf">Version 5.2</a> (PDF, 2068KB)</p>
+			Second Remeasurement (2018 – 2027)<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/photoplot/PP_Data_Dictionary_6.1.pdf">Version 6.1</a> (PDF, 1868KB)</p>
+			
+			<!-- land cover classification -->
+			<h5>Land Cover Classification</h5>
+			<p>The Land Cover Classification Scheme is used to describe current vegetated and non-vegetated land cover in NFI photo plots. The documentation for this scheme is now included in the Photo Plot Data Dictionary.<br>
+			
+			<!-- remove the link to the PDF file of the land cover scheme because it is included in the data dictionary
+			<a target="_blank" href="https://nfi.nfis.org/resources/photoplot/Land_cover_classification_v4.0.1.pdf">Version 4.0.1</a> (PDF, 207KB)			-->
+			</p>
+			
+			<!-- land use classification -->
+			<h5>Land Use Classification</h5>
+			<p>The Land Use Classification Scheme is used to describe current land use in NFI photo plots. The documentation for this scheme is now included in the Photo Plot Data Dictionary.<br>
+			</p>
+
+			<!-- photo plot data compilation procedure -->
+			<h5>Photo Plot Compilation Procedures</h5>
+			<p>This document describes NFI photo plot compilation procedures.<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/photoplot/Pp_compilation_v1.4.pdf">Version 1.4</a> (PDF, 78KB)</p>
+
+			<!-- interepter guide -->
+			<h5>Interpreter Guide</h5>
+			<p>This document provides the definitions and photo examples for each one of the NFI’s landcover classification codes. The definitions align with the Photo Plot Data Dictionary and the photos have been selected from various NFI photo plots.<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/photoplot/Photoplot_interpretation_examples_English_version.xlsx">Version 1.0</a> (XLSX, 2.34MB)</p>
+			</div>
+	</div>
+</section>
+<!-- End photo plot body -->                    
+					<!-- Estimation -->
+					<h3>Estimation</h3>
+					<!-- Begin estimation body -->
+<section>
+	<div class="row">
+		<div class="col-md-9 space-bottom">
+			<h5 class="space-xtop">Estimation Procedures</h5>
+
+			<p>This document describes NFI estimation procedures.<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/estimation/Estimation_procedures_v1.13.pdf">Version 1.13</a> (PDF, 376KB)</p>
+
+			<h5 class="space-xtop">Estimation Procedure Examples</h5>
+
+			<p>These worksheets are for the Examples provided in the NFI Estimation Procedures document.<br>
+			<a target="_blank" href="https://nfi.nfis.org/resources/estimation/Estimation_examples_v1.3_ReadOnly.xls">Version 1.3</a> (Excel, 948KB)</p>
+
+			<h5>Standard statistical reports</h5>
+			<p><a href="https://nfi.nfis.org/en/standardreports">Standard statistical reports</a>
+				 provide estimates of basic forest attributes such as area, volume, and biomass, summarized in various ways (e.g., by forest type, age class, ownership, protection status, etc.) for geographic units: Canada, Terrestrial Ecozones and Boreal Zone. Reports are available <a href="https://nfi.nfis.org/en/standardreports">here</a>
+				 in various formats such as HTML, PDF and CSV.			</p>
+		</div>
+	</div>
+</section>
+<!-- End estimation body -->				
+				
+				    <!-- NorthForM -->				
+                    <p><h3 class="first">Others</h3></p>
+					<!-- Begin Others body -->
+    <h4>Northern Forest Mapping Program (NorthForM)</h4>
+	<p><h5> Canadian Forest Fuel Attribute Sampling – CFFAS</h5>
+
+	<a target="_blank" href="https://nfi.nfis.org/resources/others/Field_Guide_of_NG_Protocol_2024_v1.1_en.pdf">Field Sampling Protocol and List of Attributes for Field Crews v1.1 (2024)</a>  (991KB)<br>	
+	<a target="_blank" href="https://nfi.nfis.org/resources/others/Field_Guide_of_NG_Protocol_2025_v1.2_en.pdf">Field Sampling Protocol and List of Attributes for Field Crews v1.2 (2025)</a>  (980KB)<br>
+	<a target="_blank" href="https://nfi.nfis.org/resources/others/Field_Guide_of_NG_Protocol_v2.0_2026_EN.pdf">Field Sampling Protocol and List of Attributes for Field Crews <b>v2.0 (2026)</b></a>  (113KB)<br>
+	<!-- Add more documentation from other projects later -->
+<!-- End Others body -->	
+							
+                </div>
+                <div class="col-md-3 right-sidebar">
+                    <!-- Begin Featured sidebar -->
+<h3>Featured</h3>
+
+<div id="sidebar-accordion" class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-accordion" href="#sidebarCollapseBrochure">
+                    NFI Brochure                </a>
+            </h4>
+        </div>
+        <div id="sidebarCollapseBrochure" class="panel-collapse collapse">
+            <div class="panel-body">
+				<p>The NFI brochure provides a succinct overview of the purpose and design of Canada's National Forest Inventory.<br>
+                    <a target="_blank" href="https://nfi.nfis.org/resources/general/NFI%20Brochure.pdf">NFI Brochure.pdf</a> (PDF, 4.5MB)</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-accordion" href="#sidebarCollapseInfographic">
+                    NFI Data Access Guide                </a>
+            </h4>
+        </div>
+        <div id="sidebarCollapseInfographic" class="panel-collapse collapse">
+            <div class="panel-body">
+				<p>
+                    <a target="_blank" href="https://nfi.nfis.org/resources/general/NFI_Infographic_en.pdf">NFI Infographic</a> (PDF, 1.24MB)</p>
+			</div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-accordion" href="#sidebarCollapseOne">
+                    Latest NFI maps and estimates                </a>
+            </h4>
+        </div>
+        <div id="sidebarCollapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+				<p>NFI data have been used to produce a suite of continuous maps of forest properties.</p>
+                <p>To view maps, click<a href="https://nfi.nfis.org/en/maps">&nbsp;here</a>.</p>
+                <p>To access these data products, please click <a target="_blank" href="https://open.canada.ca/data/en/dataset/ec9e2659-1c29-4ddb-87a2-6aced147a990">here</a>.</p>
+                <p>For more information, please refer to <a target="_blank" href="https://ostrnrcan-dostrncan.canada.ca/entities/publication/715ee0e3-da4e-4822-b6b2-be28c9a86c0f">Beaudoin et al. (2017) Tracking forest attributes across Canada between 2001 and 2011 using a k nearest neighbors mapping approach applied to MODIS imagery. Canadian Journal of Forest Research.</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-accordion" href="#sidebarCollapseTwo">
+                    Latest publications                </a>
+            </h4>
+        </div>
+        <div id="sidebarCollapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <ul class="list-material">
+                        <li><a target="_blank" href="https://doi.org/10.1002/ecs2.70631">Gauthier, M-M., and Guillemette, F. <b>(2026)</b> Radial growth of black cherry (Prunus serotina) at the northern limit of its native range, <i>Ecosphere</i></a></li>
+                        <li><a target="_blank" href="https://doi.org/10.1071/WF25274">Girardin, M.P., <i>et al</i>. <b>(2026)</b> Atmospheric dryness as a coordinated driver of fire activity and biomass accumulation in northwestern boreal Canada, <i>International Journal of Wildland Fire</i></a></li>
+                        <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S0378112726002665?via%3Dihub">Ganesh, A., Pureswaran, D.S., and Liebhold, A.M. <b>(2026)</b> Risk of co-evolved pest damage to non-native Douglas-fir plantations, <i>Forest Ecology and Management</i></a></li>
+                        <li><a target="_blank" href="https://doi.org/10.1088/1748-9326/ae481a">Liang, W., <i>et al</i>. <b>(2026)</b> Meta-analysis of North American Arctic and boreal aboveground biomass datasets: assessing accuracy, dynamics, and similarities, <i>Environmental Research Letters</i></a></li>
+                        <li><a target="_blank" href="http://dx.doi.org/10.2139/ssrn.6963643">Caron, D., <i>et al</i>. <b>(2026)</b> LandRCBM: Bridging forest dynamics and carbon accounting to advance forest carbon predictions, <i>SSRN</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-accordion" href="#sidebarCollapseThree">
+                    Updated biomass calculators                </a>
+            </h4>
+        </div>
+        <div id="sidebarCollapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p>The  <a href="https://nfi.nfis.org/en/biomass">NFI online biomass calculators </a>have been updated to use the latest  <a href="https://nfi.nfis.org/en/biomass_models">biomass models</a>.
+            </div>
+        </div>
+   </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#sidebar-accordion" href="#sidebarCollapseFour" >
+                    First remeasurement data reports                </a>
+            </h4>
+        </div>
+        <div id="sidebarCollapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p>The new version of the NFI first remeasurement data reports and the annual change reports are available. You can download  <a href="https://nfi.nfis.org/en/standardreports">here</a>.
+            </div>
+        </div>
+   </div>
+
+    <div class="panel panel-default">
+        <div id="nfis" class="">
+            <div class="panel-body" style="text-align: center;">
+                <a target="_blank" href="https://ca.nfis.org/"><img class="nfis" src="https://nfi.nfis.org/img/nfis_en.gif" alt="Powered by NFIS"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--p class="rss-feed" style="margin-top: 15px; font-size: 1.7em; font-weight: bold; color: #999; text-align: center">
+    <a style="vertical-align: middle; color: #999; text-decoration: none;" href="">RSS FEED</a> <img src="https://nfi.nfis.org/img/rss.png" />
+</p>-->
+<!-- End Featured sidebar -->
+                </div>
+            </div>
+        </section>
+    </div>
+</article>
+<!-- End article -->
+
+<!-- Begin footer -->
+<div class="clear"></div>
+<footer>
+    <div class="container">
+        <!-- Adding a div because of IE... -->
+        <div class="row footer-feedback space-xtop">
+            <div class="col-md-6">
+                <h3>Quick Contact</h3>
+            	<p>You can contact us via the <a href="https://nfi.nfis.org/en/contact">contact form</a> or if you would just like to send us your feedback, you may do so using this form:</p>
+		</div>
+            <div class="col-md-6">
+                <form id="form-feedback" class="form-horizontal" role="form" action="" onsubmit="return sendFeedback()">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="feedback-fld-name" name="name" placeholder="Name (optional)" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" id="feedback-fld-email" name="email" placeholder="Email (optional)"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" name="message" id="feedback-fld-message" placeholder="Message" style="height: 82px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 text-right">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">provide your feedback</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="application-footer col-md-12" style="margin: 10px 0; color: #999;">
+                &copy; Copyright 2026 - NFI. 
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Begin footer -->
+
+<script>var nfis_cookie_mgmt = (function() { var style = {bannerBG:'rgba(54, 54, 54, 0.84)', bannerTXT: 'rgb(227, 227, 227)', buttonBG:'rgb(43, 43, 43)', buttonTXT:'rgb(176, 176, 176)'}; var message = 'This website uses cookies to ensure you get the best experience on our website. <a class="cc-link" href="https:\/\/ca.nfis.org\/important_notices_eng.html">Learn More<\/a> / Ce site Web utilise des cookies pour vous garantir la meilleure exp&eacute;rience sur notre site Web. <a class="cc-link" href="https:\/\/ca.nfis.org\/important_notices_fra.html">Apprendre encore plus<\/a>'; return { message:message, style:style } })();</script><script src='https://ca.nfis.org/js/cookieconsent.min.js' data-cfasync='false'></script><script> window.cookieconsent.initialise({ 'palette': { 'popup': { 'background': nfis_cookie_mgmt.style.bannerBG, 'text': nfis_cookie_mgmt.style.bannerTXT }, 'button': { 'background': nfis_cookie_mgmt.style.buttonBG, 'text':nfis_cookie_mgmt.style.buttonTXT } }, 'content': { 'message': nfis_cookie_mgmt.message, 'dismiss':'OK' }, 'cookie' : { 'domain': '.nfis.org' }, 'showLink':false });</script></body>
+</html>
