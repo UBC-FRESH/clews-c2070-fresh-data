@@ -1,0 +1,1813 @@
+{
+ "currentVersion": 12,
+ "id": 15,
+ "name": "Immature Trees Permanent",
+ "type": "Table",
+ "serviceItemId": "6672099533d34409b7c221cc0a5b803d",
+ "cacheMaxAge": 30,
+ "isView": true,
+ "isUpdatableView": true,
+ "sourceSchemaChangesAllowed": true,
+ "displayField": "PlotKey",
+ "description": "",
+ "copyrightText": "",
+ "defaultVisibility": true,
+ "ownershipBasedAccessControlForFeatures": {
+  "allowOthersToQuery": true,
+  "allowOthersToDelete": true,
+  "allowOthersToUpdate": true,
+  "allowAnonymousToQuery": true,
+  "allowAnonymousToUpdate": true,
+  "allowAnonymousToDelete": true
+ },
+ "editFieldsInfo": {
+  "creationDateField": "CREATED_DATE",
+  "creatorField": "CREATED_USER",
+  "editDateField": "LAST_EDITED_DATE",
+  "editorField": "LAST_EDITED_USER"
+ },
+ "editingInfo": {
+  "lastEditDate": 1794522723047,
+  "schemaLastEditDate": 1786025998673,
+  "dataLastEditDate": 1794263500322
+ },
+ "relationships": [
+  {
+   "id": 15,
+   "name": "toImmature",
+   "relatedTableId": 2,
+   "cardinality": "esriRelCardinalityOneToMany",
+   "role": "esriRelRoleDestination",
+   "keyField": "PlotKey",
+   "composite": false
+  }
+ ],
+ "isDataVersioned": false,
+ "hasContingentValuesDefinition": false,
+ "supportsAppend": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsTruncate": false,
+ "supportsAttachmentsByUploadId": true,
+ "supportsAttachmentsResizing": true,
+ "supportsRollbackOnFailureParameter": true,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSql": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsLayerOverrides": true,
+ "supportsTilesAndBasicQueriesMode": true,
+ "supportsFieldDescriptionProperty": true,
+ "supportsQuantizationEditMode": true,
+ "supportsColumnStoreIndex": true,
+ "supportsApplyEditsWithGlobalIds": true,
+ "supportsOBACForAnonymousUsers": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsPaginationOnAggregatedQueries": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": false,
+  "supportsStatistics": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsQueryWithResultType": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsCountDistinct": true,
+  "supportsPercentileStatistics": true,
+  "supportsApproxPercentileStatistics": true,
+  "supportsSpatialAggregationStatistics": true,
+  "supportedSpatialAggregationStatistics": [
+   "EnvelopeAggregate",
+   "CentroidAggregate",
+   "ConvexHullAggregate"
+  ],
+  "supportsLod": true,
+  "supportsQueryWithLodSR": false,
+  "supportedLodTypes": [
+   "geohash"
+  ],
+  "supportsReturningGeometryCentroid": false,
+  "supportsReturningGeometryEnvelope": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsCurrentUserQueries": true,
+  "supportsHavingClause": true,
+  "supportsOutFieldSQLExpression": true,
+  "supportsMaxRecordCountFactor": true,
+  "supportsTopFeaturesQuery": true,
+  "supportsQueryWithCacheHint": true,
+  "supportedOperationsWithCacheHint": [
+   "query",
+   "queryTopFilter",
+   "queryAnalytics",
+   "queryAttachments",
+   "queryRelated",
+   "queryBins",
+   "queryPivot"
+  ],
+  "supportsQueryAnalytic": true,
+  "supportsQueryPivot": true,
+  "supportsQueryBins": true,
+  "supportsDefaultSR": true,
+  "supportsTranslations": false,
+  "supportsAggIds": true,
+  "supportsQueryWithCollation": true,
+  "supportsISODOW": true,
+  "supportsISOWeek": true,
+  "supportsFullTextSearch": true,
+  "fullTextSearchCapabilities": {
+   "supportsAccentSensitivity": true,
+   "supportsStopWords": true,
+   "supportsSearchOperator": true,
+   "supportsOperator": true
+  }
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsTrendlineRegression": true,
+  "supportsAsync": true,
+  "supportsPercentileAnalytic": true
+ },
+ "queryBinsCapabilities": {
+  "supportsAsync": true,
+  "supportsAutoIntervalBin": true,
+  "supportsFixedIntervalBin": true,
+  "supportsFixedBoundariesBin": true,
+  "supportsDateBin": true,
+  "supportsClassificationBin": true,
+  "supportsStackBy": true,
+  "supportsSplitBy": true,
+  "supportsFirstDayOfWeek": true,
+  "supportsSnapToData": true,
+  "supportsReturnFullIntervalBin": true,
+  "supportsReturnStackValueRange": true,
+  "supportsNormalization": true,
+  "supportedStatisticTypes": [
+   "COUNT",
+   "SUM",
+   "AVG",
+   "VAR",
+   "VAR_SAMP",
+   "VAR_POP",
+   "STDDEV",
+   "STDDEV_SAMP",
+   "STDDEV_POP",
+   "MIN",
+   "MAX",
+   "PERCENTILE_CONT",
+   "PERCENTILE_DISC",
+   "APPROX_PERCENTILE_CONT",
+   "APPROX_PERCENTILE_DISC",
+   "CentroidAggregate",
+   "EnvelopeAggregate",
+   "ConvexHullAggregate"
+  ],
+  "supportedNormalizationTypes": [
+   "boxCox",
+   "field",
+   "inverse",
+   "log",
+   "naturalLog",
+   "percentOfTotal",
+   "squareRoot"
+  ]
+ },
+ "supportedOperationsWithCollation": "query,addField,updateField",
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsReturnEditResults": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+  "supportsTranslation": false,
+  "supportsMaxTranslations": 10
+ },
+ "infoInEstimates": [
+  "count"
+ ],
+ "useStandardizedQueries": true,
+ "allowGeometryUpdates": true,
+ "hasAttachments": false,
+ "viewSourceHasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeNone",
+ "hasM": false,
+ "hasZ": false,
+ "objectIdField": "OBJECTID",
+ "uniqueIdField": {
+  "name": "OBJECTID",
+  "isSystemMaintained": true
+ },
+ "globalIdField": "GLOBALID",
+ "typeIdField": "",
+ "collation": {
+  "locale": "neutral",
+  "caseSensitive": false,
+  "accentSensitive": true
+ },
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "sqlType": "sqlTypeOther",
+   "nullable": false,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PLOTKEY",
+   "type": "esriFieldTypeString",
+   "alias": "Plot Key",
+   "sqlType": "sqlTypeOther",
+   "length": 10,
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "DISTRICT",
+   "type": "esriFieldTypeString",
+   "alias": "District",
+   "sqlType": "sqlTypeOther",
+   "length": 5,
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "MDNumber",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDefaultValue",
+    "codedValues": [
+     {
+      "name": "10",
+      "code": "10"
+     },
+     {
+      "name": "11",
+      "code": "11"
+     },
+     {
+      "name": "12",
+      "code": "12"
+     },
+     {
+      "name": "13",
+      "code": "13"
+     },
+     {
+      "name": "14",
+      "code": "14"
+     },
+     {
+      "name": "15",
+      "code": "15"
+     },
+     {
+      "name": "16",
+      "code": "16"
+     },
+     {
+      "name": "17",
+      "code": "17"
+     },
+     {
+      "name": "18",
+      "code": "18"
+     },
+     {
+      "name": "19a",
+      "code": "19a"
+     },
+     {
+      "name": "19b",
+      "code": "19b"
+     },
+     {
+      "name": "19c",
+      "code": "19c"
+     },
+     {
+      "name": "20",
+      "code": "20"
+     },
+     {
+      "name": "21",
+      "code": "21"
+     },
+     {
+      "name": "22",
+      "code": "22"
+     },
+     {
+      "name": "23",
+      "code": "23"
+     },
+     {
+      "name": "24",
+      "code": "24"
+     },
+     {
+      "name": "01",
+      "code": "01"
+     },
+     {
+      "name": "02",
+      "code": "02"
+     },
+     {
+      "name": "03",
+      "code": "03"
+     },
+     {
+      "name": "04",
+      "code": "04"
+     },
+     {
+      "name": "05",
+      "code": "05"
+     },
+     {
+      "name": "06",
+      "code": "06"
+     },
+     {
+      "name": "07",
+      "code": "07"
+     },
+     {
+      "name": "08",
+      "code": "08"
+     },
+     {
+      "name": "09",
+      "code": "09"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "TREENUMBER",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Tree Number",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "SPECIES",
+   "type": "esriFieldTypeString",
+   "alias": "Species",
+   "sqlType": "sqlTypeOther",
+   "length": 10,
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "SpeciesComp",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDefaultValue",
+    "description": "Species Composition Codes",
+    "codedValues": [
+     {
+      "name": "rPbF",
+      "code": "rPbF"
+     },
+     {
+      "name": "wSnS",
+      "code": "wSnS"
+     },
+     {
+      "name": "jLbF",
+      "code": "jLbF"
+     },
+     {
+      "name": "jLbFwB",
+      "code": "jLbFwB"
+     },
+     {
+      "name": "jLwBbF",
+      "code": "jLwBbF"
+     },
+     {
+      "name": "jLwB",
+      "code": "jLwB"
+     },
+     {
+      "name": "nSbSbF",
+      "code": "nSbSbF"
+     },
+     {
+      "name": "tLwSwB",
+      "code": "tLwSwB"
+     },
+     {
+      "name": "wBjLbF",
+      "code": "wBjLbF"
+     },
+     {
+      "name": "wBjL",
+      "code": "wBjL"
+     },
+     {
+      "name": "wPrPbS",
+      "code": "wPrPbS"
+     },
+     {
+      "name": "wPtL",
+      "code": "wPtL"
+     },
+     {
+      "name": "wPwBbF",
+      "code": "wPwBbF"
+     },
+     {
+      "name": "wStLbS",
+      "code": "wStLbS"
+     },
+     {
+      "name": "bSwBrP",
+      "code": "bSwBrP"
+     },
+     {
+      "name": "bF",
+      "code": "bF"
+     },
+     {
+      "name": "bFbP",
+      "code": "bFbP"
+     },
+     {
+      "name": "bFbS",
+      "code": "bFbS"
+     },
+     {
+      "name": "bFbSrM",
+      "code": "bFbSrM"
+     },
+     {
+      "name": "bFbSrP",
+      "code": "bFbSrP"
+     },
+     {
+      "name": "bFbStA",
+      "code": "bFbStA"
+     },
+     {
+      "name": "bFbStL",
+      "code": "bFbStL"
+     },
+     {
+      "name": "bFbSwB",
+      "code": "bFbSwB"
+     },
+     {
+      "name": "bFbSwP",
+      "code": "bFbSwP"
+     },
+     {
+      "name": "bFbSwS",
+      "code": "bFbSwS"
+     },
+     {
+      "name": "bFbSyB",
+      "code": "bFbSyB"
+     },
+     {
+      "name": "bFrM",
+      "code": "bFrM"
+     },
+     {
+      "name": "bFrMwB",
+      "code": "bFrMwB"
+     },
+     {
+      "name": "bFrP",
+      "code": "bFrP"
+     },
+     {
+      "name": "bFtA",
+      "code": "bFtA"
+     },
+     {
+      "name": "bFtAbS",
+      "code": "bFtAbS"
+     },
+     {
+      "name": "bFtAwB",
+      "code": "bFtAwB"
+     },
+     {
+      "name": "bFtL",
+      "code": "bFtL"
+     },
+     {
+      "name": "bFtLbS",
+      "code": "bFtLbS"
+     },
+     {
+      "name": "bFtLwB",
+      "code": "bFtLwB"
+     },
+     {
+      "name": "bFtLwS",
+      "code": "bFtLwS"
+     },
+     {
+      "name": "bFwB",
+      "code": "bFwB"
+     },
+     {
+      "name": "bFwBbS",
+      "code": "bFwBbS"
+     },
+     {
+      "name": "bFwBrM",
+      "code": "bFwBrM"
+     },
+     {
+      "name": "bFwBrP",
+      "code": "bFwBrP"
+     },
+     {
+      "name": "bFwBtA",
+      "code": "bFwBtA"
+     },
+     {
+      "name": "bFwBtL",
+      "code": "bFwBtL"
+     },
+     {
+      "name": "bFwBwP",
+      "code": "bFwBwP"
+     },
+     {
+      "name": "bFwBwS",
+      "code": "bFwBwS"
+     },
+     {
+      "name": "bFwByB",
+      "code": "bFwByB"
+     },
+     {
+      "name": "bFwP",
+      "code": "bFwP"
+     },
+     {
+      "name": "bFwPbS",
+      "code": "bFwPbS"
+     },
+     {
+      "name": "bFwPwB",
+      "code": "bFwPwB"
+     },
+     {
+      "name": "bFwS",
+      "code": "bFwS"
+     },
+     {
+      "name": "bFwSbP",
+      "code": "bFwSbP"
+     },
+     {
+      "name": "bFwSbS",
+      "code": "bFwSbS"
+     },
+     {
+      "name": "bFwStA",
+      "code": "bFwStA"
+     },
+     {
+      "name": "bFwStL",
+      "code": "bFwStL"
+     },
+     {
+      "name": "bFwSwB",
+      "code": "bFwSwB"
+     },
+     {
+      "name": "bFwSwP",
+      "code": "bFwSwP"
+     },
+     {
+      "name": "bFwSyB",
+      "code": "bFwSyB"
+     },
+     {
+      "name": "bFyB",
+      "code": "bFyB"
+     },
+     {
+      "name": "bFyBwB",
+      "code": "bFyBwB"
+     },
+     {
+      "name": "bFyBwS",
+      "code": "bFyBwS"
+     },
+     {
+      "name": "bP",
+      "code": "bP"
+     },
+     {
+      "name": "bPbF",
+      "code": "bPbF"
+     },
+     {
+      "name": "bPyB",
+      "code": "bPyB"
+     },
+     {
+      "name": "bPyBwS",
+      "code": "bPyBwS"
+     },
+     {
+      "name": "bS",
+      "code": "bS"
+     },
+     {
+      "name": "bSbF",
+      "code": "bSbF"
+     },
+     {
+      "name": "bSbFrM",
+      "code": "bSbFrM"
+     },
+     {
+      "name": "bSbFrP",
+      "code": "bSbFrP"
+     },
+     {
+      "name": "bSbFtA",
+      "code": "bSbFtA"
+     },
+     {
+      "name": "bSbFtL",
+      "code": "bSbFtL"
+     },
+     {
+      "name": "bSbFwB",
+      "code": "bSbFwB"
+     },
+     {
+      "name": "bSbFwP",
+      "code": "bSbFwP"
+     },
+     {
+      "name": "bSbFwS",
+      "code": "bSbFwS"
+     },
+     {
+      "name": "bSjB",
+      "code": "bSjB"
+     },
+     {
+      "name": "bSjP",
+      "code": "bSjP"
+     },
+     {
+      "name": "bSjPtA",
+      "code": "bSjPtA"
+     },
+     {
+      "name": "bSlP",
+      "code": "bSlP"
+     },
+     {
+      "name": "bSrM",
+      "code": "bSrM"
+     },
+     {
+      "name": "bSrMtA",
+      "code": "bSrMtA"
+     },
+     {
+      "name": "bSrMtL",
+      "code": "bSrMtL"
+     },
+     {
+      "name": "bSrMwB",
+      "code": "bSrMwB"
+     },
+     {
+      "name": "bSrP",
+      "code": "bSrP"
+     },
+     {
+      "name": "bSrPjL",
+      "code": "bSrPjL"
+     },
+     {
+      "name": "bSsP",
+      "code": "bSsP"
+     },
+     {
+      "name": "bSsS",
+      "code": "bSsS"
+     },
+     {
+      "name": "bStA",
+      "code": "bStA"
+     },
+     {
+      "name": "bStAbF",
+      "code": "bStAbF"
+     },
+     {
+      "name": "bStArM",
+      "code": "bStArM"
+     },
+     {
+      "name": "bStAtL",
+      "code": "bStAtL"
+     },
+     {
+      "name": "bStAwB",
+      "code": "bStAwB"
+     },
+     {
+      "name": "bStAwS",
+      "code": "bStAwS"
+     },
+     {
+      "name": "bStL",
+      "code": "bStL"
+     },
+     {
+      "name": "bStLbF",
+      "code": "bStLbF"
+     },
+     {
+      "name": "bStLrM",
+      "code": "bStLrM"
+     },
+     {
+      "name": "bStLtA",
+      "code": "bStLtA"
+     },
+     {
+      "name": "bStLwB",
+      "code": "bStLwB"
+     },
+     {
+      "name": "bStLwS",
+      "code": "bStLwS"
+     },
+     {
+      "name": "bSwB",
+      "code": "bSwB"
+     },
+     {
+      "name": "bSwBbF",
+      "code": "bSwBbF"
+     },
+     {
+      "name": "bSwBrM",
+      "code": "bSwBrM"
+     },
+     {
+      "name": "bSwBsS",
+      "code": "bSwBsS"
+     },
+     {
+      "name": "bSwBtA",
+      "code": "bSwBtA"
+     },
+     {
+      "name": "bSwBtL",
+      "code": "bSwBtL"
+     },
+     {
+      "name": "bSwBwS",
+      "code": "bSwBwS"
+     },
+     {
+      "name": "bSwP",
+      "code": "bSwP"
+     },
+     {
+      "name": "bSwPbF",
+      "code": "bSwPbF"
+     },
+     {
+      "name": "bSwPwB",
+      "code": "bSwPwB"
+     },
+     {
+      "name": "bSwS",
+      "code": "bSwS"
+     },
+     {
+      "name": "bSwSbF",
+      "code": "bSwSbF"
+     },
+     {
+      "name": "bSwSrP",
+      "code": "bSwSrP"
+     },
+     {
+      "name": "bSwStA",
+      "code": "bSwStA"
+     },
+     {
+      "name": "bSwSwB",
+      "code": "bSwSwB"
+     },
+     {
+      "name": "bSyB",
+      "code": "bSyB"
+     },
+     {
+      "name": "eL",
+      "code": "eL"
+     },
+     {
+      "name": "jB",
+      "code": "jB"
+     },
+     {
+      "name": "jL",
+      "code": "jL"
+     },
+     {
+      "name": "jLbS",
+      "code": "jLbS"
+     },
+     {
+      "name": "jLeLtL",
+      "code": "jLeLtL"
+     },
+     {
+      "name": "jLjPrP",
+      "code": "jLjPrP"
+     },
+     {
+      "name": "jLwS",
+      "code": "jLwS"
+     },
+     {
+      "name": "jP",
+      "code": "jP"
+     },
+     {
+      "name": "jPbF",
+      "code": "jPbF"
+     },
+     {
+      "name": "jPbFwB",
+      "code": "jPbFwB"
+     },
+     {
+      "name": "jPbS",
+      "code": "jPbS"
+     },
+     {
+      "name": "jPnS",
+      "code": "jPnS"
+     },
+     {
+      "name": "jPtLbS",
+      "code": "jPtLbS"
+     },
+     {
+      "name": "jPwB",
+      "code": "jPwB"
+     },
+     {
+      "name": "lP",
+      "code": "lP"
+     },
+     {
+      "name": "lPrPsP",
+      "code": "lPrPsP"
+     },
+     {
+      "name": "lPrPwS",
+      "code": "lPrPwS"
+     },
+     {
+      "name": "rMbS",
+      "code": "rMbS"
+     },
+     {
+      "name": "rMtAbS",
+      "code": "rMtAbS"
+     },
+     {
+      "name": "rMwB",
+      "code": "rMwB"
+     },
+     {
+      "name": "rMwBbF",
+      "code": "rMwBbF"
+     },
+     {
+      "name": "rP",
+      "code": "rP"
+     },
+     {
+      "name": "rPbS",
+      "code": "rPbS"
+     },
+     {
+      "name": "rPwS",
+      "code": "rPwS"
+     },
+     {
+      "name": "rS",
+      "code": "rS"
+     },
+     {
+      "name": "sP",
+      "code": "sP"
+     },
+     {
+      "name": "sPjP",
+      "code": "sPjP"
+     },
+     {
+      "name": "sPrPjP",
+      "code": "sPrPjP"
+     },
+     {
+      "name": "sS",
+      "code": "sS"
+     },
+     {
+      "name": "sSbS",
+      "code": "sSbS"
+     },
+     {
+      "name": "sSsP",
+      "code": "sSsP"
+     },
+     {
+      "name": "tA",
+      "code": "tA"
+     },
+     {
+      "name": "tAbF",
+      "code": "tAbF"
+     },
+     {
+      "name": "tAbFbS",
+      "code": "tAbFbS"
+     },
+     {
+      "name": "tAbFwB",
+      "code": "tAbFwB"
+     },
+     {
+      "name": "tAbS",
+      "code": "tAbS"
+     },
+     {
+      "name": "tAbSbF",
+      "code": "tAbSbF"
+     },
+     {
+      "name": "tAbStL",
+      "code": "tAbStL"
+     },
+     {
+      "name": "tAbSwB",
+      "code": "tAbSwB"
+     },
+     {
+      "name": "tAbSwS",
+      "code": "tAbSwS"
+     },
+     {
+      "name": "tArM",
+      "code": "tArM"
+     },
+     {
+      "name": "tAtLbS",
+      "code": "tAtLbS"
+     },
+     {
+      "name": "tAwB",
+      "code": "tAwB"
+     },
+     {
+      "name": "tAwBbF",
+      "code": "tAwBbF"
+     },
+     {
+      "name": "tAwBbS",
+      "code": "tAwBbS"
+     },
+     {
+      "name": "tAwBwS",
+      "code": "tAwBwS"
+     },
+     {
+      "name": "tAwS",
+      "code": "tAwS"
+     },
+     {
+      "name": "tAyB",
+      "code": "tAyB"
+     },
+     {
+      "name": "tL",
+      "code": "tL"
+     },
+     {
+      "name": "tLbF",
+      "code": "tLbF"
+     },
+     {
+      "name": "tLbFbS",
+      "code": "tLbFbS"
+     },
+     {
+      "name": "tLbFwB",
+      "code": "tLbFwB"
+     },
+     {
+      "name": "tLbFwS",
+      "code": "tLbFwS"
+     },
+     {
+      "name": "tLbS",
+      "code": "tLbS"
+     },
+     {
+      "name": "tLbSbF",
+      "code": "tLbSbF"
+     },
+     {
+      "name": "tLbSwB",
+      "code": "tLbSwB"
+     },
+     {
+      "name": "tLbSwS",
+      "code": "tLbSwS"
+     },
+     {
+      "name": "tLrM",
+      "code": "tLrM"
+     },
+     {
+      "name": "tLtA",
+      "code": "tLtA"
+     },
+     {
+      "name": "tLwB",
+      "code": "tLwB"
+     },
+     {
+      "name": "tLwBbF",
+      "code": "tLwBbF"
+     },
+     {
+      "name": "tLwBbS",
+      "code": "tLwBbS"
+     },
+     {
+      "name": "tLwS",
+      "code": "tLwS"
+     },
+     {
+      "name": "tLwSbS",
+      "code": "tLwSbS"
+     },
+     {
+      "name": "wB",
+      "code": "wB"
+     },
+     {
+      "name": "wBbF",
+      "code": "wBbF"
+     },
+     {
+      "name": "wBbFbS",
+      "code": "wBbFbS"
+     },
+     {
+      "name": "wBbFtA",
+      "code": "wBbFtA"
+     },
+     {
+      "name": "wBbFtL",
+      "code": "wBbFtL"
+     },
+     {
+      "name": "wBbFwP",
+      "code": "wBbFwP"
+     },
+     {
+      "name": "wBbFwS",
+      "code": "wBbFwS"
+     },
+     {
+      "name": "wBbFyB",
+      "code": "wBbFyB"
+     },
+     {
+      "name": "wBbS",
+      "code": "wBbS"
+     },
+     {
+      "name": "wBbSbF",
+      "code": "wBbSbF"
+     },
+     {
+      "name": "wBbSrM",
+      "code": "wBbSrM"
+     },
+     {
+      "name": "wBbStA",
+      "code": "wBbStA"
+     },
+     {
+      "name": "wBbStL",
+      "code": "wBbStL"
+     },
+     {
+      "name": "wBbSwS",
+      "code": "wBbSwS"
+     },
+     {
+      "name": "wBbSyB",
+      "code": "wBbSyB"
+     },
+     {
+      "name": "wBrM",
+      "code": "wBrM"
+     },
+     {
+      "name": "wBrMbF",
+      "code": "wBrMbF"
+     },
+     {
+      "name": "wBrMbS",
+      "code": "wBrMbS"
+     },
+     {
+      "name": "wBrMtA",
+      "code": "wBrMtA"
+     },
+     {
+      "name": "wBrMtL",
+      "code": "wBrMtL"
+     },
+     {
+      "name": "wBrMwS",
+      "code": "wBrMwS"
+     },
+     {
+      "name": "wBtA",
+      "code": "wBtA"
+     },
+     {
+      "name": "wBtAbF",
+      "code": "wBtAbF"
+     },
+     {
+      "name": "wBtAtL",
+      "code": "wBtAtL"
+     },
+     {
+      "name": "wBtL",
+      "code": "wBtL"
+     },
+     {
+      "name": "wBwS",
+      "code": "wBwS"
+     },
+     {
+      "name": "wBwStA",
+      "code": "wBwStA"
+     },
+     {
+      "name": "wByBbS",
+      "code": "wByBbS"
+     },
+     {
+      "name": "wP",
+      "code": "wP"
+     },
+     {
+      "name": "wPwB",
+      "code": "wPwB"
+     },
+     {
+      "name": "wSbFwB",
+      "code": "wSbFwB"
+     },
+     {
+      "name": "wSbSbF",
+      "code": "wSbSbF"
+     },
+     {
+      "name": "wSbStL",
+      "code": "wSbStL"
+     },
+     {
+      "name": "wSjPrP",
+      "code": "wSjPrP"
+     },
+     {
+      "name": "wSsPjL",
+      "code": "wSsPjL"
+     },
+     {
+      "name": "wSwB",
+      "code": "wSwB"
+     },
+     {
+      "name": "wSwPwB",
+      "code": "wSwPwB"
+     },
+     {
+      "name": "yBbFwB",
+      "code": "yBbFwB"
+     },
+     {
+      "name": "yBtA",
+      "code": "yBtA"
+     },
+     {
+      "name": "yBwBwP",
+      "code": "yBwBwP"
+     },
+     {
+      "name": "bSwBjP",
+      "code": "bSwBjP"
+     },
+     {
+      "name": "yBbFwS",
+      "code": "yBbFwS"
+     },
+     {
+      "name": "yBbFbS",
+      "code": "yBbFbS"
+     },
+     {
+      "name": "wBwSrM",
+      "code": "wBwSrM"
+     },
+     {
+      "name": "nSbF",
+      "code": "nSbF"
+     },
+     {
+      "name": "nSwSwB",
+      "code": "nSwSwB"
+     },
+     {
+      "name": "wBtLbF",
+      "code": "wBtLbF"
+     },
+     {
+      "name": "wStLbF",
+      "code": "wStLbF"
+     },
+     {
+      "name": "wBbSwP",
+      "code": "wBbSwP"
+     },
+     {
+      "name": "yBwSwB",
+      "code": "yBwSwB"
+     },
+     {
+      "name": "bPbS",
+      "code": "bPbS"
+     },
+     {
+      "name": "tAwSwB",
+      "code": "tAwSwB"
+     },
+     {
+      "name": "jPwBbF",
+      "code": "jPwBbF"
+     },
+     {
+      "name": "bSjPwB",
+      "code": "bSjPwB"
+     },
+     {
+      "name": "tArMbS",
+      "code": "tArMbS"
+     },
+     {
+      "name": "bFtAtL",
+      "code": "bFtAtL"
+     },
+     {
+      "name": "bSwPtA",
+      "code": "bSwPtA"
+     },
+     {
+      "name": "bFrMtL",
+      "code": "bFrMtL"
+     },
+     {
+      "name": "wStLwB",
+      "code": "wStLwB"
+     },
+     {
+      "name": "bFbSjP",
+      "code": "bFbSjP"
+     },
+     {
+      "name": "wBtAbS",
+      "code": "wBtAbS"
+     },
+     {
+      "name": "wBtArP",
+      "code": "wBtArP"
+     },
+     {
+      "name": "wBtAwP",
+      "code": "wBtAwP"
+     },
+     {
+      "name": "wBtAwS",
+      "code": "wBtAwS"
+     },
+     {
+      "name": "wBtLbS",
+      "code": "wBtLbS"
+     },
+     {
+      "name": "wBwP",
+      "code": "wBwP"
+     },
+     {
+      "name": "wBwPbF",
+      "code": "wBwPbF"
+     },
+     {
+      "name": "wBwSbF",
+      "code": "wBwSbF"
+     },
+     {
+      "name": "wBwSbS",
+      "code": "wBwSbS"
+     },
+     {
+      "name": "wBwSyB",
+      "code": "wBwSyB"
+     },
+     {
+      "name": "wByB",
+      "code": "wByB"
+     },
+     {
+      "name": "wByBbF",
+      "code": "wByBbF"
+     },
+     {
+      "name": "wByBwP",
+      "code": "wByBwP"
+     },
+     {
+      "name": "wByBwS",
+      "code": "wByBwS"
+     },
+     {
+      "name": "wPbF",
+      "code": "wPbF"
+     },
+     {
+      "name": "wPbFbS",
+      "code": "wPbFbS"
+     },
+     {
+      "name": "wPbS",
+      "code": "wPbS"
+     },
+     {
+      "name": "wS",
+      "code": "wS"
+     },
+     {
+      "name": "wSbF",
+      "code": "wSbF"
+     },
+     {
+      "name": "wSbFbS",
+      "code": "wSbFbS"
+     },
+     {
+      "name": "wSbFtL",
+      "code": "wSbFtL"
+     },
+     {
+      "name": "wSbFyB",
+      "code": "wSbFyB"
+     },
+     {
+      "name": "wSbS",
+      "code": "wSbS"
+     },
+     {
+      "name": "wSbSjP",
+      "code": "wSbSjP"
+     },
+     {
+      "name": "wSbSlP",
+      "code": "wSbSlP"
+     },
+     {
+      "name": "wSbSrP",
+      "code": "wSbSrP"
+     },
+     {
+      "name": "wSbSwB",
+      "code": "wSbSwB"
+     },
+     {
+      "name": "wSjL",
+      "code": "wSjL"
+     },
+     {
+      "name": "wSlPrP",
+      "code": "wSlPrP"
+     },
+     {
+      "name": "wSrP",
+      "code": "wSrP"
+     },
+     {
+      "name": "wSsP",
+      "code": "wSsP"
+     },
+     {
+      "name": "wSsPjP",
+      "code": "wSsPjP"
+     },
+     {
+      "name": "wStA",
+      "code": "wStA"
+     },
+     {
+      "name": "wStL",
+      "code": "wStL"
+     },
+     {
+      "name": "wSwBbF",
+      "code": "wSwBbF"
+     },
+     {
+      "name": "wSwBbS",
+      "code": "wSwBbS"
+     },
+     {
+      "name": "wSwBrM",
+      "code": "wSwBrM"
+     },
+     {
+      "name": "wSyB",
+      "code": "wSyB"
+     },
+     {
+      "name": "yB",
+      "code": "yB"
+     },
+     {
+      "name": "yBbF",
+      "code": "yBbF"
+     },
+     {
+      "name": "yBbS",
+      "code": "yBbS"
+     },
+     {
+      "name": "yBbSbF",
+      "code": "yBbSbF"
+     },
+     {
+      "name": "yBrMwS",
+      "code": "yBrMwS"
+     },
+     {
+      "name": "yBwB",
+      "code": "yBwB"
+     },
+     {
+      "name": "yBwBbF",
+      "code": "yBwBbF"
+     },
+     {
+      "name": "yBwBbS",
+      "code": "yBwBbS"
+     },
+     {
+      "name": "yBwBwS",
+      "code": "yBwBwS"
+     },
+     {
+      "name": "yBwS",
+      "code": "yBwS"
+     },
+     {
+      "name": "tArMbF",
+      "code": "tArMbF"
+     },
+     {
+      "name": "rM",
+      "code": "rM"
+     },
+     {
+      "name": "yBwSbF",
+      "code": "yBwSbF"
+     },
+     {
+      "name": "wBbFrM",
+      "code": "wBbFrM"
+     },
+     {
+      "name": "bPbFbS",
+      "code": "bPbFbS"
+     },
+     {
+      "name": "bPwBbF",
+      "code": "bPwBbF"
+     },
+     {
+      "name": "bFjP",
+      "code": "bFjP"
+     },
+     {
+      "name": "rMbF",
+      "code": "rMbF"
+     },
+     {
+      "name": "bFrMbS",
+      "code": "bFrMbS"
+     },
+     {
+      "name": "rMbFwB",
+      "code": "rMbFwB"
+     },
+     {
+      "name": "bFtLwP",
+      "code": "bFtLwP"
+     },
+     {
+      "name": "wBbSrP",
+      "code": "wBbSrP"
+     },
+     {
+      "name": "bSjL",
+      "code": "bSjL"
+     },
+     {
+      "name": "bStLwP",
+      "code": "bStLwP"
+     },
+     {
+      "name": "nS",
+      "code": "nS"
+     },
+     {
+      "name": "nSwS",
+      "code": "nSwS"
+     },
+     {
+      "name": "tAnSwS",
+      "code": "tAnSwS"
+     },
+     {
+      "name": "bSnS",
+      "code": "bSnS"
+     },
+     {
+      "name": "bSwStL",
+      "code": "bSwStL"
+     },
+     {
+      "name": "tLtAbF",
+      "code": "tLtAbF"
+     },
+     {
+      "name": "jPrP",
+      "code": "jPrP"
+     },
+     {
+      "name": "tLwSbF",
+      "code": "tLwSbF"
+     },
+     {
+      "name": "wBtArM",
+      "code": "wBtArM"
+     },
+     {
+      "name": "wBwStL",
+      "code": "wBwStL"
+     },
+     {
+      "name": "bSwBwP",
+      "code": "bSwBwP"
+     },
+     {
+      "name": "wBjP",
+      "code": "wBjP"
+     },
+     {
+      "name": "wBtLwS",
+      "code": "wBtLwS"
+     },
+     {
+      "name": "bSeL",
+      "code": "bSeL"
+     },
+     {
+      "name": "eLbS",
+      "code": "eLbS"
+     },
+     {
+      "name": "bFjL",
+      "code": "bFjL"
+     },
+     {
+      "name": "bFnS",
+      "code": "bFnS"
+     },
+     {
+      "name": "jPrPwS",
+      "code": "jPrPwS"
+     },
+     {
+      "name": "tAbFyB",
+      "code": "tAbFyB"
+     },
+     {
+      "name": "wBbP",
+      "code": "wBbP"
+     },
+     {
+      "name": "wSbFtA",
+      "code": "wSbFtA"
+     },
+     {
+      "name": "tAtL",
+      "code": "tAtL"
+     },
+     {
+      "name": "jPbSwB",
+      "code": "jPbSwB"
+     },
+     {
+      "name": "jPwBbS",
+      "code": "jPwBbS"
+     },
+     {
+      "name": "wBjPbS",
+      "code": "wBjPbS"
+     },
+     {
+      "name": "eLtLbS",
+      "code": "eLtLbS"
+     },
+     {
+      "name": "wSrM",
+      "code": "wSrM"
+     },
+     {
+      "name": "tAwBrM",
+      "code": "tAwBrM"
+     },
+     {
+      "name": "tArMwB",
+      "code": "tArMwB"
+     },
+     {
+      "name": "tAbSrM",
+      "code": "tAbSrM"
+     },
+     {
+      "name": "rMbFbS",
+      "code": "rMbFbS"
+     },
+     {
+      "name": "bSrPwB",
+      "code": "bSrPwB"
+     },
+     {
+      "name": "tAtLwB",
+      "code": "tAtLwB"
+     },
+     {
+      "name": "wSwBtA",
+      "code": "wSwBtA"
+     },
+     {
+      "name": "wSwBtL",
+      "code": "wSwBtL"
+     },
+     {
+      "name": "bFwSrM",
+      "code": "bFwSrM"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "COMMENTS",
+   "type": "esriFieldTypeString",
+   "alias": "Comments",
+   "sqlType": "sqlTypeOther",
+   "length": 255,
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "GLOBALID",
+   "type": "esriFieldTypeGlobalID",
+   "alias": "GLOBALID",
+   "sqlType": "sqlTypeOther",
+   "length": 38,
+   "nullable": false,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  }
+ ],
+ "indexes": [
+  {
+   "name": "GDB_121615_PLOTK",
+   "fields": "PLOTKEY",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Attribute"
+  },
+  {
+   "name": "UUID_45982",
+   "fields": "GLOBALID,OBJECTID",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Attribute"
+  },
+  {
+   "name": "PK__FBNF_PSP__F4B70D853ADD6346",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": "clustered, unique, primary key",
+   "indexType": "Attribute"
+  }
+ ],
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "timeZoneIANA": "Etc/UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [],
+ "templates": [
+  {
+   "name": "Immature Trees Permanent",
+   "description": "",
+   "drawingTool": "esriFeatureEditToolNone",
+   "prototype": {
+    "attributes": {
+     "COMMENTS": null,
+     "PLOTNUMBER": null,
+     "PLOTKEY": null,
+     "DISTRICT": null,
+     "TREENUMBER": null,
+     "SPECIES": null
+    }
+   }
+  }
+ ],
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedAppendFormats": "sqlite,geoPackage,shapefile,filegdb,featureCollection,geojson,csv,excel,jsonl,featureService,pbf",
+ "supportedAppendSourceFilterFormats": "sqlite,geoPackage,shapefile,filegdb,featureService",
+ "supportedExportFormats": "csv,shapefile,sqlite,geoPackage,filegdb,featureCollection,geojson,kml,excel,parquet",
+ "supportedConvertFileFormats": "JSON,PBF,Parquet",
+ "supportedConvertContentFormats": "LayerEditCollection,FeatureCollection",
+ "guidFormat": "",
+ "supportsContingentValues": true,
+ "supportsEditingContingentValues": true,
+ "supportedContingentValuesFormats": "JSON, PBF",
+ "supportsFieldGroups": true,
+ "supportedSyncDataOptions": 49412,
+ "hasStaticData": false,
+ "maxRecordCount": 2000,
+ "standardMaxRecordCount": 32000,
+ "maxIdsCount": 1000000,
+ "tileMaxRecordCount": 8000,
+ "maxRecordCountFactor": 1,
+ "capabilities": "Query"
+}

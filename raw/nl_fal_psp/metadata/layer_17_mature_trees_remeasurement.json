@@ -1,0 +1,802 @@
+{
+ "currentVersion": 12,
+ "id": 17,
+ "name": "Mature Trees Remeasurement",
+ "type": "Table",
+ "serviceItemId": "6672099533d34409b7c221cc0a5b803d",
+ "cacheMaxAge": 30,
+ "isView": true,
+ "isUpdatableView": true,
+ "sourceSchemaChangesAllowed": true,
+ "displayField": "PlotKey",
+ "description": "",
+ "copyrightText": "",
+ "defaultVisibility": true,
+ "ownershipBasedAccessControlForFeatures": {
+  "allowOthersToQuery": true,
+  "allowOthersToDelete": true,
+  "allowOthersToUpdate": true,
+  "allowAnonymousToQuery": true,
+  "allowAnonymousToUpdate": true,
+  "allowAnonymousToDelete": true
+ },
+ "editFieldsInfo": {
+  "creationDateField": "CREATED_DATE",
+  "creatorField": "CREATED_USER",
+  "editDateField": "LAST_EDITED_DATE",
+  "editorField": "LAST_EDITED_USER"
+ },
+ "editingInfo": {
+  "lastEditDate": 1794522723047,
+  "schemaLastEditDate": 1786025998673,
+  "dataLastEditDate": 1794263500322
+ },
+ "relationships": [
+  {
+   "id": 3,
+   "name": "toMature",
+   "relatedTableId": 1,
+   "cardinality": "esriRelCardinalityOneToMany",
+   "role": "esriRelRoleDestination",
+   "keyField": "PlotKey",
+   "composite": false
+  }
+ ],
+ "isDataVersioned": false,
+ "hasContingentValuesDefinition": false,
+ "supportsAppend": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsTruncate": false,
+ "supportsAttachmentsByUploadId": true,
+ "supportsAttachmentsResizing": true,
+ "supportsRollbackOnFailureParameter": true,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSql": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsLayerOverrides": true,
+ "supportsTilesAndBasicQueriesMode": true,
+ "supportsFieldDescriptionProperty": true,
+ "supportsQuantizationEditMode": true,
+ "supportsColumnStoreIndex": true,
+ "supportsApplyEditsWithGlobalIds": true,
+ "supportsOBACForAnonymousUsers": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsPaginationOnAggregatedQueries": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": false,
+  "supportsStatistics": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsQueryWithResultType": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsCountDistinct": true,
+  "supportsPercentileStatistics": true,
+  "supportsApproxPercentileStatistics": true,
+  "supportsSpatialAggregationStatistics": true,
+  "supportedSpatialAggregationStatistics": [
+   "EnvelopeAggregate",
+   "CentroidAggregate",
+   "ConvexHullAggregate"
+  ],
+  "supportsLod": true,
+  "supportsQueryWithLodSR": false,
+  "supportedLodTypes": [
+   "geohash"
+  ],
+  "supportsReturningGeometryCentroid": false,
+  "supportsReturningGeometryEnvelope": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsCurrentUserQueries": true,
+  "supportsHavingClause": true,
+  "supportsOutFieldSQLExpression": true,
+  "supportsMaxRecordCountFactor": true,
+  "supportsTopFeaturesQuery": true,
+  "supportsQueryWithCacheHint": true,
+  "supportedOperationsWithCacheHint": [
+   "query",
+   "queryTopFilter",
+   "queryAnalytics",
+   "queryAttachments",
+   "queryRelated",
+   "queryBins",
+   "queryPivot"
+  ],
+  "supportsQueryAnalytic": true,
+  "supportsQueryPivot": true,
+  "supportsQueryBins": true,
+  "supportsDefaultSR": true,
+  "supportsTranslations": false,
+  "supportsAggIds": true,
+  "supportsQueryWithCollation": true,
+  "supportsISODOW": true,
+  "supportsISOWeek": true,
+  "supportsFullTextSearch": true,
+  "fullTextSearchCapabilities": {
+   "supportsAccentSensitivity": true,
+   "supportsStopWords": true,
+   "supportsSearchOperator": true,
+   "supportsOperator": true
+  }
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsTrendlineRegression": true,
+  "supportsAsync": true,
+  "supportsPercentileAnalytic": true
+ },
+ "queryBinsCapabilities": {
+  "supportsAsync": true,
+  "supportsAutoIntervalBin": true,
+  "supportsFixedIntervalBin": true,
+  "supportsFixedBoundariesBin": true,
+  "supportsDateBin": true,
+  "supportsClassificationBin": true,
+  "supportsStackBy": true,
+  "supportsSplitBy": true,
+  "supportsFirstDayOfWeek": true,
+  "supportsSnapToData": true,
+  "supportsReturnFullIntervalBin": true,
+  "supportsReturnStackValueRange": true,
+  "supportsNormalization": true,
+  "supportedStatisticTypes": [
+   "COUNT",
+   "SUM",
+   "AVG",
+   "VAR",
+   "VAR_SAMP",
+   "VAR_POP",
+   "STDDEV",
+   "STDDEV_SAMP",
+   "STDDEV_POP",
+   "MIN",
+   "MAX",
+   "PERCENTILE_CONT",
+   "PERCENTILE_DISC",
+   "APPROX_PERCENTILE_CONT",
+   "APPROX_PERCENTILE_DISC",
+   "CentroidAggregate",
+   "EnvelopeAggregate",
+   "ConvexHullAggregate"
+  ],
+  "supportedNormalizationTypes": [
+   "boxCox",
+   "field",
+   "inverse",
+   "log",
+   "naturalLog",
+   "percentOfTotal",
+   "squareRoot"
+  ]
+ },
+ "supportedOperationsWithCollation": "query,addField,updateField",
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsReturnEditResults": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+  "supportsTranslation": false,
+  "supportsMaxTranslations": 10
+ },
+ "infoInEstimates": [
+  "count"
+ ],
+ "useStandardizedQueries": true,
+ "allowGeometryUpdates": true,
+ "hasAttachments": false,
+ "viewSourceHasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeNone",
+ "hasM": false,
+ "hasZ": false,
+ "objectIdField": "OBJECTID",
+ "uniqueIdField": {
+  "name": "OBJECTID",
+  "isSystemMaintained": true
+ },
+ "globalIdField": "GLOBALID",
+ "typeIdField": "",
+ "collation": {
+  "locale": "neutral",
+  "caseSensitive": false,
+  "accentSensitive": true
+ },
+ "fields": [
+  {
+   "name": "GLOBALID",
+   "type": "esriFieldTypeGlobalID",
+   "alias": "GLOBALID",
+   "sqlType": "sqlTypeOther",
+   "length": 38,
+   "nullable": false,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "sqlType": "sqlTypeOther",
+   "nullable": false,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PLOTKEY",
+   "type": "esriFieldTypeString",
+   "alias": "Plot Key",
+   "sqlType": "sqlTypeOther",
+   "length": 10,
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "DISTRICT",
+   "type": "esriFieldTypeString",
+   "alias": "District",
+   "sqlType": "sqlTypeOther",
+   "length": 5,
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "MDNumber",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDefaultValue",
+    "codedValues": [
+     {
+      "name": "10",
+      "code": "10"
+     },
+     {
+      "name": "11",
+      "code": "11"
+     },
+     {
+      "name": "12",
+      "code": "12"
+     },
+     {
+      "name": "13",
+      "code": "13"
+     },
+     {
+      "name": "14",
+      "code": "14"
+     },
+     {
+      "name": "15",
+      "code": "15"
+     },
+     {
+      "name": "16",
+      "code": "16"
+     },
+     {
+      "name": "17",
+      "code": "17"
+     },
+     {
+      "name": "18",
+      "code": "18"
+     },
+     {
+      "name": "19a",
+      "code": "19a"
+     },
+     {
+      "name": "19b",
+      "code": "19b"
+     },
+     {
+      "name": "19c",
+      "code": "19c"
+     },
+     {
+      "name": "20",
+      "code": "20"
+     },
+     {
+      "name": "21",
+      "code": "21"
+     },
+     {
+      "name": "22",
+      "code": "22"
+     },
+     {
+      "name": "23",
+      "code": "23"
+     },
+     {
+      "name": "24",
+      "code": "24"
+     },
+     {
+      "name": "01",
+      "code": "01"
+     },
+     {
+      "name": "02",
+      "code": "02"
+     },
+     {
+      "name": "03",
+      "code": "03"
+     },
+     {
+      "name": "04",
+      "code": "04"
+     },
+     {
+      "name": "05",
+      "code": "05"
+     },
+     {
+      "name": "06",
+      "code": "06"
+     },
+     {
+      "name": "07",
+      "code": "07"
+     },
+     {
+      "name": "08",
+      "code": "08"
+     },
+     {
+      "name": "09",
+      "code": "09"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "REMEASUREMENT",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Remeasurement",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "TREENUMBER",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Tree Number",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "DBH",
+   "type": "esriFieldTypeDouble",
+   "alias": "DBH",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "range",
+    "name": "PSP_TreeMetrics",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDefaultValue",
+    "description": "Tree Metrics: DBH, Height",
+    "range": [
+     0,
+     99
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "TREEHEIGHT",
+   "type": "esriFieldTypeDouble",
+   "alias": "Tree Height",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "range",
+    "name": "PSP_TreeMetrics",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDefaultValue",
+    "description": "Tree Metrics: DBH, Height",
+    "range": [
+     0,
+     99
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "CROWNRATIO",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Crown Ratio",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "PSP_Rank",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDuplicate",
+    "description": "Percent Ranking Code",
+    "codedValues": [
+     {
+      "name": "No Damage",
+      "code": 0
+     },
+     {
+      "name": "1 to 10%",
+      "code": 1
+     },
+     {
+      "name": "11 to 20%",
+      "code": 2
+     },
+     {
+      "name": "21 to 30%",
+      "code": 3
+     },
+     {
+      "name": "31 to 40%",
+      "code": 4
+     },
+     {
+      "name": "41 to 50%",
+      "code": 5
+     },
+     {
+      "name": "51 to 60%",
+      "code": 6
+     },
+     {
+      "name": "61 to 70%",
+      "code": 7
+     },
+     {
+      "name": "71 to 80%",
+      "code": 8
+     },
+     {
+      "name": "81 to 90%",
+      "code": 9
+     },
+     {
+      "name": "91 to 100%",
+      "code": 10
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "TREESTATUS",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Tree Status",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "PSP_TreeStatusMat",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDuplicate",
+    "description": "Tree Status Code",
+    "codedValues": [
+     {
+      "name": "Live - no defects",
+      "code": 0
+     },
+     {
+      "name": "Dead - standing",
+      "code": 1
+     },
+     {
+      "name": "Dead - leaning or down",
+      "code": 2
+     },
+     {
+      "name": "Live - leaning",
+      "code": 3
+     },
+     {
+      "name": "Live - down",
+      "code": 4
+     },
+     {
+      "name": "Dead - broken top/stem",
+      "code": 5
+     },
+     {
+      "name": "Live - broken top/stem",
+      "code": 6
+     },
+     {
+      "name": "Live - dead top",
+      "code": 7
+     },
+     {
+      "name": "Live - lateral takeover",
+      "code": 8
+     },
+     {
+      "name": "Tree not located",
+      "code": 9
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "CAUSEOFDEATH",
+   "type": "esriFieldTypeString",
+   "alias": "Cause of Death",
+   "sqlType": "sqlTypeOther",
+   "length": 5,
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "DisturbanceCode",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDuplicate",
+    "description": "Disturbance Type Codes",
+    "codedValues": [
+     {
+      "name": "Flood",
+      "code": "F"
+     },
+     {
+      "name": "Wind",
+      "code": "W"
+     },
+     {
+      "name": "Fire",
+      "code": "Y"
+     },
+     {
+      "name": "Insect",
+      "code": "Z"
+     },
+     {
+      "name": "Harvest",
+      "code": "X"
+     },
+     {
+      "name": "Severe Browsing",
+      "code": "B"
+     },
+     {
+      "name": "Mechanical / Misc.",
+      "code": "M"
+     },
+     {
+      "name": "Vegetation",
+      "code": "V"
+     },
+     {
+      "name": "Insect caused mortality",
+      "code": "I"
+     },
+     {
+      "name": "Natural causes (old age, indirect suppression)",
+      "code": "N"
+     },
+     {
+      "name": "Suppression causing mortality",
+      "code": "S"
+     },
+     {
+      "name": "Unknown mortality (avoid use of this code)",
+      "code": "U"
+     },
+     {
+      "name": "Plantation",
+      "code": "P"
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "CUMDEFOL",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Cumulative Defoliation",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "PSP_Rank",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDuplicate",
+    "description": "Percent Ranking Code",
+    "codedValues": [
+     {
+      "name": "No Damage",
+      "code": 0
+     },
+     {
+      "name": "1 to 10%",
+      "code": 1
+     },
+     {
+      "name": "11 to 20%",
+      "code": 2
+     },
+     {
+      "name": "21 to 30%",
+      "code": 3
+     },
+     {
+      "name": "31 to 40%",
+      "code": 4
+     },
+     {
+      "name": "41 to 50%",
+      "code": 5
+     },
+     {
+      "name": "51 to 60%",
+      "code": 6
+     },
+     {
+      "name": "61 to 70%",
+      "code": 7
+     },
+     {
+      "name": "71 to 80%",
+      "code": 8
+     },
+     {
+      "name": "81 to 90%",
+      "code": 9
+     },
+     {
+      "name": "91 to 100%",
+      "code": 10
+     }
+    ]
+   },
+   "defaultValue": null
+  },
+  {
+   "name": "APHIDDAMAGE",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Aphid Damage",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": {
+    "type": "codedValue",
+    "name": "PSP_AphidDamage",
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDuplicate",
+    "description": "Aphid Damage Code",
+    "codedValues": [
+     {
+      "name": "Undamaged - also if species not = 21 (balsam fir)",
+      "code": 0
+     },
+     {
+      "name": "Light - close examination to see",
+      "code": 1
+     },
+     {
+      "name": "Light to Moderate - swelling distict - stunting & distortion may be present",
+      "code": 2
+     },
+     {
+      "name": "Moderate - distortion prominent",
+      "code": 3
+     },
+     {
+      "name": "Moderate to Severe - branches bare 30cm or less",
+      "code": 4
+     },
+     {
+      "name": "Severe - branches bare 30cm or more",
+      "code": 5
+     },
+     {
+      "name": "Dead tree due to aphid attack",
+      "code": 6
+     }
+    ]
+   },
+   "defaultValue": null
+  }
+ ],
+ "indexes": [
+  {
+   "name": "GDB_121616_PLOTK",
+   "fields": "PLOTKEY",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Attribute"
+  },
+  {
+   "name": "UUID_45984",
+   "fields": "GLOBALID,OBJECTID",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Attribute"
+  },
+  {
+   "name": "PK__FBNF_PSP__F4B70D858E038E80",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": "clustered, unique, primary key",
+   "indexType": "Attribute"
+  }
+ ],
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "timeZoneIANA": "Etc/UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [],
+ "templates": [
+  {
+   "name": "Mature Trees Remeasurement",
+   "description": "",
+   "drawingTool": "esriFeatureEditToolNone",
+   "prototype": {
+    "attributes": {
+     "CUMDEFOL": null,
+     "APHIDDAMAGE": null,
+     "CAUSEOFDEATH": null,
+     "TREESTATUS": null,
+     "CROWNRATIO": null,
+     "TREEHEIGHT": null,
+     "PLOTNUMBER": null,
+     "PLOTKEY": null,
+     "DISTRICT": null,
+     "REMEASUREMENT": null,
+     "TREENUMBER": null,
+     "DBH": null
+    }
+   }
+  }
+ ],
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedAppendFormats": "sqlite,geoPackage,shapefile,filegdb,featureCollection,geojson,csv,excel,jsonl,featureService,pbf",
+ "supportedAppendSourceFilterFormats": "sqlite,geoPackage,shapefile,filegdb,featureService",
+ "supportedExportFormats": "csv,shapefile,sqlite,geoPackage,filegdb,featureCollection,geojson,kml,excel,parquet",
+ "supportedConvertFileFormats": "JSON,PBF,Parquet",
+ "supportedConvertContentFormats": "LayerEditCollection,FeatureCollection",
+ "guidFormat": "",
+ "supportsContingentValues": true,
+ "supportsEditingContingentValues": true,
+ "supportedContingentValuesFormats": "JSON, PBF",
+ "supportsFieldGroups": true,
+ "supportedSyncDataOptions": 49412,
+ "hasStaticData": false,
+ "maxRecordCount": 2000,
+ "standardMaxRecordCount": 32000,
+ "maxIdsCount": 1000000,
+ "tileMaxRecordCount": 8000,
+ "maxRecordCountFactor": 1,
+ "capabilities": "Query"
+}
