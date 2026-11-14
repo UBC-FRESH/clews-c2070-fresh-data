@@ -1,10 +1,11 @@
-# BC FAIB PSP Compilation — Table Inventory and Profiling — 2026-11-14
+# BC FAIB Ground Plot Compilations — Table Inventory and Profiling — 2026-11-14
 
-Source: `psp/` tables from the anonymous BC FAIB FTP publication tree,
-retrieved 2026-11-14. Compilation files are dated 2026-04-16/20; the data
-dictionary is `PSP_data_dictionary_2026Apr20.xlsx`. All CSVs are archived
-gzipped; row counts below were computed from the decompressed files and match
-the original CSV line counts.
+Source: `psp/` tables (sections 1–5) and `non_psp/` tables (section 6) from
+the anonymous BC FAIB FTP publication tree, retrieved 2026-11-14. Compilation
+files are dated 2026-04-16/21; the data dictionaries are
+`PSP_data_dictionary_2026Apr20.xlsx` and `non_PSP_data_dictionary_2026Apr20.xlsx`.
+All CSVs are archived gzipped; row counts below were computed from the
+decompressed files.
 
 ## 1. Table inventory
 
@@ -176,11 +177,27 @@ field. Per-hectare expansion is carried by `PHF_TREE` and the plot-area fields.
 - `faib_header.SITE_STATUS_CODE` has only `IA` (4,298) and `A` (3,043);
   `SAMPLE_ESTABLISHMENT_TYPE` has `PSP_G` (5,289) and `PSP_R` (2,052).
 
-## 6. Companion non-PSP corpus (not archived)
+## 6. Companion non-PSP corpus (archived 2026-11-14)
 
-The sibling `non_psp/` directory contains the province-wide VRI/CMI/YSM/NFI
-compilation and a `publish_by_tsa/` tree with 37 TSA directories. The
-province-wide files include `faib_tree_detail.csv` (92,488,343 bytes),
-`faib_compiled_spcsmries.csv` (22,866,655 bytes), and the same header/visit/
-summary table family. It was not downloaded in this pass; the access route is
-identical (`ftp://ftp.for.gov.bc.ca/HTS/external/!publish/ground_plot_compilations/non_psp/`).
+The sibling `non_psp/` directory was acquired on 2026-11-14 and is archived
+under `data/raw/bc_faib_ground_plots/non_psp/`. It contains the province-wide
+VRI/CMI/YSM/NFI/SUP/VLT compilation (12 tables) and a `publish_by_tsa/` tree
+with 37 TSA directories (each with the same 12 table names), plus the non-PSP
+dictionary. The archive has 457 files: 456 gzipped CSVs and one XLSX,
+269,779,544 bytes uncompressed and 52,765,031 bytes gzipped.
+
+Corpus totals are 9,512 sites, 11,951 visits, 367,096 tree rows, 275,264
+unique trees, 76,667 remeasured trees, 37 TSAs, 16 BEC zones, 42 species
+codes, and measurement years 1995–2025. The corpus is predominantly
+single-visit (7,484 sites, 78.7%), but 2,028 sites are remeasured. The site
+identifiers are disjoint from the PSP corpus; combined totals are 16,853
+sites and 35,907 visits.
+
+The per-TSA tables are exact subsets of the province-wide tables: their site,
+visit, and tree-row counts sum exactly to the province-wide counts and their
+site-identifier union equals the province-wide 9,512. Use `publish_province/`
+for analysis; do not sum the two scopes.
+
+See `non_psp/CONTENTS.md` for the full table inventory and profile,
+`non_psp/ACQUISITION.md` for the access route and retrieval record, and
+`non_psp/PROVENANCE.csv` for per-file hashes.

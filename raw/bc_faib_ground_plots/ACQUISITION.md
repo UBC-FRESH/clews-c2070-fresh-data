@@ -1,4 +1,4 @@
-# BC FAIB Ground Plot Compilations (PSP) — Acquisition Record — 2026-11-14
+# BC FAIB Ground Plot Compilations (PSP + non-PSP) — Acquisition Record — 2026-11-14
 
 ## Identity
 
@@ -8,18 +8,22 @@
 | Dataset | Forest Inventory Ground Plot Data and Interactive Map |
 | BC Data Catalogue record | `824e684b-4114-4a05-a490-aa56332b57f4` |
 | Catalogue URL | https://catalogue.data.gov.bc.ca/dataset/824e684b-4114-4a05-a490-aa56332b57f4 |
-| Sub-corpus acquired | `psp/` — province-wide Permanent Sample Plot compilations |
-| Compilation date | 2026-04-16/20 (dictionary `PSP_data_dictionary_2026Apr20.xlsx`) |
+| Sub-corpus acquired | `psp/` (PSP compilations) and `non_psp/` (non-PSP compilations) |
+| Compilation date | 2026-04-16/21 (dictionaries `PSP_data_dictionary_2026Apr20.xlsx` and `non_PSP_data_dictionary_2026Apr20.xlsx`) |
 | Licence | Open Government Licence — British Columbia |
-| Coverage | British Columbia; 7,341 PSP sites, 23,956 visits |
-| Format | 10 CSV tables + XLSX data dictionary |
+| Coverage | British Columbia; PSP 7,341 sites / 23,956 visits; non-PSP 9,512 sites / 11,951 visits; combined 16,853 sites / 35,907 visits |
+| Format | PSP: 10 CSV tables + XLSX dictionary; non-PSP: 456 CSV tables + XLSX dictionary |
 | Access tier | Open. Anonymous FTP; no credentials, request form, or DSA. |
 | Acquisition date | 2026-11-14 |
 | Acquired by | UBC FRESH / CLEWs-C2070 forestry data maintainers |
 
-This is the corpus that `fresh-fvsbc` calibrates on. The acquired tables
-contain exactly **7,341 sites and 23,956 visits**, matching the `fresh-fvsbc`
-reference counts.
+This record covers both sub-corpora. The PSP tables are in `psp/` and are
+described below. The non-PSP companion is in `non_psp/` and has its own
+`ACQUISITION.md`, `CONTENTS.md`, and `PROVENANCE.csv`. The two site identifier
+sets are disjoint.
+
+The PSP tables contain exactly **7,341 sites and 23,956 visits**, matching
+the `fresh-fvsbc` reference counts.
 
 ## Access route
 
@@ -39,10 +43,10 @@ The same publication tree is anonymously readable over the FTP protocol:
 
 ```text
 ftp://ftp.for.gov.bc.ca/HTS/external/!publish/ground_plot_compilations/
-├── psp/           <- acquired in this pass
-└── non_psp/       <- companion corpus, not acquired in this pass
+├── psp/           <- acquired 2026-11-14
+└── non_psp/       <- acquired 2026-11-14
     ├── publish_province/
-    └── publish_by_tsa/
+    └── publish_by_tsa/  (37 TSA directories)
 ```
 
 Login is `anonymous` with no password. The FTP service welcomed the anonymous
@@ -67,7 +71,7 @@ The separate catalogue layer "Forest Inventory Ground Plots - Public Access"
 (WMS, KML, and BCGW custom download). It does not contain the compiled
 mensuration tables and was not used as a substitute.
 
-## Retrieved files
+## Retrieved PSP files
 
 All CSVs were gzipped with `gzip -9 -n` for git-annex. Original sizes and
 SHA-256 values were verified against the decompressed streams.
@@ -225,6 +229,32 @@ Site index and age are present:
 - `faib_compiled_smeries_ht` has 23,956 visit-level height summaries; mean
   live height is present for 23,948 visits and Lorey height for 20,861.
 
+## Non-PSP companion corpus
+
+The non-PSP compilations were archived on 2026-11-14 under `non_psp/`. The
+upstream tree is `ftp://ftp.for.gov.bc.ca/HTS/external/!publish/ground_plot_compilations/non_psp/`
+and contains a province-wide 12-table set plus 37 per-TSA directories, each
+with the same 12 table names, plus the non-PSP dictionary. The archive has 457
+files (456 gzipped CSVs and one XLSX), 269,779,544 bytes uncompressed and
+52,765,031 bytes gzipped.
+
+The non-PSP corpus has 9,512 sites and 11,951 visits in 37 TSAs, with 367,096
+tree measurement rows, 275,264 unique trees, and 76,667 remeasured trees. It
+is predominantly single-visit (7,484 sites, 78.7%), but 2,028 sites are
+remeasured. Establishment types are VRI 6,684 sites, YSM 1,129, CMI 995, SUP
+387, NFI 254, and VLT 63. The site identifiers are disjoint from PSP, so the
+combined BC FAIB archive holds 16,853 sites and 35,907 visits.
+
+The province-wide and per-TSA tables are not independent: the per-TSA site,
+visit, and tree-row counts sum exactly to the province-wide counts, and the
+union of per-TSA site identifiers equals the province-wide 9,512. Use
+`publish_province/` for analysis and treat `publish_by_tsa/` as the upstream
+publication partition.
+
+Full detail is in `non_psp/ACQUISITION.md`, `non_psp/CONTENTS.md`, and
+`non_psp/PROVENANCE.csv`. The acquisition manifest is
+`data/manifests/bc-faib-ground-plots-nonpsp-acquisition.csv`.
+
 ## Feasibility for fresh-fvsca
 
 **Verdict: strong primary BC calibration corpus.** The PSP compilation is a
@@ -250,11 +280,11 @@ Caveats for calibration:
   across utilization levels.
 - **Coordinates are incomplete.** 1,026 sites (14.0%) lack latitude/longitude.
   Spatial joins or climate overlays must handle missing coordinates.
-- **PSP only.** This archive does not include the non-PSP VRI/CMI/YSM/NFI
-  compilation. The companion corpus is available at the sibling FTP path
-  `non_psp/` (province-wide tables plus 37 TSA directories; the province-wide
-  tree detail alone is 92,488,343 bytes) and can be acquired in a later pass.
-- **Snapshot, not a versioned release.** The files are dated 2026-04-16/20.
+- **PSP is the primary calibration subset.** The PSP tables are the
+  remeasurement-rich corpus. The non-PSP companion is archived under
+  `non_psp/` and adds 9,512 mostly single-visit sites (2,028 remeasured) plus
+  367,096 tree rows; see `non_psp/ACQUISITION.md` and `non_psp/CONTENTS.md`.
+- **Snapshot, not a versioned release.** The files are dated 2026-04-16/21.
   Re-list and re-hash the FTP directory before reuse.
 
 ## Reproduction
