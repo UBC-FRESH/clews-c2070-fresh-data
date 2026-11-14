@@ -123,7 +123,7 @@ No Alberta, Ontario, Prince Edward Island or Nova Scotia sites are present in th
 | `YT_PSP` | 261 | 244 | 103,010 | 18,200 | 16,520 | 1988–2019 |
 | **Total** | **39,130** | **20,890** | **7,771,041** | **2,866,168** | **1,573,761** | **1921–2024** |
 
-Program types (`gpp_type`) by site: PSP `01` (23,402), VRI `03` (6,800), CMI `04` (920), YSM `05` (1,014), SUP `06` (387), VLT `07` (63), RPN `08` (236), TSP `11` (6,308). NFM covers the 616 TSP-designated sites plus some NL/QC/YT; the TSP count includes those.
+Program types (`gpp_type`) by site: PSP `01` (23,402), VRI `03` (6,800), CMI `04` (920), YSM `05` (1,014), SUP `06` (387), VLT `07` (63), RPN `08` (236), TSP `11` (6,308). The TSP total is 616 NFM_GP sites plus 5,692 NB_CLI temporary sample plots.
 
 ## 6. Species
 
