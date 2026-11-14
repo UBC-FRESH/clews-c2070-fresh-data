@@ -1,0 +1,497 @@
+{
+  "product": "fvsca_calibration_v0",
+  "built_utc": "2026-11-14T21:29:13Z",
+  "code_version": {
+    "commit": "90695aafe9286721fe11a932d5f71229684822d9",
+    "dirty": true
+  },
+  "parameters": {
+    "min_interval_years": 2,
+    "max_interval_years": 40,
+    "min_year": 1900,
+    "max_year": 2027,
+    "min_dbh_cm": 0.0,
+    "max_dbh_cm": 500.0,
+    "min_height_m": 0.0,
+    "max_height_m": 100.0,
+    "max_sites": null,
+    "include_wfs": true,
+    "validation": true
+  },
+  "inputs": {
+    "faib_psp": [
+      {
+        "path": "data/raw/bc_faib_ground_plots/psp/faib_header.csv.gz",
+        "bytes": 314277,
+        "sha256": "c385452cc76b1f6bb4d55102cb0226d811e2eab840c83e762702e6395e5bf19d"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/psp/faib_sample_byvisit.csv.gz",
+        "bytes": 311679,
+        "sha256": "9e8488ed089833ec23281edde2e6689c9994c542ff069408e860a0b7e0599461"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/psp/faib_plot_header.csv.gz",
+        "bytes": 230273,
+        "sha256": "cacc06c524bd783c13bcbba94c0d2fad9d98a0f3710eb6431edc49918bf56e9f"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/psp/faib_tree_detail.csv.gz",
+        "bytes": 111371932,
+        "sha256": "9ed7b0a23dd74686173ee45fddfcb71a7bbddd7995230c7de2696b7c76d614e8"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/psp/faib_compiled_spcsmries_siteage.csv.gz",
+        "bytes": 1695648,
+        "sha256": "218ee66b428ce51734a49f93cd4b9cae306279865ed9f172c3d646c922ba7521"
+      }
+    ],
+    "faib_non_psp": [
+      {
+        "path": "data/raw/bc_faib_ground_plots/non_psp/publish_province/faib_header.csv.gz",
+        "bytes": 386808,
+        "sha256": "8966bc50de5bdb1e95e1e580da4a98e3288942d11ff1829acba40ae9835561e6"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/non_psp/publish_province/faib_sample_byvisit.csv.gz",
+        "bytes": 232474,
+        "sha256": "ece3a6f022475c1fd4272de535f758ddb51f581557aecff515497d8a761e1cd4"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/non_psp/publish_province/faib_plot_header.csv.gz",
+        "bytes": 182760,
+        "sha256": "0b1ee47337d3461d7f62dd3f5eba21308f113488309e8ef688c01b6d4d20a657"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/non_psp/publish_province/faib_tree_detail.csv.gz",
+        "bytes": 19070426,
+        "sha256": "2664a13fa52117b09d611287a9102b29f97f6242e632f497be923761b8cb38cd"
+      },
+      {
+        "path": "data/raw/bc_faib_ground_plots/non_psp/publish_province/faib_compiled_spcsmries_siteage.csv.gz",
+        "bytes": 270686,
+        "sha256": "255d545b8825549845bb6d0d423a51cb2a1801b7359ff9547bd910cdf8a716a6"
+      }
+    ],
+    "magplot": [
+      {
+        "path": "data/raw/magplot/MAGPlot_latest_data_package.zip",
+        "bytes": 127123248,
+        "sha256": "270055bb9eeed6ccd6cbd75f6a2026b54e340c5a4938af18ad06e479792888db"
+      }
+    ],
+    "magplot_wfs": [
+      {
+        "path": "data/raw/magplot/wfs/sites_summary.csv.gz",
+        "bytes": 1643267,
+        "sha256": "20c9dacb4cfebc56f806dac8145e630ec666f041bea00a87ed837b5cb40cbde6"
+      },
+      {
+        "path": "data/raw/magplot/wfs/sk_trees_measure_num_0.csv.gz",
+        "bytes": 4763464,
+        "sha256": "2d4b94b2e91ae744b2dd348de229e3be8b14551e0b7c927b2b1ee2e955bad2c1"
+      },
+      {
+        "path": "data/raw/magplot/wfs/sk_trees_measure_num_1.csv.gz",
+        "bytes": 3322350,
+        "sha256": "f0083c31053da0a9f53d3ee2b9e0a9ca70612fcac0d35c751ae1f0d033be5dbf"
+      },
+      {
+        "path": "data/raw/magplot/wfs/sk_trees_measure_num_2_8.csv.gz",
+        "bytes": 4243245,
+        "sha256": "14d37cacdc34cf63db61e32ca31dedcdd07376abba7f503523ccbed1b67f8b11"
+      },
+      {
+        "path": "data/raw/magplot/wfs/pei_trees_measure_num_0_11.csv.gz",
+        "bytes": 3368887,
+        "sha256": "c9625884a36426d2a52aee553399dd0426c89cc266528080cc5f598034f5808f"
+      },
+      {
+        "path": "data/raw/magplot/wfs/nl_trees_measure_num_0_2.csv.gz",
+        "bytes": 4116727,
+        "sha256": "9715ed6d49df996cf1468215ac7b7898a4442ed8af512a96652725e2dc64bb79"
+      },
+      {
+        "path": "data/raw/magplot/wfs/nl_trees_measure_num_3_9.csv.gz",
+        "bytes": 3924513,
+        "sha256": "21ce361fcfd7cd113964abd752729acc3275591a3bb73e817d9fe7ef2f0cb56b"
+      }
+    ],
+    "qc_pep": [
+      {
+        "path": "data/raw/qc_pep/PEP_GPKG.zip",
+        "bytes": 128568617,
+        "sha256": "a5deb82b8e05c3226f83eb8daa4842900b6564e31b30915d9215f8a031faa5e5"
+      }
+    ],
+    "nl_fal": [
+      {
+        "path": "data/raw/nl_fal_psp/mature.geojson.gz",
+        "bytes": 41687,
+        "sha256": "84339e08814afcd7a060c90e23d01978657b7f905d6878ad20fca2cf9c2c8741"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/immature.geojson.gz",
+        "bytes": 95737,
+        "sha256": "33c4b9ad3b2b0a0c5b9419f7a86454b26bb33e60cd0aa4b42f69d76d31a01efb"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/remeasurement.csv.gz",
+        "bytes": 331393,
+        "sha256": "f847eb2158a0fdcf831712e9a512c0567ec8f9e6d06ca8c3a95d1a5fac8c18f2"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/remeasurement_crew_date.csv.gz",
+        "bytes": 233971,
+        "sha256": "b62aff40024091fc5d3b8ce5de45fb5e3f580c4ae49c2d10d1f1137cb68b6126"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/mature_trees_remeasurement.csv.gz",
+        "bytes": 5914635,
+        "sha256": "ed2fc488cf14c0e0c92e0bc41143ef80e8cc5e1bd7d62be854bf220f2e0b1975"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/immature_trees_remeasurement.csv.gz",
+        "bytes": 18999350,
+        "sha256": "85250c34d7fbea07cac908396fafbd63c0cbb349ebc0519af3683954289a143f"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/mature_trees_permanent.csv.gz",
+        "bytes": 1028658,
+        "sha256": "a644e058d9101950fe5fdc653c92834201106d2c0e2df615fd2b10826dd94807"
+      },
+      {
+        "path": "data/raw/nl_fal_psp/immature_trees_permanent.csv.gz",
+        "bytes": 3102163,
+        "sha256": "6d2cd05907ece6ecfd637420e5d9bae78d463e5419e87c4097dc6c87ac808bde"
+      }
+    ],
+    "qc_pep_member": [
+      {
+        "path": "PEP_GPKG.zip:PEP.gpkg",
+        "bytes": 739045376,
+        "sha256": "6d53e90a23799d681d050e13a433bc6e7ede6549b0733c8cc9c01fc8f94348c9",
+        "compressed_bytes": 128568431
+      }
+    ]
+  },
+  "sources": {
+    "faib_psp": {
+      "input": {
+        "sites": 7341,
+        "visits": 23956,
+        "trees": 3217648
+      },
+      "selected": {
+        "sites": 7341,
+        "visits": 23956,
+        "trees": 3217648
+      },
+      "dropped": {
+        "tree_missing_site_or_tree_key": 5
+      },
+      "source": "faib_psp",
+      "notes": [
+        "visit_id is CLSTR_ID; a site may contain several plots but the visit table is site-level.",
+        "site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age.",
+        "5 tree rows with a blank PLOT/TREE_NO were dropped."
+      ],
+      "output": {
+        "sites": 7341,
+        "visits": 23956,
+        "trees": 3217643,
+        "intervals": 1799382
+      },
+      "coverage": {
+        "visits": 23956,
+        "site_index_visits": 21639,
+        "age_visits": 21976
+      },
+      "units": {
+        "dbh_min": 0.5,
+        "dbh_max": 401.7,
+        "height_min": 0.37,
+        "height_max": 73.3,
+        "year_min": 1921.0,
+        "year_max": 2025.0,
+        "interval_min": 2.0,
+        "interval_max": 35.0
+      },
+      "reconciliation": {
+        "sites": 0.0,
+        "visits": 0.0,
+        "trees": -1.5539300756328846e-06
+      }
+    },
+    "faib_non_psp": {
+      "input": {
+        "sites": 9512,
+        "visits": 11951,
+        "trees": 367096
+      },
+      "selected": {
+        "sites": 9512,
+        "visits": 11951,
+        "trees": 367096
+      },
+      "dropped": {
+        "tree_missing_site_or_tree_key": 308
+      },
+      "source": "faib_non_psp",
+      "notes": [
+        "visit_id is CLSTR_ID; a site may contain several plots but the visit table is site-level.",
+        "site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age.",
+        "308 tree rows with a blank PLOT/TREE_NO were dropped."
+      ],
+      "output": {
+        "sites": 9512,
+        "visits": 11951,
+        "trees": 366788,
+        "intervals": 80702
+      },
+      "coverage": {
+        "visits": 11951,
+        "site_index_visits": 9318,
+        "age_visits": 11286
+      },
+      "units": {
+        "dbh_min": 0.1,
+        "dbh_max": 450.0,
+        "height_min": 0.0,
+        "height_max": 74.5,
+        "year_min": 1995.0,
+        "year_max": 2025.0,
+        "interval_min": 2.0,
+        "interval_max": 23.0
+      },
+      "reconciliation": {
+        "sites": 0.0,
+        "visits": 0.0,
+        "trees": -0.0008390175866803234
+      }
+    },
+    "magplot": {
+      "input": {
+        "sites": 39130,
+        "visits": 257031,
+        "trees": 7771041
+      },
+      "selected": {
+        "sites": 39130,
+        "visits": 257031,
+        "trees": 7771041
+      },
+      "dropped": {},
+      "source": "magplot",
+      "output": {
+        "sites": 39130,
+        "visits": 257031,
+        "trees": 7771041,
+        "intervals": 3293792
+      },
+      "coverage": {
+        "visits": 257031,
+        "site_index_visits": 0,
+        "age_visits": 0
+      },
+      "units": {
+        "dbh_min": 0.1,
+        "dbh_max": 450.0,
+        "height_min": 0.1,
+        "height_max": 74.5,
+        "year_min": 1921.0,
+        "year_max": 2024.0,
+        "interval_min": 2.0,
+        "interval_max": 35.0
+      },
+      "reconciliation": {
+        "sites": 0.0,
+        "visits": 0.0,
+        "trees": 0.0
+      }
+    },
+    "magplot_wfs": {
+      "input": {
+        "sites": 41840,
+        "trees": 1900092
+      },
+      "selected": {
+        "sites": 2778,
+        "trees": 1309173,
+        "visits": 13906
+      },
+      "dropped": {
+        "tree_duplicate_key": 10699
+      },
+      "source": "magplot_wfs",
+      "output": {
+        "sites": 2778,
+        "visits": 13906,
+        "trees": 1298474,
+        "intervals": 369878
+      },
+      "coverage": {
+        "visits": 13906,
+        "site_index_visits": 0,
+        "age_visits": 0
+      },
+      "units": {
+        "dbh_min": 0.0,
+        "dbh_max": 133.2,
+        "height_min": 0.01,
+        "height_max": 46.5,
+        "year_min": 1949.0,
+        "year_max": 2019.0,
+        "interval_min": 2.0,
+        "interval_max": 38.0
+      },
+      "reconciliation": {
+        "sites": 0.0,
+        "visits": 0.0,
+        "trees": -0.008172334748730687
+      }
+    },
+    "qc_pep": {
+      "input": {
+        "sites": 12834,
+        "visits": 53632,
+        "trees": 2210417
+      },
+      "selected": {
+        "sites": 12834,
+        "visits": 53632,
+        "trees": 2210417
+      },
+      "dropped": {},
+      "source": "qc_pep",
+      "output": {
+        "sites": 12834,
+        "visits": 53632,
+        "trees": 2210417,
+        "intervals": 979461
+      },
+      "coverage": {
+        "visits": 53632,
+        "site_index_visits": 0,
+        "age_visits": 45816
+      },
+      "units": {
+        "dbh_min": 0.0,
+        "dbh_max": 108.9,
+        "height_min": 0.0,
+        "height_max": 41.5,
+        "year_min": 1970.0,
+        "year_max": 2025.0,
+        "interval_min": 2.0,
+        "interval_max": 34.0
+      },
+      "reconciliation": {
+        "sites": 0.0,
+        "visits": 0.0,
+        "trees": 0.0
+      }
+    },
+    "nl_fal": {
+      "input": {
+        "sites": 1380,
+        "visits": 7659,
+        "trees": 775648
+      },
+      "selected": {
+        "sites": 1380,
+        "visits": 7657,
+        "trees": 775480
+      },
+      "dropped": {
+        "visit_site_not_found": 2,
+        "tree_site_not_found": 168,
+        "tree_height_99_sentinel": 1,
+        "tree_duplicate_key": 3
+      },
+      "source": "nl_fal",
+      "output": {
+        "sites": 1380,
+        "visits": 7657,
+        "trees": 775477,
+        "intervals": 488111
+      },
+      "coverage": {
+        "visits": 7657,
+        "site_index_visits": 0,
+        "age_visits": 0
+      },
+      "units": {
+        "dbh_min": 0.0,
+        "dbh_max": 99.0,
+        "height_min": 0.0,
+        "height_max": 81.0,
+        "year_min": 1985.0,
+        "year_max": 2026.0,
+        "interval_min": 2.0,
+        "interval_max": 13.0
+      },
+      "reconciliation": {
+        "sites": 0.0,
+        "visits": 0.0,
+        "trees": -3.86857172331975e-06
+      }
+    }
+  },
+  "totals": {
+    "sites": 72975,
+    "visits": 368133,
+    "trees": 15639840,
+    "intervals": 7011326,
+    "sources": 6
+  },
+  "outputs": {
+    "sites.csv": {
+      "path": "sites.csv",
+      "bytes": 8371441,
+      "sha256": "a88e68918266800c58ccf9d7699435dc7689db707a119a5675e375bcb128b6c8",
+      "rows": 72975
+    },
+    "visits.csv": {
+      "path": "visits.csv",
+      "bytes": 30574202,
+      "sha256": "bd07dc1189d5feca8c04f3ad589a68f10f62115bb85007a8b2dcf2dcbb61534c",
+      "rows": 368133
+    },
+    "trees.csv.gz": {
+      "path": "trees.csv.gz",
+      "bytes": 103812857,
+      "sha256": "a0b540f45d6f325792d3e56f36727018514336862077610ea0c34ba5de3afffe",
+      "rows": 15639840
+    },
+    "intervals.csv.gz": {
+      "path": "intervals.csv.gz",
+      "bytes": 48366358,
+      "sha256": "bf2781a33d4e4c84eadb557c061ad747a6467187c426901f10388c24c87b4c10",
+      "rows": 7011326
+    },
+    "species_crosswalk.csv": {
+      "path": "species_crosswalk.csv",
+      "bytes": 18222,
+      "sha256": "4074882426dc3c73d24f32da7d23328a89a9dcd47f13d847445b6d36f182e35c",
+      "rows": 355
+    }
+  },
+  "notes": [
+    "faib_psp: visit_id is CLSTR_ID; a site may contain several plots but the visit table is site-level.",
+    "faib_psp: site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age.",
+    "faib_psp: 5 tree rows with a blank PLOT/TREE_NO were dropped.",
+    "faib_non_psp: visit_id is CLSTR_ID; a site may contain several plots but the visit table is site-level.",
+    "faib_non_psp: site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age.",
+    "faib_non_psp: 308 tree rows with a blank PLOT/TREE_NO were dropped.",
+    "magplot: visit_id is plot_id|meas_num; nested large/small/regeneration plots are kept separate to avoid double counting.",
+    "magplot_wfs: WFS-only sites are those absent from the ZIP package; 39,062 ZIP-overlapping sites and 590,919 overlapping tree features are excluded to avoid double counting.",
+    "magplot_wfs: The NL WFS tree layers 0_2 and 3_9 repeat the same 10,699 tree features for the 39 WFS-only NL sites; exact duplicate keys are dropped.",
+    "qc_pep: eco_zone is classi_eco_pe.reg_eco; eco_subzone is the visit-level station_pe.type_eco mode. No numeric site index is stored.",
+    "qc_pep: plot_area_ha is derived as 10000/median(tige_ha) after tree load; no BAF is present because plots are fixed-area.",
+    "nl_fal: visit year from remeasurement_crew_date.ORIGINAL_DATE, not from the REMEASUREMENT sequence number.",
+    "nl_fal: PLOTSIZE is interpreted as square metres (source has no coded domain); no per-tree expansion factor is available, so BA/TPH are null.",
+    "nl_fal: TREEHEIGHT=99 is the documented sentinel; those values are null. No source expansion factor is present.",
+    "nl_fal: Three exact duplicate tree records (same PLOTKEY/REMEASUREMENT/TREENUMBER) were dropped; 168 tallies did not match a site-layer PLOTKEY and were dropped.",
+    "nl_fal: Two remeasurement visits belong to PLOTKEY 8_119019, which is absent from the point layers; they and its 168 tallies are dropped."
+  ]
+}
