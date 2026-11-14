@@ -1,6 +1,6 @@
 # FVSCA calibration v0 — QA
 
-Built: 2026-11-14T21:29:13Z
+Built: 2026-11-14T21:51:57Z
 Code: `90695aafe9286721fe11a932d5f71229684822d9`
 
 ## Source reconciliation
@@ -68,10 +68,10 @@ Input counts are the selected source rows after the optional `--max-sites` filte
 ## Known issues
 
 - faib_psp: visit_id is CLSTR_ID; a site may contain several plots but the visit table is site-level.
-- faib_psp: site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age.
+- faib_psp: site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age. A small number of compiled ages exceed 1000 years and are retained as source values.
 - faib_psp: 5 tree rows with a blank PLOT/TREE_NO were dropped.
 - faib_non_psp: visit_id is CLSTR_ID; a site may contain several plots but the visit table is site-level.
-- faib_non_psp: site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age.
+- faib_non_psp: site_index is the maximum of the compiled species-level SI columns for the visit; age is the maximum compiled total age. A small number of compiled ages exceed 1000 years and are retained as source values.
 - faib_non_psp: 308 tree rows with a blank PLOT/TREE_NO were dropped.
 - magplot: visit_id is plot_id|meas_num; nested large/small/regeneration plots are kept separate to avoid double counting.
 - magplot_wfs: WFS-only sites are those absent from the ZIP package; 39,062 ZIP-overlapping sites and 590,919 overlapping tree features are excluded to avoid double counting.
