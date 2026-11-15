@@ -1,11 +1,15 @@
 {
   "checks": {
     "dbh_fit_quantiles": {
-      "detail": "per-species weighted quantile MAE < 3.0 cm; max=2.145 cm",
+      "detail": "per-species weighted quantile MAE < 3.0 cm; max=0.775 cm",
       "pass": true
     },
     "no_negative_values": {
       "detail": "checked matrix volume, residue, ODT, AGB proxy, and log counts",
+      "pass": true
+    },
+    "selected_mixtures_converged": {
+      "detail": "every selected Weibull mixture converged; a non-converged legacy two-gamma fallback may remain selected and is flagged in distribution_fits.csv",
       "pass": true
     },
     "species_weights_sum": {
@@ -13,18 +17,19 @@
       "pass": true
     },
     "target_volume": {
-      "detail": "achieved 311.600000 m3 vs target 311.600000 m3; scale 0.725926323",
+      "detail": "achieved 311.600000 m3 vs target 311.600000 m3; scale 0.837133819",
       "pass": true
     },
     "volume_conservation": {
-      "detail": "logs 259.957881 + residue 51.642119 = 311.600000 m3 vs taper 311.600000 m3; error 0 m3",
+      "detail": "logs 252.582033 + residue 59.017967 = 311.600000 m3 vs taper 311.600000 m3; error 0 m3",
       "pass": true
     }
   },
   "code": {
-    "data_commit": "c3b280e5096b6f2ed7e2826dad9dd22334c5c720",
+    "data_commit": "2b60f8a8849e8b9a4db33c6ea6096d0bce42d8be",
     "modules": [
       "distributions.py",
+      "mixtures.py",
       "height.py",
       "synthesize.py",
       "assortments.py",
@@ -33,7 +38,7 @@
       "validate_tsa24.py"
     ],
     "package": "workflows.national.assortments",
-    "parent_commit": "5a7dc8d49a23a19ceedf08505b73fc33be246aec"
+    "parent_commit": "e5e0b338a8d0adf40eacd432ce988593e5760c34"
   },
   "config": {
     "age": 100.0,
@@ -42,6 +47,7 @@
       120.0
     ],
     "au_id": 23000,
+    "baseline_fits": "previous_run_distribution_fits.csv",
     "basic_density_table": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/bucking/rules/bc_basic_density.csv",
     "bin_width_cm": 2.0,
     "chip_yield_fraction": 0.9,
@@ -50,11 +56,27 @@
     "min_plots": 5,
     "min_species_share": 0.01,
     "min_trees": 30,
+    "mixture": {
+      "families": [
+        "mixture",
+        "mix_weibull_2",
+        "mix_weibull_gamma",
+        "mix_weibull_3"
+      ],
+      "gamma_fallback": "censored",
+      "max_iter": 250,
+      "min_component_weight": 0.0001,
+      "new_family_starts": 2,
+      "selection_aic_margin": 2.0,
+      "three_component_ks_trigger": 0.15,
+      "three_component_starts": 1,
+      "tol": 1e-06
+    },
     "moisture_wet_basis": 0.45,
     "n_trees": 600,
     "seed": 20261115
   },
-  "generated_utc": "2026-11-15T21:28:31.245605+00:00",
+  "generated_utc": "2026-11-15T23:15:30.990347+00:00",
   "inputs": {
     "btc_biomass_curves": {
       "bytes": 109243,
@@ -145,49 +167,57 @@
     "Prototype contract; not an operational national yield model.",
     "Assortment sorts are dimension-only; no official BC grade is assigned.",
     "BTC grade shares are context only.",
-    "Fail-closed on unexpected git deletions."
+    "Fail-closed on unexpected git deletions.",
+    "Weibull-containing mixtures are fitted on the left-truncated grouped support; new-family unstable fits are reported but not selected, while the legacy two-gamma fallback may remain selected and is flagged."
   ],
   "outputs": {
     "VALIDATION_REPORT.md": {
-      "bytes": 6940,
+      "bytes": 17482,
       "label": "VALIDATION_REPORT.md",
       "path": "data/derived/national/assortments/tsa24_prototype/VALIDATION_REPORT.md",
-      "sha256": "0cec5147e2fd389eb38fa9e413a3d026cb6ae53486c9ba24fafe4fabad0d7143",
+      "sha256": "cf57da85bc2aac34d064f8a3d22f21c86b53e914a51905288b956ceccec1bcf8",
       "status": "present"
     },
     "assortment_matrix.csv": {
-      "bytes": 39009,
+      "bytes": 39115,
       "label": "assortment_matrix.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/assortment_matrix.csv",
-      "sha256": "57043d584e84284512f8d60ac4e0ff8cf668c9091b659134440f8f0b7289faef",
+      "sha256": "2a3ede24bae9e21204b12230a766274522399d87c049f0ebce341f378852b9ea",
       "status": "present"
     },
     "btc_grade_proxy.csv": {
-      "bytes": 1799,
+      "bytes": 1800,
       "label": "btc_grade_proxy.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/btc_grade_proxy.csv",
-      "sha256": "91d9ff452246d03742621db73a7d213d33991d16b54fb4a0f5dc366d56dfa0a9",
+      "sha256": "a035da379fc3f0c40f325f183f87b75e0eddfaafdd5cf5ec7f84de887df54190",
       "status": "present"
     },
     "bucked_logs.csv": {
-      "bytes": 166722,
+      "bytes": 160633,
       "label": "bucked_logs.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/bucked_logs.csv",
-      "sha256": "143cdcdad0d62347a51e52f816979f9937180b1014836e14202fb4f2e6a3a1e8",
+      "sha256": "1a08f643de78b4a2267b39fa8b8f8e03f7837d8de8091bbc37b4429500d85220",
+      "status": "present"
+    },
+    "dbh_mixture_comparison.csv": {
+      "bytes": 51331,
+      "label": "dbh_mixture_comparison.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/dbh_mixture_comparison.csv",
+      "sha256": "0f3c42a7058fe76dd7e3d10ee90bc9ecd0fc1462cd89f275a3ec6587bc0aaa37",
       "status": "present"
     },
     "dbh_validation.csv": {
-      "bytes": 5368,
+      "bytes": 5726,
       "label": "dbh_validation.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/dbh_validation.csv",
-      "sha256": "734f94668e65fc1978d624663a50305e15dad4e1e9ae873fb9e90431727cb8b9",
+      "sha256": "ebfb95eb48dceff81afc48c05d6c30756d7673e18c819a2e3a5cf45d145da077",
       "status": "present"
     },
     "distribution_fits.csv": {
-      "bytes": 217344,
+      "bytes": 404133,
       "label": "distribution_fits.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/distribution_fits.csv",
-      "sha256": "89a545954a629efbf3c7cb1d2e10a3bb43fb11a8b7b229032cb928bef6f8055c",
+      "sha256": "07d61fb181972f0ca3cd6f9096330d0b501fb51dd7dbf5b78ac3720b753cbd07",
       "status": "present"
     },
     "height_models.csv": {
@@ -205,10 +235,10 @@
       "status": "present"
     },
     "residue_ledger.csv": {
-      "bytes": 370035,
+      "bytes": 370098,
       "label": "residue_ledger.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/residue_ledger.csv",
-      "sha256": "41df3c8c1164bd63936a0d824a85ec24f89ed23a17d6312df20fa7f5f85b5127",
+      "sha256": "f17b03814364a034d3ffdb8d672069779e73f873fd8792603abede1d1ce468d1",
       "status": "present"
     },
     "species_composition.csv": {
@@ -219,10 +249,10 @@
       "status": "present"
     },
     "synthetic_trees.csv": {
-      "bytes": 247727,
+      "bytes": 248202,
       "label": "synthetic_trees.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/synthetic_trees.csv",
-      "sha256": "63cb74250fd29b57c3fd267cfff9a091d43346e2951eaf849b98360c7e28b79c",
+      "sha256": "374027633c127ba913b4e7e6332ac3fa2c4eaa091fc3fff84902e3bff12564ae",
       "status": "present"
     },
     "target_stand.json": {
@@ -233,14 +263,14 @@
       "status": "present"
     },
     "validation_summary.json": {
-      "bytes": 86194,
+      "bytes": 300277,
       "label": "validation_summary.json",
       "path": "data/derived/national/assortments/tsa24_prototype/validation_summary.json",
-      "sha256": "15ad1ace07ccea682ac2d9ffac54b57f9e54f5d2fb2de0f914e02e9d7bf347dc",
+      "sha256": "924c5d0a1138891c4507a82b21ea9642056b125c9580853a94b7454a1e87cb8c",
       "status": "present"
     }
   },
   "pilot": "tsa24_assortment_disaggregation",
   "status": "prototype_complete",
-  "version": "0.1.0"
+  "version": "0.2.0"
 }
