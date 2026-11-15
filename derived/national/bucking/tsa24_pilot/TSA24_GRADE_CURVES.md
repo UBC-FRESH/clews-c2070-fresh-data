@@ -94,8 +94,9 @@ Species mapping:
 | `CW` | `cw 1040P00` | 0 | direct; nominal SI not populated |
 | `HW` | `hwi1030P00` | 0 | direct; nominal SI not populated |
 
-Only `SW`, `PL`, and `FDI` occur as the leading species of the 16 TSA24
-managed AUs, so every AU table has a non-zero nominal site index.
+Only `SW`, `SE`, `PL`, and `FDI` occur as the leading species of the 16
+TSA24 managed AUs; `SE` uses the SW table as its interior volume surrogate.
+Every AU table therefore has a non-zero nominal site index.
 
 ## 3. Coverage
 
