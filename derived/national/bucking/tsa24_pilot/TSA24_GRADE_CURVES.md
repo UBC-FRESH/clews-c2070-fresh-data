@@ -57,7 +57,8 @@ The local TIPSY database has 96 `.tab`/`.taf` pairs.  `fresh-tipsy` parses the
 
 This path needs no Windows runtime.  The parser and column map are from
 `fresh-tipsy` (`fresh_tipsy.tables.parsers.parse_taf_file` and
-`tab-taf-columns.csv`), not a hand-written field guess.
+`tab-taf-columns.csv`), not a hand-written field guess.  `fresh-tipsy` must be
+importable in the active environment (editable install or `PYTHONPATH`).
 
 Exact compile command:
 
