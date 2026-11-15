@@ -1,6 +1,26 @@
 {
-  "checked_utc": "2026-11-14T22:11:26Z",
+  "checked_utc": "2026-11-15T07:45:13Z",
   "checks": [
+    {
+      "name": "non-empty sites",
+      "status": "PASS",
+      "detail": "72,975 rows"
+    },
+    {
+      "name": "non-empty visits",
+      "status": "PASS",
+      "detail": "368,133 rows"
+    },
+    {
+      "name": "non-empty trees",
+      "status": "PASS",
+      "detail": "15,639,840 rows"
+    },
+    {
+      "name": "non-empty intervals",
+      "status": "PASS",
+      "detail": "7,228,291 rows"
+    },
     {
       "name": "site columns",
       "status": "PASS",
@@ -19,7 +39,7 @@
     {
       "name": "interval columns",
       "status": "PASS",
-      "detail": "12 columns"
+      "detail": "14 columns"
     },
     {
       "name": "no duplicate sites key",
@@ -54,7 +74,17 @@
     {
       "name": "interval tree referential integrity",
       "status": "PASS",
-      "detail": "0 of 3,169,855 distinct keys have no match"
+      "detail": "0 of 3,278,009 distinct keys have no match"
+    },
+    {
+      "name": "interval start visit referential integrity",
+      "status": "PASS",
+      "detail": "0 of 134,049 distinct keys have no match"
+    },
+    {
+      "name": "interval end visit referential integrity",
+      "status": "PASS",
+      "detail": "0 of 134,049 distinct keys have no match"
     },
     {
       "name": "site keys complete",
@@ -74,12 +104,12 @@
     {
       "name": "DBH range",
       "status": "PASS",
-      "detail": "observed [0.0, 450.0] cm"
+      "detail": "15,075,603 observed in [0.0, 450.0] cm"
     },
     {
       "name": "height range",
       "status": "PASS",
-      "detail": "observed [0.0, 81.0] m"
+      "detail": "10,099,629 observed in [0.0, 81.0] m"
     },
     {
       "name": "tree status domain",
@@ -94,12 +124,12 @@
     {
       "name": "visit year range",
       "status": "PASS",
-      "detail": "observed [1921, 2026]"
+      "detail": "0 null; observed [1921, 2026]"
     },
     {
       "name": "interval length",
       "status": "PASS",
-      "detail": "observed [2, 38] years"
+      "detail": "observed [2, 39] years"
     },
     {
       "name": "interval year range",
@@ -149,17 +179,17 @@
     {
       "name": "faib_psp sites reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_missing_site_or_tree_key"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_missing_site_or_tree_key"
     },
     {
       "name": "faib_psp visits reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_missing_site_or_tree_key"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_missing_site_or_tree_key"
     },
     {
       "name": "faib_psp trees reconciliation",
       "status": "PASS",
-      "detail": "0.0002% difference; dropped reasons: tree_missing_site_or_tree_key"
+      "detail": "0.0002% difference (5 rows); explained_drops=5; reasons: tree_missing_site_or_tree_key"
     },
     {
       "name": "faib_non_psp manifest counts",
@@ -169,17 +199,17 @@
     {
       "name": "faib_non_psp sites reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_missing_site_or_tree_key"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_missing_site_or_tree_key"
     },
     {
       "name": "faib_non_psp visits reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_missing_site_or_tree_key"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_missing_site_or_tree_key"
     },
     {
       "name": "faib_non_psp trees reconciliation",
       "status": "PASS",
-      "detail": "0.0839% difference; dropped reasons: tree_missing_site_or_tree_key"
+      "detail": "0.0839% difference (308 rows); explained_drops=308; reasons: tree_missing_site_or_tree_key"
     },
     {
       "name": "magplot manifest counts",
@@ -189,17 +219,17 @@
     {
       "name": "magplot sites reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: none"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: none"
     },
     {
       "name": "magplot visits reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: none"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: none"
     },
     {
       "name": "magplot trees reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: none"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: none"
     },
     {
       "name": "magplot_wfs manifest counts",
@@ -209,17 +239,17 @@
     {
       "name": "magplot_wfs sites reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_duplicate_key"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_duplicate_key"
     },
     {
       "name": "magplot_wfs visits reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_duplicate_key"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_duplicate_key"
     },
     {
       "name": "magplot_wfs trees reconciliation",
       "status": "PASS",
-      "detail": "0.8172% difference; dropped reasons: tree_duplicate_key"
+      "detail": "0.8172% difference (10,699 rows); explained_drops=10699; reasons: tree_duplicate_key"
     },
     {
       "name": "qc_pep manifest counts",
@@ -229,17 +259,17 @@
     {
       "name": "qc_pep sites reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: none"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: none"
     },
     {
       "name": "qc_pep visits reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: none"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: none"
     },
     {
       "name": "qc_pep trees reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: none"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: none"
     },
     {
       "name": "nl_fal manifest counts",
@@ -249,17 +279,72 @@
     {
       "name": "nl_fal sites reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_duplicate_key, tree_height_99_sentinel, tree_site_not_found, visit_site_not_found"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_duplicate_key, tree_height_99_sentinel, tree_site_not_found, visit_site_not_found"
     },
     {
       "name": "nl_fal visits reconciliation",
       "status": "PASS",
-      "detail": "0.0000% difference; dropped reasons: tree_duplicate_key, tree_height_99_sentinel, tree_site_not_found, visit_site_not_found"
+      "detail": "0.0000% difference (0 rows); explained_drops=0; reasons: tree_duplicate_key, tree_height_99_sentinel, tree_site_not_found, visit_site_not_found"
     },
     {
       "name": "nl_fal trees reconciliation",
       "status": "PASS",
-      "detail": "0.0004% difference; dropped reasons: tree_duplicate_key, tree_height_99_sentinel, tree_site_not_found, visit_site_not_found"
+      "detail": "0.0004% difference (3 rows); explained_drops=3; reasons: tree_duplicate_key, tree_height_99_sentinel, tree_site_not_found, visit_site_not_found"
+    },
+    {
+      "name": "manifest source coverage",
+      "status": "PASS",
+      "detail": "manifest ['faib_non_psp', 'faib_psp', 'magplot', 'magplot_wfs', 'nl_fal', 'qc_pep']; outputs ['faib_non_psp', 'faib_psp', 'magplot', 'magplot_wfs', 'nl_fal', 'qc_pep']"
+    },
+    {
+      "name": "manifest outputs declared",
+      "status": "PASS",
+      "detail": "all five outputs declared"
+    },
+    {
+      "name": "output sites.csv manifest record",
+      "status": "PASS",
+      "detail": "hash, bytes, and rows match"
+    },
+    {
+      "name": "output visits.csv manifest record",
+      "status": "PASS",
+      "detail": "hash, bytes, and rows match"
+    },
+    {
+      "name": "output trees.csv.gz manifest record",
+      "status": "PASS",
+      "detail": "hash, bytes, and rows match"
+    },
+    {
+      "name": "output intervals.csv.gz manifest record",
+      "status": "PASS",
+      "detail": "hash, bytes, and rows match"
+    },
+    {
+      "name": "output species_crosswalk.csv manifest record",
+      "status": "PASS",
+      "detail": "hash, bytes, and rows match"
+    },
+    {
+      "name": "species crosswalk columns",
+      "status": "PASS",
+      "detail": "5 columns"
+    },
+    {
+      "name": "species crosswalk non-empty",
+      "status": "PASS",
+      "detail": "355 rows"
+    },
+    {
+      "name": "species crosswalk source coverage",
+      "status": "PASS",
+      "detail": "missing []"
+    },
+    {
+      "name": "species crosswalk group domain",
+      "status": "PASS",
+      "detail": "values ['conifer', 'deciduous', 'unknown']"
     }
   ],
   "passed": true

@@ -1,8 +1,8 @@
 {
   "product": "fvsca_calibration_v0",
-  "built_utc": "2026-11-14T21:51:57Z",
+  "built_utc": "2026-11-15T07:27:50Z",
   "code_version": {
-    "commit": "90695aafe9286721fe11a932d5f71229684822d9",
+    "commit": "1ca5feceba115482876e1b8ffda4ffed847731c5",
     "dirty": true
   },
   "parameters": {
@@ -202,6 +202,11 @@
         "trees": 3217643,
         "intervals": 1799382
       },
+      "explained_drops": {
+        "sites": 0,
+        "visits": 0,
+        "trees": 5
+      },
       "coverage": {
         "visits": 23956,
         "site_index_visits": 21639,
@@ -249,6 +254,11 @@
         "trees": 366788,
         "intervals": 80702
       },
+      "explained_drops": {
+        "sites": 0,
+        "visits": 0,
+        "trees": 308
+      },
       "coverage": {
         "visits": 11951,
         "site_index_visits": 9318,
@@ -287,7 +297,12 @@
         "sites": 39130,
         "visits": 257031,
         "trees": 7771041,
-        "intervals": 3293792
+        "intervals": 3298527
+      },
+      "explained_drops": {
+        "sites": 0,
+        "visits": 0,
+        "trees": 0
       },
       "coverage": {
         "visits": 257031,
@@ -328,7 +343,12 @@
         "sites": 2778,
         "visits": 13906,
         "trees": 1298474,
-        "intervals": 369878
+        "intervals": 436550
+      },
+      "explained_drops": {
+        "sites": 0,
+        "visits": 0,
+        "trees": 10699
       },
       "coverage": {
         "visits": 13906,
@@ -368,7 +388,12 @@
         "sites": 12834,
         "visits": 53632,
         "trees": 2210417,
-        "intervals": 979461
+        "intervals": 1119613
+      },
+      "explained_drops": {
+        "sites": 0,
+        "visits": 0,
+        "trees": 0
       },
       "coverage": {
         "visits": 53632,
@@ -383,7 +408,7 @@
         "year_min": 1970.0,
         "year_max": 2025.0,
         "interval_min": 2.0,
-        "interval_max": 34.0
+        "interval_max": 39.0
       },
       "reconciliation": {
         "sites": 0.0,
@@ -413,7 +438,12 @@
         "sites": 1380,
         "visits": 7657,
         "trees": 775477,
-        "intervals": 488111
+        "intervals": 493517
+      },
+      "explained_drops": {
+        "sites": 0,
+        "visits": 0,
+        "trees": 3
       },
       "coverage": {
         "visits": 7657,
@@ -441,14 +471,14 @@
     "sites": 72975,
     "visits": 368133,
     "trees": 15639840,
-    "intervals": 7011326,
+    "intervals": 7228291,
     "sources": 6
   },
   "outputs": {
     "sites.csv": {
       "path": "sites.csv",
-      "bytes": 8371441,
-      "sha256": "a88e68918266800c58ccf9d7699435dc7689db707a119a5675e375bcb128b6c8",
+      "bytes": 8359304,
+      "sha256": "7796f2c8f8b83284c3980333e1563de4bb409f10668f1bb32a5fca2bccf54de9",
       "rows": 72975
     },
     "visits.csv": {
@@ -465,9 +495,9 @@
     },
     "intervals.csv.gz": {
       "path": "intervals.csv.gz",
-      "bytes": 48366358,
-      "sha256": "bf2781a33d4e4c84eadb557c061ad747a6467187c426901f10388c24c87b4c10",
-      "rows": 7011326
+      "bytes": 53638804,
+      "sha256": "b42845c5bab5732e0dc483119005b4fa48400a59b8c2e6892f8a7c92acdd3f9b",
+      "rows": 7228291
     },
     "species_crosswalk.csv": {
       "path": "species_crosswalk.csv",
@@ -487,8 +517,8 @@
     "magplot_wfs: WFS-only sites are those absent from the ZIP package; 39,062 ZIP-overlapping sites and 590,919 overlapping tree features are excluded to avoid double counting.",
     "magplot_wfs: The NL WFS tree layers 0_2 and 3_9 repeat the same 10,699 tree features for the 39 WFS-only NL sites; exact duplicate keys are dropped.",
     "qc_pep: eco_zone is classi_eco_pe.reg_eco; eco_subzone is the visit-level station_pe.type_eco mode. No numeric site index is stored.",
-    "qc_pep: plot_area_ha is derived as 10000/median(tige_ha) after tree load; no BAF is present because plots are fixed-area.",
-    "nl_fal: visit year from remeasurement_crew_date.ORIGINAL_DATE, not from the REMEASUREMENT sequence number.",
+    "qc_pep: plot_area_ha is derived as 1/median(tige_ha) hectares after tree load; no BAF is present because plots are fixed-area.",
+    "nl_fal: visit year from remeasurement_crew_date.ORIGINAL_DATE interpreted in America/St_Johns, not from the REMEASUREMENT sequence number.",
     "nl_fal: PLOTSIZE is interpreted as square metres (source has no coded domain); no per-tree expansion factor is available, so BA/TPH are null.",
     "nl_fal: TREEHEIGHT=99 is the documented sentinel; those values are null. No source expansion factor is present.",
     "nl_fal: Three exact duplicate tree records (same PLOTKEY/REMEASUREMENT/TREENUMBER) were dropped; 168 tallies did not match a site-layer PLOTKEY and were dropped.",
