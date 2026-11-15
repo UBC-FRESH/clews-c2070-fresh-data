@@ -1,0 +1,123 @@
+{
+  "coverage": {
+    "age_count": 36,
+    "au_count": 16,
+    "nominal_site_indices": {
+      "fdi0535P00": 25,
+      "pli0530P00": 23,
+      "sw 0530P00": 20
+    },
+    "rows": 576,
+    "species_tables": [
+      "fdi0535P00",
+      "pli0530P00",
+      "sw 0530P00"
+    ]
+  },
+  "created_utc": "2026-11-15T18:54:14+00:00",
+  "inputs": [
+    {
+      "bytes": 2818,
+      "label": "03_input",
+      "path": "femic-tsa24-instance/data/03_input-tsa24.csv",
+      "sha256": "e3c518bdad74a7b7897d44da6d36d93f513bcbfc29495123a7a91b5b24566042"
+    },
+    {
+      "bytes": 17584,
+      "label": "04_output",
+      "path": "femic-tsa24-instance/data/04_output-tsa24.csv",
+      "sha256": "3939e5ef4d2bc17a50218dabd5e0f32d452fea69c135de8a29a7aec265b8759b"
+    },
+    {
+      "bytes": 19001,
+      "label": "tipsy_curves",
+      "path": "femic-tsa24-instance/data/tipsy_curves_tsa24.csv",
+      "sha256": "83765a61aef631b3a876fe7e7b9dfbcda6d6a4a9bcc59987607107c187763469"
+    },
+    {
+      "bytes": 2222,
+      "label": "au_table",
+      "path": "femic-tsa24-instance/data/model_input_bundle/au_table.csv",
+      "sha256": "fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099"
+    }
+  ],
+  "limitations": [
+    "The TAF tables are nominal-site-index surfaces (SW 20, PLI 23, FDI 25).",
+    "SE and BL use the SW table as the interior volume surrogate.",
+    "Grade volumes are share-preserving rescales, not independent AU grade runs.",
+    "Residual fibre is mill processing residue, not harvest residue."
+  ],
+  "outputs": [
+    {
+      "bytes": 336692,
+      "label": "managed_au_curves",
+      "path": "managed_au_curves.csv",
+      "rows": 576,
+      "sha256": "30639a435bdb1f0dd11b353b16dffc4fa56c2b82f66af7d21b64e5861aab3945"
+    },
+    {
+      "bytes": 137652,
+      "label": "managed_au_industrial_sorts",
+      "path": "managed_au_industrial_sorts.csv",
+      "rows": 576,
+      "sha256": "91c019cd32c20fde04de36b6c9054f5aa2bd0b5fbc506fbbda7b8dc4ad0cab30"
+    },
+    {
+      "bytes": 3858,
+      "label": "au_grade_coverage",
+      "path": "au_grade_coverage.csv",
+      "rows": 16,
+      "sha256": "a0ef4cbef6a59611a5df92dadff451eae4ed26544b83b54aae6918e73710d1ff"
+    },
+    {
+      "bytes": 84527,
+      "label": "species_grade_curves",
+      "path": "species_grade_curves.csv",
+      "rows": 216,
+      "sha256": "8656e67ea27cca01c0f2ce2868cd6407b9a8d933a9e52d212a5380c3f676c054"
+    }
+  ],
+  "provenance": {
+    "citation": "Province of British Columbia, TIPSY 4.5, Database/<file>; extracted by fresh-tipsy.",
+    "database_root": "TIPSY_DATABASE (host-local path; not recorded)",
+    "database_title": "Ministry Standard Database, February 2022",
+    "evidence_tier": "model_output",
+    "grade_status": "model_output_not_field_grade",
+    "source_model": "TIPSY 4.5 / SYLVER"
+  },
+  "status": "compiled_from_tipsy_taf",
+  "taf_tables": [
+    {
+      "first_age": 3.0,
+      "header_code": "FDI",
+      "last_age": 220.0,
+      "nominal_site_index": 25,
+      "path": "Database/fdi0535P00.taf",
+      "sha256": "71586bfb336ed38e8b5558b063078db5436259a685633639485d8786dac432a7",
+      "stem": "fdi0535P00"
+    },
+    {
+      "first_age": 1.0,
+      "header_code": "PLI",
+      "last_age": 465.0,
+      "nominal_site_index": 23,
+      "path": "Database/pli0530P00.taf",
+      "sha256": "e9744c721b8429dc460198e6d622027f0ecb734d3e754c5eece63d08d978da02",
+      "stem": "pli0530P00"
+    },
+    {
+      "first_age": 3.0,
+      "header_code": "SW",
+      "last_age": 440.0,
+      "nominal_site_index": 20,
+      "path": "Database/sw 0530P00.taf",
+      "sha256": "e014babd67fc6d366a4a60a9452af7ae71277ca81f01b59aaea1aae8f74e628e",
+      "stem": "sw 0530P00"
+    }
+  ],
+  "transformations": {
+    "age_extrapolation": "Ages beyond the last populated TAF age are held flat and flagged in taf_extrapolated.",
+    "grade_volumes": "Raw TAF Logs_Grade_* shares multiplied by the FEMIC managed AU volume for the same age; grade columns sum to volume.",
+    "residual_fibre": "Raw TAF Residual_* ODT/ha multiplied by FEMIC managed volume / TAF Volume_Diameter_Class sum. TIPSY residuals are mill-processing residues, not harvest slash."
+  }
+}

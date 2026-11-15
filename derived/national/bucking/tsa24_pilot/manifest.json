@@ -195,8 +195,8 @@
     "tolerance_relative": 1e-05,
     "total_taper_m3": 58.15258667098862
   },
-  "created_utc": "2026-11-15T18:15:23+00:00",
-  "elapsed_seconds": 33.929779414087534,
+  "created_utc": "2026-11-15T18:54:56+00:00",
+  "elapsed_seconds": 35.55324220494367,
   "inputs": [
     {
       "bytes": 314277,
@@ -271,6 +271,18 @@
       "sha256": "fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099"
     },
     {
+      "bytes": 336692,
+      "label": "tsa24_grade_curves",
+      "path": "tsa24_grade_curves/managed_au_curves.csv",
+      "sha256": "30639a435bdb1f0dd11b353b16dffc4fa56c2b82f66af7d21b64e5861aab3945"
+    },
+    {
+      "bytes": 137652,
+      "label": "tsa24_grade_industrial_sorts",
+      "path": "tsa24_grade_curves/managed_au_industrial_sorts.csv",
+      "sha256": "91c019cd32c20fde04de36b6c9054f5aa2bd0b5fbc506fbbda7b8dc4ad0cab30"
+    },
+    {
       "bytes": 1468706,
       "label": "rsyc_models",
       "path": "raw/national/rsyc/RSYC_models.zip",
@@ -298,13 +310,20 @@
   "notes": [
     "Pilot, not the pre-registered three-way validation gate.",
     "No official grade assigned.",
-    "TSA24 TIPSY instance has no grade/residue/value columns."
+    "TSA24 TIPSY instance has no grade/residue/value columns.",
+    "Grade/residue benchmark comes from TIPSY .taf tables at nominal site index.",
+    "TIPSY residual fibre is mill residue, not harvest slash."
   ],
   "outputs": [
     {
-      "bytes": 13402,
+      "bytes": 10796,
+      "path": "TSA24_GRADE_CURVES.md",
+      "sha256": "70f208a20aa0c985f20a6ca9f66170d478b17766662670d6e448b8e6585ccee3"
+    },
+    {
+      "bytes": 16155,
       "path": "VALIDATION_REPORT.md",
-      "sha256": "cf1ef6be9bf004d18e38e3c45d90f3097de9db01b73ad1a5c63efa6b4d4d5ec0"
+      "sha256": "45e78be93348152556ddcb4928b9ca0500d430bf42e7dc4b7602c9bc14f566af"
     },
     {
       "bytes": 38706,
@@ -312,14 +331,24 @@
       "sha256": "7cfd7894ccb78bae304b51609aec922fd26590250f18913a6ebe297fb2768fd9"
     },
     {
+      "bytes": 20466,
+      "path": "grade_benchmark.csv",
+      "sha256": "01a68d97867c73bdb5f06f74d68636f16f7ee831a7ad59d6e9eceea72e70a47f"
+    },
+    {
+      "bytes": 6347,
+      "path": "grade_benchmark_summary.json",
+      "sha256": "19af4ad783843bb656b98e780b86c90a528d3088fb9fdcdd5a9e8705231f473c"
+    },
+    {
       "bytes": 284,
       "path": "market_group_summary.csv",
       "sha256": "0cce786d79bffec7749338004aa723fd5b66dada054c533514284fe42a9cc60d"
     },
     {
-      "bytes": 397,
+      "bytes": 439,
       "path": "pilot_row.json",
-      "sha256": "98065d48c91f9294d5aae940573162067ad02e1a96fe618104f782ef9c757e58"
+      "sha256": "69e952da50047ddd67595abf6a043da10278b59ce070f58263f4101d0b9686ec"
     },
     {
       "bytes": 7913,
@@ -372,9 +401,9 @@
       "sha256": "da3ce78ec49cd9ea3a311d79cb2001f513ede97264ae12332a3e0221db775ab3"
     },
     {
-      "bytes": 20663,
+      "bytes": 27818,
       "path": "validation_summary.json",
-      "sha256": "8abbfb42d4d07bf9642e626a049840277b5f52120af5e200736b087da0fb1a22"
+      "sha256": "a653ff7038762d84ac6743e4b413ce974d5f84514b7086333d4adb2ff9814bb7"
     },
     {
       "bytes": 2269,

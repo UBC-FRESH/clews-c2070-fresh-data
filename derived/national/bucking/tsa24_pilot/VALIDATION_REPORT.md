@@ -4,16 +4,18 @@
 |---|---|
 | Pilot | `tsa24_bucking_phase0` |
 | TSA | 24 — Prince George |
-| Generated (UTC) | 2026-11-15T18:15:22+00:00 |
-| Status | pilot complete; benchmark gaps stated |
+| Generated (UTC) | 2026-11-15T18:54:56+00:00 |
+| Status | pilot complete; grade benchmark with stated assumptions |
 | Sample | 20 plots, 300 live trees |
 | Logs | 134 |
-| Elapsed | 33.9 s |
+| Elapsed | 35.6 s |
 
 > This is the Phase 0/1 pilot. It is **not** the pre-registered three-way
-> validation gate. The TSA24 TIPSY instance has no grade, residue, or value
-> columns, so no grade or residue benchmark is claimed. No official BC log
-> grade is assigned.
+> validation gate. The TSA24 FEMIC instance has no grade, residue, or value
+> columns, but the TIPSY 4.5 `.taf` database exposes `Logs_Grade_*` and
+> `Residual_*` surfaces. A TAF-derived grade/residue benchmark is reported
+> with nominal-site-index, species-surrogate, and mill-vs-harvest caveats.
+> No official BC log grade is assigned.
 
 ## 1. Scope and contracts
 
@@ -215,6 +217,27 @@ merchantability rules, taper families, and sort boundaries differ.
 - Grade/residue/value inspection: {"status": "inspected", "n_columns": 217, "grade_columns": [], "residue_columns": [], "value_columns": [], "has_grade_or_residue_or_value": false, "note": "The TSA24 instance exposes only conifer/deciduous merchantable volume, height, gross volume, and crown cover by age. It has no grade, residue, or value columns."}
 - Caveat: The TSA24 TIPSY instance has no grade, residue, or value columns. No grade/residue benchmark is possible from this instance. The sort and price profile is a placeholder. TIPSY Yield is treated as m3/ha.
 
+### TSA24 grade and residue benchmark (TIPSY 4.5 `.taf`)
+
+- Status: **reported_with_join_and_semantic_assumptions**
+- Compiled curves: `data/derived/national/bucking/tsa24_grade_curves`
+- Match tiers: **11** AU-curve, **7** species-curve, **2** no-match; **3** plots with no pilot logs, **2** with zero TIPSY volume, **13** grade-comparable.
+- Industrial sort shares (exact codes): n=13, mean TVD=0.670, mean overlap=0.330, aggregate TVD=0.487.
+- Diameter marginal shares: aggregate TVD=0.232; length marginal shares: aggregate TVD=0.234.
+- TIPSY grade shares (proxy; `Logs_Grade_*`): D=0.0%, F=0.0%, H=5.6%, I=0.3%, J=59.8%, U=27.8%, X=3.9%, Y=2.5%
+- TIPSY grade-group proxy: high_grade_D_F_H_I=5.9%, sawlog_group_D_F_H_I_J=65.7%, low_grade_U_X_Y=34.3%
+- Pilot product shares (comparable plots): sawlog=96.8%, other=3.0%, pulpwood=0.2%
+- Residue (absolute ODT/ha): n=11, pilot sum=43.50, TIPSY sum=516.17, mean ratio=13.39; per m³ mean ratio=2.90.
+- Value: **not_computed_no_same_basis_grade_prices** — The pilot uses product-level BC Interior log prices.  No same-basis interior grade price vector is available, so only shares are reported.
+- Join basis: FAIB plot -> BEC+leading-species stratum -> within-stratum PSP site-index tertile -> TSA24 managed AU; TIPSY curve interpolated at FAIB stand age.  Species fallback uses the leading-species TAF table and is labelled separately.
+- Caveat: TIPSY residual fibre is mill-processing chips/sawdust/shavings/trim/bark.  The pilot residue is harvest slash (taper total - recovered logs).  The two are not equivalent.
+- Caveat: Pilot sort codes are dimension-only industrial sorts, not BC log grades.  Compare TIPSY grade groups only as a proxy.
+- Interpretation: the exact-code TVD is sensitive to within-class length
+  splits.  The marginal diameter and length TVDs are about 0.23 each: the
+  pilot bucker concentrates volume in the 8 m and 6.3 m length classes,
+  while TIPSY concentrates in 5.1 m.  That is a bucking-policy difference,
+  not an official grade validation.
+
 ### RSYC
 
 - Status: **reported_with_join_assumptions**
@@ -254,6 +277,7 @@ Assumptions:
 | FAIB PSP tree list | measured plot data |
 | Kozak 2004 taper | published_table |
 | TIPSY interior dimension sorts | published_table, adapted to geometry-only |
+| TIPSY 4.5 `.taf` grade/residue | model_output; nominal site index; share-scaled to FEMIC volume |
 | BC Interior log prices | published product averages; placeholder for grade value |
 | Residue density / moisture / chip yield | assumption |
 | Grade assignment | none (`not_assigned`) |
@@ -262,9 +286,16 @@ Input and output hashes are in `manifest.json`.
 
 ## 7. Gaps and next steps
 
-- No grade benchmark: the TSA24 TIPSY instance has no grade, residue, or value
-  columns. The sort/price profile is a placeholder. Do not report these
-  shares as official BC grades or as a grade-validation result.
+- No official grade benchmark: the pilot is dimension-only, so its sort
+  shares are not BC log grades. The TIPSY `.taf` grade shares are a
+  model-output proxy at nominal site index, not a field-grade gate.
+- The TIPSY `.taf` tables are nominal-site-index surfaces (SW 20, PLI 23,
+  FDI 25). Grade volumes are share-preserving rescales to FEMIC managed
+  volume; they are not independent AU grade runs. SE and BL use the SW
+  table as the interior volume surrogate.
+- TIPSY `Residual_*` is mill-processing residue (chips/sawdust/shavings/
+  trim/bark), not harvest slash. The pilot residue is
+  `taper total - recovered logs`; the two are not equivalent.
 - VDYP and TIPSY joins use within-stratum PSP site-index tertiles. That is a
   benchmark stratification, not the FEMIC AU `si_level` assignment. Replace
   it with the FEMIC AU crosswalk before treating the comparison as a gate.

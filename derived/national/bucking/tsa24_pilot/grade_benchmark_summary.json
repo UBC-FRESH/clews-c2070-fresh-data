@@ -1,0 +1,198 @@
+{
+  "caveats": [
+    "TAF tables are nominal-site-index surfaces (SW 20, PLI 23, FDI 25).",
+    "SE and BL use the SW table as the interior volume surrogate.",
+    "Pilot sort codes are not official BC log grades.",
+    "TIPSY residual fibre is mill residue, not harvest residue.",
+    "Grade volumes are share-preserving rescales to FEMIC managed volume."
+  ],
+  "compiled_dir": "data/derived/national/bucking/tsa24_grade_curves",
+  "diameter_share_comparison": {
+    "aggregate_distance": {
+      "l1": 0.46450729508697464,
+      "overlap": 0.7677463524565127,
+      "total_variation_distance": 0.23225364754348732
+    },
+    "aggregate_pilot": {
+      "D125": 0.6822756721442464,
+      "D20": 0.12901750199642292,
+      "D30": 0.08622945442361733,
+      "D38": 0.10247737143571328
+    },
+    "aggregate_tipsy": {
+      "D125": 0.5238082629046016,
+      "D20": 0.3516962800009229,
+      "D30": 0.09580432396260466,
+      "D38": 0.028691133131870855
+    },
+    "mean": {
+      "mean_overlap": 0.5763283847647122,
+      "mean_tvd": 0.42367161523528785,
+      "n": 13
+    },
+    "n": 13
+  },
+  "grade_share_comparison": {
+    "aggregate_tipsy_grades": {
+      "D": 0.0,
+      "F": 0.0,
+      "H": 0.056143360850621146,
+      "I": 0.0030034559806224425,
+      "J": 0.5980459882113845,
+      "U": 0.27845072259896353,
+      "X": 0.039233166866231683,
+      "Y": 0.025123305492176735
+    },
+    "aggregate_tipsy_groups": {
+      "high_grade_D_F_H_I": 0.059146816831243586,
+      "low_grade_U_X_Y": 0.34280719495737194,
+      "sawlog_group_D_F_H_I_J": 0.6571928050426281
+    },
+    "n": 13,
+    "note": "Pilot sort codes are dimension-only industrial sorts, not BC log grades.  Compare TIPSY grade groups only as a proxy.",
+    "pilot_product_shares": {
+      "other": 0.030282892458533207,
+      "pulpwood": 0.0021083228506126525,
+      "sawlog": 0.9676087846908541
+    },
+    "pilot_sawlog_product_share": 0.9676087846908541,
+    "status": "proxy_only_pilot_grade_status_not_assigned"
+  },
+  "join_basis": "FAIB plot -> BEC+leading-species stratum -> within-stratum PSP site-index tertile -> TSA24 managed AU; TIPSY curve interpolated at FAIB stand age.  Species fallback uses the leading-species TAF table and is labelled separately.",
+  "length_share_comparison": {
+    "aggregate_distance": {
+      "l1": 0.4676700885437461,
+      "overlap": 0.7661649557281269,
+      "total_variation_distance": 0.23383504427187304
+    },
+    "aggregate_pilot": {
+      "L11": 0.06965978026226306,
+      "L13": 0.13333205782026875,
+      "L5": 0.0021741627885248967,
+      "L51": 0.13766240228198318,
+      "L63": 0.2149231591794458,
+      "L8": 0.44224843766751426
+    },
+    "aggregate_tipsy": {
+      "L11": 0.07971227061171447,
+      "L13": 0.07240367546876898,
+      "L5": 0.07092023729409497,
+      "L51": 0.2926988816988348,
+      "L63": 0.06602839462645806,
+      "L8": 0.41823654030012875
+    },
+    "mean": {
+      "mean_overlap": 0.46624327685572337,
+      "mean_tvd": 0.5337567231442766,
+      "n": 13
+    },
+    "n": 13
+  },
+  "n_age_missing": 1,
+  "n_au_curve": 11,
+  "n_grade_comparable": 13,
+  "n_no_match": 2,
+  "n_plots_total": 20,
+  "n_species_curve": 7,
+  "n_zero_pilot_logs": 3,
+  "n_zero_tipsy_volume": 2,
+  "residue_comparison": {
+    "absolute_odt_ha": {
+      "mae": 43.561060402108154,
+      "mean_bias": 42.969910890387816,
+      "mean_ratio": 13.385414121500663,
+      "n": 11,
+      "observed_sum": 43.496984705734064,
+      "predicted_sum": 516.1660045,
+      "relative_bias": 10.866707726799177,
+      "rmse": 56.38594514335338
+    },
+    "au_curve_n": 11,
+    "note": "TIPSY residual fibre is mill-processing chips/sawdust/shavings/trim/bark.  The pilot residue is harvest slash (taper total - recovered logs).  The two are not equivalent.",
+    "per_m3": {
+      "mae": 0.17026529068337914,
+      "mean_bias": 0.08138958565740158,
+      "mean_ratio": 2.9016419428574562,
+      "n": 11,
+      "observed_sum": 1.7642204577685827,
+      "predicted_sum": 2.6595059,
+      "relative_bias": 0.5074680084844897,
+      "rmse": 0.1968775551723608
+    },
+    "status": "semantic_mismatch_reported"
+  },
+  "sort_share_comparison": {
+    "aggregate_distance": {
+      "l1": 0.9748130053482441,
+      "overlap": 0.512593497325878,
+      "total_variation_distance": 0.48740650267412206
+    },
+    "aggregate_pilot": {
+      "D125L11": 0.0675502806278959,
+      "D125L13": 0.12929437745202266,
+      "D125L5": 0.002108322850612653,
+      "D125L51": 0.13349358655809457,
+      "D125L63": 0.20841466426316646,
+      "D125L8": 0.12075315958583659,
+      "D152": 0.019591032502211413,
+      "D178": 0.0019311832183955718,
+      "D203": 0.008760676737926227,
+      "D20L11": 0.0,
+      "D20L13": 0.0,
+      "D20L8": 0.12511047885819668,
+      "D254": 0.0,
+      "D305": 0.0,
+      "D30L11": 0.0,
+      "D30L13": 0.0,
+      "D30L8": 0.08361817712854895,
+      "D38L11": 0.0,
+      "D38L13": 0.0,
+      "D38L8": 0.09937406021709244
+    },
+    "aggregate_tipsy": {
+      "D125L11": 0.015789729721356723,
+      "D125L13": 0.0032268407587951187,
+      "D125L5": 0.07092023729409497,
+      "D125L51": 0.2926988816988348,
+      "D125L63": 0.06602839462645806,
+      "D125L8": 0.07514417880506194,
+      "D152": 0.0,
+      "D178": 0.0,
+      "D203": 0.0,
+      "D20L11": 0.046680013912155566,
+      "D20L13": 0.05361586974100283,
+      "D20L8": 0.2514003963477645,
+      "D254": 0.0,
+      "D305": 0.0,
+      "D30L11": 0.013683113991676361,
+      "D30L13": 0.011736620243958048,
+      "D30L8": 0.07038458972697026,
+      "D38L11": 0.0035594129865258203,
+      "D38L13": 0.003824344725012993,
+      "D38L8": 0.02130737542033204
+    },
+    "code_alias": {
+      "D125L50": "D125L5"
+    },
+    "mean_overlap": {
+      "max": 0.5780824964073829,
+      "mean": 0.3300880089265128,
+      "median": 0.3244137404514176,
+      "min": 0.12024741510163554,
+      "n": 13
+    },
+    "mean_tvd": {
+      "max": 0.8797525848983645,
+      "mean": 0.6699119910734871,
+      "median": 0.6755862595485823,
+      "min": 0.4219175035926172,
+      "n": 13
+    },
+    "n": 13
+  },
+  "status": "reported_with_join_and_semantic_assumptions",
+  "value_comparison": {
+    "note": "The pilot uses product-level BC Interior log prices.  No same-basis interior grade price vector is available, so only shares are reported.",
+    "status": "not_computed_no_same_basis_grade_prices"
+  }
+}
