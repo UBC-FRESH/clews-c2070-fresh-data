@@ -1,0 +1,246 @@
+{
+  "checks": {
+    "dbh_fit_quantiles": {
+      "detail": "per-species weighted quantile MAE < 3.0 cm; max=2.145 cm",
+      "pass": true
+    },
+    "no_negative_values": {
+      "detail": "checked matrix volume, residue, ODT, AGB proxy, and log counts",
+      "pass": true
+    },
+    "species_weights_sum": {
+      "detail": "sum=1.000000000000",
+      "pass": true
+    },
+    "target_volume": {
+      "detail": "achieved 311.600000 m3 vs target 311.600000 m3; scale 0.725926323",
+      "pass": true
+    },
+    "volume_conservation": {
+      "detail": "logs 259.957881 + residue 51.642119 = 311.600000 m3 vs taper 311.600000 m3; error 0 m3",
+      "pass": true
+    }
+  },
+  "code": {
+    "data_commit": "c3b280e5096b6f2ed7e2826dad9dd22334c5c720",
+    "modules": [
+      "distributions.py",
+      "height.py",
+      "synthesize.py",
+      "assortments.py",
+      "facility.py",
+      "rsyc.py",
+      "validate_tsa24.py"
+    ],
+    "package": "workflows.national.assortments",
+    "parent_commit": "5a7dc8d49a23a19ceedf08505b73fc33be246aec"
+  },
+  "config": {
+    "age": 100.0,
+    "age_window": [
+      80.0,
+      120.0
+    ],
+    "au_id": 23000,
+    "basic_density_table": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/bucking/rules/bc_basic_density.csv",
+    "bin_width_cm": 2.0,
+    "chip_yield_fraction": 0.9,
+    "ecodistrict": "Nechako Lowland",
+    "min_height_n": 30,
+    "min_plots": 5,
+    "min_species_share": 0.01,
+    "min_trees": 30,
+    "moisture_wet_basis": 0.45,
+    "n_trees": 600,
+    "seed": 20261115
+  },
+  "generated_utc": "2026-11-15T21:28:31.245605+00:00",
+  "inputs": {
+    "btc_biomass_curves": {
+      "bytes": 109243,
+      "label": "btc_biomass_curves",
+      "path": "data/derived/national/bucking/tsa24_grade_curves/biomass_au_curves.csv",
+      "sha256": "3a3c4f6feb47766895c3d3e872d4c12c299251eb188c0c093d515647748111d0",
+      "status": "present"
+    },
+    "btc_managed_au_curves": {
+      "bytes": 152311,
+      "label": "btc_managed_au_curves",
+      "path": "data/derived/national/bucking/tsa24_grade_curves/managed_au_curves.csv",
+      "sha256": "6fe02e124b842040fe463b2e94bf6a549db7203e74e403db787e1b616b72791c",
+      "status": "present"
+    },
+    "faib_psp_header": {
+      "bytes": 314277,
+      "label": "faib_psp_header",
+      "path": "data/raw/bc_faib_ground_plots/psp/faib_header.csv.gz",
+      "sha256": "c385452cc76b1f6bb4d55102cb0226d811e2eab840c83e762702e6395e5bf19d",
+      "status": "present"
+    },
+    "faib_psp_visits": {
+      "bytes": 311679,
+      "label": "faib_psp_visits",
+      "path": "data/raw/bc_faib_ground_plots/psp/faib_sample_byvisit.csv.gz",
+      "sha256": "9e8488ed089833ec23281edde2e6689c9994c542ff069408e860a0b7e0599461",
+      "status": "present"
+    },
+    "grade_rules": {
+      "bytes": 4336,
+      "label": "grade_rules",
+      "path": "workflows/national/bucking/rules/bc_interior.yaml",
+      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392",
+      "status": "present"
+    },
+    "harmonized_sites": {
+      "bytes": 8359304,
+      "label": "harmonized_sites",
+      "path": "data/derived/fvsca_calibration/v0/sites.csv",
+      "sha256": "7796f2c8f8b83284c3980333e1563de4bb409f10668f1bb32a5fca2bccf54de9",
+      "status": "present"
+    },
+    "harmonized_trees": {
+      "bytes": 103812857,
+      "label": "harmonized_trees",
+      "path": ".git/modules/data/annex/objects/23/w4/MD5E-s103812857--0852370a6f5fc5de956a870c514ce5e9.csv.gz/MD5E-s103812857--0852370a6f5fc5de956a870c514ce5e9.csv.gz",
+      "sha256": "a0b540f45d6f325792d3e56f36727018514336862077610ea0c34ba5de3afffe",
+      "status": "present"
+    },
+    "harmonized_visits": {
+      "bytes": 30574202,
+      "label": "harmonized_visits",
+      "path": "data/derived/fvsca_calibration/v0/visits.csv",
+      "sha256": "bd07dc1189d5feca8c04f3ad589a68f10f62115bb85007a8b2dcf2dcbb61534c",
+      "status": "present"
+    },
+    "price_profile": {
+      "bytes": 827,
+      "label": "price_profile",
+      "path": "/srv/shared-data/gep/ws4/nemora/config/log_prices/bc_interior_2026q3.yaml",
+      "sha256": "58674b7409ffc6cfd60292e04a7a753aff095a07788b2c1abbeed727bae86ce9",
+      "status": "present"
+    },
+    "rsyc_ecostrat": {
+      "bytes": 15421440,
+      "label": "rsyc_ecostrat",
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4",
+      "status": "present"
+    },
+    "rsyc_models": {
+      "bytes": 1468706,
+      "label": "rsyc_models",
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940",
+      "status": "present"
+    },
+    "rsyc_tiles": {
+      "bytes": 278528,
+      "label": "rsyc_tiles",
+      "path": "data/raw/national/rsyc/RSYC_tiles.gpkg",
+      "sha256": "f61e0ec06b29146264ff676c98fcfa1e431d6ddd5f1d97d17e957d4d9e77308b",
+      "status": "present"
+    }
+  },
+  "notes": [
+    "Prototype contract; not an operational national yield model.",
+    "Assortment sorts are dimension-only; no official BC grade is assigned.",
+    "BTC grade shares are context only.",
+    "Fail-closed on unexpected git deletions."
+  ],
+  "outputs": {
+    "VALIDATION_REPORT.md": {
+      "bytes": 6940,
+      "label": "VALIDATION_REPORT.md",
+      "path": "data/derived/national/assortments/tsa24_prototype/VALIDATION_REPORT.md",
+      "sha256": "0cec5147e2fd389eb38fa9e413a3d026cb6ae53486c9ba24fafe4fabad0d7143",
+      "status": "present"
+    },
+    "assortment_matrix.csv": {
+      "bytes": 39009,
+      "label": "assortment_matrix.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/assortment_matrix.csv",
+      "sha256": "57043d584e84284512f8d60ac4e0ff8cf668c9091b659134440f8f0b7289faef",
+      "status": "present"
+    },
+    "btc_grade_proxy.csv": {
+      "bytes": 1799,
+      "label": "btc_grade_proxy.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/btc_grade_proxy.csv",
+      "sha256": "91d9ff452246d03742621db73a7d213d33991d16b54fb4a0f5dc366d56dfa0a9",
+      "status": "present"
+    },
+    "bucked_logs.csv": {
+      "bytes": 166722,
+      "label": "bucked_logs.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/bucked_logs.csv",
+      "sha256": "143cdcdad0d62347a51e52f816979f9937180b1014836e14202fb4f2e6a3a1e8",
+      "status": "present"
+    },
+    "dbh_validation.csv": {
+      "bytes": 5368,
+      "label": "dbh_validation.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/dbh_validation.csv",
+      "sha256": "734f94668e65fc1978d624663a50305e15dad4e1e9ae873fb9e90431727cb8b9",
+      "status": "present"
+    },
+    "distribution_fits.csv": {
+      "bytes": 217344,
+      "label": "distribution_fits.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/distribution_fits.csv",
+      "sha256": "89a545954a629efbf3c7cb1d2e10a3bb43fb11a8b7b229032cb928bef6f8055c",
+      "status": "present"
+    },
+    "height_models.csv": {
+      "bytes": 2164,
+      "label": "height_models.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/height_models.csv",
+      "sha256": "26c1289285e041207845d94a3fa7eb792d70967c10f8c3fc4c374ec574a05871",
+      "status": "present"
+    },
+    "height_models_general.csv": {
+      "bytes": 17443,
+      "label": "height_models_general.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/height_models_general.csv",
+      "sha256": "e7b43ef4de898c5b8f50d54cc308163686c2e26fd69edf10a27b32071d7b7f4d",
+      "status": "present"
+    },
+    "residue_ledger.csv": {
+      "bytes": 370035,
+      "label": "residue_ledger.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/residue_ledger.csv",
+      "sha256": "41df3c8c1164bd63936a0d824a85ec24f89ed23a17d6312df20fa7f5f85b5127",
+      "status": "present"
+    },
+    "species_composition.csv": {
+      "bytes": 791,
+      "label": "species_composition.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/species_composition.csv",
+      "sha256": "cb764514e101788d3528068513f86d13ea33a7f2d5a97bd661a85eb1663dc6a0",
+      "status": "present"
+    },
+    "synthetic_trees.csv": {
+      "bytes": 247727,
+      "label": "synthetic_trees.csv",
+      "path": "data/derived/national/assortments/tsa24_prototype/synthetic_trees.csv",
+      "sha256": "63cb74250fd29b57c3fd267cfff9a091d43346e2951eaf849b98360c7e28b79c",
+      "status": "present"
+    },
+    "target_stand.json": {
+      "bytes": 1389,
+      "label": "target_stand.json",
+      "path": "data/derived/national/assortments/tsa24_prototype/target_stand.json",
+      "sha256": "7d543f1603a97e9b014dd073b23b85249d58d67c08d7b5a7e83409b9f63bbfb8",
+      "status": "present"
+    },
+    "validation_summary.json": {
+      "bytes": 86194,
+      "label": "validation_summary.json",
+      "path": "data/derived/national/assortments/tsa24_prototype/validation_summary.json",
+      "sha256": "15ad1ace07ccea682ac2d9ffac54b57f9e54f5d2fb2de0f914e02e9d7bf347dc",
+      "status": "present"
+    }
+  },
+  "pilot": "tsa24_assortment_disaggregation",
+  "status": "prototype_complete",
+  "version": "0.1.0"
+}
