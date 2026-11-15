@@ -1,0 +1,6 @@
+# Dataset tables are binary payloads; annex them explicitly.
+dataset/*.parquet annex.largefiles=anything
+
+# Large run outputs are text but should not bloat the Git history.
+schedules/*.csv annex.largefiles=largerthan=1MB
+runs/area_control/*.csv annex.largefiles=largerthan=1MB

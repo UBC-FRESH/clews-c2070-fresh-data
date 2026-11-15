@@ -1,0 +1,182 @@
+{
+  "area_control": {
+    "A_ha": 3060473.1,
+    "MAI_R": 2.1832500782967177,
+    "Q_ha": 306047.31,
+    "R_years": 100.0,
+    "au_count": 24,
+    "expected_volume_m3_per_period": 66817781.35199998,
+    "final_carry_ha": 56590.20999999999,
+    "periods": 10,
+    "schedule_rows": 205959,
+    "scheduled_area_ha": 3004065.8000000003,
+    "scheduled_volume_m3": 814043631.9366667,
+    "warnings": []
+  },
+  "config": {
+    "area_control": {
+      "path": "config/area_control.yaml",
+      "sha256": "d62de0826b9d8a6709fc54cf345614980df823d6f4013f245cc573bbf07d1ad7"
+    },
+    "instance": {
+      "path": "config/instance.yaml",
+      "sha256": "85b910b696e3ba2d9d76e9dd35de47415f5941bb9d73407e78f5c66a01ef3323"
+    },
+    "run_profile": {
+      "path": "config/run_profile.yaml",
+      "sha256": "7653c760bc7ce59c9a134ac79a8c5c3d580578cf5bf06c5944c0ce1b155ca24a"
+    },
+    "targets": {
+      "path": "config/targets.yaml",
+      "sha256": "767c1500d3461e5df878c610c15e95e8f005f9c2adba24dbb0a73e7b19f66065"
+    }
+  },
+  "created_utc": "2026-11-15T09:42:38+00:00",
+  "dataset": {
+    "accounts": 99,
+    "blocks": 458708,
+    "file_count": 13,
+    "fragments": 458708,
+    "local_path": "dataset",
+    "manifest_sha256": "c1304ed993814b1e4c049e98b53d197fc5218cda32d29d1cc01d2b8eda7a53eb",
+    "source_path": "/srv/shared-data/gep/ws4/femic/external/femic-tsa24-instance/build/compiled",
+    "table_count": 12,
+    "tracks": 72,
+    "treatments": 48
+  },
+  "instance": {
+    "path": "data/derived/ws4/tsa24",
+    "tsa_name": "Prince George",
+    "tsa_number": 24
+  },
+  "outputs": [
+    {
+      "bytes": 2606473,
+      "path": "schedules/area_control.csv",
+      "rows": 205959,
+      "sha256": "17b834a6f41b5985ba8269b83a2aa222906a9c0ed9b9c8a4ac226bd37dce2f84"
+    },
+    {
+      "bytes": 36019,
+      "path": "schedules/diagnostics.csv",
+      "rows": 240,
+      "sha256": "fec36faa730e3ca724ad762d7448ae0d67f03cf30e1cd9bd2fc0f8c9dbc4fe62"
+    },
+    {
+      "bytes": 12361,
+      "path": "schedules/summary.json",
+      "sha256": "eec0e16079a297e7ea4a17151c92fba07b637740e1901ae80e79eb96663753d5"
+    },
+    {
+      "bytes": 439788,
+      "path": "runs/area_control/account_values.csv",
+      "rows": 9177,
+      "sha256": "c96426f4beb3e4d606b0e815347410ef8ed82dee3d8702671df361f7fbdba692"
+    },
+    {
+      "bytes": 85236307,
+      "path": "runs/area_control/product_values.csv",
+      "rows": 1883799,
+      "sha256": "c860a4c79d880348cf05e9362c02ea96891ee5c801ba7b29406fb9e3fddbb05e"
+    },
+    {
+      "bytes": 3808,
+      "path": "runs/area_control/ending_inventory.csv",
+      "rows": 78,
+      "sha256": "4e07a2ef9b97b5c47007129580f4ef830ec1cb06ad360de40b2bebb20fe06384"
+    },
+    {
+      "bytes": 9629,
+      "path": "runs/area_control/report_accounts.csv",
+      "rows": 99,
+      "sha256": "0f38d1effcc3c535d570a76e82933349d77b9cd841b8d08248655c1f4bbf7b89"
+    },
+    {
+      "bytes": 1182,
+      "path": "runs/area_control/report_targets.csv",
+      "rows": 10,
+      "sha256": "72f1373522ad538a4312897169a15ac9dbdc8e2cba6e94635fa4d66d086494a1"
+    },
+    {
+      "bytes": 854,
+      "path": "runs/area_control/report_provenance.json",
+      "sha256": "3899901368eb29c422b34b5a236be70cb9c68359d775904efd02b7c0333fd9a8"
+    },
+    {
+      "bytes": 394,
+      "path": "runs/area_control/dataset.json",
+      "sha256": "5d378bcae81c1c0b05faffdadcd8582c2fb317f81614aca1f36300c470bddd06"
+    },
+    {
+      "bytes": 2606473,
+      "path": "runs/area_control/schedule.csv",
+      "rows": 205959,
+      "sha256": "17b834a6f41b5985ba8269b83a2aa222906a9c0ed9b9c8a4ac226bd37dce2f84"
+    }
+  ],
+  "schema_version": "1.0",
+  "simulation": {
+    "account_values_rows": 9177,
+    "period_volume_m3": [
+      {
+        "period": 1,
+        "rows": 21380,
+        "volume_m3": 71682611.58966666
+      },
+      {
+        "period": 2,
+        "rows": 24200,
+        "volume_m3": 76278334.404
+      },
+      {
+        "period": 3,
+        "rows": 25323,
+        "volume_m3": 76034740.481
+      },
+      {
+        "period": 4,
+        "rows": 25739,
+        "volume_m3": 76620855.1
+      },
+      {
+        "period": 5,
+        "rows": 24769,
+        "volume_m3": 78512595.935
+      },
+      {
+        "period": 6,
+        "rows": 24179,
+        "volume_m3": 82441100.345
+      },
+      {
+        "period": 7,
+        "rows": 20187,
+        "volume_m3": 95160338.751
+      },
+      {
+        "period": 8,
+        "rows": 17374,
+        "volume_m3": 94406711.17
+      },
+      {
+        "period": 9,
+        "rows": 14967,
+        "volume_m3": 92963106.52900001
+      },
+      {
+        "period": 10,
+        "rows": 7841,
+        "volume_m3": 69943237.632
+      }
+    ],
+    "product_values_rows": 1883799,
+    "run": "runs/area_control",
+    "target_status": {
+      "below": 1,
+      "met": 9
+    },
+    "total_volume_m3": 814043631.9366667,
+    "ws4_version": "0.2.0",
+    "years": 100
+  }
+}
