@@ -4,11 +4,11 @@
 |---|---|
 | Pilot | `tsa24_bucking_phase0` |
 | TSA | 24 — Prince George |
-| Generated (UTC) | 2026-11-15T20:41:11+00:00 |
+| Generated (UTC) | 2026-11-15T20:43:07+00:00 |
 | Status | pilot complete; BTC volume benchmarked; grade not validated; harvest-slash ledger reported |
 | Sample | 20 plots, 300 live trees |
 | Logs | 134 |
-| Elapsed | 50.1 s |
+| Elapsed | 52.3 s |
 
 > This is the Phase 0/1 pilot. It is **not** the pre-registered three-way
 > validation gate. The refreshed TSA24 FEMIC BTC /TSR output exposes
@@ -360,6 +360,7 @@ Summary over the primary plots (each plot treated as one hectare):
 | agb_odt_ha_unscaled (ODT/ha) | 8 | 211.621 | 212.495 | 126.820 | 293.140 |
 | merchantable_log_odt_ha (ODT/ha) | 8 | 88.274 | 76.382 | 35.225 | 166.199 |
 | harvest_residue_odt_ha (ODT/ha) | 8 | 112.648 | 83.351 | 57.858 | 277.538 |
+| harvest_residue_odt_ha_unscaled (ODT/ha) | 8 | 123.348 | 122.264 | 58.293 | 180.749 |
 | taper_residue_odt_ha (ODT/ha) | 8 | 21.008 | 18.797 | 6.551 | 46.722 |
 | non_taper_residue_odt_ha (ODT/ha) | 8 | 91.640 | 57.572 | 39.726 | 230.816 |
 | branch_foliage_bark_odt_ha (ODT/ha) | 8 | 46.909 | 31.390 | 20.963 | 142.572 |

@@ -72,6 +72,7 @@ They are species defaults, **not** BC-local sampled values.
 | AGB (ODT/ha) | 200.921 | 155.910 | 101.692 | 439.625 |
 | Merchantable log biomass (ODT/ha) | 88.274 | 76.382 | 35.225 | 166.199 |
 | Harvest slash (ODT/ha) | 112.648 | 83.351 | 57.858 | 277.538 |
+| Harvest slash, unscaled AGB (ODT/ha) | 123.348 | 122.264 | 58.293 | 180.749 |
 | Taper residue (ODT/ha) | 21.008 | 18.797 | 6.551 | 46.722 |
 | Non-taper residue (ODT/ha) | 91.640 | 57.572 | 39.726 | 230.816 |
 | Recoverable slash (ODT/ha) | 67.589 | 50.011 | 34.715 | 166.523 |
