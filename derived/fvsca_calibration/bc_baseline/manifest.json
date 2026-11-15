@@ -1,0 +1,237 @@
+{
+  "schema_version": "fvsca-bc-baseline-v1",
+  "generated_at_utc": "2026-11-15T09:10:00Z",
+  "purpose": "First measured uncalibrated FVS-BC baseline on the FAIB PSP archive in the clews-c2070-fresh workspace; reproduction of the fresh-fvsbc D6-corrected all-zone baseline (139 BEC strata).",
+  "reference_runner": {
+    "checkout": "/srv/shared-data/gep/ws4/tmp/fresh-fvsbc (read-only)",
+    "checkout_commit": "f5dce3474d213972c6637ec17cf8ae1dbd55f620",
+    "checkout_describe": "v0.21.4-212-gf5dce34",
+    "entrypoint": "scripts/run_baseline_backtest.py"
+  },
+  "inputs": {
+    "faib_header.csv": {
+      "compressed_sha256": "c385452cc76b1f6bb4d55102cb0226d811e2eab840c83e762702e6395e5bf19d",
+      "bytes": 1406012,
+      "sha256": "f029e21c149079036683ad65acf03b74975952d945926d1d3d607047079ea8b2"
+    },
+    "faib_sample_byvisit.csv": {
+      "compressed_sha256": "9e8488ed089833ec23281edde2e6689c9994c542ff069408e860a0b7e0599461",
+      "bytes": 3186768,
+      "sha256": "9b6db29182c4509d526ef16c06fb03f6cd9959ccf0125099af055e7e52fece60"
+    },
+    "faib_plot_header.csv": {
+      "compressed_sha256": "cacc06c524bd783c13bcbba94c0d2fad9d98a0f3710eb6431edc49918bf56e9f",
+      "bytes": 2815639,
+      "sha256": "dcb206e5c70acc449a2371b1799ee915474b72cb9b200659e4905826b45514ae"
+    },
+    "faib_tree_detail.csv": {
+      "compressed_sha256": "9ed7b0a23dd74686173ee45fddfcb71a7bbddd7995230c7de2696b7c76d614e8",
+      "bytes": 740181676,
+      "sha256": "d9f609cd42dd32d0d9e3cac19a6b654771ad2b1e2642c97452a6328143a4c910"
+    }
+  },
+  "shim": {
+    "directory": "/tmp/fvsca_psp",
+    "note": "four decompressed FAIB CSVs; archive not modified"
+  },
+  "dataset": {
+    "directory": "/tmp/fvsca_calibration",
+    "intervals": 17151,
+    "visits": 24962,
+    "bec_units": 139,
+    "build_seconds": 40.4,
+    "peak_rss_kb": 1588328
+  },
+  "sample": {
+    "rule": "select_intervals(intervals, per_bec=1): sort by BEC, TSA_DESC, SITE_IDENTIFIER, PLOT, year0; first interval per BEC",
+    "intervals": 139,
+    "bec_variants": 139,
+    "skipped_intervals": 0,
+    "intervals_with_skipped_trees": 2,
+    "skipped_trees": 23,
+    "years_min": 3.0,
+    "years_max": 27.0,
+    "years_mean": 10.763
+  },
+  "command": ".venv-fvsca/bin/python /srv/shared-data/gep/ws4/tmp/fresh-fvsbc/scripts/run_baseline_backtest.py --data-dir /tmp/fvsca_calibration --psp-dir /tmp/fvsca_psp --out-dir /tmp/fvsca_baseline --per-bec 1 --tree-age 60",
+  "environment": {
+    "python": "3.12.3",
+    "fresh_fvsbc": "0.21.4 (editable local checkout f5dce34; version string 0.21.4)",
+    "fresh_fvsbc_pyfvs": "0.4.1",
+    "pyfvs_commit": "e95172b",
+    "fvs_source_commit": "ef5fa847",
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39"
+  },
+  "runtime": {
+    "baseline_wall_seconds": 80.1,
+    "baseline_peak_rss_kb": 452880,
+    "baseline_cpu_seconds": 474.9,
+    "probe_d74_wall_seconds": 21.3,
+    "probe_d73_subset_wall_seconds": 67.6
+  },
+  "outputs": {
+    "baseline_by_ba.csv": {
+      "bytes": 38613,
+      "sha256": "17a1c0ae637a804c8457160da9610033e48b098de7e960281938b96fa8d648c9",
+      "rows": 139
+    },
+    "baseline_by_dbh.csv": {
+      "bytes": 38710,
+      "sha256": "317e3a2e4fb5ecd024148a5f79fa66d2cf5ec234fda26ccfef57666d0f7c9096",
+      "rows": 139
+    },
+    "baseline_by_species.csv": {
+      "bytes": 38357,
+      "sha256": "2f6b5bc064b5fcbcbc753f5086f0c1537aa22aa4b4233e455ead63acf233b590",
+      "rows": 139
+    },
+    "baseline_by_tsa.csv": {
+      "bytes": 39893,
+      "sha256": "eaa5f5b9415ccb77633afd90d8ee1022db1635d7a8fbb61fdd611dd999be09dc",
+      "rows": 139
+    },
+    "baseline_by_zone.csv": {
+      "bytes": 1103,
+      "sha256": "2fb90d23c503491b462dd4d72d7cb0b28d62a06fa8439cce5c9f495ae2c748b1",
+      "rows": 12
+    },
+    "baseline_report.md": {
+      "bytes": 45103,
+      "sha256": "b58f0593f80569b0c2fbe3a5fda8064c840b6aa7d926844cb71a933197c2995a",
+      "rows": null
+    },
+    "baseline_skip_reasons.csv": {
+      "bytes": 17,
+      "sha256": "5079137fc293288b46f896fd54671625579275e629bc239fe927716e464c9c46",
+      "rows": 0
+    },
+    "baseline_skipped_becs.csv": {
+      "bytes": 21,
+      "sha256": "de2e7474249d71c5f7f3953c7baea9f8980a22a084355037f2c5957739bb27ef",
+      "rows": 0
+    },
+    "baseline_skips.csv": {
+      "bytes": 54,
+      "sha256": "aba05d16ee75c6947a01c04935294c0d585e0c944a9bc5d355ba2261873996a7",
+      "rows": 2
+    },
+    "baseline_summary.csv": {
+      "bytes": 37926,
+      "sha256": "2228dc5264ffae66a4046f2e77ad6413b0a08442cdc67da78f5102a7a4339872",
+      "rows": 139
+    },
+    "metrics_summary.csv": {
+      "bytes": 512,
+      "sha256": "2b785061f21400d6b2b72bb35df51f0cec29f38e29175a4240c09a988e129692",
+      "rows": 8
+    },
+    "probe_idfdk/d73_subset_probe_by_bec.csv": {
+      "bytes": 1734,
+      "sha256": "7822dd6d3b3defb8f9c9c8869d998c22b09154ccdf11b834636c34a2984976aa",
+      "rows": 24
+    },
+    "probe_idfdk/d73_subset_probe_summary.csv": {
+      "bytes": 792,
+      "sha256": "ec1d830a08023dbe9d63d24c6e29a1285236574162ca91cb6b5b643745bf48ae",
+      "rows": 8
+    },
+    "probe_idfdk/d74_ingrowth_probe_by_bec.csv": {
+      "bytes": 495,
+      "sha256": "d3502efaa38005af6c6f31849e189e735676d6539160287d601bedaa3c264396",
+      "rows": 6
+    },
+    "probe_idfdk/d74_ingrowth_probe_summary.csv": {
+      "bytes": 249,
+      "sha256": "e7f22229a07ecde8566a4e0de2609067ee4ddca8537efb62eb893867814b1dc1",
+      "rows": 2
+    }
+  },
+  "overall_metrics": [
+    {
+      "metric": "initial_ba",
+      "n": 139,
+      "mean_observed": 37.02,
+      "mean_predicted": 36.331,
+      "bias": -0.689,
+      "median_bias": -0.487,
+      "mae": 0.836,
+      "rmse": 1.367
+    },
+    {
+      "metric": "end_ba",
+      "n": 139,
+      "mean_observed": 39.42,
+      "mean_predicted": 35.252,
+      "bias": -4.168,
+      "median_bias": -3.831,
+      "mae": 8.648,
+      "rmse": 11.41
+    },
+    {
+      "metric": "end_tph",
+      "n": 139,
+      "mean_observed": 2201.605,
+      "mean_predicted": 1809.755,
+      "bias": -391.85,
+      "median_bias": -88.945,
+      "mae": 781.732,
+      "rmse": 1996.456
+    },
+    {
+      "metric": "end_qmd",
+      "n": 139,
+      "mean_observed": 18.676,
+      "mean_predicted": 19.578,
+      "bias": 0.901,
+      "median_bias": -0.222,
+      "mae": 2.478,
+      "rmse": 3.874
+    },
+    {
+      "metric": "end_top_height",
+      "n": 139,
+      "mean_observed": 27.525,
+      "mean_predicted": 22.705,
+      "bias": -4.82,
+      "median_bias": -4.4,
+      "mae": 4.958,
+      "rmse": 5.747
+    },
+    {
+      "metric": "end_volume",
+      "n": 139,
+      "mean_observed": 302.444,
+      "mean_predicted": 248.554,
+      "bias": -53.89,
+      "median_bias": -46.006,
+      "mae": 84.242,
+      "rmse": 112.375
+    }
+  ],
+  "flags": {
+    "above_p99": 1,
+    "above_max": 5,
+    "above_max_becs": [
+      "IDFxx2",
+      "SBPSxc",
+      "SBSmc3",
+      "SBSun",
+      "SBSwk3"
+    ],
+    "above_p99_becs": [
+      "SBSwk1"
+    ]
+  },
+  "excluded_artifacts": {
+    "baseline_backtest.csv": "withheld from data commit: interval_id carries SITE_IDENTIFIER; stays at /tmp/fvsca_baseline/baseline_backtest.csv",
+    "runs/": "per-interval FVS run directories (keyword, tree list, SQLite database, report); site identifiers; stays at /tmp/fvsca_baseline/runs"
+  },
+  "caveats": [
+    "One interval per BEC; a coverage and failure-mode reference, not a province-wide mean.",
+    "The reproduction target is the D6-corrected all-zone baseline on fresh-fvsbc-pyfvs 0.4.1, not W1.4 or D5.",
+    "SITECODE FD,20 and tree age 60 are placeholders; site index is not joined.",
+    "Envelope flags are empirical sample properties, not biological maxima."
+  ]
+}
