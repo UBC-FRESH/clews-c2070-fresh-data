@@ -1,0 +1,102 @@
+{
+  "variant": "bc",
+  "variant_name": "British Columbia",
+  "fvs_variant": "FVSbc",
+  "site_key_kind": "bec",
+  "tree_list_format": "BC TREFMT from canada/bc/blkdat.f: (I4,T1,I7,F6.0,I1,A3,F5.1,F4.1,2F5.1,F5.1,I1,3(I2,I2),2I1,I2,2I3,2I1,F3.0)",
+  "species_scheme": "BC JSP 15-code list plus 7 donor aliases; unresolved source codes stay explicit rather than being silently imputed",
+  "built_utc": "2026-11-15T08:45:00Z",
+  "inputs": {
+    "sites.csv": {
+      "bytes": 8359304,
+      "sha256": "7796f2c8f8b83284c3980333e1563de4bb409f10668f1bb32a5fca2bccf54de9"
+    },
+    "visits.csv": {
+      "bytes": 30574202,
+      "sha256": "bd07dc1189d5feca8c04f3ad589a68f10f62115bb85007a8b2dcf2dcbb61534c"
+    },
+    "trees.csv.gz": {
+      "bytes": 103812857,
+      "sha256": "a0b540f45d6f325792d3e56f36727018514336862077610ea0c34ba5de3afffe"
+    },
+    "intervals.csv.gz": {
+      "bytes": 53638804,
+      "sha256": "b42845c5bab5732e0dc483119005b4fa48400a59b8c2e6892f8a7c92acdd3f9b"
+    },
+    "bc_faib_ground_plots/psp/faib_header.csv.gz": {
+      "bytes": 314277,
+      "sha256": "c385452cc76b1f6bb4d55102cb0226d811e2eab840c83e762702e6395e5bf19d"
+    }
+  },
+  "outputs": {
+    "visits.csv": {
+      "bytes": 5051096,
+      "sha256": "8169df689c085625a744a06a06aa0974a466026f6c93cd00ac485221c6a6f916"
+    },
+    "intervals.csv": {
+      "bytes": 4658304,
+      "sha256": "d125cebeea7a06a397ecc0947bc764f790273b212da2e71dfc8c6662934e6f07"
+    },
+    "tree_survival.csv.gz": {
+      "bytes": 39312661,
+      "sha256": "ad19a21d1e9818b28543b4318c9911c873dd285e5a4161b17aeab0d78443f60d"
+    },
+    "species_crosswalk_fvsbc.csv": {
+      "bytes": 5646,
+      "sha256": "a69c03a40ee7e2b34d707692f198952f938b7421a76c183ee71abe86f426fc3c"
+    }
+  },
+  "rows": {
+    "visits": 24962,
+    "intervals": 17151,
+    "tree_survival": 1814527,
+    "species_crosswalk": 45
+  },
+  "parameters": {
+    "include_unsupported": false,
+    "min_dbh": 0.0,
+    "strict_species": false,
+    "min_interval_years": 2,
+    "max_interval_years": 40,
+    "volume_policy": "source visit volume on single-plot visits; null on multi-plot visits because no defensible allocation exists",
+    "end_status_policy": "all v0 tree statuses are used for the end lookup; a dead endpoint with null DBH remains a known death",
+    "species_policy": "15 BC JSP codes plus 7 donor aliases; unmapped codes stay explicit and consumer species is null"
+  },
+  "stats": {
+    "sites_input": 7341,
+    "sites_missing_bec": 0,
+    "sites_supported": 7341,
+    "sites_dropped_unsupported": 0,
+    "sites_selected": 7341,
+    "visits_input": 23956,
+    "visits_selected": 23956,
+    "visit_rows": 24962,
+    "visit_units": 23949,
+    "multi_plot_visit_units": 509,
+    "trees_input": 3217643,
+    "trees_base": 3205741,
+    "trees_live_base": 2635220,
+    "trees_dropped_status": 0,
+    "trees_dropped_missing_dbh": 181,
+    "trees_dropped_missing_weight": 11721,
+    "trees_dropped_min_dbh": 0,
+    "species_crosswalk_rows": 45,
+    "species_direct": 13,
+    "species_donor": 7,
+    "species_unmapped": 25,
+    "species_unmapped_calibration_rows": 261472,
+    "volume_null_multi_plot_visit_units": 509,
+    "tsa_sites_matched": 7304,
+    "interval_count": 17151,
+    "tree_survival_count": 1814527,
+    "tree_survival_dead": 272292,
+    "tree_survival_known": 1793037,
+    "tree_survival_missing": 21490,
+    "interval_years_min": 2,
+    "interval_years_max": 35
+  },
+  "warnings": [
+    "Volume is null for visits that contain more than one plot; the harmonized v0 volume aggregate cannot be split without per-tree volume, and no allocation is invented.",
+    "25 source species code(s) used in calibration rows have no BC JSP mapping; their consumer 'species' value is null."
+  ]
+}
