@@ -1,7 +1,8 @@
-# TSA24 grade and residue curves
+# TSA24 grade, residue, and biomass curves
 
-Status: compiled from refreshed TSA24 BTC `/TSR` output (log-grades and
-residual-fibre indicator banks). Model output, not field grade.
+Status: compiled from refreshed TSA24 BTC `/TSR` output. Grade and residual
+fibre use the log-grades and residual-fibre banks; AGB uses the biomass-live
+and carbon banks. Model output, not field grade or measured biomass.
 Generated: 2026-11-15.
 
 This note records how the TSA24 grade/residue benchmark was produced, what it
@@ -57,12 +58,34 @@ The compile reads `data/tipsy_curves_tsa24.csv`, which FEMIC derives from
 `data/04_output-tsa24.csv`. It does not read the TIPSY `.taf` database and does
 not apply a nominal site index, species surrogate, or grade-share rescale.
 
+## 2b. Biomass compile
+
+```bash
+python -m femic tipsy run-btc data/03_input-tsa24.csv \
+  --indicator-bank biomass-live --indicator-bank carbon \
+  --run-id tsa24_biomass \
+  --output-csv data/04_output-tsa24_biomass.csv
+
+.venv/bin/python -m workflows.national.bucking.compile_tsa24_biomass_curves \
+  --femic-root /srv/shared-data/gep/ws4/femic/external/femic-tsa24-instance \
+  --out-dir data/derived/national/bucking/tsa24_grade_curves
+```
+
+The biomass compile reads `04_output-tsa24_biomass.csv`, reshapes the
+`Biomass_Live_*_<age>` and `Carbon_Live_*_<age>` families to one row per AU and
+age, checks `Above == wood+bark+foliar+branch` and `Total == Above+roots`, and
+writes `biomass_au_curves.csv`. The BTC biomass family is in oven-dry tonnes
+per hectare; `Biomass_Live_Above` is the aboveground AGB surface. No allometric
+equation is fitted or substituted.
+
 ## 3. Coverage
 
 - AUs: **16** of 16 TSA24 managed-curve AUs in `03_input-tsa24.csv`.
 - Ages: **36** per AU (0–350 by 10 years); **576** AU-age rows.
 - Grades: `Logs_Grade_D/F/H/I/J/U/X/Y`.
 - Residual fibre: `Residual_Chips/Sawdust/Shavings/Trim/Bark`.
+- Biomass: `Biomass_Live_Wood/Bark/Foliar/Branch/Roots/Total/Above`, ODT/ha.
+- Carbon: `Carbon_Live_*`, t C/ha.
 - `Logs_Grade_D` and `Logs_Grade_F` are zero for every AU in this run.
 - `DBHq` and `TPH` are absent because the stand-structure bank was not
   requested.
@@ -115,6 +138,11 @@ that have no managed AU curve. It is a fallback surface, not an AU assignment.
 `au_grade_coverage.csv` records the AU crosswalk, site index, planted density,
 grade coverage, and zero-grade columns.
 
+`biomass_au_curves.csv` (576 rows) carries `au_id`, `stratum_code`,
+`si_level`, `leading_species`, `age`, `agb_odt_ha`, the six live biomass
+components, and the seven live carbon components. It is documented by
+`biomass_curves_manifest.json`.
+
 ## 5. Transformations and limitations
 
 - **No grade rescale.** Grade and residue values are direct BTC `/TSR` output
@@ -127,9 +155,13 @@ grade coverage, and zero-grade columns.
   This is a BTC model result for these stand types and product rules, not a
   missing-column failure.
 - **Residual fibre is mill residue.** BTC `Residual_Chips`, `Sawdust`,
-  `Shavings`, `Trim`, and `Bark` are processing residues. The pilot residue is
-  harvest slash (`taper total - recovered logs`). The two are reported side by
-  side but are not equivalent.
+  `Shavings`, `Trim`, and `Bark` are processing residues. They are not harvest
+  slash and are not used in the AGB-based harvest-slash ledger. The pilot taper
+  residue is `taper total - recovered logs`; the harvest-slash ledger is
+  `Biomass_Live_Above - merchantable log biomass`.
+- **Biomass is model output.** `Biomass_Live_Above` is a stand-level BTC
+  model output in ODT/ha at the AU and age. It is not a plot measurement and
+  is not a per-tree allocation.
 - **No industrial sorts.** The industrial-logs bank was not requested, so the
   industrial-sort share comparison is marked unavailable rather than reusing
   the old nominal-SI table.
@@ -144,7 +176,9 @@ grade coverage, and zero-grade columns.
 | `03_input-tsa24.csv` | `e3c518bdad74a7b7897d44da6d36d93f513bcbfc29495123a7a91b5b24566042` |
 | `04_output-tsa24.csv` | `0b7d020b91e118fce4cc67d2d50680e33fa48afe0b429c0413226d846e1d69f9` |
 | `tipsy_curves_tsa24.csv` | `ccb7bb0ead30381c355646b3b1f1cb7668537b3f7dbe4d8e237c963df1ed540a` |
+| `04_output-tsa24_biomass.csv` | `059bca42a845afc5ca873b56018fd99dd1ad4986d96652f3ae9332ce4afc8808` |
 | `au_table.csv` | `fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099` |
+| `biomass_au_curves.csv` | `3a3c4f6feb47766895c3d3e872d4c12c299251eb188c0c093d515647748111d0` |
 | BTC manifest | `d4a659b391b5b153de5b8af3f0772a8c84c029fd7f5a0dc604c3cd0c26d59587` |
 | `TIPSYbtc.exe` wrapper | `5491f2047407c7a645673906515f64f152c59578f1ea4a54b3194ab40c933426` |
 | `TIPSYbtc_real.exe` | `17a5f35533b1c367df4ee1ff6f52c269b561d5ea4014cf1b592b8b3c24fb72da` |
@@ -172,8 +206,13 @@ age are labelled `no_match` and excluded from share metrics.
 The comparison is reported as:
 
 - TIPSY `Logs_Grade_*` shares as a proxy only, because the pilot has
-  `grade_status=not_assigned`;
-- residue ODT/ha and ODT/m³ with the mill-vs-harvest caveat;
+  `grade_status=not_assigned`; grade shares are explicitly **not validated**;
+- BTC `volume` against pilot bucked volume and observed PSP volume on the same
+  AU/age join;
+- AGB-based harvest slash (`Biomass_Live_Above - merchantable log biomass`)
+  against the pilot taper residue, with the branch/foliage/bark difference
+  stated;
 - no industrial-sort comparison in this pass (no industrial-logs bank);
 - no value comparison, because no same-basis interior grade price vector is
-  available.
+  available;
+- no comparison against BTC `Residual_*` mill residue.

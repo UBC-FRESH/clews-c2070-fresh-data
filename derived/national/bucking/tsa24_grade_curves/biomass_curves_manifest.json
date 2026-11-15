@@ -1,0 +1,75 @@
+{
+  "coverage": {
+    "agb_max_odt_ha": 456.2,
+    "agb_min_odt_ha": 0.0,
+    "age_count": 36,
+    "age_max": 350,
+    "age_min": 0,
+    "age_step": 10,
+    "au_count": 16,
+    "leading_species": [
+      "BL",
+      "FDI",
+      "PLI",
+      "SE",
+      "SX"
+    ],
+    "rows": 576
+  },
+  "created_utc": "2026-11-15T20:26:24+00:00",
+  "inputs": [
+    {
+      "bytes": 2818,
+      "label": "03_input",
+      "path": "femic-tsa24-instance/data/03_input-tsa24.csv",
+      "sha256": "e3c518bdad74a7b7897d44da6d36d93f513bcbfc29495123a7a91b5b24566042"
+    },
+    {
+      "bytes": 89132,
+      "label": "biomass_output",
+      "path": "femic-tsa24-instance/data/04_output-tsa24_biomass.csv",
+      "sha256": "059bca42a845afc5ca873b56018fd99dd1ad4986d96652f3ae9332ce4afc8808"
+    },
+    {
+      "bytes": 2222,
+      "label": "au_table",
+      "path": "femic-tsa24-instance/data/model_input_bundle/au_table.csv",
+      "sha256": "fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099"
+    }
+  ],
+  "limitations": [
+    "AGB is a stand-level BTC model output at the managed AU site index, not a plot measurement.",
+    "Biomass_Live_Above excludes roots; do not add Roots when comparing to harvest slash.",
+    "The biomass run did not include the grade or volume banks; volume is taken from managed_au_curves.csv."
+  ],
+  "outputs": [
+    {
+      "bytes": 109243,
+      "label": "biomass_au_curves",
+      "path": "biomass_au_curves.csv",
+      "rows": 576,
+      "sha256": "3a3c4f6feb47766895c3d3e872d4c12c299251eb188c0c093d515647748111d0"
+    }
+  ],
+  "provenance": {
+    "agb_definition": "Biomass_Live_Above = stem wood + bark + foliage + branch; roots and total are reported separately.",
+    "btc_run_id": "tsa24_biomass",
+    "evidence_tier": "model_output",
+    "indicator_banks": [
+      "biomass-live",
+      "carbon"
+    ],
+    "source_model": "TIPSY 4.7 BTC /TSR via FEMIC",
+    "units": {
+      "agb_odt_ha": "ODT/ha",
+      "biomass_live_*_odt_ha": "ODT/ha",
+      "carbon_*_t_ha": "t C/ha"
+    }
+  },
+  "status": "compiled_from_femic_btc_biomass_live",
+  "transformations": {
+    "additivity_checks": "Above == wood+bark+foliar+branch and Total == Above+roots; the compile fails loudly if either identity breaks.",
+    "age_grid": "0-350 by 10 years, matching the compiled grade/residue table.",
+    "wide_to_long": "One row per managed AU and BTC age column; Biomass_Live_Above is used as AGB. No interpolation, rescaling, or allometric synthesis."
+  }
+}

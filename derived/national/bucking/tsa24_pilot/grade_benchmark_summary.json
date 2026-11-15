@@ -89,29 +89,11 @@
   "n_zero_pilot_logs": 3,
   "n_zero_tipsy_volume": 2,
   "residue_comparison": {
-    "absolute_odt_ha": {
-      "mae": 52.88778136642404,
-      "mean_bias": 51.265832093217185,
-      "mean_ratio": 18.45326780350655,
-      "n": 14,
-      "observed_sum": 50.828350694959376,
-      "predicted_sum": 768.5499999999998,
-      "relative_bias": 14.120498491331468,
-      "rmse": 65.79893969821994
-    },
     "au_curve_n": 14,
-    "note": "TIPSY residual fibre is mill-processing chips/sawdust/shavings/trim/bark.  The pilot residue is harvest slash (taper total - recovered logs).  The two are not equivalent.",
-    "per_m3": {
-      "mae": 0.19027239548405195,
-      "mean_bias": 0.09089626065571658,
-      "mean_ratio": 3.4670657131762472,
-      "n": 14,
-      "observed_sum": 2.0243336508199676,
-      "predicted_sum": 3.2968813,
-      "relative_bias": 0.6286254485097256,
-      "rmse": 0.2158684773986074
-    },
-    "status": "semantic_mismatch_reported"
+    "note": "BTC Residual_Chips/Sawdust/Shavings/Trim/Bark are mill-processing residues. The pilot taper residue is harvest slash (top/stump/unmerchantable). The two are not equivalent, so no ratio or error metric is computed. Harvest slash is reported separately from the biomass-live AGB bank.",
+    "pilot_taper_residue_odt_ha_sum": 50.828350694959376,
+    "pilot_taper_residue_odt_per_m3_mean": 0.14459526077285484,
+    "status": "not_comparable_by_design"
   },
   "sort_share_comparison": {
     "aggregate_distance": null,

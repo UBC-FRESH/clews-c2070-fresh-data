@@ -19,7 +19,9 @@
     },
     "residue_assumptions": {
       "basic_density_odt_m3": 0.45,
+      "basic_density_source": "species-specific defaults in rules/bc_basic_density.csv (FVS-BC NBEL/FIA table; not a BC-local sample)",
       "chip_yield_fraction": 0.9,
+      "harvest_recovery_factor": 0.6,
       "moisture_green_wet_basis": 0.45,
       "moisture_seasoned_wet_basis": 0.3
     },
@@ -195,8 +197,8 @@
     "tolerance_relative": 1e-05,
     "total_taper_m3": 58.15258667098862
   },
-  "created_utc": "2026-11-15T19:34:51+00:00",
-  "elapsed_seconds": 53.0715859758202,
+  "created_utc": "2026-11-15T20:36:12+00:00",
+  "elapsed_seconds": 52.47577871894464,
   "inputs": [
     {
       "bytes": 314277,
@@ -265,6 +267,12 @@
       "sha256": "0b7d020b91e118fce4cc67d2d50680e33fa48afe0b429c0413226d846e1d69f9"
     },
     {
+      "bytes": 89132,
+      "label": "biomass_output",
+      "path": "femic-tsa24-instance/data/04_output-tsa24_biomass.csv",
+      "sha256": "059bca42a845afc5ca873b56018fd99dd1ad4986d96652f3ae9332ce4afc8808"
+    },
+    {
       "bytes": 2222,
       "label": "au_table",
       "path": "femic-tsa24-instance/data/model_input_bundle/au_table.csv",
@@ -275,6 +283,24 @@
       "label": "tsa24_grade_curves",
       "path": "tsa24_grade_curves/managed_au_curves.csv",
       "sha256": "6fe02e124b842040fe463b2e94bf6a549db7203e74e403db787e1b616b72791c"
+    },
+    {
+      "bytes": 109243,
+      "label": "tsa24_biomass_curves",
+      "path": "tsa24_grade_curves/biomass_au_curves.csv",
+      "sha256": "3a3c4f6feb47766895c3d3e872d4c12c299251eb188c0c093d515647748111d0"
+    },
+    {
+      "bytes": 2473,
+      "label": "tsa24_biomass_manifest",
+      "path": "tsa24_grade_curves/biomass_curves_manifest.json",
+      "sha256": "4e54086307416291c37d0373e1295b560d7bedbd702da00764550030b6477853"
+    },
+    {
+      "bytes": 3633,
+      "label": "basic_density",
+      "path": "workflows/national/bucking/rules/bc_basic_density.csv",
+      "sha256": "6584fb93a50cb6c1bd080515db780dd635aa9859e25b6867afed07a00c3198b6"
     },
     {
       "bytes": 505,
@@ -309,21 +335,32 @@
   ],
   "notes": [
     "Pilot, not the pre-registered three-way validation gate.",
-    "No official grade assigned.",
-    "Grade/residue benchmark comes from refreshed TSA24 BTC /TSR output.",
-    "Logs_Grade_D and Logs_Grade_F are zero for every TSA24 AU in this run.",
-    "TIPSY residual fibre is mill residue, not harvest slash."
+    "No official grade assigned; grade shares are not validated.",
+    "Merchantable volume is benchmarked against the compiled BTC volume curve.",
+    "Harvest slash is AGB - merchantable log biomass from the BTC biomass-live bank.",
+    "BTC Residual_* is mill-processing residue and is not used as harvest slash.",
+    "Logs_Grade_D and Logs_Grade_F are zero for every TSA24 AU in this run."
   ],
   "outputs": [
+    {
+      "bytes": 4614,
+      "path": "HARVEST_RESIDUE.md",
+      "sha256": "b5ff72f0023859f92a7298d7f6796ce8905dedf4728d2d1e8a1e544b184d7583"
+    },
     {
       "bytes": 8185,
       "path": "TSA24_GRADE_CURVES.md",
       "sha256": "0e54e33603773cffefe2a12bd78f1ffa7f40e6b44e11b451e2d2502059dff6bb"
     },
     {
-      "bytes": 25736,
+      "bytes": 36168,
       "path": "VALIDATION_REPORT.md",
-      "sha256": "6f07a944110505508cebe82bcb6001e9b30fa482b17f28c0a3308958a62c799e"
+      "sha256": "106326812e8e595479b5047707c7d7ef752ee7aba67f4fa37c3b5670424a5c4b"
+    },
+    {
+      "bytes": 3502,
+      "path": "btc_volume_benchmark.csv",
+      "sha256": "495bf7b2c675954af8523c6de8c366a9cdb8fefe44f9b0c4edb078064c9b7250"
     },
     {
       "bytes": 38706,
@@ -336,9 +373,19 @@
       "sha256": "c6671e4066bfe4402dc359d76f6d0f502f76d30e0ad6c4622e5e5f2aab7c8eec"
     },
     {
-      "bytes": 4636,
+      "bytes": 4248,
       "path": "grade_benchmark_summary.json",
-      "sha256": "778d8ec51eaa47f921b2c2bc23d474e96e0132d91f6c7da4c4e4ec8644a8e607"
+      "sha256": "a21118f53e3597de73db2906e926239ee58ae2cbb8625ef9dfb78b276aa7b85a"
+    },
+    {
+      "bytes": 9416,
+      "path": "harvest_residue_ledger.csv",
+      "sha256": "2624e8b2ed566be2588fa006705561cecc154ab05f4d895f43aac5bcb654cb11"
+    },
+    {
+      "bytes": 8476,
+      "path": "harvest_residue_summary.json",
+      "sha256": "1f37270431656eb8b589dca1d7baacc4589dd24ec961d3136b2f989afe7663ad"
     },
     {
       "bytes": 284,
@@ -346,9 +393,9 @@
       "sha256": "0cce786d79bffec7749338004aa723fd5b66dada054c533514284fe42a9cc60d"
     },
     {
-      "bytes": 447,
+      "bytes": 503,
       "path": "pilot_row.json",
-      "sha256": "2a7afc8ebdabded7fc5e886ecd5ef17bd82a9cbe7ea224546c3d04fc5a27b44b"
+      "sha256": "11f1ba80ea53a6469cb2146765c1d13c0ddf89fcb9e2115f4b08a8e1504a4520"
     },
     {
       "bytes": 7913,
@@ -401,9 +448,9 @@
       "sha256": "da3ce78ec49cd9ea3a311d79cb2001f513ede97264ae12332a3e0221db775ab3"
     },
     {
-      "bytes": 40403,
+      "bytes": 53803,
       "path": "validation_summary.json",
-      "sha256": "1741e383d48d4eb767ae922cbaabcbad2b29bec27ed1c255e6b0094965b91db8"
+      "sha256": "fa038f7d8d23ca07ec8c2e449a769ac9fad0e56a383893bdfbb15e0b96147e58"
     },
     {
       "bytes": 2140,

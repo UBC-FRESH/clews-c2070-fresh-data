@@ -1,11 +1,140 @@
 {
   "assumptions": {
     "basic_density_odt_m3": 0.45,
+    "basic_density_source": "species-specific defaults in rules/bc_basic_density.csv (FVS-BC NBEL/FIA table; not a BC-local sample)",
     "chip_yield_fraction": 0.9,
+    "harvest_recovery_factor": 0.6,
     "moisture_green_wet_basis": 0.45,
     "moisture_seasoned_wet_basis": 0.3
   },
   "benchmarks": {
+    "btc_volume": {
+      "bucked_ratio_est_vs_btc": {
+        "mae": 126.86457858255464,
+        "mean_bias_predicted_minus_observed": 28.116744322454014,
+        "mean_observed": 201.09492234421262,
+        "mean_predicted": 229.2116666666667,
+        "mean_ratio_predicted_observed": 1.2426434480109403,
+        "n": 12,
+        "relative_bias": 0.13981827086775866,
+        "rmse": 151.07771887858001
+      },
+      "bucked_sampled_vs_btc": {
+        "mae": 196.27317397854878,
+        "mean_bias_predicted_minus_observed": 187.41005783551736,
+        "mean_observed": 41.8016088311493,
+        "mean_predicted": 229.2116666666667,
+        "mean_ratio_predicted_observed": 7.428060716354755,
+        "n": 12,
+        "relative_bias": 4.483321648995123,
+        "rmse": 231.70917868550555
+      },
+      "caveat": "The comparison is a benchmark, not a validation gate. The FAIB stand age and the managed AU age origin are not guaranteed to be the same clock; young plots can show near-zero BTC volume and are reported as unmatched by volume rather than silently clipped.",
+      "join_basis": "FAIB plot -> BEC + leading species -> managed FEMIC AU stratum (including combined-species strata) -> FEMIC AU site-index class -> managed AU; BTC /TSR volume interpolated at FAIB stand age. This is the same benchmark join as the grade table, not an operational AU assignment.",
+      "match_tier_counts": {
+        "au_curve": 12,
+        "no_au_match": 6,
+        "zero_btc_volume": 2
+      },
+      "matched_plots": [
+        "4035967-PSP1",
+        "4036113-PSP1",
+        "4037163-PSP1",
+        "4038213-PSP1",
+        "4038415-PSP2",
+        "4038551-PSP2",
+        "4038570-PSP2",
+        "4045088-PSP1",
+        "4045109-PSP1",
+        "4045124-PSP2",
+        "4045144-PSP1",
+        "4045365-PSP2"
+      ],
+      "n_au_matched": 14,
+      "n_matched": 12,
+      "n_no_au_match": 6,
+      "n_plots_total": 20,
+      "n_positive_volume": 12,
+      "n_unmatched": 8,
+      "n_zero_btc_volume": 2,
+      "observed_all_vs_btc": {
+        "mae": 122.7234922243013,
+        "mean_bias_predicted_minus_observed": -2.055754996454174,
+        "mean_observed": 231.26742166312087,
+        "mean_predicted": 229.2116666666667,
+        "mean_ratio_predicted_observed": 2.479154916404266,
+        "n": 12,
+        "relative_bias": -0.008889081659969903,
+        "rmse": 148.2733720630735
+      },
+      "status": "reported_with_join_assumptions",
+      "unmatched_plots": [
+        {
+          "bec_zone": "ICH",
+          "leading_species": "SW",
+          "match_reason": "no managed FEMIC AU for BEC + leading species + SI class",
+          "match_tier": "no_au_match",
+          "plot_id": "4035884-PSP1",
+          "stand_age": 169.0
+        },
+        {
+          "bec_zone": "ICH",
+          "leading_species": "HW",
+          "match_reason": "no managed FEMIC AU for BEC + leading species + SI class",
+          "match_tier": "no_au_match",
+          "plot_id": "4036956-PSP1",
+          "stand_age": 89.0
+        },
+        {
+          "bec_zone": "SBS",
+          "leading_species": "SW",
+          "match_reason": "BTC volume is zero or non-finite at the plot age",
+          "match_tier": "zero_btc_volume",
+          "plot_id": "4037899-PSP2",
+          "stand_age": 14.0
+        },
+        {
+          "bec_zone": "SBS",
+          "leading_species": "EP",
+          "match_reason": "no managed FEMIC AU for BEC + leading species + SI class",
+          "match_tier": "no_au_match",
+          "plot_id": "4038237-PSP1",
+          "stand_age": 69.0
+        },
+        {
+          "bec_zone": "SBS",
+          "leading_species": "SW",
+          "match_reason": "no managed FEMIC AU for BEC + leading species + SI class",
+          "match_tier": "no_au_match",
+          "plot_id": "4038318-PSP1",
+          "stand_age": null
+        },
+        {
+          "bec_zone": "SBS",
+          "leading_species": "BL",
+          "match_reason": "BTC volume is zero or non-finite at the plot age",
+          "match_tier": "zero_btc_volume",
+          "plot_id": "4038614-PSP1",
+          "stand_age": 6.0
+        },
+        {
+          "bec_zone": "SBPS",
+          "leading_species": "PL",
+          "match_reason": "no managed FEMIC AU for BEC + leading species + SI class",
+          "match_tier": "no_au_match",
+          "plot_id": "4040936-PSP1",
+          "stand_age": 142.0
+        },
+        {
+          "bec_zone": "ESSF",
+          "leading_species": "SE",
+          "match_reason": "no managed FEMIC AU for BEC + leading species + SI class",
+          "match_tier": "no_au_match",
+          "plot_id": "4045366-PSP1",
+          "stand_age": 249.0
+        }
+      ]
+    },
     "rsyc": {
       "bucked_plot_comparison": {
         "mae": 119.17924694769607,
@@ -655,29 +784,11 @@
       "n_zero_pilot_logs": 3,
       "n_zero_tipsy_volume": 2,
       "residue_comparison": {
-        "absolute_odt_ha": {
-          "mae": 52.88778136642404,
-          "mean_bias": 51.265832093217185,
-          "mean_ratio": 18.45326780350655,
-          "n": 14,
-          "observed_sum": 50.828350694959376,
-          "predicted_sum": 768.5499999999998,
-          "relative_bias": 14.120498491331468,
-          "rmse": 65.79893969821994
-        },
         "au_curve_n": 14,
-        "note": "TIPSY residual fibre is mill-processing chips/sawdust/shavings/trim/bark.  The pilot residue is harvest slash (taper total - recovered logs).  The two are not equivalent.",
-        "per_m3": {
-          "mae": 0.19027239548405195,
-          "mean_bias": 0.09089626065571658,
-          "mean_ratio": 3.4670657131762472,
-          "n": 14,
-          "observed_sum": 2.0243336508199676,
-          "predicted_sum": 3.2968813,
-          "relative_bias": 0.6286254485097256,
-          "rmse": 0.2158684773986074
-        },
-        "status": "semantic_mismatch_reported"
+        "note": "BTC Residual_Chips/Sawdust/Shavings/Trim/Bark are mill-processing residues. The pilot taper residue is harvest slash (top/stump/unmerchantable). The two are not equivalent, so no ratio or error metric is computed. Harvest slash is reported separately from the biomass-live AGB bank.",
+        "pilot_taper_residue_odt_ha_sum": 50.828350694959376,
+        "pilot_taper_residue_odt_per_m3_mean": 0.14459526077285484,
+        "status": "not_comparable_by_design"
       },
       "sort_share_comparison": {
         "aggregate_distance": null,
@@ -768,8 +879,266 @@
     "tolerance_relative": 1e-05,
     "total_taper_m3": 58.15258667098862
   },
-  "created_utc": "2026-11-15T19:34:50+00:00",
-  "elapsed_seconds": 53.0715859758202,
+  "created_utc": "2026-11-15T20:36:11+00:00",
+  "elapsed_seconds": 52.47577871894464,
+  "harvest_residue": {
+    "assumptions": {
+      "agb_source": "BTC biomass-live bank, Biomass_Live_Above at the matched managed AU and FAIB stand age, ODT/ha. The stand-level value is reported unscaled as agb_odt_ha_unscaled and volume-scaled for the ledger.",
+      "allocation": "No per-tree AGB is invented. The stand-level AGB is applied to the plot on a per-hectare basis and scaled by observed_merchantable_all / BTC_volume so the AGB and the pilot log volume are on the same plot productivity basis. Merchantable log biomass is expanded from sampled trees by PHF_TREE and then by observed all-tree/sampled-tree merchantable volume. The unscaled AGB is retained for sensitivity.",
+      "basic_density": "Species-specific defaults from rules/bc_basic_density.csv (FVS-BC NBEL/FIA table; not a BC-local sample).",
+      "chip_yield_fraction": 0.9,
+      "definition": "harvest_residue_odt = AGB_ODT - merchantable_log_biomass_ODT; merchantable_log_biomass_ODT = sum(log_volume_m3 * basic_density_odt_m3)",
+      "mill_residue_not_used": "BTC Residual_Chips/Sawdust/Shavings/Trim/Bark are mill-processing residues and are not harvest slash; they are deliberately excluded.",
+      "moisture_green_wet_basis": 0.45,
+      "moisture_seasoned_wet_basis": 0.3,
+      "recovery_factor": 0.6,
+      "volume_ratio_screen": {
+        "max": 2.5,
+        "min": 0.4,
+        "note": "Plots outside the observed/BTC volume band are kept in the ledger output but excluded from the primary summary because the AU/age join is not mass-balance defensible."
+      }
+    },
+    "caveat": "AGB is a stand-level model output, not a plot measurement. The difference between AGB-based slash and taper residue is expected: AGB includes bark, branches, and foliage, while the taper ledger only covers top, stump, and unmerchantable stem sections.",
+    "excluded_plots": [
+      {
+        "bec_zone": "ICH",
+        "leading_species": "SW",
+        "plot_id": "4035884-PSP1",
+        "stand_age": 169.0,
+        "status": "no_au_match",
+        "status_reason": "no managed FEMIC AU for BEC + leading species + SI class"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "SW",
+        "plot_id": "4035967-PSP1",
+        "stand_age": 40.0,
+        "status": "volume_ratio_out_of_range",
+        "status_reason": "observed/BTC volume ratio 0.068 outside 0.40-2.50"
+      },
+      {
+        "bec_zone": "ICH",
+        "leading_species": "HW",
+        "plot_id": "4036956-PSP1",
+        "stand_age": 89.0,
+        "status": "no_au_match",
+        "status_reason": "no managed FEMIC AU for BEC + leading species + SI class"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "SW",
+        "plot_id": "4037899-PSP2",
+        "stand_age": 14.0,
+        "status": "zero_btc_volume",
+        "status_reason": "BTC volume is zero or non-finite at the plot age"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "EP",
+        "plot_id": "4038237-PSP1",
+        "stand_age": 69.0,
+        "status": "no_au_match",
+        "status_reason": "no managed FEMIC AU for BEC + leading species + SI class"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "SW",
+        "plot_id": "4038318-PSP1",
+        "stand_age": null,
+        "status": "no_au_match",
+        "status_reason": "no managed FEMIC AU for BEC + leading species + SI class"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "AT",
+        "plot_id": "4038415-PSP2",
+        "stand_age": 16.0,
+        "status": "volume_ratio_out_of_range",
+        "status_reason": "observed/BTC volume ratio 2794.671 outside 0.40-2.50"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "BL",
+        "plot_id": "4038614-PSP1",
+        "stand_age": 6.0,
+        "status": "zero_btc_volume",
+        "status_reason": "BTC volume is zero or non-finite at the plot age"
+      },
+      {
+        "bec_zone": "SBPS",
+        "leading_species": "PL",
+        "plot_id": "4040936-PSP1",
+        "stand_age": 142.0,
+        "status": "no_au_match",
+        "status_reason": "no managed FEMIC AU for BEC + leading species + SI class"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "SW",
+        "plot_id": "4045109-PSP1",
+        "stand_age": 50.0,
+        "status": "volume_ratio_out_of_range",
+        "status_reason": "observed/BTC volume ratio 4.599 outside 0.40-2.50"
+      },
+      {
+        "bec_zone": "SBS",
+        "leading_species": "PL",
+        "plot_id": "4045124-PSP2",
+        "stand_age": 57.0,
+        "status": "volume_ratio_out_of_range",
+        "status_reason": "observed/BTC volume ratio 0.215 outside 0.40-2.50"
+      },
+      {
+        "bec_zone": "ESSF",
+        "leading_species": "SE",
+        "plot_id": "4045366-PSP1",
+        "stand_age": 249.0,
+        "status": "no_au_match",
+        "status_reason": "no managed FEMIC AU for BEC + leading species + SI class"
+      }
+    ],
+    "n_plots_excluded": 12,
+    "n_plots_primary": 8,
+    "n_plots_total": 20,
+    "per_ha": {
+      "agb_odt_ha": {
+        "max": 439.6251254401473,
+        "mean": 200.92145411401336,
+        "median": 155.90967384940154,
+        "min": 101.69223475536973,
+        "n": 8
+      },
+      "agb_odt_ha_unscaled": {
+        "max": 293.14,
+        "mean": 211.62124999999997,
+        "median": 212.495,
+        "min": 126.82000000000001,
+        "n": 8
+      },
+      "branch_foliage_bark_odt_ha": {
+        "max": 142.57195623562632,
+        "mean": 46.90853224952497,
+        "median": 31.38958011330361,
+        "min": 20.962621415610336,
+        "n": 8
+      },
+      "green_tonnes_30_ha": {
+        "max": 396.48257989468385,
+        "mean": 160.92561891803143,
+        "median": 119.07356555794506,
+        "min": 82.65493690875537,
+        "n": 8
+      },
+      "green_tonnes_45_ha": {
+        "max": 504.6141925932339,
+        "mean": 204.8144240774945,
+        "median": 151.5481743464755,
+        "min": 105.197192429325,
+        "n": 8
+      },
+      "harvest_residue_odt_ha": {
+        "max": 277.5378059262787,
+        "mean": 112.647933242622,
+        "median": 83.35149589056152,
+        "min": 57.858455836128755,
+        "n": 8
+      },
+      "merchantable_log_odt_ha": {
+        "max": 166.19870622010632,
+        "mean": 88.27352087139133,
+        "median": 76.38197511643929,
+        "min": 35.224926476376865,
+        "n": 8
+      },
+      "non_taper_residue_odt_ha": {
+        "max": 230.81597497692763,
+        "mean": 91.63984039306102,
+        "median": 57.5718007935146,
+        "min": 39.72608928297486,
+        "n": 8
+      },
+      "recoverable_chip_green_tonnes_ha": {
+        "max": 272.4916640003463,
+        "mean": 110.59978900184706,
+        "median": 81.83601414709678,
+        "min": 56.80648391183551,
+        "n": 8
+      },
+      "recoverable_green_tonnes_45_ha": {
+        "max": 302.7685155559403,
+        "mean": 122.88865444649673,
+        "median": 90.9289046078853,
+        "min": 63.118315457595,
+        "n": 8
+      },
+      "recoverable_residue_odt_ha": {
+        "max": 166.5226835557672,
+        "mean": 67.5887599455732,
+        "median": 50.01089753433692,
+        "min": 34.71507350167725,
+        "n": 8
+      },
+      "taper_residue_odt_ha": {
+        "max": 46.721830949351045,
+        "mean": 21.008092849560978,
+        "median": 18.796507737556407,
+        "min": 6.551471120765416,
+        "n": 8
+      },
+      "unmerchantable_wood_odt_ha": {
+        "max": 134.78631315698496,
+        "mean": 65.72980023742448,
+        "median": 52.426555595914294,
+        "min": 36.930747185188736,
+        "n": 8
+      }
+    },
+    "per_m3": {
+      "harvest_residue_odt_per_m3_log": {
+        "max": 0.7778601393092938,
+        "mean": 0.4832008135958597,
+        "median": 0.4033567902914936,
+        "min": 0.32456971381769145,
+        "n": 8
+      },
+      "taper_residue_odt_per_m3_taper_total": {
+        "max": 0.138695439706356,
+        "mean": 0.08158288591318999,
+        "median": 0.09212779429212221,
+        "min": 0.021452285126337674,
+        "n": 8
+      }
+    },
+    "primary_plot_ids": [
+      "4036113-PSP1",
+      "4037163-PSP1",
+      "4038213-PSP1",
+      "4038551-PSP2",
+      "4038570-PSP2",
+      "4045088-PSP1",
+      "4045144-PSP1",
+      "4045365-PSP2"
+    ],
+    "ratio_harvest_to_taper_residue": 5.362120876430537,
+    "status": "reported_with_mass_balance_screen",
+    "status_counts": {
+      "no_au_match": 6,
+      "ok": 8,
+      "volume_ratio_out_of_range": 4,
+      "zero_btc_volume": 2
+    },
+    "totals_over_primary_plot_ha": {
+      "agb_odt": 1607.3716329121069,
+      "harvest_residue_odt": 901.183465940976,
+      "merchantable_log_odt": 706.1881669711306,
+      "non_taper_residue_odt": 733.1187231444882,
+      "recoverable_chip_green_tonnes": 884.7983120147765,
+      "recoverable_green_tonnes_45": 983.1092355719738,
+      "recoverable_residue_odt": 540.7100795645856,
+      "sample_hectares": 8,
+      "taper_residue_odt": 168.06474279648782
+    }
+  },
   "pilot": "tsa24_bucking_phase0",
   "population": {
     "dropped": {
