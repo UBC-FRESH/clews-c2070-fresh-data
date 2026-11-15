@@ -1,0 +1,624 @@
+{
+  "assumptions": {
+    "basic_density_odt_m3": 0.45,
+    "chip_yield_fraction": 0.9,
+    "moisture_green_wet_basis": 0.45,
+    "moisture_seasoned_wet_basis": 0.3
+  },
+  "benchmarks": {
+    "rsyc": {
+      "bucked_plot_comparison": {
+        "mae": 119.17924694769607,
+        "mean_bias": 82.01239073852551,
+        "mean_ratio": 1.4163428481991696,
+        "n": 13,
+        "n_valid": 13,
+        "observed_sum": 2376.5554297251538,
+        "predicted_sum": 3442.716509325986,
+        "relative_bias": 0.4486161215790082,
+        "rmse": 155.0695240541975
+      },
+      "caveat": "RSYC is a stand-level remote-sensing yield product. Its volume response is total volume, not merchantable volume, and it has no tree lists, diameter distribution, grade, or residue. This is a coarse sanity check, not a bucking calibration.",
+      "curve_join": "TSA24 centroid -> RSYC tile and ecodistrict; volume curves at ages 20-140",
+      "n_curve_rows": 130,
+      "n_plot_matches": 13,
+      "next_step": "If the plot-level ecodistrict join is sparse, join all TSA24 VRI polygons to RSYC tiles/ecodistricts and compare area-weighted curves rather than using a centroid-only check.",
+      "plot_comparison": {
+        "mae": 115.12521646284311,
+        "mean_bias": 44.15331840262061,
+        "mean_ratio": 13.668011825448275,
+        "n": 13,
+        "n_valid": 13,
+        "observed_sum": 2868.7233700919182,
+        "predicted_sum": 3442.716509325986,
+        "relative_bias": 0.20008661177242626,
+        "rmse": 143.23654001158957
+      },
+      "plot_join": "sample plot coordinates -> RSYC ecodistrict; plot-level volume at stand age",
+      "plot_join_error": null,
+      "species_curves": [
+        "PICE.ENG",
+        "PICE.ENG",
+        "PICE.GLA",
+        "PICE.GLA",
+        "PINU.CON",
+        "PINU.CON",
+        "POPU.TRE",
+        "POPU.TRE",
+        "PSEU.MEN",
+        "TSUG.HET"
+      ],
+      "status": "reported_with_join_assumptions",
+      "tsa_boundary": "tsa24",
+      "tsa_centroid_ecodistrict": "Montane Cordillera/Northern Montane Cordillera/Fraser Basin/Nechako Lowland",
+      "tsa_centroid_tile": "J4"
+    },
+    "tipsy": {
+      "bucked_vs_tipsy": {
+        "mae": 120.74499565061659,
+        "mean_bias": -14.060403575824187,
+        "mean_ratio": 1.22930213877878,
+        "n": 11,
+        "n_valid": 11,
+        "observed_sum": 2126.7944393340663,
+        "predicted_sum": 1972.13,
+        "relative_bias": -0.07272185617642202,
+        "rmse": 144.48947093137804
+      },
+      "caveat": "The TSA24 TIPSY instance has no grade, residue, or value columns. No grade/residue benchmark is possible from this instance. The sort and price profile is a placeholder. TIPSY Yield is treated as m3/ha.",
+      "coverage": 0.55,
+      "grade_residue_value_inspection": {
+        "grade_columns": [],
+        "has_grade_or_residue_or_value": false,
+        "n_columns": 217,
+        "note": "The TSA24 instance exposes only conifer/deciduous merchantable volume, height, gross volume, and crown cover by age. It has no grade, residue, or value columns.",
+        "residue_columns": [],
+        "status": "inspected",
+        "value_columns": []
+      },
+      "join_basis": "BEC + leading species -> stratum_code; within-stratum PSP site-index tertiles -> L/M/H; au_table managed source AU (falling back to unmanaged/source AU) -> TIPSY AU. Not the FEMIC AU assignment.",
+      "n_matched_plots": 11,
+      "n_plots_in_sample": 20,
+      "observed_all_vs_tipsy": {
+        "mae": 128.2211113720496,
+        "mean_bias": -47.087272638718126,
+        "mean_ratio": 2.15357403067765,
+        "n": 11,
+        "n_valid": 11,
+        "observed_sum": 2490.0899990258995,
+        "predicted_sum": 1972.13,
+        "relative_bias": -0.208008545566032,
+        "rmse": 150.37589449494584
+      },
+      "status": "reported_with_join_assumptions",
+      "tipsy_au_available": 16,
+      "tipsy_au_total": 27
+    },
+    "vdyp": {
+      "bucked_vs_vdyp": {
+        "mae": 112.38706178537463,
+        "mean_bias": -42.11080389213007,
+        "mean_ratio": 0.8362076428376748,
+        "n": 15,
+        "n_valid": 15,
+        "observed_sum": 2713.79482655294,
+        "predicted_sum": 2082.132768170989,
+        "relative_bias": -0.23275969583311784,
+        "rmse": 124.40486089076937
+      },
+      "caveat": "VDYP smooth volume units are assumed m3/ha; the curve may represent gross or total volume while VOL_MER is merchantable. The comparison is indicative, not a gate.",
+      "coverage": 0.75,
+      "input": "vdyp_curves_smooth-tsa24.feather",
+      "join_basis": "BEC + leading supported species -> VDYP stratum_code; within-stratum PSP site-index tertiles -> L/M/H. This is a benchmark stratification, not the FEMIC AU SI-level mapping.",
+      "n_matched_plots": 15,
+      "n_plots_in_sample": 20,
+      "observed_all_vs_vdyp": {
+        "mae": 122.45356249922015,
+        "mean_bias": -73.83640226277716,
+        "mean_ratio": 3.0993511470755055,
+        "n": 15,
+        "n_valid": 15,
+        "observed_sum": 3189.6788021126467,
+        "predicted_sum": 2082.132768170989,
+        "relative_bias": -0.3472280761335865,
+        "rmse": 135.8270819938111
+      },
+      "status": "reported_with_join_assumptions"
+    }
+  },
+  "conservation": {
+    "bucker_internal_check": {
+      "max_absolute_balance_m3": 1.1347101298991857e-05,
+      "max_relative_balance": 7.742851523831378e-05,
+      "n_trees": 300,
+      "note": "The reference bucker returns the full stem as residue when no log is feasible; the ledger independently sets residue = taper total - recovered.",
+      "pass": true
+    },
+    "bucker_tolerance_absolute_m3": 1e-06,
+    "bucker_tolerance_relative": 0.0001,
+    "max_absolute_balance_m3": 4.440892098500626e-16,
+    "max_relative_balance": 1.733487552684518e-16,
+    "n_trees": 300,
+    "n_trees_with_logs": 83,
+    "n_trees_without_logs": 217,
+    "no_log_trees": 217,
+    "no_log_trees_with_bucker_residue_equal_total": 217,
+    "pass": true,
+    "recovered_log_m3": 47.86407840978886,
+    "recovered_plus_residue_m3": 58.15258667098862,
+    "residue_m3": 10.288508261199752,
+    "residue_volume_share": 0.17692262460153851,
+    "tolerance_absolute_m3": 1e-07,
+    "tolerance_relative": 1e-05,
+    "total_taper_m3": 58.15258667098862
+  },
+  "created_utc": "2026-11-15T18:15:22+00:00",
+  "elapsed_seconds": 33.929779414087534,
+  "pilot": "tsa24_bucking_phase0",
+  "population": {
+    "dropped": {
+      "dead": 28704,
+      "invalid_dbh": 0,
+      "invalid_expansion": 0,
+      "missing_bec": 0,
+      "missing_species": 0,
+      "short_height": 1
+    },
+    "input_sites": 7341,
+    "latest_visit_only": true,
+    "live_valid_trees": 155903,
+    "plots_with_live_trees": 1318,
+    "selected_plots": 1318,
+    "selected_sites": 558,
+    "selected_tree_rows": 184907,
+    "species_crosswalk": "bc_psp_to_group.csv",
+    "tsa_name": "Prince George"
+  },
+  "psp_volume": {
+    "bucked_log_m3ha_sum": 760.5325141972719,
+    "mae_all_m3ha": 34.97605817251871,
+    "mae_m3ha": 5.759737619176738,
+    "mean_bias_all_m3ha": -34.97605817251871,
+    "mean_bias_m3ha": -5.759737619176738,
+    "mean_ratio_bucked_observed": 0.702253376946591,
+    "median_ratio_bucked_observed": 0.8320912857999874,
+    "n_plots": 20,
+    "n_plots_observed_positive": 20,
+    "note": "Primary comparison is paired sampled trees: observed VOL_MER*PHF_TREE versus bucked log volume*PHF_TREE. The *_all columns use all live supported trees in each selected plot on the observed side and a ratio-expanded bucked estimate; that is a secondary estimate.",
+    "observed_all_m3ha_sum": 4409.224489095942,
+    "observed_merchantable_m3ha_sum": 875.7272665808066,
+    "relative_bias": -0.1315418130501996,
+    "rmse_m3ha": 6.506548175511688
+  },
+  "residue": {
+    "assumptions": {
+      "basic_density_odt_m3": 0.45,
+      "basic_density_source": "default assumption; no species-specific BC table applied",
+      "chip_yield_fraction": 0.9,
+      "moisture_green_wet_basis": 0.45,
+      "moisture_seasoned_wet_basis": 0.3
+    },
+    "chip_green_tonnes_45": 7.576083355974362,
+    "green_tonnes_30": 6.614041025056984,
+    "green_tonnes_45": 8.41787039552707,
+    "mean_chip_green_tonnes_ha": 6.568955455271232,
+    "mean_green_tonnes_30_ha": 5.734802381585998,
+    "mean_green_tonnes_45_ha": 7.298839394745815,
+    "mean_residue_m3ha": 8.920803704689328,
+    "mean_residue_odt_ha": 4.014361667110198,
+    "n_trees": 300,
+    "residue_odt": 4.629828717539889,
+    "residue_volume_m3": 10.288508261199752
+  },
+  "sample": {
+    "max_plots": 20,
+    "max_trees_per_plot": 15,
+    "method": "stratified plots by BEC zone and supported leading species; up to max_trees_per_plot trees per plot, sampled across species and DBH",
+    "n_plots": 20,
+    "n_trees": 300,
+    "seed": 20261115,
+    "strata": [
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 593,
+        "leading_species": "SW",
+        "n_sampled_trees": 90,
+        "quota": 6,
+        "selected_plots": 6
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 317,
+        "leading_species": "BL",
+        "n_sampled_trees": 45,
+        "quota": 3,
+        "selected_plots": 3
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 145,
+        "leading_species": "PL",
+        "n_sampled_trees": 30,
+        "quota": 2,
+        "selected_plots": 2
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 134,
+        "leading_species": "AT",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 37,
+        "leading_species": "FD",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 35,
+        "leading_species": "EP",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "ESSF",
+        "candidate_plots": 33,
+        "leading_species": "BL",
+        "n_sampled_trees": 30,
+        "quota": 2,
+        "selected_plots": 2
+      },
+      {
+        "bec_zone": "ESSF",
+        "candidate_plots": 4,
+        "leading_species": "SE",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "ICH",
+        "candidate_plots": 5,
+        "leading_species": "HW",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "ICH",
+        "candidate_plots": 4,
+        "leading_species": "SW",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "SBPS",
+        "candidate_plots": 3,
+        "leading_species": "PL",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      }
+    ]
+  },
+  "skipped": [],
+  "sorts": {
+    "by_market_group": [
+      {
+        "n_logs": 75,
+        "species_market_group": "SPF",
+        "value_cad": 3584.411948081087,
+        "volume_m3": 31.453246297657834
+      },
+      {
+        "n_logs": 25,
+        "species_market_group": "Hem-Bal",
+        "value_cad": 967.2576675842532,
+        "volume_m3": 9.206016439945373
+      },
+      {
+        "n_logs": 11,
+        "species_market_group": "Df-Larch",
+        "value_cad": 584.2819640042798,
+        "volume_m3": 4.557937155817768
+      },
+      {
+        "n_logs": 22,
+        "species_market_group": "Deciduous",
+        "value_cad": 156.11056325799223,
+        "volume_m3": 2.5285157638158764
+      },
+      {
+        "n_logs": 1,
+        "species_market_group": "Cedar",
+        "value_cad": 22.72564848998622,
+        "volume_m3": 0.11836275255201156
+      }
+    ],
+    "by_product": [
+      {
+        "n_logs": 111,
+        "product": "sawlog",
+        "value_cad": 5158.677228159606,
+        "volume_m3": 45.25634057840215
+      },
+      {
+        "n_logs": 22,
+        "product": "other",
+        "value_cad": 156.11056325799223,
+        "volume_m3": 2.5285157638158764
+      },
+      {
+        "n_logs": 1,
+        "product": "pulpwood",
+        "value_cad": 0.0,
+        "volume_m3": 0.07922206757083694
+      }
+    ],
+    "by_sort": [
+      {
+        "n_logs": 15,
+        "priced_volume_m3": 7.160848494016516,
+        "product": "sawlog",
+        "sort_code": "D125L63",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 816.0502943781221,
+        "value_per_m3_priced": 113.95999999999998,
+        "volume_m3": 7.160848494016516,
+        "volume_share": 0.1496079885359711
+      },
+      {
+        "n_logs": 9,
+        "priced_volume_m3": 4.614262637821517,
+        "product": "sawlog",
+        "sort_code": "D125L13",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 525.84137020614,
+        "value_per_m3_priced": 113.96,
+        "volume_m3": 4.614262637821517,
+        "volume_share": 0.0964034572715775
+      },
+      {
+        "n_logs": 15,
+        "priced_volume_m3": 4.010040358062846,
+        "product": "sawlog",
+        "sort_code": "D125L8",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 456.9841992048419,
+        "value_per_m3_priced": 113.96,
+        "volume_m3": 4.010040358062846,
+        "volume_share": 0.0837797465508651
+      },
+      {
+        "n_logs": 7,
+        "priced_volume_m3": 3.8985922700025166,
+        "product": "sawlog",
+        "sort_code": "D20L8",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 444.28357508948676,
+        "value_per_m3_priced": 113.96,
+        "volume_m3": 3.8985922700025166,
+        "volume_share": 0.08145131797221024
+      },
+      {
+        "n_logs": 2,
+        "priced_volume_m3": 3.7340668726420287,
+        "product": "sawlog",
+        "sort_code": "D38L8",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 425.5342608062856,
+        "value_per_m3_priced": 113.96000000000001,
+        "volume_m3": 3.7340668726420287,
+        "volume_share": 0.07801397199529825
+      },
+      {
+        "n_logs": 3,
+        "priced_volume_m3": 3.430354614145058,
+        "product": "sawlog",
+        "sort_code": "D30L8",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 390.92321182797076,
+        "value_per_m3_priced": 113.96,
+        "volume_m3": 3.430354614145058,
+        "volume_share": 0.07166866527285945
+      },
+      {
+        "n_logs": 7,
+        "priced_volume_m3": 2.932965101290461,
+        "product": "sawlog",
+        "sort_code": "D125L51",
+        "species_market_group": "Hem-Bal",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 310.8356414347631,
+        "value_per_m3_priced": 105.98,
+        "volume_m3": 2.932965101290461,
+        "volume_share": 0.06127695755843966
+      },
+      {
+        "n_logs": 18,
+        "priced_volume_m3": 2.337217888471711,
+        "product": "sawlog",
+        "sort_code": "D125L51",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 266.3493505702362,
+        "value_per_m3_priced": 113.96,
+        "volume_m3": 2.337217888471711,
+        "volume_share": 0.04883031212805546
+      },
+      {
+        "n_logs": 6,
+        "priced_volume_m3": 2.2678631624956447,
+        "product": "sawlog",
+        "sort_code": "D125L11",
+        "species_market_group": "SPF",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 258.4456859980036,
+        "value_per_m3_priced": 113.95999999999998,
+        "volume_m3": 2.2678631624956447,
+        "volume_share": 0.047381318889696517
+      },
+      {
+        "n_logs": 4,
+        "priced_volume_m3": 1.8539901745101361,
+        "product": "sawlog",
+        "sort_code": "D125L63",
+        "species_market_group": "Df-Larch",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 237.66300047045434,
+        "value_per_m3_priced": 128.19,
+        "volume_m3": 1.8539901745101361,
+        "volume_share": 0.03873447972062007
+      },
+      {
+        "n_logs": 3,
+        "priced_volume_m3": 1.7145718406006347,
+        "product": "sawlog",
+        "sort_code": "D20L8",
+        "species_market_group": "Hem-Bal",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 181.71032366685526,
+        "value_per_m3_priced": 105.97999999999999,
+        "volume_m3": 1.7145718406006347,
+        "volume_share": 0.03582168293143154
+      },
+      {
+        "n_logs": 7,
+        "priced_volume_m3": 1.7008717460207334,
+        "product": "sawlog",
+        "sort_code": "D125L8",
+        "species_market_group": "Hem-Bal",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 180.25838764327733,
+        "value_per_m3_priced": 105.98,
+        "volume_m3": 1.7008717460207334,
+        "volume_share": 0.03553545377931859
+      },
+      {
+        "n_logs": 3,
+        "priced_volume_m3": 1.3750643924519783,
+        "product": "sawlog",
+        "sort_code": "D125L13",
+        "species_market_group": "Hem-Bal",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 145.72932431206067,
+        "value_per_m3_priced": 105.98,
+        "volume_m3": 1.3750643924519783,
+        "volume_share": 0.028728525402272415
+      },
+      {
+        "n_logs": 10,
+        "priced_volume_m3": 1.1704423003181847,
+        "product": "other",
+        "sort_code": "D152",
+        "species_market_group": "Deciduous",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 72.26310762164472,
+        "value_per_m3_priced": 61.739999999999995,
+        "volume_m3": 1.1704423003181847,
+        "volume_share": 0.02445345944608876
+      },
+      {
+        "n_logs": 1,
+        "priced_volume_m3": 1.1281946810568158,
+        "product": "sawlog",
+        "sort_code": "D20L11",
+        "species_market_group": "Df-Larch",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 144.6232761646732,
+        "value_per_m3_priced": 128.19,
+        "volume_m3": 1.1281946810568158,
+        "volume_share": 0.023570801288552212
+      },
+      {
+        "n_logs": 7,
+        "priced_volume_m3": 0.9034635753726856,
+        "product": "other",
+        "sort_code": "D203",
+        "species_market_group": "Deciduous",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 55.779841143509614,
+        "value_per_m3_priced": 61.74,
+        "volume_m3": 0.9034635753726856,
+        "volume_share": 0.018875607875235192
+      },
+      {
+        "n_logs": 1,
+        "priced_volume_m3": 0.86543410136333,
+        "product": "sawlog",
+        "sort_code": "D30L8",
+        "species_market_group": "Hem-Bal",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 91.71870606248572,
+        "value_per_m3_priced": 105.98000000000002,
+        "volume_m3": 0.86543410136333,
+        "volume_share": 0.018081077294623864
+      },
+      {
+        "n_logs": 4,
+        "priced_volume_m3": 0.7253168594646833,
+        "product": "sawlog",
+        "sort_code": "D125L51",
+        "species_market_group": "Df-Larch",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 92.97836821477776,
+        "value_per_m3_priced": 128.19000000000003,
+        "volume_m3": 0.7253168594646833,
+        "volume_share": 0.015153678574041986
+      },
+      {
+        "n_logs": 1,
+        "priced_volume_m3": 0.4768351470295372,
+        "product": "sawlog",
+        "sort_code": "D125L11",
+        "species_market_group": "Df-Larch",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 61.125497497716374,
+        "value_per_m3_priced": 128.19,
+        "volume_m3": 0.4768351470295372,
+        "volume_share": 0.009962275737288985
+      },
+      {
+        "n_logs": 1,
+        "priced_volume_m3": 0.3736002937565963,
+        "product": "sawlog",
+        "sort_code": "D125L8",
+        "species_market_group": "Df-Larch",
+        "unpriced_volume_m3": 0.0,
+        "value_cad": 47.89182165665808,
+        "value_per_m3_priced": 128.19,
+        "volume_m3": 0.3736002937565963,
+        "volume_share": 0.0078054421221278505
+      }
+    ],
+    "mean_value_cad_ha_ratio_est": 20787.23113193111,
+    "mean_value_cad_ha_sample": 4277.260731593724,
+    "n_logs": 134,
+    "priced_volume_m3": 47.784856342218035,
+    "total_log_volume_m3": 47.864078409788874,
+    "total_value_cad": 5314.787791417599,
+    "unpriced_volume_m3": 0.07922206757083927,
+    "unpriced_volume_share": 0.0016551466194037751,
+    "value_per_m3_all_logs": 111.039175264485,
+    "value_per_m3_priced": 111.22326607733193
+  },
+  "status": "pilot_complete_with_gaps",
+  "taper_warnings": [
+    "RuntimeWarning: invalid value encountered in power"
+  ],
+  "tsa_name": "Prince George",
+  "tsa_number": 24
+}

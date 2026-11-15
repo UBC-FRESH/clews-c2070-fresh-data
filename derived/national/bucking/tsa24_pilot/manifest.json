@@ -1,0 +1,524 @@
+{
+  "code": {
+    "package": "workflows.national.bucking",
+    "schema": "TreeRecord, BuckedLog, ResidueLedger, GradeRule",
+    "version": "0.1.0"
+  },
+  "config": {
+    "grade_rules": {
+      "authority": "TIPSY 4.5 industrial interior dimensions",
+      "basis": "dimension_only",
+      "grade_status": "not_assigned",
+      "path": "workflows/national/bucking/rules/bc_interior.yaml"
+    },
+    "jurisdiction": "BC",
+    "price_profile": {
+      "note": "product-level averages, not grade-specific prices",
+      "path": "nemora/config/log_prices/bc_interior_2026q3.yaml",
+      "period": "2026-07-01/2026-09-30"
+    },
+    "residue_assumptions": {
+      "basic_density_odt_m3": 0.45,
+      "chip_yield_fraction": 0.9,
+      "moisture_green_wet_basis": 0.45,
+      "moisture_seasoned_wet_basis": 0.3
+    },
+    "taper": {
+      "cached_keys": [
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "AC"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "AT"
+        },
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "AT"
+        },
+        {
+          "bec_zone": "ESSF",
+          "jurisdiction": "BC",
+          "species": "BL"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "BL"
+        },
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "BL"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "CW"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "EP"
+        },
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "EP"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "FD"
+        },
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "FD"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "HW"
+        },
+        {
+          "bec_zone": "SBPS",
+          "jurisdiction": "BC",
+          "species": "PL"
+        },
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "PL"
+        },
+        {
+          "bec_zone": "ESSF",
+          "jurisdiction": "BC",
+          "species": "SE"
+        },
+        {
+          "bec_zone": "ICH",
+          "jurisdiction": "BC",
+          "species": "SW"
+        },
+        {
+          "bec_zone": "SBPS",
+          "jurisdiction": "BC",
+          "species": "SW"
+        },
+        {
+          "bec_zone": "SBS",
+          "jurisdiction": "BC",
+          "species": "SW"
+        }
+      ],
+      "jurisdiction": "BC",
+      "parameter_table": "config/kozak/kozak_parameters_v94.csv",
+      "source": "Kozak (2004) taper equation, Version 6 parameter table (vers=94), UBC Research Forests KozakTaper implementation.",
+      "supported_bec_zones": [
+        "AT",
+        "BWBS",
+        "CDF",
+        "CWH",
+        "ESSF",
+        "ICH",
+        "IDF",
+        "MH",
+        "MS",
+        "PP",
+        "SBPS",
+        "SBS",
+        "SWB"
+      ],
+      "supported_species": [
+        "AC",
+        "AT",
+        "B",
+        "BA",
+        "BL",
+        "C",
+        "CW",
+        "D",
+        "DR",
+        "E",
+        "EP",
+        "F",
+        "FD",
+        "H",
+        "HM",
+        "HW",
+        "L",
+        "LW",
+        "MB",
+        "PA",
+        "PL",
+        "PW",
+        "PY",
+        "S",
+        "SB",
+        "SE",
+        "SS",
+        "SW",
+        "Y",
+        "YC"
+      ],
+      "taper_family": "Kozak (2004) Version 6"
+    }
+  },
+  "conservation": {
+    "bucker_internal_check": {
+      "max_absolute_balance_m3": 1.1347101298991857e-05,
+      "max_relative_balance": 7.742851523831378e-05,
+      "n_trees": 300,
+      "note": "The reference bucker returns the full stem as residue when no log is feasible; the ledger independently sets residue = taper total - recovered.",
+      "pass": true
+    },
+    "bucker_tolerance_absolute_m3": 1e-06,
+    "bucker_tolerance_relative": 0.0001,
+    "max_absolute_balance_m3": 4.440892098500626e-16,
+    "max_relative_balance": 1.733487552684518e-16,
+    "n_trees": 300,
+    "n_trees_with_logs": 83,
+    "n_trees_without_logs": 217,
+    "no_log_trees": 217,
+    "no_log_trees_with_bucker_residue_equal_total": 217,
+    "pass": true,
+    "recovered_log_m3": 47.86407840978886,
+    "recovered_plus_residue_m3": 58.15258667098862,
+    "residue_m3": 10.288508261199752,
+    "residue_volume_share": 0.17692262460153851,
+    "tolerance_absolute_m3": 1e-07,
+    "tolerance_relative": 1e-05,
+    "total_taper_m3": 58.15258667098862
+  },
+  "created_utc": "2026-11-15T18:15:23+00:00",
+  "elapsed_seconds": 33.929779414087534,
+  "inputs": [
+    {
+      "bytes": 314277,
+      "label": "faib_header",
+      "path": "raw/bc_faib_ground_plots/psp/faib_header.csv.gz",
+      "sha256": "c385452cc76b1f6bb4d55102cb0226d811e2eab840c83e762702e6395e5bf19d"
+    },
+    {
+      "bytes": 311679,
+      "label": "faib_sample_byvisit",
+      "path": "raw/bc_faib_ground_plots/psp/faib_sample_byvisit.csv.gz",
+      "sha256": "9e8488ed089833ec23281edde2e6689c9994c542ff069408e860a0b7e0599461"
+    },
+    {
+      "bytes": 111371932,
+      "label": "faib_tree_detail",
+      "path": "raw/bc_faib_ground_plots/psp/faib_tree_detail.csv.gz",
+      "sha256": "9ed7b0a23dd74686173ee45fddfcb71a7bbddd7995230c7de2696b7c76d614e8"
+    },
+    {
+      "bytes": 1695648,
+      "label": "faib_siteage",
+      "path": "raw/bc_faib_ground_plots/psp/faib_compiled_spcsmries_siteage.csv.gz",
+      "sha256": "218ee66b428ce51734a49f93cd4b9cae306279865ed9f172c3d646c922ba7521"
+    },
+    {
+      "bytes": 22650,
+      "label": "kozak_parameters",
+      "path": "nemora/config/kozak/kozak_parameters_v94.csv",
+      "sha256": "36a916991b00ddc3ea0bbd35bf7a305e8cb13f7056af10283ffb8668f9fc00a5"
+    },
+    {
+      "bytes": 641,
+      "label": "species_crosswalk",
+      "path": "nemora/config/species/bc_psp_to_group.csv",
+      "sha256": "6eceb0b5db5f433325daae23c8538322d9a7d5cb5dc5e6b5db8ac10cfe7aa979"
+    },
+    {
+      "bytes": 4336,
+      "label": "grade_rules",
+      "path": "workflows/national/bucking/rules/bc_interior.yaml",
+      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392"
+    },
+    {
+      "bytes": 827,
+      "label": "price_profile",
+      "path": "nemora/config/log_prices/bc_interior_2026q3.yaml",
+      "sha256": "58674b7409ffc6cfd60292e04a7a753aff095a07788b2c1abbeed727bae86ce9"
+    },
+    {
+      "bytes": 212010,
+      "label": "vdyp_smooth",
+      "path": "femic-tsa24-instance/data/vdyp_curves_smooth-tsa24.feather",
+      "sha256": "81d70887a756a1116609f3d97531740db4e7e31eb358006bd39a37e381fc4bd6"
+    },
+    {
+      "bytes": 19001,
+      "label": "tipsy_curves",
+      "path": "femic-tsa24-instance/data/tipsy_curves_tsa24.csv",
+      "sha256": "83765a61aef631b3a876fe7e7b9dfbcda6d6a4a9bcc59987607107c187763469"
+    },
+    {
+      "bytes": 17584,
+      "label": "tipsy_output",
+      "path": "femic-tsa24-instance/data/04_output-tsa24.csv",
+      "sha256": "3939e5ef4d2bc17a50218dabd5e0f32d452fea69c135de8a29a7aec265b8759b"
+    },
+    {
+      "bytes": 2222,
+      "label": "au_table",
+      "path": "femic-tsa24-instance/data/model_input_bundle/au_table.csv",
+      "sha256": "fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099"
+    },
+    {
+      "bytes": 1468706,
+      "label": "rsyc_models",
+      "path": "raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940"
+    },
+    {
+      "bytes": 278528,
+      "label": "rsyc_tiles",
+      "path": "raw/national/rsyc/RSYC_tiles.gpkg",
+      "sha256": "f61e0ec06b29146264ff676c98fcfa1e431d6ddd5f1d97d17e957d4d9e77308b"
+    },
+    {
+      "bytes": 15421440,
+      "label": "rsyc_ecostrat",
+      "path": "raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    },
+    {
+      "bytes": 21114,
+      "label": "tsa_boundaries",
+      "path": "femic-tsa24-instance/data/tsa_boundaries.feather",
+      "sha256": "9f113dac53352c2d87726ab3874a469ea381b23500921465cd6fa9c6e1264935"
+    }
+  ],
+  "notes": [
+    "Pilot, not the pre-registered three-way validation gate.",
+    "No official grade assigned.",
+    "TSA24 TIPSY instance has no grade/residue/value columns."
+  ],
+  "outputs": [
+    {
+      "bytes": 13402,
+      "path": "VALIDATION_REPORT.md",
+      "sha256": "cf1ef6be9bf004d18e38e3c45d90f3097de9db01b73ad1a5c63efa6b4d4d5ec0"
+    },
+    {
+      "bytes": 38706,
+      "path": "bucked_logs.csv",
+      "sha256": "7cfd7894ccb78bae304b51609aec922fd26590250f18913a6ebe297fb2768fd9"
+    },
+    {
+      "bytes": 284,
+      "path": "market_group_summary.csv",
+      "sha256": "0cce786d79bffec7749338004aa723fd5b66dada054c533514284fe42a9cc60d"
+    },
+    {
+      "bytes": 397,
+      "path": "pilot_row.json",
+      "sha256": "98065d48c91f9294d5aae940573162067ad02e1a96fe618104f782ef9c757e58"
+    },
+    {
+      "bytes": 7913,
+      "path": "plot_summary.csv",
+      "sha256": "c25220b66e6ad4eaf43ee869ed8a250fea17672cf6e3a9080f95f532c0c56f29"
+    },
+    {
+      "bytes": 164,
+      "path": "product_summary.csv",
+      "sha256": "b7f00e52c26151d7f00f4c98917b1213d50ade112ea8b3b80f8e9308ad42d91c"
+    },
+    {
+      "bytes": 172685,
+      "path": "residue_ledger.csv",
+      "sha256": "ad746570318d5caefa2b0d34b6bb65cfa8eb9dc86a77920f99b008da14b36dce"
+    },
+    {
+      "bytes": 2482,
+      "path": "rsyc_benchmark.csv",
+      "sha256": "3df6feb87e099142e17ea68fc9fbfce78bd6fb2b1461c38aaf233abc09b045b1"
+    },
+    {
+      "bytes": 28970,
+      "path": "rsyc_curves.csv",
+      "sha256": "d2f9d22e0471d8e9facefbe514659c3c7dcb3a6886e6778de605fbe89626e67e"
+    },
+    {
+      "bytes": 2954,
+      "path": "sample_plots.csv",
+      "sha256": "9440c5b4fbb359e9eba643c06371f5db84ba2b79e35f3dd68c770a7b961eea57"
+    },
+    {
+      "bytes": 268,
+      "path": "sample_strata.csv",
+      "sha256": "263fc85d2248558c8342b74fac2f93289192bdc3ce0077751306234b01ed6aff"
+    },
+    {
+      "bytes": 3104,
+      "path": "sort_value_summary.csv",
+      "sha256": "a0fcb0f220a8805b08f9cf2026d3b6dcddd6f701439c6435159398b0e9668dd6"
+    },
+    {
+      "bytes": 1263,
+      "path": "tipsy_benchmark.csv",
+      "sha256": "0fa567588ea09cf38e62f0e29f55dd8138041e5dfe42c55473cbf293da40dd02"
+    },
+    {
+      "bytes": 158547,
+      "path": "tree_summary.csv",
+      "sha256": "da3ce78ec49cd9ea3a311d79cb2001f513ede97264ae12332a3e0221db775ab3"
+    },
+    {
+      "bytes": 20663,
+      "path": "validation_summary.json",
+      "sha256": "8abbfb42d4d07bf9642e626a049840277b5f52120af5e200736b087da0fb1a22"
+    },
+    {
+      "bytes": 2269,
+      "path": "vdyp_benchmark.csv",
+      "sha256": "d65aef25d855334729f9c950a2ec095de968ae11f08dbe27200f4c12805a2fc9"
+    }
+  ],
+  "pilot": "tsa24_bucking_phase0",
+  "population": {
+    "dropped": {
+      "dead": 28704,
+      "invalid_dbh": 0,
+      "invalid_expansion": 0,
+      "missing_bec": 0,
+      "missing_species": 0,
+      "short_height": 1
+    },
+    "input_sites": 7341,
+    "latest_visit_only": true,
+    "live_valid_trees": 155903,
+    "plots_with_live_trees": 1318,
+    "selected_plots": 1318,
+    "selected_sites": 558,
+    "selected_tree_rows": 184907,
+    "species_crosswalk": "bc_psp_to_group.csv",
+    "tsa_name": "Prince George"
+  },
+  "psp_volume": {
+    "bucked_log_m3ha_sum": 760.5325141972719,
+    "mae_all_m3ha": 34.97605817251871,
+    "mae_m3ha": 5.759737619176738,
+    "mean_bias_all_m3ha": -34.97605817251871,
+    "mean_bias_m3ha": -5.759737619176738,
+    "mean_ratio_bucked_observed": 0.702253376946591,
+    "median_ratio_bucked_observed": 0.8320912857999874,
+    "n_plots": 20,
+    "n_plots_observed_positive": 20,
+    "note": "Primary comparison is paired sampled trees: observed VOL_MER*PHF_TREE versus bucked log volume*PHF_TREE. The *_all columns use all live supported trees in each selected plot on the observed side and a ratio-expanded bucked estimate; that is a secondary estimate.",
+    "observed_all_m3ha_sum": 4409.224489095942,
+    "observed_merchantable_m3ha_sum": 875.7272665808066,
+    "relative_bias": -0.1315418130501996,
+    "rmse_m3ha": 6.506548175511688
+  },
+  "sample": {
+    "max_plots": 20,
+    "max_trees_per_plot": 15,
+    "method": "stratified plots by BEC zone and supported leading species; up to max_trees_per_plot trees per plot, sampled across species and DBH",
+    "n_plots": 20,
+    "n_trees": 300,
+    "seed": 20261115,
+    "strata": [
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 593,
+        "leading_species": "SW",
+        "n_sampled_trees": 90,
+        "quota": 6,
+        "selected_plots": 6
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 317,
+        "leading_species": "BL",
+        "n_sampled_trees": 45,
+        "quota": 3,
+        "selected_plots": 3
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 145,
+        "leading_species": "PL",
+        "n_sampled_trees": 30,
+        "quota": 2,
+        "selected_plots": 2
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 134,
+        "leading_species": "AT",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 37,
+        "leading_species": "FD",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "SBS",
+        "candidate_plots": 35,
+        "leading_species": "EP",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "ESSF",
+        "candidate_plots": 33,
+        "leading_species": "BL",
+        "n_sampled_trees": 30,
+        "quota": 2,
+        "selected_plots": 2
+      },
+      {
+        "bec_zone": "ESSF",
+        "candidate_plots": 4,
+        "leading_species": "SE",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "ICH",
+        "candidate_plots": 5,
+        "leading_species": "HW",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "ICH",
+        "candidate_plots": 4,
+        "leading_species": "SW",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      },
+      {
+        "bec_zone": "SBPS",
+        "candidate_plots": 3,
+        "leading_species": "PL",
+        "n_sampled_trees": 15,
+        "quota": 1,
+        "selected_plots": 1
+      }
+    ]
+  },
+  "taper_warnings": [
+    "RuntimeWarning: invalid value encountered in power"
+  ],
+  "tsa_name": "Prince George",
+  "tsa_number": 24
+}
