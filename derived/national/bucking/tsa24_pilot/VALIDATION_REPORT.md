@@ -4,18 +4,17 @@
 |---|---|
 | Pilot | `tsa24_bucking_phase0` |
 | TSA | 24 — Prince George |
-| Generated (UTC) | 2026-11-15T18:54:56+00:00 |
+| Generated (UTC) | 2026-11-15T19:34:50+00:00 |
 | Status | pilot complete; grade benchmark with stated assumptions |
 | Sample | 20 plots, 300 live trees |
 | Logs | 134 |
-| Elapsed | 35.6 s |
+| Elapsed | 53.1 s |
 
 > This is the Phase 0/1 pilot. It is **not** the pre-registered three-way
-> validation gate. The TSA24 FEMIC instance has no grade, residue, or value
-> columns, but the TIPSY 4.5 `.taf` database exposes `Logs_Grade_*` and
-> `Residual_*` surfaces. A TAF-derived grade/residue benchmark is reported
-> with nominal-site-index, species-surrogate, and mill-vs-harvest caveats.
-> No official BC log grade is assigned.
+> validation gate. The refreshed TSA24 FEMIC BTC /TSR output exposes
+> `Logs_Grade_*` and `Residual_*` surfaces at each managed AU and age. A
+> BTC-derived grade/residue benchmark is reported with model-output and
+> mill-vs-harvest caveats. No official BC log grade is assigned.
 
 ## 1. Scope and contracts
 
@@ -200,43 +199,42 @@ merchantability rules, taper families, and sort boundaries differ.
 ### VDYP7
 
 - Status: **reported_with_join_assumptions**
-- Matched plots: **15** of **20**
-- Join basis: BEC + leading supported species -> VDYP stratum_code; within-stratum PSP site-index tertiles -> L/M/H. This is a benchmark stratification, not the FEMIC AU SI-level mapping.
-- Observed-all vs VDYP: n=15, bias=-73.84, MAE=122.45, rel.bias=-34.7%
-- Bucked ratio-estimated vs VDYP: n=15, bias=-42.11, MAE=112.39, rel.bias=-23.3%
+- Matched plots: **14** of **20**
+- Join basis: BEC + leading supported species -> managed FEMIC AU stratum (including combined-species strata) -> FEMIC AU site-index class -> VDYP stratum_code + L/M/H. This is the FEMIC AU crosswalk used as a benchmark join, not an operational AU assignment.
+- Observed-all vs VDYP: n=14, bias=-42.36, MAE=113.33, rel.bias=-19.4%
+- Bucked ratio-estimated vs VDYP: n=14, bias=-11.52, MAE=109.86, rel.bias=-6.1%
 - Caveat: VDYP smooth volume units are assumed m3/ha; the curve may represent gross or total volume while VOL_MER is merchantable. The comparison is indicative, not a gate.
 
 ### TIPSY / FANSIER
 
 - Status: **reported_with_join_assumptions**
-- Matched plots: **11** of **20**
+- Matched plots: **14** of **20**
 - TIPSY AU coverage: **16** of **27** mapped AU combinations
-- Join basis: BEC + leading species -> stratum_code; within-stratum PSP site-index tertiles -> L/M/H; au_table managed source AU (falling back to unmanaged/source AU) -> TIPSY AU. Not the FEMIC AU assignment.
-- Observed-all vs TIPSY: n=11, bias=-47.09, MAE=128.22, rel.bias=-20.8%
-- Bucked ratio-estimated vs TIPSY: n=11, bias=-14.06, MAE=120.74, rel.bias=-7.3%
-- Grade/residue/value inspection: {"status": "inspected", "n_columns": 217, "grade_columns": [], "residue_columns": [], "value_columns": [], "has_grade_or_residue_or_value": false, "note": "The TSA24 instance exposes only conifer/deciduous merchantable volume, height, gross volume, and crown cover by age. It has no grade, residue, or value columns."}
-- Caveat: The TSA24 TIPSY instance has no grade, residue, or value columns. No grade/residue benchmark is possible from this instance. The sort and price profile is a placeholder. TIPSY Yield is treated as m3/ha.
+- Join basis: BEC + leading species -> managed FEMIC AU stratum (including combined-species strata such as SBS_SX+AT) -> FEMIC AU site-index class -> managed source AU in au_table -> TIPSY curve at FAIB stand age.
+- Observed-all vs TIPSY: n=14, bias=-22.32, MAE=125.75, rel.bias=-10.2%
+- Bucked ratio-estimated vs TIPSY: n=14, bias=8.52, MAE=124.32, rel.bias=4.5%
+- Grade/residue/value inspection: {"status": "inspected", "n_columns": 685, "grade_columns": ["Logs_Grade_D_0", "Logs_Grade_D_10", "Logs_Grade_D_20", "Logs_Grade_D_30", "Logs_Grade_D_40", "Logs_Grade_D_50", "Logs_Grade_D_60", "Logs_Grade_D_70", "Logs_Grade_D_80", "Logs_Grade_D_90", "Logs_Grade_D_100", "Logs_Grade_D_110", "Logs_Grade_D_120", "Logs_Grade_D_130", "Logs_Grade_D_140", "Logs_Grade_D_150", "Logs_Grade_D_160", "Logs_Grade_D_170", "Logs_Grade_D_180", "Logs_Grade_D_190", "Logs_Grade_D_200", "Logs_Grade_D_210", "Logs_Grade_D_220", "Logs_Grade_D_230", "Logs_Grade_D_240", "Logs_Grade_D_250", "Logs_Grade_D_260", "Logs_Grade_D_270", "Logs_Grade_D_280", "Logs_Grade_D_290", "Logs_Grade_D_300", "Logs_Grade_D_310", "Logs_Grade_D_320", "Logs_Grade_D_330", "Logs_Grade_D_340", "Logs_Grade_D_350", "Logs_Grade_F_0", "Logs_Grade_F_10", "Logs_Grade_F_20", "Logs_Grade_F_30", "Logs_Grade_F_40", "Logs_Grade_F_50", "Logs_Grade_F_60", "Logs_Grade_F_70", "Logs_Grade_F_80", "Logs_Grade_F_90", "Logs_Grade_F_100", "Logs_Grade_F_110", "Logs_Grade_F_120", "Logs_Grade_F_130", "Logs_Grade_F_140", "Logs_Grade_F_150", "Logs_Grade_F_160", "Logs_Grade_F_170", "Logs_Grade_F_180", "Logs_Grade_F_190", "Logs_Grade_F_200", "Logs_Grade_F_210", "Logs_Grade_F_220", "Logs_Grade_F_230", "Logs_Grade_F_240", "Logs_Grade_F_250", "Logs_Grade_F_260", "Logs_Grade_F_270", "Logs_Grade_F_280", "Logs_Grade_F_290", "Logs_Grade_F_300", "Logs_Grade_F_310", "Logs_Grade_F_320", "Logs_Grade_F_330", "Logs_Grade_F_340", "Logs_Grade_F_350", "Logs_Grade_H_0", "Logs_Grade_H_10", "Logs_Grade_H_20", "Logs_Grade_H_30", "Logs_Grade_H_40", "Logs_Grade_H_50", "Logs_Grade_H_60", "Logs_Grade_H_70", "Logs_Grade_H_80", "Logs_Grade_H_90", "Logs_Grade_H_100", "Logs_Grade_H_110", "Logs_Grade_H_120", "Logs_Grade_H_130", "Logs_Grade_H_140", "Logs_Grade_H_150", "Logs_Grade_H_160", "Logs_Grade_H_170", "Logs_Grade_H_180", "Logs_Grade_H_190", "Logs_Grade_H_200", "Logs_Grade_H_210", "Logs_Grade_H_220", "Logs_Grade_H_230", "Logs_Grade_H_240", "Logs_Grade_H_250", "Logs_Grade_H_260", "Logs_Grade_H_270", "Logs_Grade_H_280", "Logs_Grade_H_290", "Logs_Grade_H_300", "Logs_Grade_H_310", "Logs_Grade_H_320", "Logs_Grade_H_330", "Logs_Grade_H_340", "Logs_Grade_H_350", "Logs_Grade_I_0", "Logs_Grade_I_10", "Logs_Grade_I_20", "Logs_Grade_I_30", "Logs_Grade_I_40", "Logs_Grade_I_50", "Logs_Grade_I_60", "Logs_Grade_I_70", "Logs_Grade_I_80", "Logs_Grade_I_90", "Logs_Grade_I_100", "Logs_Grade_I_110", "Logs_Grade_I_120", "Logs_Grade_I_130", "Logs_Grade_I_140", "Logs_Grade_I_150", "Logs_Grade_I_160", "Logs_Grade_I_170", "Logs_Grade_I_180", "Logs_Grade_I_190", "Logs_Grade_I_200", "Logs_Grade_I_210", "Logs_Grade_I_220", "Logs_Grade_I_230", "Logs_Grade_I_240", "Logs_Grade_I_250", "Logs_Grade_I_260", "Logs_Grade_I_270", "Logs_Grade_I_280", "Logs_Grade_I_290", "Logs_Grade_I_300", "Logs_Grade_I_310", "Logs_Grade_I_320", "Logs_Grade_I_330", "Logs_Grade_I_340", "Logs_Grade_I_350", "Logs_Grade_J_0", "Logs_Grade_J_10", "Logs_Grade_J_20", "Logs_Grade_J_30", "Logs_Grade_J_40", "Logs_Grade_J_50", "Logs_Grade_J_60", "Logs_Grade_J_70", "Logs_Grade_J_80", "Logs_Grade_J_90", "Logs_Grade_J_100", "Logs_Grade_J_110", "Logs_Grade_J_120", "Logs_Grade_J_130", "Logs_Grade_J_140", "Logs_Grade_J_150", "Logs_Grade_J_160", "Logs_Grade_J_170", "Logs_Grade_J_180", "Logs_Grade_J_190", "Logs_Grade_J_200", "Logs_Grade_J_210", "Logs_Grade_J_220", "Logs_Grade_J_230", "Logs_Grade_J_240", "Logs_Grade_J_250", "Logs_Grade_J_260", "Logs_Grade_J_270", "Logs_Grade_J_280", "Logs_Grade_J_290", "Logs_Grade_J_300", "Logs_Grade_J_310", "Logs_Grade_J_320", "Logs_Grade_J_330", "Logs_Grade_J_340", "Logs_Grade_J_350", "Logs_Grade_U_0", "Logs_Grade_U_10", "Logs_Grade_U_20", "Logs_Grade_U_30", "Logs_Grade_U_40", "Logs_Grade_U_50", "Logs_Grade_U_60", "Logs_Grade_U_70", "Logs_Grade_U_80", "Logs_Grade_U_90", "Logs_Grade_U_100", "Logs_Grade_U_110", "Logs_Grade_U_120", "Logs_Grade_U_130", "Logs_Grade_U_140", "Logs_Grade_U_150", "Logs_Grade_U_160", "Logs_Grade_U_170", "Logs_Grade_U_180", "Logs_Grade_U_190", "Logs_Grade_U_200", "Logs_Grade_U_210", "Logs_Grade_U_220", "Logs_Grade_U_230", "Logs_Grade_U_240", "Logs_Grade_U_250", "Logs_Grade_U_260", "Logs_Grade_U_270", "Logs_Grade_U_280", "Logs_Grade_U_290", "Logs_Grade_U_300", "Logs_Grade_U_310", "Logs_Grade_U_320", "Logs_Grade_U_330", "Logs_Grade_U_340", "Logs_Grade_U_350", "Logs_Grade_X_0", "Logs_Grade_X_10", "Logs_Grade_X_20", "Logs_Grade_X_30", "Logs_Grade_X_40", "Logs_Grade_X_50", "Logs_Grade_X_60", "Logs_Grade_X_70", "Logs_Grade_X_80", "Logs_Grade_X_90", "Logs_Grade_X_100", "Logs_Grade_X_110", "Logs_Grade_X_120", "Logs_Grade_X_130", "Logs_Grade_X_140", "Logs_Grade_X_150", "Logs_Grade_X_160", "Logs_Grade_X_170", "Logs_Grade_X_180", "Logs_Grade_X_190", "Logs_Grade_X_200", "Logs_Grade_X_210", "Logs_Grade_X_220", "Logs_Grade_X_230", "Logs_Grade_X_240", "Logs_Grade_X_250", "Logs_Grade_X_260", "Logs_Grade_X_270", "Logs_Grade_X_280", "Logs_Grade_X_290", "Logs_Grade_X_300", "Logs_Grade_X_310", "Logs_Grade_X_320", "Logs_Grade_X_330", "Logs_Grade_X_340", "Logs_Grade_X_350", "Logs_Grade_Y_0", "Logs_Grade_Y_10", "Logs_Grade_Y_20", "Logs_Grade_Y_30", "Logs_Grade_Y_40", "Logs_Grade_Y_50", "Logs_Grade_Y_60", "Logs_Grade_Y_70", "Logs_Grade_Y_80", "Logs_Grade_Y_90", "Logs_Grade_Y_100", "Logs_Grade_Y_110", "Logs_Grade_Y_120", "Logs_Grade_Y_130", "Logs_Grade_Y_140", "Logs_Grade_Y_150", "Logs_Grade_Y_160", "Logs_Grade_Y_170", "Logs_Grade_Y_180", "Logs_Grade_Y_190", "Logs_Grade_Y_200", "Logs_Grade_Y_210", "Logs_Grade_Y_220", "Logs_Grade_Y_230", "Logs_Grade_Y_240", "Logs_Grade_Y_250", "Logs_Grade_Y_260", "Logs_Grade_Y_270", "Logs_Grade_Y_280", "Logs_Grade_Y_290", "Logs_Grade_Y_300", "Logs_Grade_Y_310", "Logs_Grade_Y_320", "Logs_Grade_Y_330", "Logs_Grade_Y_340", "Logs_Grade_Y_350"], "residue_columns": ["Residual_Chips_0", "Residual_Chips_10", "Residual_Chips_20", "Residual_Chips_30", "Residual_Chips_40", "Residual_Chips_50", "Residual_Chips_60", "Residual_Chips_70", "Residual_Chips_80", "Residual_Chips_90", "Residual_Chips_100", "Residual_Chips_110", "Residual_Chips_120", "Residual_Chips_130", "Residual_Chips_140", "Residual_Chips_150", "Residual_Chips_160", "Residual_Chips_170", "Residual_Chips_180", "Residual_Chips_190", "Residual_Chips_200", "Residual_Chips_210", "Residual_Chips_220", "Residual_Chips_230", "Residual_Chips_240", "Residual_Chips_250", "Residual_Chips_260", "Residual_Chips_270", "Residual_Chips_280", "Residual_Chips_290", "Residual_Chips_300", "Residual_Chips_310", "Residual_Chips_320", "Residual_Chips_330", "Residual_Chips_340", "Residual_Chips_350", "Residual_Sawdust_0", "Residual_Sawdust_10", "Residual_Sawdust_20", "Residual_Sawdust_30", "Residual_Sawdust_40", "Residual_Sawdust_50", "Residual_Sawdust_60", "Residual_Sawdust_70", "Residual_Sawdust_80", "Residual_Sawdust_90", "Residual_Sawdust_100", "Residual_Sawdust_110", "Residual_Sawdust_120", "Residual_Sawdust_130", "Residual_Sawdust_140", "Residual_Sawdust_150", "Residual_Sawdust_160", "Residual_Sawdust_170", "Residual_Sawdust_180", "Residual_Sawdust_190", "Residual_Sawdust_200", "Residual_Sawdust_210", "Residual_Sawdust_220", "Residual_Sawdust_230", "Residual_Sawdust_240", "Residual_Sawdust_250", "Residual_Sawdust_260", "Residual_Sawdust_270", "Residual_Sawdust_280", "Residual_Sawdust_290", "Residual_Sawdust_300", "Residual_Sawdust_310", "Residual_Sawdust_320", "Residual_Sawdust_330", "Residual_Sawdust_340", "Residual_Sawdust_350", "Residual_Shavings_0", "Residual_Shavings_10", "Residual_Shavings_20", "Residual_Shavings_30", "Residual_Shavings_40", "Residual_Shavings_50", "Residual_Shavings_60", "Residual_Shavings_70", "Residual_Shavings_80", "Residual_Shavings_90", "Residual_Shavings_100", "Residual_Shavings_110", "Residual_Shavings_120", "Residual_Shavings_130", "Residual_Shavings_140", "Residual_Shavings_150", "Residual_Shavings_160", "Residual_Shavings_170", "Residual_Shavings_180", "Residual_Shavings_190", "Residual_Shavings_200", "Residual_Shavings_210", "Residual_Shavings_220", "Residual_Shavings_230", "Residual_Shavings_240", "Residual_Shavings_250", "Residual_Shavings_260", "Residual_Shavings_270", "Residual_Shavings_280", "Residual_Shavings_290", "Residual_Shavings_300", "Residual_Shavings_310", "Residual_Shavings_320", "Residual_Shavings_330", "Residual_Shavings_340", "Residual_Shavings_350", "Residual_Trim_0", "Residual_Trim_10", "Residual_Trim_20", "Residual_Trim_30", "Residual_Trim_40", "Residual_Trim_50", "Residual_Trim_60", "Residual_Trim_70", "Residual_Trim_80", "Residual_Trim_90", "Residual_Trim_100", "Residual_Trim_110", "Residual_Trim_120", "Residual_Trim_130", "Residual_Trim_140", "Residual_Trim_150", "Residual_Trim_160", "Residual_Trim_170", "Residual_Trim_180", "Residual_Trim_190", "Residual_Trim_200", "Residual_Trim_210", "Residual_Trim_220", "Residual_Trim_230", "Residual_Trim_240", "Residual_Trim_250", "Residual_Trim_260", "Residual_Trim_270", "Residual_Trim_280", "Residual_Trim_290", "Residual_Trim_300", "Residual_Trim_310", "Residual_Trim_320", "Residual_Trim_330", "Residual_Trim_340", "Residual_Trim_350", "Residual_Bark_0", "Residual_Bark_10", "Residual_Bark_20", "Residual_Bark_30", "Residual_Bark_40", "Residual_Bark_50", "Residual_Bark_60", "Residual_Bark_70", "Residual_Bark_80", "Residual_Bark_90", "Residual_Bark_100", "Residual_Bark_110", "Residual_Bark_120", "Residual_Bark_130", "Residual_Bark_140", "Residual_Bark_150", "Residual_Bark_160", "Residual_Bark_170", "Residual_Bark_180", "Residual_Bark_190", "Residual_Bark_200", "Residual_Bark_210", "Residual_Bark_220", "Residual_Bark_230", "Residual_Bark_240", "Residual_Bark_250", "Residual_Bark_260", "Residual_Bark_270", "Residual_Bark_280", "Residual_Bark_290", "Residual_Bark_300", "Residual_Bark_310", "Residual_Bark_320", "Residual_Bark_330", "Residual_Bark_340", "Residual_Bark_350"], "value_columns": [], "has_grade_or_residue_or_value": true, "note": "The refreshed TSA24 BTC /TSR output now exposes Logs_Grade_D/F/H/I/J/U/X/Y and Residual_Chips/Sawdust/Shavings/Trim/Bark by age. It still has no value, price, or sort columns."}
+- Caveat: TIPSY Yield is treated as m3/ha. Grade and residue surfaces are reported separately by the TSA24 grade benchmark; this volume join does not assert grade equivalence. The sort and price profile is a placeholder.
 
-### TSA24 grade and residue benchmark (TIPSY 4.5 `.taf`)
+### TSA24 grade and residue benchmark (BTC /TSR)
 
 - Status: **reported_with_join_and_semantic_assumptions**
 - Compiled curves: `data/derived/national/bucking/tsa24_grade_curves`
-- Match tiers: **11** AU-curve, **7** species-curve, **2** no-match; **3** plots with no pilot logs, **2** with zero TIPSY volume, **13** grade-comparable.
-- Industrial sort shares (exact codes): n=13, mean TVD=0.670, mean overlap=0.330, aggregate TVD=0.487.
-- Diameter marginal shares: aggregate TVD=0.232; length marginal shares: aggregate TVD=0.234.
-- TIPSY grade shares (proxy; `Logs_Grade_*`): D=0.0%, F=0.0%, H=5.6%, I=0.3%, J=59.8%, U=27.8%, X=3.9%, Y=2.5%
-- TIPSY grade-group proxy: high_grade_D_F_H_I=5.9%, sawlog_group_D_F_H_I_J=65.7%, low_grade_U_X_Y=34.3%
-- Pilot product shares (comparable plots): sawlog=96.8%, other=3.0%, pulpwood=0.2%
-- Residue (absolute ODT/ha): n=11, pilot sum=43.50, TIPSY sum=516.17, mean ratio=13.39; per m³ mean ratio=2.90.
+- Match tiers: **14** AU-curve, **3** species-curve, **3** no-match; **3** plots with no pilot logs, **2** with zero TIPSY volume, **12** grade-comparable.
+- Industrial sort shares (exact codes): n=0, mean TVD=n/a, mean overlap=n/a, aggregate TVD=n/a.
+- Diameter marginal shares: aggregate TVD=n/a; length marginal shares: aggregate TVD=n/a.
+- TIPSY grade shares (proxy; `Logs_Grade_*`): D=0.0%, F=0.0%, H=2.6%, I=0.2%, J=58.0%, U=29.9%, X=6.9%, Y=2.4%
+- TIPSY grade-group proxy: high_grade_D_F_H_I=2.8%, sawlog_group_D_F_H_I_J=60.8%, low_grade_U_X_Y=39.2%
+- Pilot product shares (comparable plots): sawlog=96.9%, other=3.1%, pulpwood=0.0%
+- Residue (absolute ODT/ha): n=14, pilot sum=50.83, TIPSY sum=768.55, mean ratio=18.45; per m³ mean ratio=3.47.
 - Value: **not_computed_no_same_basis_grade_prices** — The pilot uses product-level BC Interior log prices.  No same-basis interior grade price vector is available, so only shares are reported.
-- Join basis: FAIB plot -> BEC+leading-species stratum -> within-stratum PSP site-index tertile -> TSA24 managed AU; TIPSY curve interpolated at FAIB stand age.  Species fallback uses the leading-species TAF table and is labelled separately.
+- Join basis: FAIB plot -> BEC + leading species -> managed FEMIC AU stratum (including combined-species strata) -> FEMIC AU site-index class -> managed AU; BTC /TSR curve interpolated at FAIB stand age. Species fallback uses a mean of the same-species managed AU curves and is labelled separately.
 - Caveat: TIPSY residual fibre is mill-processing chips/sawdust/shavings/trim/bark.  The pilot residue is harvest slash (taper total - recovered logs).  The two are not equivalent.
-- Caveat: Pilot sort codes are dimension-only industrial sorts, not BC log grades.  Compare TIPSY grade groups only as a proxy.
-- Interpretation: the exact-code TVD is sensitive to within-class length
-  splits.  The marginal diameter and length TVDs are about 0.23 each: the
-  pilot bucker concentrates volume in the 8 m and 6.3 m length classes,
-  while TIPSY concentrates in 5.1 m.  That is a bucking-policy difference,
-  not an official grade validation.
+- Caveat: Pilot sort codes are dimension-only industrial sorts, not BC log grades.  TIPSY Logs_Grade_* values are BTC model output, not field grades; compare grade groups only as a proxy.
+- Interpretation: the grade comparison is a model-output proxy.  The
+  pilot bucker assigns dimension-only sorts; the BTC surface assigns
+  TIPSY log grades from its own interior rules.  Agreement in grade-group
+  shares is informative but is not an official grade validation.
 
 ### RSYC
 
@@ -277,7 +275,7 @@ Assumptions:
 | FAIB PSP tree list | measured plot data |
 | Kozak 2004 taper | published_table |
 | TIPSY interior dimension sorts | published_table, adapted to geometry-only |
-| TIPSY 4.5 `.taf` grade/residue | model_output; nominal site index; share-scaled to FEMIC volume |
+| TSA24 BTC /TSR grade/residue | model_output; AU and site-index specific |
 | BC Interior log prices | published product averages; placeholder for grade value |
 | Residue density / moisture / chip yield | assumption |
 | Grade assignment | none (`not_assigned`) |
@@ -287,18 +285,16 @@ Input and output hashes are in `manifest.json`.
 ## 7. Gaps and next steps
 
 - No official grade benchmark: the pilot is dimension-only, so its sort
-  shares are not BC log grades. The TIPSY `.taf` grade shares are a
-  model-output proxy at nominal site index, not a field-grade gate.
-- The TIPSY `.taf` tables are nominal-site-index surfaces (SW 20, PLI 23,
-  FDI 25). Grade volumes are share-preserving rescales to FEMIC managed
-  volume; they are not independent AU grade runs. SE and BL use the SW
-  table as the interior volume surrogate.
+  shares are not BC log grades. The BTC `Logs_Grade_*` shares are a
+  model-output proxy, not a field-grade gate.
+- Logs_Grade_D and Logs_Grade_F are zero for every TSA24 AU in this run.
+  The grade comparison therefore covers the H/I/J/U/X/Y surface only.
 - TIPSY `Residual_*` is mill-processing residue (chips/sawdust/shavings/
   trim/bark), not harvest slash. The pilot residue is
   `taper total - recovered logs`; the two are not equivalent.
-- VDYP and TIPSY joins use within-stratum PSP site-index tertiles. That is a
-  benchmark stratification, not the FEMIC AU `si_level` assignment. Replace
-  it with the FEMIC AU crosswalk before treating the comparison as a gate.
+- The VDYP and TIPSY joins now use the FEMIC AU crosswalk (BEC + species
+  + FEMIC site-index class), including combined-species AUs. The join is
+  still a benchmark mapping, not an operational AU assignment.
 - The price profile has no pulpwood price for Hem-Bal or Cedar and no prices
   for White Pine or Yellow Pine. Unpriced volume is reported separately.
 - Residue density, moisture, and chip yield are assumptions. Replace them with

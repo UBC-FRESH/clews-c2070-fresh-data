@@ -195,8 +195,8 @@
     "tolerance_relative": 1e-05,
     "total_taper_m3": 58.15258667098862
   },
-  "created_utc": "2026-11-15T18:54:56+00:00",
-  "elapsed_seconds": 35.55324220494367,
+  "created_utc": "2026-11-15T19:34:51+00:00",
+  "elapsed_seconds": 53.0715859758202,
   "inputs": [
     {
       "bytes": 314277,
@@ -253,16 +253,16 @@
       "sha256": "81d70887a756a1116609f3d97531740db4e7e31eb358006bd39a37e381fc4bd6"
     },
     {
-      "bytes": 19001,
+      "bytes": 52648,
       "label": "tipsy_curves",
       "path": "femic-tsa24-instance/data/tipsy_curves_tsa24.csv",
-      "sha256": "83765a61aef631b3a876fe7e7b9dfbcda6d6a4a9bcc59987607107c187763469"
+      "sha256": "ccb7bb0ead30381c355646b3b1f1cb7668537b3f7dbe4d8e237c963df1ed540a"
     },
     {
-      "bytes": 17584,
+      "bytes": 58914,
       "label": "tipsy_output",
       "path": "femic-tsa24-instance/data/04_output-tsa24.csv",
-      "sha256": "3939e5ef4d2bc17a50218dabd5e0f32d452fea69c135de8a29a7aec265b8759b"
+      "sha256": "0b7d020b91e118fce4cc67d2d50680e33fa48afe0b429c0413226d846e1d69f9"
     },
     {
       "bytes": 2222,
@@ -271,16 +271,16 @@
       "sha256": "fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099"
     },
     {
-      "bytes": 336692,
+      "bytes": 152311,
       "label": "tsa24_grade_curves",
       "path": "tsa24_grade_curves/managed_au_curves.csv",
-      "sha256": "30639a435bdb1f0dd11b353b16dffc4fa56c2b82f66af7d21b64e5861aab3945"
+      "sha256": "6fe02e124b842040fe463b2e94bf6a549db7203e74e403db787e1b616b72791c"
     },
     {
-      "bytes": 137652,
+      "bytes": 505,
       "label": "tsa24_grade_industrial_sorts",
       "path": "tsa24_grade_curves/managed_au_industrial_sorts.csv",
-      "sha256": "91c019cd32c20fde04de36b6c9054f5aa2bd0b5fbc506fbbda7b8dc4ad0cab30"
+      "sha256": "5f79dd70d00e126f79f11e18f27deab9e588e1e5475828bb6042d8faf1c58728"
     },
     {
       "bytes": 1468706,
@@ -310,20 +310,20 @@
   "notes": [
     "Pilot, not the pre-registered three-way validation gate.",
     "No official grade assigned.",
-    "TSA24 TIPSY instance has no grade/residue/value columns.",
-    "Grade/residue benchmark comes from TIPSY .taf tables at nominal site index.",
+    "Grade/residue benchmark comes from refreshed TSA24 BTC /TSR output.",
+    "Logs_Grade_D and Logs_Grade_F are zero for every TSA24 AU in this run.",
     "TIPSY residual fibre is mill residue, not harvest slash."
   ],
   "outputs": [
     {
-      "bytes": 10796,
+      "bytes": 8185,
       "path": "TSA24_GRADE_CURVES.md",
-      "sha256": "70f208a20aa0c985f20a6ca9f66170d478b17766662670d6e448b8e6585ccee3"
+      "sha256": "0e54e33603773cffefe2a12bd78f1ffa7f40e6b44e11b451e2d2502059dff6bb"
     },
     {
-      "bytes": 16155,
+      "bytes": 25736,
       "path": "VALIDATION_REPORT.md",
-      "sha256": "45e78be93348152556ddcb4928b9ca0500d430bf42e7dc4b7602c9bc14f566af"
+      "sha256": "6f07a944110505508cebe82bcb6001e9b30fa482b17f28c0a3308958a62c799e"
     },
     {
       "bytes": 38706,
@@ -331,14 +331,14 @@
       "sha256": "7cfd7894ccb78bae304b51609aec922fd26590250f18913a6ebe297fb2768fd9"
     },
     {
-      "bytes": 20466,
+      "bytes": 14713,
       "path": "grade_benchmark.csv",
-      "sha256": "01a68d97867c73bdb5f06f74d68636f16f7ee831a7ad59d6e9eceea72e70a47f"
+      "sha256": "c6671e4066bfe4402dc359d76f6d0f502f76d30e0ad6c4622e5e5f2aab7c8eec"
     },
     {
-      "bytes": 6347,
+      "bytes": 4636,
       "path": "grade_benchmark_summary.json",
-      "sha256": "19af4ad783843bb656b98e780b86c90a528d3088fb9fdcdd5a9e8705231f473c"
+      "sha256": "778d8ec51eaa47f921b2c2bc23d474e96e0132d91f6c7da4c4e4ec8644a8e607"
     },
     {
       "bytes": 284,
@@ -346,9 +346,9 @@
       "sha256": "0cce786d79bffec7749338004aa723fd5b66dada054c533514284fe42a9cc60d"
     },
     {
-      "bytes": 439,
+      "bytes": 447,
       "path": "pilot_row.json",
-      "sha256": "69e952da50047ddd67595abf6a043da10278b59ce070f58263f4101d0b9686ec"
+      "sha256": "2a7afc8ebdabded7fc5e886ecd5ef17bd82a9cbe7ea224546c3d04fc5a27b44b"
     },
     {
       "bytes": 7913,
@@ -391,9 +391,9 @@
       "sha256": "a0fcb0f220a8805b08f9cf2026d3b6dcddd6f701439c6435159398b0e9668dd6"
     },
     {
-      "bytes": 1263,
+      "bytes": 1583,
       "path": "tipsy_benchmark.csv",
-      "sha256": "0fa567588ea09cf38e62f0e29f55dd8138041e5dfe42c55473cbf293da40dd02"
+      "sha256": "9b99c4e3a99da87707cc5436c843299cdbb5a022b9a9728b003dd9979a343ba4"
     },
     {
       "bytes": 158547,
@@ -401,14 +401,14 @@
       "sha256": "da3ce78ec49cd9ea3a311d79cb2001f513ede97264ae12332a3e0221db775ab3"
     },
     {
-      "bytes": 27818,
+      "bytes": 40403,
       "path": "validation_summary.json",
-      "sha256": "a653ff7038762d84ac6743e4b413ce974d5f84514b7086333d4adb2ff9814bb7"
+      "sha256": "1741e383d48d4eb767ae922cbaabcbad2b29bec27ed1c255e6b0094965b91db8"
     },
     {
-      "bytes": 2269,
+      "bytes": 2140,
       "path": "vdyp_benchmark.csv",
-      "sha256": "d65aef25d855334729f9c950a2ec095de968ae11f08dbe27200f4c12805a2fc9"
+      "sha256": "969a20d3100bf482a886e9fe4cde9d4f5478cad39179e17b5da8f81508972814"
     }
   ],
   "pilot": "tsa24_bucking_phase0",

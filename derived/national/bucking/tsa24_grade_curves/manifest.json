@@ -2,19 +2,37 @@
   "coverage": {
     "age_count": 36,
     "au_count": 16,
-    "nominal_site_indices": {
-      "fdi0535P00": 25,
-      "pli0530P00": 23,
-      "sw 0530P00": 20
-    },
+    "dbhq_available": false,
+    "industrial_columns_present": false,
+    "leading_species": [
+      "BL",
+      "FDI",
+      "PLI",
+      "SE",
+      "SX"
+    ],
     "rows": 576,
-    "species_tables": [
-      "fdi0535P00",
-      "pli0530P00",
-      "sw 0530P00"
-    ]
+    "tph_available": false,
+    "zero_grade_columns_by_au": {
+      "21002": "D,F",
+      "21007": "D,F",
+      "21008": "D,F",
+      "22000": "D,F",
+      "22002": "D,F",
+      "22003": "D,F",
+      "22004": "D,F",
+      "22007": "D,F",
+      "22008": "D,F",
+      "23000": "D,F",
+      "23001": "D,F",
+      "23002": "D,F",
+      "23003": "D,F",
+      "23004": "D,F",
+      "23007": "D,F",
+      "23008": "D,F"
+    }
   },
-  "created_utc": "2026-11-15T18:54:14+00:00",
+  "created_utc": "2026-11-15T19:31:19+00:00",
   "inputs": [
     {
       "bytes": 2818,
@@ -23,101 +41,86 @@
       "sha256": "e3c518bdad74a7b7897d44da6d36d93f513bcbfc29495123a7a91b5b24566042"
     },
     {
-      "bytes": 17584,
+      "bytes": 58914,
       "label": "04_output",
       "path": "femic-tsa24-instance/data/04_output-tsa24.csv",
-      "sha256": "3939e5ef4d2bc17a50218dabd5e0f32d452fea69c135de8a29a7aec265b8759b"
+      "sha256": "0b7d020b91e118fce4cc67d2d50680e33fa48afe0b429c0413226d846e1d69f9"
     },
     {
-      "bytes": 19001,
+      "bytes": 52648,
       "label": "tipsy_curves",
       "path": "femic-tsa24-instance/data/tipsy_curves_tsa24.csv",
-      "sha256": "83765a61aef631b3a876fe7e7b9dfbcda6d6a4a9bcc59987607107c187763469"
+      "sha256": "ccb7bb0ead30381c355646b3b1f1cb7668537b3f7dbe4d8e237c963df1ed540a"
     },
     {
       "bytes": 2222,
       "label": "au_table",
       "path": "femic-tsa24-instance/data/model_input_bundle/au_table.csv",
       "sha256": "fbaeb44b241e73373dfa0cf9b730cafed0f3e6f15f944056d35268d4b06b3099"
+    },
+    {
+      "bytes": 3342,
+      "label": "btc_manifest",
+      "path": "vdyp_io/profile_logs/btc_manifest-tsa24_grades_tsa24.json",
+      "sha256": "d4a659b391b5b153de5b8af3f0772a8c84c029fd7f5a0dc604c3cd0c26d59587"
     }
   ],
   "limitations": [
-    "The TAF tables are nominal-site-index surfaces (SW 20, PLI 23, FDI 25).",
-    "SE and BL use the SW table as the interior volume surrogate.",
-    "Grade volumes are share-preserving rescales, not independent AU grade runs.",
-    "Residual fibre is mill processing residue, not harvest residue."
+    "Logs_Grade_D and Logs_Grade_F are zero for every TSA24 AU in this run.",
+    "DBHq and TPH are absent because the stand-structure bank was not requested.",
+    "Industrial log columns are absent because the industrial-logs bank was not requested.",
+    "Residual fibre is mill processing residue, not harvest residue.",
+    "Grade status is model output, not official BC log grade."
   ],
   "outputs": [
     {
-      "bytes": 336692,
+      "bytes": 152311,
       "label": "managed_au_curves",
       "path": "managed_au_curves.csv",
       "rows": 576,
-      "sha256": "30639a435bdb1f0dd11b353b16dffc4fa56c2b82f66af7d21b64e5861aab3945"
+      "sha256": "6fe02e124b842040fe463b2e94bf6a549db7203e74e403db787e1b616b72791c"
     },
     {
-      "bytes": 137652,
+      "bytes": 505,
       "label": "managed_au_industrial_sorts",
       "path": "managed_au_industrial_sorts.csv",
-      "rows": 576,
-      "sha256": "91c019cd32c20fde04de36b6c9054f5aa2bd0b5fbc506fbbda7b8dc4ad0cab30"
+      "rows": 0,
+      "sha256": "5f79dd70d00e126f79f11e18f27deab9e588e1e5475828bb6042d8faf1c58728"
     },
     {
-      "bytes": 3858,
+      "bytes": 3409,
       "label": "au_grade_coverage",
       "path": "au_grade_coverage.csv",
       "rows": 16,
-      "sha256": "a0ef4cbef6a59611a5df92dadff451eae4ed26544b83b54aae6918e73710d1ff"
+      "sha256": "74ca9a5a95c1960889deb2538bdde7dcbc36595b8a8b1dd8929e1353b54a3a04"
     },
     {
-      "bytes": 84527,
+      "bytes": 43716,
       "label": "species_grade_curves",
       "path": "species_grade_curves.csv",
-      "rows": 216,
-      "sha256": "8656e67ea27cca01c0f2ce2868cd6407b9a8d933a9e52d212a5380c3f676c054"
+      "rows": 180,
+      "sha256": "2bfa38f0fd5871c6188479626afd0cea452d9e604813cbfe4c3815b5e8136211"
     }
   ],
   "provenance": {
-    "citation": "Province of British Columbia, TIPSY 4.5, Database/<file>; extracted by fresh-tipsy.",
-    "database_root": "TIPSY_DATABASE (host-local path; not recorded)",
+    "btc_run_id": "tsa24_grades",
     "database_title": "Ministry Standard Database, February 2022",
     "evidence_tier": "model_output",
     "grade_status": "model_output_not_field_grade",
-    "source_model": "TIPSY 4.5 / SYLVER"
+    "indicator_banks": [
+      "log-grades",
+      "residual-fibre"
+    ],
+    "source_model": "TIPSY 4.7 BTC /TSR via FEMIC"
   },
-  "status": "compiled_from_tipsy_taf",
-  "taf_tables": [
-    {
-      "first_age": 3.0,
-      "header_code": "FDI",
-      "last_age": 220.0,
-      "nominal_site_index": 25,
-      "path": "Database/fdi0535P00.taf",
-      "sha256": "71586bfb336ed38e8b5558b063078db5436259a685633639485d8786dac432a7",
-      "stem": "fdi0535P00"
-    },
-    {
-      "first_age": 1.0,
-      "header_code": "PLI",
-      "last_age": 465.0,
-      "nominal_site_index": 23,
-      "path": "Database/pli0530P00.taf",
-      "sha256": "e9744c721b8429dc460198e6d622027f0ecb734d3e754c5eece63d08d978da02",
-      "stem": "pli0530P00"
-    },
-    {
-      "first_age": 3.0,
-      "header_code": "SW",
-      "last_age": 440.0,
-      "nominal_site_index": 20,
-      "path": "Database/sw 0530P00.taf",
-      "sha256": "e014babd67fc6d366a4a60a9452af7ae71277ca81f01b59aaea1aae8f74e628e",
-      "stem": "sw 0530P00"
-    }
-  ],
+  "status": "compiled_from_btc_tsr",
+  "supersedes": {
+    "note": "Replaces the previous nominal-site-index TAF-derived grade table with AU-specific BTC /TSR output from the refreshed TSA24 run.",
+    "status": "compiled_from_tipsy_taf"
+  },
   "transformations": {
-    "age_extrapolation": "Ages beyond the last populated TAF age are held flat and flagged in taf_extrapolated.",
-    "grade_volumes": "Raw TAF Logs_Grade_* shares multiplied by the FEMIC managed AU volume for the same age; grade columns sum to volume.",
-    "residual_fibre": "Raw TAF Residual_* ODT/ha multiplied by FEMIC managed volume / TAF Volume_Diameter_Class sum. TIPSY residuals are mill-processing residues, not harvest slash."
+    "age_grid": "Linear interpolation onto 0-350 by 10 years; ages beyond the BTC curve are held flat and flagged.",
+    "grade_volumes": "Direct copy of BTC Logs_Grade_* columns at the AU age grid; no nominal-site-index substitution or share rescaling.",
+    "residual_fibre": "Direct copy of BTC Residual_* columns; summed to residual_fibre_odt_ha. TIPSY residuals are mill-processing residues, not harvest slash."
   }
 }
