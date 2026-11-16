@@ -178,7 +178,19 @@ basis. The multi-period key is present, but the pilot uses one period.
 161 of 161 diagnostic contracts satisfy both bounds.
 All contracts are marked `diagnostic`.
 
-### 4.6 Objective decomposition
+### 4.6 Delivered cost per m3
+
+| Component | CAD/m3 | Notes |
+| --- | --- | --- |
+| product revenue | 133.60 | assigned volume weighted |
+| supply (roadside proxy) | 90.55 | assigned volume weighted |
+| transport (diagnostic road) | 16.52 | assigned volume weighted |
+| gate | 0.00 | assigned volume weighted |
+| processing | 40.01 | assigned volume weighted |
+| delivered cost | 147.08 | supply + transport + gate + processing |
+| net contribution | -13.48 | revenue - delivered cost |
+
+### 4.7 Objective decomposition
 
 | Component | Value CAD | Unit | Notes |
 | --- | --- | --- | --- |
@@ -190,7 +202,7 @@ All contracts are marked `diagnostic`.
 | unassigned_penalty | -16,549,021,450.00 | CAD | unassigned volume x diagnostic penalty |
 | net_objective | -17,611,466,710.14 | CAD | solver objective -17611466710.142990 |
 
-### 4.7 Facility-class mix versus FFCM
+### 4.8 Facility-class mix versus FFCM
 
 | Class | Pilot assigned m3 | Pilot share | FFCM fmu-primary share |
 | --- | --- | --- | --- |

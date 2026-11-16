@@ -159,7 +159,19 @@ No facility reached nameplate capacity in this run.
 161 of 161 diagnostic contracts satisfy both bounds.
 All contracts are marked `diagnostic`.
 
-### 4.6 Objective decomposition
+### 4.6 Delivered cost per m3
+
+| Component | CAD/m3 | Notes |
+| --- | --- | --- |
+| product revenue | 141.27 | assigned volume weighted |
+| supply (roadside proxy) | 84.33 | assigned volume weighted |
+| transport (diagnostic road) | 8.31 | assigned volume weighted |
+| gate | 0.00 | assigned volume weighted |
+| processing | 40.38 | assigned volume weighted |
+| delivered cost | 133.01 | supply + transport + gate + processing |
+| net contribution | 8.25 | revenue - delivered cost |
+
+### 4.7 Objective decomposition
 
 | Component | Value CAD | Unit | Notes |
 | --- | --- | --- | --- |
@@ -171,7 +183,7 @@ All contracts are marked `diagnostic`.
 | unassigned_penalty | 0.00 | CAD | unassigned volume x diagnostic penalty |
 | net_objective | 2,571,868.89 | CAD | solver objective 2571868.886798 |
 
-### 4.7 Facility-class mix versus FFCM
+### 4.8 Facility-class mix versus FFCM
 
 | Class | Pilot assigned m3 | Pilot share | FFCM fmu-primary share |
 | --- | --- | --- | --- |
