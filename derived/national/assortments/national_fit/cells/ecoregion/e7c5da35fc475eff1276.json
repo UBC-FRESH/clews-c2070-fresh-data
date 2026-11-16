@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -106680.88822934518,
+      "aicc": -106679.84475108431,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10093791673635216,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -106839.0966449174,
+      "aicc": -106838.05316665654,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09532156722587948,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -107563.8550512423,
+      "aicc": -107560.99790838515,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08940332146645924,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -107567.4641316289,
+      "aicc": -107564.60698877176,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08282397224821919,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -107567.4641316289,
+    "aicc": -107564.60698877176,
+    "bic": -107560.98494729889,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.3692604872562864, 0.6307395127437135]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Cascade Ranges|ALNU.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08282397224821919,
+    "limit_excluded_trees": 33,
+    "log_likelihood": 53788.73206581445,
+    "method": "truncated-em-moments",
+    "n_bins": 26,
+    "n_parameters": 5,
+    "n_plots": 33,
+    "n_trees": 495,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.4891069012173506, \"p\": 8.31702937072107}, \"weight\": 0.3692604872562864}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.6498215404608034, \"beta\": 7.879918954838165}, \"weight\": 0.6307395127437135}]}",
+    "spike_weight": null,
+    "support_upper_cm": 67.87499904632568,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.3643932782992035,
+    "b": 0.8046749605163169,
+    "bias_m": -0.007903823121015324,
+    "n": 506,
+    "rmse_m": 2.795814882534201
+  },
+  "height_observations": 506,
+  "runtime_seconds": 0.9936225414276123,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 47,
+    "coverage_n_trees": 528,
+    "end": 1118166,
+    "level": "ecoregion",
+    "species": "ALNU.RUB",
+    "start": 1117638,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Cascade Ranges",
+    "stratum_name": "Cascade Ranges"
+  },
+  "status": "ok"
+}

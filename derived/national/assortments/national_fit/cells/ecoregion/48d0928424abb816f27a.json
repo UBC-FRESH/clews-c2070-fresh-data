@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3100366.2892199196,
+      "aicc": -3100365.5619471925,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06783829043889611,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3099372.37832747,
+      "aicc": -3099371.6510547427,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07273864175600742,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3112580.7095603114,
+      "aicc": -3112578.7740764404,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.019590357737291786,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -3101527.157249228,
+      "aicc": -3101525.221765357,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03965542910419584,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3112580.7095603114,
+    "aicc": -3112578.7740764404,
+    "bic": -3112572.6549707484,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.10985560114883047, 0.8901443988511696]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Atlantic Maritime/Appalachian-Acadian Highlands/Northern New Brunswick Highlands|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.019590357737291786,
+    "limit_excluded_trees": 1826,
+    "log_likelihood": 1556295.3547801557,
+    "method": "truncated-em-moments",
+    "n_bins": 32,
+    "n_parameters": 5,
+    "n_plots": 812,
+    "n_trees": 5362,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 4.4124541568055875, \"beta\": 3.4159295170325477}, \"weight\": 0.10985560114883047}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.5194863543929742, \"beta\": 14.364468592803144}, \"weight\": 0.8901443988511696}]}",
+    "spike_weight": null,
+    "support_upper_cm": 93.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.5380580104148518,
+    "b": 0.9875638031336395,
+    "bias_m": 0.17145473018698001,
+    "n": 1815,
+    "rmse_m": 3.1667887220993687
+  },
+  "height_observations": 1815,
+  "runtime_seconds": 4.192111492156982,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 899,
+    "coverage_n_trees": 7188,
+    "end": 5961654,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 5954466,
+    "stratum_id": "Atlantic Maritime/Appalachian-Acadian Highlands/Northern New Brunswick Highlands",
+    "stratum_name": "Northern New Brunswick Highlands"
+  },
+  "status": "ok"
+}

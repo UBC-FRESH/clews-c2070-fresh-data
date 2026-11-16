@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -131589682.00586319,
+      "aicc": -131589681.0458632,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0372888720264607,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -131645476.52588825,
+      "aicc": -131645475.56588826,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.025999070671847216,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -131662145.17487717,
+      "aicc": -131662142.56618151,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03058739146984904,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -131645476.52588825,
+    "aicc": -131645475.56588826,
+    "bic": -131645472.42400075,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Montane Cordillera/Southern Montane Cordillera|PINU.CON",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.025999070671847216,
+    "limit_excluded_trees": 6183,
+    "log_likelihood": 65822741.262944125,
+    "method": "two-stage",
+    "n_bins": 29,
+    "n_parameters": 3,
+    "n_plots": 2972,
+    "n_trees": 182571,
+    "parameters_json": "{\"beta\": 4.628822157439187, \"p\": 3.0390605285278873, \"s\": 1.0208320543952079}",
+    "spike_weight": null,
+    "support_upper_cm": 74.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.3865039978086564,
+    "b": 0.867764319193893,
+    "bias_m": 0.14709841200791798,
+    "n": 180796,
+    "rmse_m": 3.260651938853077
+  },
+  "height_observations": 180796,
+  "runtime_seconds": 1.3682942390441895,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 4429,
+    "coverage_n_trees": 188889,
+    "end": 2295057,
+    "level": "ecoprovince",
+    "species": "PINU.CON",
+    "start": 2106303,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera",
+    "stratum_name": "Southern Montane Cordillera"
+  },
+  "status": "ok"
+}

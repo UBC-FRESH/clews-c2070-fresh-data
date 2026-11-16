@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -70573.49520916613,
+      "aicc": -70572.74520916613,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08466442931850537,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -71023.11433630878,
+      "aicc": -71022.36433630878,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07170960518540015,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -71216.28782575227,
+      "aicc": -71214.28782575227,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04702963245259628,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -71023.11433630878,
+    "aicc": -71022.36433630878,
+    "bic": -71018.3637794934,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges|PINU.PON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07170960518540015,
+    "limit_excluded_trees": 1,
+    "log_likelihood": 35514.55716815439,
+    "method": "two-stage",
+    "n_bins": 26,
+    "n_parameters": 3,
+    "n_plots": 12,
+    "n_trees": 490,
+    "parameters_json": "{\"beta\": 5.56674001041573, \"p\": 2.7853928730051853, \"s\": 0.9844066274093287}",
+    "spike_weight": null,
+    "support_upper_cm": 90.87499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.4937825472673142,
+    "b": 1.020249084982437,
+    "bias_m": -0.17299049121962437,
+    "n": 491,
+    "rmse_m": 2.8560780217174138
+  },
+  "height_observations": 491,
+  "runtime_seconds": 1.152012586593628,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 491,
+    "end": 3167308,
+    "level": "ecoregion",
+    "species": "PINU.PON",
+    "start": 3166817,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges",
+    "stratum_name": "Western Continental Ranges"
+  },
+  "status": "ok"
+}

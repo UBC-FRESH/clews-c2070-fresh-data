@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -327278.290397055,
+      "aicc": -327273.490397055,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.8843088913686424,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -353919.2683740433,
+      "aicc": -353914.4683740433,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.8033386390841106,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -353919.2683740433,
+    "aicc": -353914.4683740433,
+    "bic": -353918.67670031125,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Southern Boreal Cordillera/Boreal Mountains and Plateaus|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.8033386390841106,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 176962.63418702164,
+    "method": "two-stage",
+    "n_bins": 7,
+    "n_parameters": 3,
+    "n_plots": 83,
+    "n_trees": 708,
+    "parameters_json": "{\"beta\": 1.7930424710838055, \"p\": 4.3488294661719884e-05, \"s\": 674608.3788759896}",
+    "spike_weight": null,
+    "support_upper_cm": 24.500000476837158,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6358495456356205,
+    "b": 0.6851542904599164,
+    "bias_m": 0.08584915868114862,
+    "n": 708,
+    "rmse_m": 1.1547671092549527
+  },
+  "height_observations": 708,
+  "runtime_seconds": 28.875885248184204,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 83,
+    "coverage_n_trees": 708,
+    "end": 5284805,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5284097,
+    "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Boreal Mountains and Plateaus",
+    "stratum_name": "Boreal Mountains and Plateaus"
+  },
+  "status": "ok"
+}

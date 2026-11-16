@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1241715.885071009,
+      "aicc": -1241715.2534920615,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07504512908653982,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1251208.4956994753,
+      "aicc": -1251207.8641205279,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07070487165994987,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1245997.576930276,
+      "aicc": -1245995.9102636091,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.053845577157175084,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1251208.4956994753,
+    "aicc": -1251207.8641205279,
+    "bic": -1251203.2826906205,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Northern Montane Cordillera/Skeena Mountains|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07070487165994987,
+    "limit_excluded_trees": 69,
+    "log_likelihood": 625607.2478497376,
+    "method": "two-stage",
+    "n_bins": 36,
+    "n_parameters": 3,
+    "n_plots": 178,
+    "n_trees": 3203,
+    "parameters_json": "{\"beta\": 4.634486125509567, \"p\": 2.8797894602571814, \"s\": 0.9745647107309007}",
+    "spike_weight": null,
+    "support_upper_cm": 105.50000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.06695868573689107,
+    "b": 0.9803302980649292,
+    "bias_m": 0.0355537676182562,
+    "n": 3186,
+    "rmse_m": 4.116173937356945
+  },
+  "height_observations": 3186,
+  "runtime_seconds": 0.936420202255249,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 215,
+    "coverage_n_trees": 3272,
+    "end": 4945643,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 4942371,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Skeena Mountains",
+    "stratum_name": "Skeena Mountains"
+  },
+  "status": "ok"
+}

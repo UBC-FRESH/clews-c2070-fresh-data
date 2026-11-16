@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3327522.3187865494,
+      "aicc": -3327521.6129041966,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.20994227386363246,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3345822.9507202897,
+      "aicc": -3345822.244837937,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17074786797853736,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3387164.3219321263,
+      "aicc": -3387162.4469321263,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08662583478015796,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3411443.307032182,
+      "aicc": -3411441.432032182,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0287965536423014,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3411443.307032182,
+    "aicc": -3411441.432032182,
+    "bic": -3411435.1191013833,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.7909316689813521, 0.2090683310186478]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Boreal Shield East/Southern Boreal Shield|POPU.GRA",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.0287965536423014,
+    "limit_excluded_trees": 8467,
+    "log_likelihood": 1705726.653516091,
+    "method": "truncated-em-moments",
+    "n_bins": 34,
+    "n_parameters": 5,
+    "n_plots": 778,
+    "n_trees": 8474,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.8585843130976225, \"p\": 6.038936913988785}, \"weight\": 0.7909316689813521}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.1354487845946215, \"beta\": 11.605516834167371}, \"weight\": 0.2090683310186478}]}",
+    "spike_weight": null,
+    "support_upper_cm": 95.625,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.1215613524575854,
+    "b": 0.5680033199848957,
+    "bias_m": 0.3382881950049289,
+    "n": 4231,
+    "rmse_m": 3.2898151201692687
+  },
+  "height_observations": 4231,
+  "runtime_seconds": 1.3782734870910645,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1348,
+    "coverage_n_trees": 16941,
+    "end": 8932234,
+    "level": "ecoprovince",
+    "species": "POPU.GRA",
+    "start": 8915293,
+    "stratum_id": "Boreal Shield East/Southern Boreal Shield",
+    "stratum_name": "Southern Boreal Shield"
+  },
+  "status": "ok"
+}

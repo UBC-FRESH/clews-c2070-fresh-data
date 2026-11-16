@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -921861.9588585079,
+      "aicc": -921861.44822021,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04858031812584396,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -921689.929903234,
+      "aicc": -921689.4192649361,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.044050798013462844,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -922129.3602784136,
+      "aicc": -922128.0269450803,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04683491644392901,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -922261.8803746721,
+      "aicc": -922260.5470413388,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.044905823696700986,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -922261.8803746721,
+    "aicc": -922260.5470413388,
+    "bic": -922252.2212465085,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.013863063641650642, 0.9861369363583494]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecozone:Pacific Maritime|ACER.MAC",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.044905823696700986,
+    "limit_excluded_trees": 65,
+    "log_likelihood": 461135.94018733606,
+    "method": "truncated-em-moments",
+    "n_bins": 47,
+    "n_parameters": 5,
+    "n_plots": 239,
+    "n_trees": 4155,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.020248671139999, \"p\": 22.03911007766153}, \"weight\": 0.013863063641650642}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.4479236111680214, \"beta\": 21.284136088368694}, \"weight\": 0.9861369363583494}]}",
+    "spike_weight": null,
+    "support_upper_cm": 129.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.484924717158925,
+    "b": 0.7954576100310469,
+    "bias_m": -0.0037199667820372695,
+    "n": 4176,
+    "rmse_m": 4.82130487682311
+  },
+  "height_observations": 4176,
+  "runtime_seconds": 0.8006515502929688,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 276,
+    "coverage_n_trees": 4249,
+    "end": 1594859,
+    "level": "ecozone",
+    "species": "ACER.MAC",
+    "start": 1590639,
+    "stratum_id": "Pacific Maritime",
+    "stratum_name": "Pacific Maritime"
+  },
+  "status": "ok"
+}

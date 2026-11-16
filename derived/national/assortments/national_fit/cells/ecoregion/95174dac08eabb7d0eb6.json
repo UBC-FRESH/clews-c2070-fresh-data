@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -149009.63803124626,
+      "aicc": -149008.63803124626,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1049718327550635,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -152988.8230324884,
+      "aicc": -152987.8230324884,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.059526551602465116,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -147758.78808252496,
+      "aicc": -147756.0608097977,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11382135108283731,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -152988.8230324884,
+    "aicc": -152987.8230324884,
+    "bic": -152984.82641895788,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Central Montane Cordillera/Bulkley Ranges|PINU.CON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.059526551602465116,
+    "limit_excluded_trees": 11,
+    "log_likelihood": 76497.4115162442,
+    "method": "two-stage",
+    "n_bins": 22,
+    "n_parameters": 3,
+    "n_plots": 23,
+    "n_trees": 611,
+    "parameters_json": "{\"beta\": 2.6971453357166673, \"p\": 6.992159707231762, \"s\": 0.9487074166632686}",
+    "spike_weight": null,
+    "support_upper_cm": 71.99999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.27346619365027464,
+    "b": 1.02072956381747,
+    "bias_m": -0.02422283477342277,
+    "n": 607,
+    "rmse_m": 3.8297447450312583
+  },
+  "height_observations": 607,
+  "runtime_seconds": 0.748492956161499,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 33,
+    "coverage_n_trees": 622,
+    "end": 4886797,
+    "level": "ecoregion",
+    "species": "PINU.CON",
+    "start": 4886175,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera/Bulkley Ranges",
+    "stratum_name": "Bulkley Ranges"
+  },
+  "status": "ok"
+}

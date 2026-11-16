@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -59525.241571074,
+      "aicc": -59513.241571074,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.6358154262085342,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -61444.51676633765,
+      "aicc": -61432.51676633765,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.5843284149779557,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -70133.82069896485,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07934426648232151,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -70662.75283460697,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.040809675465315776,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -70662.75283460697,
+    "aicc": null,
+    "bic": -70663.79403726083,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5742678493885053, 0.42573215061149466]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Central Montane Cordillera/Fraser Plateau|ALNU.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.040809675465315776,
+    "limit_excluded_trees": 4,
+    "log_likelihood": 35336.37641730349,
+    "method": "truncated-em-moments",
+    "n_bins": 4,
+    "n_parameters": 5,
+    "n_plots": 9,
+    "n_trees": 86,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.7682823284846831, \"p\": 10.094116764505337}, \"weight\": 0.5742678493885053}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 5.552448742314587}, \"weight\": 0.42573215061149466}]}",
+    "spike_weight": null,
+    "support_upper_cm": 15.750000476837158,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.7669535197762619,
+    "b": 1.2644596099515393,
+    "bias_m": 0.5620195901250943,
+    "n": 84,
+    "rmse_m": 1.5878441474788492
+  },
+  "height_observations": 84,
+  "runtime_seconds": 0.6263442039489746,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 242,
+    "end": 3745974,
+    "level": "ecoregion",
+    "species": "ALNU.RUB",
+    "start": 3745884,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera/Fraser Plateau",
+    "stratum_name": "Fraser Plateau"
+  },
+  "status": "ok"
+}

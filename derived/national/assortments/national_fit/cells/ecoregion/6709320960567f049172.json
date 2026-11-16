@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -314406.52490942064,
+      "aicc": -314405.6677665635,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3178691705373293,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -318264.80258251587,
+      "aicc": -318263.9454396587,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.264102276326205,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -330022.85831105255,
+      "aicc": -330020.55061874486,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0678646475209094,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -318264.80258251587,
+    "aicc": -318263.9454396587,
+    "bic": -318260.4053748075,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Mid-Boreal Shield/Riviere Rupert Plateau|POPU.TRE",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "magplot",
+    "ks": 0.264102276326205,
+    "limit_excluded_trees": 1257,
+    "log_likelihood": 159135.40129125793,
+    "method": "two-stage",
+    "n_bins": 24,
+    "n_parameters": 3,
+    "n_plots": 92,
+    "n_trees": 1022,
+    "parameters_json": "{\"beta\": 5.606409649205423, \"p\": 2.5014449046177374, \"s\": 1.368434269497703}",
+    "spike_weight": null,
+    "support_upper_cm": 82.25000381469727,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7827679908816547,
+    "b": 0.641350228016255,
+    "bias_m": 0.18145948908572493,
+    "n": 400,
+    "rmse_m": 2.7535677592381895
+  },
+  "height_observations": 400,
+  "runtime_seconds": 1.4922528266906738,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 183,
+    "coverage_n_trees": 2279,
+    "end": 9058083,
+    "level": "ecoregion",
+    "species": "POPU.TRE",
+    "start": 9055804,
+    "stratum_id": "Boreal Shield East/Mid-Boreal Shield/Riviere Rupert Plateau",
+    "stratum_name": "Riviere Rupert Plateau"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -5709746.250709365,
+      "aicc": -5709745.107852222,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.13434276815220592,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -5837724.150513512,
+      "aicc": -5837723.007656369,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1474820952142485,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -5837724.150513512,
+    "aicc": -5837723.007656369,
+    "bic": -5837720.493886038,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Cordillera/Southern Boreal Cordillera|ABIE.LAS",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.1474820952142485,
+    "limit_excluded_trees": 697,
+    "log_likelihood": 2918865.075256756,
+    "method": "two-stage",
+    "n_bins": 25,
+    "n_parameters": 3,
+    "n_plots": 198,
+    "n_trees": 2915,
+    "parameters_json": "{\"beta\": 1.5375359274580265, \"p\": 5.251035085150374, \"s\": 0.8948477423073965}",
+    "spike_weight": null,
+    "support_upper_cm": 64.375,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.0405717792546014,
+    "b": 1.1780945153588656,
+    "bias_m": 0.2888466280987138,
+    "n": 3254,
+    "rmse_m": 2.7945328348424736
+  },
+  "height_observations": 3254,
+  "runtime_seconds": 3.197958469390869,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 297,
+    "coverage_n_trees": 3613,
+    "end": 6011117,
+    "level": "ecoprovince",
+    "species": "ABIE.LAS",
+    "start": 6007505,
+    "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera",
+    "stratum_name": "Southern Boreal Cordillera"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -896511.5782419279,
+      "aicc": -896511.1167034664,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.48979049744166436,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -874036.0907144351,
+      "aicc": -874035.6291759736,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.46710625718877113,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -958117.2263732816,
+      "aicc": -958116.0263732816,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.19615224924179436,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -964509.998119895,
+      "aicc": -964508.798119895,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1493000657147378,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -964509.998119895,
+    "aicc": -964508.798119895,
+    "bic": -964499.8713614413,
+    "component_names_json": "[\"weibull\", \"gamma\"]",
+    "component_weights_json": "[0.4872318679047121, 0.5127681320952879]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Ranges|TSUG.MER",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.1493000657147378,
+    "limit_excluded_trees": 128,
+    "log_likelihood": 482259.9990599475,
+    "method": "truncated-em-moments",
+    "n_bins": 45,
+    "n_parameters": 5,
+    "n_plots": 78,
+    "n_trees": 232,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 3.1987766963498467, \"beta\": 5.749217599987894}, \"weight\": 0.4872318679047121}, {\"name\": \"gamma\", \"parameters\": {\"beta\": 12.083955186085308, \"p\": 1.6446919549342893}, \"weight\": 0.5127681320952879}]}",
+    "spike_weight": null,
+    "support_upper_cm": 142.25000381469727,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.570829692926387,
+    "b": 0.9040503152287137,
+    "bias_m": 0.38928679722915155,
+    "n": 264,
+    "rmse_m": 3.6861210905857535
+  },
+  "height_observations": 264,
+  "runtime_seconds": 1.656374454498291,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 145,
+    "coverage_n_trees": 360,
+    "end": 4808770,
+    "level": "ecoregion",
+    "species": "TSUG.MER",
+    "start": 4808410,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Ranges",
+    "stratum_name": "Queen Charlotte Ranges"
+  },
+  "status": "ok"
+}

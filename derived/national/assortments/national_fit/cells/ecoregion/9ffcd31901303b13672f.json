@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2047.8206252932564,
+      "aicc": -2045.1539586265897,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0929658485778957,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2193.221732408658,
+      "aicc": -2190.5550657419917,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06504392131908238,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2172.256488351651,
+      "aicc": -2163.6850597802227,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07029475241874206,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2224.8495657537255,
+      "aicc": -2216.278137182297,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.046557220781038855,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2224.8495657537255,
+    "aicc": -2216.278137182297,
+    "bic": -2222.024818966418,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.11226148415060914, 0.8877385158493909]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Boreal Transition|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.046557220781038855,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 1117.4247828768628,
+    "method": "truncated-em-moments",
+    "n_bins": 10,
+    "n_parameters": 5,
+    "n_plots": 3,
+    "n_trees": 39,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.23892273305486583, \"p\": 96.89056019439538}, \"weight\": 0.11226148415060914}, {\"name\": \"weibull\", \"parameters\": {\"a\": 5.089056873327416, \"beta\": 15.256814265424888}, \"weight\": 0.8877385158493909}]}",
+    "spike_weight": null,
+    "support_upper_cm": 33.62499952316284,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7536650943144646,
+    "b": 0.5505616922761194,
+    "bias_m": 0.009424703175736496,
+    "n": 39,
+    "rmse_m": 0.32172344372817624
+  },
+  "height_observations": 39,
+  "runtime_seconds": 1.555328369140625,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 3,
+    "coverage_n_trees": 39,
+    "end": 11097892,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 11097853,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Boreal Transition",
+    "stratum_name": "Boreal Transition"
+  },
+  "status": "ok"
+}

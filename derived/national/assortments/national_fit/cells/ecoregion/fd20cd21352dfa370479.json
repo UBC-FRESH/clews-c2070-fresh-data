@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -18379883.117445312,
+      "aicc": -18379881.97458817,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.015518999094086744,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -18366822.136120968,
+      "aicc": -18366820.993263826,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03534140134116803,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -18384331.00289765,
+      "aicc": -18384327.845002912,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.016939370404209855,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -18379883.117445312,
+    "aicc": -18379881.97458817,
+    "bic": -18379879.460817836,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Atlantic Maritime/Northumberland Lowlands/Prince Edward Island|ACER.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.015518999094086744,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 9189944.558722656,
+    "method": "two-stage",
+    "n_bins": 25,
+    "n_parameters": 3,
+    "n_plots": 213,
+    "n_trees": 24822,
+    "parameters_json": "{\"a\": 1.812426906879549, \"beta\": 13.67795877138423, \"s\": 1.022636893782853}",
+    "spike_weight": null,
+    "support_upper_cm": 64.74999904632568,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.0903955647157515,
+    "b": 0.527745169923311,
+    "bias_m": 0.16932438070831174,
+    "n": 2047,
+    "rmse_m": 2.17109850943722
+  },
+  "height_observations": 2047,
+  "runtime_seconds": 1.0191102027893066,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 213,
+    "coverage_n_trees": 24822,
+    "end": 11283719,
+    "level": "ecoregion",
+    "species": "ACER.RUB",
+    "start": 11258897,
+    "stratum_id": "Atlantic Maritime/Northumberland Lowlands/Prince Edward Island",
+    "stratum_name": "Prince Edward Island"
+  },
+  "status": "ok"
+}

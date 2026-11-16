@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -351182.85501300375,
+      "aicc": -351181.9661241149,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.24682079788212527,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -355300.06386416167,
+      "aicc": -355299.1749752728,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.19135996893511661,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -360667.92280340364,
+      "aicc": -360665.5228034036,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1070613671898539,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -364791.91633157287,
+      "aicc": -364789.51633157284,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03554716364671406,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -364791.91633157287,
+    "aicc": -364789.51633157284,
+    "bic": -364784.74639555044,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.764287896584413, 0.23571210341558696]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Mid-Boreal Shield/Abitibi Plains|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.03554716364671406,
+    "limit_excluded_trees": 1189,
+    "log_likelihood": 182400.95816578643,
+    "method": "truncated-em-moments",
+    "n_bins": 25,
+    "n_parameters": 5,
+    "n_plots": 163,
+    "n_trees": 1161,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.663162634732002, \"p\": 5.971384415251468}, \"weight\": 0.764287896584413}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.0585270706962175, \"beta\": 11.60153577721991}, \"weight\": 0.23571210341558696}]}",
+    "spike_weight": null,
+    "support_upper_cm": 78.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.20557485783029397,
+    "b": 0.8878891810397935,
+    "bias_m": 0.23617789297004443,
+    "n": 705,
+    "rmse_m": 2.568717940294155
+  },
+  "height_observations": 705,
+  "runtime_seconds": 1.7342770099639893,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 296,
+    "coverage_n_trees": 2350,
+    "end": 9064417,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 9062067,
+    "stratum_id": "Boreal Shield East/Mid-Boreal Shield/Abitibi Plains",
+    "stratum_name": "Abitibi Plains"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -138339.46034501976,
+      "aicc": -138338.81169637112,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05550291452448908,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -138326.57174260938,
+      "aicc": -138325.92309396074,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05929724290233873,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -138477.4400773788,
+      "aicc": -138475.7257916645,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.047848447710502895,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -138477.4400773788,
+    "aicc": -138475.7257916645,
+    "bic": -138468.87221704528,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.010951792242900476, 0.9890482077570995]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Georgia Depression/Eastern Vancouver Island|PICE.SIT",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.047848447710502895,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 69243.7200386894,
+    "method": "truncated-em-moments",
+    "n_bins": 30,
+    "n_parameters": 5,
+    "n_plots": 71,
+    "n_trees": 830,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.49322692696353393, \"p\": 147.0835746144269}, \"weight\": 0.010951792242900476}, {\"name\": \"weibull\", \"parameters\": {\"a\": 0.9485592798174082, \"beta\": 10.947324768224057}, \"weight\": 0.9890482077570995}]}",
+    "spike_weight": null,
+    "support_upper_cm": 103.24999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.9318758825185897,
+    "b": 1.1862208644202228,
+    "bias_m": -0.28784642154359974,
+    "n": 830,
+    "rmse_m": 4.093141525115303
+  },
+  "height_observations": 830,
+  "runtime_seconds": 0.4700894355773926,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 71,
+    "coverage_n_trees": 833,
+    "end": 616039,
+    "level": "ecoregion",
+    "species": "PICE.SIT",
+    "start": 615209,
+    "stratum_id": "Pacific Maritime/Georgia Depression/Eastern Vancouver Island",
+    "stratum_name": "Eastern Vancouver Island"
+  },
+  "status": "ok"
+}

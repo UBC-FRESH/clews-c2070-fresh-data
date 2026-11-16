@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2470579.82874681,
+      "aicc": -2470579.1228644573,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.023533363355568215,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2471317.5795880426,
+      "aicc": -2471316.87370569,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.020522209619966314,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2473231.4941197596,
+      "aicc": -2473229.6191197596,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02085290190232092,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -2471639.8714332287,
+      "aicc": -2471637.9964332287,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.019371858422445487,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2473231.4941197596,
+    "aicc": -2473229.6191197596,
+    "bic": -2473223.306188961,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9967320668400264, 0.0032679331599736127]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Atlantic Maritime/Northumberland Lowlands/Prince Edward Island|BETU.ALL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.02085290190232092,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 1236620.7470598798,
+    "method": "truncated-em-moments",
+    "n_bins": 30,
+    "n_parameters": 5,
+    "n_plots": 75,
+    "n_trees": 4153,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 1.2492765205728125, \"beta\": 11.804973433746207}, \"weight\": 0.9967320668400264}, {\"name\": \"weibull\", \"parameters\": {\"a\": 42.00031712074596, \"beta\": 75.7174132874356}, \"weight\": 0.0032679331599736127}]}",
+    "spike_weight": null,
+    "support_upper_cm": 97.5,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.5278574180547955,
+    "b": 0.6939383789821454,
+    "bias_m": 0.18467845509159608,
+    "n": 695,
+    "rmse_m": 2.407493964031299
+  },
+  "height_observations": 695,
+  "runtime_seconds": 0.732649564743042,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 75,
+    "coverage_n_trees": 4153,
+    "end": 11311111,
+    "level": "ecoregion",
+    "species": "BETU.ALL",
+    "start": 11306958,
+    "stratum_id": "Atlantic Maritime/Northumberland Lowlands/Prince Edward Island",
+    "stratum_name": "Prince Edward Island"
+  },
+  "status": "ok"
+}

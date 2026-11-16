@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -27951371.16457342,
+      "aicc": -27951370.478859134,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05739143161292115,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -27876381.036271907,
+      "aicc": -27876380.35055762,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08910533489658101,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -27951371.16457342,
+    "aicc": -27951370.478859134,
+    "bic": -27951366.173888482,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoprovince:Atlantic Maritime/Appalachian-Acadian Highlands|BETU.PAP",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.05739143161292115,
+    "limit_excluded_trees": 22920,
+    "log_likelihood": 13975688.58228671,
+    "method": "two-stage",
+    "n_bins": 27,
+    "n_parameters": 3,
+    "n_plots": 3226,
+    "n_trees": 38029,
+    "parameters_json": "{\"a\": 1.4918100217115966, \"beta\": 11.6636564766994, \"s\": 1.1034521705904634}",
+    "spike_weight": null,
+    "support_upper_cm": 100.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.5374518851975593,
+    "b": 0.6718423223680896,
+    "bias_m": 0.3706418485718517,
+    "n": 10186,
+    "rmse_m": 2.7518453148094353
+  },
+  "height_observations": 10186,
+  "runtime_seconds": 0.8733057975769043,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 4303,
+    "coverage_n_trees": 60949,
+    "end": 6762521,
+    "level": "ecoprovince",
+    "species": "BETU.PAP",
+    "start": 6701572,
+    "stratum_id": "Atlantic Maritime/Appalachian-Acadian Highlands",
+    "stratum_name": "Appalachian-Acadian Highlands"
+  },
+  "status": "ok"
+}

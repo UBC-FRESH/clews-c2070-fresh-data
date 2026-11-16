@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -6400519.621718648,
+      "aicc": -6400519.355051981,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02338255168599912,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -6406009.788346839,
+      "aicc": -6406009.5216801725,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02289882528935719,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -6406009.788346839,
+    "aicc": -6406009.5216801725,
+    "bic": -6406002.158462493,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Yukon Southern Lakes|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.02289882528935719,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 3203007.8941734196,
+    "method": "two-stage",
+    "n_bins": 28,
+    "n_parameters": 3,
+    "n_plots": 221,
+    "n_trees": 13120,
+    "parameters_json": "{\"beta\": 4.771215535159273, \"p\": 2.42068113737303, \"s\": 1.0361816617610913}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.16292370054909552,
+    "b": 0.8568514132108378,
+    "bias_m": 0.1628022987414932,
+    "n": 9758,
+    "rmse_m": 2.8135150634880883
+  },
+  "height_observations": 9758,
+  "runtime_seconds": 0.09606575965881348,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 221,
+    "coverage_n_trees": 13120,
+    "end": 5455461,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 5442341,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Southern Lakes",
+    "stratum_name": "Yukon Southern Lakes"
+  },
+  "status": "ok"
+}

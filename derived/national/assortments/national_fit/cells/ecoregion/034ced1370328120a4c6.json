@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3201486.620961404,
+      "aicc": -3201485.697884481,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04274044312246128,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3216021.5478162826,
+      "aicc": -3216020.6247393596,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.012095111174702244,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3217243.378626879,
+      "aicc": -3217240.878626879,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.011968511800398263,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3217411.297766305,
+      "aicc": -3217408.797766305,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.011552890965035478,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3217411.297766305,
+    "aicc": -3217408.797766305,
+    "bic": -3217404.2917793966,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.08610516775948433, 0.9138948322405157]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Thompson-Okanagan Plateau|POPU.TRE",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.011552890965035478,
+    "limit_excluded_trees": 206,
+    "log_likelihood": 1608710.6488831525,
+    "method": "truncated-em-moments",
+    "n_bins": 28,
+    "n_parameters": 5,
+    "n_plots": 497,
+    "n_trees": 9943,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.4979181593630884, \"p\": 12.08652435212853}, \"weight\": 0.08610516775948433}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.9087862180475068, \"beta\": 12.624442026426834}, \"weight\": 0.9138948322405157}]}",
+    "spike_weight": null,
+    "support_upper_cm": 75.87500095367432,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.06801908063305313,
+    "b": 0.9526595578518925,
+    "bias_m": 0.08198698115716264,
+    "n": 9948,
+    "rmse_m": 3.468003649248192
+  },
+  "height_observations": 9948,
+  "runtime_seconds": 1.7384357452392578,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 573,
+    "coverage_n_trees": 10166,
+    "end": 1759989,
+    "level": "ecoregion",
+    "species": "POPU.TRE",
+    "start": 1749840,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Thompson-Okanagan Plateau",
+    "stratum_name": "Thompson-Okanagan Plateau"
+  },
+  "status": "ok"
+}

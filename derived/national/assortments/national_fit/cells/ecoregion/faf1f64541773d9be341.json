@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -15516.773337400173,
+      "aicc": -15508.773337400173,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07798071896223674,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -14900.960042931116,
+      "aicc": -14892.960042931116,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10195320319511655,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -15516.773337400173,
+    "aicc": -15508.773337400173,
+    "bic": -15516.935606953008,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Liard Basin|ABIE.LAS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.07798071896223674,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 7761.386668700086,
+    "method": "two-stage",
+    "n_bins": 7,
+    "n_parameters": 3,
+    "n_plots": 6,
+    "n_trees": 71,
+    "parameters_json": "{\"a\": 3.8024091560976743, \"beta\": 10.318901269450365, \"s\": 0.9414545393544006}",
+    "spike_weight": null,
+    "support_upper_cm": 19.500000476837158,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.5797368166694554,
+    "b": 1.1277269692559861,
+    "bias_m": 0.12257673119378419,
+    "n": 56,
+    "rmse_m": 1.287280569928348
+  },
+  "height_observations": 56,
+  "runtime_seconds": 1.6417477130889893,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 6,
+    "coverage_n_trees": 71,
+    "end": 5489863,
+    "level": "ecoregion",
+    "species": "ABIE.LAS",
+    "start": 5489792,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Liard Basin",
+    "stratum_name": "Liard Basin"
+  },
+  "status": "ok"
+}

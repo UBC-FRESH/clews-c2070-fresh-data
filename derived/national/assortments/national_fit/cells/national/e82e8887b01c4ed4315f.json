@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -272294204.0450185,
+      "aicc": -272294203.65792173,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.015426038982441104,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -272339490.5810433,
+      "aicc": -272339490.19394654,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01944078204620947,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -272396599.962565,
+      "aicc": -272396598.962565,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.009073225208804991,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -272422899.9856923,
+      "aicc": -272422898.9856923,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.008668397214291246,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -272339490.5810433,
+    "aicc": -272339490.19394654,
+    "bic": -272339484.01207906,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "national:Canada|POPU.TRE",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.01944078204620947,
+    "limit_excluded_trees": 73679,
+    "log_likelihood": 136169748.29052165,
+    "method": "two-stage",
+    "n_bins": 44,
+    "n_parameters": 3,
+    "n_plots": 13240,
+    "n_trees": 586346,
+    "parameters_json": "{\"beta\": 5.469440638753361, \"p\": 2.562807187119839, \"s\": 1.0276525835712866}",
+    "spike_weight": null,
+    "support_upper_cm": 166.49999618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.4488818001987895,
+    "b": 0.8280336792131416,
+    "bias_m": 0.02229312249738218,
+    "n": 537927,
+    "rmse_m": 2.8361764268269845
+  },
+  "height_observations": 537927,
+  "runtime_seconds": 2.461066484451294,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 17995,
+    "coverage_n_trees": 660173,
+    "end": 4811366,
+    "level": "national",
+    "species": "POPU.TRE",
+    "start": 4151341,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

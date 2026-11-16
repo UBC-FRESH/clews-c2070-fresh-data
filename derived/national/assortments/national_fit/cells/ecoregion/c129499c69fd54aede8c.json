@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -188971.24518183974,
+      "aicc": -188968.84518183974,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03930140368571428,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -188766.3031326829,
+      "aicc": -188763.9031326829,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06122379848961956,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -189255.750720479,
+      "aicc": -189248.250720479,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02072142534223942,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -188971.24518183974,
+    "aicc": -188968.84518183974,
+    "bic": -188969.3280098509,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Nass Ranges|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.03930140368571428,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 94488.62259091987,
+    "method": "two-stage",
+    "n_bins": 12,
+    "n_parameters": 3,
+    "n_plots": 84,
+    "n_trees": 977,
+    "parameters_json": "{\"a\": 2.645548322343056, \"beta\": 12.632790943311345, \"s\": 1.044970387758453}",
+    "spike_weight": null,
+    "support_upper_cm": 35.875000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.1815545110536734,
+    "b": 0.5022399658516051,
+    "bias_m": 0.12952669805735245,
+    "n": 977,
+    "rmse_m": 1.743405623157795
+  },
+  "height_observations": 977,
+  "runtime_seconds": 1.5815746784210205,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 85,
+    "coverage_n_trees": 1002,
+    "end": 4850328,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 4849351,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Nass Ranges",
+    "stratum_name": "Nass Ranges"
+  },
+  "status": "ok"
+}

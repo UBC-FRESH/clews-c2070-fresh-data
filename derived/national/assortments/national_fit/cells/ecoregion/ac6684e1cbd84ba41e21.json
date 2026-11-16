@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -793427.674270605,
+      "aicc": -793425.674270605,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.21947831108878207,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -813719.1857541658,
+      "aicc": -813717.1857541658,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11257528020620655,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -816857.7673491095,
+      "aicc": -816851.7673491095,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10038573296560416,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -823459.7219837678,
+      "aicc": -823453.7219837678,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05569849574274778,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -823459.7219837678,
+    "aicc": -823453.7219837678,
+    "bic": -823455.8590401566,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.6574671892727638, 0.3425328107272362]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Southern Boreal Shield/Lac Temiscamingue Lowland|ABIE.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.05569849574274778,
+    "limit_excluded_trees": 2097,
+    "log_likelihood": 411734.8609918839,
+    "method": "truncated-em-moments",
+    "n_bins": 13,
+    "n_parameters": 5,
+    "n_plots": 92,
+    "n_trees": 2097,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.186379994128073, \"p\": 12.698723383311112}, \"weight\": 0.6574671892727638}, {\"name\": \"weibull\", \"parameters\": {\"a\": 6.7063655549157755, \"beta\": 10.981082611379454}, \"weight\": 0.3425328107272362}]}",
+    "spike_weight": null,
+    "support_upper_cm": 41.99999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.41395361503861167,
+    "b": 0.724287665520225,
+    "bias_m": 0.23469703237893141,
+    "n": 935,
+    "rmse_m": 2.0959233328098112
+  },
+  "height_observations": 935,
+  "runtime_seconds": 1.2420670986175537,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 179,
+    "coverage_n_trees": 4194,
+    "end": 8034400,
+    "level": "ecoregion",
+    "species": "ABIE.BAL",
+    "start": 8030206,
+    "stratum_id": "Boreal Shield East/Southern Boreal Shield/Lac Temiscamingue Lowland",
+    "stratum_name": "Lac Temiscamingue Lowland"
+  },
+  "status": "ok"
+}

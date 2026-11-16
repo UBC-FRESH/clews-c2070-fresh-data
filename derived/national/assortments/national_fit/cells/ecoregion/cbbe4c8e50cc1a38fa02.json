@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -91275.05124703534,
+      "aicc": -91273.45124703534,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17462324348959818,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -94242.81055982588,
+      "aicc": -94241.21055982588,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08708564843400535,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -95059.43594661442,
+      "aicc": -95054.82056199903,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03894685074363147,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -94242.81055982588,
+    "aicc": -94241.21055982588,
+    "bic": -94239.97724288839,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Eastern Boreal Shield/Mecatina Plateau|LARI.LAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.08708564843400535,
+    "limit_excluded_trees": 320,
+    "log_likelihood": 47124.40527991294,
+    "method": "two-stage",
+    "n_bins": 12,
+    "n_parameters": 3,
+    "n_plots": 53,
+    "n_trees": 319,
+    "parameters_json": "{\"beta\": 1.1255697740924413, \"p\": 11.586188042942444, \"s\": 1.0523353843688055}",
+    "spike_weight": null,
+    "support_upper_cm": 48.375000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.38183965962386074,
+    "b": 0.6170240706968018,
+    "bias_m": 0.2452937402659768,
+    "n": 109,
+    "rmse_m": 2.0061038723687723
+  },
+  "height_observations": 109,
+  "runtime_seconds": 1.250859260559082,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 105,
+    "coverage_n_trees": 639,
+    "end": 9110391,
+    "level": "ecoregion",
+    "species": "LARI.LAR",
+    "start": 9109752,
+    "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Mecatina Plateau",
+    "stratum_name": "Mecatina Plateau"
+  },
+  "status": "ok"
+}

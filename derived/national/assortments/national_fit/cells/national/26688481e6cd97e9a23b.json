@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -43963007.92471601,
+      "aicc": -43963007.42471601,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.026835288095998222,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -44026432.305614114,
+      "aicc": -44026431.805614114,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.011091628170017742,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -43947193.13023069,
+      "aicc": -43947191.82588286,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.009179806545674796,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -44022218.088628896,
+      "aicc": -44022216.78428107,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01000564161953349,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -44026432.305614114,
+    "aicc": -44026431.805614114,
+    "bic": -44026426.45188296,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "national:Canada|LARI.OCC",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.011091628170017742,
+    "limit_excluded_trees": 1280,
+    "log_likelihood": 22013219.152807057,
+    "method": "two-stage",
+    "n_bins": 50,
+    "n_parameters": 3,
+    "n_plots": 2155,
+    "n_trees": 129984,
+    "parameters_json": "{\"beta\": 6.166457429828017, \"p\": 2.4863384048356685, \"s\": 1.0157105490481624}",
+    "spike_weight": null,
+    "support_upper_cm": 132.5,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.051084215993601065,
+    "b": 0.9928692024985458,
+    "bias_m": -0.17973150811406688,
+    "n": 130054,
+    "rmse_m": 4.064042081860946
+  },
+  "height_observations": 130054,
+  "runtime_seconds": 2.2686190605163574,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 2829,
+    "coverage_n_trees": 131325,
+    "end": 4965825,
+    "level": "national",
+    "species": "LARI.OCC",
+    "start": 4834561,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

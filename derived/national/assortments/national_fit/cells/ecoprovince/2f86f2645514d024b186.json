@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1541548.895848953,
+      "aicc": -1541547.395848953,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.18521642000252703,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1813086.0262031492,
+      "aicc": -1813084.5262031492,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14697931431010258,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1898610.454570629,
+      "aicc": -1898606.1688563433,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.008955590099754468,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1813086.0262031492,
+    "aicc": -1813084.5262031492,
+    "bic": -1813083.0390063287,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Pacific Maritime/Southern Coastal Mountains|BROADLEAF",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.14697931431010258,
+    "limit_excluded_trees": 32,
+    "log_likelihood": 906546.0131015746,
+    "method": "two-stage",
+    "n_bins": 17,
+    "n_parameters": 3,
+    "n_plots": 280,
+    "n_trees": 4468,
+    "parameters_json": "{\"beta\": 0.6302568546991855, \"p\": 10.02642149633156, \"s\": 0.8686007672656387}",
+    "spike_weight": null,
+    "support_upper_cm": 51.500000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.70712229169523,
+    "b": 0.6940347002462922,
+    "bias_m": 0.12353477193654286,
+    "n": 4405,
+    "rmse_m": 1.7980801173384726
+  },
+  "height_observations": 4405,
+  "runtime_seconds": 2.48764967918396,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 296,
+    "coverage_n_trees": 4588,
+    "end": 1073140,
+    "level": "ecoprovince",
+    "species": "BROADLEAF",
+    "start": 1068640,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains",
+    "stratum_name": "Southern Coastal Mountains"
+  },
+  "status": "ok"
+}

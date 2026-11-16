@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -267092.3429250737,
+      "aicc": -267091.20006793085,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.052956331133434786,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -266602.9982196039,
+      "aicc": -266601.85536246106,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06773130681329487,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -267092.3429250737,
+    "aicc": -267091.20006793085,
+    "bic": -267088.6862975991,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 9.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Shield East/Mid-Boreal Shield/Abitibi Plains|CONIFEROUS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "qc_pep",
+    "ks": 0.052956331133434786,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 133549.17146253685,
+    "method": "two-stage",
+    "n_bins": 23,
+    "n_parameters": 3,
+    "n_plots": 39,
+    "n_trees": 848,
+    "parameters_json": "{\"a\": 1.3884945546033922, \"beta\": 15.702443365856963, \"s\": 1.6353318287273355}",
+    "spike_weight": null,
+    "support_upper_cm": 71.50000095367432,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6171684927760493,
+    "b": 0.6941969271463341,
+    "bias_m": 0.36825724456317155,
+    "n": 232,
+    "rmse_m": 2.6711903746003585
+  },
+  "height_observations": 232,
+  "runtime_seconds": 30.19329071044922,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 39,
+    "coverage_n_trees": 848,
+    "end": 11345791,
+    "level": "ecoregion",
+    "species": "CONIFEROUS",
+    "start": 11344943,
+    "stratum_id": "Boreal Shield East/Mid-Boreal Shield/Abitibi Plains",
+    "stratum_name": "Abitibi Plains"
+  },
+  "status": "ok"
+}

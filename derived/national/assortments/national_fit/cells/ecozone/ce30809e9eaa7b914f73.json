@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -395925.64087486896,
+      "aicc": -395923.64087486896,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09259510723158826,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -395454.1322780336,
+      "aicc": -395452.1322780336,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1226773461421814,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -398534.5802489407,
+      "aicc": -398528.5802489407,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08984385461119393,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -398534.5802489407,
+    "aicc": -398528.5802489407,
+    "bic": -398530.71730532945,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9972222725942486, 0.0027777274057513967]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecozone:Taiga Shield East|BETU.PAP",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.08984385461119393,
+    "limit_excluded_trees": 276,
+    "log_likelihood": 199272.29012447034,
+    "method": "truncated-em-moments",
+    "n_bins": 11,
+    "n_parameters": 5,
+    "n_plots": 14,
+    "n_trees": 276,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 1.9961760167340699, \"beta\": 6.457982894268716}, \"weight\": 0.9972222725942486}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.6137687607950975, \"beta\": 2331.0501421148806}, \"weight\": 0.0027777274057513967}]}",
+    "spike_weight": null,
+    "support_upper_cm": 41.99999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.19650162912090635,
+    "b": 0.7163544694353698,
+    "bias_m": 0.24040756206840416,
+    "n": 507,
+    "rmse_m": 1.2029883267064543
+  },
+  "height_observations": 507,
+  "runtime_seconds": 0.7481763362884521,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 24,
+    "coverage_n_trees": 552,
+    "end": 11216087,
+    "level": "ecozone",
+    "species": "BETU.PAP",
+    "start": 11215535,
+    "stratum_id": "Taiga Shield East",
+    "stratum_name": "Taiga Shield East"
+  },
+  "status": "ok"
+}

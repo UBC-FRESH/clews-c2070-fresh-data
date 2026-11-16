@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -60532.29359156326,
+      "aicc": -60520.29359156326,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.8522535765530135,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -65813.75423395948,
+      "aicc": -65801.75423395948,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.7701739342219579,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -77486.61963561681,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4312678377765522,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -84425.34683738233,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.026148698438051232,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -84425.34683738233,
+    "aicc": null,
+    "bic": -84426.38804003618,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.33330665286210404, 0.6666933471378961]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Northern Montane Cordillera/Central Canadian Rocky Mountains|GENERIC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp",
+    "ks": 0.026148698438051232,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 42217.67341869116,
+    "method": "truncated-em-moments",
+    "n_bins": 5,
+    "n_parameters": 5,
+    "n_plots": 47,
+    "n_trees": 379,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.4983664984788999, \"p\": 16.626596962599454}, \"weight\": 0.33330665286210404}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 5.377584016920527}, \"weight\": 0.6666933471378961}]}",
+    "spike_weight": null,
+    "support_upper_cm": 17.5,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.029578885905100737,
+    "b": 0.9684851737455566,
+    "bias_m": 0.0757332902503782,
+    "n": 379,
+    "rmse_m": 1.0116445574247521
+  },
+  "height_observations": 379,
+  "runtime_seconds": 2.5539050102233887,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 54,
+    "coverage_n_trees": 439,
+    "end": 4976697,
+    "level": "ecoregion",
+    "species": "GENERIC",
+    "start": 4976318,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Central Canadian Rocky Mountains",
+    "stratum_name": "Central Canadian Rocky Mountains"
+  },
+  "status": "ok"
+}

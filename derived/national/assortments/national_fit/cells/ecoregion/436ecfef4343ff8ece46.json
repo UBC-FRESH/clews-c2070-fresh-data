@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -18433.14872758294,
+      "aicc": -18429.720156154366,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07473611144473491,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -18494.532084115886,
+      "aicc": -18491.103512687314,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.032771131365486594,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -18641.67451379499,
+      "aicc": -18629.67451379499,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.015904533172357016,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -18641.67451379499,
+    "aicc": -18629.67451379499,
+    "bic": -18639.685037430998,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.12028421903674397, 0.8797157809632561]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Boreal Transition|LARI.LAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.015904533172357016,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 9325.837256897496,
+    "method": "truncated-em-moments",
+    "n_bins": 11,
+    "n_parameters": 5,
+    "n_plots": 28,
+    "n_trees": 168,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.11756128997351845, \"p\": 169.4452709348862}, \"weight\": 0.12028421903674397}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.528821199217787, \"beta\": 11.994391561992849}, \"weight\": 0.8797157809632561}]}",
+    "spike_weight": null,
+    "support_upper_cm": 28.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.5322069597914727,
+    "b": 0.7319405146897203,
+    "bias_m": 0.05894058432897177,
+    "n": 168,
+    "rmse_m": 1.3436031330778715
+  },
+  "height_observations": 168,
+  "runtime_seconds": 0.9008774757385254,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 28,
+    "coverage_n_trees": 168,
+    "end": 10971244,
+    "level": "ecoregion",
+    "species": "LARI.LAR",
+    "start": 10971076,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Boreal Transition",
+    "stratum_name": "Boreal Transition"
+  },
+  "status": "ok"
+}

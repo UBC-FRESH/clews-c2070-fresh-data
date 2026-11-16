@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3618.370518879993,
+      "aicc": -3616.870518879993,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1887456132441595,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -5236.556106693274,
+      "aicc": -5235.056106693274,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14919018645263316,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3615.3179409740587,
+      "aicc": -3611.0322266883445,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.18871361414390397,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -6330.194627705216,
+      "aicc": -6325.908913419501,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.045155669402932475,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -6330.194627705216,
+    "aicc": -6325.908913419501,
+    "bic": -6325.215966337446,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5988391796198832, 0.40116082038011686]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Strait of Belle Isle|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.045155669402932475,
+    "limit_excluded_trees": 716,
+    "log_likelihood": 3170.097313852608,
+    "method": "truncated-em-moments",
+    "n_bins": 20,
+    "n_parameters": 5,
+    "n_plots": 12,
+    "n_trees": 876,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.808940418261955, \"p\": 5.171454920872065}, \"weight\": 0.5988391796198832}, {\"name\": \"weibull\", \"parameters\": {\"a\": 9.469517176255263, \"beta\": 10.785233315445332}, \"weight\": 0.40116082038011686}]}",
+    "spike_weight": null,
+    "support_upper_cm": 51.25,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.06253368333699108,
+    "b": 0.7145353781545841,
+    "bias_m": 0.3131638675812684,
+    "n": 596,
+    "rmse_m": 1.2967612841869292
+  },
+  "height_observations": 596,
+  "runtime_seconds": 1.9179003238677979,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 24,
+    "coverage_n_trees": 1592,
+    "end": 10236188,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 10234596,
+    "stratum_id": "Boreal Shield East/Newfoundland/Strait of Belle Isle",
+    "stratum_name": "Strait of Belle Isle"
+  },
+  "status": "ok"
+}

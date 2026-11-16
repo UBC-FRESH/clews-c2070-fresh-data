@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -23577.032550669825,
+      "aicc": -23574.032550669825,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1625634533438246,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -27148.155363560967,
+      "aicc": -27145.155363560967,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.096524806958595,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -27567.457374836653,
+      "aicc": -27557.457374836653,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03554504121980928,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -27652.47117430609,
+      "aicc": -27642.47117430609,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03141116250425981,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -27652.47117430609,
+    "aicc": -27642.47117430609,
+    "bic": -27650.04664105715,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.1855117305519957, 0.8144882694480042]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North|POPU.TRE",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.03141116250425981,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 13831.235587153045,
+    "method": "truncated-em-moments",
+    "n_bins": 9,
+    "n_parameters": 5,
+    "n_plots": 6,
+    "n_trees": 112,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.24080674865432714, \"p\": 80.66949101810972}, \"weight\": 0.1855117305519957}, {\"name\": \"weibull\", \"parameters\": {\"a\": 4.806541891166486, \"beta\": 11.750511005093243}, \"weight\": 0.8144882694480042}]}",
+    "spike_weight": null,
+    "support_upper_cm": 32.37499952316284,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.3692679353122452,
+    "b": 0.44451882289507333,
+    "bias_m": 0.15081005645000245,
+    "n": 110,
+    "rmse_m": 1.8534127229666575
+  },
+  "height_observations": 110,
+  "runtime_seconds": 0.5722498893737793,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 6,
+    "coverage_n_trees": 112,
+    "end": 5509508,
+    "level": "ecoregion",
+    "species": "POPU.TRE",
+    "start": 5509396,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North",
+    "stratum_name": "Yukon Plateau-North"
+  },
+  "status": "ok"
+}

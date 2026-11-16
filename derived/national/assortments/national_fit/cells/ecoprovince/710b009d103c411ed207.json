@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -333623.200329289,
+      "aicc": -333622.6669959557,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10918878019630471,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -342464.4127490825,
+      "aicc": -342463.87941574916,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08607530777128189,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -342464.4127490825,
+    "aicc": -342463.87941574916,
+    "bic": -342458.73728818813,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Pacific Maritime/Georgia Depression|ACER.MAC",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08607530777128189,
+    "limit_excluded_trees": 9,
+    "log_likelihood": 171235.20637454125,
+    "method": "two-stage",
+    "n_bins": 45,
+    "n_parameters": 3,
+    "n_plots": 79,
+    "n_trees": 2141,
+    "parameters_json": "{\"beta\": 7.43216245935819, \"p\": 2.8350777884772245, \"s\": 0.9504683598905804}",
+    "spike_weight": null,
+    "support_upper_cm": 125.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.47790428992656764,
+    "b": 0.7907255975571111,
+    "bias_m": -0.029137490424558193,
+    "n": 2143,
+    "rmse_m": 5.366250269224257
+  },
+  "height_observations": 2143,
+  "runtime_seconds": 2.338045835494995,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 85,
+    "coverage_n_trees": 2174,
+    "end": 1590243,
+    "level": "ecoprovince",
+    "species": "ACER.MAC",
+    "start": 1588093,
+    "stratum_id": "Pacific Maritime/Georgia Depression",
+    "stratum_name": "Georgia Depression"
+  },
+  "status": "ok"
+}

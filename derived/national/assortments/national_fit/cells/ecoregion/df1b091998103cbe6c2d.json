@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -252298.09980282493,
+      "aicc": -252296.59980282493,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09044669896816951,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -252638.3613589954,
+      "aicc": -252636.8613589954,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10981022605613844,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -72269.35576456426,
+      "aicc": -72265.07005027855,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.25530116253142254,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -253853.25149472023,
+      "aicc": -253848.96578043452,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07991293879356111,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -253853.25149472023,
+    "aicc": -253848.96578043452,
+    "bic": -253848.27283335247,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.14421795033596313, 0.8557820496640368]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges|BETU.PAP",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07991293879356111,
+    "limit_excluded_trees": 19,
+    "log_likelihood": 126931.62574736011,
+    "method": "truncated-em-moments",
+    "n_bins": 20,
+    "n_parameters": 5,
+    "n_plots": 25,
+    "n_trees": 587,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.9760757476184221, \"p\": 28.120699729366947}, \"weight\": 0.14421795033596313}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.7641251983759987, \"beta\": 10.65027381122757}, \"weight\": 0.8557820496640368}]}",
+    "spike_weight": null,
+    "support_upper_cm": 51.25,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.36065631258565056,
+    "b": 0.8363949432529774,
+    "bias_m": 0.13233345791716833,
+    "n": 582,
+    "rmse_m": 2.6354888391876914
+  },
+  "height_observations": 582,
+  "runtime_seconds": 1.1063191890716553,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 35,
+    "coverage_n_trees": 606,
+    "end": 3177661,
+    "level": "ecoregion",
+    "species": "BETU.PAP",
+    "start": 3177055,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges",
+    "stratum_name": "Interior Transition Ranges"
+  },
+  "status": "ok"
+}

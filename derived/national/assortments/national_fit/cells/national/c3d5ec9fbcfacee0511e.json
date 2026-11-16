@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -80553621.46250017,
+      "aicc": -80553621.28068198,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06359495535586002,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -80531882.50956267,
+      "aicc": -80531882.32774448,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06386735494332026,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -81176107.04693663,
+      "aicc": -81176106.58539817,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03995065252793218,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -80553621.46250017,
+    "aicc": -80553621.28068198,
+    "bic": -80553612.72453551,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "national:Canada|PINU.BAN",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.06359495535586002,
+    "limit_excluded_trees": 70775,
+    "log_likelihood": 40276813.731250085,
+    "method": "two-stage",
+    "n_bins": 31,
+    "n_parameters": 3,
+    "n_plots": 3319,
+    "n_trees": 170813,
+    "parameters_json": "{\"a\": 3.23404185019389, \"beta\": 14.478323638930979, \"s\": 0.9323290581020699}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.013315446143122727,
+    "b": 0.9367985506410617,
+    "bias_m": 0.08227856915089647,
+    "n": 125357,
+    "rmse_m": 2.8572643712209014
+  },
+  "height_observations": 125357,
+  "runtime_seconds": 1.6025969982147217,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 5068,
+    "coverage_n_trees": 241588,
+    "end": 10728017,
+    "level": "national",
+    "species": "PINU.BAN",
+    "start": 10486429,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

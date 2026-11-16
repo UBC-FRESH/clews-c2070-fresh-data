@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1420785.1360529508,
+      "aicc": -1420781.707481522,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.6089159371099505,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -1417760.9793599425,
+      "aicc": -1417757.5507885139,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.6156078549431114,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1464881.293352592,
+      "aicc": -1464869.293352592,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.49336921203810674,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1420785.1360529508,
+    "aicc": -1420781.707481522,
+    "bic": -1420783.9423671323,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoprovince:Taiga Plains/Hay-Slave Lowlands|BROADLEAF",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.6089159371099505,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 710395.5680264754,
+    "method": "two-stage",
+    "n_bins": 10,
+    "n_parameters": 3,
+    "n_plots": 204,
+    "n_trees": 4104,
+    "parameters_json": "{\"a\": 0.8723354154664543, \"beta\": 1.7380522904401583, \"s\": 8.181516639212902}",
+    "spike_weight": null,
+    "support_upper_cm": 28.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.1420954131487784,
+    "b": 0.479275510418924,
+    "bias_m": 0.05812194531318536,
+    "n": 4091,
+    "rmse_m": 0.9694092563865246
+  },
+  "height_observations": 4091,
+  "runtime_seconds": 4.475986957550049,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 204,
+    "coverage_n_trees": 4201,
+    "end": 5987418,
+    "level": "ecoprovince",
+    "species": "BROADLEAF",
+    "start": 5983314,
+    "stratum_id": "Taiga Plains/Hay-Slave Lowlands",
+    "stratum_name": "Hay-Slave Lowlands"
+  },
+  "status": "ok"
+}

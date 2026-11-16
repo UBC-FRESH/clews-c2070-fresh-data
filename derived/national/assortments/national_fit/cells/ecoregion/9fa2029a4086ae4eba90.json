@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -449371.22235620185,
+      "aicc": -449370.333467313,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01722733894634887,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -449247.84239632724,
+      "aicc": -449246.95350743836,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02628017756591272,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -447913.2882537652,
+      "aicc": -447910.8882537652,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03338522489514728,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -449371.22235620185,
+    "aicc": -449370.333467313,
+    "bic": -449366.9203945884,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Shield West/Western Boreal Shield/Churchill River Upland|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.01722733894634887,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 224688.61117810092,
+    "method": "two-stage",
+    "n_bins": 29,
+    "n_parameters": 3,
+    "n_plots": 77,
+    "n_trees": 1322,
+    "parameters_json": "{\"a\": 1.1811616771664695, \"beta\": 9.916314605068045, \"s\": 1.1717845242423497}",
+    "spike_weight": null,
+    "support_upper_cm": 78.37500095367432,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3267081070438183,
+    "b": 1.0237303295225124,
+    "bias_m": -0.15324260221245295,
+    "n": 1216,
+    "rmse_m": 2.8206318979289087
+  },
+  "height_observations": 1216,
+  "runtime_seconds": 21.42236590385437,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 77,
+    "coverage_n_trees": 1322,
+    "end": 10333434,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 10332112,
+    "stratum_id": "Boreal Shield West/Western Boreal Shield/Churchill River Upland",
+    "stratum_name": "Churchill River Upland"
+  },
+  "status": "ok"
+}

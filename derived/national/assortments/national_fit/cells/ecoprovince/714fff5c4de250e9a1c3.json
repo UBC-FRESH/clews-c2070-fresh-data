@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2122054.626041894,
+      "aicc": -2122053.702964971,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.23702456762185026,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2156008.0351618095,
+      "aicc": -2156007.1120848865,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1581826851515366,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2178784.2860654844,
+      "aicc": -2178781.7860654844,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05755636687444,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2156008.0351618095,
+    "aicc": -2156007.1120848865,
+    "bic": -2156003.8315696646,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Shield East/Southern Boreal Shield|FRAX.NIG",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.1581826851515366,
+    "limit_excluded_trees": 5336,
+    "log_likelihood": 1078007.0175809048,
+    "method": "two-stage",
+    "n_bins": 27,
+    "n_parameters": 3,
+    "n_plots": 426,
+    "n_trees": 5337,
+    "parameters_json": "{\"beta\": 2.898525886956316, \"p\": 4.959777286416524, \"s\": 1.1341889800906397}",
+    "spike_weight": null,
+    "support_upper_cm": 75.50000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.9164528542347653,
+    "b": 0.5984380698908006,
+    "bias_m": 0.39152859689930963,
+    "n": 3140,
+    "rmse_m": 2.948886420789771
+  },
+  "height_observations": 3140,
+  "runtime_seconds": 1.3790419101715088,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 806,
+    "coverage_n_trees": 10673,
+    "end": 8915293,
+    "level": "ecoprovince",
+    "species": "FRAX.NIG",
+    "start": 8904620,
+    "stratum_id": "Boreal Shield East/Southern Boreal Shield",
+    "stratum_name": "Southern Boreal Shield"
+  },
+  "status": "ok"
+}

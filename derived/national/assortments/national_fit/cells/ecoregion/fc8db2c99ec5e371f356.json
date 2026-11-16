@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -184276.56261836513,
+      "aicc": -184275.56261836513,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02628207071220695,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -184414.59076569328,
+      "aicc": -184413.59076569328,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04066291436763647,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -184607.4170871118,
+      "aicc": -184604.68981438453,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.028914105371354637,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -184607.4170871118,
+    "aicc": -184604.68981438453,
+    "bic": -184600.75606456093,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.005438649829441938, 0.994561350170558]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Atlantic Maritime/Fundy Uplands/Saint John River Valley|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.028914105371354637,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 92308.7085435559,
+    "method": "truncated-em-moments",
+    "n_bins": 22,
+    "n_parameters": 5,
+    "n_plots": 57,
+    "n_trees": 395,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.3812496709462705, \"p\": 134.6196084322572}, \"weight\": 0.005438649829441938}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.4216979814658166, \"beta\": 10.425734910889274}, \"weight\": 0.994561350170558}]}",
+    "spike_weight": null,
+    "support_upper_cm": 70.12499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.10134288249560079,
+    "b": 0.8161303731220421,
+    "bias_m": 0.01937487953046972,
+    "n": 88,
+    "rmse_m": 2.462425381540344
+  },
+  "height_observations": 88,
+  "runtime_seconds": 0.4233419895172119,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 57,
+    "coverage_n_trees": 395,
+    "end": 5818840,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 5818445,
+    "stratum_id": "Atlantic Maritime/Fundy Uplands/Saint John River Valley",
+    "stratum_name": "Saint John River Valley"
+  },
+  "status": "ok"
+}

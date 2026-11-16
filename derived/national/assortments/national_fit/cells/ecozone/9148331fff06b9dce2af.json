@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -80084.48311842783,
+      "aicc": -80081.05454699926,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16679616375969958,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -81814.65515729794,
+      "aicc": -81811.22658586937,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12060937001608285,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -84441.55364787237,
+      "aicc": -84429.55364787237,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03853324968979782,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -84270.65175641607,
+      "aicc": -84258.65175641607,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.025365626796394758,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -84441.55364787237,
+    "aicc": -84429.55364787237,
+    "bic": -84439.56417150838,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.42670135064159415, 0.5732986493584059]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecozone:Hudson Plains|ABIE.BAL",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.03853324968979782,
+    "limit_excluded_trees": 274,
+    "log_likelihood": 42225.77682393618,
+    "method": "truncated-em-moments",
+    "n_bins": 9,
+    "n_parameters": 5,
+    "n_plots": 19,
+    "n_trees": 274,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 9.701680722068106, \"beta\": 11.459268634770776}, \"weight\": 0.42670135064159415}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.705874074237429, \"beta\": 15.044753746112546}, \"weight\": 0.5732986493584059}]}",
+    "spike_weight": null,
+    "support_upper_cm": 28.250000476837158,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.2190035669413113,
+    "b": 1.30499485609057,
+    "bias_m": 0.18372291022137044,
+    "n": 74,
+    "rmse_m": 1.770084255187941
+  },
+  "height_observations": 74,
+  "runtime_seconds": 1.3611888885498047,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 37,
+    "coverage_n_trees": 548,
+    "end": 11215116,
+    "level": "ecozone",
+    "species": "ABIE.BAL",
+    "start": 11214568,
+    "stratum_id": "Hudson Plains",
+    "stratum_name": "Hudson Plains"
+  },
+  "status": "ok"
+}

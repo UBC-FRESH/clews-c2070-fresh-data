@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -31201840.027035207,
+      "aicc": -31201839.73073891,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05602497433215148,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -31209478.441546466,
+      "aicc": -31209478.14525017,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05457131098843526,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -31209478.441546466,
+    "aicc": -31209478.14525017,
+    "bic": -31209471.113592695,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Atlantic Maritime|ACER.SAH",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.05457131098843526,
+    "limit_excluded_trees": 19833,
+    "log_likelihood": 15604742.220773233,
+    "method": "two-stage",
+    "n_bins": 45,
+    "n_parameters": 3,
+    "n_plots": 2681,
+    "n_trees": 44416,
+    "parameters_json": "{\"beta\": 16.54045984350009, \"p\": 0.7120042678709851, \"s\": 1.3586736797321621}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.064412870557882,
+    "b": 0.5370399814129184,
+    "bias_m": 0.27498086528343574,
+    "n": 17264,
+    "rmse_m": 3.1169291538458626
+  },
+  "height_observations": 17264,
+  "runtime_seconds": 0.2664146423339844,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 3164,
+    "coverage_n_trees": 64249,
+    "end": 7379303,
+    "level": "ecozone",
+    "species": "ACER.SAH",
+    "start": 7315054,
+    "stratum_id": "Atlantic Maritime",
+    "stratum_name": "Atlantic Maritime"
+  },
+  "status": "ok"
+}

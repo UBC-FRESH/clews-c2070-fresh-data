@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -475286375.25571847,
+      "aicc": -475286375.1332695,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05592104137593956,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -475380207.0484736,
+      "aicc": -475380206.9260246,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06359134087791918,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -476495032.79314697,
+      "aicc": -476495032.4838686,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.026351871187969333,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -476756978.5450712,
+      "aicc": -476756978.2357928,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.026963871260294425,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -475380207.0484736,
+    "aicc": -475380206.9260246,
+    "bic": -475380197.1535215,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "national:Canada|PSEU.MEN",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.06359134087791918,
+    "limit_excluded_trees": 18402,
+    "log_likelihood": 237690106.5242368,
+    "method": "two-stage",
+    "n_bins": 95,
+    "n_parameters": 3,
+    "n_plots": 12636,
+    "n_trees": 993212,
+    "parameters_json": "{\"beta\": 8.161049842818608, \"p\": 1.5473532412653612, \"s\": 1.0180523038557157}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.8487792547984848,
+    "b": 1.1899836544561595,
+    "bias_m": -0.40835822915311476,
+    "n": 989268,
+    "rmse_m": 6.201625813785339
+  },
+  "height_observations": 989268,
+  "runtime_seconds": 3.00075101852417,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 18715,
+    "coverage_n_trees": 1013474,
+    "end": 4144194,
+    "level": "national",
+    "species": "PSEU.MEN",
+    "start": 3132580,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

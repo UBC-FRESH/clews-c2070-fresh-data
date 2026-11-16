@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -319518.36554680625,
+      "aicc": -319513.56554680626,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.187576757654647,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -429328.57421609823,
+      "aicc": -429323.77421609825,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08422020073257996,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -317894.15149241575,
+      "aicc": -317874.15149241575,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.21731294811225793,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -429328.57421609823,
+    "aicc": -429323.77421609825,
+    "bic": -429327.9825423662,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08422020073257996,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 214667.28710804912,
+    "method": "two-stage",
+    "n_bins": 9,
+    "n_parameters": 3,
+    "n_plots": 43,
+    "n_trees": 1125,
+    "parameters_json": "{\"beta\": 0.18193730475035375, \"p\": 30.235911894560566, \"s\": 0.8990595547166197}",
+    "spike_weight": null,
+    "support_upper_cm": 23.375000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.681842306634731,
+    "b": 0.617115888801364,
+    "bias_m": 0.08043739996784458,
+    "n": 1124,
+    "rmse_m": 0.9909582498545016
+  },
+  "height_observations": 1124,
+  "runtime_seconds": 5.250936269760132,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 52,
+    "coverage_n_trees": 1331,
+    "end": 3158885,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 3157760,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges",
+    "stratum_name": "Western Continental Ranges"
+  },
+  "status": "ok"
+}

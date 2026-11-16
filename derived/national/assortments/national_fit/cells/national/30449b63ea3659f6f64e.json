@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -13090313.502204759,
+      "aicc": -13090313.049374571,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.028756583711351702,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -13110004.966165239,
+      "aicc": -13110004.513335051,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04024399323327532,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -13117056.52271673,
+      "aicc": -13117055.346246142,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03056201377483294,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -13120884.257178897,
+      "aicc": -13120883.080708308,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0303149010685727,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -13120884.257178897,
+    "aicc": -13120883.080708308,
+    "bic": -13120874.041922558,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.03954946028615319, 0.9604505397138468]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "national:Canada|PINU.STR",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.0303149010685727,
+    "limit_excluded_trees": 9788,
+    "log_likelihood": 6560447.1285894485,
+    "method": "truncated-em-moments",
+    "n_bins": 53,
+    "n_parameters": 5,
+    "n_plots": 2762,
+    "n_trees": 22419,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.8528135716336878, \"p\": 20.998365207227355}, \"weight\": 0.03954946028615319}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.6597519736122157, \"beta\": 20.94590758615858}, \"weight\": 0.9604505397138468}]}",
+    "spike_weight": null,
+    "support_upper_cm": 143.24999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.06304810348488862,
+    "b": 0.7978273100005612,
+    "bias_m": 0.3438052802190232,
+    "n": 9417,
+    "rmse_m": 4.132971595006345
+  },
+  "height_observations": 9417,
+  "runtime_seconds": 0.6214284896850586,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 3645,
+    "coverage_n_trees": 32207,
+    "end": 11100367,
+    "level": "national",
+    "species": "PINU.STR",
+    "start": 11068160,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

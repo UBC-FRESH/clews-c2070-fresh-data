@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -194843.5140926188,
+      "aicc": -194842.0140926188,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.017941916178992934,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -195930.18308271008,
+      "aicc": -195928.68308271008,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0642779628597141,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -196927.94086543264,
+      "aicc": -196923.65515114693,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.017210358610420275,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -196930.42126433522,
+      "aicc": -196926.1355500495,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.017210461794667512,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -196930.42126433522,
+    "aicc": -196926.1355500495,
+    "bic": -196925.44260296747,
+    "component_names_json": "[\"weibull\", \"gamma\"]",
+    "component_weights_json": "[0.9967301775509253, 0.0032698224490747183]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Southern Boreal Cordillera/Yukon-Stikine Highlands|PINU.CON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot",
+    "ks": 0.017210461794667512,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 98470.21063216761,
+    "method": "truncated-em-moments",
+    "n_bins": 12,
+    "n_parameters": 5,
+    "n_plots": 3,
+    "n_trees": 612,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 3.9930811908919326, \"beta\": 16.493155415094336}, \"weight\": 0.9967301775509253}, {\"name\": \"gamma\", \"parameters\": {\"beta\": 581.5642634525327, \"p\": 5.972719507159839}, \"weight\": 0.0032698224490747183}]}",
+    "spike_weight": null,
+    "support_upper_cm": 51.12500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.21489821423151992,
+    "b": 0.9376300475890141,
+    "bias_m": 0.08537189700638019,
+    "n": 598,
+    "rmse_m": 1.6379212068138345
+  },
+  "height_observations": 598,
+  "runtime_seconds": 1.1207597255706787,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 3,
+    "coverage_n_trees": 612,
+    "end": 5468554,
+    "level": "ecoregion",
+    "species": "PINU.CON",
+    "start": 5467942,
+    "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Yukon-Stikine Highlands",
+    "stratum_name": "Yukon-Stikine Highlands"
+  },
+  "status": "ok"
+}

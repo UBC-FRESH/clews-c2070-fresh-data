@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -9533446.667762324,
+      "aicc": -9533446.096333753,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01440620621276123,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9535956.630100574,
+      "aicc": -9535956.058672003,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02460958931032109,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9538604.814533211,
+      "aicc": -9538603.314533211,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.016324450207798297,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9538803.902182236,
+      "aicc": -9538802.402182236,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.016326465992122507,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -9538803.902182236,
+    "aicc": -9538802.402182236,
+    "bic": -9538794.758975254,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.014458093730609746, 0.9855419062693903]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecozone:Boreal Plains|POPU.BAL",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.016326465992122507,
+    "limit_excluded_trees": 552,
+    "log_likelihood": 4769406.951091118,
+    "method": "truncated-em-moments",
+    "n_bins": 36,
+    "n_parameters": 5,
+    "n_plots": 1171,
+    "n_trees": 26838,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.1625388026066066, \"p\": 13.114984003017456}, \"weight\": 0.014458093730609746}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.693758014336784, \"beta\": 15.299036378852461}, \"weight\": 0.9855419062693903}]}",
+    "spike_weight": null,
+    "support_upper_cm": 117.12499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6248572047977895,
+    "b": 0.7321829811858293,
+    "bias_m": 0.033818780257251754,
+    "n": 26726,
+    "rmse_m": 2.1223395097125004
+  },
+  "height_observations": 26726,
+  "runtime_seconds": 1.7898759841918945,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1347,
+    "coverage_n_trees": 27393,
+    "end": 5686525,
+    "level": "ecozone",
+    "species": "POPU.BAL",
+    "start": 5659135,
+    "stratum_id": "Boreal Plains",
+    "stratum_name": "Boreal Plains"
+  },
+  "status": "ok"
+}

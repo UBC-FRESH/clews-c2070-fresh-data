@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2204451.0581829306,
+      "aicc": -2204450.442798315,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14829482567143615,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2255534.1785113914,
+      "aicc": -2255533.563126776,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14124142425538466,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2255534.1785113914,
+    "aicc": -2255533.563126776,
+    "bic": -2255528.8949110443,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Peace Lowland|POPU.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.14124142425538466,
+    "limit_excluded_trees": 273,
+    "log_likelihood": 1127770.0892556957,
+    "method": "two-stage",
+    "n_bins": 34,
+    "n_parameters": 3,
+    "n_plots": 171,
+    "n_trees": 1627,
+    "parameters_json": "{\"beta\": 3.4137507456474774, \"p\": 3.0144340376090693, \"s\": 0.8940706455899629}",
+    "spike_weight": null,
+    "support_upper_cm": 108.00000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.5290651361136243,
+    "b": 0.7483041544559962,
+    "bias_m": 0.060050752161108674,
+    "n": 1506,
+    "rmse_m": 2.7572034639119423
+  },
+  "height_observations": 1506,
+  "runtime_seconds": 2.108262777328491,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 255,
+    "coverage_n_trees": 1900,
+    "end": 5172631,
+    "level": "ecoregion",
+    "species": "POPU.BAL",
+    "start": 5170731,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Peace Lowland",
+    "stratum_name": "Peace Lowland"
+  },
+  "status": "ok"
+}

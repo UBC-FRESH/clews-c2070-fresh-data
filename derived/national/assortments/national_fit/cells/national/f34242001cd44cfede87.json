@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -67131535.97935818,
+      "aicc": -67131535.68306188,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03678139505458239,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -67134036.13531362,
+      "aicc": -67134035.83901732,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03923621880539576,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -67174241.91577186,
+      "aicc": -67174241.1562782,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.036739856938530935,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -67174241.91577186,
+    "aicc": -67174241.1562782,
+    "bic": -67174229.70251557,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.041881846508653835, 0.9581181534913462]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "national:Canada|ACER.SAH",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.036739856938530935,
+    "limit_excluded_trees": 84667,
+    "log_likelihood": 33587125.95788593,
+    "method": "truncated-em-moments",
+    "n_bins": 45,
+    "n_parameters": 5,
+    "n_plots": 5548,
+    "n_trees": 108941,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.7465074732939208, \"p\": 15.576268563517074}, \"weight\": 0.041881846508653835}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.6858797583524092, \"beta\": 17.101842065226915}, \"weight\": 0.9581181534913462}]}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.2134326804215343,
+    "b": 0.49814859341412515,
+    "bias_m": 0.33252461940235817,
+    "n": 62788,
+    "rmse_m": 3.0133302518821443
+  },
+  "height_observations": 62788,
+  "runtime_seconds": 1.1630020141601562,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 7927,
+    "coverage_n_trees": 193608,
+    "end": 11293975,
+    "level": "national",
+    "species": "ACER.SAH",
+    "start": 11100367,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

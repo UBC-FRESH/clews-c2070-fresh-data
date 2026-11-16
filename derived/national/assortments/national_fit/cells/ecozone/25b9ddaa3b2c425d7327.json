@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -7405802.339425758,
+      "aicc": -7405801.248516668,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.020873199834465533,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -7388441.164948666,
+      "aicc": -7388440.074039575,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06072259022384341,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7403880.273398548,
+      "aicc": -7403877.273398548,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.010966116464009246,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -7405802.339425758,
+    "aicc": -7405801.248516668,
+    "bic": -7405798.565136144,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecozone:Atlantic Maritime|PINU.BAN",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.020873199834465533,
+    "limit_excluded_trees": 250,
+    "log_likelihood": 3702904.169712879,
+    "method": "two-stage",
+    "n_bins": 25,
+    "n_parameters": 3,
+    "n_plots": 511,
+    "n_trees": 10609,
+    "parameters_json": "{\"a\": 2.2817199341700705, \"beta\": 14.127059212557722, \"s\": 1.0024149522362902}",
+    "spike_weight": null,
+    "support_upper_cm": 65.625,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.08650191796063302,
+    "b": 0.8900437928149415,
+    "bias_m": 0.23965664655461008,
+    "n": 2197,
+    "rmse_m": 2.9483840829616095
+  },
+  "height_observations": 2197,
+  "runtime_seconds": 15.434051275253296,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 516,
+    "coverage_n_trees": 10859,
+    "end": 7070529,
+    "level": "ecozone",
+    "species": "PINU.BAN",
+    "start": 7059670,
+    "stratum_id": "Atlantic Maritime",
+    "stratum_name": "Atlantic Maritime"
+  },
+  "status": "ok"
+}

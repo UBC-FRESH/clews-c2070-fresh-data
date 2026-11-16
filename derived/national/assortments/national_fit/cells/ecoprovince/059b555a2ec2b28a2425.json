@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -304820.5737313791,
+      "aicc": -304818.5737313791,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12915386693769948,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -326319.3372487342,
+      "aicc": -326317.3372487342,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08119408804447004,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -329575.46765327745,
+      "aicc": -329569.46765327745,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02202304529205308,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -326319.3372487342,
+    "aicc": -326317.3372487342,
+    "bic": -326317.0194825675,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Cordillera/Southern Boreal Cordillera|BETU.PAP",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08119408804447004,
+    "limit_excluded_trees": 17,
+    "log_likelihood": 163162.6686243671,
+    "method": "two-stage",
+    "n_bins": 16,
+    "n_parameters": 3,
+    "n_plots": 21,
+    "n_trees": 545,
+    "parameters_json": "{\"beta\": 0.9440325831578561, \"p\": 9.84576550744514, \"s\": 0.9436680530168483}",
+    "spike_weight": null,
+    "support_upper_cm": 40.74999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.56231215090543,
+    "b": 0.8215894058884484,
+    "bias_m": 0.12292599341676727,
+    "n": 550,
+    "rmse_m": 2.228188877281743
+  },
+  "height_observations": 550,
+  "runtime_seconds": 1.0229520797729492,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 26,
+    "coverage_n_trees": 562,
+    "end": 6021738,
+    "level": "ecoprovince",
+    "species": "BETU.PAP",
+    "start": 6021176,
+    "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera",
+    "stratum_name": "Southern Boreal Cordillera"
+  },
+  "status": "ok"
+}

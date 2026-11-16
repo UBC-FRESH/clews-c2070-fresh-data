@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -867502.5468329797,
+      "aicc": -867501.7468329796,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.029758386890549937,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -867678.4868747414,
+      "aicc": -867677.6868747413,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.028860294320153135,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -869248.4293536281,
+      "aicc": -869246.2864964852,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.014404689812290039,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -868912.8712475612,
+      "aicc": -868910.7283904183,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.025572746751509,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -869248.4293536281,
+    "aicc": -869246.2864964852,
+    "bic": -869240.797551005,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.1483522322472329, 0.8516477677527672]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide|PSEU.MEN",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.014404689812290039,
+    "limit_excluded_trees": 53,
+    "log_likelihood": 434629.21467681404,
+    "method": "truncated-em-moments",
+    "n_bins": 33,
+    "n_parameters": 5,
+    "n_plots": 73,
+    "n_trees": 3575,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 5.115976846869631, \"beta\": 4.406826091003118}, \"weight\": 0.1483522322472329}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.2268606650048226, \"beta\": 14.083971694557684}, \"weight\": 0.8516477677527672}]}",
+    "spike_weight": null,
+    "support_upper_cm": 87.12499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.9323557622450507,
+    "b": 1.1900294145096983,
+    "bias_m": -0.27422085522252077,
+    "n": 3628,
+    "rmse_m": 3.5597532955274964
+  },
+  "height_observations": 3628,
+  "runtime_seconds": 1.8359103202819824,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 97,
+    "coverage_n_trees": 3635,
+    "end": 3059984,
+    "level": "ecoregion",
+    "species": "PSEU.MEN",
+    "start": 3056356,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide",
+    "stratum_name": "Northern Continental Divide"
+  },
+  "status": "ok"
+}

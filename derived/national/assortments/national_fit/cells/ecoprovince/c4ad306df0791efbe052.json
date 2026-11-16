@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -417595.22167116456,
+      "aicc": -417594.6999320341,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.025544268716205853,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -417781.4315899275,
+      "aicc": -417780.9098507971,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.028420658471022153,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -418140.1701607919,
+      "aicc": -418138.80652442825,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.033445156909386986,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -418174.9905904615,
+      "aicc": -418173.6269540978,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.033078170169692056,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -418174.9905904615,
+    "aicc": -418173.6269540978,
+    "bic": -418165.43047543435,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.09295145682966978, 0.9070485431703302]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Atlantic Maritime/Fundy Uplands|PINU.STR",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.033078170169692056,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 209092.49529523074,
+    "method": "truncated-em-moments",
+    "n_bins": 44,
+    "n_parameters": 5,
+    "n_plots": 256,
+    "n_trees": 940,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 5.2825891558165745, \"p\": 9.582651140608068}, \"weight\": 0.09295145682966978}, {\"name\": \"weibull\", \"parameters\": {\"a\": 0.835956129653941, \"beta\": 9.922530048908763}, \"weight\": 0.9070485431703302}]}",
+    "spike_weight": null,
+    "support_upper_cm": 126.875,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.3170031458681592,
+    "b": 0.6894858867083823,
+    "bias_m": 0.2798131956823908,
+    "n": 382,
+    "rmse_m": 3.465780165405277
+  },
+  "height_observations": 382,
+  "runtime_seconds": 1.7631971836090088,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 256,
+    "coverage_n_trees": 940,
+    "end": 6267505,
+    "level": "ecoprovince",
+    "species": "PINU.STR",
+    "start": 6266565,
+    "stratum_id": "Atlantic Maritime/Fundy Uplands",
+    "stratum_name": "Fundy Uplands"
+  },
+  "status": "ok"
+}

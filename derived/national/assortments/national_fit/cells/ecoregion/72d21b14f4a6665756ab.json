@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -54941.698778537946,
+      "aicc": -54941.06719959058,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.061326391588047535,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -54815.95812150819,
+      "aicc": -54815.326542560826,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11257897293319219,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -55344.8433290625,
+      "aicc": -55343.17666239584,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.060796509715432934,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -55344.8433290625,
+    "aicc": -55343.17666239584,
+    "bic": -55336.154980971085,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9961938580774913, 0.0038061419225088214]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Coastal Gap|PINU.CON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.060796509715432934,
+    "limit_excluded_trees": 11,
+    "log_likelihood": 27677.42166453125,
+    "method": "truncated-em-moments",
+    "n_bins": 19,
+    "n_parameters": 5,
+    "n_plots": 35,
+    "n_trees": 240,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 2.2014295207892425, \"beta\": 23.417380636614418}, \"weight\": 0.9961938580774913}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 85.0}, \"weight\": 0.0038061419225088214}]}",
+    "spike_weight": null,
+    "support_upper_cm": 105.37500381469727,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.008110066755184001,
+    "b": 0.888159373419454,
+    "bias_m": 0.5866321511868182,
+    "n": 241,
+    "rmse_m": 4.7612594564292126
+  },
+  "height_observations": 241,
+  "runtime_seconds": 0.08539056777954102,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 41,
+    "coverage_n_trees": 251,
+    "end": 3746225,
+    "level": "ecoregion",
+    "species": "PINU.CON",
+    "start": 3745974,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Coastal Gap",
+    "stratum_name": "Coastal Gap"
+  },
+  "status": "ok"
+}

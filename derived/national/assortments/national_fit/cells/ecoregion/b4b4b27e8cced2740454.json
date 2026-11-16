@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2993409.2219384816,
+      "aicc": -2993407.0401203,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02413076593677088,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2996312.612771458,
+      "aicc": -2996310.4309532763,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0241568227031288,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2994255.0240984834,
+      "aicc": -2994248.357431817,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.021368226898795584,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2996312.612771458,
+    "aicc": -2996310.4309532763,
+    "bic": -2996310.488620855,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Atlantic Maritime/Northumberland Lowlands/Prince Edward Island|PINU.BAN",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.0241568227031288,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 1498159.306385729,
+    "method": "two-stage",
+    "n_bins": 15,
+    "n_parameters": 3,
+    "n_plots": 13,
+    "n_trees": 3396,
+    "parameters_json": "{\"beta\": 1.8528711791901227, \"p\": 6.5178057775940355, \"s\": 1.0039947775124625}",
+    "spike_weight": null,
+    "support_upper_cm": 38.25000047683716,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.8544207894711483,
+    "b": 1.135351179927024,
+    "bias_m": 0.16534989652214735,
+    "n": 368,
+    "rmse_m": 2.4797606375617094
+  },
+  "height_observations": 368,
+  "runtime_seconds": 1.2174670696258545,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 3396,
+    "end": 11323370,
+    "level": "ecoregion",
+    "species": "PINU.BAN",
+    "start": 11319974,
+    "stratum_id": "Atlantic Maritime/Northumberland Lowlands/Prince Edward Island",
+    "stratum_name": "Prince Edward Island"
+  },
+  "status": "ok"
+}

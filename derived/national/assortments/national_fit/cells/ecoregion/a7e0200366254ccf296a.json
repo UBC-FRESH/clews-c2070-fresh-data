@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1133756.4728818648,
+      "aicc": -1133755.2728818648,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03174625451480202,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1131907.053619008,
+      "aicc": -1131905.853619008,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04684395024302135,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1134292.779078662,
+      "aicc": -1134289.4457453287,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03339890765676831,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -1134042.8462566398,
+      "aicc": -1134039.5129233066,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0341502571138325,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1134292.779078662,
+    "aicc": -1134289.4457453287,
+    "bic": -1134286.8888095103,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9875579940772371, 0.012442005922762987]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Pelly Mountains|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.03339890765676831,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 567151.389539331,
+    "method": "truncated-em-moments",
+    "n_bins": 22,
+    "n_parameters": 5,
+    "n_plots": 31,
+    "n_trees": 2974,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 1.6189684378474007, \"beta\": 12.439403483566332}, \"weight\": 0.9875579940772371}, {\"name\": \"weibull\", \"parameters\": {\"a\": 31.759609736783172, \"beta\": 29.387876307214558}, \"weight\": 0.012442005922762987}]}",
+    "spike_weight": null,
+    "support_upper_cm": 60.50000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.41740980120882387,
+    "b": 0.7724414755040252,
+    "bias_m": 0.2796665071730024,
+    "n": 2121,
+    "rmse_m": 2.6168909714542425
+  },
+  "height_observations": 2121,
+  "runtime_seconds": 1.2610580921173096,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 31,
+    "coverage_n_trees": 2974,
+    "end": 5485206,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 5482232,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Pelly Mountains",
+    "stratum_name": "Pelly Mountains"
+  },
+  "status": "ok"
+}

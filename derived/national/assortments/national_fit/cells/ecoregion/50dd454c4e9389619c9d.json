@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -6531.660117608754,
+      "aicc": -6530.160117608754,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3042736264102357,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3388.9924001483305,
+      "aicc": -3387.4924001483305,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.8659985656420713,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7534.791659912917,
+      "aicc": -7530.505945627202,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.23990053540952197,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7641.58538001703,
+      "aicc": -7637.299665731315,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.24049356866926921,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -7641.58538001703,
+    "aicc": -7637.299665731315,
+    "bic": -7636.60671864926,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.3848289211408799, 0.6151710788591201]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Okanogan Range|ALNU.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks;low_support",
+    "fit_sources": "magplot",
+    "ks": 0.24049356866926921,
+    "limit_excluded_trees": 4,
+    "log_likelihood": 3825.792690008515,
+    "method": "truncated-em-moments",
+    "n_bins": 8,
+    "n_parameters": 5,
+    "n_plots": 3,
+    "n_trees": 74,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.4628389969007139, \"p\": 71.21814417572067}, \"weight\": 0.3848289211408799}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.1664243683924043, \"beta\": 3.2599964887646786}, \"weight\": 0.6151710788591201}]}",
+    "spike_weight": null,
+    "support_upper_cm": 50.374999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.0267129096423284,
+    "b": 0.4762301105087327,
+    "bias_m": 0.14680203047021784,
+    "n": 78,
+    "rmse_m": 2.1176651316889115
+  },
+  "height_observations": 78,
+  "runtime_seconds": 1.181800127029419,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 4,
+    "coverage_n_trees": 78,
+    "end": 5434996,
+    "level": "ecoregion",
+    "species": "ALNU.RUB",
+    "start": 5434918,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Range",
+    "stratum_name": "Okanogan Range"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -125830.00685689507,
+      "aicc": -125827.82503871324,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.035375741487042034,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -125184.57521453981,
+      "aicc": -125182.39339635799,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06829922692146184,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -126042.58242553302,
+      "aicc": -126035.91575886635,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.013954554904999972,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -125830.00685689507,
+    "aicc": -125827.82503871324,
+    "bic": -125827.88270629176,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Maritime Barrens|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.035375741487042034,
+    "limit_excluded_trees": 9662,
+    "log_likelihood": 62918.00342844753,
+    "method": "two-stage",
+    "n_bins": 15,
+    "n_parameters": 3,
+    "n_plots": 54,
+    "n_trees": 10670,
+    "parameters_json": "{\"a\": 1.6825500129143718, \"beta\": 10.567932499878898, \"s\": 1.035077896159705}",
+    "spike_weight": null,
+    "support_upper_cm": 38.375000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3541260413202215,
+    "b": 0.8940066550022205,
+    "bias_m": 0.34127156340593506,
+    "n": 13996,
+    "rmse_m": 1.2724730081678013
+  },
+  "height_observations": 13996,
+  "runtime_seconds": 1.2396776676177979,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 105,
+    "coverage_n_trees": 20332,
+    "end": 9987627,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 9967295,
+    "stratum_id": "Boreal Shield East/Newfoundland/Maritime Barrens",
+    "stratum_name": "Maritime Barrens"
+  },
+  "status": "ok"
+}

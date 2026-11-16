@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -18974.74206004075,
+      "aicc": -18972.07539337408,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.041047971530923544,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -18740.285344915275,
+      "aicc": -18737.618678248607,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09128737523142325,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -18946.07530340221,
+      "aicc": -18937.50387483078,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.032342483942280786,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -19105.375383630257,
+      "aicc": -19096.80395505883,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.025728203147612094,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -19105.375383630257,
+    "aicc": -19096.80395505883,
+    "bic": -19102.55063684295,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.8453200814517281, 0.1546799185482718]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Taiga Shield East/Labrador Uplands|PINU.BAN",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.025728203147612094,
+    "limit_excluded_trees": 84,
+    "log_likelihood": 9557.687691815128,
+    "method": "truncated-em-moments",
+    "n_bins": 10,
+    "n_parameters": 5,
+    "n_plots": 4,
+    "n_trees": 84,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.5171487808632463, \"p\": 37.363037671432146}, \"weight\": 0.8453200814517281}, {\"name\": \"weibull\", \"parameters\": {\"a\": 8.117455301358856, \"beta\": 12.085765584274954}, \"weight\": 0.1546799185482718}]}",
+    "spike_weight": null,
+    "support_upper_cm": 34.124999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.27542458699336797,
+    "b": 0.6988815562948415,
+    "bias_m": 0.11220775859017726,
+    "n": 98,
+    "rmse_m": 1.4558665316645782
+  },
+  "height_observations": 98,
+  "runtime_seconds": 1.127608299255371,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 8,
+    "coverage_n_trees": 168,
+    "end": 10122137,
+    "level": "ecoprovince",
+    "species": "PINU.BAN",
+    "start": 10121969,
+    "stratum_id": "Taiga Shield East/Labrador Uplands",
+    "stratum_name": "Labrador Uplands"
+  },
+  "status": "ok"
+}

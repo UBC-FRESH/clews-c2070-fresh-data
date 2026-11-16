@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -16820220.598875012,
+      "aicc": -16820219.771288805,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03796607028459802,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -16764724.317997009,
+      "aicc": -16764723.490410801,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0793956197331831,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -16826889.04203393,
+      "aicc": -16826886.819811705,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03811728503572634,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -16828584.889448747,
+      "aicc": -16828582.667226523,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03811628954797381,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -16828584.889448747,
+    "aicc": -16828582.667226523,
+    "bic": -16828577.40691094,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.0024304875298013376, 0.9975695124701988]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecozone:Atlantic Maritime|LARI.LAR",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.03811628954797381,
+    "limit_excluded_trees": 1177,
+    "log_likelihood": 8414297.444724374,
+    "method": "truncated-em-moments",
+    "n_bins": 31,
+    "n_parameters": 5,
+    "n_plots": 929,
+    "n_trees": 20457,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.9120533974920312, \"p\": 48.828976790827795}, \"weight\": 0.0024304875298013376}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.0468523096113924, \"beta\": 14.013122141833465}, \"weight\": 0.9975695124701988}]}",
+    "spike_weight": null,
+    "support_upper_cm": 85.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.03513968385186822,
+    "b": 0.8737793622112439,
+    "bias_m": 0.2514201393555068,
+    "n": 3065,
+    "rmse_m": 3.323170966009601
+  },
+  "height_observations": 3065,
+  "runtime_seconds": 0.47894763946533203,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1001,
+    "coverage_n_trees": 21634,
+    "end": 6190906,
+    "level": "ecozone",
+    "species": "LARI.LAR",
+    "start": 6169272,
+    "stratum_id": "Atlantic Maritime",
+    "stratum_name": "Atlantic Maritime"
+  },
+  "status": "ok"
+}

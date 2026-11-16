@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -370979.367572066,
+      "aicc": -370971.367572066,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1274825152253004,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -371952.8256207278,
+      "aicc": -371944.8256207278,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12994594359498435,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -379134.8566609461,
+      "aicc": -379074.8566609461,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.019126307726385572,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -379141.1914441392,
+      "aicc": -379081.1914441392,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01845245220980496,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -379141.1914441392,
+    "aicc": -379081.1914441392,
+    "bic": -379141.4618933939,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.2858798767096906, 0.7141201232903095]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Taiga Shield East/Labrador Uplands/Mecatina River|BETU.PAP",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.01845245220980496,
+    "limit_excluded_trees": 246,
+    "log_likelihood": 189575.5957220696,
+    "method": "truncated-em-moments",
+    "n_bins": 7,
+    "n_parameters": 5,
+    "n_plots": 7,
+    "n_trees": 241,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.3458086790930197, \"p\": 31.348442766479714}, \"weight\": 0.2858798767096906}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.637932958768597, \"beta\": 5.3775098816994}, \"weight\": 0.7141201232903095}]}",
+    "spike_weight": null,
+    "support_upper_cm": 19.874999523162842,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.2121145396946708,
+    "b": 0.7120399555336016,
+    "bias_m": 0.25233153414986637,
+    "n": 472,
+    "rmse_m": 1.1722551142560782
+  },
+  "height_observations": 472,
+  "runtime_seconds": 0.7187228202819824,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 487,
+    "end": 9171825,
+    "level": "ecoregion",
+    "species": "BETU.PAP",
+    "start": 9171338,
+    "stratum_id": "Taiga Shield East/Labrador Uplands/Mecatina River",
+    "stratum_name": "Mecatina River"
+  },
+  "status": "ok"
+}

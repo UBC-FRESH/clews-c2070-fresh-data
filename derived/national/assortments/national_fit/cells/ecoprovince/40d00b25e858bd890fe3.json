@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -488411.37274187105,
+      "aicc": -488410.86210357316,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06718695608454539,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -487880.276613032,
+      "aicc": -487879.7659747341,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06832798700150433,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -494068.5305428172,
+      "aicc": -494067.1972094839,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03916875592196534,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -488411.37274187105,
+    "aicc": -488410.86210357316,
+    "bic": -488405.57726497285,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoprovince:Pacific Maritime/Southern Coastal Mountains|ACER.MAC",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.06718695608454539,
+    "limit_excluded_trees": 56,
+    "log_likelihood": 244208.68637093552,
+    "method": "two-stage",
+    "n_bins": 40,
+    "n_parameters": 3,
+    "n_plots": 160,
+    "n_trees": 2014,
+    "parameters_json": "{\"a\": 1.26700866981409, \"beta\": 19.995662069984665, \"s\": 1.0815961710536275}",
+    "spike_weight": null,
+    "support_upper_cm": 129.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.47466231441638224,
+    "b": 0.8069588412092243,
+    "bias_m": 0.03725110667632577,
+    "n": 2033,
+    "rmse_m": 4.0077627165189185
+  },
+  "height_observations": 2033,
+  "runtime_seconds": 1.626615285873413,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 191,
+    "coverage_n_trees": 2075,
+    "end": 1549689,
+    "level": "ecoprovince",
+    "species": "ACER.MAC",
+    "start": 1547619,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains",
+    "stratum_name": "Southern Coastal Mountains"
+  },
+  "status": "ok"
+}

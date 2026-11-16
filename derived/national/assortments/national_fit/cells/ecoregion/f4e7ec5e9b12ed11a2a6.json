@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -79245.81619718926,
+      "aicc": -79245.30555889138,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08393560102465358,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -82554.4409194932,
+      "aicc": -82553.93028119532,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08209901399893868,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -77577.18052671706,
+      "aicc": -77575.84719338373,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1006718794359978,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -83093.08470343084,
+      "aicc": -83091.75137009751,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08728886185713865,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -83093.08470343084,
+    "aicc": -83091.75137009751,
+    "bic": -83083.42557526722,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.21533507698097548, 0.7846649230190245]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Lowland|CONIFEROUS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08728886185713865,
+    "limit_excluded_trees": 39,
+    "log_likelihood": 41551.54235171542,
+    "method": "truncated-em-moments",
+    "n_bins": 38,
+    "n_parameters": 5,
+    "n_plots": 32,
+    "n_trees": 132,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 5.675162103640725, \"p\": 8.652069163419828}, \"weight\": 0.21533507698097548}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.3752067403362904, \"beta\": 28.96300303273383}, \"weight\": 0.7846649230190245}]}",
+    "spike_weight": null,
+    "support_upper_cm": 128.00000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6795667167792012,
+    "b": 0.5586931085632473,
+    "bias_m": 0.40963665677035654,
+    "n": 171,
+    "rmse_m": 3.5005843954851037
+  },
+  "height_observations": 171,
+  "runtime_seconds": 2.7443008422851562,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 52,
+    "coverage_n_trees": 171,
+    "end": 4808410,
+    "level": "ecoregion",
+    "species": "CONIFEROUS",
+    "start": 4808239,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Lowland",
+    "stratum_name": "Queen Charlotte Lowland"
+  },
+  "status": "ok"
+}

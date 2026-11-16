@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -39118885.38609564,
+      "aicc": -39118885.12803113,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06663510007530637,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -39304945.06916429,
+      "aicc": -39304944.811099775,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06526246094960642,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -39304945.06916429,
+    "aicc": -39304944.811099775,
+    "bic": -39304937.34503136,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "national:Canada|CONIFEROUS",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.06526246094960642,
+    "limit_excluded_trees": 17267,
+    "log_likelihood": 19652475.534582146,
+    "method": "two-stage",
+    "n_bins": 86,
+    "n_parameters": 3,
+    "n_plots": 4118,
+    "n_trees": 56010,
+    "parameters_json": "{\"beta\": 6.595470671202923, \"p\": 1.9821550667795136, \"s\": 0.9768270969679284}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6149339952633049,
+    "b": 1.058792056785403,
+    "bias_m": 0.01238127237407727,
+    "n": 47913,
+    "rmse_m": 7.179634297412753
+  },
+  "height_observations": 47913,
+  "runtime_seconds": 3.1752238273620605,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 6374,
+    "coverage_n_trees": 73377,
+    "end": 2902195,
+    "level": "national",
+    "species": "CONIFEROUS",
+    "start": 2828918,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

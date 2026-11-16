@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -848949.4482339893,
+      "aicc": -848948.4882339893,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05997225816504753,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -855299.2602135638,
+      "aicc": -855298.3002135638,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.043685618054912445,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -845514.2591797394,
+      "aicc": -845511.6504840872,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06327416142499442,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -855299.2602135638,
+    "aicc": -855298.3002135638,
+    "bic": -855295.1583260739,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Plains/Boreal Foothills/Western Alberta Upland|POPU.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.043685618054912445,
+    "limit_excluded_trees": 233,
+    "log_likelihood": 427652.6301067819,
+    "method": "two-stage",
+    "n_bins": 28,
+    "n_parameters": 3,
+    "n_plots": 107,
+    "n_trees": 1158,
+    "parameters_json": "{\"beta\": 4.555622560597522, \"p\": 3.4289740757941622, \"s\": 0.9830002010639481}",
+    "spike_weight": null,
+    "support_upper_cm": 74.87500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.41683389851188796,
+    "b": 0.7732960894628397,
+    "bias_m": 0.13367364313543506,
+    "n": 1165,
+    "rmse_m": 2.8222451354400815
+  },
+  "height_observations": 1165,
+  "runtime_seconds": 6.923380374908447,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 177,
+    "coverage_n_trees": 1394,
+    "end": 5152432,
+    "level": "ecoregion",
+    "species": "POPU.BAL",
+    "start": 5151041,
+    "stratum_id": "Boreal Plains/Boreal Foothills/Western Alberta Upland",
+    "stratum_name": "Western Alberta Upland"
+  },
+  "status": "ok"
+}

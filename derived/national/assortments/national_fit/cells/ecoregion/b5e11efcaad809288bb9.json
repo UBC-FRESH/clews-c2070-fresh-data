@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -6875425.454846528,
+      "aicc": -6875425.182119256,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07575006673816032,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -6913321.048168372,
+      "aicc": -6913320.7754411,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07007812940508207,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -6843862.281482649,
+      "aicc": -6843861.58380823,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08527498976791248,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -6913321.048168372,
+    "aicc": -6913320.7754411,
+    "bic": -6913313.482802642,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Lowland|PICE.SIT",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07007812940508207,
+    "limit_excluded_trees": 16,
+    "log_likelihood": 3456663.524084186,
+    "method": "two-stage",
+    "n_bins": 61,
+    "n_parameters": 3,
+    "n_plots": 126,
+    "n_trees": 15449,
+    "parameters_json": "{\"beta\": 7.005431372541351, \"p\": 2.235139477720717, \"s\": 0.9610460171215368}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.8447142602703398,
+    "b": 1.166139879614653,
+    "bias_m": -0.35879048337875313,
+    "n": 15465,
+    "rmse_m": 5.5110910040335215
+  },
+  "height_observations": 15465,
+  "runtime_seconds": 0.8848531246185303,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 135,
+    "coverage_n_trees": 15467,
+    "end": 4775399,
+    "level": "ecoregion",
+    "species": "PICE.SIT",
+    "start": 4759934,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Lowland",
+    "stratum_name": "Queen Charlotte Lowland"
+  },
+  "status": "ok"
+}

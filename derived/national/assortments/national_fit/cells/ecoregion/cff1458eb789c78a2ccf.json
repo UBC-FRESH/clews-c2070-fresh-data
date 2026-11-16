@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -21445.14375691324,
+      "aicc": -21443.810423579907,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06838925463662682,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21085.159228764773,
+      "aicc": -21083.82589543144,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1411317511282404,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -20862.81418248459,
+      "aicc": -20859.06418248459,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04649092950617206,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21721.278697429138,
+      "aicc": -21717.528697429138,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01524368930198853,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -21721.278697429138,
+    "aicc": -21717.528697429138,
+    "bic": -21715.823485162346,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.610199841032654, 0.389800158967346]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Hyland Highland|BETU.PAP",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.01524368930198853,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 10865.639348714569,
+    "method": "truncated-em-moments",
+    "n_bins": 18,
+    "n_parameters": 5,
+    "n_plots": 3,
+    "n_trees": 188,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 4.905080490387197, \"p\": 3.1450698169104934}, \"weight\": 0.610199841032654}, {\"name\": \"weibull\", \"parameters\": {\"a\": 5.944443169544057, \"beta\": 21.599355333629408}, \"weight\": 0.389800158967346}]}",
+    "spike_weight": null,
+    "support_upper_cm": 55.250000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.8341764998439818,
+    "b": 0.7434776765361404,
+    "bias_m": 0.0679801228688848,
+    "n": 188,
+    "rmse_m": 3.1972849166931567
+  },
+  "height_observations": 188,
+  "runtime_seconds": 2.1473195552825928,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 3,
+    "coverage_n_trees": 188,
+    "end": 5432413,
+    "level": "ecoregion",
+    "species": "BETU.PAP",
+    "start": 5432225,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Hyland Highland",
+    "stratum_name": "Hyland Highland"
+  },
+  "status": "ok"
+}

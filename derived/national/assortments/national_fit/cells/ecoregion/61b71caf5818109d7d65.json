@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -8285.319226957492,
+      "aicc": -8282.652560290826,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04416059931690508,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8194.085345882153,
+      "aicc": -8191.418679215486,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08541735299409736,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8288.723505338452,
+      "aicc": -8280.152076767023,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03248920809615019,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -8281.4525048338,
+      "aicc": -8272.88107626237,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04410215883958324,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -8288.723505338452,
+    "aicc": -8280.152076767023,
+    "bic": -8285.898758551144,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.09701853117971122, 0.9029814688202888]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Maritime Barrens|BETU.PAP",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.03248920809615019,
+    "limit_excluded_trees": 975,
+    "log_likelihood": 4149.361752669226,
+    "method": "truncated-em-moments",
+    "n_bins": 13,
+    "n_parameters": 5,
+    "n_plots": 39,
+    "n_trees": 1191,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 3.79237050100458, \"beta\": 2.4133152717307427}, \"weight\": 0.09701853117971122}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.472269907996788, \"beta\": 10.168218677488893}, \"weight\": 0.9029814688202888}]}",
+    "spike_weight": null,
+    "support_upper_cm": 33.62499952316284,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.009143124663613425,
+    "b": 0.8625376385998219,
+    "bias_m": 0.3141408362423374,
+    "n": 1692,
+    "rmse_m": 2.0051801403066745
+  },
+  "height_observations": 1692,
+  "runtime_seconds": 6.746125221252441,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 77,
+    "coverage_n_trees": 2166,
+    "end": 10039645,
+    "level": "ecoregion",
+    "species": "BETU.PAP",
+    "start": 10037479,
+    "stratum_id": "Boreal Shield East/Newfoundland/Maritime Barrens",
+    "stratum_name": "Maritime Barrens"
+  },
+  "status": "ok"
+}

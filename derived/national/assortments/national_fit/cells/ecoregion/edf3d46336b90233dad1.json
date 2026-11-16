@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -9392599.591884714,
+      "aicc": -9392598.925218048,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.007297920367685062,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9396250.341015542,
+      "aicc": -9396249.674348876,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.011999416383656203,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9397730.227413757,
+      "aicc": -9397728.462707875,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0076624784849865235,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9398893.905500874,
+      "aicc": -9398892.140794992,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.007859229437504889,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -9398893.905500874,
+    "aicc": -9398892.140794992,
+    "bic": -9398885.461103603,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.004566428444824694, 0.9954335715551753]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Northern Montane Cordillera/Skeena Mountains|TSUG.HET",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.007859229437504889,
+    "limit_excluded_trees": 40,
+    "log_likelihood": 4699451.952750437,
+    "method": "truncated-em-moments",
+    "n_bins": 33,
+    "n_parameters": 5,
+    "n_plots": 127,
+    "n_trees": 23162,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.5524982501388362, \"p\": 17.456420927347047}, \"weight\": 0.004566428444824694}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.4906289808843876, \"beta\": 10.22796174870295}, \"weight\": 0.9954335715551753}]}",
+    "spike_weight": null,
+    "support_upper_cm": 101.75000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.9654114067449029,
+    "b": 1.3164519360875808,
+    "bias_m": -0.15861120892114944,
+    "n": 23167,
+    "rmse_m": 3.6859251720733086
+  },
+  "height_observations": 23167,
+  "runtime_seconds": 0.48921823501586914,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 142,
+    "coverage_n_trees": 23203,
+    "end": 4931659,
+    "level": "ecoregion",
+    "species": "TSUG.HET",
+    "start": 4908457,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Skeena Mountains",
+    "stratum_name": "Skeena Mountains"
+  },
+  "status": "ok"
+}

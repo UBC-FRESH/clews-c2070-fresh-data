@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -24084.083853960896,
+      "aicc": -24079.283853960897,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08852917865188059,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -23692.002890020474,
+      "aicc": -23687.202890020475,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1733429181752263,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -24084.083853960896,
+    "aicc": -24079.283853960897,
+    "bic": -24083.492180228888,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Ruby Ranges|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot",
+    "ks": 0.08852917865188059,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 12045.041926980448,
+    "method": "two-stage",
+    "n_bins": 8,
+    "n_parameters": 3,
+    "n_plots": 2,
+    "n_trees": 105,
+    "parameters_json": "{\"a\": 2.6525053756204646, \"beta\": 11.504112310234953, \"s\": 1.0486194629719665}",
+    "spike_weight": null,
+    "support_upper_cm": 24.625000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.34313456724286895,
+    "b": 0.7553812141453299,
+    "bias_m": 0.14624324204901024,
+    "n": 80,
+    "rmse_m": 1.6219094555034963
+  },
+  "height_observations": 80,
+  "runtime_seconds": 1.4051613807678223,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 2,
+    "coverage_n_trees": 105,
+    "end": 5508689,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 5508584,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Ruby Ranges",
+    "stratum_name": "Ruby Ranges"
+  },
+  "status": "ok"
+}

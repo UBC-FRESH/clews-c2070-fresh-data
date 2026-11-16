@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -74528813.06268747,
+      "aicc": -74528812.94023849,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04498084986150852,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -74803008.79504499,
+      "aicc": -74803008.67259601,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.021119388407165547,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -74729829.86785291,
+      "aicc": -74729829.55857456,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.021387389956464515,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -74821322.49056752,
+      "aicc": -74821322.18128917,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02216452195533521,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -74803008.79504499,
+    "aicc": -74803008.67259601,
+    "bic": -74802998.90009288,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Pacific Maritime|PSEU.MEN",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.021119388407165547,
+    "limit_excluded_trees": 3674,
+    "log_likelihood": 37401507.397522494,
+    "method": "two-stage",
+    "n_bins": 95,
+    "n_parameters": 3,
+    "n_plots": 2797,
+    "n_trees": 214269,
+    "parameters_json": "{\"beta\": 10.47663872725212, \"p\": 2.160862068107065, \"s\": 0.9956762557767774}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.25098015164967696,
+    "b": 1.0166567767111319,
+    "bias_m": -0.3211040625842271,
+    "n": 213742,
+    "rmse_m": 6.9015732177698315
+  },
+  "height_observations": 213742,
+  "runtime_seconds": 1.9400548934936523,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 4099,
+    "coverage_n_trees": 218215,
+    "end": 1573158,
+    "level": "ecozone",
+    "species": "PSEU.MEN",
+    "start": 1355215,
+    "stratum_id": "Pacific Maritime",
+    "stratum_name": "Pacific Maritime"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3893459.734233416,
+      "aicc": -3893459.4415504895,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1125169808336165,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3955865.5101909055,
+      "aicc": -3955865.217507979,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10615929905021615,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -4019523.7501586424,
+      "aicc": -4019523.0001586424,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02987335790089274,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3955865.5101909055,
+    "aicc": -3955865.217507979,
+    "bic": -3955858.1471490166,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Montane Cordillera|POPU.BAL",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.10615929905021615,
+    "limit_excluded_trees": 891,
+    "log_likelihood": 1977935.7550954528,
+    "method": "two-stage",
+    "n_bins": 70,
+    "n_parameters": 3,
+    "n_plots": 1094,
+    "n_trees": 7052,
+    "parameters_json": "{\"beta\": 5.44225922240497, \"p\": 2.3910472343637035, \"s\": 0.9295392363088683}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.21885537002016542,
+    "b": 0.8451914465695541,
+    "bias_m": -0.12437953582811984,
+    "n": 7139,
+    "rmse_m": 5.458153496657716
+  },
+  "height_observations": 7139,
+  "runtime_seconds": 1.478614330291748,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1491,
+    "coverage_n_trees": 7945,
+    "end": 4390227,
+    "level": "ecozone",
+    "species": "POPU.BAL",
+    "start": 4382284,
+    "stratum_id": "Montane Cordillera",
+    "stratum_name": "Montane Cordillera"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3243146.6925457977,
+      "aicc": -3243144.6925457977,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08624082684889836,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3131914.2086657686,
+      "aicc": -3131912.2086657686,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1361076563739264,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3251831.684328023,
+      "aicc": -3251825.684328023,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07601105636600636,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -3238730.163429663,
+      "aicc": -3238724.163429663,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1160163792465354,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3251831.684328023,
+    "aicc": -3251825.684328023,
+    "bic": -3251827.821384412,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.11063435096275681, 0.8893656490372432]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Taiga Shield East/Labrador Uplands/Smallwood Reservoir-Michikamau|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.07601105636600636,
+    "limit_excluded_trees": 5348,
+    "log_likelihood": 1625920.8421640114,
+    "method": "truncated-em-moments",
+    "n_bins": 16,
+    "n_parameters": 5,
+    "n_plots": 108,
+    "n_trees": 6182,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 4.1581647759487295, \"beta\": 3.7262652092147306}, \"weight\": 0.11063435096275681}, {\"name\": \"weibull\", \"parameters\": {\"a\": 4.104838095864847, \"beta\": 12.65915956474821}, \"weight\": 0.8893656490372432}]}",
+    "spike_weight": null,
+    "support_upper_cm": 41.875,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.9448266420675417,
+    "b": 1.166268131910747,
+    "bias_m": 0.08348235032498412,
+    "n": 3458,
+    "rmse_m": 1.6220557261138282
+  },
+  "height_observations": 3458,
+  "runtime_seconds": 1.6895678043365479,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 167,
+    "coverage_n_trees": 11530,
+    "end": 9169111,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 9157581,
+    "stratum_id": "Taiga Shield East/Labrador Uplands/Smallwood Reservoir-Michikamau",
+    "stratum_name": "Smallwood Reservoir-Michikamau"
+  },
+  "status": "ok"
+}

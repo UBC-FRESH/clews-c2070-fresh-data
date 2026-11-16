@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1716606.960464929,
+      "aicc": -1716605.960464929,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2625577279744571,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1762001.8025766418,
+      "aicc": -1762000.8025766418,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16045394070568636,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1784084.5731892916,
+      "aicc": -1784081.8459165643,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1151992627990055,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1810818.2047835726,
+      "aicc": -1810815.4775108453,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05595554027417387,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1810818.2047835726,
+    "aicc": -1810815.4775108453,
+    "bic": -1810811.5437610217,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.6295391555367637, 0.3704608444632364]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Eastern Boreal Shield/Anticosti Island|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.05595554027417387,
+    "limit_excluded_trees": 4714,
+    "log_likelihood": 905414.1023917863,
+    "method": "truncated-em-moments",
+    "n_bins": 22,
+    "n_parameters": 5,
+    "n_plots": 136,
+    "n_trees": 4446,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.6354671206978266, \"p\": 6.975349915317178}, \"weight\": 0.6295391555367637}, {\"name\": \"weibull\", \"parameters\": {\"a\": 6.642810941271382, \"beta\": 11.422739519176622}, \"weight\": 0.3704608444632364}]}",
+    "spike_weight": null,
+    "support_upper_cm": 70.99999904632568,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3681262992601297,
+    "b": 0.8808432988876854,
+    "bias_m": 0.1471883822861751,
+    "n": 1831,
+    "rmse_m": 1.7913459395665912
+  },
+  "height_observations": 1831,
+  "runtime_seconds": 1.1439363956451416,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 228,
+    "coverage_n_trees": 9160,
+    "end": 9156020,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 9146860,
+    "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Anticosti Island",
+    "stratum_name": "Anticosti Island"
+  },
+  "status": "ok"
+}

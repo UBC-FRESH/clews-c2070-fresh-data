@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -10888.307685697802,
+      "aicc": -10884.879114269232,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07855954973289708,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -9895.564474934323,
+      "aicc": -9892.135903505752,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.13712067400373695,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -10888.307685697802,
+    "aicc": -10884.879114269232,
+    "bic": -10887.113999879408,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot",
+    "ks": 0.07855954973289708,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 5447.153842848901,
+    "method": "two-stage",
+    "n_bins": 10,
+    "n_parameters": 3,
+    "n_plots": 2,
+    "n_trees": 53,
+    "parameters_json": "{\"a\": 5.290827297858716, \"beta\": 16.310002817447444, \"s\": 0.9482501270310363}",
+    "spike_weight": null,
+    "support_upper_cm": 29.375,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.8924917677021037,
+    "b": 0.6391853242263883,
+    "bias_m": 0.1361837267813407,
+    "n": 50,
+    "rmse_m": 2.0357980090679906
+  },
+  "height_observations": 50,
+  "runtime_seconds": 0.6586732864379883,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 2,
+    "coverage_n_trees": 53,
+    "end": 5511170,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5511117,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North",
+    "stratum_name": "Yukon Plateau-North"
+  },
+  "status": "ok"
+}

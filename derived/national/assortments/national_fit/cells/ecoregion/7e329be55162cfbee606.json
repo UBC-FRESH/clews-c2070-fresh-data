@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -207865.7608498726,
+      "aicc": -207864.34908516673,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.039907210340251076,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -205597.1510525912,
+      "aicc": -205595.7392878853,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07727062072443219,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -208159.39386372396,
+      "aicc": -208155.39386372396,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.037346059175914825,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -208129.9813669379,
+      "aicc": -208125.9813669379,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03772577758310469,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -208159.39386372396,
+    "aicc": -208155.39386372396,
+    "bic": -208154.17125153536,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.05170292902750043, 0.9482970709724996]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Atlantic Maritime/Fundy Uplands/Southern New Brunswick Uplands|PINU.BAN",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.037346059175914825,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 104084.69693186198,
+    "method": "truncated-em-moments",
+    "n_bins": 18,
+    "n_parameters": 5,
+    "n_plots": 28,
+    "n_trees": 625,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 4.947346046163994, \"beta\": 5.341528739400746}, \"weight\": 0.05170292902750043}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.940790728344762, \"beta\": 17.00862989768587}, \"weight\": 0.9482970709724996}]}",
+    "spike_weight": null,
+    "support_upper_cm": 54.749999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7908180648363904,
+    "b": 0.5973839758595841,
+    "bias_m": 0.20666836718253495,
+    "n": 176,
+    "rmse_m": 2.3038426368093305
+  },
+  "height_observations": 176,
+  "runtime_seconds": 2.018263339996338,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 28,
+    "coverage_n_trees": 625,
+    "end": 5611906,
+    "level": "ecoregion",
+    "species": "PINU.BAN",
+    "start": 5611281,
+    "stratum_id": "Atlantic Maritime/Fundy Uplands/Southern New Brunswick Uplands",
+    "stratum_name": "Southern New Brunswick Uplands"
+  },
+  "status": "ok"
+}

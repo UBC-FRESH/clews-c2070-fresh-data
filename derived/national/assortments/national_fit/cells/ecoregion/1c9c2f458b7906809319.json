@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -354865.7229312258,
+      "aicc": -354864.1229312258,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05340847180226593,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -353260.12894958956,
+      "aicc": -353258.5289495896,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08613791612952659,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -356032.06432396657,
+      "aicc": -356027.4489393512,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.020347156974130004,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -356032.06432396657,
+    "aicc": -356027.4489393512,
+    "bic": -356027.3421290707,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.07717716652745156, 0.9228228334725485]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Maritime Barrens|ABIE.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.020347156974130004,
+    "limit_excluded_trees": 23409,
+    "log_likelihood": 178021.03216198328,
+    "method": "truncated-em-moments",
+    "n_bins": 19,
+    "n_parameters": 5,
+    "n_plots": 81,
+    "n_trees": 26443,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 3.8302004919751136, \"beta\": 2.502777615489147}, \"weight\": 0.07717716652745156}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.8920022785867978, \"beta\": 11.295274784067319}, \"weight\": 0.9228228334725485}]}",
+    "spike_weight": null,
+    "support_upper_cm": 47.249999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3993623374247515,
+    "b": 0.9252037855186275,
+    "bias_m": 0.39312620149139943,
+    "n": 39218,
+    "rmse_m": 1.599235074369042
+  },
+  "height_observations": 39218,
+  "runtime_seconds": 7.396242618560791,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 161,
+    "coverage_n_trees": 49852,
+    "end": 10037479,
+    "level": "ecoregion",
+    "species": "ABIE.BAL",
+    "start": 9987627,
+    "stratum_id": "Boreal Shield East/Newfoundland/Maritime Barrens",
+    "stratum_name": "Maritime Barrens"
+  },
+  "status": "ok"
+}

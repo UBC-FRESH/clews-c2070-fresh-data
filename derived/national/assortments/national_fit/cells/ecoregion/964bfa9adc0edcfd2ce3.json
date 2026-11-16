@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -24928.876534580304,
+      "aicc": -24928.36589628243,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14263288512314654,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -24711.313499342297,
+      "aicc": -24710.802861044423,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17107779306415072,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -25730.326686477896,
+      "aicc": -25728.993353144564,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11728052591029425,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -27581.85450832631,
+      "aicc": -27580.521174992977,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.053477963338569856,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -25730.326686477896,
+    "aicc": -25728.993353144564,
+    "bic": -25720.667558314275,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.935433017099065, 0.06456698290093504]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Pacific Maritime/Georgia Depression/Georgia-Puget Basin|CONIFEROUS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.11728052591029425,
+    "limit_excluded_trees": 4,
+    "log_likelihood": 12870.163343238948,
+    "method": "truncated-em-moments",
+    "n_bins": 36,
+    "n_parameters": 5,
+    "n_plots": 25,
+    "n_trees": 171,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 1.4509143917504472, \"beta\": 19.323562090678333}, \"weight\": 0.935433017099065}, {\"name\": \"weibull\", \"parameters\": {\"a\": 5.073084622786529, \"beta\": 95.44696391111583}, \"weight\": 0.06456698290093504}]}",
+    "spike_weight": null,
+    "support_upper_cm": 128.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3199473092807495,
+    "b": 1.0236202907076646,
+    "bias_m": -0.3389445892377252,
+    "n": 173,
+    "rmse_m": 6.666927675246867
+  },
+  "height_observations": 173,
+  "runtime_seconds": 2.0662450790405273,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 29,
+    "coverage_n_trees": 175,
+    "end": 3207531,
+    "level": "ecoregion",
+    "species": "CONIFEROUS",
+    "start": 3207356,
+    "stratum_id": "Pacific Maritime/Georgia Depression/Georgia-Puget Basin",
+    "stratum_name": "Georgia-Puget Basin"
+  },
+  "status": "ok"
+}

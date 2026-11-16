@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -601826.8565319648,
+      "aicc": -601825.5933740701,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.023835160533889344,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -600740.8862624838,
+      "aicc": -600739.6231045891,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.028688940639110316,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -601812.9848456001,
+      "aicc": -601809.4554338354,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.026384479131757288,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -601826.8565319648,
+    "aicc": -601825.5933740701,
+    "bic": -601823.4500493171,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Cordillera/Western Boreal Cordillera/Klondike Plateau|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.023835160533889344,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 300916.4282659824,
+    "method": "two-stage",
+    "n_bins": 21,
+    "n_parameters": 3,
+    "n_plots": 34,
+    "n_trees": 1722,
+    "parameters_json": "{\"a\": 2.12887599710765, \"beta\": 17.530425407476145, \"s\": 1.0066903398826343}",
+    "spike_weight": null,
+    "support_upper_cm": 58.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.12031050840371386,
+    "b": 0.8950773801385454,
+    "bias_m": 0.3400301669291161,
+    "n": 1413,
+    "rmse_m": 3.1255450833103104
+  },
+  "height_observations": 1413,
+  "runtime_seconds": 5.064782619476318,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 34,
+    "coverage_n_trees": 1722,
+    "end": 5504275,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 5502553,
+    "stratum_id": "Boreal Cordillera/Western Boreal Cordillera/Klondike Plateau",
+    "stratum_name": "Klondike Plateau"
+  },
+  "status": "ok"
+}

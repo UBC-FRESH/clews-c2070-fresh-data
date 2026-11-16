@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -4902128.317279161,
+      "aicc": -4902126.905514455,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01876800770849664,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -4905348.946919186,
+      "aicc": -4905347.5351544805,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.042608889791959426,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -4908427.832811515,
+      "aicc": -4908423.832811515,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01826207140043852,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -4908630.774245931,
+      "aicc": -4908626.774245931,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01723691326140739,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -4908427.832811515,
+    "aicc": -4908423.832811515,
+    "bic": -4908422.610199327,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9949036668912005, 0.005096333108799468]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecozone:Taiga Plains|PINU.CON",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.01826207140043852,
+    "limit_excluded_trees": 215,
+    "log_likelihood": 2454218.9164057574,
+    "method": "truncated-em-moments",
+    "n_bins": 20,
+    "n_parameters": 5,
+    "n_plots": 174,
+    "n_trees": 11719,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 2.5694307563896897, \"beta\": 14.851641450957016}, \"weight\": 0.9949036668912005}, {\"name\": \"weibull\", \"parameters\": {\"a\": 8.557112772991141, \"beta\": 38.67788604461494}, \"weight\": 0.005096333108799468}]}",
+    "spike_weight": null,
+    "support_upper_cm": 54.87500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.24572639010683092,
+    "b": 0.8692181294050685,
+    "bias_m": 0.07235018347093859,
+    "n": 11674,
+    "rmse_m": 1.9276392290053066
+  },
+  "height_observations": 11674,
+  "runtime_seconds": 1.7215602397918701,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 273,
+    "coverage_n_trees": 11937,
+    "end": 5948032,
+    "level": "ecozone",
+    "species": "PINU.CON",
+    "start": 5936098,
+    "stratum_id": "Taiga Plains",
+    "stratum_name": "Taiga Plains"
+  },
+  "status": "ok"
+}

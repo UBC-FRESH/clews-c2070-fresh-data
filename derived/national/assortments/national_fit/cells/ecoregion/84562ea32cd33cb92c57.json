@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -34228.733427728825,
+      "aicc": -34227.470269834084,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07207050340964867,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -34045.39083775362,
+      "aicc": -34044.12767985888,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09278851326867421,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -34289.902981090076,
+      "aicc": -34286.37356932537,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07683478778900402,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -34289.902981090076,
+    "aicc": -34286.37356932537,
+    "bic": -34284.22551001043,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.028988442063309975, 0.97101155793669]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Plains/Eastern Boreal Plains/Mid-Boreal Lowland|POPU.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.07683478778900402,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 17149.951490545038,
+    "method": "truncated-em-moments",
+    "n_bins": 21,
+    "n_parameters": 5,
+    "n_plots": 25,
+    "n_trees": 343,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.003085930678075408, \"p\": 10707.530362222375}, \"weight\": 0.028988442063309975}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.820099042504459, \"beta\": 15.651992596898728}, \"weight\": 0.97101155793669}]}",
+    "spike_weight": null,
+    "support_upper_cm": 59.000000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7189995424131603,
+    "b": 0.6935690680364609,
+    "bias_m": -0.03496430284947568,
+    "n": 343,
+    "rmse_m": 1.2724416892334436
+  },
+  "height_observations": 343,
+  "runtime_seconds": 0.41866588592529297,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 25,
+    "coverage_n_trees": 343,
+    "end": 10975424,
+    "level": "ecoregion",
+    "species": "POPU.BAL",
+    "start": 10975081,
+    "stratum_id": "Boreal Plains/Eastern Boreal Plains/Mid-Boreal Lowland",
+    "stratum_name": "Mid-Boreal Lowland"
+  },
+  "status": "ok"
+}

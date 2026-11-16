@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -8457.264009555083,
+      "aicc": -8456.40686669794,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.30969625400558265,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8593.016334273438,
+      "aicc": -8592.159191416295,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2795634221223934,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9119.687417453595,
+      "aicc": -9117.379725145904,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14834169380063644,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -9119.687417453595,
+    "aicc": -9117.379725145904,
+    "bic": -9112.358737939596,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9644977033450833, 0.035502296654916714]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Pacific Maritime/Georgia Depression/Georgia-Puget Basin|ACER.MAC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.14834169380063644,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 4564.843708726798,
+    "method": "truncated-em-moments",
+    "n_bins": 29,
+    "n_parameters": 5,
+    "n_plots": 6,
+    "n_trees": 172,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 1.2567323581578882, \"beta\": 39.69271738625658}, \"weight\": 0.9644977033450833}, {\"name\": \"weibull\", \"parameters\": {\"a\": 170.79064737016208, \"beta\": 63.80453281757697}, \"weight\": 0.035502296654916714}]}",
+    "spike_weight": null,
+    "support_upper_cm": 82.37500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.8838362425438937,
+    "b": 0.6815047469756845,
+    "bias_m": 0.03571876787100537,
+    "n": 172,
+    "rmse_m": 4.1205199575176055
+  },
+  "height_observations": 172,
+  "runtime_seconds": 1.5019290447235107,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 6,
+    "coverage_n_trees": 184,
+    "end": 6501862,
+    "level": "ecoregion",
+    "species": "ACER.MAC",
+    "start": 6501690,
+    "stratum_id": "Pacific Maritime/Georgia Depression/Georgia-Puget Basin",
+    "stratum_name": "Georgia-Puget Basin"
+  },
+  "status": "ok"
+}

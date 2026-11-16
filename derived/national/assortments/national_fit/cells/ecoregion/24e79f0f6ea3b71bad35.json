@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -78940.23573587676,
+      "aicc": -78939.23573587676,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09635682804004486,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -78632.3519366495,
+      "aicc": -78631.3519366495,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11523514882185026,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -79673.68419938226,
+      "aicc": -79670.95692665498,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04264695243626182,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -79766.89501982683,
+      "aicc": -79764.16774709955,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.039573482351403094,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -79766.89501982683,
+    "aicc": -79764.16774709955,
+    "bic": -79760.23399727595,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.19953055099740516, 0.8004694490025949]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Southern Rocky Mountain Trench|PICE.ENG",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.039573482351403094,
+    "limit_excluded_trees": 11,
+    "log_likelihood": 39888.447509913414,
+    "method": "truncated-em-moments",
+    "n_bins": 27,
+    "n_parameters": 5,
+    "n_plots": 24,
+    "n_trees": 280,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.5132246579736193, \"p\": 46.569667142796455}, \"weight\": 0.19953055099740516}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.2027523921419028, \"beta\": 18.569392379346397}, \"weight\": 0.8004694490025949}]}",
+    "spike_weight": null,
+    "support_upper_cm": 71.875,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6447493119787209,
+    "b": 1.0869963968833356,
+    "bias_m": -0.19418356141807408,
+    "n": 274,
+    "rmse_m": 4.1666856813178885
+  },
+  "height_observations": 274,
+  "runtime_seconds": 0.7052602767944336,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 28,
+    "coverage_n_trees": 291,
+    "end": 5435289,
+    "level": "ecoregion",
+    "species": "PICE.ENG",
+    "start": 5434998,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Southern Rocky Mountain Trench",
+    "stratum_name": "Southern Rocky Mountain Trench"
+  },
+  "status": "ok"
+}

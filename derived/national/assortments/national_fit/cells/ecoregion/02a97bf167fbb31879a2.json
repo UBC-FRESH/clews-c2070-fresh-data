@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -102554.23609608831,
+      "aicc": -102552.6360960883,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.015798051789011683,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -102320.61447746774,
+      "aicc": -102319.01447746773,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04077614058334045,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -102560.43904973273,
+      "aicc": -102555.82366511734,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.016249252932300146,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -102554.23609608831,
+    "aicc": -102552.6360960883,
+    "bic": -102551.40277915081,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide|POPU.TRE",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.015798051789011683,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 51280.118048044154,
+    "method": "two-stage",
+    "n_bins": 17,
+    "n_parameters": 3,
+    "n_plots": 20,
+    "n_trees": 770,
+    "parameters_json": "{\"a\": 1.8618665328872521, \"beta\": 12.187825485552857, \"s\": 1.0312876262774697}",
+    "spike_weight": null,
+    "support_upper_cm": 49.87500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.14170025982882486,
+    "b": 0.9359244166548849,
+    "bias_m": 0.0021308558257141634,
+    "n": 770,
+    "rmse_m": 1.7507539668902004
+  },
+  "height_observations": 770,
+  "runtime_seconds": 1.1503372192382812,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 20,
+    "coverage_n_trees": 770,
+    "end": 3060976,
+    "level": "ecoregion",
+    "species": "POPU.TRE",
+    "start": 3060206,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide",
+    "stratum_name": "Northern Continental Divide"
+  },
+  "status": "ok"
+}

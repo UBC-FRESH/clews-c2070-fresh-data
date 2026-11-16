@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -84738.83689284955,
+      "aicc": -84736.99073900339,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08936939712751957,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -85056.06886045718,
+      "aicc": -85054.22270661102,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07412516685080343,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -84958.4661526024,
+      "aicc": -84953.01160714786,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08900092446997976,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -85056.06886045718,
+    "aicc": -85054.22270661102,
+    "bic": -85053.56922042501,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Western Vancouver Island|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07412516685080343,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 42531.03443022859,
+    "method": "two-stage",
+    "n_bins": 12,
+    "n_parameters": 3,
+    "n_plots": 44,
+    "n_trees": 311,
+    "parameters_json": "{\"beta\": 2.351428657236923, \"p\": 3.899229905236684, \"s\": 1.0042239325020916}",
+    "spike_weight": null,
+    "support_upper_cm": 45.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.9314939371753168,
+    "b": 0.5770012088496632,
+    "bias_m": 0.16778298961261556,
+    "n": 311,
+    "rmse_m": 1.9383549323840203
+  },
+  "height_observations": 311,
+  "runtime_seconds": 0.44898462295532227,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 44,
+    "coverage_n_trees": 311,
+    "end": 329758,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 329447,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Western Vancouver Island",
+    "stratum_name": "Western Vancouver Island"
+  },
+  "status": "ok"
+}

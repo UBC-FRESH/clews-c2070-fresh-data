@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -63106862.5421631,
+      "aicc": -63106862.25300647,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06514284027640405,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -63352661.67735845,
+      "aicc": -63352661.388201825,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05506564213033116,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -63541103.1456442,
+      "aicc": -63541102.404903464,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.024564137712997924,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -63352661.67735845,
+    "aicc": -63352661.388201825,
+    "bic": -63352654.279634096,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Pacific Maritime/Georgia Depression|TSUG.HET",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.05506564213033116,
+    "limit_excluded_trees": 618,
+    "log_likelihood": 31676333.838679224,
+    "method": "two-stage",
+    "n_bins": 73,
+    "n_parameters": 3,
+    "n_plots": 1070,
+    "n_trees": 156561,
+    "parameters_json": "{\"beta\": 6.185982528382413, \"p\": 2.321534756367937, \"s\": 0.9764425094571926}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.7417613718226497,
+    "b": 1.207987328453567,
+    "bias_m": -0.4237452964919766,
+    "n": 156376,
+    "rmse_m": 6.5596306006777745
+  },
+  "height_observations": 156376,
+  "runtime_seconds": 2.31091046333313,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1327,
+    "coverage_n_trees": 157253,
+    "end": 1393456,
+    "level": "ecoprovince",
+    "species": "TSUG.HET",
+    "start": 1236277,
+    "stratum_id": "Pacific Maritime/Georgia Depression",
+    "stratum_name": "Georgia Depression"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -156375.0494659159,
+      "aicc": -156367.0494659159,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.833409677220581,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -168042.09404963316,
+      "aicc": -168034.09404963316,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.7461349552336896,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -168042.09404963316,
+    "aicc": -168034.09404963316,
+    "bic": -168042.25631918598,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Northern Montane Cordillera/Omineca Mountains|GENERIC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp",
+    "ks": 0.7461349552336896,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 84024.04702481658,
+    "method": "two-stage",
+    "n_bins": 6,
+    "n_parameters": 3,
+    "n_plots": 41,
+    "n_trees": 576,
+    "parameters_json": "{\"beta\": 2.268985874818794, \"p\": 2.1850237097997827e-05, \"s\": 704980.7887906273}",
+    "spike_weight": null,
+    "support_upper_cm": 20.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.2945153954749856,
+    "b": 1.1296035806011355,
+    "bias_m": 0.076384525847022,
+    "n": 576,
+    "rmse_m": 1.0796228582376604
+  },
+  "height_observations": 576,
+  "runtime_seconds": 46.97183394432068,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 50,
+    "coverage_n_trees": 728,
+    "end": 5109010,
+    "level": "ecoregion",
+    "species": "GENERIC",
+    "start": 5108434,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Omineca Mountains",
+    "stratum_name": "Omineca Mountains"
+  },
+  "status": "ok"
+}

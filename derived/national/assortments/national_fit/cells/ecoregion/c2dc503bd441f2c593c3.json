@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -15847.904860638771,
+      "aicc": null,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4635792974913327,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -16971.321850369626,
+      "aicc": null,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.22650537442944915,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -16745.09757911694,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17112094684520374,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -17746.245363348247,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.008910213565661646,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -17746.245363348247,
+    "aicc": null,
+    "bic": -17749.313891542646,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.22269776124520177, 0.7773022387547983]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.008910213565661646,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 8878.122681674124,
+    "method": "truncated-em-moments",
+    "n_bins": 3,
+    "n_parameters": 5,
+    "n_plots": 11,
+    "n_trees": 100,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.03772387573220997, \"p\": 189.4094862346353}, \"weight\": 0.22269776124520177}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 5.0}, \"weight\": 0.7773022387547983}]}",
+    "spike_weight": null,
+    "support_upper_cm": 12.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.26735070485303125,
+    "b": 0.8955314460225481,
+    "bias_m": 0.08448704693179561,
+    "n": 100,
+    "rmse_m": 0.9805076144650565
+  },
+  "height_observations": 100,
+  "runtime_seconds": 0.45664429664611816,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 12,
+    "coverage_n_trees": 120,
+    "end": 3155186,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 3155086,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide",
+    "stratum_name": "Northern Continental Divide"
+  },
+  "status": "ok"
+}

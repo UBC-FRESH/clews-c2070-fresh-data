@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -571196.8916144265,
+      "aicc": -571195.6284565318,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.23714236269768343,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -588870.5452675915,
+      "aicc": -588869.2821096968,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14358666578237636,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -588898.4033789743,
+      "aicc": -588894.8739672096,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11927819153919146,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -602479.7655113315,
+      "aicc": -602476.2360995668,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05362694065640969,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -602479.7655113315,
+    "aicc": -602476.2360995668,
+    "bic": -602474.0880402519,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.6833446196472367, 0.3166553803527634]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Eastern Boreal Shield/Mecatina Plateau|BETU.PAP",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.05362694065640969,
+    "limit_excluded_trees": 1668,
+    "log_likelihood": 301244.88275566575,
+    "method": "truncated-em-moments",
+    "n_bins": 20,
+    "n_parameters": 5,
+    "n_plots": 146,
+    "n_trees": 1665,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.4210262856521028, \"p\": 7.322083369584989}, \"weight\": 0.6833446196472367}, {\"name\": \"weibull\", \"parameters\": {\"a\": 6.903354263872965, \"beta\": 11.323980047171226}, \"weight\": 0.3166553803527634}]}",
+    "spike_weight": null,
+    "support_upper_cm": 58.375000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.9614546362819325,
+    "b": 0.4379078256243943,
+    "bias_m": 0.39086204528805085,
+    "n": 490,
+    "rmse_m": 2.440367149534169
+  },
+  "height_observations": 490,
+  "runtime_seconds": 1.3441269397735596,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 284,
+    "coverage_n_trees": 3333,
+    "end": 9107748,
+    "level": "ecoregion",
+    "species": "BETU.PAP",
+    "start": 9104415,
+    "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Mecatina Plateau",
+    "stratum_name": "Mecatina Plateau"
+  },
+  "status": "ok"
+}

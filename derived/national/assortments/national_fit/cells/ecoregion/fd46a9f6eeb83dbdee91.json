@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -131851.67651456618,
+      "aicc": -131849.27651456618,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16452473123620648,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -249246.1557953342,
+      "aicc": -249243.7557953342,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10275688929608029,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -147289.31896837425,
+      "aicc": -147281.81896837425,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16452473062902606,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -249246.1557953342,
+    "aicc": -249243.7557953342,
+    "bic": -249244.23862334536,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Okanogan Range|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.10275688929608029,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 124626.0778976671,
+    "method": "two-stage",
+    "n_bins": 13,
+    "n_parameters": 3,
+    "n_plots": 64,
+    "n_trees": 1529,
+    "parameters_json": "{\"beta\": 0.3147674137736983, \"p\": 18.399177712004025, \"s\": 0.9354022145506063}",
+    "spike_weight": null,
+    "support_upper_cm": 36.875,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.21333488839229262,
+    "b": 0.9311879610022933,
+    "bias_m": 0.08348227010938768,
+    "n": 1529,
+    "rmse_m": 1.4927113800600915
+  },
+  "height_observations": 1529,
+  "runtime_seconds": 3.8633949756622314,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 71,
+    "coverage_n_trees": 1670,
+    "end": 1217399,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 1215870,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Range",
+    "stratum_name": "Okanogan Range"
+  },
+  "status": "ok"
+}

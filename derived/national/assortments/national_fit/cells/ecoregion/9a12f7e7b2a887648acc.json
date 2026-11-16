@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -6830.062380576705,
+      "aicc": -6825.262380576705,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4747715620539835,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7131.218057307866,
+      "aicc": -7126.418057307866,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4449692737123801,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7140.533612787672,
+      "aicc": -7120.533612787672,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2876949164458391,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -6730.675082622379,
+      "aicc": -6710.675082622379,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.34372016099874025,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -7140.533612787672,
+    "aicc": -7120.533612787672,
+    "bic": -7139.5474899009905,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.7580021019854675, 0.2419978980145324]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Western Vancouver Island|GENERIC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp",
+    "ks": 0.2876949164458391,
+    "limit_excluded_trees": 6,
+    "log_likelihood": 3575.266806393836,
+    "method": "truncated-em-moments",
+    "n_bins": 8,
+    "n_parameters": 5,
+    "n_plots": 9,
+    "n_trees": 56,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 0.8188417245466891, \"beta\": 1.9235277732035283}, \"weight\": 0.7580021019854675}, {\"name\": \"weibull\", \"parameters\": {\"a\": 12.050867346908, \"beta\": 16.9673012354767}, \"weight\": 0.2419978980145324}]}",
+    "spike_weight": null,
+    "support_upper_cm": 23.499999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3119680100329451,
+    "b": 1.0778115278043496,
+    "bias_m": 0.4254900128177613,
+    "n": 60,
+    "rmse_m": 2.360492591671278
+  },
+  "height_observations": 60,
+  "runtime_seconds": 1.011455774307251,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 62,
+    "end": 344333,
+    "level": "ecoregion",
+    "species": "GENERIC",
+    "start": 344271,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Western Vancouver Island",
+    "stratum_name": "Western Vancouver Island"
+  },
+  "status": "ok"
+}

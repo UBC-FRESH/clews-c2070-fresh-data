@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1114498.5831419278,
+      "aicc": -1114497.5396636669,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14082926743187285,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1235716.815107223,
+      "aicc": -1235715.7716289621,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10670157405721759,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1284842.9468476882,
+      "aicc": -1284840.0897048311,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.024947612417158704,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1235716.815107223,
+    "aicc": -1235715.7716289621,
+    "bic": -1235712.9275966252,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Plains/Central Boreal Plains|PINU.CON",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.10670157405721759,
+    "limit_excluded_trees": 53,
+    "log_likelihood": 617861.4075536116,
+    "method": "two-stage",
+    "n_bins": 26,
+    "n_parameters": 3,
+    "n_plots": 68,
+    "n_trees": 2266,
+    "parameters_json": "{\"beta\": 1.7612241602102499, \"p\": 4.963772197903202, \"s\": 0.9094408757916571}",
+    "spike_weight": null,
+    "support_upper_cm": 67.62499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.24500213874294482,
+    "b": 0.8627836158447975,
+    "bias_m": 0.11373588324028257,
+    "n": 2253,
+    "rmse_m": 2.497971044186712
+  },
+  "height_observations": 2253,
+  "runtime_seconds": 1.5343163013458252,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 87,
+    "coverage_n_trees": 2321,
+    "end": 5868613,
+    "level": "ecoprovince",
+    "species": "PINU.CON",
+    "start": 5866294,
+    "stratum_id": "Boreal Plains/Central Boreal Plains",
+    "stratum_name": "Central Boreal Plains"
+  },
+  "status": "ok"
+}

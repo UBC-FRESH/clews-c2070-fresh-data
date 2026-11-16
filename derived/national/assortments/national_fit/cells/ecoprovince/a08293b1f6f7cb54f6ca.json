@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -151247.3746055415,
+      "aicc": -151246.95355290992,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08444865338451224,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -154308.5444920484,
+      "aicc": -154308.1234394168,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06668889664983668,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -152451.8790404704,
+      "aicc": -152450.7881313795,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08174761724650703,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -155781.71079271202,
+      "aicc": -155780.6198836211,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03057246305006356,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -155781.71079271202,
+    "aicc": -155780.6198836211,
+    "bic": -155771.15642339116,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.1308310223792423, 0.8691689776207577]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Montane Cordillera/Southern Montane Cordillera|POPU.BAL",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.03057246305006356,
+    "limit_excluded_trees": 55,
+    "log_likelihood": 77895.85539635601,
+    "method": "truncated-em-moments",
+    "n_bins": 40,
+    "n_parameters": 5,
+    "n_plots": 88,
+    "n_trees": 396,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 6.164186290572377, \"p\": 7.855675963699909}, \"weight\": 0.1308310223792423}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.6595978022962536, \"beta\": 15.565897878503497}, \"weight\": 0.8691689776207577}]}",
+    "spike_weight": null,
+    "support_upper_cm": 154.62499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.22023328368402395,
+    "b": 0.8361039125739028,
+    "bias_m": 0.23917146141913648,
+    "n": 399,
+    "rmse_m": 7.018414959056136
+  },
+  "height_observations": 399,
+  "runtime_seconds": 5.656787633895874,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 108,
+    "coverage_n_trees": 451,
+    "end": 2393733,
+    "level": "ecoprovince",
+    "species": "POPU.BAL",
+    "start": 2393282,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera",
+    "stratum_name": "Southern Montane Cordillera"
+  },
+  "status": "ok"
+}

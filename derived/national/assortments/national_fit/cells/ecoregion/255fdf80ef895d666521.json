@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2192638.884581009,
+      "aicc": -2192637.621423114,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.009972025051943723,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2192681.8425825257,
+      "aicc": -2192680.579424631,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.00598905406120398,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2174842.3035359983,
+      "aicc": -2174838.7741242335,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08825487538490778,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2192681.8425825257,
+    "aicc": -2192680.579424631,
+    "bic": -2192678.436099878,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 9.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Atlantic Maritime/Appalachian-Acadian Highlands/Appalachians|PICE.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "qc_pep",
+    "ks": 0.00598905406120398,
+    "limit_excluded_trees": 5561,
+    "log_likelihood": 1096343.9212912628,
+    "method": "two-stage",
+    "n_bins": 22,
+    "n_parameters": 3,
+    "n_plots": 381,
+    "n_trees": 5195,
+    "parameters_json": "{\"beta\": 3.670171020459378, \"p\": 3.6372726602653813, \"s\": 1.4264417305459731}",
+    "spike_weight": null,
+    "support_upper_cm": 68.49999904632568,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.012770339414129937,
+    "b": 0.8351918879025919,
+    "bias_m": 0.2229750999444564,
+    "n": 2038,
+    "rmse_m": 2.261006538438557
+  },
+  "height_observations": 2038,
+  "runtime_seconds": 2.00372314453125,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 760,
+    "coverage_n_trees": 10756,
+    "end": 6441559,
+    "level": "ecoregion",
+    "species": "PICE.RUB",
+    "start": 6430803,
+    "stratum_id": "Atlantic Maritime/Appalachian-Acadian Highlands/Appalachians",
+    "stratum_name": "Appalachians"
+  },
+  "status": "ok"
+}

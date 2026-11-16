@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -41956.63795644476,
+      "aicc": -41953.9712897781,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.7450604509691469,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -43786.161710782115,
+      "aicc": -43783.49504411545,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.6661863615861362,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -52200.850609007575,
+      "aicc": -52192.27918043615,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.24320750395358537,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -52901.386650188346,
+      "aicc": -52892.81522161692,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1717880792733874,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -52901.386650188346,
+    "aicc": -52892.81522161692,
+    "bic": -52898.56190340104,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5505484130192898, 0.44945158698071014]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Southern Rocky Mountain Trench|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.1717880792733874,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 26455.693325094173,
+    "method": "truncated-em-moments",
+    "n_bins": 11,
+    "n_parameters": 5,
+    "n_plots": 35,
+    "n_trees": 290,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.9183555594619308, \"p\": 4.921222569013824}, \"weight\": 0.5505484130192898}, {\"name\": \"weibull\", \"parameters\": {\"a\": 5.115265351774533, \"beta\": 4.8346896561537065}, \"weight\": 0.44945158698071014}]}",
+    "spike_weight": null,
+    "support_upper_cm": 34.24999952316284,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.30437515899066514,
+    "b": 0.8330570533907132,
+    "bias_m": 0.1273561794362039,
+    "n": 290,
+    "rmse_m": 1.8407494729395082
+  },
+  "height_observations": 290,
+  "runtime_seconds": 2.3140761852264404,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 36,
+    "coverage_n_trees": 313,
+    "end": 3037101,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 3036811,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Southern Rocky Mountain Trench",
+    "stratum_name": "Southern Rocky Mountain Trench"
+  },
+  "status": "ok"
+}

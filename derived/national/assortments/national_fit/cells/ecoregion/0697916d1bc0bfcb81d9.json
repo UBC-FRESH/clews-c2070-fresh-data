@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -68665.84234222601,
+      "aicc": -68663.17567555934,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04077250400141348,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -69241.78388394184,
+      "aicc": -69239.11721727517,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.040020377971112575,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -67944.2391110959,
+      "aicc": -67935.66768252446,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.033814683683503044,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -69241.78388394184,
+    "aicc": -69239.11721727517,
+    "bic": -69240.08903586946,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands|PINU.BAN",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot",
+    "ks": 0.040020377971112575,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 34623.89194197092,
+    "method": "two-stage",
+    "n_bins": 11,
+    "n_parameters": 3,
+    "n_plots": 4,
+    "n_trees": 241,
+    "parameters_json": "{\"beta\": 1.3177486063256687, \"p\": 8.340483615547795, \"s\": 1.026112538592228}",
+    "spike_weight": null,
+    "support_upper_cm": 32.874999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.4160987328208818,
+    "b": 0.8317660002115238,
+    "bias_m": 0.0254708732990369,
+    "n": 240,
+    "rmse_m": 0.9263991660513677
+  },
+  "height_observations": 240,
+  "runtime_seconds": 1.0715787410736084,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 4,
+    "coverage_n_trees": 241,
+    "end": 6506532,
+    "level": "ecoregion",
+    "species": "PINU.BAN",
+    "start": 6506291,
+    "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands",
+    "stratum_name": "Northern Alberta Uplands"
+  },
+  "status": "ok"
+}

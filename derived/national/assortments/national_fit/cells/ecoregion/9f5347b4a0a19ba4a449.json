@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -117103.07792630685,
+      "aicc": -117101.935069164,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17031168163969926,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -118658.28991635253,
+      "aicc": -118657.14705920967,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11427465381471286,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -119285.4185613758,
+      "aicc": -119282.26066663896,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05470449917275971,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -118658.28991635253,
+    "aicc": -118657.14705920967,
+    "bic": -118654.63328887793,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Southern Boreal Shield/Lac Temiscamingue Lowland|THUJ.OCC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.11427465381471286,
+    "limit_excluded_trees": 438,
+    "log_likelihood": 59332.144958176264,
+    "method": "two-stage",
+    "n_bins": 22,
+    "n_parameters": 3,
+    "n_plots": 17,
+    "n_trees": 439,
+    "parameters_json": "{\"beta\": 4.176203490168091, \"p\": 4.241580017406535, \"s\": 1.1046360116516434}",
+    "spike_weight": null,
+    "support_upper_cm": 62.874999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.8634455908907114,
+    "b": 0.4922182352976297,
+    "bias_m": 0.10920865270826502,
+    "n": 184,
+    "rmse_m": 1.5386171930442156
+  },
+  "height_observations": 184,
+  "runtime_seconds": 1.3559534549713135,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 28,
+    "coverage_n_trees": 877,
+    "end": 9112213,
+    "level": "ecoregion",
+    "species": "THUJ.OCC",
+    "start": 9111336,
+    "stratum_id": "Boreal Shield East/Southern Boreal Shield/Lac Temiscamingue Lowland",
+    "stratum_name": "Lac Temiscamingue Lowland"
+  },
+  "status": "ok"
+}

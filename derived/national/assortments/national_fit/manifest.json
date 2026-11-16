@@ -1,0 +1,155 @@
+{
+  "artifact": "national_hierarchical_fit",
+  "artifact_version": "0.1.0",
+  "code": {
+    "data_branch": "main",
+    "data_commit": "3630df834e2948507971ab7799edd1f2ca4dcdf3",
+    "parent_branch": "feature/p7-source-triage-and-production-readiness",
+    "parent_commit": "4e06c24b44bbddf220f76ef988a01d746ed735e6"
+  },
+  "generated_at_utc": "2026-11-16T08:09:48Z",
+  "inputs": {
+    "coverage": {
+      "bytes": 10164691,
+      "path": "data/derived/national/assortments/national_coverage/coverage.csv",
+      "sha256": "12f85f85a8c803d1c841d5e817881c7277628ee69a170c45100076633b08fd5d"
+    },
+    "rsyc_ecostrat": {
+      "bytes": 15421440,
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    },
+    "rsyc_models": {
+      "bytes": 1468706,
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940"
+    },
+    "sites": {
+      "bytes": 8359304,
+      "path": "data/derived/fvsca_calibration/v0/sites.csv",
+      "sha256": "7796f2c8f8b83284c3980333e1563de4bb409f10668f1bb32a5fca2bccf54de9"
+    },
+    "trees": {
+      "bytes": 103812857,
+      "path": "data/derived/fvsca_calibration/v0/trees.csv.gz",
+      "sha256": "a0b540f45d6f325792d3e56f36727018514336862077610ea0c34ba5de3afffe"
+    },
+    "visits": {
+      "bytes": 30574202,
+      "path": "data/derived/fvsca_calibration/v0/visits.csv",
+      "sha256": "bd07dc1189d5feca8c04f3ad589a68f10f62115bb85007a8b2dcf2dcbb61534c"
+    }
+  },
+  "level": "ecoregion",
+  "outputs": {
+    "data/derived/national/assortments/national_fit/NATIONAL_FIT_REPORT.md": "b53cb9490fbdd376733be67685a57ceb3c4f167ec00218cef0a93cea24622145",
+    "data/derived/national/assortments/national_fit/evidence_map.png": "2528b75c6ba196e407e205a4d8637551c8786626a1d2a36beff2e52248ce9122",
+    "data/derived/national/assortments/national_fit/national_distribution_parameters.csv": "82996707356b4226c79debdf216ee8b22120c3f764972705e5fd1a4604288723",
+    "data/derived/national/assortments/national_fit/national_evidence_summary.json": "5c5e1c10243677bb2de9c48a79d2aaf151cc321c52f0fcd9852de8c585f9a291",
+    "data/derived/national/assortments/national_fit/national_height_models.csv": "f9bb0dffc256833f089684808f2674116ffbb7a0267fc10ffb6739aa5dbfd77f",
+    "data/derived/national/assortments/national_fit/remaining_cells.csv": "95d9e47c6bb4ee2cdfff314781e610eff04162553c070758d5519f55220539a5"
+  },
+  "prep": {
+    "cache_key": {
+      "inputs": {
+        "ecostrat": {
+          "mtime_ns": 1794736946504714638,
+          "size": 15421440
+        },
+        "sites": {
+          "mtime_ns": 1794728617287217150,
+          "size": 8359304
+        },
+        "trees": {
+          "mtime_ns": 1794692862716862428,
+          "size": 103812857
+        },
+        "visits": {
+          "mtime_ns": 1794728619125215638,
+          "size": 30574202
+        }
+      },
+      "prep_version": 2
+    },
+    "dbh_limits_by_source": {
+      "faib_non_psp": 4.0,
+      "faib_psp": 2.0,
+      "magplot": 2.0,
+      "magplot_wfs": 2.0,
+      "nl_fal": 1.0,
+      "qc_pep": 9.0
+    },
+    "dropped_missing_expansion_factor": 26922,
+    "dropped_unmapped_sites": 928264,
+    "generated_at_utc": "2026-11-16T08:00:20Z",
+    "mapping": {
+      "duplicate_boundary_matches": 0,
+      "runtime_seconds": 0.5806646347045898,
+      "sites_mapped_to_ecodistrict": 67477,
+      "sites_outside_rsyc_ecostrata": 1067,
+      "sites_with_valid_coordinates": 68544
+    },
+    "plots": 122929,
+    "prep_version": 2,
+    "rows": 11348450,
+    "rpkm": {
+      "note": "live trees with finite DBH in (0, 500] cm; NL FAL uses unit weights because the source publishes no expansion factor"
+    },
+    "runtime_seconds": 74.2903699874878,
+    "sites": 66584,
+    "sources": {
+      "faib_non_psp": 134213,
+      "faib_psp": 2345956,
+      "magplot": 5640416,
+      "magplot_wfs": 1030459,
+      "nl_fal": 598951,
+      "qc_pep": 1598455
+    },
+    "species": [
+      "ABIE.AMA",
+      "ABIE.BAL",
+      "ABIE.LAS",
+      "ACER.MAC",
+      "ACER.RUB",
+      "ACER.SAH",
+      "ALNU.RUB",
+      "BETU.ALL",
+      "BETU.PAP",
+      "BROADLEAF",
+      "CONIFEROUS",
+      "FRAX.NIG",
+      "GENERIC",
+      "LARI.LAR",
+      "LARI.OCC",
+      "PICE.ABI",
+      "PICE.ENG",
+      "PICE.GLA",
+      "PICE.MAR",
+      "PICE.RUB",
+      "PICE.SIT",
+      "PINU.BAN",
+      "PINU.CON",
+      "PINU.PON",
+      "PINU.RES",
+      "PINU.STR",
+      "POPU.BAL",
+      "POPU.GRA",
+      "POPU.TRE",
+      "PSEU.MEN",
+      "QUER.RUB",
+      "THUJ.OCC",
+      "THUJ.PLI",
+      "TSUG.HET",
+      "TSUG.MER"
+    ]
+  },
+  "remaining_cells": 98,
+  "runtime_seconds": 93.40343713760376,
+  "support_levels": [
+    "national",
+    "ecozone",
+    "ecoprovince",
+    "ecoregion"
+  ],
+  "timebox_exhausted": false
+}

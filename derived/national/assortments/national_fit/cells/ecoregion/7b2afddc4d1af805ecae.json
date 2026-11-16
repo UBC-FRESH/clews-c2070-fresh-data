@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": 21466.933661366,
+      "aicc": 21467.639543718942,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.34272772555040876,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": 19412.128462504406,
+      "aicc": 19412.834344857347,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3427277254769837,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -49879.85380405634,
+      "aicc": -49877.97880405634,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08730657098911232,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -49928.22262893392,
+      "aicc": -49926.34762893392,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12837550195429648,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -49928.22262893392,
+    "aicc": -49926.34762893392,
+    "bic": -49920.03469813529,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.3498670766894814, 0.6501329233105186]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Selkirk-Bitterroot Foothills|PINU.PON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.12837550195429648,
+    "limit_excluded_trees": 17,
+    "log_likelihood": 24969.11131446696,
+    "method": "truncated-em-moments",
+    "n_bins": 26,
+    "n_parameters": 5,
+    "n_plots": 13,
+    "n_trees": 68,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 4.253193406248004, \"p\": 7.635308836796479}, \"weight\": 0.3498670766894814}, {\"name\": \"weibull\", \"parameters\": {\"a\": 25.385523166766077, \"beta\": 9.809289232631158}, \"weight\": 0.6501329233105186}]}",
+    "spike_weight": null,
+    "support_upper_cm": 95.24999618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7114946905243374,
+    "b": 0.6806669229362874,
+    "bias_m": 0.2406849159094876,
+    "n": 69,
+    "rmse_m": 3.6560027654465626
+  },
+  "height_observations": 69,
+  "runtime_seconds": 0.7446267604827881,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 23,
+    "coverage_n_trees": 85,
+    "end": 2892751,
+    "level": "ecoregion",
+    "species": "PINU.PON",
+    "start": 2892666,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Selkirk-Bitterroot Foothills",
+    "stratum_name": "Selkirk-Bitterroot Foothills"
+  },
+  "status": "ok"
+}

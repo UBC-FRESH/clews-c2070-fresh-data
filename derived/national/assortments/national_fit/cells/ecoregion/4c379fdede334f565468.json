@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -517366.129689637,
+      "aicc": -517364.4154039227,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0454492851324233,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -524014.2977262453,
+      "aicc": -524012.58344053105,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01756491126791715,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -524141.51204625977,
+      "aicc": -524136.51204625977,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02692578353349312,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -524014.2977262453,
+    "aicc": -524012.58344053105,
+    "bic": -524011.62661097164,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-Central|PINU.CON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.01756491126791715,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 262010.14886312265,
+    "method": "two-stage",
+    "n_bins": 16,
+    "n_parameters": 3,
+    "n_plots": 20,
+    "n_trees": 1472,
+    "parameters_json": "{\"beta\": 1.9094135645571315, \"p\": 7.342378370869043, \"s\": 0.9944503415612896}",
+    "spike_weight": null,
+    "support_upper_cm": 46.624999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.8561640182651435,
+    "b": 0.6222402896291147,
+    "bias_m": 0.14515122631262944,
+    "n": 1286,
+    "rmse_m": 1.8515494852433416
+  },
+  "height_observations": 1286,
+  "runtime_seconds": 1.2849555015563965,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 20,
+    "coverage_n_trees": 1472,
+    "end": 5502553,
+    "level": "ecoregion",
+    "species": "PINU.CON",
+    "start": 5501081,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-Central",
+    "stratum_name": "Yukon Plateau-Central"
+  },
+  "status": "ok"
+}

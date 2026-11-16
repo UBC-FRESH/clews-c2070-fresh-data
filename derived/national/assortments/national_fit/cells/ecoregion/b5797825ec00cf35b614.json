@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -29694.90226759386,
+      "aicc": -29692.90226759386,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09819297074843059,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -29508.545626130264,
+      "aicc": -29506.545626130264,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.13176581151919275,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -19674.153151803926,
+      "aicc": -19668.153151803926,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14732206971856887,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -30928.194688650532,
+      "aicc": -30922.194688650532,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08605324946631876,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -30928.194688650532,
+    "aicc": -30922.194688650532,
+    "bic": -30924.331745039333,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5207316797163537, 0.4792683202836463]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Plains/Boreal Foothills/Clear Hills Upland|LARI.LAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.08605324946631876,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 15469.097344325266,
+    "method": "truncated-em-moments",
+    "n_bins": 15,
+    "n_parameters": 5,
+    "n_plots": 15,
+    "n_trees": 50,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.41274064645055597, \"p\": 53.49530818766689}, \"weight\": 0.5207316797163537}, {\"name\": \"weibull\", \"parameters\": {\"a\": 6.15050511777748, \"beta\": 12.208368440874022}, \"weight\": 0.4792683202836463}]}",
+    "spike_weight": null,
+    "support_upper_cm": 40.999999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6956563860837294,
+    "b": 1.1306609191056574,
+    "bias_m": 0.2302146469082789,
+    "n": 49,
+    "rmse_m": 3.223558432674732
+  },
+  "height_observations": 49,
+  "runtime_seconds": 0.3853793144226074,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 15,
+    "coverage_n_trees": 50,
+    "end": 6501420,
+    "level": "ecoregion",
+    "species": "LARI.LAR",
+    "start": 6501370,
+    "stratum_id": "Boreal Plains/Boreal Foothills/Clear Hills Upland",
+    "stratum_name": "Clear Hills Upland"
+  },
+  "status": "ok"
+}

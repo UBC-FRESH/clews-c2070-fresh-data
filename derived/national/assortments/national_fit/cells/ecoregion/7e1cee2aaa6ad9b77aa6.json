@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -251139.91104993978,
+      "aicc": -251138.64789204503,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11307079733596688,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -260630.2397764348,
+      "aicc": -260628.97661854007,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08397669592401424,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -257027.22796929165,
+      "aicc": -257023.69855752695,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05903262656254251,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -264137.6881171131,
+      "aicc": -264134.1587053484,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03306081170472008,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -264137.6881171131,
+    "aicc": -264134.1587053484,
+    "bic": -264132.01064603345,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.7449884315159485, 0.25501156848405154]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Atlantic Maritime/Appalachian-Acadian Highlands/Appalachians|LARI.LAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.03306081170472008,
+    "limit_excluded_trees": 799,
+    "log_likelihood": 132073.84405855654,
+    "method": "truncated-em-moments",
+    "n_bins": 21,
+    "n_parameters": 5,
+    "n_plots": 70,
+    "n_trees": 817,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.150598470074799, \"p\": 8.294943907811405}, \"weight\": 0.7449884315159485}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.613742844060982, \"beta\": 11.707426383283497}, \"weight\": 0.25501156848405154}]}",
+    "spike_weight": null,
+    "support_upper_cm": 58.125,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.2988656523842699,
+    "b": 0.7690510761407523,
+    "bias_m": 0.34023331390509876,
+    "n": 350,
+    "rmse_m": 3.063575817442638
+  },
+  "height_observations": 350,
+  "runtime_seconds": 2.3260443210601807,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 131,
+    "coverage_n_trees": 1616,
+    "end": 6465415,
+    "level": "ecoregion",
+    "species": "LARI.LAR",
+    "start": 6463799,
+    "stratum_id": "Atlantic Maritime/Appalachian-Acadian Highlands/Appalachians",
+    "stratum_name": "Appalachians"
+  },
+  "status": "ok"
+}

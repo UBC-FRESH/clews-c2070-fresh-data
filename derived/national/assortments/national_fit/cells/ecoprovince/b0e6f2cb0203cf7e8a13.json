@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -20714076.63332296,
+      "aicc": -20714075.906050235,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09601448171268823,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -20787902.528277345,
+      "aicc": -20787901.80100462,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10183380777284945,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21017279.94184107,
+      "aicc": -21017278.0063572,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.023933201537116422,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21025800.398001116,
+      "aicc": -21025798.462517247,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02530204675403991,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -21025800.398001116,
+    "aicc": -21025798.462517247,
+    "bic": -21025792.343411554,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.6281186704415469, 0.3718813295584531]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Taiga Plains/Hay-Slave Lowlands|PICE.GLA",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.02530204675403991,
+    "limit_excluded_trees": 584,
+    "log_likelihood": 10512905.199000558,
+    "method": "truncated-em-moments",
+    "n_bins": 33,
+    "n_parameters": 5,
+    "n_plots": 785,
+    "n_trees": 33028,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 5.226224592013123, \"p\": 2.5803571535461938}, \"weight\": 0.6281186704415469}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.0575647787698914, \"beta\": 5.572467544358862}, \"weight\": 0.3718813295584531}]}",
+    "spike_weight": null,
+    "support_upper_cm": 94.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6824649467981745,
+    "b": 1.1931867391776838,
+    "bias_m": -0.1693107552845611,
+    "n": 32322,
+    "rmse_m": 3.029809967508601
+  },
+  "height_observations": 32322,
+  "runtime_seconds": 1.7800238132476807,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1020,
+    "coverage_n_trees": 33616,
+    "end": 5983314,
+    "level": "ecoprovince",
+    "species": "PICE.GLA",
+    "start": 5949702,
+    "stratum_id": "Taiga Plains/Hay-Slave Lowlands",
+    "stratum_name": "Hay-Slave Lowlands"
+  },
+  "status": "ok"
+}

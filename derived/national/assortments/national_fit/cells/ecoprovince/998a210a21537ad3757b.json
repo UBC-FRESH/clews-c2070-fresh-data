@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -15969.667883009968,
+      "aicc": -15961.667883009968,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.29887502491459705,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -15296.075000557184,
+      "aicc": -15288.075000557184,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4521260317202679,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -15969.667883009968,
+    "aicc": -15961.667883009968,
+    "bic": -15969.830152562803,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoprovince:Boreal Cordillera/Northern Boreal Cordillera|LARI.LAR",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "high_ks;low_support",
+    "fit_sources": "magplot",
+    "ks": 0.29887502491459705,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 7987.833941504984,
+    "method": "two-stage",
+    "n_bins": 6,
+    "n_parameters": 3,
+    "n_plots": 3,
+    "n_trees": 72,
+    "parameters_json": "{\"a\": 1.9205399691373883, \"beta\": 14.36257735109525, \"s\": 1.5922757510894585}",
+    "spike_weight": null,
+    "support_upper_cm": 19.375,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7615278299779923,
+    "b": 0.5842282781369385,
+    "bias_m": 0.19034355673880474,
+    "n": 58,
+    "rmse_m": 1.877842863677868
+  },
+  "height_observations": 58,
+  "runtime_seconds": 0.21822237968444824,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 3,
+    "coverage_n_trees": 72,
+    "end": 6146108,
+    "level": "ecoprovince",
+    "species": "LARI.LAR",
+    "start": 6146036,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera",
+    "stratum_name": "Northern Boreal Cordillera"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -264691.1982020149,
+      "aicc": -264689.48391630064,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04981643767870214,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -266788.3284298391,
+      "aicc": -266786.61414412485,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01720403623638922,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -263618.95592159487,
+      "aicc": -263613.95592159487,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05648400377274332,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -267027.50401836954,
+      "aicc": -267022.50401836954,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.013933107169497139,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -267027.50401836954,
+    "aicc": -267022.50401836954,
+    "bic": -267023.05215958005,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.06679874901861235, 0.9332012509813876]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Mid-Boreal Uplands|LARI.LAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.013933107169497139,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 133518.75200918477,
+    "method": "truncated-em-moments",
+    "n_bins": 18,
+    "n_parameters": 5,
+    "n_plots": 101,
+    "n_trees": 1601,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.8218813174515552, \"p\": 29.990733780373898}, \"weight\": 0.06679874901861235}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.2841758330067314, \"beta\": 11.087503109552602}, \"weight\": 0.9332012509813876}]}",
+    "spike_weight": null,
+    "support_upper_cm": 45.875000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.45849344765422906,
+    "b": 0.7583606539394289,
+    "bias_m": 0.11935812553199474,
+    "n": 1601,
+    "rmse_m": 1.7576667343274615
+  },
+  "height_observations": 1601,
+  "runtime_seconds": 1.9979002475738525,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 101,
+    "coverage_n_trees": 1601,
+    "end": 10745889,
+    "level": "ecoregion",
+    "species": "LARI.LAR",
+    "start": 10744288,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Mid-Boreal Uplands",
+    "stratum_name": "Mid-Boreal Uplands"
+  },
+  "status": "ok"
+}

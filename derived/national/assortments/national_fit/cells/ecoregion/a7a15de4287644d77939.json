@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -208172.06257498218,
+      "aicc": -208171.20543212505,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08006956073138194,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -210243.94830747193,
+      "aicc": -210243.0911646148,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05757906176662975,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -209781.12561602087,
+      "aicc": -209778.81792371318,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0495576829102406,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -210243.94830747193,
+    "aicc": -210243.0911646148,
+    "bic": -210239.55109976354,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Taiga Plains/Hay-Slave Lowlands/Muskwa Plateau|POPU.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.05757906176662975,
+    "limit_excluded_trees": 24,
+    "log_likelihood": 105124.97415373597,
+    "method": "two-stage",
+    "n_bins": 30,
+    "n_parameters": 3,
+    "n_plots": 39,
+    "n_trees": 858,
+    "parameters_json": "{\"beta\": 5.522347320444925, \"p\": 2.7502514610901576, \"s\": 0.9762983033878508}",
+    "spike_weight": null,
+    "support_upper_cm": 81.00000381469727,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6167567391320803,
+    "b": 0.8031051462110694,
+    "bias_m": 0.03657500453651205,
+    "n": 854,
+    "rmse_m": 4.273265484831294
+  },
+  "height_observations": 854,
+  "runtime_seconds": 1.4923324584960938,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 53,
+    "coverage_n_trees": 882,
+    "end": 5380201,
+    "level": "ecoregion",
+    "species": "POPU.BAL",
+    "start": 5379319,
+    "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Muskwa Plateau",
+    "stratum_name": "Muskwa Plateau"
+  },
+  "status": "ok"
+}

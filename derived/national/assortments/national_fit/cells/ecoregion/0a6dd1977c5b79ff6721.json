@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -69935.86778781805,
+      "aicc": -69934.66778781805,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.054909967038027606,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -68524.65326885591,
+      "aicc": -68523.45326885591,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08527226361565857,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -70382.85237557485,
+      "aicc": -70379.51904224152,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0472876242221596,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -70373.67613230506,
+      "aicc": -70370.34279897173,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.047750345337660094,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -70382.85237557485,
+    "aicc": -70379.51904224152,
+    "bic": -70376.9621064231,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.05013587773508484, 0.9498641222649152]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Boreal Shield East/Eastern Boreal Shield/Paradise River|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.0472876242221596,
+    "limit_excluded_trees": 6673,
+    "log_likelihood": 35196.42618778742,
+    "method": "truncated-em-moments",
+    "n_bins": 22,
+    "n_parameters": 5,
+    "n_plots": 79,
+    "n_trees": 6762,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 3.4553777779518944, \"beta\": 2.272717174887073}, \"weight\": 0.05013587773508484}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.0012164342908445, \"beta\": 14.978248655606485}, \"weight\": 0.9498641222649152}]}",
+    "spike_weight": null,
+    "support_upper_cm": 59.749999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.39019587912465853,
+    "b": 0.8804298382003466,
+    "bias_m": 0.5796556185901574,
+    "n": 5078,
+    "rmse_m": 1.8236214177928716
+  },
+  "height_observations": 5078,
+  "runtime_seconds": 1.0902137756347656,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 158,
+    "coverage_n_trees": 13435,
+    "end": 10297259,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 10283824,
+    "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Paradise River",
+    "stratum_name": "Paradise River"
+  },
+  "status": "ok"
+}

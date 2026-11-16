@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -10713512.006923165,
+      "aicc": -10713510.59515846,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06866055729527076,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -10771925.180795796,
+      "aicc": -10771923.76903109,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07762811488469401,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -10826950.175323388,
+      "aicc": -10826946.175323388,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.01470219848319887,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -10771925.180795796,
+    "aicc": -10771923.76903109,
+    "bic": -10771922.047228483,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Plains/Boreal Foothills|PICE.MAR",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07762811488469401,
+    "limit_excluded_trees": 378,
+    "log_likelihood": 5385965.590397898,
+    "method": "two-stage",
+    "n_bins": 18,
+    "n_parameters": 3,
+    "n_plots": 237,
+    "n_trees": 14583,
+    "parameters_json": "{\"beta\": 1.635503229908383, \"p\": 4.592896904805795, \"s\": 0.9612276911607124}",
+    "spike_weight": null,
+    "support_upper_cm": 53.499999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.17554633215401266,
+    "b": 1.0057775725854619,
+    "bias_m": 0.06841536461380932,
+    "n": 14424,
+    "rmse_m": 1.5369087881265207
+  },
+  "height_observations": 14424,
+  "runtime_seconds": 1.7503852844238281,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 343,
+    "coverage_n_trees": 14974,
+    "end": 5231082,
+    "level": "ecoprovince",
+    "species": "PICE.MAR",
+    "start": 5216121,
+    "stratum_id": "Boreal Plains/Boreal Foothills",
+    "stratum_name": "Boreal Foothills"
+  },
+  "status": "ok"
+}

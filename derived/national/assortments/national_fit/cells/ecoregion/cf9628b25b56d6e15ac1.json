@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -34446.90293331933,
+      "aicc": -34443.47436189076,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1991529607719148,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -59441.36943335342,
+      "aicc": -59437.94086192485,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1418701787108948,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -78656.82098655197,
+      "aicc": -78644.82098655197,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06825726330122339,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -78855.46036474718,
+      "aicc": -78843.46036474718,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03335478602970465,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -78855.46036474718,
+    "aicc": -78843.46036474718,
+    "bic": -78853.47088838319,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.2427373084175257, 0.7572626915824743]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Selkirk-Bitterroot Foothills|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.03335478602970465,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 39432.73018237359,
+    "method": "truncated-em-moments",
+    "n_bins": 9,
+    "n_parameters": 5,
+    "n_plots": 67,
+    "n_trees": 272,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.064685769240063, \"p\": 6.262077643777632}, \"weight\": 0.2427373084175257}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.2921448315104564, \"beta\": 6.212579839328863}, \"weight\": 0.7572626915824743}]}",
+    "spike_weight": null,
+    "support_upper_cm": 30.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.43054341580913724,
+    "b": 0.7655713665186059,
+    "bias_m": 0.11028701322460983,
+    "n": 271,
+    "rmse_m": 1.3279473397407207
+  },
+  "height_observations": 271,
+  "runtime_seconds": 1.0451562404632568,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 83,
+    "coverage_n_trees": 510,
+    "end": 2829342,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 2829070,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Selkirk-Bitterroot Foothills",
+    "stratum_name": "Selkirk-Bitterroot Foothills"
+  },
+  "status": "ok"
+}

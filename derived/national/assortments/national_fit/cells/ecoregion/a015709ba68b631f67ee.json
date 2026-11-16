@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -39047.368997765894,
+      "aicc": -39046.03566443256,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1840404500546615,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -39944.002277590895,
+      "aicc": -39942.66894425756,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.15574176023800146,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -39433.561610575896,
+      "aicc": -39429.811610575896,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17614620625413216,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -39998.271622995606,
+      "aicc": -39994.521622995606,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17244823763421438,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -39998.271622995606,
+    "aicc": -39994.521622995606,
+    "bic": -39992.81641072882,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.0506422208046178, 0.9493577791953822]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Okanogan Highland|ABIE.LAS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.17244823763421438,
+    "limit_excluded_trees": 19,
+    "log_likelihood": 20004.135811497803,
+    "method": "truncated-em-moments",
+    "n_bins": 15,
+    "n_parameters": 5,
+    "n_plots": 11,
+    "n_trees": 88,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.010745370040611256, \"p\": 2683.271120853335}, \"weight\": 0.0506422208046178}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.038047827959988, \"beta\": 11.548871950755128}, \"weight\": 0.9493577791953822}]}",
+    "spike_weight": null,
+    "support_upper_cm": 56.25,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.3841119371215867,
+    "b": 1.0589031022999378,
+    "bias_m": 0.014438030819362237,
+    "n": 90,
+    "rmse_m": 2.838981805673481
+  },
+  "height_observations": 90,
+  "runtime_seconds": 0.4445352554321289,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 19,
+    "coverage_n_trees": 107,
+    "end": 2790751,
+    "level": "ecoregion",
+    "species": "ABIE.LAS",
+    "start": 2790644,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Highland",
+    "stratum_name": "Okanogan Highland"
+  },
+  "status": "ok"
+}

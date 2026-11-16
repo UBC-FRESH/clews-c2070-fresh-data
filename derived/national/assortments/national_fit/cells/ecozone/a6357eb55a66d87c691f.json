@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -48475957.7677228,
+      "aicc": -48475957.0177228,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.013181783826090143,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -48449742.500114284,
+      "aicc": -48449741.750114284,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04176679420893492,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -48475881.151434384,
+      "aicc": -48475879.151434384,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.013214993923248514,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -48496779.76646351,
+      "aicc": -48496777.76646351,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.014810198335357905,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -48496779.76646351,
+    "aicc": -48496777.76646351,
+    "bic": -48496771.84886882,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.007704435973506231, 0.9922955640264938]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecozone:Boreal Cordillera|PINU.CON",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.014810198335357905,
+    "limit_excluded_trees": 338,
+    "log_likelihood": 24248394.883231755,
+    "method": "truncated-em-moments",
+    "n_bins": 23,
+    "n_parameters": 5,
+    "n_plots": 575,
+    "n_trees": 48295,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.102591710501013, \"p\": 26.811779458558647}, \"weight\": 0.007704435973506231}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.02268982755764, \"beta\": 11.46412371640158}, \"weight\": 0.9922955640264938}]}",
+    "spike_weight": null,
+    "support_upper_cm": 91.25,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.017838252185074427,
+    "b": 0.9714636203680196,
+    "bias_m": 0.16079520452494828,
+    "n": 43124,
+    "rmse_m": 2.7574349820572994
+  },
+  "height_observations": 43124,
+  "runtime_seconds": 0.9366245269775391,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 637,
+    "coverage_n_trees": 48633,
+    "end": 6060780,
+    "level": "ecozone",
+    "species": "PINU.CON",
+    "start": 6012147,
+    "stratum_id": "Boreal Cordillera",
+    "stratum_name": "Boreal Cordillera"
+  },
+  "status": "ok"
+}

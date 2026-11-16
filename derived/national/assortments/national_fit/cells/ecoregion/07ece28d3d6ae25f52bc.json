@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -11714.86529207955,
+      "aicc": -11708.86529207955,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.39245808698665297,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -12330.99939426928,
+      "aicc": -12324.99939426928,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.24074761733330072,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -12521.40644476112,
+      "aicc": -12491.40644476112,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17789632312237322,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -12888.06955718921,
+      "aicc": -12858.06955718921,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06853570837023149,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -12888.06955718921,
+    "aicc": -12858.06955718921,
+    "bic": -12887.67234948081,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.7165586558649462, 0.2834413441350538]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Mid-Boreal Shield/Riviere Rupert Plateau|ACER.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.06853570837023149,
+    "limit_excluded_trees": 55,
+    "log_likelihood": 6449.034778594605,
+    "method": "truncated-em-moments",
+    "n_bins": 5,
+    "n_parameters": 5,
+    "n_plots": 5,
+    "n_trees": 55,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.3854672480213096, \"p\": 32.56353512542872}, \"weight\": 0.7165586558649462}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 9.0}, \"weight\": 0.2834413441350538}]}",
+    "spike_weight": null,
+    "support_upper_cm": 22.249999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.2195311497921086,
+    "b": 1.3325783551828447,
+    "bias_m": 0.3657071768188503,
+    "n": 44,
+    "rmse_m": 2.2070295862009117
+  },
+  "height_observations": 44,
+  "runtime_seconds": 2.2305378913879395,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 10,
+    "coverage_n_trees": 110,
+    "end": 9129320,
+    "level": "ecoregion",
+    "species": "ACER.RUB",
+    "start": 9129210,
+    "stratum_id": "Boreal Shield East/Mid-Boreal Shield/Riviere Rupert Plateau",
+    "stratum_name": "Riviere Rupert Plateau"
+  },
+  "status": "ok"
+}

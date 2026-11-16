@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -24339.05277558306,
+      "aicc": -24337.641010877178,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.23861235203957182,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -24726.938990160033,
+      "aicc": -24725.527225454152,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2415493025743624,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -24548.09606865653,
+      "aicc": -24544.09606865653,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2363883309449804,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -24726.938990160033,
+    "aicc": -24725.527225454152,
+    "bic": -24723.805422846865,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Georgia Depression/Lower Mainland|PINU.CON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.2415493025743624,
+    "limit_excluded_trees": 20,
+    "log_likelihood": 12366.469495080017,
+    "method": "two-stage",
+    "n_bins": 15,
+    "n_parameters": 3,
+    "n_plots": 11,
+    "n_trees": 61,
+    "parameters_json": "{\"beta\": 1.7095545716278133, \"p\": 12.086854829158884, \"s\": 1.304525104007996}",
+    "spike_weight": null,
+    "support_upper_cm": 54.25000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.34114602018117474,
+    "b": 0.8214266620371837,
+    "bias_m": 0.28096516608425365,
+    "n": 60,
+    "rmse_m": 3.7318938656821175
+  },
+  "height_observations": 60,
+  "runtime_seconds": 1.0119447708129883,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 16,
+    "coverage_n_trees": 81,
+    "end": 3181753,
+    "level": "ecoregion",
+    "species": "PINU.CON",
+    "start": 3181672,
+    "stratum_id": "Pacific Maritime/Georgia Depression/Lower Mainland",
+    "stratum_name": "Lower Mainland"
+  },
+  "status": "ok"
+}

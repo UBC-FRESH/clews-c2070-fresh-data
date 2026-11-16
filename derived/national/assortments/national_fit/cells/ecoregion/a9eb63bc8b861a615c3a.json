@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -49797.2802887021,
+      "aicc": -49796.83584425766,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1129752232450831,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -49991.95329173341,
+      "aicc": -49991.50884728896,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10160738939356231,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -50845.534207706405,
+      "aicc": -50844.38036155256,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05127828202433951,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -50845.534207706405,
+    "aicc": -50844.38036155256,
+    "bic": -50835.23199265367,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.13875998097579037, 0.8612400190242097]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Pacific Ranges|PICE.ENG",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.05127828202433951,
+    "limit_excluded_trees": 28,
+    "log_likelihood": 25427.767103853203,
+    "method": "truncated-em-moments",
+    "n_bins": 41,
+    "n_parameters": 5,
+    "n_plots": 34,
+    "n_trees": 152,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.026533233415172212, \"p\": 344.0546256034395}, \"weight\": 0.13875998097579037}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.7315193101475073, \"beta\": 32.54894166759127}, \"weight\": 0.8612400190242097}]}",
+    "spike_weight": null,
+    "support_upper_cm": 145.625,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.25155597586621,
+    "b": 0.904066188936323,
+    "bias_m": 0.5143299010562687,
+    "n": 149,
+    "rmse_m": 5.580250338399418
+  },
+  "height_observations": 149,
+  "runtime_seconds": 0.607403039932251,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 51,
+    "coverage_n_trees": 180,
+    "end": 4376082,
+    "level": "ecoregion",
+    "species": "PICE.ENG",
+    "start": 4375902,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Pacific Ranges",
+    "stratum_name": "Pacific Ranges"
+  },
+  "status": "ok"
+}

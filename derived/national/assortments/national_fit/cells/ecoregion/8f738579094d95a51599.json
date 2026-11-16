@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -669470.7270167421,
+      "aicc": -669469.869873885,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4483811557028368,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -690683.327794512,
+      "aicc": -690682.4706516549,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3645707512641101,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -690683.327794512,
+    "aicc": -690682.4706516549,
+    "bic": -690678.9305868036,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges|TSUG.MER",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "magplot",
+    "ks": 0.3645707512641101,
+    "limit_excluded_trees": 91,
+    "log_likelihood": 345344.663897256,
+    "method": "two-stage",
+    "n_bins": 27,
+    "n_parameters": 3,
+    "n_plots": 53,
+    "n_trees": 139,
+    "parameters_json": "{\"beta\": 15.078238112444884, \"p\": 1.0616020588050112e-05, \"s\": 90849.52323653961}",
+    "spike_weight": null,
+    "support_upper_cm": 81.875,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.1468232235571467,
+    "b": 1.0685334528977823,
+    "bias_m": 0.23597092772662567,
+    "n": 112,
+    "rmse_m": 2.9144379458975203
+  },
+  "height_observations": 112,
+  "runtime_seconds": 4.400241136550903,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 92,
+    "coverage_n_trees": 230,
+    "end": 5442313,
+    "level": "ecoregion",
+    "species": "TSUG.MER",
+    "start": 5442083,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges",
+    "stratum_name": "Interior Transition Ranges"
+  },
+  "status": "ok"
+}

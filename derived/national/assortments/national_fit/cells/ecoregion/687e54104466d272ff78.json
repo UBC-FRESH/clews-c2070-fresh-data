@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -14776.480173508971,
+      "aicc": -14772.480173508971,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2109230662452224,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -15391.703135512358,
+      "aicc": -15387.703135512358,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09399874635234129,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -14772.776755859906,
+      "aicc": -14757.776755859906,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.21084117290879914,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -15495.14213832366,
+      "aicc": -15480.14213832366,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.060457106888741285,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -15495.14213832366,
+    "aicc": -15480.14213832366,
+    "bic": -15493.629212858688,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.99983601045199, 0.0001639895480100368]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Long Range Mountains|GENERIC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot",
+    "ks": 0.060457106888741285,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 7752.57106916183,
+    "method": "truncated-em-moments",
+    "n_bins": 7,
+    "n_parameters": 5,
+    "n_plots": 3,
+    "n_trees": 62,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.5710428239047332, \"p\": 20.71825960749773}, \"weight\": 0.99983601045199}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 10.15}, \"weight\": 0.0001639895480100368}]}",
+    "spike_weight": null,
+    "support_upper_cm": 26.375000476837158,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.022773937274708132,
+    "b": 0.8715613262260808,
+    "bias_m": 0.11853913874524769,
+    "n": 33,
+    "rmse_m": 2.0610020878003064
+  },
+  "height_observations": 33,
+  "runtime_seconds": 0.26827144622802734,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 3,
+    "coverage_n_trees": 62,
+    "end": 10076127,
+    "level": "ecoregion",
+    "species": "GENERIC",
+    "start": 10076065,
+    "stratum_id": "Boreal Shield East/Newfoundland/Long Range Mountains",
+    "stratum_name": "Long Range Mountains"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -8292.891860477359,
+      "aicc": -8290.225193810693,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.22962748759849805,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8439.630222663553,
+      "aicc": -8436.963555996886,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.19564941273400727,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9113.817413002724,
+      "aicc": -9105.245984431294,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08190744731879074,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -9166.10859621138,
+      "aicc": -9157.53716763995,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.038526761692485256,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -9166.10859621138,
+    "aicc": -9157.53716763995,
+    "bic": -9163.283849424071,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5529112190797915, 0.44708878092020854]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Ruby Ranges|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.038526761692485256,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 4588.05429810569,
+    "method": "truncated-em-moments",
+    "n_bins": 10,
+    "n_parameters": 5,
+    "n_plots": 8,
+    "n_trees": 47,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.1638255862263314, \"p\": 15.563661366239199}, \"weight\": 0.5529112190797915}, {\"name\": \"weibull\", \"parameters\": {\"a\": 9.376976065873487, \"beta\": 9.579225819323263}, \"weight\": 0.44708878092020854}]}",
+    "spike_weight": null,
+    "support_upper_cm": 32.874999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.11336209117842203,
+    "b": 0.7363739189436977,
+    "bias_m": 0.2938058385433485,
+    "n": 46,
+    "rmse_m": 2.2310590655475946
+  },
+  "height_observations": 46,
+  "runtime_seconds": 0.7057561874389648,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 8,
+    "coverage_n_trees": 47,
+    "end": 5506560,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5506513,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Ruby Ranges",
+    "stratum_name": "Ruby Ranges"
+  },
+  "status": "ok"
+}

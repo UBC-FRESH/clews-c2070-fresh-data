@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -159027.2198628609,
+      "aicc": -159024.55319619423,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4536355928434409,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -159999.78446306163,
+      "aicc": -159997.11779639497,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.43307928484846975,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -159999.78446306163,
+    "aicc": -159997.11779639497,
+    "bic": -159998.08961498924,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Plains/Central Boreal Plains|BROADLEAF",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.43307928484846975,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 80002.89223153082,
+    "method": "two-stage",
+    "n_bins": 11,
+    "n_parameters": 3,
+    "n_plots": 48,
+    "n_trees": 660,
+    "parameters_json": "{\"beta\": 1.8371065237357085, \"p\": 2.290813132937087, \"s\": 2.295510749083872}",
+    "spike_weight": null,
+    "support_upper_cm": 33.62499952316284,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7161017840397553,
+    "b": 0.6432887889366252,
+    "bias_m": 0.10202095673035273,
+    "n": 660,
+    "rmse_m": 1.2805425957993783
+  },
+  "height_observations": 660,
+  "runtime_seconds": 3.0439670085906982,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 48,
+    "coverage_n_trees": 660,
+    "end": 5869273,
+    "level": "ecoprovince",
+    "species": "BROADLEAF",
+    "start": 5868613,
+    "stratum_id": "Boreal Plains/Central Boreal Plains",
+    "stratum_name": "Central Boreal Plains"
+  },
+  "status": "ok"
+}

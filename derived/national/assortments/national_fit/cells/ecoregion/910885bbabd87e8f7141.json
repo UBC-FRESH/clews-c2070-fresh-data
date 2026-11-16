@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -31391.151575858796,
+      "aicc": -31388.484909192128,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.056716839315829805,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -31478.83142872396,
+      "aicc": -31476.16476205729,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04160464256206675,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -31469.476476089018,
+      "aicc": -31460.90504751759,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03112489419373976,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -31478.83142872396,
+    "aicc": -31476.16476205729,
+    "bic": -31477.136580651575,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Plains/Eastern Boreal Plains/Mid-Boreal Lowland|ABIE.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.04160464256206675,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 15742.41571436198,
+    "method": "two-stage",
+    "n_bins": 13,
+    "n_parameters": 3,
+    "n_plots": 16,
+    "n_trees": 260,
+    "parameters_json": "{\"beta\": 1.9520557288296105, \"p\": 6.716306554764111, \"s\": 1.0265263421034176}",
+    "spike_weight": null,
+    "support_upper_cm": 34.375,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.1290171868077465,
+    "b": 0.9786464163858136,
+    "bias_m": 0.06430466140695457,
+    "n": 260,
+    "rmse_m": 1.3352026151895349
+  },
+  "height_observations": 260,
+  "runtime_seconds": 1.8954553604125977,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 16,
+    "coverage_n_trees": 260,
+    "end": 10952214,
+    "level": "ecoregion",
+    "species": "ABIE.BAL",
+    "start": 10951954,
+    "stratum_id": "Boreal Plains/Eastern Boreal Plains/Mid-Boreal Lowland",
+    "stratum_name": "Mid-Boreal Lowland"
+  },
+  "status": "ok"
+}

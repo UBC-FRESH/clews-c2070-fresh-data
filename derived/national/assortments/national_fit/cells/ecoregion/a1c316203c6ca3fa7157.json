@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -4476063.542310638,
+      "aicc": -4476062.984171104,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1002177106283394,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -4508812.827349601,
+      "aicc": -4508812.269210067,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11059074013404369,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -4508812.827349601,
+    "aicc": -4508812.269210067,
+    "bic": -4508807.276906796,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Central Montane Cordillera/Bulkley Ranges|ABIE.LAS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.11059074013404369,
+    "limit_excluded_trees": 331,
+    "log_likelihood": 2254409.4136748007,
+    "method": "two-stage",
+    "n_bins": 36,
+    "n_parameters": 3,
+    "n_plots": 127,
+    "n_trees": 4316,
+    "parameters_json": "{\"beta\": 3.4207122683945457, \"p\": 2.893958197749159, \"s\": 0.9295766785337695}",
+    "spike_weight": null,
+    "support_upper_cm": 119.62499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.1476746004260237,
+    "b": 1.2493985543432735,
+    "bias_m": -0.2248418488287168,
+    "n": 4255,
+    "rmse_m": 4.332172334169077
+  },
+  "height_observations": 4255,
+  "runtime_seconds": 2.3852202892303467,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 233,
+    "coverage_n_trees": 4647,
+    "end": 4885538,
+    "level": "ecoregion",
+    "species": "ABIE.LAS",
+    "start": 4880891,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera/Bulkley Ranges",
+    "stratum_name": "Bulkley Ranges"
+  },
+  "status": "ok"
+}

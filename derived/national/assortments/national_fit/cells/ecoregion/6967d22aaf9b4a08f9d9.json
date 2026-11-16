@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -37058.376041675576,
+      "aicc": -37050.376041675576,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.15882004598551813,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -72251.52233063214,
+      "aicc": -72243.52233063214,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11638763565514354,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -69930.4103024637,
+      "aicc": -69870.4103024637,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.18028806589118163,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -72251.52233063214,
+    "aicc": -72243.52233063214,
+    "bic": -72251.68460018498,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Thompson-Okanagan Plateau|ACER.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.11638763565514354,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 36128.76116531607,
+    "method": "two-stage",
+    "n_bins": 7,
+    "n_parameters": 3,
+    "n_plots": 59,
+    "n_trees": 422,
+    "parameters_json": "{\"beta\": 0.27740448765553316, \"p\": 20.43686651283286, \"s\": 0.9161699795265655}",
+    "spike_weight": null,
+    "support_upper_cm": 19.500000476837158,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.06827687970783851,
+    "b": 0.9757906009477264,
+    "bias_m": 0.06598151598189042,
+    "n": 422,
+    "rmse_m": 1.01028456948001
+  },
+  "height_observations": 422,
+  "runtime_seconds": 6.92221212387085,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 123,
+    "coverage_n_trees": 841,
+    "end": 6502992,
+    "level": "ecoregion",
+    "species": "ACER.RUB",
+    "start": 6502570,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Thompson-Okanagan Plateau",
+    "stratum_name": "Thompson-Okanagan Plateau"
+  },
+  "status": "ok"
+}

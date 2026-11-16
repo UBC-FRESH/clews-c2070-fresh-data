@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -12826444.32467052,
+      "aicc": -12826443.467527663,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05273543469199704,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -12788892.80192674,
+      "aicc": -12788891.944783883,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08259301978280997,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -12861068.103293069,
+      "aicc": -12861065.79560076,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.014374291720820387,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -12854804.33885992,
+      "aicc": -12854802.031167611,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0207641614396622,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -12861068.103293069,
+    "aicc": -12861065.79560076,
+    "bic": -12861060.774613556,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.06908100274526369, 0.9309189972547363]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Boreal Transition|POPU.TRE",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.014374291720820387,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 6430539.051646534,
+    "method": "truncated-em-moments",
+    "n_bins": 31,
+    "n_parameters": 5,
+    "n_plots": 267,
+    "n_trees": 60315,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 4.315306053281916, \"beta\": 3.361003245935785}, \"weight\": 0.06908100274526369}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.8358109097136, \"beta\": 15.663039867348727}, \"weight\": 0.9309189972547363}]}",
+    "spike_weight": null,
+    "support_upper_cm": 81.00000381469727,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.4656979135293575,
+    "b": 0.8435530688461578,
+    "bias_m": -0.07504118521615391,
+    "n": 60211,
+    "rmse_m": 2.5192228266747274
+  },
+  "height_observations": 60211,
+  "runtime_seconds": 2.74758243560791,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 267,
+    "coverage_n_trees": 60315,
+    "end": 11082316,
+    "level": "ecoregion",
+    "species": "POPU.TRE",
+    "start": 11022001,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Boreal Transition",
+    "stratum_name": "Boreal Transition"
+  },
+  "status": "ok"
+}

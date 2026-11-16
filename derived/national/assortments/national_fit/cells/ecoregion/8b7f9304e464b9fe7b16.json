@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -24390.45724905855,
+      "aicc": -24389.123915725217,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05690328669756359,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -24747.040957934096,
+      "aicc": -24745.707624600764,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03500803116042239,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -24412.319867300634,
+      "aicc": -24408.569867300634,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04514246102821662,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -24443.77750515849,
+      "aicc": -24440.02750515849,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.046787563956456876,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -24747.040957934096,
+    "aicc": -24745.707624600764,
+    "bic": -24743.76783057402,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Taiga Plains/Hay-Slave Lowlands/Hay River Lowland|CONIFEROUS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.03500803116042239,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 12376.520478967048,
+    "method": "two-stage",
+    "n_bins": 15,
+    "n_parameters": 3,
+    "n_plots": 6,
+    "n_trees": 140,
+    "parameters_json": "{\"beta\": 3.010457153326424, \"p\": 4.92052599459527, \"s\": 1.0142890087516503}",
+    "spike_weight": null,
+    "support_upper_cm": 57.37500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.004718298720171,
+    "b": 0.6474666976294207,
+    "bias_m": 0.04511909993941369,
+    "n": 136,
+    "rmse_m": 1.704820195506966
+  },
+  "height_observations": 136,
+  "runtime_seconds": 1.0253112316131592,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 6,
+    "coverage_n_trees": 140,
+    "end": 5432961,
+    "level": "ecoregion",
+    "species": "CONIFEROUS",
+    "start": 5432821,
+    "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Hay River Lowland",
+    "stratum_name": "Hay River Lowland"
+  },
+  "status": "ok"
+}

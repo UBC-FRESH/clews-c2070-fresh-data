@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": 1289.4084665378239,
+      "aicc": 1290.551323680681,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.27471216006501675,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": 40.59262317461637,
+      "aicc": 41.73548031747352,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.2634583551658203,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1067.758595689207,
+      "aicc": -1064.6007009523648,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11497610234127353,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1112.974054092334,
+      "aicc": -1109.816159355492,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05461610977066944,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1112.974054092334,
+    "aicc": -1109.816159355492,
+    "bic": -1106.879674967993,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5536432789958166, 0.4463567210041835]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Avalon Forest|BETU.PAP",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.05461610977066944,
+    "limit_excluded_trees": 237,
+    "log_likelihood": 561.487027046167,
+    "method": "truncated-em-moments",
+    "n_bins": 15,
+    "n_parameters": 5,
+    "n_plots": 6,
+    "n_trees": 262,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.9947553755480767, \"p\": 5.006623549560908}, \"weight\": 0.5536432789958166}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.9860756297710855, \"beta\": 10.57734979507038}, \"weight\": 0.4463567210041835}]}",
+    "spike_weight": null,
+    "support_upper_cm": 61.875,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.7560995303081384,
+    "b": 0.11324082572881643,
+    "bias_m": 0.20921789453439177,
+    "n": 313,
+    "rmse_m": 1.7560529105610623
+  },
+  "height_observations": 313,
+  "runtime_seconds": 0.9487104415893555,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 12,
+    "coverage_n_trees": 499,
+    "end": 10282412,
+    "level": "ecoregion",
+    "species": "BETU.PAP",
+    "start": 10281913,
+    "stratum_id": "Boreal Shield East/Newfoundland/Avalon Forest",
+    "stratum_name": "Avalon Forest"
+  },
+  "status": "ok"
+}

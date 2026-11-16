@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -8632047.242051728,
+      "aicc": -8632046.780513266,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.037468386457963576,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8638510.653258046,
+      "aicc": -8638510.191719584,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.034315067469463334,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8627851.10343329,
+      "aicc": -8627849.903433291,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04775403403048739,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -8638510.653258046,
+    "aicc": -8638510.191719584,
+    "bic": -8638504.577202974,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Montane Cordillera/Northern Montane Cordillera|PICE.ENG",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.034315067469463334,
+    "limit_excluded_trees": 1754,
+    "log_likelihood": 4319258.326629023,
+    "method": "two-stage",
+    "n_bins": 53,
+    "n_parameters": 3,
+    "n_plots": 1015,
+    "n_trees": 10724,
+    "parameters_json": "{\"beta\": 9.125883463379235, \"p\": 1.8375410835059434, \"s\": 1.0108985684872978}",
+    "spike_weight": null,
+    "support_upper_cm": 141.99999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.284285013111698,
+    "b": 0.9497770291715466,
+    "bias_m": -0.00037629862454811104,
+    "n": 10749,
+    "rmse_m": 3.9850585550896387
+  },
+  "height_observations": 10749,
+  "runtime_seconds": 1.2035608291625977,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1669,
+    "coverage_n_trees": 12484,
+    "end": 5138865,
+    "level": "ecoprovince",
+    "species": "PICE.ENG",
+    "start": 5126387,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera",
+    "stratum_name": "Northern Montane Cordillera"
+  },
+  "status": "ok"
+}

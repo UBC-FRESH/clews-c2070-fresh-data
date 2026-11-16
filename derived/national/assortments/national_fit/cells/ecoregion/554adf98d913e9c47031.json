@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -689921.1190282583,
+      "aicc": -689920.4333139725,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12791457883766222,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -592086.9789519159,
+      "aicc": -592086.2932376302,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.32474526241876145,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -699715.0891426442,
+      "aicc": -699713.270960826,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03928363125751233,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -699715.0891426442,
+    "aicc": -699713.270960826,
+    "bic": -699706.7713344136,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.17680793525120012, 0.8231920647487999]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Central Montane Cordillera/Chilcotin Ranges|ABIE.LAS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.03928363125751233,
+    "limit_excluded_trees": 79,
+    "log_likelihood": 349862.5445713221,
+    "method": "truncated-em-moments",
+    "n_bins": 30,
+    "n_parameters": 5,
+    "n_plots": 51,
+    "n_trees": 1242,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.0243949837314394, \"p\": 286.3790843520641}, \"weight\": 0.17680793525120012}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.5281403125690147, \"beta\": 17.537878636926582}, \"weight\": 0.8231920647487999}]}",
+    "spike_weight": null,
+    "support_upper_cm": 98.87499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.2873724789532583,
+    "b": 1.3125381481602802,
+    "bias_m": -0.09140903280098758,
+    "n": 1218,
+    "rmse_m": 4.318443438456491
+  },
+  "height_observations": 1218,
+  "runtime_seconds": 1.0702884197235107,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 94,
+    "coverage_n_trees": 1323,
+    "end": 3209883,
+    "level": "ecoregion",
+    "species": "ABIE.LAS",
+    "start": 3208562,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera/Chilcotin Ranges",
+    "stratum_name": "Chilcotin Ranges"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2002732.2694064423,
+      "aicc": -2002731.0062485475,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0519501222151606,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2015692.418244964,
+      "aicc": -2015691.1550870691,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06856522597415013,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2028936.2342541036,
+      "aicc": -2028932.7048423388,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0471356925888133,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2035124.25368095,
+      "aicc": -2035120.7242691852,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04578521752599796,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -2035124.25368095,
+    "aicc": -2035120.7242691852,
+    "bic": -2035118.5762098704,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.14388582188732096, 0.8561141781126791]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Boreal Plains/Eastern Boreal Plains|PICE.MAR",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.04578521752599796,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 1017567.126840475,
+    "method": "truncated-em-moments",
+    "n_bins": 23,
+    "n_parameters": 5,
+    "n_plots": 49,
+    "n_trees": 9651,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.5244249511295167, \"p\": 11.422851329105482}, \"weight\": 0.14388582188732096}, {\"name\": \"weibull\", \"parameters\": {\"a\": 3.4644788961690978, \"beta\": 11.055433351093885}, \"weight\": 0.8561141781126791}]}",
+    "spike_weight": null,
+    "support_upper_cm": 59.87500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.2551519941506215,
+    "b": 0.8429379782456556,
+    "bias_m": 0.08630273198593481,
+    "n": 9651,
+    "rmse_m": 1.5050298852985298
+  },
+  "height_observations": 9651,
+  "runtime_seconds": 1.855698823928833,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 49,
+    "coverage_n_trees": 9651,
+    "end": 11310823,
+    "level": "ecoprovince",
+    "species": "PICE.MAR",
+    "start": 11301172,
+    "stratum_id": "Boreal Plains/Eastern Boreal Plains",
+    "stratum_name": "Eastern Boreal Plains"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -2931776.1727926983,
+      "aicc": -2931775.3727926984,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.24082655160239352,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2971420.882005343,
+      "aicc": -2971420.0820053434,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16581045264568472,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -2987191.1449708827,
+      "aicc": -2987189.00211374,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10827665632980991,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3023070.0578232077,
+      "aicc": -3023067.914966065,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.039987303264412584,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3023070.0578232077,
+    "aicc": -3023067.914966065,
+    "bic": -3023062.4260205845,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.7466071568582728, 0.2533928431417272]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecozone:Boreal Shield East|PICE.RUB",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.039987303264412584,
+    "limit_excluded_trees": 7264,
+    "log_likelihood": 1511540.0289116038,
+    "method": "truncated-em-moments",
+    "n_bins": 29,
+    "n_parameters": 5,
+    "n_plots": 692,
+    "n_trees": 7290,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.1990768248577117, \"p\": 6.270857057217437}, \"weight\": 0.7466071568582728}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.346954161744619, \"beta\": 11.569734677647409}, \"weight\": 0.2533928431417272}]}",
+    "spike_weight": null,
+    "support_upper_cm": 86.37499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.1094254542070182,
+    "b": 0.8101346786457672,
+    "bias_m": 0.16465015771990033,
+    "n": 3311,
+    "rmse_m": 2.253648049441314
+  },
+  "height_observations": 3311,
+  "runtime_seconds": 1.2102675437927246,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1384,
+    "coverage_n_trees": 14554,
+    "end": 10557321,
+    "level": "ecozone",
+    "species": "PICE.RUB",
+    "start": 10542767,
+    "stratum_id": "Boreal Shield East",
+    "stratum_name": "Boreal Shield East"
+  },
+  "status": "ok"
+}

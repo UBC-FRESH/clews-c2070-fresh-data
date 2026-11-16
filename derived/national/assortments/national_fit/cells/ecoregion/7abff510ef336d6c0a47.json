@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -4750.548647417341,
+      "aicc": null,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.911253052015712,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -5844.093435141699,
+      "aicc": null,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.833834214598557,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8765.6172663614,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10232689863550792,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -8964.533724680898,
+      "aicc": null,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.009094518110371267,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -8964.533724680898,
+    "aicc": null,
+    "bic": -8967.602252875298,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.2066372978808721, 0.793362702119128]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Northern Montane Cordillera/Fraser Basin|ACER.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.009094518110371267,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 4487.266862340449,
+    "method": "truncated-em-moments",
+    "n_bins": 3,
+    "n_parameters": 5,
+    "n_plots": 11,
+    "n_trees": 66,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.10817963461491453, \"p\": 69.77941448723695}, \"weight\": 0.2066372978808721}, {\"name\": \"weibull\", \"parameters\": {\"a\": 20.0, \"beta\": 5.0}, \"weight\": 0.793362702119128}]}",
+    "spike_weight": null,
+    "support_upper_cm": 12.250000238418579,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.23490903229274526,
+    "b": 1.1526142673981261,
+    "bias_m": 0.007049842788570093,
+    "n": 66,
+    "rmse_m": 0.3489932521067936
+  },
+  "height_observations": 66,
+  "runtime_seconds": 0.723228931427002,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 71,
+    "end": 6504111,
+    "level": "ecoregion",
+    "species": "ACER.RUB",
+    "start": 6504045,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Fraser Basin",
+    "stratum_name": "Fraser Basin"
+  },
+  "status": "ok"
+}

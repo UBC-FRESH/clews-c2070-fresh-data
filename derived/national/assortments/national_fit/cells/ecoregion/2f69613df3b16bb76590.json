@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -257902.52280046992,
+      "aicc": -257899.09422904134,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.7074558945272104,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -263018.6172077748,
+      "aicc": -263015.1886363462,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.6682362035830637,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -258145.85062035493,
+      "aicc": -258133.85062035493,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.7056293977576995,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -263018.6172077748,
+    "aicc": -263015.1886363462,
+    "bic": -263017.42352195637,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.6682362035830637,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 131512.3086038874,
+    "method": "two-stage",
+    "n_bins": 10,
+    "n_parameters": 3,
+    "n_plots": 34,
+    "n_trees": 903,
+    "parameters_json": "{\"beta\": 3.1099527593680145, \"p\": 1.4298685250380139e-05, \"s\": 522742.8514618138}",
+    "spike_weight": null,
+    "support_upper_cm": 27.999999523162842,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.3377524478623728,
+    "b": 0.3790275478229011,
+    "bias_m": 0.04849846359616536,
+    "n": 898,
+    "rmse_m": 0.9019103939873885
+  },
+  "height_observations": 898,
+  "runtime_seconds": 40.80913186073303,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 34,
+    "coverage_n_trees": 942,
+    "end": 5422275,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5421372,
+    "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands",
+    "stratum_name": "Northern Alberta Uplands"
+  },
+  "status": "ok"
+}

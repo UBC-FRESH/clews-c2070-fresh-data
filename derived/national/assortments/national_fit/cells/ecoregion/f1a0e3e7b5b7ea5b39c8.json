@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -216927.97730013932,
+      "aicc": -216927.43184559388,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.39162036140311796,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -233165.99607088856,
+      "aicc": -233165.45061634312,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1505487307299101,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -167419.92907417193,
+      "aicc": -167418.50050274335,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.5315484568424829,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -233165.99607088856,
+    "aicc": -233165.45061634312,
+    "bic": -233160.38246785584,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 4.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Coastal Gap|ABIE.LAS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_non_psp",
+    "ks": 0.1505487307299101,
+    "limit_excluded_trees": 58,
+    "log_likelihood": 116585.99803544428,
+    "method": "two-stage",
+    "n_bins": 33,
+    "n_parameters": 3,
+    "n_plots": 20,
+    "n_trees": 81,
+    "parameters_json": "{\"beta\": 86.6029073134171, \"p\": 0.000209814279427456, \"s\": 2919.4929414831063}",
+    "spike_weight": null,
+    "support_upper_cm": 123.00000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.8042360157593195,
+    "b": 1.0314644227202645,
+    "bias_m": 0.2567318472754299,
+    "n": 127,
+    "rmse_m": 5.304981025672634
+  },
+  "height_observations": 127,
+  "runtime_seconds": 6.846381664276123,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 34,
+    "coverage_n_trees": 139,
+    "end": 5433550,
+    "level": "ecoregion",
+    "species": "ABIE.LAS",
+    "start": 5433411,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Coastal Gap",
+    "stratum_name": "Coastal Gap"
+  },
+  "status": "ok"
+}

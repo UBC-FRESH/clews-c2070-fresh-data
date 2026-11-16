@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -210457.77646882323,
+      "aicc": -210456.63361168036,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07293668284763721,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -209865.7372881722,
+      "aicc": -209864.59443102934,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09056419136467286,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -211984.34253385692,
+      "aicc": -211981.18463912007,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0322032794404149,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -211984.34253385692,
+    "aicc": -211981.18463912007,
+    "bic": -211978.24815473257,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.08249062928081294, 0.917509370719187]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.0322032794404149,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 105997.17126692846,
+    "method": "truncated-em-moments",
+    "n_bins": 19,
+    "n_parameters": 5,
+    "n_plots": 15,
+    "n_trees": 705,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 4.426553075889737, \"beta\": 3.296256773337383}, \"weight\": 0.08249062928081294}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.6176615613787129, \"beta\": 15.444860579080936}, \"weight\": 0.917509370719187}]}",
+    "spike_weight": null,
+    "support_upper_cm": 62.750000953674316,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.39147302743050016,
+    "b": 0.7907395795318909,
+    "bias_m": 0.272234435699368,
+    "n": 512,
+    "rmse_m": 2.6162592290433584
+  },
+  "height_observations": 512,
+  "runtime_seconds": 6.071409225463867,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 15,
+    "coverage_n_trees": 705,
+    "end": 5509396,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 5508691,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North",
+    "stratum_name": "Yukon Plateau-North"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -43170954.92070785,
+      "aicc": -43170954.34927928,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09049133385167041,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -43227366.486286536,
+      "aicc": -43227365.91485796,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07933246862493804,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -43409073.71760547,
+      "aicc": -43409072.21760547,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03840464779668684,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -43480162.71550847,
+      "aicc": -43480161.21550847,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.036086467223915064,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -43227366.486286536,
+    "aicc": -43227365.91485796,
+    "bic": -43227361.000362344,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "national:Canada|BETU.ALL",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.07933246862493804,
+    "limit_excluded_trees": 44497,
+    "log_likelihood": 21613686.243143268,
+    "method": "two-stage",
+    "n_bins": 45,
+    "n_parameters": 3,
+    "n_plots": 6957,
+    "n_trees": 63632,
+    "parameters_json": "{\"beta\": 26.85005791961638, \"p\": 0.5534205941279916, \"s\": 1.43885506252952}",
+    "spike_weight": null,
+    "support_upper_cm": 117.12499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.039898202546186,
+    "b": 0.5083138427113688,
+    "bias_m": 0.37319958839282924,
+    "n": 34457,
+    "rmse_m": 3.1887756501357494
+  },
+  "height_observations": 34457,
+  "runtime_seconds": 6.248326778411865,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 9821,
+    "coverage_n_trees": 108129,
+    "end": 10486429,
+    "level": "national",
+    "species": "BETU.ALL",
+    "start": 10378300,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

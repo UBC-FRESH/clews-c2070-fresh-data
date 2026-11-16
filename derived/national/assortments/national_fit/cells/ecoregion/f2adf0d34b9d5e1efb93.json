@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -3396676.358308287,
+      "aicc": -3396675.7868797155,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02201010430793073,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -3390756.175182374,
+      "aicc": -3390755.603753803,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03602703372323046,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -3396653.069452398,
+      "aicc": -3396651.569452398,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02203965613095594,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -3396676.358308287,
+    "aicc": -3396675.7868797155,
+    "bic": -3396670.8723840974,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Mid-Boreal Uplands|POPU.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.02201010430793073,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 1698341.1791541434,
+    "method": "two-stage",
+    "n_bins": 29,
+    "n_parameters": 3,
+    "n_plots": 608,
+    "n_trees": 16945,
+    "parameters_json": "{\"a\": 2.2667176578427233, \"beta\": 16.804201955094726, \"s\": 0.9924269856179625}",
+    "spike_weight": null,
+    "support_upper_cm": 117.12499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6046327719215651,
+    "b": 0.740160512311025,
+    "bias_m": 0.035911201677763065,
+    "n": 16944,
+    "rmse_m": 2.0910496546118496
+  },
+  "height_observations": 16944,
+  "runtime_seconds": 3.068638324737549,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 608,
+    "coverage_n_trees": 16945,
+    "end": 10762834,
+    "level": "ecoregion",
+    "species": "POPU.BAL",
+    "start": 10745889,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Mid-Boreal Uplands",
+    "stratum_name": "Mid-Boreal Uplands"
+  },
+  "status": "ok"
+}

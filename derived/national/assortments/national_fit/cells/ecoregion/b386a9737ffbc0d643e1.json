@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -108685.95405861815,
+      "aicc": -108685.36869276449,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08424625555470067,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -109777.69948894333,
+      "aicc": -109777.11412308966,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07203931004108727,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -109289.24937977904,
+      "aicc": -109287.71091824057,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.055608103538240417,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -109777.69948894333,
+    "aicc": -109777.11412308966,
+    "bic": -109772.27950147401,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Columbia Mountains and Highlands|PINU.PON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07203931004108727,
+    "limit_excluded_trees": 21,
+    "log_likelihood": 54891.84974447166,
+    "method": "two-stage",
+    "n_bins": 41,
+    "n_parameters": 3,
+    "n_plots": 42,
+    "n_trees": 838,
+    "parameters_json": "{\"beta\": 8.509578037424891, \"p\": 2.7495471255887636, \"s\": 1.0008602389564198}",
+    "spike_weight": null,
+    "support_upper_cm": 114.375,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.2530900210566404,
+    "b": 0.8445532006778078,
+    "bias_m": 0.03200524366951701,
+    "n": 844,
+    "rmse_m": 4.475114325237514
+  },
+  "height_observations": 844,
+  "runtime_seconds": 0.6432695388793945,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 54,
+    "coverage_n_trees": 859,
+    "end": 2904509,
+    "level": "ecoregion",
+    "species": "PINU.PON",
+    "start": 2903650,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Columbia Mountains and Highlands",
+    "stratum_name": "Columbia Mountains and Highlands"
+  },
+  "status": "ok"
+}

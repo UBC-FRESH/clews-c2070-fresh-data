@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1043532.5549261103,
+      "aicc": -1043531.9062774617,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05477756713295634,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1057627.313294055,
+      "aicc": -1057626.6646454062,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04256341353644122,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -981324.1960038937,
+      "aicc": -981322.4817181794,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09977637167700992,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1057627.313294055,
+    "aicc": -1057626.6646454062,
+    "bic": -1057622.1725778547,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Pacific Maritime/Southern Coastal Mountains|PICE.GLA",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.04256341353644122,
+    "limit_excluded_trees": 61,
+    "log_likelihood": 528816.6566470275,
+    "method": "two-stage",
+    "n_bins": 33,
+    "n_parameters": 3,
+    "n_plots": 140,
+    "n_trees": 2716,
+    "parameters_json": "{\"beta\": 4.2583851708725815, \"p\": 2.7221548299399356, \"s\": 0.9941453138078592}",
+    "spike_weight": null,
+    "support_upper_cm": 103.37499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.26398046167393485,
+    "b": 1.0539948153275198,
+    "bias_m": -0.05207057822423031,
+    "n": 2713,
+    "rmse_m": 4.041034386617918
+  },
+  "height_observations": 2713,
+  "runtime_seconds": 0.9092957973480225,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 179,
+    "coverage_n_trees": 2777,
+    "end": 5141726,
+    "level": "ecoprovince",
+    "species": "PICE.GLA",
+    "start": 5138949,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains",
+    "stratum_name": "Southern Coastal Mountains"
+  },
+  "status": "ok"
+}

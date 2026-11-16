@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1767922.5604767797,
+      "aicc": -1767922.293810113,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.405713141437763,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -1743893.1202621548,
+      "aicc": -1743892.8535954882,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3842041544453388,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1767922.5604767797,
+    "aicc": -1767922.293810113,
+    "bic": -1767914.9305924329,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Ranges|CONIFEROUS",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.405713141437763,
+    "limit_excluded_trees": 300,
+    "log_likelihood": 883964.2802383899,
+    "method": "two-stage",
+    "n_bins": 68,
+    "n_parameters": 3,
+    "n_plots": 163,
+    "n_trees": 1179,
+    "parameters_json": "{\"a\": 0.12219266291979947, \"beta\": 1.000005399265369e-06, \"s\": 610.3377265244031}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.0048032626443757845,
+    "b": 0.7904428742078301,
+    "bias_m": 0.48188208357335993,
+    "n": 1293,
+    "rmse_m": 6.048687440446299
+  },
+  "height_observations": 1293,
+  "runtime_seconds": 19.54042649269104,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 290,
+    "coverage_n_trees": 1479,
+    "end": 4754654,
+    "level": "ecoregion",
+    "species": "CONIFEROUS",
+    "start": 4753175,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Queen Charlotte Ranges",
+    "stratum_name": "Queen Charlotte Ranges"
+  },
+  "status": "ok"
+}

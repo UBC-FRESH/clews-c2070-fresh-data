@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -21390112.62944735,
+      "aicc": -21390112.368577782,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.023707848588024105,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21407257.9190045,
+      "aicc": -21407257.658134934,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.029713469362885284,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -21407257.9190045,
+    "aicc": -21407257.658134934,
+    "bic": -21407250.225959927,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Boreal Cordillera/Northern Boreal Cordillera|PICE.GLA",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.029713469362885284,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 10703631.95950225,
+    "method": "two-stage",
+    "n_bins": 31,
+    "n_parameters": 3,
+    "n_plots": 531,
+    "n_trees": 40638,
+    "parameters_json": "{\"beta\": 4.509614205922802, \"p\": 2.677532839212446, \"s\": 1.0281884815376414}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.03706135390917586,
+    "b": 0.8918402233963475,
+    "bias_m": 0.23739272423153088,
+    "n": 30947,
+    "rmse_m": 3.059848074933218
+  },
+  "height_observations": 30947,
+  "runtime_seconds": 0.11305713653564453,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 532,
+    "coverage_n_trees": 40639,
+    "end": 6085490,
+    "level": "ecoprovince",
+    "species": "PICE.GLA",
+    "start": 6044852,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera",
+    "stratum_name": "Northern Boreal Cordillera"
+  },
+  "status": "ok"
+}

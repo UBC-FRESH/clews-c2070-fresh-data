@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -148703.02846370055,
+      "aicc": -148700.84664551873,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07239666104585729,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -150524.8792700798,
+      "aicc": -150522.69745189798,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03081475399317457,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -151060.4308518328,
+      "aicc": -151053.76418516613,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.018454523048399785,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -151028.38258970657,
+      "aicc": -151021.7159230399,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.016813759891333935,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -151060.4308518328,
+    "aicc": -151053.76418516613,
+    "bic": -151056.8906008273,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9067729040381952, 0.09322709596180485]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoprovince:Boreal Cordillera/Northern Boreal Cordillera|BROADLEAF",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.018454523048399785,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 75535.2154259164,
+    "method": "truncated-em-moments",
+    "n_bins": 15,
+    "n_parameters": 5,
+    "n_plots": 70,
+    "n_trees": 521,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 2.322783388043765, \"beta\": 11.64119831003054}, \"weight\": 0.9067729040381952}, {\"name\": \"weibull\", \"parameters\": {\"a\": 8.457954774600704, \"beta\": 27.348741213633893}, \"weight\": 0.09322709596180485}]}",
+    "spike_weight": null,
+    "support_upper_cm": 39.749999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7201496737933818,
+    "b": 0.6526765095322008,
+    "bias_m": 0.3592262634336151,
+    "n": 439,
+    "rmse_m": 2.7022790069250577
+  },
+  "height_observations": 439,
+  "runtime_seconds": 0.9088401794433594,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 70,
+    "coverage_n_trees": 521,
+    "end": 6124611,
+    "level": "ecoprovince",
+    "species": "BROADLEAF",
+    "start": 6124090,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera",
+    "stratum_name": "Northern Boreal Cordillera"
+  },
+  "status": "ok"
+}

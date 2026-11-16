@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -62098.1321141602,
+      "aicc": -62090.1321141602,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.41110166839819867,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -62104.88674067449,
+      "aicc": -62096.88674067449,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4084056715887322,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -62104.88674067449,
+    "aicc": -62096.88674067449,
+    "bic": -62105.049010227325,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Southern Boreal Cordillera/Northern Canadian Rocky Mountains|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.4084056715887322,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 31055.443370337245,
+    "method": "two-stage",
+    "n_bins": 6,
+    "n_parameters": 3,
+    "n_plots": 18,
+    "n_trees": 228,
+    "parameters_json": "{\"beta\": 2.9175203473151816, \"p\": 1.4210969399577715, \"s\": 2.589108809509146}",
+    "spike_weight": null,
+    "support_upper_cm": 17.74999976158142,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.2607717954839122,
+    "b": 0.4211528255916131,
+    "bias_m": 0.020586577847943245,
+    "n": 228,
+    "rmse_m": 0.5700648272399194
+  },
+  "height_observations": 228,
+  "runtime_seconds": 3.144629716873169,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 18,
+    "coverage_n_trees": 228,
+    "end": 5293860,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5293632,
+    "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Northern Canadian Rocky Mountains",
+    "stratum_name": "Northern Canadian Rocky Mountains"
+  },
+  "status": "ok"
+}

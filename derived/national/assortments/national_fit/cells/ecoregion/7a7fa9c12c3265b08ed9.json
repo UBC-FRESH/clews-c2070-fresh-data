@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -60341.88335775114,
+      "aicc": -60340.6201998564,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14044395285592504,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -64029.776936229915,
+      "aicc": -64028.513778335175,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12149229392197036,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -66886.9000123974,
+      "aicc": -66883.3706006327,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.034942320635216295,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -66951.83000680606,
+      "aicc": -66948.30059504136,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.038692203395159885,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -66951.83000680606,
+    "aicc": -66948.30059504136,
+    "bic": -66946.15253572642,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.2479768876343769, 0.7520231123656231]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Wrangel Mountains/St.Elias Mountains|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "magplot",
+    "ks": 0.038692203395159885,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 33480.91500340303,
+    "method": "truncated-em-moments",
+    "n_bins": 20,
+    "n_parameters": 5,
+    "n_plots": 4,
+    "n_trees": 107,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 5.167080926877462, \"p\": 4.133614629046152}, \"weight\": 0.2479768876343769}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.949550511099586, \"beta\": 7.084420047280244}, \"weight\": 0.7520231123656231}]}",
+    "spike_weight": null,
+    "support_upper_cm": 60.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.1257073800393782,
+    "b": 0.8244400901344092,
+    "bias_m": -0.12028634296764801,
+    "n": 106,
+    "rmse_m": 2.6145104100131817
+  },
+  "height_observations": 106,
+  "runtime_seconds": 1.425936222076416,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 4,
+    "coverage_n_trees": 107,
+    "end": 10335298,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 10335191,
+    "stratum_id": "Boreal Cordillera/Wrangel Mountains/St.Elias Mountains",
+    "stratum_name": "St.Elias Mountains"
+  },
+  "status": "ok"
+}

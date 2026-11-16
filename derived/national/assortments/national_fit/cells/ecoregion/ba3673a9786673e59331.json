@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -14965633.98128904,
+      "aicc": -14965632.890379949,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.19048728177070368,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -15177141.676672423,
+      "aicc": -15177140.585763332,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10646777369544677,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -15152645.771522323,
+      "aicc": -15152642.771522323,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08395403693863848,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -15298669.93544817,
+      "aicc": -15298666.93544817,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.029812154658190308,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -15298669.93544817,
+    "aicc": -15298666.93544817,
+    "bic": -15298663.64496548,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.7430916831736543, 0.25690831682634574]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Southern Boreal Shield/Southern Laurentians|PINU.BAN",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.029812154658190308,
+    "limit_excluded_trees": 30291,
+    "log_likelihood": 7649339.967724085,
+    "method": "truncated-em-moments",
+    "n_bins": 23,
+    "n_parameters": 5,
+    "n_plots": 845,
+    "n_trees": 30066,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.8094184902526533, \"p\": 9.630380890266888}, \"weight\": 0.7430916831736543}, {\"name\": \"weibull\", \"parameters\": {\"a\": 7.736262566549434, \"beta\": 11.62069172358622}, \"weight\": 0.25690831682634574}]}",
+    "spike_weight": null,
+    "support_upper_cm": 65.74999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.2152375574817158,
+    "b": 0.8252864555808119,
+    "bias_m": 0.2866494093654296,
+    "n": 13075,
+    "rmse_m": 2.840184268745817
+  },
+  "height_observations": 13075,
+  "runtime_seconds": 1.5251882076263428,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1555,
+    "coverage_n_trees": 60357,
+    "end": 8265363,
+    "level": "ecoregion",
+    "species": "PINU.BAN",
+    "start": 8205006,
+    "stratum_id": "Boreal Shield East/Southern Boreal Shield/Southern Laurentians",
+    "stratum_name": "Southern Laurentians"
+  },
+  "status": "ok"
+}

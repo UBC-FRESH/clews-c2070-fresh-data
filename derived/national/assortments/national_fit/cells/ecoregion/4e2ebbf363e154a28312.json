@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -36948.82754063131,
+      "aicc": -36947.93865174242,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.22055754225587287,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -37831.00979294415,
+      "aicc": -37830.12090405526,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14425525613999465,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -37092.784763452306,
+      "aicc": -37090.384763452304,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.22020162853371172,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -39088.43952469377,
+      "aicc": -39086.03952469377,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03439171720774453,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -39088.43952469377,
+    "aicc": -39086.03952469377,
+    "bic": -39081.26958867135,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.6326318274559424, 0.3673681725440577]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Eastern Boreal Shield/Central Laurentians|FRAX.NIG",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.03439171720774453,
+    "limit_excluded_trees": 171,
+    "log_likelihood": 19549.219762346886,
+    "method": "truncated-em-moments",
+    "n_bins": 20,
+    "n_parameters": 5,
+    "n_plots": 18,
+    "n_trees": 173,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.621231530362175, \"p\": 6.301754160383236}, \"weight\": 0.6326318274559424}, {\"name\": \"weibull\", \"parameters\": {\"a\": 5.639149827775569, \"beta\": 12.992268438028434}, \"weight\": 0.3673681725440577}]}",
+    "spike_weight": null,
+    "support_upper_cm": 78.37500095367432,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 1.1906875274560285,
+    "b": 0.48195161674166287,
+    "bias_m": 0.49035076354352175,
+    "n": 156,
+    "rmse_m": 3.1792833925883355
+  },
+  "height_observations": 156,
+  "runtime_seconds": 1.0788860321044922,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 33,
+    "coverage_n_trees": 344,
+    "end": 9071878,
+    "level": "ecoregion",
+    "species": "FRAX.NIG",
+    "start": 9071534,
+    "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Central Laurentians",
+    "stratum_name": "Central Laurentians"
+  },
+  "status": "ok"
+}

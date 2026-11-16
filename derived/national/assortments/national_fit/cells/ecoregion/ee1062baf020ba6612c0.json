@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1132.502578917025,
+      "aicc": -1130.502578917025,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.18117976415775025,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1333.2662401109465,
+      "aicc": -1331.2662401109465,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11945420622899627,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1128.7425623419294,
+      "aicc": -1122.7425623419294,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.18104321473833837,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1436.5317738703807,
+      "aicc": -1430.5317738703807,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.040972742109611104,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1436.5317738703807,
+    "aicc": -1430.5317738703807,
+    "bic": -1432.6688302591817,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.6441759032375171, 0.35582409676248294]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Taiga Shield East/Labrador Uplands/Coastal Barrens|ABIE.BAL",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.040972742109611104,
+    "limit_excluded_trees": 279,
+    "log_likelihood": 723.2658869351903,
+    "method": "truncated-em-moments",
+    "n_bins": 13,
+    "n_parameters": 5,
+    "n_plots": 4,
+    "n_trees": 284,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 1.589067902346827, \"p\": 9.693723093173993}, \"weight\": 0.6441759032375171}, {\"name\": \"weibull\", \"parameters\": {\"a\": 8.178264990327026, \"beta\": 10.597275705524845}, \"weight\": 0.35582409676248294}]}",
+    "spike_weight": null,
+    "support_upper_cm": 40.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6586114864308958,
+    "b": 0.9515408024264013,
+    "bias_m": 0.12315779874410143,
+    "n": 164,
+    "rmse_m": 1.2658393046481426
+  },
+  "height_observations": 164,
+  "runtime_seconds": 1.579601764678955,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 8,
+    "coverage_n_trees": 563,
+    "end": 10282987,
+    "level": "ecoregion",
+    "species": "ABIE.BAL",
+    "start": 10282424,
+    "stratum_id": "Taiga Shield East/Labrador Uplands/Coastal Barrens",
+    "stratum_name": "Coastal Barrens"
+  },
+  "status": "ok"
+}

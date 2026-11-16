@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -55976601.26080071,
+      "aicc": -55976600.824437074,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08043192343919292,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -56208170.42722077,
+      "aicc": -56208169.99085713,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07824164466719252,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -55736348.08902882,
+      "aicc": -55736346.95695335,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08483086714977439,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -56208170.42722077,
+    "aicc": -56208169.99085713,
+    "bic": -56208164.194608435,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "national:Canada|PICE.ENG",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.07824164466719252,
+    "limit_excluded_trees": 6942,
+    "log_likelihood": 28104088.213610385,
+    "method": "two-stage",
+    "n_bins": 58,
+    "n_parameters": 3,
+    "n_plots": 4167,
+    "n_trees": 57472,
+    "parameters_json": "{\"beta\": 5.856023127671689, \"p\": 2.2474711002869157, \"s\": 0.9586219065207403}",
+    "spike_weight": null,
+    "support_upper_cm": 148.00000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6104250489930838,
+    "b": 1.065503417598219,
+    "bias_m": -0.1006079041368981,
+    "n": 56635,
+    "rmse_m": 4.324432736554753
+  },
+  "height_observations": 56635,
+  "runtime_seconds": 1.0868306159973145,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 7102,
+    "coverage_n_trees": 64446,
+    "end": 5645563,
+    "level": "national",
+    "species": "PICE.ENG",
+    "start": 5581149,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

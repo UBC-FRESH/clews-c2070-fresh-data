@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -78462738.54820454,
+      "aicc": -78462738.1037601,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08850670654437676,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -78921937.31665589,
+      "aicc": -78921936.87221144,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08411470013803812,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -79425648.1726521,
+      "aicc": -79425647.01880594,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.030775282016220484,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -78921937.31665589,
+    "aicc": -78921936.87221144,
+    "bic": -78921931.13532686,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Northern Montane Cordillera/Fraser Basin|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08411470013803812,
+    "limit_excluded_trees": 4626,
+    "log_likelihood": 39460971.658327945,
+    "method": "two-stage",
+    "n_bins": 51,
+    "n_parameters": 3,
+    "n_plots": 3151,
+    "n_trees": 153274,
+    "parameters_json": "{\"beta\": 4.508416982299128, \"p\": 2.4585220302450876, \"s\": 0.9547856340588333}",
+    "spike_weight": null,
+    "support_upper_cm": 145.12499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6148622038809606,
+    "b": 1.1171331163354987,
+    "bias_m": -0.24588929280383648,
+    "n": 152737,
+    "rmse_m": 4.01143636072285
+  },
+  "height_observations": 152737,
+  "runtime_seconds": 1.870413064956665,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 4949,
+    "coverage_n_trees": 157935,
+    "end": 4022840,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 3864940,
+    "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Fraser Basin",
+    "stratum_name": "Fraser Basin"
+  },
+  "status": "ok"
+}

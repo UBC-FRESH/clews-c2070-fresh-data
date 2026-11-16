@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -22101.356908722068,
+      "aicc": -22098.6902420554,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04106908257701353,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -22081.99542342712,
+      "aicc": -22079.328756760453,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.043393213785641926,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -22255.83594742018,
+      "aicc": -22247.26451884875,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.029502941359534907,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -22269.151436709024,
+      "aicc": -22260.580008137596,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.026520763527492885,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -22255.83594742018,
+    "aicc": -22247.26451884875,
+    "bic": -22253.01120063287,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.2532159092487627, 0.7467840907512373]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Okanogan Range|ACER.MAC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.029502941359534907,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 11132.91797371009,
+    "method": "truncated-em-moments",
+    "n_bins": 13,
+    "n_parameters": 5,
+    "n_plots": 13,
+    "n_trees": 237,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 4.070373673675119, \"beta\": 5.301214396373741}, \"weight\": 0.2532159092487627}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.952797374848862, \"beta\": 14.23434457720467}, \"weight\": 0.7467840907512373}]}",
+    "spike_weight": null,
+    "support_upper_cm": 34.375,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.4081015224184287,
+    "b": 1.141550388781338,
+    "bias_m": -0.11042270796931547,
+    "n": 237,
+    "rmse_m": 1.9026495156895624
+  },
+  "height_observations": 237,
+  "runtime_seconds": 2.529371738433838,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 13,
+    "coverage_n_trees": 237,
+    "end": 1215840,
+    "level": "ecoregion",
+    "species": "ACER.MAC",
+    "start": 1215603,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Range",
+    "stratum_name": "Okanogan Range"
+  },
+  "status": "ok"
+}

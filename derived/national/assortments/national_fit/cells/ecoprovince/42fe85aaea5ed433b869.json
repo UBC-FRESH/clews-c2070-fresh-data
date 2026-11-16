@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -34479579.509895116,
+      "aicc": -34479579.18557079,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.15819852690706526,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -35585287.59633565,
+      "aicc": -35585287.272011325,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14953236407469883,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -35585287.59633565,
+    "aicc": -35585287.272011325,
+    "bic": -35585280.52620917,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Montane Cordillera/Central Montane Cordillera|ABIE.LAS",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.14953236407469883,
+    "limit_excluded_trees": 1607,
+    "log_likelihood": 17792646.798167825,
+    "method": "two-stage",
+    "n_bins": 50,
+    "n_parameters": 3,
+    "n_plots": 963,
+    "n_trees": 32441,
+    "parameters_json": "{\"beta\": 1.975608402927266, \"p\": 4.085177871561863, \"s\": 0.8765216488004953}",
+    "spike_weight": null,
+    "support_upper_cm": 197.25000381469727,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.1534298577091295,
+    "b": 1.278169296951172,
+    "bias_m": -0.16256740859655305,
+    "n": 32488,
+    "rmse_m": 3.8166548312327464
+  },
+  "height_observations": 32488,
+  "runtime_seconds": 2.2683677673339844,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1539,
+    "coverage_n_trees": 34205,
+    "end": 3741708,
+    "level": "ecoprovince",
+    "species": "ABIE.LAS",
+    "start": 3707660,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera",
+    "stratum_name": "Central Montane Cordillera"
+  },
+  "status": "ok"
+}

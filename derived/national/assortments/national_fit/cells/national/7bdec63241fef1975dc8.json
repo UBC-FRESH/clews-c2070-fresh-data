@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1014957.4136431474,
+      "aicc": -1014956.9030048496,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04861649801257212,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1014579.5575131583,
+      "aicc": -1014579.0468748604,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04406616997701662,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1015184.4517123926,
+      "aicc": -1015183.1183790592,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0471403889913084,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1015194.5673000682,
+      "aicc": -1015193.2339667348,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04587147083588994,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1015194.5673000682,
+    "aicc": -1015193.2339667348,
+    "bic": -1015184.9081719046,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.009484149656213726, 0.9905158503437863]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "national:Canada|ACER.MAC",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.04587147083588994,
+    "limit_excluded_trees": 65,
+    "log_likelihood": 507602.2836500341,
+    "method": "truncated-em-moments",
+    "n_bins": 47,
+    "n_parameters": 5,
+    "n_plots": 261,
+    "n_trees": 4598,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.9195285623826717, \"p\": 23.25248776676946}, \"weight\": 0.009484149656213726}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.38006423260298, \"beta\": 20.409614594081898}, \"weight\": 0.9905158503437863}]}",
+    "spike_weight": null,
+    "support_upper_cm": 129.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.3764460617393452,
+    "b": 0.8287608219678567,
+    "bias_m": -0.04310339897684437,
+    "n": 4619,
+    "rmse_m": 4.878296861454234
+  },
+  "height_observations": 4619,
+  "runtime_seconds": 1.0230228900909424,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 298,
+    "coverage_n_trees": 4692,
+    "end": 4970488,
+    "level": "national",
+    "species": "ACER.MAC",
+    "start": 4965825,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

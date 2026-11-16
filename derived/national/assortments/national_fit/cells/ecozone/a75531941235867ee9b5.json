@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -21361919.310564842,
+      "aicc": -21361918.560564842,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07237231980818218,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21583168.809794087,
+      "aicc": -21583168.059794087,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03019438040634337,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -21495488.194180876,
+      "aicc": -21495486.194180876,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03468020037237484,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21609565.202667147,
+      "aicc": -21609563.202667147,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.009913151576301342,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -21583168.809794087,
+    "aicc": -21583168.059794087,
+    "bic": -21583164.05923727,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Boreal Plains|PINU.BAN",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot_wfs",
+    "ks": 0.03019438040634337,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 10791587.404897043,
+    "method": "two-stage",
+    "n_bins": 28,
+    "n_parameters": 3,
+    "n_plots": 571,
+    "n_trees": 81123,
+    "parameters_json": "{\"beta\": 1.4905989175107939, \"p\": 9.527418840338616, \"s\": 0.9930031777775418}",
+    "spike_weight": null,
+    "support_upper_cm": 92.12499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.8352428495406719,
+    "b": 0.6502617261122394,
+    "bias_m": 0.16503475774658613,
+    "n": 81123,
+    "rmse_m": 2.1136631854688095
+  },
+  "height_observations": 81123,
+  "runtime_seconds": 2.443411350250244,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 571,
+    "coverage_n_trees": 81123,
+    "end": 11326413,
+    "level": "ecozone",
+    "species": "PINU.BAN",
+    "start": 11245290,
+    "stratum_id": "Boreal Plains",
+    "stratum_name": "Boreal Plains"
+  },
+  "status": "ok"
+}

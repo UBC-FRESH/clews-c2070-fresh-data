@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1110451.306252736,
+      "aicc": -1110450.262774475,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14184828249489645,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1232402.1242651409,
+      "aicc": -1232401.0807868799,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10756592812178511,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1281899.2452175776,
+      "aicc": -1281896.3880747205,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.024939817190298474,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1232402.1242651409,
+    "aicc": -1232401.0807868799,
+    "bic": -1232398.236754543,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Peace Lowland|PINU.CON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.10756592812178511,
+    "limit_excluded_trees": 53,
+    "log_likelihood": 616204.0621325704,
+    "method": "two-stage",
+    "n_bins": 26,
+    "n_parameters": 3,
+    "n_plots": 67,
+    "n_trees": 2259,
+    "parameters_json": "{\"beta\": 1.7535422170288575, \"p\": 4.97680765720637, \"s\": 0.9088590178618227}",
+    "spike_weight": null,
+    "support_upper_cm": 67.62499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.24046578345255404,
+    "b": 0.8652437242283619,
+    "bias_m": 0.10935316806700897,
+    "n": 2246,
+    "rmse_m": 2.4870806161139685
+  },
+  "height_observations": 2246,
+  "runtime_seconds": 1.6776580810546875,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 86,
+    "coverage_n_trees": 2314,
+    "end": 5174943,
+    "level": "ecoregion",
+    "species": "PINU.CON",
+    "start": 5172631,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Peace Lowland",
+    "stratum_name": "Peace Lowland"
+  },
+  "status": "ok"
+}

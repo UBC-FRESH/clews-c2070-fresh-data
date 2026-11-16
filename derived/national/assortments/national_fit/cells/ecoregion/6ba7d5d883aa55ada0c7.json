@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -303134.4190667133,
+      "aicc": -303133.9084284154,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06007506868051238,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -302960.9313611276,
+      "aicc": -302960.4207228297,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05961723232847624,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -305403.3364105689,
+      "aicc": -305402.0030772356,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05651500989044385,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -305403.3364105689,
+    "aicc": -305402.0030772356,
+    "bic": -305393.67728240526,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.14611737071778014, 0.8538826292822198]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Pacific Ranges|ACER.MAC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.05651500989044385,
+    "limit_excluded_trees": 39,
+    "log_likelihood": 152706.66820528446,
+    "method": "truncated-em-moments",
+    "n_bins": 38,
+    "n_parameters": 5,
+    "n_plots": 96,
+    "n_trees": 1130,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.14302243515160323, \"p\": 139.75659413129554}, \"weight\": 0.14611737071778014}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.1316664570274635, \"beta\": 14.389434461712357}, \"weight\": 0.8538826292822198}]}",
+    "spike_weight": null,
+    "support_upper_cm": 129.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.4539587509136969,
+    "b": 0.8062932246540467,
+    "bias_m": 0.07041449560455705,
+    "n": 1146,
+    "rmse_m": 4.069516649858979
+  },
+  "height_observations": 1146,
+  "runtime_seconds": 0.8848168849945068,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 116,
+    "coverage_n_trees": 1174,
+    "end": 1075185,
+    "level": "ecoregion",
+    "species": "ACER.MAC",
+    "start": 1074016,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Pacific Ranges",
+    "stratum_name": "Pacific Ranges"
+  },
+  "status": "ok"
+}

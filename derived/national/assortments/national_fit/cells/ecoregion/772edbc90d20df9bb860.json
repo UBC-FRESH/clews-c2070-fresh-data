@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1059460.8870496794,
+      "aicc": -1059460.353716346,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06961516919271515,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1064487.3654295846,
+      "aicc": -1064486.8320962512,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05856321752189897,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1054407.9442493343,
+      "aicc": -1054406.5489004971,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08800024971831244,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1064487.3654295846,
+    "aicc": -1064486.8320962512,
+    "bic": -1064481.6899686903,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Okanogan Range|PICE.ENG",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.05856321752189897,
+    "limit_excluded_trees": 271,
+    "log_likelihood": 532246.6827147923,
+    "method": "two-stage",
+    "n_bins": 40,
+    "n_parameters": 3,
+    "n_plots": 88,
+    "n_trees": 972,
+    "parameters_json": "{\"beta\": 6.660909507390171, \"p\": 2.393201046384225, \"s\": 0.9754355340389066}",
+    "spike_weight": null,
+    "support_upper_cm": 123.75,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.43127072207341854,
+    "b": 1.0215837595525574,
+    "bias_m": 0.11424960135811767,
+    "n": 915,
+    "rmse_m": 4.80772308797969
+  },
+  "height_observations": 915,
+  "runtime_seconds": 0.6839296817779541,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 160,
+    "coverage_n_trees": 1243,
+    "end": 1201482,
+    "level": "ecoregion",
+    "species": "PICE.ENG",
+    "start": 1200239,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Range",
+    "stratum_name": "Okanogan Range"
+  },
+  "status": "ok"
+}

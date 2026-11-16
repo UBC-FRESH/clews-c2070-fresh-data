@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -7076466.449334394,
+      "aicc": -7076465.996504205,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.050547329066385316,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7064594.301906888,
+      "aicc": -7064593.849076699,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09920375263077497,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7083716.3383632,
+      "aicc": -7083715.161892612,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05659221362142208,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7085497.864483423,
+      "aicc": -7085496.688012835,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.056587829122301536,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -7085497.864483423,
+    "aicc": -7085496.688012835,
+    "bic": -7085487.649227084,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.012301905779052824, 0.9876980942209472]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Atlantic Maritime/Northumberland Lowlands|PINU.STR",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.056587829122301536,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 3542753.9322417113,
+    "method": "truncated-em-moments",
+    "n_bins": 50,
+    "n_parameters": 5,
+    "n_plots": 913,
+    "n_trees": 10680,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 2.168446983887998, \"p\": 31.35960313525963}, \"weight\": 0.012301905779052824}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.638206497894823, \"beta\": 20.39867683638724}, \"weight\": 0.9876980942209472}]}",
+    "spike_weight": null,
+    "support_upper_cm": 143.24999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.020991997905209125,
+    "b": 0.783413312742234,
+    "bias_m": 0.28925045190069637,
+    "n": 2457,
+    "rmse_m": 3.5241808689861305
+  },
+  "height_observations": 2457,
+  "runtime_seconds": 0.49709272384643555,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 913,
+    "coverage_n_trees": 10680,
+    "end": 6551794,
+    "level": "ecoprovince",
+    "species": "PINU.STR",
+    "start": 6541114,
+    "stratum_id": "Atlantic Maritime/Northumberland Lowlands",
+    "stratum_name": "Northumberland Lowlands"
+  },
+  "status": "ok"
+}

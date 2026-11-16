@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -392249.6208538228,
+      "aicc": -392247.6208538228,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09773870489605485,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -392257.7993594858,
+      "aicc": -392255.7993594858,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12298867475981146,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -395265.9798484592,
+      "aicc": -395259.9798484592,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09493244438370385,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -395265.9798484592,
+    "aicc": -395259.9798484592,
+    "bic": -395262.11690484796,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.9971930539993493, 0.0028069460006507297]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoprovince:Taiga Shield East/Labrador Uplands|BETU.PAP",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.09493244438370385,
+    "limit_excluded_trees": 268,
+    "log_likelihood": 197637.9899242296,
+    "method": "truncated-em-moments",
+    "n_bins": 10,
+    "n_parameters": 5,
+    "n_plots": 13,
+    "n_trees": 268,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 2.0463318754618536, \"beta\": 6.380075615280202}, \"weight\": 0.9971930539993493}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.6137687607950975, \"beta\": 2331.0501421148806}, \"weight\": 0.0028069460006507297}]}",
+    "spike_weight": null,
+    "support_upper_cm": 41.99999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.1933296806858552,
+    "b": 0.7193489607929113,
+    "bias_m": 0.24339929926846895,
+    "n": 503,
+    "rmse_m": 1.197819121313962
+  },
+  "height_observations": 503,
+  "runtime_seconds": 0.8234918117523193,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 22,
+    "coverage_n_trees": 536,
+    "end": 10122673,
+    "level": "ecoprovince",
+    "species": "BETU.PAP",
+    "start": 10122137,
+    "stratum_id": "Taiga Shield East/Labrador Uplands",
+    "stratum_name": "Labrador Uplands"
+  },
+  "status": "ok"
+}

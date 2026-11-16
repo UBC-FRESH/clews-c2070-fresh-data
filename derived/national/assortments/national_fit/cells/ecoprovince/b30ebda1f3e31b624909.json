@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -70515539.88324757,
+      "aicc": -70515539.49615079,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02797733250697576,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -70353465.42886405,
+      "aicc": -70353465.04176727,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06150905862133149,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -70515539.88324757,
+    "aicc": -70515539.49615079,
+    "bic": -70515533.31428334,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "weibull",
+    "fit_id": "ecoprovince:Boreal Plains/Central Boreal Plains|POPU.TRE",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.02797733250697576,
+    "limit_excluded_trees": 500,
+    "log_likelihood": 35257772.941623785,
+    "method": "two-stage",
+    "n_bins": 35,
+    "n_parameters": 3,
+    "n_plots": 1556,
+    "n_trees": 249396,
+    "parameters_json": "{\"a\": 1.6710960915644844, \"beta\": 16.069739129712378, \"s\": 1.0460422610271531}",
+    "spike_weight": null,
+    "support_upper_cm": 166.49999618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.44801051861243857,
+    "b": 0.8384911311780162,
+    "bias_m": -0.05170881088459612,
+    "n": 248885,
+    "rmse_m": 2.5813197833572405
+  },
+  "height_observations": 248885,
+  "runtime_seconds": 0.4380173683166504,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 1677,
+    "coverage_n_trees": 249896,
+    "end": 5482626,
+    "level": "ecoprovince",
+    "species": "POPU.TRE",
+    "start": 5232730,
+    "stratum_id": "Boreal Plains/Central Boreal Plains",
+    "stratum_name": "Central Boreal Plains"
+  },
+  "status": "ok"
+}

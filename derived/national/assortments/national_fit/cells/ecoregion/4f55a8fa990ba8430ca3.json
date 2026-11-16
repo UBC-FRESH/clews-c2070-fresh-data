@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -191037.89094264878,
+      "aicc": -191037.3328031139,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08094131435918728,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -191598.03082207785,
+      "aicc": -191597.47268254298,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08404529596228238,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -192830.32071060414,
+      "aicc": -192828.85729597,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06912357207110942,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -191598.03082207785,
+    "aicc": -191597.47268254298,
+    "bic": -191592.48037927272,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges|PINU.PON",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08404529596228238,
+    "limit_excluded_trees": 78,
+    "log_likelihood": 95802.01541103893,
+    "method": "two-stage",
+    "n_bins": 33,
+    "n_parameters": 3,
+    "n_plots": 51,
+    "n_trees": 660,
+    "parameters_json": "{\"beta\": 6.958810315739522, \"p\": 2.065733335280285, \"s\": 0.9768749831930127}",
+    "spike_weight": null,
+    "support_upper_cm": 118.00000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.8902372138160157,
+    "b": 1.0841893241436542,
+    "bias_m": -0.1704893858905715,
+    "n": 663,
+    "rmse_m": 3.1975784148989814
+  },
+  "height_observations": 663,
+  "runtime_seconds": 2.8410067558288574,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 95,
+    "coverage_n_trees": 738,
+    "end": 3174107,
+    "level": "ecoregion",
+    "species": "PINU.PON",
+    "start": 3173369,
+    "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges",
+    "stratum_name": "Interior Transition Ranges"
+  },
+  "status": "ok"
+}

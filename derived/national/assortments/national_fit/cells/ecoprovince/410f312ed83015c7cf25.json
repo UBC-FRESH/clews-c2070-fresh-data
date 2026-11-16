@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -18941749.86041858,
+      "aicc": -18941749.21176993,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.28853143190503017,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -19902666.252849348,
+      "aicc": -19902665.6042007,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.19186467174687805,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21186474.28648684,
+      "aicc": -21186472.57220113,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.13785870673810144,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -21412027.773788013,
+      "aicc": -21412026.0595023,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07312498461657443,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -21412027.773788013,
+    "aicc": -21412026.0595023,
+    "bic": -21412019.205927677,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.5464687964736948, 0.45353120352630516]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoprovince:Boreal Shield East/Southern Boreal Shield|BROADLEAF",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.07312498461657443,
+    "limit_excluded_trees": 40311,
+    "log_likelihood": 10706018.886894006,
+    "method": "truncated-em-moments",
+    "n_bins": 36,
+    "n_parameters": 5,
+    "n_plots": 3504,
+    "n_trees": 41745,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 3.812594041829973, \"p\": 5.223953160276827}, \"weight\": 0.5464687964736948}, {\"name\": \"weibull\", \"parameters\": {\"a\": 6.471718217588742, \"beta\": 11.282395265082258}, \"weight\": 0.45353120352630516}]}",
+    "spike_weight": null,
+    "support_upper_cm": 103.62500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.9580910665826818,
+    "b": 0.5767114295310072,
+    "bias_m": 0.4601956987592577,
+    "n": 15452,
+    "rmse_m": 3.2247692676966873
+  },
+  "height_observations": 15452,
+  "runtime_seconds": 0.9546244144439697,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 6451,
+    "coverage_n_trees": 82056,
+    "end": 8179985,
+    "level": "ecoprovince",
+    "species": "BROADLEAF",
+    "start": 8097929,
+    "stratum_id": "Boreal Shield East/Southern Boreal Shield",
+    "stratum_name": "Southern Boreal Shield"
+  },
+  "status": "ok"
+}

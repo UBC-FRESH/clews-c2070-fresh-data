@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -59981.834798721,
+      "aicc": -59980.874798721,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.5514110552332462,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -64412.918063210745,
+      "aicc": -64411.958063210746,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.5128862545486174,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -38750.24104165789,
+      "aicc": -38747.63234600572,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.763971363100812,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -64412.918063210745,
+    "aicc": -64411.958063210746,
+    "bic": -64408.816175720785,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Eastern Continental Ranges|PICE.ENG",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "magplot",
+    "ks": 0.5128862545486174,
+    "limit_excluded_trees": 29,
+    "log_likelihood": 32209.459031605373,
+    "method": "two-stage",
+    "n_bins": 22,
+    "n_parameters": 3,
+    "n_plots": 14,
+    "n_trees": 48,
+    "parameters_json": "{\"beta\": 37.726438912370064, \"p\": 4.885834000478706e-05, \"s\": 20041.711475747106}",
+    "spike_weight": null,
+    "support_upper_cm": 73.87499809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.07283726351052987,
+    "b": 0.7993067540080216,
+    "bias_m": 0.2820853922535514,
+    "n": 42,
+    "rmse_m": 2.9688968322956217
+  },
+  "height_observations": 42,
+  "runtime_seconds": 4.6883814334869385,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 25,
+    "coverage_n_trees": 77,
+    "end": 5441132,
+    "level": "ecoregion",
+    "species": "PICE.ENG",
+    "start": 5441055,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Eastern Continental Ranges",
+    "stratum_name": "Eastern Continental Ranges"
+  },
+  "status": "ok"
+}

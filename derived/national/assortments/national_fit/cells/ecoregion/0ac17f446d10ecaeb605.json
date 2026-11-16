@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -296826.47730877757,
+      "aicc": -296824.63115493144,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08566797213907229,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -294640.83195834875,
+      "aicc": -294638.9858045026,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.1264352414410852,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -299088.90508517536,
+      "aicc": -299083.4505397208,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.039184958302288436,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -299144.5975672715,
+      "aicc": -299139.14302181697,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.033068801069469744,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -299144.5975672715,
+    "aicc": -299139.14302181697,
+    "bic": -299140.43150055123,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.10900764436012252, 0.8909923556398776]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Northeastern Newfoundland|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "nl_fal",
+    "ks": 0.033068801069469744,
+    "limit_excluded_trees": 20762,
+    "log_likelihood": 149577.29878363575,
+    "method": "truncated-em-moments",
+    "n_bins": 17,
+    "n_parameters": 5,
+    "n_plots": 64,
+    "n_trees": 22666,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.11726604482505604, \"p\": 18.109730378404997}, \"weight\": 0.10900764436012252}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.174256805858089, \"beta\": 12.027160051014333}, \"weight\": 0.8909923556398776}]}",
+    "spike_weight": null,
+    "support_upper_cm": 43.125,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.4297865578928375,
+    "b": 0.9457593887218682,
+    "bias_m": 0.2793698881976354,
+    "n": 28972,
+    "rmse_m": 1.2597023229523523
+  },
+  "height_observations": 28972,
+  "runtime_seconds": 1.351602554321289,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 128,
+    "coverage_n_trees": 43428,
+    "end": 9784126,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 9740698,
+    "stratum_id": "Boreal Shield East/Newfoundland/Northeastern Newfoundland",
+    "stratum_name": "Northeastern Newfoundland"
+  },
+  "status": "ok"
+}

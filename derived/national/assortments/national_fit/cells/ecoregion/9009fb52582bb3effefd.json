@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -7569387.525075331,
+      "aicc": -7569387.249213262,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.052436607433513305,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7626009.672775175,
+      "aicc": -7626009.396913107,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.020005213919070508,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -7626578.780152879,
+      "aicc": -7626578.074270526,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.021310435965889905,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -7630503.130693828,
+      "aicc": -7630502.424811475,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02165689167681039,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -7626009.672775175,
+    "aicc": -7626009.396913107,
+    "bic": -7626002.140196656,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Georgia Depression/Lower Mainland|PSEU.MEN",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.020005213919070508,
+    "limit_excluded_trees": 245,
+    "log_likelihood": 3813007.8363875877,
+    "method": "two-stage",
+    "n_bins": 69,
+    "n_parameters": 3,
+    "n_plots": 209,
+    "n_trees": 32068,
+    "parameters_json": "{\"beta\": 8.449472273562579, \"p\": 2.524500912084852, \"s\": 0.9928642091348333}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.02738537577283034,
+    "b": 0.9644240214769827,
+    "bias_m": -0.16218211088321507,
+    "n": 32038,
+    "rmse_m": 6.275741158814281
+  },
+  "height_observations": 32038,
+  "runtime_seconds": 1.9700660705566406,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 280,
+    "coverage_n_trees": 32318,
+    "end": 1042695,
+    "level": "ecoregion",
+    "species": "PSEU.MEN",
+    "start": 1010382,
+    "stratum_id": "Pacific Maritime/Georgia Depression/Lower Mainland",
+    "stratum_name": "Lower Mainland"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1776034.2606538932,
+      "aicc": -1776031.8606538933,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.035013915729319556,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1787587.031261829,
+      "aicc": -1787584.631261829,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.042562056032238615,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1730515.0748241027,
+      "aicc": -1730507.5748241027,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04245958918543569,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1790392.6769225197,
+      "aicc": -1790385.1769225197,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03160174279365069,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1790392.6769225197,
+    "aicc": -1790385.1769225197,
+    "bic": -1790389.4816358716,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.03109230458440638, 0.9689076954155936]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Southern Boreal Cordillera/Boreal Mountains and Plateaus|PICE.MAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.03160174279365069,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 895201.3384612598,
+    "method": "truncated-em-moments",
+    "n_bins": 14,
+    "n_parameters": 5,
+    "n_plots": 36,
+    "n_trees": 1031,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.5282734681231072, \"p\": 35.41975394104682}, \"weight\": 0.03109230458440638}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.4656652328483855, \"beta\": 7.847445587698762}, \"weight\": 0.9689076954155936}]}",
+    "spike_weight": null,
+    "support_upper_cm": 37.00000047683716,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.19940508390045608,
+    "b": 1.051036449562021,
+    "bias_m": 0.02759275674369397,
+    "n": 1031,
+    "rmse_m": 1.5646444364078866
+  },
+  "height_observations": 1031,
+  "runtime_seconds": 2.1756458282470703,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 36,
+    "coverage_n_trees": 1031,
+    "end": 5293625,
+    "level": "ecoregion",
+    "species": "PICE.MAR",
+    "start": 5292594,
+    "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Boreal Mountains and Plateaus",
+    "stratum_name": "Boreal Mountains and Plateaus"
+  },
+  "status": "ok"
+}

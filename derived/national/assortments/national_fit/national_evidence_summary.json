@@ -1,0 +1,1720 @@
+{
+  "artifact": "national_hierarchical_fit",
+  "artifact_version": "0.1.0",
+  "cells": {
+    "direct_fit": 757,
+    "local_fit_failed": 98,
+    "no_data_unresolved": 0,
+    "no_fit": 72,
+    "pending_timebox": 0,
+    "pooled_fit": 154,
+    "pooled_parent": 1142,
+    "resumed": 1543,
+    "species_national": 2705,
+    "submitted": 0,
+    "total": 4830,
+    "worker_errors": 0
+  },
+  "evidence_by_level": [
+    {
+      "coverage_direct": 35,
+      "coverage_no_data": 0,
+      "coverage_pooled": 0,
+      "direct_fit": 35,
+      "level": "national",
+      "no_fit": 0,
+      "pooled_fit": 0,
+      "pooled_parent": 0,
+      "species_national": 0,
+      "total_cells": 35
+    },
+    {
+      "coverage_direct": 142,
+      "coverage_no_data": 262,
+      "coverage_pooled": 16,
+      "direct_fit": 141,
+      "level": "ecozone",
+      "no_fit": 7,
+      "pooled_fit": 10,
+      "pooled_parent": 0,
+      "species_national": 262,
+      "total_cells": 420
+    },
+    {
+      "coverage_direct": 321,
+      "coverage_no_data": 893,
+      "coverage_pooled": 46,
+      "direct_fit": 319,
+      "level": "ecoprovince",
+      "no_fit": 19,
+      "pooled_fit": 29,
+      "pooled_parent": 132,
+      "species_national": 761,
+      "total_cells": 1260
+    },
+    {
+      "coverage_direct": 765,
+      "coverage_no_data": 3847,
+      "coverage_pooled": 218,
+      "direct_fit": 757,
+      "level": "ecoregion",
+      "no_fit": 72,
+      "pooled_fit": 154,
+      "pooled_parent": 1142,
+      "species_national": 2705,
+      "total_cells": 4830
+    }
+  ],
+  "fit_config_hash": "5e4f975187efeaef",
+  "fit_seconds": 58.6246132850647,
+  "generated_at_utc": "2026-11-16T08:09:48Z",
+  "inputs": {
+    "coverage": {
+      "bytes": 10164691,
+      "path": "data/derived/national/assortments/national_coverage/coverage.csv",
+      "sha256": "12f85f85a8c803d1c841d5e817881c7277628ee69a170c45100076633b08fd5d"
+    },
+    "rsyc_ecostrat": {
+      "bytes": 15421440,
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    },
+    "rsyc_models": {
+      "bytes": 1468706,
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940"
+    },
+    "sites": {
+      "bytes": 8359304,
+      "path": "data/derived/fvsca_calibration/v0/sites.csv",
+      "sha256": "7796f2c8f8b83284c3980333e1563de4bb409f10668f1bb32a5fca2bccf54de9"
+    },
+    "trees": {
+      "bytes": 103812857,
+      "path": "data/derived/fvsca_calibration/v0/trees.csv.gz",
+      "sha256": "a0b540f45d6f325792d3e56f36727018514336862077610ea0c34ba5de3afffe"
+    },
+    "visits": {
+      "bytes": 30574202,
+      "path": "data/derived/fvsca_calibration/v0/visits.csv",
+      "sha256": "bd07dc1189d5feca8c04f3ad589a68f10f62115bb85007a8b2dcf2dcbb61534c"
+    }
+  },
+  "level": "ecoregion",
+  "outputs": {
+    "cells_dir": "data/derived/national/assortments/national_fit/cells",
+    "distribution_csv": "data/derived/national/assortments/national_fit/national_distribution_parameters.csv",
+    "evidence_map_png": "data/derived/national/assortments/national_fit/evidence_map.png",
+    "height_csv": "data/derived/national/assortments/national_fit/national_height_models.csv",
+    "remaining_cells_csv": "data/derived/national/assortments/national_fit/remaining_cells.csv",
+    "report_md": "data/derived/national/assortments/national_fit/NATIONAL_FIT_REPORT.md",
+    "summary_json": "data/derived/national/assortments/national_fit/national_evidence_summary.json"
+  },
+  "prep": {
+    "cache_key": {
+      "inputs": {
+        "ecostrat": {
+          "mtime_ns": 1794736946504714638,
+          "size": 15421440
+        },
+        "sites": {
+          "mtime_ns": 1794728617287217150,
+          "size": 8359304
+        },
+        "trees": {
+          "mtime_ns": 1794692862716862428,
+          "size": 103812857
+        },
+        "visits": {
+          "mtime_ns": 1794728619125215638,
+          "size": 30574202
+        }
+      },
+      "prep_version": 2
+    },
+    "dbh_limits_by_source": {
+      "faib_non_psp": 4.0,
+      "faib_psp": 2.0,
+      "magplot": 2.0,
+      "magplot_wfs": 2.0,
+      "nl_fal": 1.0,
+      "qc_pep": 9.0
+    },
+    "dropped_missing_expansion_factor": 26922,
+    "dropped_unmapped_sites": 928264,
+    "generated_at_utc": "2026-11-16T08:00:20Z",
+    "mapping": {
+      "duplicate_boundary_matches": 0,
+      "runtime_seconds": 0.5806646347045898,
+      "sites_mapped_to_ecodistrict": 67477,
+      "sites_outside_rsyc_ecostrata": 1067,
+      "sites_with_valid_coordinates": 68544
+    },
+    "plots": 122929,
+    "prep_version": 2,
+    "rows": 11348450,
+    "rpkm": {
+      "note": "live trees with finite DBH in (0, 500] cm; NL FAL uses unit weights because the source publishes no expansion factor"
+    },
+    "runtime_seconds": 74.2903699874878,
+    "sites": 66584,
+    "sources": {
+      "faib_non_psp": 134213,
+      "faib_psp": 2345956,
+      "magplot": 5640416,
+      "magplot_wfs": 1030459,
+      "nl_fal": 598951,
+      "qc_pep": 1598455
+    },
+    "species": [
+      "ABIE.AMA",
+      "ABIE.BAL",
+      "ABIE.LAS",
+      "ACER.MAC",
+      "ACER.RUB",
+      "ACER.SAH",
+      "ALNU.RUB",
+      "BETU.ALL",
+      "BETU.PAP",
+      "BROADLEAF",
+      "CONIFEROUS",
+      "FRAX.NIG",
+      "GENERIC",
+      "LARI.LAR",
+      "LARI.OCC",
+      "PICE.ABI",
+      "PICE.ENG",
+      "PICE.GLA",
+      "PICE.MAR",
+      "PICE.RUB",
+      "PICE.SIT",
+      "PINU.BAN",
+      "PINU.CON",
+      "PINU.PON",
+      "PINU.RES",
+      "PINU.STR",
+      "POPU.BAL",
+      "POPU.GRA",
+      "POPU.TRE",
+      "PSEU.MEN",
+      "QUER.RUB",
+      "THUJ.OCC",
+      "THUJ.PLI",
+      "TSUG.HET",
+      "TSUG.MER"
+    ]
+  },
+  "prep_seconds": 0.9627401828765869,
+  "remaining_cells": [
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 19,
+      "coverage_n_trees": 125,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=125, n_plots=19, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Atlantic Maritime/Fundy Uplands/Fundy Coast"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 1,
+      "coverage_n_trees": 31,
+      "error": "fit fell back to tsa24_species:tsa24_species:PICE.ABI; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.ABI",
+      "stratum_id": "Atlantic Maritime/Fundy Uplands/Saint John River Valley"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.ABI' in national_ecoregion: below the default reporting threshold; last attempt n_trees=8, n_plots=2, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.ABI",
+      "stratum_id": "Atlantic Maritime/Fundy Uplands/Southern New Brunswick Uplands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=4, n_bins=4",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Atlantic Maritime/Northumberland Lowlands/Prince Edward Island"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 1,
+      "coverage_n_trees": 78,
+      "error": "fit fell back to tsa24_species:tsa24_species:ABIE.LAS; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ABIE.LAS",
+      "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Hyland Highland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'BROADLEAF' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=3, n_bins=4",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BROADLEAF",
+      "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Pelly Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 47,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: DBH range 2.000-6.000 cm is too narrow for 2 cm bins; last attempt n_trees=47, n_plots=3, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-Central"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.CON' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=2, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.CON",
+      "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Plateau-North"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 7,
+      "error": "DistributionFitError: no fit is possible for species 'BETU.PAP' in national_ecoregion: below the default reporting threshold; last attempt n_trees=7, n_plots=2, n_bins=7",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BETU.PAP",
+      "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Yukon Southern Lakes"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 7,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: below the default reporting threshold; last attempt n_trees=7, n_plots=2, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Boreal Mountains and Plateaus"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 5,
+      "coverage_n_trees": 146,
+      "error": "fit fell back to tsa24_species:tsa24_species:ABIE.LAS; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ABIE.LAS",
+      "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Yukon-Stikine Highlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 9,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Boreal Plains/Boreal Foothills/Clear Hills Upland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 40,
+      "error": "DistributionFitError: no fit is possible for species 'ALNU.RUB' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Boreal Plains/Boreal Foothills/Western Alberta Upland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.GLA' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.GLA",
+      "stratum_id": "Boreal Plains/Central Boreal Plains/Western Boreal"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.BAL' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=4, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.BAL",
+      "stratum_id": "Boreal Plains/Central Boreal Plains/Western Boreal"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.BAL' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=3, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.BAL",
+      "stratum_id": "Boreal Plains/Eastern Boreal Plains/Interlake Plain"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'BROADLEAF' in national_ecoregion: only 1 populated DBH bins at limit 2 cm; last attempt n_trees=4, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BROADLEAF",
+      "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Anticosti Island"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.RUB' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.RUB",
+      "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Mecatina Plateau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.RES' in national_ecoregion: only 1 populated DBH bins at limit 2 cm; last attempt n_trees=4, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.RES",
+      "stratum_id": "Boreal Shield East/Mid-Boreal Shield/Abitibi Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 7,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.GRA' in national_ecoregion: below the default reporting threshold; last attempt n_trees=7, n_plots=3, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.GRA",
+      "stratum_id": "Boreal Shield East/Mid-Boreal Shield/Abitibi Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 3,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.STR' in national_ecoregion: only 1 populated DBH bins at limit 1 cm; last attempt n_trees=3, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.STR",
+      "stratum_id": "Boreal Shield East/Newfoundland/Long Range Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 6,
+      "error": "DistributionFitError: no fit is possible for species 'BROADLEAF' in national_ecoregion: only 2 populated DBH bins at limit 1 cm; last attempt n_trees=6, n_plots=3, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BROADLEAF",
+      "stratum_id": "Boreal Shield East/Newfoundland/Long Range Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.TRE' in national_ecoregion: only 1 populated DBH bins at limit 1 cm; last attempt n_trees=8, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.TRE",
+      "stratum_id": "Boreal Shield East/Newfoundland/Maritime Barrens"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'BROADLEAF' in national_ecoregion: DBH range 1.000-3.500 cm is too narrow for 2 cm bins; last attempt n_trees=8, n_plots=4, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BROADLEAF",
+      "stratum_id": "Boreal Shield East/Newfoundland/Maritime Barrens"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 1,
+      "coverage_n_trees": 91,
+      "error": "fit fell back to tsa24_species:tsa24_species:PICE.ABI; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.ABI",
+      "stratum_id": "Boreal Shield East/Newfoundland/Southwestern Newfoundland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 3,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.TRE' in national_ecoregion: only 1 populated DBH bins at limit 1 cm; last attempt n_trees=3, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.TRE",
+      "stratum_id": "Boreal Shield East/Newfoundland/Southwestern Newfoundland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 1,
+      "coverage_n_trees": 91,
+      "error": "fit fell back to tsa24_species:tsa24_species:CONIFEROUS; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "CONIFEROUS",
+      "stratum_id": "Boreal Shield East/Newfoundland/Southwestern Newfoundland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 7,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.LAR' in national_ecoregion: only 2 populated DBH bins at limit 1 cm; last attempt n_trees=7, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.LAR",
+      "stratum_id": "Boreal Shield East/Newfoundland/Strait of Belle Isle"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 6,
+      "error": "DistributionFitError: no fit is possible for species 'BETU.PAP' in national_ecoregion: below the default reporting threshold; last attempt n_trees=6, n_plots=2, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BETU.PAP",
+      "stratum_id": "Boreal Shield West/Western Boreal Shield/Athabasca Plain"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 3,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: only 1 populated DBH bins at limit 2 cm; last attempt n_trees=3, n_plots=3, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Boreal Shield West/Western Boreal Shield/Athabasca Plain"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.RUB' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.RUB",
+      "stratum_id": "Hudson Plains/Hudson-James Lowlands/James Bay Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.STR' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.STR",
+      "stratum_id": "Hudson Plains/Hudson-James Lowlands/James Bay Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'BETU.PAP' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BETU.PAP",
+      "stratum_id": "Montane Cordillera/Central Montane Cordillera/Chilcotin Ranges"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.LAR' in national_ecoregion: below the default reporting threshold; last attempt n_trees=5, n_plots=3, n_bins=4",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.LAR",
+      "stratum_id": "Montane Cordillera/Central Montane Cordillera/Fraser Plateau"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 17,
+      "coverage_n_trees": 875,
+      "error": "fit fell back to tsa24_species:tsa24_species:ALNU.RUB; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Columbia Mountains and Highlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 7,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.BAL' in national_ecoregion: below the default reporting threshold; last attempt n_trees=7, n_plots=3, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.BAL",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Eastern Continental Ranges"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.HET' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=4, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.HET",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 10,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Selkirk-Bitterroot Foothills"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 9,
+      "coverage_n_trees": 123,
+      "error": "fit fell back to tsa24_species:tsa24_species:ACER.RUB; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ACER.RUB",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Southern Rocky Mountain Trench"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 7,
+      "coverage_n_trees": 392,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.MER' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.MER",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 28,
+      "error": "DistributionFitError: no fit is possible for species 'ACER.RUB' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=24, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ACER.RUB",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Central Canadian Rocky Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 3,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.LAR' in national_ecoregion: below the default reporting threshold; last attempt n_trees=3, n_plots=3, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.LAR",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Central Canadian Rocky Mountains"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 21,
+      "coverage_n_trees": 150,
+      "error": "DistributionFitError: no fit is possible for species 'ALNU.RUB' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=10, n_plots=5, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Fraser Basin"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.MER' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.MER",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Fraser Basin"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Omineca Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.HET' in national_ecoregion: below the default reporting threshold; last attempt n_trees=4, n_plots=3, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.HET",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera/Omineca Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 11,
+      "error": "DistributionFitError: no fit is possible for species 'ACER.RUB' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=1, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ACER.RUB",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Interior Transition Ranges"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 7,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ACER.RUB",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Highland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'BETU.PAP' in national_ecoregion: below the default reporting threshold; last attempt n_trees=5, n_plots=2, n_bins=4",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BETU.PAP",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Highland"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 8,
+      "coverage_n_trees": 169,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=1, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Highland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 45,
+      "error": "DistributionFitError: no fit is possible for species 'ACER.RUB' in national_ecoregion: DBH range 2.000-5.600 cm is too narrow for 2 cm bins; last attempt n_trees=8, n_plots=1, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ACER.RUB",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Okanogan Range"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 17,
+      "coverage_n_trees": 187,
+      "error": "fit fell back to tsa24_species:tsa24_species:ALNU.RUB; a cell-level fit was required",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Thompson-Okanagan Plateau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.MER' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.MER",
+      "stratum_id": "Montane Cordillera/Southern Montane Cordillera/Thompson-Okanagan Plateau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 7,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.BAL' in national_ecoregion: below the default reporting threshold; last attempt n_trees=7, n_plots=3, n_bins=4",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.BAL",
+      "stratum_id": "Pacific Maritime/Georgia Depression/Georgia-Puget Basin"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.PON' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.PON",
+      "stratum_id": "Pacific Maritime/Georgia Depression/Lower Mainland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.SIT' in national_ecoregion: below the default reporting threshold; last attempt n_trees=8, n_plots=4, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.SIT",
+      "stratum_id": "Pacific Maritime/Northern Coastal Mountains/Northern Coastal Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.MER' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=2, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.MER",
+      "stratum_id": "Pacific Maritime/Northern Coastal Mountains/Northern Coastal Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.ENG' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.ENG",
+      "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Coastal Gap"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.GLA' in national_ecoregion: below the default reporting threshold; last attempt n_trees=4, n_plots=3, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.GLA",
+      "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Coastal Gap"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.GLA' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.GLA",
+      "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Pacific Ranges"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.TRE' in national_ecoregion: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.TRE",
+      "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Western Vancouver Island"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: below the default reporting threshold; last attempt n_trees=9, n_plots=4, n_bins=4",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Taiga Plains/Great Bear Lowlands/Great Slave Lake Plain"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 3,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.GLA' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=3, n_plots=3, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.GLA",
+      "stratum_id": "Taiga Plains/Great Bear Lowlands/Horn Plateau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 21,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Muskwa Plateau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'CONIFEROUS' in national_ecoregion: below the default reporting threshold; last attempt n_trees=3, n_plots=2, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "CONIFEROUS",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Muskwa Plateau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 81,
+      "error": "no analysis trees remain after cleaning",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.OCC' in national_ecoregion: below the default reporting threshold; last attempt n_trees=5, n_plots=3, n_bins=5",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.OCC",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.GLA' in national_ecoregion: only 1 populated DBH bins at limit 1 cm; last attempt n_trees=4, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.GLA",
+      "stratum_id": "Taiga Shield East/Labrador Uplands/Coastal Barrens"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.TRE' in national_ecoregion: below the default reporting threshold; last attempt n_trees=8, n_plots=4, n_bins=3",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.TRE",
+      "stratum_id": "Taiga Shield East/Labrador Uplands/Mecatina River"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.GLA' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=5, n_plots=2, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.GLA",
+      "stratum_id": "Taiga Shield East/Labrador Uplands/Smallwood Reservoir-Michikamau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 7,
+      "coverage_n_trees": 65,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoregion: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=65, n_plots=7, n_bins=0",
+      "level": "ecoregion",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Taiga Shield East/Labrador Uplands/Smallwood Reservoir-Michikamau"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=8, n_plots=3, n_bins=3",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 7,
+      "coverage_n_trees": 49,
+      "error": "DistributionFitError: no fit is possible for species 'ALNU.RUB' in national_ecoprovince: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Boreal Plains/Boreal Foothills"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.RES' in national_ecoprovince: only 1 populated DBH bins at limit 2 cm; last attempt n_trees=4, n_plots=2, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.RES",
+      "stratum_id": "Boreal Shield East/Mid-Boreal Shield"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'POPU.GRA' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=8, n_plots=4, n_bins=3",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "POPU.GRA",
+      "stratum_id": "Boreal Shield East/Mid-Boreal Shield"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 1,
+      "coverage_n_trees": 91,
+      "error": "fit fell back to tsa24_species:tsa24_species:PICE.ABI; a cell-level fit was required",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.ABI",
+      "stratum_id": "Boreal Shield East/Newfoundland"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.RUB' in national_ecoprovince: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.RUB",
+      "stratum_id": "Hudson Plains/Hudson-James Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.STR' in national_ecoprovince: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.STR",
+      "stratum_id": "Hudson Plains/Hudson-James Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'ABIE.AMA' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=5, n_plots=2, n_bins=3",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ABIE.AMA",
+      "stratum_id": "Montane Cordillera/Central Montane Cordillera"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.LAR' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=5, n_plots=3, n_bins=4",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.LAR",
+      "stratum_id": "Montane Cordillera/Central Montane Cordillera"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 29,
+      "coverage_n_trees": 1323,
+      "error": "fit fell back to tsa24_species:tsa24_species:ALNU.RUB; a cell-level fit was required",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 3,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.LAR' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=3, n_plots=3, n_bins=3",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.LAR",
+      "stratum_id": "Montane Cordillera/Northern Montane Cordillera"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.PON' in national_ecoprovince: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.PON",
+      "stratum_id": "Pacific Maritime/Georgia Depression"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 8,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.SIT' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=8, n_plots=4, n_bins=3",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.SIT",
+      "stratum_id": "Pacific Maritime/Northern Coastal Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'TSUG.MER' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=9, n_plots=2, n_bins=5",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "TSUG.MER",
+      "stratum_id": "Pacific Maritime/Northern Coastal Mountains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 4,
+      "error": "DistributionFitError: no fit is possible for species 'BETU.PAP' in national_ecoprovince: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=4, n_plots=2, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "BETU.PAP",
+      "stratum_id": "Taiga Plains/Great Bear Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 4,
+      "coverage_n_trees": 9,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=9, n_plots=4, n_bins=4",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Taiga Plains/Great Bear Lowlands"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 16,
+      "coverage_n_trees": 158,
+      "error": "fit fell back to tsa24_species:tsa24_species:ALNU.RUB; a cell-level fit was required",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.OCC' in national_ecoprovince: below the default reporting threshold; last attempt n_trees=5, n_plots=3, n_bins=5",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.OCC",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 7,
+      "coverage_n_trees": 65,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecoprovince: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=65, n_plots=7, n_bins=0",
+      "level": "ecoprovince",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Taiga Shield East/Labrador Uplands"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 8,
+      "coverage_n_trees": 50,
+      "error": "DistributionFitError: no fit is possible for species 'ALNU.RUB' in national_ecozone: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Boreal Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PICE.RUB' in national_ecozone: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PICE.RUB",
+      "stratum_id": "Hudson Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.STR' in national_ecozone: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.STR",
+      "stratum_id": "Hudson Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 2,
+      "coverage_n_trees": 2,
+      "error": "DistributionFitError: no fit is possible for species 'PINU.PON' in national_ecozone: fewer than three trees or no plots; last attempt n_trees=2, n_plots=2, n_bins=0",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "PINU.PON",
+      "stratum_id": "Pacific Maritime"
+    },
+    {
+      "coverage_class": "direct_fit",
+      "coverage_n_plots": 16,
+      "coverage_n_trees": 158,
+      "error": "fit fell back to tsa24_species:tsa24_species:ALNU.RUB; a cell-level fit was required",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "ALNU.RUB",
+      "stratum_id": "Taiga Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 3,
+      "coverage_n_trees": 5,
+      "error": "DistributionFitError: no fit is possible for species 'LARI.OCC' in national_ecozone: below the default reporting threshold; last attempt n_trees=5, n_plots=3, n_bins=5",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "LARI.OCC",
+      "stratum_id": "Taiga Plains"
+    },
+    {
+      "coverage_class": "pooled_fit",
+      "coverage_n_plots": 7,
+      "coverage_n_trees": 65,
+      "error": "DistributionFitError: no fit is possible for species 'GENERIC' in national_ecozone: only 2 populated DBH bins at limit 2 cm; last attempt n_trees=65, n_plots=7, n_bins=0",
+      "level": "ecozone",
+      "reason": "local_fit_failed",
+      "resumable": false,
+      "species": "GENERIC",
+      "stratum_id": "Taiga Shield East"
+    }
+  ],
+  "rsyc_prior": {
+    "basis_counts": {
+      "group": 4465,
+      "none": 35,
+      "parent_group": 290,
+      "parent_species": 154,
+      "species": 1601
+    },
+    "detail": "6510/6545 rows have an RSYC prior; 1755 are exact-species; 0 fall outside the published age range",
+    "no_data_basis_counts": {
+      "group": 3967,
+      "parent_group": 274,
+      "parent_species": 94,
+      "species": 667
+    },
+    "no_data_missing_prior": 0,
+    "pass": true,
+    "reference_age": 100.0
+  },
+  "runtime_seconds": 89.95348167419434,
+  "support_levels": [
+    "national",
+    "ecozone",
+    "ecoprovince",
+    "ecoregion"
+  ],
+  "thresholds": {
+    "bin_width_cm": 2.0,
+    "coverage_direct_min_plots": 5,
+    "coverage_direct_min_trees": 100,
+    "coverage_pooled_max_plots": 4,
+    "coverage_pooled_max_trees": 99,
+    "coverage_pooled_min_plots": 2,
+    "coverage_pooled_min_trees": 30,
+    "local_direct_min_plots": 5,
+    "local_direct_min_trees": 30,
+    "local_pooled_min_plots": 2,
+    "local_pooled_min_trees": 10,
+    "min_height_obs": 30,
+    "reference_age": 100.0
+  },
+  "timebox_exhausted": false,
+  "timebox_seconds": 780.0,
+  "top_direct_fits": [
+    {
+      "aic": -723127810.7917621,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.011520031134811648,
+      "level": "national",
+      "n_plots": 14025.0,
+      "n_trees": 1051630.0,
+      "species": "PINU.CON",
+      "stratum_id": "Canada"
+    },
+    {
+      "aic": -952970998.5421128,
+      "dbh_limit_cm": 2.0,
+      "distribution": "weibull",
+      "ks": 0.04921816628250153,
+      "level": "national",
+      "n_plots": 15451.0,
+      "n_trees": 1038842.0,
+      "species": "PICE.MAR",
+      "stratum_id": "Canada"
+    },
+    {
+      "aic": -475380207.0484736,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.06359134087791918,
+      "level": "national",
+      "n_plots": 12636.0,
+      "n_trees": 993212.0,
+      "species": "PSEU.MEN",
+      "stratum_id": "Canada"
+    },
+    {
+      "aic": -619475223.8630891,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.11896820440087719,
+      "level": "national",
+      "n_plots": 11286.0,
+      "n_trees": 974033.0,
+      "species": "TSUG.HET",
+      "stratum_id": "Canada"
+    },
+    {
+      "aic": -608068803.8036629,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.012431399466902783,
+      "level": "ecozone",
+      "n_plots": 12265.0,
+      "n_trees": 933171.0,
+      "species": "PINU.CON",
+      "stratum_id": "Montane Cordillera"
+    },
+    {
+      "aic": -1239947262.8312185,
+      "dbh_limit_cm": 2.0,
+      "distribution": "spike_weibull_constrained",
+      "ks": 0.022656107782672907,
+      "level": "national",
+      "n_plots": 21121.0,
+      "n_trees": 908485.0,
+      "species": "ABIE.BAL",
+      "stratum_id": "Canada"
+    },
+    {
+      "aic": -468650251.9004858,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.10674152117180102,
+      "level": "ecozone",
+      "n_plots": 7830.0,
+      "n_trees": 793795.0,
+      "species": "TSUG.HET",
+      "stratum_id": "Pacific Maritime"
+    },
+    {
+      "aic": -382514644.6547147,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.051252586272839296,
+      "level": "ecozone",
+      "n_plots": 9833.0,
+      "n_trees": 776830.0,
+      "species": "PSEU.MEN",
+      "stratum_id": "Montane Cordillera"
+    },
+    {
+      "aic": -489478648.68189704,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.016853478379157627,
+      "level": "national",
+      "n_plots": 23334.0,
+      "n_trees": 749527.0,
+      "species": "PICE.GLA",
+      "stratum_id": "Canada"
+    },
+    {
+      "aic": -386698018.4758609,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.12178586753873022,
+      "level": "ecoprovince",
+      "n_plots": 6745.0,
+      "n_trees": 633979.0,
+      "species": "TSUG.HET",
+      "stratum_id": "Pacific Maritime/Southern Coastal Mountains"
+    },
+    {
+      "aic": -609545988.0218959,
+      "dbh_limit_cm": 2.0,
+      "distribution": "weibull",
+      "ks": 0.04658976192188635,
+      "level": "ecozone",
+      "n_plots": 7710.0,
+      "n_trees": 610934.0,
+      "species": "PICE.MAR",
+      "stratum_id": "Boreal Shield East"
+    },
+    {
+      "aic": -886347308.5005267,
+      "dbh_limit_cm": 2.0,
+      "distribution": "spike_weibull_constrained",
+      "ks": 0.024768253264929263,
+      "level": "ecozone",
+      "n_plots": 9181.0,
+      "n_trees": 603736.0,
+      "species": "ABIE.BAL",
+      "stratum_id": "Boreal Shield East"
+    }
+  ],
+  "top_pooled_fits": [
+    {
+      "aic": -196930.42126433522,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.017210461794667512,
+      "level": "ecoregion",
+      "n_plots": 3.0,
+      "n_trees": 612.0,
+      "species": "PINU.CON",
+      "stratum_id": "Boreal Cordillera/Southern Boreal Cordillera/Yukon-Stikine Highlands"
+    },
+    {
+      "aic": -525302.0394366712,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.017771059094475516,
+      "level": "ecoregion",
+      "n_plots": 2.0,
+      "n_trees": 421.0,
+      "species": "PINU.BAN",
+      "stratum_id": "Boreal Shield East/Newfoundland/Central Newfoundland"
+    },
+    {
+      "aic": -525302.0394366712,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.017771059094475516,
+      "level": "ecoprovince",
+      "n_plots": 2.0,
+      "n_trees": 421.0,
+      "species": "PINU.BAN",
+      "stratum_id": "Boreal Shield East/Newfoundland"
+    },
+    {
+      "aic": -37260.36545147035,
+      "dbh_limit_cm": 2.0,
+      "distribution": "weibull",
+      "ks": 0.041425558829644715,
+      "level": "ecoregion",
+      "n_plots": 4.0,
+      "n_trees": 420.0,
+      "species": "PINU.PON",
+      "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Northern Continental Divide"
+    },
+    {
+      "aic": -69241.78388394184,
+      "dbh_limit_cm": 2.0,
+      "distribution": "gamma",
+      "ks": 0.040020377971112575,
+      "level": "ecoregion",
+      "n_plots": 4.0,
+      "n_trees": 241.0,
+      "species": "PINU.BAN",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Northern Alberta Uplands"
+    },
+    {
+      "aic": -21721.278697429138,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.01524368930198853,
+      "level": "ecoregion",
+      "n_plots": 3.0,
+      "n_trees": 188.0,
+      "species": "BETU.PAP",
+      "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Hyland Highland"
+    },
+    {
+      "aic": -489.2582007869725,
+      "dbh_limit_cm": 1.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.046244634430605336,
+      "level": "ecoregion",
+      "n_plots": 2.0,
+      "n_trees": 173.0,
+      "species": "ABIE.BAL",
+      "stratum_id": "Taiga Shield East/Labrador Uplands/Kingarutuk-Fraser River"
+    },
+    {
+      "aic": -13313.697429421447,
+      "dbh_limit_cm": 2.0,
+      "distribution": "spike_weibull_constrained",
+      "ks": 0.05434306538654299,
+      "level": "ecoregion",
+      "n_plots": 4.0,
+      "n_trees": 150.0,
+      "species": "POPU.TRE",
+      "stratum_id": "Boreal Plains/Eastern Boreal Plains/Interlake Plain"
+    },
+    {
+      "aic": -670.7279701448895,
+      "dbh_limit_cm": 1.0,
+      "distribution": "weibull",
+      "ks": 0.014209851836118115,
+      "level": "ecoregion",
+      "n_plots": 2.0,
+      "n_trees": 138.0,
+      "species": "PINU.BAN",
+      "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Lake Melville"
+    },
+    {
+      "aic": -52604.3505925967,
+      "dbh_limit_cm": 2.0,
+      "distribution": "spike_weibull_constrained",
+      "ks": 0.08026829576655586,
+      "level": "ecoregion",
+      "n_plots": 4.0,
+      "n_trees": 138.0,
+      "species": "PICE.ABI",
+      "stratum_id": "Atlantic Maritime/Northumberland Lowlands/Maritime Lowlands"
+    },
+    {
+      "aic": -217283.29881733074,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.03582374049058723,
+      "level": "ecoregion",
+      "n_plots": 4.0,
+      "n_trees": 127.0,
+      "species": "ABIE.BAL",
+      "stratum_id": "Taiga Plains/Hay-Slave Lowlands/Hay River Lowland"
+    },
+    {
+      "aic": -66951.83000680606,
+      "dbh_limit_cm": 2.0,
+      "distribution": "mix_weibull_gamma",
+      "ks": 0.038692203395159885,
+      "level": "ecoregion",
+      "n_plots": 4.0,
+      "n_trees": 107.0,
+      "species": "PICE.GLA",
+      "stratum_id": "Boreal Cordillera/Wrangel Mountains/St.Elias Mountains"
+    }
+  ],
+  "validation": {
+    "borrowed": {
+      "parent": 1274,
+      "species_national": 3728
+    },
+    "checks": {
+      "borrowed_rows_have_provenance": {
+        "detail": "5002 borrowed rows have source level and parameters",
+        "pass": true
+      },
+      "borrowed_shapes_are_not_local": {
+        "detail": "0 borrowed rows are labelled local",
+        "pass": true
+      },
+      "coverage_reconciled": {
+        "coverage": {
+          "ecoprovince": {
+            "direct_fit": 321,
+            "no_data": 893,
+            "pooled_fit": 46
+          },
+          "ecoregion": {
+            "direct_fit": 765,
+            "no_data": 3847,
+            "pooled_fit": 218
+          },
+          "ecozone": {
+            "direct_fit": 142,
+            "no_data": 262,
+            "pooled_fit": 16
+          },
+          "national": {
+            "direct_fit": 35,
+            "no_data": 0,
+            "pooled_fit": 0
+          }
+        },
+        "detail": "one evidence row per coverage row at every support level; 0 duplicate keys",
+        "pass": true
+      },
+      "direct_fits_have_ks": {
+        "detail": "1252/1252 direct rows have finite KS",
+        "pass": true
+      },
+      "direct_high_ks_flagged": {
+        "detail": "67 direct rows have KS > 0.20 and the same count is flagged",
+        "pass": true
+      },
+      "height_models": {
+        "borrowed": 5208,
+        "detail": "1337 local, 5208 borrowed, 0 missing height models; median local RMSE 2.765 m",
+        "local": 1337,
+        "missing": 0,
+        "pass": true
+      },
+      "local_low_support": {
+        "detail": "10 direct and 110 pooled rows have fewer than 30 post-limit fit trees or five post-limit fit plots; flagged low_support",
+        "direct": 10,
+        "pass": true,
+        "pooled": 110
+      },
+      "no_data_never_local": {
+        "detail": "no_data cells are never labelled direct or pooled",
+        "pass": true
+      },
+      "no_fit_rows_have_errors": {
+        "detail": "98 no_fit rows carry an error reason",
+        "pass": true
+      },
+      "rsyc_prior": {
+        "basis_counts": {
+          "group": 4465,
+          "none": 35,
+          "parent_group": 290,
+          "parent_species": 154,
+          "species": 1601
+        },
+        "detail": "6510/6545 rows have an RSYC prior; 1755 are exact-species; 0 fall outside the published age range",
+        "no_data_basis_counts": {
+          "group": 3967,
+          "parent_group": 274,
+          "parent_species": 94,
+          "species": 667
+        },
+        "no_data_missing_prior": 0,
+        "pass": true,
+        "reference_age": 100.0
+      }
+    },
+    "direct": {
+      "distributions": {
+        "gamma": 496,
+        "mix_weibull_2": 88,
+        "mix_weibull_gamma": 342,
+        "spike_gamma_constrained": 68,
+        "spike_weibull_constrained": 98,
+        "weibull": 160
+      },
+      "high_ks": 67,
+      "ks_median": 0.04024873555471564,
+      "ks_p90": 0.13807461000323312,
+      "low_support": 10,
+      "n": 1252
+    },
+    "local_rows": 1445,
+    "no_data_cells": 5002,
+    "no_fit": 98,
+    "pooled": {
+      "distributions": {
+        "gamma": 18,
+        "mix_weibull_2": 13,
+        "mix_weibull_gamma": 107,
+        "spike_gamma_constrained": 8,
+        "spike_weibull_constrained": 20,
+        "weibull": 27
+      },
+      "low_support": 110,
+      "n": 193
+    }
+  },
+  "workers": 8
+}

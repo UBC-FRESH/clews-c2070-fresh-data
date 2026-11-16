@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1323778.7117914227,
+      "aicc": -1323777.9375978743,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02597353226043233,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1326250.6142627862,
+      "aicc": -1326249.8400692379,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.030931585618384383,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1320349.6076301856,
+      "aicc": -1320347.5386646683,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.04514839722187175,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1326250.6142627862,
+    "aicc": -1326249.8400692379,
+    "bic": -1326245.9482186018,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges|LARI.OCC",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.030931585618384383,
+    "limit_excluded_trees": 88,
+    "log_likelihood": 663128.3071313931,
+    "method": "two-stage",
+    "n_bins": 33,
+    "n_parameters": 3,
+    "n_plots": 124,
+    "n_trees": 6481,
+    "parameters_json": "{\"beta\": 5.449401933913569, \"p\": 3.512253047671396, \"s\": 1.0191297550076581}",
+    "spike_weight": null,
+    "support_upper_cm": 88.24999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.3413249583534889,
+    "b": 0.8955269995699866,
+    "bias_m": -0.06607442919109581,
+    "n": 6479,
+    "rmse_m": 3.204827334553283
+  },
+  "height_observations": 6479,
+  "runtime_seconds": 1.4923787117004395,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 174,
+    "coverage_n_trees": 6575,
+    "end": 3165454,
+    "level": "ecoregion",
+    "species": "LARI.OCC",
+    "start": 3158885,
+    "stratum_id": "Montane Cordillera/Columbia Montane Cordillera/Western Continental Ranges",
+    "stratum_name": "Western Continental Ranges"
+  },
+  "status": "ok"
+}

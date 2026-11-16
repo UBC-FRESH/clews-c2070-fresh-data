@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -743728.8934390408,
+      "aicc": -743728.3601057074,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06484111200829201,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -755697.0125055781,
+      "aicc": -755696.4791722448,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05632525797716825,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -760356.3363785681,
+      "aicc": -760354.9410297308,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05378382066422499,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -760427.274230301,
+      "aicc": -760425.8788814638,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05364908314745401,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -760427.274230301,
+    "aicc": -760425.8788814638,
+    "bic": -760417.8151288105,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.07610204894487577, 0.9238979510551242]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Pacific Maritime/Southern Coastal Mountains/Nass Ranges|TSUG.MER",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.05364908314745401,
+    "limit_excluded_trees": 209,
+    "log_likelihood": 380218.6371151505,
+    "method": "truncated-em-moments",
+    "n_bins": 41,
+    "n_parameters": 5,
+    "n_plots": 77,
+    "n_trees": 363,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 4.179558064879473, \"p\": 11.531262632557011}, \"weight\": 0.07610204894487577}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.693143854977508, \"beta\": 14.551640811969994}, \"weight\": 0.9238979510551242}]}",
+    "spike_weight": null,
+    "support_upper_cm": 124.49999809265137,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.8254707203496153,
+    "b": 0.9879017948326893,
+    "bias_m": 0.22684939565464032,
+    "n": 295,
+    "rmse_m": 3.122221818393968
+  },
+  "height_observations": 295,
+  "runtime_seconds": 0.7123277187347412,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 144,
+    "coverage_n_trees": 572,
+    "end": 4890928,
+    "level": "ecoregion",
+    "species": "TSUG.MER",
+    "start": 4890356,
+    "stratum_id": "Pacific Maritime/Southern Coastal Mountains/Nass Ranges",
+    "stratum_name": "Nass Ranges"
+  },
+  "status": "ok"
+}

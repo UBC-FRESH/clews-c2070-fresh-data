@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -26306515.87183083,
+      "aicc": -26306515.65561461,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.013496825619305153,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -26311615.777337346,
+      "aicc": -26311615.56112113,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.016205097996297768,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -26306521.059772816,
+      "aicc": -26306520.5093141,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.013413507942340863,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -26316312.761544716,
+      "aicc": -26316312.211086,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.014837820717783778,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -26316312.761544716,
+    "aicc": -26316312.211086,
+    "bic": -26316299.036884073,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.006607184895525254, 0.9933928151044746]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "national:Canada|POPU.BAL",
+    "fit_level": "national",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot;magplot_wfs",
+    "ks": 0.014837820717783778,
+    "limit_excluded_trees": 1920,
+    "log_likelihood": 13158161.380772358,
+    "method": "truncated-em-moments",
+    "n_bins": 77,
+    "n_parameters": 5,
+    "n_plots": 3362,
+    "n_trees": 48519,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 8.903500639894022, \"p\": 7.060828982863753}, \"weight\": 0.006607184895525254}, {\"name\": \"weibull\", \"parameters\": {\"a\": 1.2435749158653575, \"beta\": 13.756305843935765}, \"weight\": 0.9933928151044746}]}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.5530432120789022,
+    "b": 0.7627194635107635,
+    "bias_m": 0.09831270115591054,
+    "n": 44207,
+    "rmse_m": 3.5406835742902447
+  },
+  "height_observations": 44207,
+  "runtime_seconds": 1.2311792373657227,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 4125,
+    "coverage_n_trees": 50674,
+    "end": 5020927,
+    "level": "national",
+    "species": "POPU.BAL",
+    "start": 4970488,
+    "stratum_id": "Canada",
+    "stratum_name": "Canada"
+  },
+  "status": "ok"
+}

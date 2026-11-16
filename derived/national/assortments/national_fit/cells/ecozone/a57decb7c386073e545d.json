@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -117399.21868405091,
+      "aicc": -117397.88535071758,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.058457062655706604,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -121624.45805717092,
+      "aicc": -121623.1247238376,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02231873705457632,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -120874.80685668136,
+      "aicc": -120871.05685668136,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03121359514733555,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -121977.83784428766,
+      "aicc": -121974.08784428766,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.0264517170939439,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -121624.45805717092,
+    "aicc": -121623.1247238376,
+    "bic": -121621.18492981084,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Taiga Plains|CONIFEROUS",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.02231873705457632,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 60815.22902858546,
+    "method": "two-stage",
+    "n_bins": 16,
+    "n_parameters": 3,
+    "n_plots": 9,
+    "n_trees": 434,
+    "parameters_json": "{\"beta\": 1.565535941027715, \"p\": 7.625235019297301, \"s\": 0.9874588130829728}",
+    "spike_weight": null,
+    "support_upper_cm": 57.37500190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.6719378666484018,
+    "b": 0.7526042497708766,
+    "bias_m": 0.036420621692694874,
+    "n": 430,
+    "rmse_m": 1.5869531329866209
+  },
+  "height_observations": 430,
+  "runtime_seconds": 1.8660004138946533,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 9,
+    "coverage_n_trees": 437,
+    "end": 6168999,
+    "level": "ecozone",
+    "species": "CONIFEROUS",
+    "start": 6168565,
+    "stratum_id": "Taiga Plains",
+    "stratum_name": "Taiga Plains"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": 77.4538580886938,
+      "aicc": 78.37693501177073,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.38983262464684676,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": 88.32008688367031,
+      "aicc": 89.24316380674723,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.5108756053976513,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": 81.61777673640454,
+      "aicc": 84.11777673640454,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3916161573255955,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": 64.72450719512238,
+      "aicc": 67.22450719512238,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12239469002702008,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": 64.72450719512238,
+    "aicc": 67.22450719512238,
+    "bic": 71.73049410343317,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.996453843651221, 0.003546156348778964]",
+    "converged": true,
+    "dbh_limit_cm": 1.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Taiga Shield East/Labrador Uplands/Kingarutuk-Fraser River|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "low_support",
+    "fit_sources": "nl_fal",
+    "ks": 0.12239469002702008,
+    "limit_excluded_trees": 28,
+    "log_likelihood": -27.362253597561196,
+    "method": "truncated-em-moments",
+    "n_bins": 19,
+    "n_parameters": 5,
+    "n_plots": 2,
+    "n_trees": 28,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 6.4626137048866195, \"p\": 5.194713605967494}, \"weight\": 0.996453843651221}, {\"name\": \"weibull\", \"parameters\": {\"a\": 4.745959316478492, \"beta\": 723.6681042368206}, \"weight\": 0.003546156348778964}]}",
+    "spike_weight": null,
+    "support_upper_cm": 74.74999904632568,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -1.3779880562867108,
+    "b": 1.1822264031166485,
+    "bias_m": -0.11838278503514657,
+    "n": 32,
+    "rmse_m": 3.2613216527239657
+  },
+  "height_observations": 32,
+  "runtime_seconds": 0.5673859119415283,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "pooled_fit",
+    "coverage_n_plots": 4,
+    "coverage_n_trees": 56,
+    "end": 10275544,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 10275488,
+    "stratum_id": "Taiga Shield East/Labrador Uplands/Kingarutuk-Fraser River",
+    "stratum_name": "Kingarutuk-Fraser River"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -194997.1782868397,
+      "aicc": -194996.1782868397,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.17179298750111774,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -197977.5786942494,
+      "aicc": -197976.5786942494,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.14058121901613274,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -199076.71729226518,
+      "aicc": -199073.99001953792,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16260194079000503,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -199072.23493757882,
+      "aicc": -199069.50766485155,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.16336566610940345,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -199076.71729226518,
+    "aicc": -199073.99001953792,
+    "bic": -199070.05626971432,
+    "component_names_json": "[\"weibull\", \"weibull\"]",
+    "component_weights_json": "[0.938668560844144, 0.06133143915585599]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_2",
+    "fit_id": "ecoregion:Montane Cordillera/Central Montane Cordillera/Bulkley Ranges|TSUG.MER",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.16260194079000503,
+    "limit_excluded_trees": 33,
+    "log_likelihood": 99543.35864613259,
+    "method": "truncated-em-moments",
+    "n_bins": 22,
+    "n_parameters": 5,
+    "n_plots": 19,
+    "n_trees": 102,
+    "parameters_json": "{\"components\": [{\"name\": \"weibull\", \"parameters\": {\"a\": 2.1703766683783914, \"beta\": 16.262454741675803}, \"weight\": 0.938668560844144}, {\"name\": \"weibull\", \"parameters\": {\"a\": 4.576776114992432, \"beta\": 48.929528412151264}, \"weight\": 0.06133143915585599}]}",
+    "spike_weight": null,
+    "support_upper_cm": 72.24999904632568,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.7235988413405277,
+    "b": 0.9979904017526414,
+    "bias_m": 0.05156019704769071,
+    "n": 85,
+    "rmse_m": 2.264709028317061
+  },
+  "height_observations": 85,
+  "runtime_seconds": 1.230085849761963,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 31,
+    "coverage_n_trees": 135,
+    "end": 4969847,
+    "level": "ecoregion",
+    "species": "TSUG.MER",
+    "start": 4969712,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera/Bulkley Ranges",
+    "stratum_name": "Bulkley Ranges"
+  },
+  "status": "ok"
+}

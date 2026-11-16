@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -60266.607288255036,
+      "aicc": -60264.76113440888,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.049396469555745504,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -60184.50342175065,
+      "aicc": -60182.65726790449,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.05990544062777048,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -60266.607288255036,
+    "aicc": -60264.76113440888,
+    "bic": -60264.10764822287,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 9.0,
+    "distribution": "weibull",
+    "fit_id": "ecoregion:Boreal Shield East/Eastern Boreal Shield/Central Laurentians|PICE.RUB",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "qc_pep",
+    "ks": 0.049396469555745504,
+    "limit_excluded_trees": 196,
+    "log_likelihood": 30136.303644127518,
+    "method": "two-stage",
+    "n_bins": 13,
+    "n_parameters": 3,
+    "n_plots": 31,
+    "n_trees": 225,
+    "parameters_json": "{\"a\": 1.5076207410234819, \"beta\": 13.091731733403375, \"s\": 1.8507771724546371}",
+    "spike_weight": null,
+    "support_upper_cm": 52.5,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.053588075405543806,
+    "b": 0.8662265264714272,
+    "bias_m": 0.15242516535494852,
+    "n": 100,
+    "rmse_m": 1.8009903909345872
+  },
+  "height_observations": 100,
+  "runtime_seconds": 57.68844985961914,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 54,
+    "coverage_n_trees": 421,
+    "end": 9069490,
+    "level": "ecoregion",
+    "species": "PICE.RUB",
+    "start": 9069069,
+    "stratum_id": "Boreal Shield East/Eastern Boreal Shield/Central Laurentians",
+    "stratum_name": "Central Laurentians"
+  },
+  "status": "ok"
+}

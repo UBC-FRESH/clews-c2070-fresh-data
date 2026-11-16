@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -1880346.205220355,
+      "aicc": -1880345.4779476277,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.014692740209092059,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -1881209.5970205278,
+      "aicc": -1881208.8697478005,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.022450977589493992,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -1871194.5384641802,
+      "aicc": -1871192.6029803092,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03637049386703384,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -1881209.5970205278,
+    "aicc": -1881208.8697478005,
+    "bic": -1881204.76426679,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Atlantic Maritime/Northumberland Lowlands/Maritime Lowlands|PICE.GLA",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot",
+    "ks": 0.022450977589493992,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 940607.7985102639,
+    "method": "two-stage",
+    "n_bins": 33,
+    "n_parameters": 3,
+    "n_plots": 394,
+    "n_trees": 3103,
+    "parameters_json": "{\"beta\": 7.056549385250391, \"p\": 1.3842994641571331, \"s\": 1.1422479177284917}",
+    "spike_weight": null,
+    "support_upper_cm": 93.00000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.2996173429097751,
+    "b": 0.905738458064636,
+    "bias_m": 0.09980464224833673,
+    "n": 695,
+    "rmse_m": 3.178616095488245
+  },
+  "height_observations": 695,
+  "runtime_seconds": 29.835021018981934,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 394,
+    "coverage_n_trees": 3103,
+    "end": 5785547,
+    "level": "ecoregion",
+    "species": "PICE.GLA",
+    "start": 5782444,
+    "stratum_id": "Atlantic Maritime/Northumberland Lowlands/Maritime Lowlands",
+    "stratum_name": "Maritime Lowlands"
+  },
+  "status": "ok"
+}

@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -156079.14093487946,
+      "aicc": -156067.14093487946,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.4482396595053841,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -157005.54295172906,
+      "aicc": -156993.54295172906,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.42403025691986174,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": -159827.6510250693,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3559025263829612,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -159309.7196647277,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.3662048681217332,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -157005.54295172906,
+    "aicc": -156993.54295172906,
+    "bic": -157006.16767332138,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Plains/Central Boreal Plains/Peace Lowland|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "high_ks",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.42403025691986174,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 78505.77147586453,
+    "method": "two-stage",
+    "n_bins": 5,
+    "n_parameters": 3,
+    "n_plots": 44,
+    "n_trees": 618,
+    "parameters_json": "{\"beta\": 1.682681393837199, \"p\": 2.5765942204689614, \"s\": 2.215266495981125}",
+    "spike_weight": null,
+    "support_upper_cm": 16.25,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.46266300238886104,
+    "b": 0.7920214549662775,
+    "bias_m": 0.09954117564472184,
+    "n": 618,
+    "rmse_m": 1.110928667491612
+  },
+  "height_observations": 618,
+  "runtime_seconds": 1.6758091449737549,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 44,
+    "coverage_n_trees": 618,
+    "end": 5175561,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5174943,
+    "stratum_id": "Boreal Plains/Central Boreal Plains/Peace Lowland",
+    "stratum_name": "Peace Lowland"
+  },
+  "status": "ok"
+}

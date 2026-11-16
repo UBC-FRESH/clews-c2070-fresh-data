@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -99056.44621025492,
+      "aicc": -99054.26439207309,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.11484458603662162,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -103221.09792160182,
+      "aicc": -103218.91610342,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.07676198792949596,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -104744.05883073412,
+      "aicc": -104737.39216406745,
+      "converged": true,
+      "distribution": "mix_weibull_2",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.03050650728270332,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -104756.61765117197,
+      "aicc": -104749.9509845053,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.02889955836484681,
+      "n_parameters": 5,
+      "selected": true,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -104756.61765117197,
+    "aicc": -104749.9509845053,
+    "bic": -104753.07740016645,
+    "component_names_json": "[\"gamma\", \"weibull\"]",
+    "component_weights_json": "[0.11921454910476408, 0.880785450895236]",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "mix_weibull_gamma",
+    "fit_id": "ecoregion:Boreal Cordillera/Northern Boreal Cordillera/Liard Basin|BROADLEAF",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.02889955836484681,
+    "limit_excluded_trees": 0,
+    "log_likelihood": 52383.308825585984,
+    "method": "truncated-em-moments",
+    "n_bins": 15,
+    "n_parameters": 5,
+    "n_plots": 46,
+    "n_trees": 383,
+    "parameters_json": "{\"components\": [{\"name\": \"gamma\", \"parameters\": {\"beta\": 0.34645678437531, \"p\": 74.94028472039288}, \"weight\": 0.11921454910476408}, {\"name\": \"weibull\", \"parameters\": {\"a\": 2.3163461127464697, \"beta\": 10.512835187243612}, \"weight\": 0.880785450895236}]}",
+    "spike_weight": null,
+    "support_upper_cm": 39.749999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.7054150305832808,
+    "b": 0.6795199700458142,
+    "bias_m": 0.2313568452111646,
+    "n": 320,
+    "rmse_m": 2.264750280043874
+  },
+  "height_observations": 320,
+  "runtime_seconds": 0.4235107898712158,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 46,
+    "coverage_n_trees": 383,
+    "end": 5405532,
+    "level": "ecoregion",
+    "species": "BROADLEAF",
+    "start": 5405149,
+    "stratum_id": "Boreal Cordillera/Northern Boreal Cordillera/Liard Basin",
+    "stratum_name": "Liard Basin"
+  },
+  "status": "ok"
+}

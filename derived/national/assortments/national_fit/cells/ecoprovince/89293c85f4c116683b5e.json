@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -455870.5657356269,
+      "aicc": -455869.9803697732,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09346537555772018,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -460337.8282026797,
+      "aicc": -460337.242836826,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08763242867154233,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -438706.971242993,
+      "aicc": -438705.4327814546,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.12457733309276364,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -460337.8282026797,
+    "aicc": -460337.242836826,
+    "bic": -460332.40821521037,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoprovince:Montane Cordillera/Central Montane Cordillera|CONIFEROUS",
+    "fit_level": "ecoprovince",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.08763242867154233,
+    "limit_excluded_trees": 62,
+    "log_likelihood": 230171.91410133985,
+    "method": "two-stage",
+    "n_bins": 28,
+    "n_parameters": 3,
+    "n_plots": 63,
+    "n_trees": 306,
+    "parameters_json": "{\"beta\": 4.4464804605169155, \"p\": 2.5719940776286188, \"s\": 0.9859724674579614}",
+    "spike_weight": null,
+    "support_upper_cm": 114.62499618530273,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.24201717179827625,
+    "b": 0.7049983192791982,
+    "bias_m": 0.8739205632066382,
+    "n": 287,
+    "rmse_m": 2.9096288425071206
+  },
+  "height_observations": 287,
+  "runtime_seconds": 0.8062677383422852,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 96,
+    "coverage_n_trees": 372,
+    "end": 4205475,
+    "level": "ecoprovince",
+    "species": "CONIFEROUS",
+    "start": 4205107,
+    "stratum_id": "Montane Cordillera/Central Montane Cordillera",
+    "stratum_name": "Central Montane Cordillera"
+  },
+  "status": "ok"
+}

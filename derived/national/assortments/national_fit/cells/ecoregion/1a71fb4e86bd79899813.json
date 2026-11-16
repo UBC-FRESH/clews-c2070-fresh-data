@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -15977.625820368194,
+      "aicc": -15974.959153701528,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.08965968596642093,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -16555.121106151993,
+      "aicc": -16552.454439485326,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.050051226489285616,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -16555.121106151993,
+    "aicc": -16552.454439485326,
+    "bic": -16553.42625807961,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecoregion:Boreal Shield East/Newfoundland/Northern Penninsula|LARI.LAR",
+    "fit_level": "ecoregion",
+    "fit_quality_flag": "ok",
+    "fit_sources": "magplot;magplot_wfs",
+    "ks": 0.050051226489285616,
+    "limit_excluded_trees": 106,
+    "log_likelihood": 8280.560553075997,
+    "method": "two-stage",
+    "n_bins": 12,
+    "n_parameters": 3,
+    "n_plots": 6,
+    "n_trees": 93,
+    "parameters_json": "{\"beta\": 1.959157272271455, \"p\": 6.529548241727194, \"s\": 0.9776477350860658}",
+    "spike_weight": null,
+    "support_upper_cm": 34.749999046325684,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.22582392031240292,
+    "b": 0.723282008870078,
+    "bias_m": 0.479302723471029,
+    "n": 171,
+    "rmse_m": 1.8789380966314644
+  },
+  "height_observations": 171,
+  "runtime_seconds": 1.060795783996582,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 11,
+    "coverage_n_trees": 199,
+    "end": 10218251,
+    "level": "ecoregion",
+    "species": "LARI.LAR",
+    "start": 10218052,
+    "stratum_id": "Boreal Shield East/Newfoundland/Northern Penninsula",
+    "stratum_name": "Northern Penninsula"
+  },
+  "status": "ok"
+}

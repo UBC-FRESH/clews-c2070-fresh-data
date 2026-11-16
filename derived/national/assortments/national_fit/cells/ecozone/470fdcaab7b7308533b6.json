@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -466520859.32639605,
+      "aicc": -466520859.1247154,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10302059746685754,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -468650251.9004858,
+      "aicc": -468650251.69880515,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.10674152117180102,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_gamma",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -468650251.9004858,
+    "aicc": -468650251.69880515,
+    "bic": -468650243.46393275,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Pacific Maritime|TSUG.HET",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.10674152117180102,
+    "limit_excluded_trees": 10889,
+    "log_likelihood": 234325128.9502429,
+    "method": "two-stage",
+    "n_bins": 92,
+    "n_parameters": 3,
+    "n_plots": 7830,
+    "n_trees": 793795,
+    "parameters_json": "{\"beta\": 5.250791197578052, \"p\": 2.377256932235848, \"s\": 0.9301807011072935}",
+    "spike_weight": null,
+    "support_upper_cm": 200.0,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": -0.6504981496224391,
+    "b": 1.1617369257830252,
+    "bias_m": -0.40118147806978904,
+    "n": 791712,
+    "rmse_m": 6.915703561033254
+  },
+  "height_observations": 791712,
+  "runtime_seconds": 3.1275885105133057,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 11815,
+    "coverage_n_trees": 805363,
+    "end": 804684,
+    "level": "ecozone",
+    "species": "TSUG.HET",
+    "start": 0,
+    "stratum_id": "Pacific Maritime",
+    "stratum_name": "Pacific Maritime"
+  },
+  "status": "ok"
+}

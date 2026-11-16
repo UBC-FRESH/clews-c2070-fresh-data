@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "aic": -14471175.311566066,
+      "aicc": -14471174.711566066,
+      "converged": true,
+      "distribution": "weibull",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09103131808313181,
+      "n_parameters": 3,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -14614514.281235319,
+      "aicc": -14614513.681235319,
+      "converged": true,
+      "distribution": "gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.06987721364694233,
+      "n_parameters": 3,
+      "selected": true,
+      "spike_weight": null
+    },
+    {
+      "aic": null,
+      "aicc": null,
+      "converged": false,
+      "distribution": "mix_weibull_2",
+      "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+      "fit_status": "failed",
+      "ks": null,
+      "n_parameters": 0,
+      "selected": false,
+      "spike_weight": null
+    },
+    {
+      "aic": -14395809.073084142,
+      "aicc": -14395807.494136773,
+      "converged": true,
+      "distribution": "mix_weibull_gamma",
+      "error": null,
+      "fit_status": "ok",
+      "ks": 0.09709482693447813,
+      "n_parameters": 5,
+      "selected": false,
+      "spike_weight": null
+    }
+  ],
+  "error": null,
+  "fit": {
+    "aic": -14614514.281235319,
+    "aicc": -14614513.681235319,
+    "bic": -14614508.928666417,
+    "component_names_json": "",
+    "component_weights_json": "",
+    "converged": true,
+    "dbh_limit_cm": 2.0,
+    "distribution": "gamma",
+    "fit_id": "ecozone:Taiga Plains|POPU.TRE",
+    "fit_level": "ecozone",
+    "fit_quality_flag": "ok",
+    "fit_sources": "faib_psp;magplot",
+    "ks": 0.06987721364694233,
+    "limit_excluded_trees": 553,
+    "log_likelihood": 7307260.140617659,
+    "method": "two-stage",
+    "n_bins": 38,
+    "n_parameters": 3,
+    "n_plots": 588,
+    "n_trees": 25771,
+    "parameters_json": "{\"beta\": 4.151095806926197, \"p\": 2.792248821542674, \"s\": 0.9567480410525832}",
+    "spike_weight": null,
+    "support_upper_cm": 110.50000190734863,
+    "synthesis_compatible": true
+  },
+  "fit_config_hash": "5e4f975187efeaef",
+  "height": {
+    "a": 0.5927849434511494,
+    "b": 0.8197523747330933,
+    "bias_m": -0.0834192035922748,
+    "n": 25353,
+    "rmse_m": 3.1893377563740835
+  },
+  "height_observations": 25353,
+  "runtime_seconds": 1.396195650100708,
+  "schema_version": 2,
+  "spec": {
+    "coverage_class": "direct_fit",
+    "coverage_n_plots": 760,
+    "coverage_n_trees": 26327,
+    "end": 5974356,
+    "level": "ecozone",
+    "species": "POPU.TRE",
+    "start": 5948032,
+    "stratum_id": "Taiga Plains",
+    "stratum_name": "Taiga Plains"
+  },
+  "status": "ok"
+}
