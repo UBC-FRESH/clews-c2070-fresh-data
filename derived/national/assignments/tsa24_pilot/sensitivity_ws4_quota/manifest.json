@@ -1,0 +1,672 @@
+{
+  "assumptions": [
+    {
+      "assumption": "TSA24/BC Stage A pilot supply area is a diagnostic scale, not a TSA supply estimate.",
+      "category": "scope",
+      "evidence": "diagnostic",
+      "impact": "All volumes scale linearly with this value.",
+      "unit": "ha",
+      "value": 306047.3
+    },
+    {
+      "assumption": "Assortment matrix rows are per-hectare values; the pilot multiplies by the diagnostic area.",
+      "category": "supply",
+      "evidence": "derived_tsa24_assortment_matrix",
+      "impact": "Base volume is area x matrix volume; no additional yield expansion.",
+      "unit": "m3/ha",
+      "value": 311.6
+    },
+    {
+      "assumption": "Roadside cost is the assortment matrix price_cad_m3 proxy, not a harvest/stumpage cost.",
+      "category": "supply",
+      "evidence": "derived_tsa24_assortment_matrix",
+      "impact": "Changes the profit margin; transport and processing remain explicit.",
+      "unit": "CAD/m3",
+      "value": ""
+    },
+    {
+      "assumption": "Residue volume uses the ledger 0.45 ODT/m3 basic density and 0.45 wet-basis moisture.",
+      "category": "residue",
+      "evidence": "tsa24_residue_ledger_assumption",
+      "impact": "Residue ODT is volume x 0.45; matrix species-specific residue_odt is not used.",
+      "unit": "ODT/m3",
+      "value": 0.45
+    },
+    {
+      "assumption": "Log moisture is set to the ledger green assumption because the matrix has no log moisture field.",
+      "category": "log_moisture",
+      "evidence": "diagnostic",
+      "impact": "Only relevant if a moisture blend limit is enabled.",
+      "unit": "wet_basis",
+      "value": 0.45
+    },
+    {
+      "assumption": "m3/y infeed is used directly; odt/y infeed is converted at 1/0.45 m3 per ODT; bdmt/y is rejected.",
+      "category": "facility_capacity",
+      "evidence": "archive_parsed_processing_lines;ledger_density",
+      "impact": "PAP bdmt/y lines are duplicate alternatives of the m3/y log lines and are excluded.",
+      "unit": "m3/ODT",
+      "value": 2.2222222222222223
+    },
+    {
+      "assumption": "Facility nameplate is the sum of the maximum normalized capacity per primary product; feedstock alternatives are not additive.",
+      "category": "facility_capacity",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "Prevents counting the same FFCM line once per feedstock alternative.",
+      "unit": "m3/y",
+      "value": ""
+    },
+    {
+      "assumption": "Operating cost is converted to CAD/m3 infeed with the same line's outfeed ratio when the archive unit is per mbf, kwh, admt, odt, or t.",
+      "category": "processing_cost",
+      "evidence": "archive_parsed_processing_line_flows",
+      "impact": "No global mbf/kwh/admt conversion is assumed.",
+      "unit": "CAD/m3",
+      "value": ""
+    },
+    {
+      "assumption": "Product revenue uses parsed commodity prices and each line's outfeed mix.",
+      "category": "revenue",
+      "evidence": "archive_parsed_commodities;processing_line_flows",
+      "impact": "Mass prices are applied to odt/admt outfeed with an explicit flag.",
+      "unit": "CAD/m3",
+      "value": ""
+    },
+    {
+      "assumption": "The TSA24 supply node has no archive route to an FFCM transload hub; a 150 km access leg is added to the minimum facility-to-TL road distance.",
+      "category": "transport",
+      "evidence": "diagnostic",
+      "impact": "This is the primary transport uncertainty; it is not a Euclidean estimate.",
+      "unit": "km",
+      "value": 150.0
+    },
+    {
+      "assumption": "Road cost uses BC_logging_truck for logs and BC_residue_truck for residue, with archive fuel and operating rates.",
+      "category": "transport",
+      "evidence": "archive_parsed_transporters;transporter_materials",
+      "impact": "No transload cost is applied because the diagnostic path is direct road.",
+      "unit": "CAD/m3-km",
+      "value": 0.056196031959508314
+    },
+    {
+      "assumption": "FFCM route capacity is absent from the parsed route table; pilot transport links are uncapped.",
+      "category": "transport",
+      "evidence": "diagnostic",
+      "impact": "Add route capacity before interpreting congestion or rail/water limits.",
+      "unit": "m3",
+      "value": ""
+    },
+    {
+      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate.",
+      "category": "contracts",
+      "evidence": "diagnostic_no_populated_contract_table",
+      "impact": "Contract compliance is reported but does not constrain the base pilot.",
+      "unit": "m3",
+      "value": ""
+    },
+    {
+      "assumption": "Unassigned supply carries a diagnostic penalty so that feasible supply is not silently dropped.",
+      "category": "objective",
+      "evidence": "diagnostic",
+      "impact": "The penalty is reported as a separate objective component.",
+      "unit": "CAD/m3",
+      "value": 1000.0
+    },
+    {
+      "assumption": "Assortment sorts are dimension-only; no BC official grade equivalence is claimed.",
+      "category": "grade",
+      "evidence": "derived_tsa24_assortment_matrix",
+      "impact": "Grade eligibility is a feedstock-class/product screen, not a grade-quality test.",
+      "unit": "grade",
+      "value": ""
+    },
+    {
+      "assumption": "MKRF is not used anywhere in this pilot.",
+      "category": "scope",
+      "evidence": "scope_rule",
+      "impact": "No MKRF input or output is read or written.",
+      "unit": "n/a",
+      "value": ""
+    },
+    {
+      "assumption": "BC-PAP-179 BC-PAP-179-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "1267354.2"
+    },
+    {
+      "assumption": "BC-PAP-589 BC-PAP-589-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "846764.9"
+    },
+    {
+      "assumption": "BC-PAP-589 BC-PAP-589-3 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "355195.8"
+    },
+    {
+      "assumption": "BC-PAP-511 BC-PAP-511-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "1399311.8"
+    },
+    {
+      "assumption": "BC-PAP-679 BC-PAP-679-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "540441.1"
+    },
+    {
+      "assumption": "BC-PAP-731 BC-PAP-731-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "960894.1"
+    },
+    {
+      "assumption": "BC-PAP-590 BC-PAP-590-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "260697"
+    },
+    {
+      "assumption": "BC-PAP-938 BC-PAP-938-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "986352.2"
+    },
+    {
+      "assumption": "BC-PAP-591 BC-PAP-591-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "301246.6"
+    },
+    {
+      "assumption": "BC-PAP-957 BC-PAP-957-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "1291304"
+    },
+    {
+      "assumption": "BC-PAP-963 BC-PAP-963-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "1374533"
+    },
+    {
+      "assumption": "BC-PAP-964 BC-PAP-964-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "692002.5"
+    },
+    {
+      "assumption": "BC-PAP-1007 BC-PAP-1007-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "745178.7"
+    },
+    {
+      "assumption": "BC-PAP-1008 BC-PAP-1008-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "444620.7"
+    },
+    {
+      "assumption": "BC-PAP-1163 BC-PAP-1163-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "567102.7"
+    },
+    {
+      "assumption": "BC-PAP-1319 BC-PAP-1319-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
+      "category": "facility_screen",
+      "evidence": "archive_parsed_processing_lines",
+      "impact": "The line is not used for capacity or cost.",
+      "unit": "bdmt/y",
+      "value": "276704.7"
+    },
+    {
+      "assumption": "BC-BIO-4017 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-PAP-589 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-PAP-590 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-PAP-591 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-PAP-731 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1022 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1152 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1153 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1472 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-163 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1698 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1700 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1705 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1710 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1728 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1730 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-1735 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-200 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-308 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-309 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-363 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-456 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-609 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-810 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-915 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-916 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-920 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-935 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-945 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-992 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-994 rejected: rejected_no_ffcm_road_route_to_tl",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "unit": "km",
+      "value": ""
+    }
+  ],
+  "code_version": "0.1.0",
+  "config": {
+    "area_ha": 306047.3,
+    "diagnostic_access_km": 150.0,
+    "facility_classes": [
+      "BIO",
+      "PAP",
+      "PEL",
+      "SAW"
+    ],
+    "period": "2026",
+    "residue_density_odt_m3": 0.45,
+    "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
+    "target_agb_odt_ha": 204.7,
+    "target_volume_m3ha": 311.6,
+    "transport_rates": {
+      "bc_logging_truck_cost_per_km": 2.5906370733333333,
+      "bc_residue_truck_cost_per_km": 2.5906370733333333,
+      "log_cost_per_m3_km": 0.056196031959508314,
+      "log_truck_capacity_m3": 46.1,
+      "residue_cost_per_m3_km": 0.04663146732,
+      "residue_truck_capacity_bdt": 25.0
+    },
+    "unassigned_penalty_cad_m3": 1000.0
+  },
+  "counts": {
+    "assignment_row_count": 200,
+    "assignment_variable_count": 4334,
+    "contract_count": 161,
+    "facility_count": 161,
+    "facility_nameplate_m3_y": 91138248.63119508,
+    "grade_count": 5,
+    "moisture_limit_by_class": {},
+    "periods": [
+      "2026"
+    ],
+    "run_id": "tsa24_bc_stage_a_pilot_ws4_quota_v1",
+    "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
+    "supply_offer_count": 53,
+    "supply_volume_m3": 95364338.67999998,
+    "transport_link_count": 211,
+    "unassigned_penalty_cad_m3": 1000.0,
+    "unassigned_row_count": 7,
+    "unassigned_variable_count": 53
+  },
+  "generated_utc": "2026-11-16T08:43:07.375270+00:00",
+  "limitations": [
+    "1,000 ha base area is diagnostic, not a TSA24 supply estimate.",
+    "Assortment sorts are dimension-only; no BC official grade equivalence.",
+    "TSA24 access distance is a diagnostic 150 km leg; not Euclidean and not a production route.",
+    "Only BC SAW/PAP/PEL/BIO facilities are in scope.",
+    "bdmt/y capacity lines are rejected; PAP uses paired m3/y log lines.",
+    "Contracts are diagnostic min=0/max=nameplate; no populated contract data.",
+    "Transport links are road-only and uncapped; transload costs are not applied.",
+    "One period; no multi-period inventory dynamics.",
+    "No MKRF input or output is used."
+  ],
+  "outputs": {
+    "ASSIGNMENT_REPORT.md": {
+      "bytes": 15101,
+      "sha256": "98fe0235fa3ad2f60b53cd8b770696243277abdbd8de67b79d09e1b96ec982c9"
+    },
+    "assumptions.csv": {
+      "bytes": 12575,
+      "sha256": "202845b8b0f87f39e57690f5550a6dbb1e39c8925349bad80ca564579f36aeef"
+    },
+    "contract_compliance.csv": {
+      "bytes": 32282,
+      "sha256": "f326369a37fa2387d0437295a30b301211ed8ce2d5e85d9b611b67a2e80fe000"
+    },
+    "contracts.csv": {
+      "bytes": 29097,
+      "sha256": "0b5ae3dff27ecec61cb376c056ce6edff65eb6070b24ab478468d8c836687cdc"
+    },
+    "facility_assignment.csv": {
+      "bytes": 65716,
+      "sha256": "f108afe567df7b8113c4cf86bb6da5216d9797bd63f02e26995bcf827d5c54d8"
+    },
+    "facility_capacity.csv": {
+      "bytes": 17963,
+      "sha256": "1715dc19972b3a96b2c3c7d6c64db799989aafbbe2af01b6eada5a24f939815e"
+    },
+    "facility_grade_utilization.csv": {
+      "bytes": 19366,
+      "sha256": "0e32913c04319951d11f022fada05ac8f70a26e41c3f9ade5b722a5716272a98"
+    },
+    "facility_offers.csv": {
+      "bytes": 100522,
+      "sha256": "41f265d93c162e340eee5969e74e5c5f49ec9887383099fd9244b42fa86965c9"
+    },
+    "facility_utilization.csv": {
+      "bytes": 15811,
+      "sha256": "18d8555b9488b8e7fe09242ffcf53083fd6a1035cc48c172fea6914ddc193ee4"
+    },
+    "grades.csv": {
+      "bytes": 908,
+      "sha256": "587aea326f926a8919280a9955084754a0826e4ee95c8ea6e3e98a8eec49a1dc"
+    },
+    "line_screen.csv": {
+      "bytes": 66216,
+      "sha256": "40bbff6e53758ae539d01862644094f0b75a81d4984eb2a055b211cee55c8a28"
+    },
+    "objective_decomposition.csv": {
+      "bytes": 549,
+      "sha256": "c26fbc71d112673074db1bd28fdf580319656a7118ffafcf5a078ee3a3b28507"
+    },
+    "stage_b_supply_offer.csv": {
+      "bytes": 6881,
+      "sha256": "bbb007184c70f591cd439f335ec82b20119b42ce0698df65e785a09ac7c484fc"
+    },
+    "stage_b_technology.csv": {
+      "bytes": 27883,
+      "sha256": "2d89d259f2d663c67bc3116adda5c52aebb31fe02f0e039325b09ed8f36200d9"
+    },
+    "stage_b_transport_link.csv": {
+      "bytes": 14844,
+      "sha256": "4e6fff1ae52ca71abc64b1a52a4a33ec4f306168eb6f02558ed63fe851fbcb51"
+    },
+    "supply_offers.csv": {
+      "bytes": 15451,
+      "sha256": "2fc27ad27e35dc85bb69ecdbbbfda6db28d14d23f4b5f2d5d7700c597377412f"
+    },
+    "transport_links.csv": {
+      "bytes": 51420,
+      "sha256": "3d3c321e84fdefa4c46ff6f93e9292dc84792805c5119c751dde3fe259ee91cd"
+    },
+    "transport_screen.csv": {
+      "bytes": 12511,
+      "sha256": "e2b17c68676cbdd057a582768d6981c79ff7b547846cca8f52e0288fada348b8"
+    },
+    "unassigned_supply.csv": {
+      "bytes": 755,
+      "sha256": "d283319da8139635ed2c68ee8325646886a2959771587d2a38b77eb33913b3a2"
+    },
+    "validation_summary.json": {
+      "bytes": 24871,
+      "sha256": "f0335d9ef00f1262a7532603af3def5c0926b9e9cfa24d489c752f1720a1646d"
+    }
+  },
+  "pilot": "tsa24_bc_stage_a_facility_assignment",
+  "report": "ASSIGNMENT_REPORT.md",
+  "run": {
+    "objective_value_cad": -17611466710.14299,
+    "period": "2026",
+    "run_id": "tsa24_bc_stage_a_pilot_ws4_quota_v1",
+    "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
+    "solver": "PULP_CBC_CMD",
+    "solver_status": "Optimal",
+    "solver_version": "2.9.0"
+  },
+  "sensitivity_label": "ws4_quota_306047.3_ha_period_not_annual",
+  "source_hashes": {
+    "data/derived/national/assortments/tsa24_prototype/assortment_matrix.csv": "a4533314cbe6ad7bdb639f040925bb9bcbd5d205cc21ec7cf296da82851e48b0",
+    "data/derived/national/assortments/tsa24_prototype/residue_ledger.csv": "c98906728c46b3c07dfa978f7ef02792f5078bd184fc41631260afb0cddff601",
+    "data/derived/national/assortments/tsa24_prototype/target_stand.json": "dd6039911cb6e791eb8f19f0d03547117da96c337fb5a290bd5845fde74753ce",
+    "metadata/ffcm-archive/parsed/commodities.csv": "2169f411873ed781eaa70f09efc9a6858ddac03a48e08b5cd5b29ee456175015",
+    "metadata/ffcm-archive/parsed/facilities.csv": "87d8b97cb995af49ad56900e2b77c493cfb87212d8668c97e23d16e02b64e645",
+    "metadata/ffcm-archive/parsed/processing_line_flows.csv": "df6498046f88a70f3e90fee8d3b686e7031a5be583d5c818e39c8530d73953d3",
+    "metadata/ffcm-archive/parsed/processing_lines.csv": "7f98d21bdbbcea5be3c9a9e13b0c4c3e21af04f9b2cc119ef5e1dfec5ed69d3e",
+    "metadata/ffcm-archive/parsed/routes.csv": "5166249c58465fc45551cb934af1b8efc61091a531279285675ffb6923591b63",
+    "metadata/ffcm-archive/parsed/transporter_materials.csv": "2c02959d1b37d846775d8df0c85531556e83361450e6318f66cbd4c6e7136998",
+    "metadata/ffcm-archive/parsed/transporters.csv": "202622ff1e9d324bd9858f2bf3b8ba17b971450ad5f7085d75ec973966808504"
+  },
+  "status": "pass"
+}

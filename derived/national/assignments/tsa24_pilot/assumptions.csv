@@ -1,0 +1,64 @@
+category,assumption,value,unit,evidence,impact
+scope,"TSA24/BC Stage A pilot supply area is a diagnostic scale, not a TSA supply estimate.",1000.0,ha,diagnostic,All volumes scale linearly with this value.
+supply,Assortment matrix rows are per-hectare values; the pilot multiplies by the diagnostic area.,311.6,m3/ha,derived_tsa24_assortment_matrix,Base volume is area x matrix volume; no additional yield expansion.
+supply,"Roadside cost is the assortment matrix price_cad_m3 proxy, not a harvest/stumpage cost.",,CAD/m3,derived_tsa24_assortment_matrix,Changes the profit margin; transport and processing remain explicit.
+residue,Residue volume uses the ledger 0.45 ODT/m3 basic density and 0.45 wet-basis moisture.,0.45,ODT/m3,tsa24_residue_ledger_assumption,Residue ODT is volume x 0.45; matrix species-specific residue_odt is not used.
+log_moisture,Log moisture is set to the ledger green assumption because the matrix has no log moisture field.,0.45,wet_basis,diagnostic,Only relevant if a moisture blend limit is enabled.
+facility_capacity,m3/y infeed is used directly; odt/y infeed is converted at 1/0.45 m3 per ODT; bdmt/y is rejected.,2.2222222222222223,m3/ODT,archive_parsed_processing_lines;ledger_density,PAP bdmt/y lines are duplicate alternatives of the m3/y log lines and are excluded.
+facility_capacity,Facility nameplate is the sum of the maximum normalized capacity per primary product; feedstock alternatives are not additive.,,m3/y,archive_parsed_processing_lines,Prevents counting the same FFCM line once per feedstock alternative.
+processing_cost,"Operating cost is converted to CAD/m3 infeed with the same line's outfeed ratio when the archive unit is per mbf, kwh, admt, odt, or t.",,CAD/m3,archive_parsed_processing_line_flows,No global mbf/kwh/admt conversion is assumed.
+revenue,Product revenue uses parsed commodity prices and each line's outfeed mix.,,CAD/m3,archive_parsed_commodities;processing_line_flows,Mass prices are applied to odt/admt outfeed with an explicit flag.
+transport,The TSA24 supply node has no archive route to an FFCM transload hub; a 150 km access leg is added to the minimum facility-to-TL road distance.,150.0,km,diagnostic,This is the primary transport uncertainty; it is not a Euclidean estimate.
+transport,"Road cost uses BC_logging_truck for logs and BC_residue_truck for residue, with archive fuel and operating rates.",0.056196031959508314,CAD/m3-km,archive_parsed_transporters;transporter_materials,No transload cost is applied because the diagnostic path is direct road.
+transport,FFCM route capacity is absent from the parsed route table; pilot transport links are uncapped.,,m3,diagnostic,Add route capacity before interpreting congestion or rail/water limits.
+contracts,Contracts are diagnostic: min=0 and max=facility nameplate.,,m3,diagnostic_no_populated_contract_table,Contract compliance is reported but does not constrain the base pilot.
+objective,Unassigned supply carries a diagnostic penalty so that feasible supply is not silently dropped.,1000.0,CAD/m3,diagnostic,The penalty is reported as a separate objective component.
+grade,Assortment sorts are dimension-only; no BC official grade equivalence is claimed.,,grade,derived_tsa24_assortment_matrix,"Grade eligibility is a feedstock-class/product screen, not a grade-quality test."
+scope,MKRF is not used anywhere in this pilot.,,n/a,scope_rule,No MKRF input or output is read or written.
+facility_screen,"BC-PAP-179 BC-PAP-179-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",1267354.2,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-589 BC-PAP-589-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",846764.9,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-589 BC-PAP-589-3 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",355195.8,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-511 BC-PAP-511-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",1399311.8,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-679 BC-PAP-679-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",540441.1,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-731 BC-PAP-731-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",960894.1,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-590 BC-PAP-590-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",260697,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-938 BC-PAP-938-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",986352.2,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-591 BC-PAP-591-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",301246.6,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-957 BC-PAP-957-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",1291304,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-963 BC-PAP-963-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",1374533,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-964 BC-PAP-964-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",692002.5,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-1007 BC-PAP-1007-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",745178.7,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-1008 BC-PAP-1008-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",444620.7,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-1163 BC-PAP-1163-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",567102.7,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+facility_screen,"BC-PAP-1319 BC-PAP-1319-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",276704.7,bdmt/y,archive_parsed_processing_lines,The line is not used for capacity or cost.
+transport_screen,BC-BIO-4017 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-PAP-589 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-PAP-590 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-PAP-591 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-PAP-731 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1022 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1152 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1153 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1472 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-163 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1698 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1700 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1705 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1710 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1728 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1730 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-1735 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-200 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-308 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-309 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-363 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-456 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-609 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-810 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-915 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-916 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-920 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-935 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-945 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-992 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
+transport_screen,BC-SAW-994 rejected: rejected_no_ffcm_road_route_to_tl,,km,archive_parsed_routes,The facility has no defensible FFCM facility-to-transload road distance.
