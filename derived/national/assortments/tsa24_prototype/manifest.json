@@ -16,17 +16,21 @@
       "detail": "sum=1.000000000000",
       "pass": true
     },
+    "target_tph": {
+      "detail": "constraint volume_and_tph; achieved TPH 1463.550162 vs target 1463.550162",
+      "pass": true
+    },
     "target_volume": {
-      "detail": "achieved 311.600000 m3 vs target 311.600000 m3; scale 0.812673820",
+      "detail": "achieved 311.600000 m3 vs target 311.600000 m3; expansion scale 1.000000000; diameter scale 0.929782671",
       "pass": true
     },
     "volume_conservation": {
-      "detail": "logs 253.156976 + residue 58.443024 = 311.600000 m3 vs taper 311.600000 m3; error 0 m3",
+      "detail": "logs 240.735518 + residue 70.864482 = 311.600000 m3 vs taper 311.600000 m3; error 0 m3",
       "pass": true
     }
   },
   "code": {
-    "data_commit": "b8957740e3d0dcc56e3d53f40eb2bd6a69a9cec4",
+    "data_commit": "4f03dcd0bb94a87fdcdcaf9520cd5ed0e5d6dbe6",
     "modules": [
       "distributions.py",
       "mixtures.py",
@@ -38,7 +42,7 @@
       "validate_tsa24.py"
     ],
     "package": "workflows.national.assortments",
-    "parent_commit": "df466393d3f22a97044bca7427e2a5519a70ceff"
+    "parent_commit": "75014b91a668192e87e3edc4f456f7b2ac1d008b"
   },
   "config": {
     "age": 100.0,
@@ -47,7 +51,7 @@
       120.0
     ],
     "au_id": 23000,
-    "baseline_fits": "data HEAD:derived/national/assortments/tsa24_prototype/distribution_fits.csv (pre-spike)",
+    "baseline_fits": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/tsa24_prototype/distribution_fits.csv",
     "basic_density_table": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/bucking/rules/bc_basic_density.csv",
     "bin_width_cm": 2.0,
     "chip_yield_fraction": 0.9,
@@ -124,10 +128,29 @@
       "selection_aic_margin": 2.0,
       "spike_location": "dbh_limit",
       "tail_support": "first_bin_upper",
-      "unconstrained_rule": "unconstrained spike tails are synthesis-eligible on the finite fitted support and are never extrapolated beyond support_upper"
+      "unconstrained_rule": "unconstrained spike tails are audit-only diagnostics and are never synthesis-eligible because their untruncated mean can be infinite"
+    },
+    "synthesis_scaling": {
+      "diameter_scale_bracket": [
+        0.1,
+        10.0
+      ],
+      "diameter_scale_expanded_bracket": [
+        0.01,
+        25.0
+      ],
+      "expansion_factors": "target_tph * relative_weight / sum(relative_weight)",
+      "failure_rule": "expand bracket once, then fail loudly",
+      "height_recomputed_from_scaled_dbh": true,
+      "mode": "volume_and_tph",
+      "root_finder": "scipy.optimize.brentq",
+      "root_rtol": 1e-14,
+      "root_xtol": 1e-12,
+      "target_tph_source": "BTC managed_au_curves.csv",
+      "target_volume_source": "BTC managed_au_curves.csv"
     }
   },
-  "generated_utc": "2026-11-16T02:53:11.954240+00:00",
+  "generated_utc": "2026-11-16T04:43:42.633309+00:00",
   "inputs": {
     "btc_biomass_curves": {
       "bytes": 109243,
@@ -219,43 +242,44 @@
     "Assortment sorts are dimension-only; no official BC grade is assigned.",
     "BTC grade shares are context only.",
     "Fail-closed on unexpected git deletions.",
+    "Expansion factors are fixed to the BTC target TPH and a positive diameter multiplier is solved by a bracketed root search so the taper total still equals the BTC target volume; height is recomputed from the scaled DBH.",
     "Weibull-containing mixtures are fitted on the left-truncated grouped support; new-family unstable fits are reported but not selected, while the legacy two-gamma fallback may remain selected and is flagged.",
-    "Spike families are attempted only when the first DBH bin exceeds the documented share or the best simple fit leaves a high KS. The spike carries the first bin and the continuous tail starts at the first bin upper edge; the spike weight is an AIC parameter and does not set the volume scale. Unconstrained spike tails are eligible only on the finite fitted support and are never extrapolated. Constrained spike tails use a bounded grouped MLE (shape >= 1, scale >= 0.1 cm); a fit at any bound is reported as boundary_reject and is not selected."
+    "Spike families are attempted only when the first DBH bin exceeds the documented share or the best simple fit leaves a high KS. The spike carries the first bin and the continuous tail starts at the first bin upper edge; the spike weight is an AIC parameter and does not set the volume scale. Unconstrained spike rows are audit-only and are never synthesis-eligible because their untruncated tail mean can be infinite. Constrained spike tails use a bounded grouped MLE (shape >= 1, scale >= 0.1 cm); a fit at any bound is reported as boundary_reject and is not selected."
   ],
   "outputs": {
     "VALIDATION_REPORT.md": {
-      "bytes": 22198,
+      "bytes": 19773,
       "label": "VALIDATION_REPORT.md",
       "path": "data/derived/national/assortments/tsa24_prototype/VALIDATION_REPORT.md",
-      "sha256": "af400b1a5c1c2d185235dd4b8e7daefa914d4b1f3c3769d0fb6b5caf7373589b",
+      "sha256": "0e4e21dcc910c03d361cdd77fee5ca5067858a34402359b14acf7194554e4e67",
       "status": "present"
     },
     "assortment_matrix.csv": {
-      "bytes": 39009,
+      "bytes": 34784,
       "label": "assortment_matrix.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/assortment_matrix.csv",
-      "sha256": "3f0aacee32782908a22a046dc7d72b742b01952a3cbf5eb81bfc4b9f7601be9c",
+      "sha256": "a4533314cbe6ad7bdb639f040925bb9bcbd5d205cc21ec7cf296da82851e48b0",
       "status": "present"
     },
     "btc_grade_proxy.csv": {
-      "bytes": 1800,
+      "bytes": 1799,
       "label": "btc_grade_proxy.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/btc_grade_proxy.csv",
-      "sha256": "a8c15bedba332b2be181ad85a1a679cde45baee8b499818252b45b89af221213",
+      "sha256": "8a91c47726b548482595e57feb0fe66f273e873cbdcb77bd2b11f1e0e8ba90ef",
       "status": "present"
     },
     "bucked_logs.csv": {
-      "bytes": 169308,
+      "bytes": 126235,
       "label": "bucked_logs.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/bucked_logs.csv",
-      "sha256": "c2a01d5507906df99618a098ea7727dc849a54032ec52547b2db34205d564972",
+      "sha256": "5706e516a83485dde3d31508c245613cef11f3538cb8d69e984218099fe2c6a1",
       "status": "present"
     },
     "dbh_mixture_comparison.csv": {
-      "bytes": 102608,
+      "bytes": 104577,
       "label": "dbh_mixture_comparison.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/dbh_mixture_comparison.csv",
-      "sha256": "8041492b87b9f0cae4b4cfe8f7b92bab400f7a1d094fef495add6fe955ba52cf",
+      "sha256": "1514ad54cbfa208faf5fdb1a15035a50569405f472c7eeb6bc32e50176674cda",
       "status": "present"
     },
     "dbh_validation.csv": {
@@ -266,10 +290,10 @@
       "status": "present"
     },
     "distribution_fits.csv": {
-      "bytes": 796023,
+      "bytes": 795836,
       "label": "distribution_fits.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/distribution_fits.csv",
-      "sha256": "cbb62e7037812bb3de1c124453bd1976058274f3bbf2f65738d0b69cdbfa2bc4",
+      "sha256": "51d04e472ae04fa62e6ed0d79f25669594ace01eae2cb9da8d136291bf1f1d24",
       "status": "present"
     },
     "height_models.csv": {
@@ -287,10 +311,10 @@
       "status": "present"
     },
     "residue_ledger.csv": {
-      "bytes": 370205,
+      "bytes": 369682,
       "label": "residue_ledger.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/residue_ledger.csv",
-      "sha256": "24fcede45896601c224947abcacc5b122679af34940e7efd3c0763bb8cd65715",
+      "sha256": "c98906728c46b3c07dfa978f7ef02792f5078bd184fc41631260afb0cddff601",
       "status": "present"
     },
     "species_composition.csv": {
@@ -301,28 +325,28 @@
       "status": "present"
     },
     "synthetic_trees.csv": {
-      "bytes": 248539,
+      "bytes": 283450,
       "label": "synthetic_trees.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/synthetic_trees.csv",
-      "sha256": "2944d4f3aeb7b9737185bf96ed079a0cd092af71693a05620499b704bd1300d2",
+      "sha256": "0e72435391b7df1d9997f7fb503e86da45f176222ed0f891bb3161b080fc23d7",
       "status": "present"
     },
     "target_stand.json": {
-      "bytes": 1389,
+      "bytes": 1425,
       "label": "target_stand.json",
       "path": "data/derived/national/assortments/tsa24_prototype/target_stand.json",
-      "sha256": "7d543f1603a97e9b014dd073b23b85249d58d67c08d7b5a7e83409b9f63bbfb8",
+      "sha256": "dd6039911cb6e791eb8f19f0d03547117da96c337fb5a290bd5845fde74753ce",
       "status": "present"
     },
     "validation_summary.json": {
-      "bytes": 983978,
+      "bytes": 981376,
       "label": "validation_summary.json",
       "path": "data/derived/national/assortments/tsa24_prototype/validation_summary.json",
-      "sha256": "d8f3e5003a1c6ec07e1f374eda82aaf3f5f9201de1dc0733870d1d0ece003228",
+      "sha256": "f29c75b5b3b47ea6a8735593f429c96b033499830b939026a42cd0b2d060fdb6",
       "status": "present"
     }
   },
   "pilot": "tsa24_assortment_disaggregation",
   "status": "prototype_complete",
-  "version": "0.3.0"
+  "version": "0.4.0"
 }
