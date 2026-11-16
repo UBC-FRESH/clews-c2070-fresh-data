@@ -57,10 +57,10 @@ General all-age fits: **68** strata (`stratum_fit` 48, `pooled_fit` 20, `default
 
 ### 4b. Mixture candidates and previous-run comparison
 
-- Switches: **14** of **73** matched strata (spike **14**; new finite mixtures **0**).
-- Improved by >2 AIC: **13**; worse by >2 AIC: **1**; mixtures worse than the previous selected model: **16**.
+- Switches: **15** of **75** matched strata (spike **15**; new finite mixtures **0**).
+- Improved by >2 AIC: **14**; worse by >2 AIC: **1**; mixtures worse than the previous selected model: **17**.
 - Unstable mixture fits reported: **99**; new-family unstable fits are not selected; degenerate rejections: **28**.
-- High-KS (>0.20) selected strata before: **2**, after: **0**.
+- High-KS (>0.20) selected strata before: **3**, after: **0**.
 
 | family | attempted | ok | converged | selected |
 |---|---:|---:|---:|---:|
@@ -68,7 +68,7 @@ General all-age fits: **68** strata (`stratum_fit` 48, `pooled_fit` 20, `default
 | mix_weibull_2 | 75 | 61 | 51 | 10 |
 | mix_weibull_gamma | 75 | 64 | 60 | 27 |
 | mix_weibull_3 | 3 | 0 | 0 | 0 |
-| spike_weibull | 29 | 29 | 29 | 5 |
+| spike_weibull | 29 | 29 | 29 | 6 |
 | spike_gamma | 29 | 29 | 29 | 1 |
 | spike_weibull_constrained | 29 | 16 | 29 | 4 |
 | spike_gamma_constrained | 29 | 14 | 29 | 4 |
@@ -87,6 +87,7 @@ General all-age fits: **68** strata (`stratum_fit` 48, `pooled_fit` 20, `default
 | ecoprovince:Northern Montane Cordillera|EP | weibull | weibull | 0.0 | 0.0 | 0.026 | 0.026 | mix_weibull_2 | 1,756.6 |
 | ecodistrict:Hart Ranges|SW | mixture | spike_weibull | 8.6 | 7.6 | 0.046 | 0.023 | spike_weibull | 8.6 |
 | ecoregion:Fraser Basin|AC | mix_weibull_gamma | spike_weibull_constrained | -16.7 | -18.1 | 0.041 | 0.022 | spike_weibull_constrained | -16.7 |
+| ecozone:Montane Cordillera|CW | mixture | spike_weibull | -795.2 | -796.6 | 0.221 | 0.034 | spike_weibull | -795.2 |
 | ecodistrict:McGregor Plateau|EP | mixture | mixture | 0.0 | 0.0 | 0.023 | 0.023 | mix_weibull_gamma | 54.4 |
 | ecodistrict:McGregor Plateau|HW | mixture | mixture | 0.0 | 0.0 | 0.082 | 0.082 | mix_weibull_gamma | 156.3 |
 | ecodistrict:McGregor Plateau|PL | mixture | mixture | 0.0 | 0.0 | 0.026 | 0.026 | mix_weibull_gamma | 33.0 |
@@ -101,6 +102,7 @@ General all-age fits: **68** strata (`stratum_fit` 48, `pooled_fit` 20, `default
 | ecodistrict:Northern Columbia Mountains|SE | mixture | mixture | 0.0 | 0.0 | 0.098 | 0.098 | spike_weibull_constrained | 208.2 |
 | ecodistrict:Upper Fraser Trench|BL | gamma | gamma | 0.0 | 0.0 | 0.022 | 0.022 | mix_weibull_gamma | 234.6 |
 | ecoprovince:Columbia Montane Cordillera|CW | mixture | spike_weibull | -271.7 | -273.2 | 0.217 | 0.036 | spike_weibull | -271.7 |
+| ecozone:Montane Cordillera|EP | weibull | weibull | 0.0 | 0.0 | 0.023 | 0.023 | mix_weibull_2 | 1,859.3 |
 | ecodistrict:Upper Fraser Trench|SW | gamma | spike_weibull | -20.4 | -20.4 | 0.062 | 0.046 | spike_weibull | -20.4 |
 | ecodistrict:Nechako Lowland|AT | mixture | mixture | 0.0 | 0.0 | 0.013 | 0.013 | mix_weibull_2 | 1,942.6 |
 | ecodistrict:Nechako Lowland|BL | mix_weibull_2 | spike_weibull_constrained | -389.9 | -391.7 | 0.023 | 0.010 | spike_weibull_constrained | -389.9 |
@@ -109,7 +111,7 @@ The new families are fitted by a left-truncated EM that delegates each component
 
 ### 4c. Spike (first-bin) mixtures
 
-- Spike families are attempted only when the first 2 cm bin carries more than **20%** of the expansion-factor tally, or the best single-component KS exceeds **0.15**. Attempted fits: **116** across four families (**58** constrained); constrained boundary rejects: **28**; selected fits: **14** (**14** unique `scope`/`fit_id` pairs).
+- Spike families are attempted only when the first 2 cm bin carries more than **20%** of the expansion-factor tally, or the best single-component KS exceeds **0.15**. Attempted fits: **116** across four families (**58** constrained); constrained boundary rejects: **28**; selected fits: **15** (**14** unique `scope`/`fit_id` pairs).
 - The spike is a point mass at the plot DBH limit that carries the first bin; the continuous Weibull/gamma tail is left-truncated at the first bin upper edge. The spike weight is the first-bin share (the disjoint-support multinomial MLE), counts as one AIC parameter, and is sampled uniformly inside the first bin so synthesis keeps a physical diameter. The spike never sets the volume scale.
 - Constrained `spike_weibull_constrained`/`spike_gamma_constrained` tails are fitted by a bounded grouped MLE on the bins above the first bin, with shape >= 1 and scale >= 0.1 cm. A constrained fit whose tail parameters sit on any declared bound is reported as `boundary_reject` in `distribution_fits.csv` and is never selected.
 - Unconstrained `spike_weibull`/`spike_gamma` rows are also synthesis-eligible when valid. Their tails can reach the two-stage scale floor with a Weibull shape below one, so the *untruncated* mean can be infinite; `sample_spike_mixture` always draws on the finite fitted support `(first_bin_upper, support_upper]`, and the tail must not be extrapolated beyond `support_upper`.
@@ -134,14 +136,14 @@ The new families are fitted by a left-truncated EM that delegates each component
 | ecodistrict:Hart Ranges|BL | spike_gamma_constrained | 0.3047 | w=0.3047, p=1.0000, beta=7.1741 | -685,312.4 | 0.0633 | p |
 | ecozone:Montane Cordillera|CW | spike_weibull_constrained | 0.6573 | w=0.6573, a=1.0000, beta=6.8038 | -98,533.4 | 0.0936 | a |
 | ecozone:Montane Cordillera|CW | spike_gamma_constrained | 0.6573 | w=0.6573, p=1.0000, beta=6.8038 | -98,533.4 | 0.0936 | p |
-| ecozone:Montane Cordillera|CW | spike_weibull_constrained | 0.6573 | w=0.6573, a=1.0000, beta=6.8038 | -98,533.4 | 0.0936 | a |
-| ecozone:Montane Cordillera|CW | spike_gamma_constrained | 0.6573 | w=0.6573, p=1.0000, beta=6.8038 | -98,533.4 | 0.0936 | p |
 | ecodistrict:Hart Ranges|HW | spike_weibull_constrained | 0.2100 | w=0.2100, a=1.0000, beta=6.3700 | -5,566.9 | 0.0718 | a |
 | ecodistrict:Hart Ranges|HW | spike_gamma_constrained | 0.2100 | w=0.2100, p=1.0000, beta=6.3700 | -5,566.9 | 0.0718 | p |
 | ecodistrict:Hart Ranges|SW | spike_weibull_constrained | 0.2186 | w=0.2186, a=1.0000, beta=8.0902 | -217,412.6 | 0.1140 | a |
 | ecodistrict:Hart Ranges|SW | spike_gamma_constrained | 0.2186 | w=0.2186, p=1.0000, beta=8.0902 | -217,412.6 | 0.1140 | p |
 | ecodistrict:McGregor Plateau|BL | spike_weibull_constrained | 0.2128 | w=0.2128, a=1.0000, beta=9.3576 | -2,302,946.9 | 0.0451 | a |
 | ecodistrict:McGregor Plateau|BL | spike_gamma_constrained | 0.2128 | w=0.2128, p=1.0000, beta=9.3576 | -2,302,946.9 | 0.0451 | p |
+| ecozone:Montane Cordillera|CW | spike_weibull_constrained | 0.6573 | w=0.6573, a=1.0000, beta=6.8038 | -98,533.4 | 0.0936 | a |
+| ecozone:Montane Cordillera|CW | spike_gamma_constrained | 0.6573 | w=0.6573, p=1.0000, beta=6.8038 | -98,533.4 | 0.0936 | p |
 | ecodistrict:McGregor Plateau|HW | spike_weibull_constrained | 0.2688 | w=0.2688, a=1.0000, beta=5.2691 | -133,791.2 | 0.0641 | a |
 | ecodistrict:McGregor Plateau|HW | spike_gamma_constrained | 0.2688 | w=0.2688, p=1.0000, beta=5.2691 | -133,791.2 | 0.0641 | p |
 | ecodistrict:McGregor Plateau|SW | spike_weibull_constrained | 0.2097 | w=0.2097, a=1.0000, beta=10.9915 | -2,574,864.6 | 0.0471 | a |

@@ -1,10 +1,10 @@
 {
   "artifacts": {
     "VALIDATION_REPORT.md": {
-      "bytes": 21971,
+      "bytes": 22198,
       "label": "VALIDATION_REPORT.md",
       "path": "data/derived/national/assortments/tsa24_prototype/VALIDATION_REPORT.md",
-      "sha256": "ac8c6dbbb49c0c0ff60acb12359a77a2c697b663441f118756c3d1f754ab6a46",
+      "sha256": "af400b1a5c1c2d185235dd4b8e7daefa914d4b1f3c3769d0fb6b5caf7373589b",
       "status": "present"
     },
     "assortment_matrix.csv": {
@@ -29,10 +29,10 @@
       "status": "present"
     },
     "dbh_mixture_comparison.csv": {
-      "bytes": 101552,
+      "bytes": 102608,
       "label": "dbh_mixture_comparison.csv",
       "path": "data/derived/national/assortments/tsa24_prototype/dbh_mixture_comparison.csv",
-      "sha256": "f029375b609f9ff3ddbdc6badc7e582b2722a3739106e2a64f8ee97d21423cac",
+      "sha256": "8041492b87b9f0cae4b4cfe8f7b92bab400f7a1d094fef495add6fe955ba52cf",
       "status": "present"
     },
     "dbh_validation.csv": {
@@ -816,58 +816,6 @@
               "spike_component": "gamma",
               "spike_constrained": true,
               "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263505,
-              "aicc": -98532.5387497779,
-              "converged": true,
-              "distribution": "spike_weibull_constrained",
-              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 8,
-              "ks": 0.0936410862937952,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 1.0,
-                "beta": 6.803761961484754,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "a",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "weibull",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263524,
-              "aicc": -98532.53874977808,
-              "converged": true,
-              "distribution": "spike_gamma_constrained",
-              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 9,
-              "ks": 0.0936410880746632,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 6.80376206974723,
-                "p": 1.0,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "p",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "gamma",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
             }
           ],
           "fit_id": "ecozone:Montane Cordillera|CW",
@@ -1062,6 +1010,68 @@
           "selected_distribution": "mix_weibull_2",
           "selected_ks": 0.0211549288930477,
           "species": "BL"
+        },
+        {
+          "candidates": [
+            {
+              "aic": -98533.39589263505,
+              "aicc": -98532.5387497779,
+              "converged": true,
+              "distribution": "spike_weibull_constrained",
+              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 8,
+              "ks": 0.0936410862937952,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 1.0,
+                "beta": 6.803761961484754,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "a",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "weibull",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -98533.39589263524,
+              "aicc": -98532.53874977808,
+              "converged": true,
+              "distribution": "spike_gamma_constrained",
+              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 9,
+              "ks": 0.0936410880746632,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 6.80376206974723,
+                "p": 1.0,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "p",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "gamma",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            }
+          ],
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "scope": "tsa24_all_ages",
+          "selected_aic": -99709.12957570353,
+          "selected_distribution": "spike_weibull",
+          "selected_ks": 0.0337449817609635,
+          "species": "CW"
         },
         {
           "candidates": [
@@ -1535,26 +1545,31 @@
         }
       ],
       "counts": {
-        "constrained_spike_boundary_rejects": 14,
+        "constrained_spike_boundary_rejects": 15,
         "high_ks_after": 0,
-        "high_ks_before": 2,
-        "improved_by_more_than_2_aic": 13,
-        "mixture_improves_previous": 16,
-        "mixture_unstable_fits": 41,
-        "mixture_worse_than_previous": 16,
+        "high_ks_before": 3,
+        "improved_by_more_than_2_aic": 14,
+        "mixture_improves_previous": 17,
+        "mixture_unstable_fits": 43,
+        "mixture_worse_than_previous": 17,
         "selected_constrained_spike": 8,
-        "selected_spike": 14,
+        "selected_spike": 15,
         "selected_spike_unique": 14,
-        "switched": 14,
+        "switched": 15,
         "switched_to_constrained_spike": 8,
         "switched_to_finite_mixture": 0,
-        "switched_to_new_mixture": 6,
-        "switched_to_spike": 14,
-        "switched_to_unconstrained_spike": 6,
+        "switched_to_new_mixture": 7,
+        "switched_to_spike": 15,
+        "switched_to_unconstrained_spike": 7,
         "worse_by_more_than_2_aic": 1
       },
       "high_ks_after": [],
       "high_ks_before": [
+        {
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "ks": 0.2214127854783549,
+          "scope": "tsa24_all_ages"
+        },
         {
           "fit_id": "ecozone:Montane Cordillera|CW",
           "ks": 0.2214127854783549,
@@ -1566,8 +1581,8 @@
           "scope": "tsa24_all_ages"
         }
       ],
-      "n_fits": 73,
-      "n_matched": 73,
+      "n_fits": 75,
+      "n_matched": 75,
       "rows": [
         {
           "best_constrained_spike": {
@@ -4109,52 +4124,9 @@
               "spike_component": "",
               "spike_constrained": false,
               "spike_weight": null
-            },
-            {
-              "aic": -1625588.2949298734,
-              "aicc": -1625585.567657146,
-              "converged": true,
-              "distribution": "mix_weibull_2",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 81,
-              "ks": 0.0108187376410592,
-              "method": "truncated-em-moments",
-              "n_parameters": 5,
-              "n_starts": 2,
-              "n_valid_starts": 2,
-              "ordering_swaps": 2,
-              "parameters": {},
-              "spike_at_bound": "",
-              "spike_boundary_status": "",
-              "spike_component": "",
-              "spike_constrained": false,
-              "spike_weight": null
-            },
-            {
-              "aic": null,
-              "aicc": null,
-              "converged": false,
-              "distribution": "mix_weibull_gamma",
-              "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
-              "fit_status": "failed",
-              "iterations": 0,
-              "ks": null,
-              "method": "failed",
-              "n_parameters": 0,
-              "n_starts": 0,
-              "n_valid_starts": 0,
-              "ordering_swaps": 0,
-              "parameters": {},
-              "spike_at_bound": "",
-              "spike_boundary_status": "",
-              "spike_component": "",
-              "spike_constrained": false,
-              "spike_weight": null
             }
           ],
           "new_mixture_unstable": [
-            "mix_weibull_gamma",
             "mix_weibull_gamma"
           ],
           "previous_aic": -1627447.5753629496,
@@ -5358,113 +5330,9 @@
               "spike_component": "gamma",
               "spike_constrained": true,
               "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263505,
-              "aicc": -98532.5387497779,
-              "converged": true,
-              "distribution": "spike_weibull_constrained",
-              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 8,
-              "ks": 0.0936410862937952,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 1.0,
-                "beta": 6.803761961484754,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "a",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "weibull",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263524,
-              "aicc": -98532.53874977808,
-              "converged": true,
-              "distribution": "spike_gamma_constrained",
-              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 9,
-              "ks": 0.0936410880746632,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 6.80376206974723,
-                "p": 1.0,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "p",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "gamma",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
             }
           ],
           "constrained_spike_candidates": [
-            {
-              "aic": -98533.39589263505,
-              "aicc": -98532.5387497779,
-              "converged": true,
-              "distribution": "spike_weibull_constrained",
-              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 8,
-              "ks": 0.0936410862937952,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 1.0,
-                "beta": 6.803761961484754,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "a",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "weibull",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263524,
-              "aicc": -98532.53874977808,
-              "converged": true,
-              "distribution": "spike_gamma_constrained",
-              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 9,
-              "ks": 0.0936410880746632,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 6.80376206974723,
-                "p": 1.0,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "p",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "gamma",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
             {
               "aic": -98533.39589263505,
               "aicc": -98532.5387497779,
@@ -5697,179 +5565,9 @@
               "spike_component": "gamma",
               "spike_constrained": true,
               "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -92434.35732796152,
-              "aicc": -92432.04963565384,
-              "converged": true,
-              "distribution": "mix_weibull_2",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 18,
-              "ks": 0.4700843669066459,
-              "method": "truncated-em-moments",
-              "n_parameters": 5,
-              "n_starts": 2,
-              "n_valid_starts": 2,
-              "ordering_swaps": 0,
-              "parameters": {},
-              "spike_at_bound": "",
-              "spike_boundary_status": "",
-              "spike_component": "",
-              "spike_constrained": false,
-              "spike_weight": null
-            },
-            {
-              "aic": -91365.04724864104,
-              "aicc": -91362.73955633334,
-              "converged": true,
-              "distribution": "mix_weibull_gamma",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 7,
-              "ks": 0.507219686210743,
-              "method": "truncated-em-moments",
-              "n_parameters": 5,
-              "n_starts": 2,
-              "n_valid_starts": 2,
-              "ordering_swaps": 0,
-              "parameters": {},
-              "spike_at_bound": "",
-              "spike_boundary_status": "",
-              "spike_component": "",
-              "spike_constrained": false,
-              "spike_weight": null
-            },
-            {
-              "aic": null,
-              "aicc": null,
-              "converged": false,
-              "distribution": "mix_weibull_3",
-              "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
-              "fit_status": "failed",
-              "iterations": 0,
-              "ks": null,
-              "method": "failed",
-              "n_parameters": 0,
-              "n_starts": 0,
-              "n_valid_starts": 0,
-              "ordering_swaps": 0,
-              "parameters": {},
-              "spike_at_bound": "",
-              "spike_boundary_status": "",
-              "spike_component": "",
-              "spike_constrained": false,
-              "spike_weight": null
-            },
-            {
-              "aic": -99709.12957570353,
-              "aicc": -99708.27243284637,
-              "converged": true,
-              "distribution": "spike_weibull",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 1,
-              "ks": 0.0337449817609635,
-              "method": "spike-truncated-mstep",
-              "n_parameters": 3,
-              "n_starts": 1,
-              "n_valid_starts": 1,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 0.16576455343357155,
-                "beta": 1.0000041940072535e-06,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "",
-              "spike_boundary_status": "ok",
-              "spike_component": "weibull",
-              "spike_constrained": false,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -95639.19009145757,
-              "aicc": -95638.33294860042,
-              "converged": true,
-              "distribution": "spike_gamma",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 1,
-              "ks": 0.0471024623544138,
-              "method": "spike-truncated-mstep",
-              "n_parameters": 3,
-              "n_starts": 1,
-              "n_valid_starts": 1,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 3.1824368179135725,
-                "p": 4.5809029628807174e-05,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "",
-              "spike_boundary_status": "ok",
-              "spike_component": "gamma",
-              "spike_constrained": false,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263505,
-              "aicc": -98532.5387497779,
-              "converged": true,
-              "distribution": "spike_weibull_constrained",
-              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 8,
-              "ks": 0.0936410862937952,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 1.0,
-                "beta": 6.803761961484754,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "a",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "weibull",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263524,
-              "aicc": -98532.53874977808,
-              "converged": true,
-              "distribution": "spike_gamma_constrained",
-              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 9,
-              "ks": 0.0936410880746632,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 6.80376206974723,
-                "p": 1.0,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "p",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "gamma",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
             }
           ],
           "new_mixture_unstable": [
-            "mix_weibull_3",
-            "spike_weibull_constrained",
-            "spike_gamma_constrained",
             "mix_weibull_3",
             "spike_weibull_constrained",
             "spike_gamma_constrained"
@@ -5897,58 +5595,6 @@
           "switched_to_unconstrained_spike": true,
           "target_id": "ecozone:Montane Cordillera|CW",
           "unconstrained_spike_candidates": [
-            {
-              "aic": -99709.12957570353,
-              "aicc": -99708.27243284637,
-              "converged": true,
-              "distribution": "spike_weibull",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 1,
-              "ks": 0.0337449817609635,
-              "method": "spike-truncated-mstep",
-              "n_parameters": 3,
-              "n_starts": 1,
-              "n_valid_starts": 1,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 0.16576455343357155,
-                "beta": 1.0000041940072535e-06,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "",
-              "spike_boundary_status": "ok",
-              "spike_component": "weibull",
-              "spike_constrained": false,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -95639.19009145757,
-              "aicc": -95638.33294860042,
-              "converged": true,
-              "distribution": "spike_gamma",
-              "error": null,
-              "fit_status": "ok",
-              "iterations": 1,
-              "ks": 0.0471024623544138,
-              "method": "spike-truncated-mstep",
-              "n_parameters": 3,
-              "n_starts": 1,
-              "n_valid_starts": 1,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 3.1824368179135725,
-                "p": 4.5809029628807174e-05,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "",
-              "spike_boundary_status": "ok",
-              "spike_component": "gamma",
-              "spike_constrained": false,
-              "spike_weight": 0.6572968464327013
-            },
             {
               "aic": -99709.12957570353,
               "aicc": -99708.27243284637,
@@ -7880,6 +7526,436 @@
               "spike_component": "gamma",
               "spike_constrained": false,
               "spike_weight": 0.2127530872615645
+            }
+          ]
+        },
+        {
+          "best_constrained_spike": null,
+          "best_constrained_spike_any": {
+            "aic": -98533.39589263524,
+            "aicc": -98532.53874977808,
+            "converged": true,
+            "distribution": "spike_gamma_constrained",
+            "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+            "fit_status": "boundary_reject",
+            "iterations": 9,
+            "ks": 0.0936410880746632,
+            "method": "spike-constrained-grouped-mle",
+            "n_parameters": 3,
+            "n_starts": 5,
+            "n_valid_starts": 5,
+            "ordering_swaps": 0,
+            "parameters": {
+              "beta": 6.80376206974723,
+              "p": 1.0,
+              "spike_bin_width": 2.0,
+              "spike_weight": 0.6572968464327013
+            },
+            "spike_at_bound": "p",
+            "spike_boundary_status": "boundary_reject",
+            "spike_component": "gamma",
+            "spike_constrained": true,
+            "spike_weight": 0.6572968464327013
+          },
+          "best_new_mixture": "spike_weibull",
+          "best_new_mixture_aic": -99709.12957570353,
+          "best_new_mixture_converged": true,
+          "best_new_mixture_ks": 0.0337449817609635,
+          "best_unconstrained_spike": {
+            "aic": -99709.12957570353,
+            "aicc": -99708.27243284637,
+            "converged": true,
+            "distribution": "spike_weibull",
+            "error": null,
+            "fit_status": "ok",
+            "iterations": 1,
+            "ks": 0.0337449817609635,
+            "method": "spike-truncated-mstep",
+            "n_parameters": 3,
+            "n_starts": 1,
+            "n_valid_starts": 1,
+            "ordering_swaps": 0,
+            "parameters": {
+              "a": 0.16576455343357155,
+              "beta": 1.0000041940072535e-06,
+              "spike_bin_width": 2.0,
+              "spike_weight": 0.6572968464327013
+            },
+            "spike_at_bound": "",
+            "spike_boundary_status": "ok",
+            "spike_component": "weibull",
+            "spike_constrained": false,
+            "spike_weight": 0.6572968464327013
+          },
+          "constrained_spike_boundary_reject": true,
+          "constrained_spike_boundary_rejects": [
+            {
+              "aic": -98533.39589263505,
+              "aicc": -98532.5387497779,
+              "converged": true,
+              "distribution": "spike_weibull_constrained",
+              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 8,
+              "ks": 0.0936410862937952,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 1.0,
+                "beta": 6.803761961484754,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "a",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "weibull",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -98533.39589263524,
+              "aicc": -98532.53874977808,
+              "converged": true,
+              "distribution": "spike_gamma_constrained",
+              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 9,
+              "ks": 0.0936410880746632,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 6.80376206974723,
+                "p": 1.0,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "p",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "gamma",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            }
+          ],
+          "constrained_spike_candidates": [
+            {
+              "aic": -98533.39589263505,
+              "aicc": -98532.5387497779,
+              "converged": true,
+              "distribution": "spike_weibull_constrained",
+              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 8,
+              "ks": 0.0936410862937952,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 1.0,
+                "beta": 6.803761961484754,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "a",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "weibull",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -98533.39589263524,
+              "aicc": -98532.53874977808,
+              "converged": true,
+              "distribution": "spike_gamma_constrained",
+              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 9,
+              "ks": 0.0936410880746632,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 6.80376206974723,
+                "p": 1.0,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "p",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "gamma",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            }
+          ],
+          "dbh_limit_cm": 2.0,
+          "delta_aic": -795.1656424577668,
+          "delta_aicc": -796.6161919082806,
+          "delta_ks": -0.18766780371739142,
+          "evidence_tier": "pooled_fit",
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "matched_previous": true,
+          "mixture_improves_previous": true,
+          "mixture_worse": false,
+          "n_bins": 17,
+          "n_plots": 9,
+          "n_trees": 155,
+          "new_mixture_candidates": [
+            {
+              "aic": -92434.35732796152,
+              "aicc": -92432.04963565384,
+              "converged": true,
+              "distribution": "mix_weibull_2",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 18,
+              "ks": 0.4700843669066459,
+              "method": "truncated-em-moments",
+              "n_parameters": 5,
+              "n_starts": 2,
+              "n_valid_starts": 2,
+              "ordering_swaps": 0,
+              "parameters": {},
+              "spike_at_bound": "",
+              "spike_boundary_status": "",
+              "spike_component": "",
+              "spike_constrained": false,
+              "spike_weight": null
+            },
+            {
+              "aic": -91365.04724864104,
+              "aicc": -91362.73955633334,
+              "converged": true,
+              "distribution": "mix_weibull_gamma",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 7,
+              "ks": 0.507219686210743,
+              "method": "truncated-em-moments",
+              "n_parameters": 5,
+              "n_starts": 2,
+              "n_valid_starts": 2,
+              "ordering_swaps": 0,
+              "parameters": {},
+              "spike_at_bound": "",
+              "spike_boundary_status": "",
+              "spike_component": "",
+              "spike_constrained": false,
+              "spike_weight": null
+            },
+            {
+              "aic": null,
+              "aicc": null,
+              "converged": false,
+              "distribution": "mix_weibull_3",
+              "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+              "fit_status": "failed",
+              "iterations": 0,
+              "ks": null,
+              "method": "failed",
+              "n_parameters": 0,
+              "n_starts": 0,
+              "n_valid_starts": 0,
+              "ordering_swaps": 0,
+              "parameters": {},
+              "spike_at_bound": "",
+              "spike_boundary_status": "",
+              "spike_component": "",
+              "spike_constrained": false,
+              "spike_weight": null
+            },
+            {
+              "aic": -99709.12957570353,
+              "aicc": -99708.27243284637,
+              "converged": true,
+              "distribution": "spike_weibull",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 1,
+              "ks": 0.0337449817609635,
+              "method": "spike-truncated-mstep",
+              "n_parameters": 3,
+              "n_starts": 1,
+              "n_valid_starts": 1,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 0.16576455343357155,
+                "beta": 1.0000041940072535e-06,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "",
+              "spike_boundary_status": "ok",
+              "spike_component": "weibull",
+              "spike_constrained": false,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -95639.19009145757,
+              "aicc": -95638.33294860042,
+              "converged": true,
+              "distribution": "spike_gamma",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 1,
+              "ks": 0.0471024623544138,
+              "method": "spike-truncated-mstep",
+              "n_parameters": 3,
+              "n_starts": 1,
+              "n_valid_starts": 1,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 3.1824368179135725,
+                "p": 4.5809029628807174e-05,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "",
+              "spike_boundary_status": "ok",
+              "spike_component": "gamma",
+              "spike_constrained": false,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -98533.39589263505,
+              "aicc": -98532.5387497779,
+              "converged": true,
+              "distribution": "spike_weibull_constrained",
+              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 8,
+              "ks": 0.0936410862937952,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 1.0,
+                "beta": 6.803761961484754,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "a",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "weibull",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -98533.39589263524,
+              "aicc": -98532.53874977808,
+              "converged": true,
+              "distribution": "spike_gamma_constrained",
+              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 9,
+              "ks": 0.0936410880746632,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 6.80376206974723,
+                "p": 1.0,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "p",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "gamma",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            }
+          ],
+          "new_mixture_unstable": [
+            "mix_weibull_3",
+            "spike_weibull_constrained",
+            "spike_gamma_constrained"
+          ],
+          "previous_aic": -98913.96393324576,
+          "previous_aicc": -98911.65624093809,
+          "previous_distribution": "mixture",
+          "previous_ks": 0.2214127854783549,
+          "scope": "tsa24_all_ages",
+          "selected_aic": -99709.12957570353,
+          "selected_aicc": -99708.27243284637,
+          "selected_converged": true,
+          "selected_distribution": "spike_weibull",
+          "selected_ks": 0.0337449817609635,
+          "selected_spike_boundary_status": "ok",
+          "selected_spike_component": "weibull",
+          "selected_spike_constrained": false,
+          "selected_spike_weight": 0.6572968464327013,
+          "species": "CW",
+          "switched": true,
+          "switched_to_constrained_spike": false,
+          "switched_to_finite_mixture": false,
+          "switched_to_new_mixture": true,
+          "switched_to_spike": true,
+          "switched_to_unconstrained_spike": true,
+          "target_id": "ecozone:Montane Cordillera|CW",
+          "unconstrained_spike_candidates": [
+            {
+              "aic": -99709.12957570353,
+              "aicc": -99708.27243284637,
+              "converged": true,
+              "distribution": "spike_weibull",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 1,
+              "ks": 0.0337449817609635,
+              "method": "spike-truncated-mstep",
+              "n_parameters": 3,
+              "n_starts": 1,
+              "n_valid_starts": 1,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 0.16576455343357155,
+                "beta": 1.0000041940072535e-06,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "",
+              "spike_boundary_status": "ok",
+              "spike_component": "weibull",
+              "spike_constrained": false,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -95639.19009145757,
+              "aicc": -95638.33294860042,
+              "converged": true,
+              "distribution": "spike_gamma",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 1,
+              "ks": 0.0471024623544138,
+              "method": "spike-truncated-mstep",
+              "n_parameters": 3,
+              "n_starts": 1,
+              "n_valid_starts": 1,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 3.1824368179135725,
+                "p": 4.5809029628807174e-05,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "",
+              "spike_boundary_status": "ok",
+              "spike_component": "gamma",
+              "spike_constrained": false,
+              "spike_weight": 0.6572968464327013
             }
           ]
         },
@@ -15426,6 +15502,100 @@
         },
         {
           "best_constrained_spike": null,
+          "best_constrained_spike_any": null,
+          "best_new_mixture": "mix_weibull_2",
+          "best_new_mixture_aic": -1625588.2949298734,
+          "best_new_mixture_converged": true,
+          "best_new_mixture_ks": 0.0108187376410592,
+          "best_unconstrained_spike": null,
+          "constrained_spike_boundary_reject": false,
+          "constrained_spike_boundary_rejects": [],
+          "constrained_spike_candidates": [],
+          "dbh_limit_cm": 2.0,
+          "delta_aic": 0.0,
+          "delta_aicc": 0.0,
+          "delta_ks": 0.0,
+          "evidence_tier": "pooled_fit",
+          "fit_id": "ecozone:Montane Cordillera|EP",
+          "matched_previous": true,
+          "mixture_improves_previous": false,
+          "mixture_worse": true,
+          "n_bins": 28,
+          "n_plots": 526,
+          "n_trees": 5714,
+          "new_mixture_candidates": [
+            {
+              "aic": -1625588.2949298734,
+              "aicc": -1625585.567657146,
+              "converged": true,
+              "distribution": "mix_weibull_2",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 81,
+              "ks": 0.0108187376410592,
+              "method": "truncated-em-moments",
+              "n_parameters": 5,
+              "n_starts": 2,
+              "n_valid_starts": 2,
+              "ordering_swaps": 2,
+              "parameters": {},
+              "spike_at_bound": "",
+              "spike_boundary_status": "",
+              "spike_component": "",
+              "spike_constrained": false,
+              "spike_weight": null
+            },
+            {
+              "aic": null,
+              "aicc": null,
+              "converged": false,
+              "distribution": "mix_weibull_gamma",
+              "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
+              "fit_status": "failed",
+              "iterations": 0,
+              "ks": null,
+              "method": "failed",
+              "n_parameters": 0,
+              "n_starts": 0,
+              "n_valid_starts": 0,
+              "ordering_swaps": 0,
+              "parameters": {},
+              "spike_at_bound": "",
+              "spike_boundary_status": "",
+              "spike_component": "",
+              "spike_constrained": false,
+              "spike_weight": null
+            }
+          ],
+          "new_mixture_unstable": [
+            "mix_weibull_gamma"
+          ],
+          "previous_aic": -1627447.5753629496,
+          "previous_aicc": -1627446.5753629496,
+          "previous_distribution": "weibull",
+          "previous_ks": 0.0226434326484039,
+          "scope": "tsa24_all_ages",
+          "selected_aic": -1627447.5753629496,
+          "selected_aicc": -1627446.5753629496,
+          "selected_converged": true,
+          "selected_distribution": "weibull",
+          "selected_ks": 0.0226434326484039,
+          "selected_spike_boundary_status": "",
+          "selected_spike_component": "",
+          "selected_spike_constrained": false,
+          "selected_spike_weight": null,
+          "species": "EP",
+          "switched": false,
+          "switched_to_constrained_spike": false,
+          "switched_to_finite_mixture": false,
+          "switched_to_new_mixture": false,
+          "switched_to_spike": false,
+          "switched_to_unconstrained_spike": false,
+          "target_id": "ecozone:Montane Cordillera|EP",
+          "unconstrained_spike_candidates": []
+        },
+        {
+          "best_constrained_spike": null,
           "best_constrained_spike_any": {
             "aic": -314491.8909284598,
             "aicc": -314490.9309284598,
@@ -17181,16 +17351,16 @@
         "mixture": 18,
         "spike_gamma": 1,
         "spike_gamma_constrained": 4,
-        "spike_weibull": 5,
+        "spike_weibull": 6,
         "spike_weibull_constrained": 4,
-        "weibull": 2
+        "weibull": 3
       },
       "selected_distributions_before": {
         "gamma": 4,
         "mix_weibull_2": 12,
         "mix_weibull_gamma": 33,
-        "mixture": 21,
-        "weibull": 3
+        "mixture": 22,
+        "weibull": 4
       },
       "spike_comparison": [
         {
@@ -17641,58 +17811,6 @@
         },
         {
           "boundary_rejects": [
-            {
-              "aic": -98533.39589263505,
-              "aicc": -98532.5387497779,
-              "converged": true,
-              "distribution": "spike_weibull_constrained",
-              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 8,
-              "ks": 0.0936410862937952,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "a": 1.0,
-                "beta": 6.803761961484754,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "a",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "weibull",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
-            {
-              "aic": -98533.39589263524,
-              "aicc": -98532.53874977808,
-              "converged": true,
-              "distribution": "spike_gamma_constrained",
-              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-              "fit_status": "boundary_reject",
-              "iterations": 9,
-              "ks": 0.0936410880746632,
-              "method": "spike-constrained-grouped-mle",
-              "n_parameters": 3,
-              "n_starts": 5,
-              "n_valid_starts": 5,
-              "ordering_swaps": 0,
-              "parameters": {
-                "beta": 6.80376206974723,
-                "p": 1.0,
-                "spike_bin_width": 2.0,
-                "spike_weight": 0.6572968464327013
-              },
-              "spike_at_bound": "p",
-              "spike_boundary_status": "boundary_reject",
-              "spike_component": "gamma",
-              "spike_constrained": true,
-              "spike_weight": 0.6572968464327013
-            },
             {
               "aic": -98533.39589263505,
               "aicc": -98532.5387497779,
@@ -18206,6 +18324,120 @@
             "spike_component": "gamma",
             "spike_constrained": false,
             "spike_weight": 0.2127530872615645
+          }
+        },
+        {
+          "boundary_rejects": [
+            {
+              "aic": -98533.39589263505,
+              "aicc": -98532.5387497779,
+              "converged": true,
+              "distribution": "spike_weibull_constrained",
+              "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 8,
+              "ks": 0.0936410862937952,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 1.0,
+                "beta": 6.803761961484754,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "a",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "weibull",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            },
+            {
+              "aic": -98533.39589263524,
+              "aicc": -98532.53874977808,
+              "converged": true,
+              "distribution": "spike_gamma_constrained",
+              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 9,
+              "ks": 0.0936410880746632,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 6.80376206974723,
+                "p": 1.0,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "p",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "gamma",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            }
+          ],
+          "constrained": {
+            "aic": -98533.39589263524,
+            "aicc": -98532.53874977808,
+            "converged": true,
+            "distribution": "spike_gamma_constrained",
+            "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+            "fit_status": "boundary_reject",
+            "iterations": 9,
+            "ks": 0.0936410880746632,
+            "method": "spike-constrained-grouped-mle",
+            "n_parameters": 3,
+            "n_starts": 5,
+            "n_valid_starts": 5,
+            "ordering_swaps": 0,
+            "parameters": {
+              "beta": 6.80376206974723,
+              "p": 1.0,
+              "spike_bin_width": 2.0,
+              "spike_weight": 0.6572968464327013
+            },
+            "spike_at_bound": "p",
+            "spike_boundary_status": "boundary_reject",
+            "spike_component": "gamma",
+            "spike_constrained": true,
+            "spike_weight": 0.6572968464327013
+          },
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "scope": "tsa24_all_ages",
+          "selected_aic": -99709.12957570353,
+          "selected_distribution": "spike_weibull",
+          "selected_ks": 0.0337449817609635,
+          "species": "CW",
+          "unconstrained": {
+            "aic": -99709.12957570353,
+            "aicc": -99708.27243284637,
+            "converged": true,
+            "distribution": "spike_weibull",
+            "error": null,
+            "fit_status": "ok",
+            "iterations": 1,
+            "ks": 0.0337449817609635,
+            "method": "spike-truncated-mstep",
+            "n_parameters": 3,
+            "n_starts": 1,
+            "n_valid_starts": 1,
+            "ordering_swaps": 0,
+            "parameters": {
+              "a": 0.16576455343357155,
+              "beta": 1.0000041940072535e-06,
+              "spike_bin_width": 2.0,
+              "spike_weight": 0.6572968464327013
+            },
+            "spike_at_bound": "",
+            "spike_boundary_status": "ok",
+            "spike_component": "weibull",
+            "spike_constrained": false,
+            "spike_weight": 0.6572968464327013
           }
         },
         {
@@ -19731,6 +19963,23 @@
           "spike_weight": 0.3216822349598395
         },
         {
+          "delta_aic": -795.1656424577668,
+          "delta_ks": -0.18766780371739142,
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "previous_aic": -98913.96393324576,
+          "previous_distribution": "mixture",
+          "previous_ks": 0.2214127854783549,
+          "scope": "tsa24_all_ages",
+          "selected_aic": -99709.12957570353,
+          "selected_distribution": "spike_weibull",
+          "selected_ks": 0.0337449817609635,
+          "species": "CW",
+          "spike_boundary_status": "ok",
+          "spike_component": "weibull",
+          "spike_constrained": false,
+          "spike_weight": 0.6572968464327013
+        },
+        {
           "delta_aic": -16.671349317446584,
           "delta_ks": -0.014795761936567002,
           "fit_id": "ecozone:Montane Cordillera|AC",
@@ -20011,44 +20260,6 @@
           "spike_weight": 0.6572968464327013
         },
         {
-          "aic": -98533.39589263505,
-          "at_bound": "a",
-          "converged": true,
-          "distribution": "spike_weibull_constrained",
-          "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-          "fit_id": "ecozone:Montane Cordillera|CW",
-          "ks": 0.0936410862937952,
-          "parameters": {
-            "a": 1.0,
-            "beta": 6.803761961484754,
-            "spike_bin_width": 2.0,
-            "spike_weight": 0.6572968464327013
-          },
-          "scope": "tsa24_all_ages",
-          "species": "CW",
-          "spike_component": "weibull",
-          "spike_weight": 0.6572968464327013
-        },
-        {
-          "aic": -98533.39589263524,
-          "at_bound": "p",
-          "converged": true,
-          "distribution": "spike_gamma_constrained",
-          "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-          "fit_id": "ecozone:Montane Cordillera|CW",
-          "ks": 0.0936410880746632,
-          "parameters": {
-            "beta": 6.80376206974723,
-            "p": 1.0,
-            "spike_bin_width": 2.0,
-            "spike_weight": 0.6572968464327013
-          },
-          "scope": "tsa24_all_ages",
-          "species": "CW",
-          "spike_component": "gamma",
-          "spike_weight": 0.6572968464327013
-        },
-        {
           "aic": -5566.879203476501,
           "at_bound": "a",
           "converged": true,
@@ -20161,6 +20372,44 @@
           "species": "BL",
           "spike_component": "gamma",
           "spike_weight": 0.2127530872615645
+        },
+        {
+          "aic": -98533.39589263505,
+          "at_bound": "a",
+          "converged": true,
+          "distribution": "spike_weibull_constrained",
+          "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "ks": 0.0936410862937952,
+          "parameters": {
+            "a": 1.0,
+            "beta": 6.803761961484754,
+            "spike_bin_width": 2.0,
+            "spike_weight": 0.6572968464327013
+          },
+          "scope": "tsa24_all_ages",
+          "species": "CW",
+          "spike_component": "weibull",
+          "spike_weight": 0.6572968464327013
+        },
+        {
+          "aic": -98533.39589263524,
+          "at_bound": "p",
+          "converged": true,
+          "distribution": "spike_gamma_constrained",
+          "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "ks": 0.0936410880746632,
+          "parameters": {
+            "beta": 6.80376206974723,
+            "p": 1.0,
+            "spike_bin_width": 2.0,
+            "spike_weight": 0.6572968464327013
+          },
+          "scope": "tsa24_all_ages",
+          "species": "CW",
+          "spike_component": "gamma",
+          "spike_weight": 0.6572968464327013
         },
         {
           "aic": -133791.20692204704,
@@ -20511,7 +20760,7 @@
           "converged": 29,
           "failed": 0,
           "ok": 29,
-          "selected": 5
+          "selected": 6
         },
         "spike_weibull_constrained": {
           "aic_best": 3,
@@ -20570,19 +20819,9 @@
           "fit_id": "ecozone:Montane Cordillera|EP"
         },
         {
-          "distribution": "mix_weibull_gamma",
-          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
-          "fit_id": "ecozone:Montane Cordillera|EP"
-        },
-        {
           "distribution": "mix_weibull_2",
           "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
           "fit_id": "ecodistrict:Bulkley Basin|SW"
-        },
-        {
-          "distribution": "mix_weibull_3",
-          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
-          "fit_id": "ecozone:Montane Cordillera|CW"
         },
         {
           "distribution": "mix_weibull_3",
@@ -20598,6 +20837,11 @@
           "distribution": "mix_weibull_2",
           "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
           "fit_id": "ecodistrict:Hart Ranges|SW"
+        },
+        {
+          "distribution": "mix_weibull_3",
+          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+          "fit_id": "ecozone:Montane Cordillera|CW"
         },
         {
           "distribution": "mix_weibull_2",
@@ -20662,6 +20906,11 @@
         {
           "distribution": "mix_weibull_gamma",
           "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
+          "fit_id": "ecozone:Montane Cordillera|EP"
+        },
+        {
+          "distribution": "mix_weibull_gamma",
+          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
           "fit_id": "ecodistrict:Nechako Lowland|BL"
         }
       ],
@@ -20685,7 +20934,7 @@
         "mixture": 18,
         "spike_gamma": 1,
         "spike_gamma_constrained": 4,
-        "spike_weibull": 5,
+        "spike_weibull": 6,
         "spike_weibull_constrained": 4
       },
       "spike": {
@@ -21147,58 +21396,6 @@
           },
           {
             "boundary_rejects": [
-              {
-                "aic": -98533.39589263505,
-                "aicc": -98532.5387497779,
-                "converged": true,
-                "distribution": "spike_weibull_constrained",
-                "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
-                "fit_status": "boundary_reject",
-                "iterations": 8,
-                "ks": 0.0936410862937952,
-                "method": "spike-constrained-grouped-mle",
-                "n_parameters": 3,
-                "n_starts": 5,
-                "n_valid_starts": 5,
-                "ordering_swaps": 0,
-                "parameters": {
-                  "a": 1.0,
-                  "beta": 6.803761961484754,
-                  "spike_bin_width": 2.0,
-                  "spike_weight": 0.6572968464327013
-                },
-                "spike_at_bound": "a",
-                "spike_boundary_status": "boundary_reject",
-                "spike_component": "weibull",
-                "spike_constrained": true,
-                "spike_weight": 0.6572968464327013
-              },
-              {
-                "aic": -98533.39589263524,
-                "aicc": -98532.53874977808,
-                "converged": true,
-                "distribution": "spike_gamma_constrained",
-                "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
-                "fit_status": "boundary_reject",
-                "iterations": 9,
-                "ks": 0.0936410880746632,
-                "method": "spike-constrained-grouped-mle",
-                "n_parameters": 3,
-                "n_starts": 5,
-                "n_valid_starts": 5,
-                "ordering_swaps": 0,
-                "parameters": {
-                  "beta": 6.80376206974723,
-                  "p": 1.0,
-                  "spike_bin_width": 2.0,
-                  "spike_weight": 0.6572968464327013
-                },
-                "spike_at_bound": "p",
-                "spike_boundary_status": "boundary_reject",
-                "spike_component": "gamma",
-                "spike_constrained": true,
-                "spike_weight": 0.6572968464327013
-              },
               {
                 "aic": -98533.39589263505,
                 "aicc": -98532.5387497779,
@@ -21717,6 +21914,121 @@
               "spike_component": "gamma",
               "spike_constrained": false,
               "spike_weight": 0.2127530872615645
+            }
+          },
+          {
+            "boundary_rejects": [
+              {
+                "aic": -98533.39589263505,
+                "aicc": -98532.5387497779,
+                "converged": true,
+                "distribution": "spike_weibull_constrained",
+                "error": "boundary_reject: tail parameters {'a': 1.0, 'beta': 6.803761961484754} sit on the a bound {'a': [1.0, 50.0]}",
+                "fit_status": "boundary_reject",
+                "iterations": 8,
+                "ks": 0.0936410862937952,
+                "method": "spike-constrained-grouped-mle",
+                "n_parameters": 3,
+                "n_starts": 5,
+                "n_valid_starts": 5,
+                "ordering_swaps": 0,
+                "parameters": {
+                  "a": 1.0,
+                  "beta": 6.803761961484754,
+                  "spike_bin_width": 2.0,
+                  "spike_weight": 0.6572968464327013
+                },
+                "spike_at_bound": "a",
+                "spike_boundary_status": "boundary_reject",
+                "spike_component": "weibull",
+                "spike_constrained": true,
+                "spike_weight": 0.6572968464327013
+              },
+              {
+                "aic": -98533.39589263524,
+                "aicc": -98532.53874977808,
+                "converged": true,
+                "distribution": "spike_gamma_constrained",
+                "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+                "fit_status": "boundary_reject",
+                "iterations": 9,
+                "ks": 0.0936410880746632,
+                "method": "spike-constrained-grouped-mle",
+                "n_parameters": 3,
+                "n_starts": 5,
+                "n_valid_starts": 5,
+                "ordering_swaps": 0,
+                "parameters": {
+                  "beta": 6.80376206974723,
+                  "p": 1.0,
+                  "spike_bin_width": 2.0,
+                  "spike_weight": 0.6572968464327013
+                },
+                "spike_at_bound": "p",
+                "spike_boundary_status": "boundary_reject",
+                "spike_component": "gamma",
+                "spike_constrained": true,
+                "spike_weight": 0.6572968464327013
+              }
+            ],
+            "constrained": {
+              "aic": -98533.39589263524,
+              "aicc": -98532.53874977808,
+              "converged": true,
+              "distribution": "spike_gamma_constrained",
+              "error": "boundary_reject: tail parameters {'p': 1.0, 'beta': 6.80376206974723} sit on the p bound {'p': [1.0, 50.0]}",
+              "fit_status": "boundary_reject",
+              "iterations": 9,
+              "ks": 0.0936410880746632,
+              "method": "spike-constrained-grouped-mle",
+              "n_parameters": 3,
+              "n_starts": 5,
+              "n_valid_starts": 5,
+              "ordering_swaps": 0,
+              "parameters": {
+                "beta": 6.80376206974723,
+                "p": 1.0,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "p",
+              "spike_boundary_status": "boundary_reject",
+              "spike_component": "gamma",
+              "spike_constrained": true,
+              "spike_weight": 0.6572968464327013
+            },
+            "first_bin_share": 0.6572968464327013,
+            "fit_id": "ecozone:Montane Cordillera|CW",
+            "scope": "tsa24_all_ages",
+            "selected_aic": -99709.12957570353,
+            "selected_distribution": "spike_weibull",
+            "selected_ks": 0.0337449817609635,
+            "species": "CW",
+            "unconstrained": {
+              "aic": -99709.12957570353,
+              "aicc": -99708.27243284637,
+              "converged": true,
+              "distribution": "spike_weibull",
+              "error": null,
+              "fit_status": "ok",
+              "iterations": 1,
+              "ks": 0.0337449817609635,
+              "method": "spike-truncated-mstep",
+              "n_parameters": 3,
+              "n_starts": 1,
+              "n_valid_starts": 1,
+              "ordering_swaps": 0,
+              "parameters": {
+                "a": 0.16576455343357155,
+                "beta": 1.0000041940072535e-06,
+                "spike_bin_width": 2.0,
+                "spike_weight": 0.6572968464327013
+              },
+              "spike_at_bound": "",
+              "spike_boundary_status": "ok",
+              "spike_component": "weibull",
+              "spike_constrained": false,
+              "spike_weight": 0.6572968464327013
             }
           },
           {
@@ -23213,7 +23525,7 @@
         "first_bin_share_trigger": 0.2,
         "ks_trigger": 0.15,
         "model": "two-part spike at dbh_limit plus one continuous component left-truncated at the first bin upper edge; spike weight is the first-bin share and counts as one AIC parameter",
-        "selected": 14,
+        "selected": 15,
         "selected_constrained": 8,
         "selected_rows": [
           {
@@ -23280,6 +23592,19 @@
             "spike_component": "weibull",
             "spike_constrained": true,
             "spike_weight": 0.3216822349598395
+          },
+          {
+            "aic": -99709.12957570353,
+            "converged": true,
+            "distribution": "spike_weibull",
+            "fit_id": "ecozone:Montane Cordillera|CW",
+            "ks": 0.0337449817609635,
+            "scope": "tsa24_all_ages",
+            "species": "CW",
+            "spike_boundary_status": "ok",
+            "spike_component": "weibull",
+            "spike_constrained": false,
+            "spike_weight": 0.6572968464327013
           },
           {
             "aic": -50051.49058340813,
@@ -23624,16 +23949,6 @@
         },
         {
           "converged": false,
-          "distribution": "mix_weibull_gamma",
-          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
-          "fit_id": "ecozone:Montane Cordillera|EP",
-          "fit_status": "failed",
-          "iterations": 0,
-          "scope": "tsa24_all_ages",
-          "species": "EP"
-        },
-        {
-          "converged": false,
           "distribution": "mixture",
           "error": null,
           "fit_id": "ecodistrict:Bulkley Basin|FD",
@@ -23714,16 +24029,6 @@
         },
         {
           "converged": false,
-          "distribution": "mix_weibull_3",
-          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
-          "fit_id": "ecozone:Montane Cordillera|CW",
-          "fit_status": "failed",
-          "iterations": 0,
-          "scope": "tsa24_all_ages",
-          "species": "CW"
-        },
-        {
-          "converged": false,
           "distribution": "mix_weibull_gamma",
           "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001; start 1: component weight below min_weight=0.0001",
           "fit_id": "ecoprovince:Northern Montane Cordillera|EP",
@@ -23791,6 +24096,16 @@
           "iterations": 200,
           "scope": "tsa24_all_ages",
           "species": "BL"
+        },
+        {
+          "converged": false,
+          "distribution": "mix_weibull_3",
+          "error": "MixtureFitError: all mixture starts are degenerate: start 0: component weight below min_weight=0.0001",
+          "fit_id": "ecozone:Montane Cordillera|CW",
+          "fit_status": "failed",
+          "iterations": 0,
+          "scope": "tsa24_all_ages",
+          "species": "CW"
         },
         {
           "converged": false,
@@ -23901,6 +24216,16 @@
           "iterations": 250,
           "scope": "tsa24_all_ages",
           "species": "SW"
+        },
+        {
+          "converged": false,
+          "distribution": "mixture",
+          "error": null,
+          "fit_id": "ecodistrict:McGregor Plateau|W",
+          "fit_status": "ok",
+          "iterations": 200,
+          "scope": "tsa24_all_ages",
+          "species": "W"
         }
       ]
     }
