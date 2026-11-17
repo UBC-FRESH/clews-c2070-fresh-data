@@ -29,7 +29,7 @@ report; Stage A does not invent Stage B demand or market rows.
 - Supply offers: 53
 - Facilities: 161 screened; 129 with a transport link
 - Transport links: 210
-- Contracts: 161 (`contract_source=diagnostic_absent`)
+- Contracts: 161 (`contract_source=apportionment_derived_diagnostic;diagnostic_absent`)
 - Total supply: 95,364,339 m3 green
 - Solver: PULP_CBC_CMD 2.9.0 (Optimal)
 
@@ -256,7 +256,7 @@ Declared factors:
 | OTHER_LOG | other | 8 | 6,449,761 | 2,479,731 | 6,449,761 | 0 | 100.0% | 61.74-61.74 |
 | PULP | pulpwood | 2 | 183,208 | 67,066 | 183,208 | 0 | 100.0% | 52.99-52.99 |
 | RESIDUE | residue | 7 | 21,687,883 | 9,759,547 | 12,965,591 | 8,722,292 | 59.8% | 0.00-0.00 |
-| SAWLOG | sawlog | 36 | 67,043,487 | 24,432,498 | 57,863,404 | 9,180,083 | 86.3% | 105.98-128.19 |
+| SAWLOG | sawlog | 36 | 67,043,487 | 24,432,498 | 51,026,707 | 16,016,779 | 76.1% | 105.98-128.19 |
 
 ### 5.2 Facility utilization by class
 
@@ -265,7 +265,7 @@ Declared factors:
 | BIO | 12 | 11 | 8,326,259 | 7,726,990 | 92.8% | 11 | 44 |
 | PAP | 15 | 11 | 30,774,260 | 23,962,264 | 77.9% | 11 | 33 |
 | PEL | 13 | 13 | 6,859,300 | 6,859,300 | 100.0% | 13 | 39 |
-| SAW | 121 | 94 | 45,178,430 | 38,913,410 | 86.1% | 94 | 94 |
+| SAW | 121 | 94 | 45,178,430 | 32,076,713 | 71.0% | 80 | 94 |
 
 ### 5.3 Capacity binding
 
@@ -286,65 +286,62 @@ Declared factors:
 
 | Facility | Class | Assigned m3 | Nameplate m3/y | Utilization |
 | --- | --- | --- | --- | --- |
-| BC-PAP-511 | PAP | 3,498,280 | 3,498,280 | 100.0% |
-| BC-PAP-963 | PAP | 3,436,332 | 3,436,332 | 100.0% |
+| BC-PAP-511 | PAP | 3,498,279 | 3,498,280 | 100.0% |
+| BC-PAP-963 | PAP | 3,436,333 | 3,436,332 | 100.0% |
 | BC-PAP-957 | PAP | 3,228,260 | 3,228,260 | 100.0% |
-| BC-PAP-179 | PAP | 3,168,385 | 3,168,386 | 100.0% |
+| BC-PAP-179 | PAP | 3,168,386 | 3,168,386 | 100.0% |
 | BC-PAP-938 | PAP | 2,465,880 | 2,465,880 | 100.0% |
 | BC-BIO-4011 | BIO | 2,162,923 | 2,162,923 | 100.0% |
 | BC-PAP-1007 | PAP | 1,862,947 | 1,862,947 | 100.0% |
 | BC-SAW-1387 | SAW | 1,822,248 | 1,822,248 | 100.0% |
-| BC-SAW-1253 | SAW | 1,811,424 | 1,811,424 | 100.0% |
 | BC-PAP-964 | PAP | 1,730,006 | 1,730,006 | 100.0% |
+| BC-PAP-1163 | PAP | 1,417,757 | 1,417,757 | 100.0% |
 
 ### 5.5 Delivered cost per m3
 
 | Component | CAD/m3 | Notes |
 | --- | --- | --- |
-| product revenue | 133.02 | assigned volume weighted |
-| supply (roadside proxy) | 90.14 | assigned volume weighted |
-| transport (real NRN road + FFCM fallback) | 20.15 | assigned volume weighted; fallback links may include transload |
+| product revenue | 129.78 | assigned volume weighted |
+| supply (roadside proxy) | 87.84 | assigned volume weighted |
+| transport (real NRN road + FFCM fallback) | 19.61 | assigned volume weighted; fallback links may include transload |
 | gate | 0.00 | assigned volume weighted |
-| processing | 39.91 | assigned volume weighted |
-| delivered cost | 150.21 | supply + transport + gate + processing |
-| net contribution | -17.18 | revenue - delivered cost |
+| processing | 39.38 | assigned volume weighted |
+| delivered cost | 146.83 | supply + transport + gate + processing |
+| net contribution | -17.05 | revenue - delivered cost |
 
 ### 5.6 Objective decomposition
 
 | Component | Value CAD | Unit | Notes |
 | --- | --- | --- | --- |
-| product_revenue | 10,304,132,953.04 | CAD | assigned volume x facility product revenue |
-| supply_cost | -6,982,693,802.07 | CAD | assigned volume x roadside cost proxy |
-| transport_cost | -1,560,728,768.67 | CAD | assigned volume x transport cost |
+| product_revenue | 9,165,505,431.85 | CAD | assigned volume x facility product revenue |
+| supply_cost | -6,203,583,891.11 | CAD | assigned volume x roadside cost proxy |
+| transport_cost | -1,385,083,061.13 | CAD | assigned volume x transport cost |
 | gate_cost | -0.00 | CAD | assigned volume x contract gate cost |
-| processing_cost | -3,091,844,777.69 | CAD | assigned volume x line processing cost |
-| unassigned_penalty | -17,902,374,720.00 | CAD | unassigned volume x diagnostic penalty |
-| net_objective | -19,233,509,115.39 | CAD | solver objective -19233509115.389965 |
+| processing_cost | -2,781,263,939.46 | CAD | assigned volume x line processing cost |
+| unassigned_penalty | -24,739,070,980.00 | CAD | unassigned volume x diagnostic penalty |
+| net_objective | -25,943,496,439.84 | CAD | solver objective -25943496439.844780 |
 
 ### 5.7 Class mix versus FFCM BC subset and previous pilot
 
 | Class | Pilot assigned m3 | Pilot share | Previous pilot share | FFCM BC nameplate share | FFCM BC facility-count share |
 | --- | --- | --- | --- | --- | --- |
-| SAW | 38,913,410 | 50.2% | 51.1% | 49.6% | 75.2% |
-| PAP | 23,962,264 | 30.9% | 30.4% | 33.8% | 9.3% |
-| PEL | 6,859,300 | 8.9% | 8.7% | 7.5% | 8.1% |
-| BIO | 7,726,990 | 10.0% | 9.8% | 9.1% | 7.5% |
+| SAW | 32,076,713 | 45.4% | 51.1% | 49.6% | 75.2% |
+| PAP | 23,962,264 | 33.9% | 30.4% | 33.8% | 9.3% |
+| PEL | 6,859,300 | 9.7% | 8.7% | 7.5% | 8.1% |
+| BIO | 7,726,990 | 10.9% | 9.8% | 9.1% | 7.5% |
 
 FFCM BC nameplate/facility shares come from the 161 in-scope BC SAW/PAP/PEL/BIO facilities in `facilities.csv`. The directional FFCM `fmu -> facility` variable-family shares are SAW 85.8%, PAP 4.1%, PEL 7.0%, BIO 3.0%; that comparison is secondary and not a calibration target.
 
 ## 6. Contracts and capacity gaps
 
 161 of 161 diagnostic contracts satisfy both bounds.
-Contract sources in this run: `diagnostic_absent`.
-The BC Fibre Database diagnostic table contributes real TSA-level 2018
-apportionment volumes (no facility identifier) and dimensionless residue
-allocation shares (no volume).  It does **not** contribute a facility-level
-contract volume, so Stage A keeps `min=0`, `max=nameplate` and
-`contract_source=diagnostic_absent` for every facility.  These are diagnostic
-and project-legacy bounds, not real supply agreements.  Transport links carry
-`capacity=None` and `capacity_source=absent`; route and transload capacities
-are not present in the parsed tables. These are data gaps, not modelled
-constraints.
+Contract sources in this run: `apportionment_derived_diagnostic;diagnostic_absent`.
+16 facilities use apportionment-derived maximum entitlements from the 2018 TSA licence crosswalk. These are **not real supply contracts**: they are diagnostic caps built from a licence row that matched exactly one facility. 145 facilities retain `min=0`, `max=nameplate` and `contract_source=diagnostic_absent`.  The TSA apportionment table also carries
+dimensionless residue allocation shares and TSA-class totals without holders;
+neither is converted into a facility contract.  All contract bounds are
+diagnostic, not commercial evidence.  Transport links carry `capacity=None` and
+`capacity_source=absent`; route and transload capacities are not present in the
+parsed tables. These are data gaps, not modelled constraints.
 
 ## 7. Validation
 
@@ -361,7 +358,7 @@ constraints.
 | moisture_blend | yes | facility moisture blends respect declared limits |
 | unit_consistency | yes | all quantities use declared m3/odt conversions and every capacity basis is documented |
 | transport_provenance | yes | every transport link declares path confidence, capacity source, and distance basis |
-| contract_source | yes | diagnostic contracts declare diagnostic_absent |
+| contract_source | yes | diagnostic contracts declare a known diagnostic source |
 | finite_values | yes | all assignment and slack values are finite |
 | objective_reconciliation | yes | objective decomposition reconciles to the solver objective |
 | utilization_reconciliation | yes | facility utilization rows reconcile to assignments |
@@ -385,7 +382,7 @@ Overall validation: **PASS**.
 | transport | Distances are FFCM route-graph shortest paths from the anchor through TL nodes, not Euclidean distances. | 616.1618973962001 | km | archive_parsed_routes |
 | transport | Road and rail costs use BC transporters with archive fuel and operating rates and material capacities; transload costs are added at each TL node. |  | CAD/m3 | archive_parsed_transporters;transporter_materials;transload_costs |
 | transport | FFCM route capacity is absent from the parsed route table; every transport link is uncapped. |  | m3 | diagnostic |
-| contracts | Contracts are diagnostic: min=0 and max=facility nameplate. The BC Fibre Database contributes TSA apportionment volumes without facility IDs and residue shares without volumes, so no facility-level contract volume is inferred. |  | m3 | diagnostic_absent;bc_fibre_db_2018_diagnostic |
+| contracts | Contracts are diagnostic: min=0. Matched facilities use apportionment-derived maximum entitlements; unmatched facilities use nameplate maxima. These are caps, not supply agreements. |  | m3 | apportionment_derived_diagnostic;diagnostic_absent |
 | objective | Unassigned supply carries a diagnostic penalty so that feasible supply is not silently dropped. | 1000.0 | CAD/m3 | diagnostic |
 | grade | Assortment sorts are dimension-only; no BC official grade equivalence is claimed. |  | grade | derived_tsa24_assortment_matrix |
 | scope | MKRF is not used anywhere in this pilot. |  | n/a | scope_rule |

@@ -105,10 +105,10 @@
       "value": ""
     },
     {
-      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate. The BC Fibre Database contributes TSA apportionment volumes without facility IDs and residue shares without volumes, so no facility-level contract volume is inferred.",
+      "assumption": "Contracts are diagnostic: min=0. Matched facilities use apportionment-derived maximum entitlements; unmatched facilities use nameplate maxima. These are caps, not supply agreements.",
       "category": "contracts",
-      "evidence": "diagnostic_absent;bc_fibre_db_2018_diagnostic",
-      "impact": "contract_source=diagnostic_absent on every contract; compliance is a bound check, not commercial evidence.",
+      "evidence": "apportionment_derived_diagnostic;diagnostic_absent",
+      "impact": "Compliance is a bound check, not commercial evidence.",
       "unit": "m3",
       "value": ""
     },
@@ -397,6 +397,7 @@
     "area_ha": 1000.0,
     "diagnostic_access_km": 150.0,
     "diagnostic_contract_sources": [
+      "apportionment_derived_diagnostic",
       "diagnostic_absent"
     ],
     "diagnostic_contracts": "data/derived/national/assignments/tsa24_pilot/contracts_bc_diagnostic.csv",
@@ -2445,7 +2446,7 @@
     "no TSA24 supply-node-to-transload route in the parsed FFCM graph; a geocoded Prince George mill is the documented anchor proxy",
     "BC coordinate recovery: 98 facilities use a corroborated Mills DB 2015 coordinate; 65 use a low-confidence TL hub proxy and 16 are missing",
     "route capacity absent from routes.csv; all transport links use capacity=None and capacity_source=absent",
-    "BC Fibre Database has TSA apportionment volumes without facility IDs and residue allocation shares without volumes; no facility-level contract volume is available",
+    "BC Fibre Database apportionment: 16 facility contracts use apportionment-derived maximum entitlements; 145 facilities keep diagnostic_absent nameplate maxima. The caps are not real supply agreements.",
     "admt/y and mbf/y capacity units require declared moisture/recovery factors and are rejected without them",
     "no hogfuel supply in the TSA24 assortment matrix",
     "no mill-residue (sawdust/woodchips) supply in this pilot"
@@ -2533,7 +2534,7 @@
       },
       {
         "check_id": "contract_source",
-        "detail": "diagnostic contracts declare diagnostic_absent",
+        "detail": "diagnostic contracts declare a known diagnostic source",
         "passed": true
       },
       {

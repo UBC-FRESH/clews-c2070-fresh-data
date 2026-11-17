@@ -105,10 +105,10 @@
       "value": ""
     },
     {
-      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate. The BC Fibre Database contributes TSA apportionment volumes without facility IDs and residue shares without volumes, so no facility-level contract volume is inferred.",
+      "assumption": "Contracts are diagnostic: min=0. Matched facilities use apportionment-derived maximum entitlements; unmatched facilities use nameplate maxima. These are caps, not supply agreements.",
       "category": "contracts",
-      "evidence": "diagnostic_absent;bc_fibre_db_2018_diagnostic",
-      "impact": "contract_source=diagnostic_absent on every contract; compliance is a bound check, not commercial evidence.",
+      "evidence": "apportionment_derived_diagnostic;diagnostic_absent",
+      "impact": "Compliance is a bound check, not commercial evidence.",
       "unit": "m3",
       "value": ""
     },
@@ -398,6 +398,7 @@
     "area_ha": 1000.0,
     "diagnostic_access_km": 150.0,
     "diagnostic_contract_sources": [
+      "apportionment_derived_diagnostic",
       "diagnostic_absent"
     ],
     "diagnostic_contracts": "data/derived/national/assignments/tsa24_pilot/contracts_bc_diagnostic.csv",
@@ -2462,7 +2463,7 @@
     "unassigned_row_count": 0,
     "unassigned_variable_count": 53
   },
-  "generated_utc": "2026-11-17T06:17:22.626597+00:00",
+  "generated_utc": "2026-11-17T06:51:21.895652+00:00",
   "limitations": [
     "1,000 ha base area is diagnostic, not a TSA24 supply estimate.",
     "Assortment sorts are dimension-only; no BC official grade equivalence.",
@@ -2479,36 +2480,44 @@
   ],
   "outputs": {
     "ASSIGNMENT_REPORT.md": {
-      "bytes": 25907,
-      "sha256": "981bdb3d1c6f697be0a3fbf9da43e9486fbdba25a0c6205afad015258e1af037"
+      "bytes": 26068,
+      "sha256": "d2bc831f1d2238aa8998f4d15f370037dfdfc9816e9e3d2c71f63f5121671e1e"
     },
     "BC_COORDINATE_RECOVERY.md": {
-      "bytes": 6484,
-      "sha256": "247dafa678daeaaca66aa8bf5165b0e29fa83660f8a11b6213d0e5937b222a60"
+      "bytes": 6487,
+      "sha256": "45e7aa414497260062da6fc8ea50fff3710eb79e09cbc43dd05bb0130b243a02"
     },
     "NETWORK_REPORT.md": {
       "bytes": 7935,
       "sha256": "03d047f3e3dd747fd2a60f90acc9bf00e693261d053a7de49517d14e62d19dd2"
     },
     "assumptions.csv": {
-      "bytes": 9539,
-      "sha256": "840a70795b4b8ed90ff0cdc324c8d1e7c71ad98d9d0a952b5918ec51b4136425"
+      "bytes": 9446,
+      "sha256": "0d8e4e1d10ec1196d973fc151b083a87b735f215d4a0ba71bc14f107b6c91521"
     },
     "bc_facility_match_conflicts.csv": {
       "bytes": 1801,
       "sha256": "aa5e516abf93df2b38949286e760d74d8ce03541eb4735f77856582694cf36e4"
     },
+    "bc_facility_tsa.csv": {
+      "bytes": 17877,
+      "sha256": "48257f3337b9819569e2ed4451c681a203a7b6018f9d7c8cd8727a13d4db0ae1"
+    },
     "bc_fibre_diagnostic_summary.json": {
-      "bytes": 1341,
-      "sha256": "2c7badb636e045fbe7b8a3e56176a55e35f3276162e488ed9801b62c1c7f58c6"
+      "bytes": 7519,
+      "sha256": "83ac992313ed82babff40cdede19988163d120c625a8348c0c849148f29f1bf6"
     },
     "contract_compliance.csv": {
-      "bytes": 34351,
-      "sha256": "21f2f99a21b2cad83befda9df98fd27795f0a80488c37f6e4de3ddda4372dd82"
+      "bytes": 38145,
+      "sha256": "f55e9e010753d71b0aa7147f94a71c54de5693491a086a42b589316c02505033"
     },
     "contracts.csv": {
-      "bytes": 32011,
-      "sha256": "1073b4ee44316b9f8e8bab8e2bd2689a47c3815680d03de4f06f41de281e195c"
+      "bytes": 35802,
+      "sha256": "4344bdcc1d633074f2a8550f96fd132ba69936de2b15000c3ceddfe2acdcdf07"
+    },
+    "contracts_bc_apportionment.csv": {
+      "bytes": 8427,
+      "sha256": "c6a4a9a50d84e3d1a328008a6e54e8f5b4ef8221fe434c700149415dad40ab25"
     },
     "contracts_bc_diagnostic.csv": {
       "bytes": 262449,
@@ -2527,24 +2536,32 @@
       "sha256": "0aaf8ae2b257fd728c0270629dca140a7df245f7e172efd9c419d147b0b9437b"
     },
     "facility_assignment.csv": {
-      "bytes": 16959,
-      "sha256": "c677ba5d19bd74cc6a0d013b8d3406267bb8068c9858cd977b5b0839b904fb24"
+      "bytes": 16952,
+      "sha256": "4ba87128029ab41cb0821dba592c6b26b34c6e20b49e6702559a01b7e8d2714e"
     },
     "facility_capacity.csv": {
       "bytes": 24561,
       "sha256": "79fc84710786ebaebd5b10ee29ad2484ca5da44bdecf06c49c48aac8dc5d496f"
     },
     "facility_grade_utilization.csv": {
-      "bytes": 21088,
-      "sha256": "5422585161fa6bb28d6e0837314f158fc5b73eed9dfc64c6d84d7f5c4ea3b256"
+      "bytes": 21083,
+      "sha256": "4e4ec206956ccc7585a4962229b67d8ccfae0f6f70289676789e701ddbf0c325"
     },
     "facility_offers.csv": {
       "bytes": 105260,
       "sha256": "12f1445ccb3d14da50166a45b5ec222fb03bb89889236d4bec3d31b1904f85aa"
     },
+    "facility_tenure_crosswalk.csv": {
+      "bytes": 11434,
+      "sha256": "aff44db90f12ed1ad36c46c3d1c3c817af4d407c858d89f3c3a8e498ddadab95"
+    },
+    "facility_tenure_crosswalk_candidates.csv": {
+      "bytes": 66524,
+      "sha256": "1d247acd05a5f2998da1f5042c057cd65ecb0c5f341af9ed296f2542df157485"
+    },
     "facility_utilization.csv": {
       "bytes": 16139,
-      "sha256": "4548bcb30edb2b0a0d3a208c35d819724417e2b79a14613269c7d0bd9a58f77d"
+      "sha256": "20ae9bfb8b268a5b4abd599498ecc4c8ab693c55d2e8710fd73214b080bd4960"
     },
     "grades.csv": {
       "bytes": 908,
@@ -2556,7 +2573,7 @@
     },
     "objective_decomposition.csv": {
       "bytes": 525,
-      "sha256": "046985b168c5a072b7b23be045e95408f03874c1600559b0c824a53f5637fc2b"
+      "sha256": "be8d449d6f39ed856d7094f4619ceecce2bb6720399cbad47a06f11db96fb0ab"
     },
     "previous_pilot_class_mix.csv": {
       "bytes": 174,
@@ -2564,7 +2581,7 @@
     },
     "road_network_summary.json": {
       "bytes": 135657,
-      "sha256": "8a89da982c3822f8e93e71da34b9c3781f97ed0ec5e30ffdc71ee46b303a54ba"
+      "sha256": "87ae402f886f16e977bb04321bb4d832dd82e7cd861216574fb06f11cd8f3fca"
     },
     "sawmill_allocation_long.csv": {
       "bytes": 44151,
@@ -2590,6 +2607,10 @@
       "bytes": 15453,
       "sha256": "6fb278ee15727e38144cd5600dd69670f21f2420436202ada820399580461970"
     },
+    "tenure_crosswalk_summary.json": {
+      "bytes": 7690,
+      "sha256": "cff893b5efbcd32227b7c37da9b1d5b580ca54354affcaf9c337b7eb06983424"
+    },
     "transport_links.csv": {
       "bytes": 78226,
       "sha256": "044621db30108b1c5ea468756f96b8c4bb1dd54f265a777297bdd6bffad9371d"
@@ -2610,6 +2631,14 @@
       "bytes": 22230,
       "sha256": "a4e63e2517d9a75095a5ed3ca08e7c8450ed326351e3f9626207134dd810b8ca"
     },
+    "tsa_apportionment_2018.csv": {
+      "bytes": 33170,
+      "sha256": "4711036df25761eb94d7966d7d4fa33da0ac22444000d8b966c10f7314ffb7dd"
+    },
+    "tsa_apportionment_2018_rejected.csv": {
+      "bytes": 11177,
+      "sha256": "dc1446e3bdb29d47113893b718933bef7570d737618294b8dbf5ea7851be035f"
+    },
     "tsa_tenure_apportionment_long.csv": {
       "bytes": 712294,
       "sha256": "23061f23f280d53b8ebebfae0c2a047129b272558c8fc07ff280add9f38faf53"
@@ -2619,14 +2648,14 @@
       "sha256": "75c6c0f7676eba1116cfbe03ff805957f411bd246984ee8ee06682ab236fd956"
     },
     "validation_summary.json": {
-      "bytes": 77149,
-      "sha256": "f4959a21815638705c0ab536f4af85619374a6091c8a11e2722099228e1a4a17"
+      "bytes": 77143,
+      "sha256": "bdbbe737aca77571bcdf210f7d9674d4927ff74a3182c838ccbceac812bcde8a"
     }
   },
   "pilot": "tsa24_bc_stage_a_facility_assignment",
   "report": "ASSIGNMENT_REPORT.md",
   "run": {
-    "objective_value_cad": 4959577.202053819,
+    "objective_value_cad": 4959577.202053818,
     "period": "2026",
     "run_id": "tsa24_bc_stage_a_pilot_v1",
     "scenario_id": "tsa24_bc_stage_a_pilot",

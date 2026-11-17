@@ -28,7 +28,7 @@ report; Stage A does not invent Stage B demand or market rows.
 - Supply offers: 53
 - Facilities: 161 screened; 129 with a transport link
 - Transport links: 210
-- Contracts: 161 (`contract_source=diagnostic_absent`)
+- Contracts: 161 (`contract_source=apportionment_derived_diagnostic;diagnostic_absent`)
 - Total supply: 311,600 m3 green
 - Solver: PULP_CBC_CMD 2.9.0 (Optimal)
 
@@ -274,12 +274,12 @@ No facility reached nameplate capacity in this run.
 
 | Facility | Class | Assigned m3 | Nameplate m3/y | Utilization |
 | --- | --- | --- | --- | --- |
-| BC-SAW-141 | SAW | 98,220 | 703,162 | 14.0% |
-| BC-PEL-210 | PEL | 68,677 | 251,125 | 27.3% |
-| BC-SAW-1009 | SAW | 64,054 | 583,224 | 11.0% |
-| BC-SAW-977 | SAW | 56,788 | 241,639 | 23.5% |
+| BC-SAW-141 | SAW | 132,613 | 703,162 | 18.9% |
+| BC-SAW-977 | SAW | 53,228 | 241,639 | 22.0% |
+| BC-PEL-383 | PEL | 35,537 | 251,125 | 14.2% |
+| BC-PEL-210 | PEL | 35,328 | 251,125 | 14.1% |
+| BC-SAW-1009 | SAW | 33,222 | 583,224 | 5.7% |
 | BC-PAP-964 | PAP | 21,673 | 1,730,006 | 1.3% |
-| BC-PEL-383 | PEL | 2,187 | 251,125 | 0.9% |
 
 ### 5.5 Delivered cost per m3
 
@@ -319,16 +319,13 @@ FFCM BC nameplate/facility shares come from the 161 in-scope BC SAW/PAP/PEL/BIO 
 ## 6. Contracts and capacity gaps
 
 161 of 161 diagnostic contracts satisfy both bounds.
-Contract sources in this run: `diagnostic_absent`.
-The BC Fibre Database diagnostic table contributes real TSA-level 2018
-apportionment volumes (no facility identifier) and dimensionless residue
-allocation shares (no volume).  It does **not** contribute a facility-level
-contract volume, so Stage A keeps `min=0`, `max=nameplate` and
-`contract_source=diagnostic_absent` for every facility.  These are diagnostic
-and project-legacy bounds, not real supply agreements.  Transport links carry
-`capacity=None` and `capacity_source=absent`; route and transload capacities
-are not present in the parsed tables. These are data gaps, not modelled
-constraints.
+Contract sources in this run: `apportionment_derived_diagnostic;diagnostic_absent`.
+16 facilities use apportionment-derived maximum entitlements from the 2018 TSA licence crosswalk. These are **not real supply contracts**: they are diagnostic caps built from a licence row that matched exactly one facility. 145 facilities retain `min=0`, `max=nameplate` and `contract_source=diagnostic_absent`.  The TSA apportionment table also carries
+dimensionless residue allocation shares and TSA-class totals without holders;
+neither is converted into a facility contract.  All contract bounds are
+diagnostic, not commercial evidence.  Transport links carry `capacity=None` and
+`capacity_source=absent`; route and transload capacities are not present in the
+parsed tables. These are data gaps, not modelled constraints.
 
 ## 7. Validation
 
@@ -345,7 +342,7 @@ constraints.
 | moisture_blend | yes | facility moisture blends respect declared limits |
 | unit_consistency | yes | all quantities use declared m3/odt conversions and every capacity basis is documented |
 | transport_provenance | yes | every transport link declares path confidence, capacity source, and distance basis |
-| contract_source | yes | diagnostic contracts declare diagnostic_absent |
+| contract_source | yes | diagnostic contracts declare a known diagnostic source |
 | finite_values | yes | all assignment and slack values are finite |
 | objective_reconciliation | yes | objective decomposition reconciles to the solver objective |
 | utilization_reconciliation | yes | facility utilization rows reconcile to assignments |
@@ -369,7 +366,7 @@ Overall validation: **PASS**.
 | transport | Distances are FFCM route-graph shortest paths from the anchor through TL nodes, not Euclidean distances. | 616.1618973962001 | km | archive_parsed_routes |
 | transport | Road and rail costs use BC transporters with archive fuel and operating rates and material capacities; transload costs are added at each TL node. |  | CAD/m3 | archive_parsed_transporters;transporter_materials;transload_costs |
 | transport | FFCM route capacity is absent from the parsed route table; every transport link is uncapped. |  | m3 | diagnostic |
-| contracts | Contracts are diagnostic: min=0 and max=facility nameplate. The BC Fibre Database contributes TSA apportionment volumes without facility IDs and residue shares without volumes, so no facility-level contract volume is inferred. |  | m3 | diagnostic_absent;bc_fibre_db_2018_diagnostic |
+| contracts | Contracts are diagnostic: min=0. Matched facilities use apportionment-derived maximum entitlements; unmatched facilities use nameplate maxima. These are caps, not supply agreements. |  | m3 | apportionment_derived_diagnostic;diagnostic_absent |
 | objective | Unassigned supply carries a diagnostic penalty so that feasible supply is not silently dropped. | 1000.0 | CAD/m3 | diagnostic |
 | grade | Assortment sorts are dimension-only; no BC official grade equivalence is claimed. |  | grade | derived_tsa24_assortment_matrix |
 | scope | MKRF is not used anywhere in this pilot. |  | n/a | scope_rule |
