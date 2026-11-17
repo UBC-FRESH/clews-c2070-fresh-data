@@ -192,8 +192,8 @@ combined biomass feedstock cap.
 
 ### Does the cap bind?
 
-**No.** In every run, `SUPBCW` activity is zero. The cap is an upper
-bound that is never approached. The reasons are:
+**No** in every baseline and diagnostic run: `SUPBCW` activity is zero.
+The cap is an upper bound that is never approached. The reasons are:
 
 1. In the base model, unconstrained hydro is 57.05 $/MWh,
    below PWRBCW low/base/high (92.21 /
@@ -220,7 +220,85 @@ In the current runs the bypass is latent because PWRBIO is also above
 the gas LCOE (86.28 vs
 74.04 $/MWh at $115/t).
 
-## 4. Assumptions and limitations
+## 4. Policy sensitivity
+
+Two forcing cases were run on 2026-11-17 in a disposable copy of the
+public model at `/tmp/osecan_sens`; the public clone was not modified.
+Both use the BC-base national rollup (42.959 PJ cap from 2028,
+2.456978 $/GJ). The only model change is the CO2 penalty function, plus
+the hydro upper limits in the second case.
+
+| Run | Forcing | Status | Objective (M$) | SUPBCW total (PJ) | PWRBCW total (PJ) | Cap binds | Emissions total (Mt) |
+|---|---|---|---:|---:|---:|---|---:|
+| BC base | documented 95-115 $/t | optimal | 1,331,287.25 | 0.000 | 0.000 | no | 25.750 |
+| carbon_200 | BC base with a $200/t CO2 penalty from 2026 | optimal | 1,331,527.92 | 0.000 | 0.000 | no | 1.857 |
+| carbon_200_hydro_frozen | BC base with $200/t CO2 and hydro frozen at 2021 activity | optimal | 1,371,553.35 | 2,104.981 | 565.855 | yes | 43.991 |
+
+`SUPBSW` and `PWRBIO` are zero in both sensitivity runs.
+
+### SUPBCW activity by year (PJ)
+
+| Run | 2021 | 2025 | 2030 | 2050 | 2070 | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| carbon_200 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| carbon_200_hydro_frozen | 0.000 | 42.959 | 42.959 | 42.959 | 42.959 | 2,104.981 |
+
+### PWRBCW electricity by year (PJ)
+
+| Run | 2021 | 2025 | 2030 | 2050 | 2070 | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| carbon_200 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+| carbon_200_hydro_frozen | 0.000 | 11.548 | 11.548 | 11.548 | 11.548 | 565.855 |
+
+At $200/t without a hydro constraint, biomass stays at zero: hydro
+expands to 3,252 PJ in 2050 and the objective rises by only 240.67 M$
+while cumulative emissions fall to 1.86 Mt. The carbon price changes
+the merit order against gas, but not against hydro.
+
+With $200/t and hydro frozen at 2021 activity, SUPBCW reaches
+42.959 PJ in every year from 2022 and the cap binds from 2028 through
+2070 (100.0% utilisation). PWRBCW produces 11.548 PJ/yr of electricity
+(3.21 TWh), or 0.35% of 2050 generation. Wind supplies 977.3 PJ in
+2050, gas 32.7 PJ, and PWRBIO remains zero. The objective rises by
+40,266.10 M$.
+
+### Conditions for BCW dispatch
+
+- The CO2 price must exceed the BCW-vs-gas parity price: about 160 $/t for the base case, 124 $/t for the high case, and 214 $/t for the low case.
+- A cheaper clean firm resource must be constrained. With unconstrained hydro, even $200/t leaves BCW at zero because hydro expands to 3,252 PJ in 2050.
+- With $200/t and hydro frozen at 2021 activity, SUPBCW reaches the 42.959 PJ cap and PWRBCW produces 11.548 PJ/yr of electricity.
+
+The cap that binds is the national `SUPBCW` cap. The model has no
+zonal BC supply technology, so a zonal cap cannot be tested here.
+
+The documented 95-115 $/t schedule is below the base-case parity
+price of about 160 $/t even with hydro frozen, which is why the
+earlier hydro-frozen diagnostic also had zero BCW.
+
+### Sensitivity limitations
+
+- The model has a national SUPBCW cap only. Zonal BC caps (SUPBCWB1/B2) cannot be represented without a model-structure change.
+- BCW is a national fuel. In the hydro-frozen run PWRBCW dispatches in A1/A2/S1/Q1/Q2/T1/L1, not in B1/B2; the model does not allocate BC residue to BC.
+- PWRBIO stays at zero in both sensitivity runs because wind is cheaper than generic BIO; the generic-BIO bypass is latent, not active.
+
+Reproduction (disposable copy; the public clone is unchanged):
+
+```bash
+cd /tmp/osecan_sens
+# build_params.py: return 95.0 if y < 2026 else 200.0
+.venv/bin/python -m osecan.cli build-params --out data/params
+.venv/bin/python -m osecan.cli clean-demand "Current Measures"
+.venv/bin/python apply_bc_base.py
+.venv/bin/python -m osecan.pipeline.assemble --out results/<run>/input
+.venv/bin/otoole convert csv datafile results/<run>/input results/<run>/osecan.txt config/otoole.yaml
+.venv/bin/python -m osecan.pipeline.solve --run results/<run>
+```
+
+For the hydro-frozen case, append the 650 `PWRHYD<zone>` rows from
+`results/diag_hydro_frozen/input/TotalTechnologyAnnualActivityUpperLimit.csv`
+to the assembled input before `otoole convert`.
+
+## 5. Assumptions and limitations
 
 - LCOE is a simplified busbar calculation. It excludes transmission,
   backup, balancing, and financing outside the 5% discount rate.
@@ -236,9 +314,11 @@ the gas LCOE (86.28 vs
 - The model's `TotalDiscountedCost.csv` extraction is empty in this
   version; the objective is read from the GLPK solution instead.
 
-## 5. Verification
+## 6. Verification
 
-- Four OSeCAN solves returned `optimal` (two base, two diagnostics).
+- Four original OSeCAN solves returned `optimal` (two base, two diagnostics).
+- The BC-base control replication and both policy sensitivity solves
+  returned `optimal`; the control reproduced 1,331,287.25 M$.
 - The zonal `harmonize` probe returned exit 1 with the expected
   `TECHNOLOGY not in SETS` errors.
 - The reduced analysis is re-built by
@@ -246,14 +326,15 @@ the gas LCOE (86.28 vs
 - The focused test suite is
   `python -m pytest -q workflows/national/clews/tests/test_osecan_biomass_module.py`.
 
-## 6. Gaps and next steps
+## 7. Gaps and next steps
 
 1. Add `SUPBCWB1/B2` (and `BCWB1/B2` fuels) to `model_structure.py` if
    zonal BC supply constraints are required. The current model cannot
    represent them.
 2. Add a hydro resource constraint or a provincial policy that makes
-   biomass compete. The current unconstrained hydro makes the biomass
-   module dormant.
+   biomass compete. The $200/t sensitivity shows that the carbon price
+   alone is not enough while hydro is unconstrained; with hydro frozen,
+   BCW reaches the 42.959 PJ cap at $200/t.
 3. Replace the generic `RNWBIO` $3/GJ uncapped supply with a WS3/FABLE
    biomass supply curve, or add a biomass-wide cap. Otherwise the BCW
    cap is bypassed by generic BIO.
@@ -263,4 +344,4 @@ the gas LCOE (86.28 vs
 5. Re-run the model after those changes; this report's run evidence is
    for the public v0.3 placeholder model only.
 
-Generated: 2026-11-17T19:36:13+00:00
+Generated: 2026-11-17T19:48:53+00:00

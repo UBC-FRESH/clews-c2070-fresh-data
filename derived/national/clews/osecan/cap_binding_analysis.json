@@ -92,7 +92,7 @@
       "utilisation_pj": 0.0
     }
   ],
-  "conclusion": "The 50 PJ placeholder and the 43-50 PJ BC base cap do not bind in any run. The model dispatches zero BCW because unconstrained hydro is cheaper in the base model, and the placeholder gas plant is cheaper than PWRBCW even when hydro is frozen. The generic-BIO bypass means a BCW cap would not cap biomass electricity in any case.",
+  "conclusion": "The 50 PJ placeholder and the 43-50 PJ BC base cap do not bind in any baseline or diagnostic run. The model dispatches zero BCW because unconstrained hydro is cheaper in the base model, and the placeholder gas plant is cheaper than PWRBCW even when hydro is frozen. The generic-BIO bypass means a BCW cap would not cap biomass electricity in any case. The policy sensitivity recorded in the run report shows the cap can bind when the CO2 price is $200/t and hydro is frozen at 2021 activity.",
   "generic_bio_bypass": {
     "description": "PWRBIO consumes BIO from the uncapped RNWBIO supply at $3/GJ. A BCW cap therefore cannot cap biomass electricity; it only shifts feedstock from BCW to generic BIO.",
     "pwr_bio_delta_vs_gas95_usd_per_mwh": 15.913082008152458,
@@ -135,6 +135,7 @@
         "2050": 1.031283,
         "2070": 0.0
       },
+      "emissions_total_mt": 25.749782,
       "generation_2025_pj": {
         "HYD": 2264.877571
       },
@@ -178,6 +179,7 @@
         "2050": 1.031283,
         "2070": 0.0
       },
+      "emissions_total_mt": 25.749782,
       "generation_2025_pj": {
         "HYD": 2264.877571
       },

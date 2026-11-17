@@ -1,0 +1,159 @@
+{
+  "baseline": {
+    "cap_binding": false,
+    "emissions_total_mt": 25.749782,
+    "objective_musd": 1331287.25,
+    "pwr_bio_total_pj": 0.0,
+    "pwrbcw_total_pj": 0.0,
+    "run": "bc_base_national_rollup",
+    "supbcw_total_pj": 0.0
+  },
+  "conditions_for_bcw_dispatch": [
+    "The CO2 price must exceed the BCW-vs-gas parity price: about 160 $/t for the base case, 124 $/t for the high case, and 214 $/t for the low case.",
+    "A cheaper clean firm resource must be constrained. With unconstrained hydro, even $200/t leaves BCW at zero because hydro expands to 3,252 PJ in 2050.",
+    "With $200/t and hydro frozen at 2021 activity, SUPBCW reaches the 42.959 PJ cap and PWRBCW produces 11.548 PJ/yr of electricity."
+  ],
+  "forcing_conditions": {
+    "carbon_200": "EmissionsPenalty 95 $/t for 2021-2025 and 200 $/t from 2026; all other parameters from the BC-base national rollup.",
+    "carbon_200_hydro_frozen": "The carbon_200 forcing plus a TotalTechnologyAnnualActivityUpperLimit on every PWRHYD<zone> equal to its 2021 base-run activity in all years."
+  },
+  "limitations": [
+    "The model has a national SUPBCW cap only. Zonal BC caps (SUPBCWB1/B2) cannot be represented without a model-structure change.",
+    "BCW is a national fuel. In the hydro-frozen run PWRBCW dispatches in A1/A2/S1/Q1/Q2/T1/L1, not in B1/B2; the model does not allocate BC residue to BC.",
+    "PWRBIO stays at zero in both sensitivity runs because wind is cheaper than generic BIO; the generic-BIO bypass is latent, not active."
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "horizon": "2021-2070",
+    "package": "osecan 0.1.0",
+    "region": "CAN",
+    "repository": "https://github.com/deltae/C2070",
+    "scenario": "Current Measures",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "runs": {
+    "carbon_200": {
+      "cap_binding": false,
+      "cap_binding_years": "",
+      "cols": 234900,
+      "description": "BC base with a $200/t CO2 penalty from 2026",
+      "emissions_mt": {
+        "2021": 0.009171,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 1.856899
+      },
+      "forcing": "EmissionsPenalty 95 $/t for 2021-2025 and 200 $/t from 2026; BC-base national SUPBCW rollup unchanged.",
+      "generation_2050_pj": {
+        "HYD": 3252.16902
+      },
+      "max_utilisation_fraction": 0.0,
+      "objective_delta_musd": 240.67,
+      "objective_musd": 1331527.92,
+      "pwr_bio_pj": {
+        "total": 0.0
+      },
+      "pwr_hyd_pj": {
+        "2021": 2230.744902,
+        "2025": 2265.089874,
+        "2030": 2413.615279,
+        "2050": 3252.16902,
+        "2070": 3252.16902
+      },
+      "pwrbcw_pj": {
+        "2021": 0.0,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 0.0
+      },
+      "rows": 273001,
+      "status": "optimal",
+      "supbcw_pj": {
+        "2021": 0.0,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 0.0
+      },
+      "supbsw_pj": {
+        "total": 0.0
+      }
+    },
+    "carbon_200_hydro_frozen": {
+      "cap_binding": true,
+      "cap_binding_years": "2028-2070",
+      "cols": 234900,
+      "description": "BC base with $200/t CO2 and hydro frozen at 2021 activity",
+      "emissions_mt": {
+        "2021": 0.023274,
+        "2025": 0.42273,
+        "2030": 1.647079,
+        "2050": 1.669525,
+        "2070": 0.0,
+        "total": 43.990577
+      },
+      "forcing": "EmissionsPenalty 95 $/t for 2021-2025 and 200 $/t from 2026; every PWRHYD<zone> activity upper limit fixed at its 2021 base-run activity in all years.",
+      "generation_2050_pj": {
+        "BCW": 11.548065,
+        "HYD": 2230.54127,
+        "NGS": 32.735776,
+        "WND": 977.343911
+      },
+      "max_utilisation_fraction": 1.0,
+      "objective_delta_musd": 40266.1,
+      "objective_musd": 1371553.35,
+      "pwr_bio_pj": {
+        "total": 0.0
+      },
+      "pwr_hyd_pj": {
+        "2021": 2230.416314,
+        "2025": 2230.299272,
+        "2030": 2230.54127,
+        "2050": 2230.54127,
+        "2070": 2230.54127
+      },
+      "pwrbcw_2050_by_zone_pj": {
+        "A1": 0.048224,
+        "A2": 0.532557,
+        "L1": 0.176925,
+        "Q1": 3.381588,
+        "Q2": 2.033405,
+        "S1": 2.786811,
+        "T1": 2.588555
+      },
+      "pwrbcw_pj": {
+        "2021": 0.0,
+        "2025": 11.548065,
+        "2030": 11.548065,
+        "2040": 11.548065,
+        "2050": 11.548065,
+        "2060": 11.548064,
+        "2070": 11.548064,
+        "total": 565.855166
+      },
+      "rows": 273651,
+      "status": "optimal",
+      "supbcw_pj": {
+        "2021": 0.0,
+        "2022": 42.9588,
+        "2025": 42.9588,
+        "2028": 42.9588,
+        "2030": 42.9588,
+        "2040": 42.9588,
+        "2050": 42.9588,
+        "2060": 42.9588,
+        "2070": 42.9588,
+        "total": 2104.9812
+      },
+      "supbsw_pj": {
+        "total": 0.0
+      }
+    }
+  },
+  "schema_version": "1.0"
+}
