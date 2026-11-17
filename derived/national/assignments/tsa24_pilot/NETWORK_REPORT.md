@@ -119,6 +119,16 @@ m3 at the grade density, and costs/rates come from
 | RESIDUE | BC_residue_truck | 2.5906 | 55.56 | 0.046631 |
 | SAWLOG | BC_logging_truck | 2.5906 | 46.10 | 0.056196 |
 
+Matched real/FFCM cost comparison (same facility-grade pairs):
+
+| Grade | Links | Real median CAD/m3 | FFCM median CAD/m3 | Delta median CAD/m3 |
+|---|---|---|---|---|
+| HOGFUEL | 4 | 25.15 | 53.73 | -28.58 |
+| OTHER_LOG | 11 | 30.31 | 62.42 | -32.11 |
+| PULP | 11 | 30.31 | 62.42 | -32.11 |
+| RESIDUE | 8 | 25.15 | 53.08 | -27.93 |
+| SAWLOG | 54 | 30.31 | 66.10 | -35.79 |
+
 ## 4. Stage A re-run
 
 The base 1,000 ha and ws4-quota runs use real NRN links for facilities with a
