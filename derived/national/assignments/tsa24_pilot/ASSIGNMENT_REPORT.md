@@ -3,14 +3,20 @@
 > **Diagnostic pilot.** The supply area is `1,000 ha`, a
 > contract/data-shape test, not a TSA24 supply estimate. Assortment sorts are
 > dimension-only; no BC official grade equivalence is claimed. MKRF is not used.
-> This version replaces the flat 150 km access leg with the parsed FFCM TL graph,
-> adds facility coordinate provenance, and routes all capacity conversions
+> This version uses the real NRN BC road graph for facilities with a snapped
+> road path and keeps the parsed FFCM TL graph as a flagged fallback elsewhere.
+> It adds facility coordinate provenance and routes all capacity conversions
 > through `units.py`.
+
+This version uses the real NRN BC road graph for facilities with a snapped road path (67 facilities) and keeps the parsed FFCM TL graph as a flagged fallback for 67 facilities without a real path.
+- Real NRN road paths: 67 facilities (98 grade links).
+- FFCM TL fallback: 67 facilities (122 grade links); first 20: BC-BIO-4010, BC-BIO-4011, BC-BIO-4015, BC-BIO-4016, BC-BIO-4018, BC-BIO-4022, BC-BIO-4023, BC-PAP-1007, BC-PAP-1008, BC-PAP-1319, BC-PAP-679, BC-PAP-938, BC-PAP-957, BC-PAP-963, BC-PAP-964, BC-PEL-1141, BC-PEL-1650, BC-PEL-1653, BC-PEL-1654, BC-PEL-1655.
 
 ## 1. Scope and Stage A/B split
 
 Stage A consumes the TSA24 assortment matrix, parsed FFCM BC facility lines,
-the FFCM TL transport graph, and diagnostic contracts, then solves a
+the real NRN BC road graph plus flagged FFCM TL fallback, and diagnostic
+contracts, then solves a
 profit-maximising transportation/allocation LP. It emits facility assignment,
 utilization, contract, unassigned-supply, objective, and validation tables.
 Stage B (`fresh_fibre.graph` / `fresh_fibre.lp`) consumes the Stage B
@@ -20,8 +26,8 @@ report; Stage A does not invent Stage B demand or market rows.
 - Scenario: `tsa24_bc_stage_a_pilot`
 - Period: `2026`
 - Supply offers: 53
-- Facilities: 161 screened; 129 with a transport link
-- Transport links: 210
+- Facilities: 161 screened; 134 with a transport link
+- Transport links: 220
 - Contracts: 161 (`contract_source=diagnostic_absent`)
 - Total supply: 311,600 m3 green
 - Solver: PULP_CBC_CMD 2.9.0 (Optimal)
@@ -63,10 +69,10 @@ Zero/blank-capacity facilities: None; every BC facility has a positive normalize
 
 | Class | All BC rows | Stage A rows | Stage A nameplate m3/y | Linked |
 | --- | --- | --- | --- | --- |
-| SAW | 121 | 121 | 45,178,430 | 94 |
-| PAP | 15 | 15 | 30,774,260 | 11 |
+| SAW | 121 | 121 | 45,178,430 | 97 |
+| PAP | 15 | 15 | 30,774,260 | 12 |
 | PEL | 13 | 13 | 6,859,300 | 13 |
-| BIO | 12 | 12 | 8,326,259 | 11 |
+| BIO | 12 | 12 | 8,326,259 | 12 |
 | PLY | 15 | 0 | 0 | 0 |
 | OSB | 2 | 0 | 0 | 0 |
 | NSP | 1 | 0 | 0 | 0 |
@@ -88,10 +94,8 @@ fabricated distance. Rejected facilities (first 20):
 
 | Facility | Status | Reason |
 | --- | --- | --- |
-| BC-BIO-4017 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-PAP-589 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-PAP-590 | missing_no_tl_route | no_TL_route_in_routes_csv |
-| BC-PAP-591 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-PAP-731 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-SAW-1022 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-SAW-1152 | missing_no_tl_route | no_TL_route_in_routes_csv |
@@ -106,19 +110,23 @@ fabricated distance. Rejected facilities (first 20):
 | BC-SAW-1730 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-SAW-1735 | missing_no_tl_route | no_TL_route_in_routes_csv |
 | BC-SAW-200 | missing_no_tl_route | no_TL_route_in_routes_csv |
-| BC-SAW-308 | missing_no_tl_route | no_TL_route_in_routes_csv |
-| BC-SAW-309 | missing_no_tl_route | no_TL_route_in_routes_csv |
+| BC-SAW-363 | missing_no_tl_route | no_TL_route_in_routes_csv |
+| BC-SAW-456 | missing_no_tl_route | no_TL_route_in_routes_csv |
+| BC-SAW-488 | missing_anchor_proxy_self | anchor_proxy_has_no_defensible_self_haul_distance |
+| BC-SAW-609 | missing_no_tl_route | no_TL_route_in_routes_csv |
 
 ## 3. Transport (paths, modes, distance/cost vs 150 km, confidence)
 
-- Accepted links: 210 across
-  129 facilities.
+- Accepted links: 220 across
+  134 facilities.
+- Real NRN road links: 98 grade links across 67 facilities (`path_confidence=real_road_network`).
+- FFCM fallback links: 122 grade links across 67 facilities (`status=linked_ffcm_fallback_no_real_road_path`).
 - TSA24 anchor: `TSA24_AU23000` with
   anchor proxy `BC-SAW-488`.
   Access TL nodes:
   TL19, TL20, TL26.
 - Anchor basis: `tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-488;source=mills_db;note=no_TSA24_FMU_exists_in_FFCM_graph`.
-- 210 links have `capacity=None`; `capacity_source=absent`; route capacity table=`absent`.
+- 220 links have `capacity=None`; `capacity_source=absent`; route capacity table=`absent`.
 
 No accepted link uses `access_leg_plus_graph`: the anchor is attached through
 parsed route edges from `BC-SAW-488`. That label is reserved for a future
@@ -126,13 +134,14 @@ non-route access leg.
 
 | Path confidence | Facilities |
 | --- | --- |
-| direct_route | 61 |
-| graph_shortest_path | 68 |
+| direct_route | 52 |
+| graph_shortest_path | 15 |
+| real_road_network | 67 |
 
 | Mode | Facilities |
 | --- | --- |
-| COMBINATION | 24 |
-| ROAD | 105 |
+| COMBINATION | 15 |
+| ROAD | 119 |
 
 | Distance set | Distribution (km) |
 | --- | --- |
@@ -209,10 +218,10 @@ Declared factors:
 
 | Class | Facilities | With link | Nameplate m3/y | Assigned m3 | Utilization | Binding | Links |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| BIO | 12 | 11 | 8,326,259 | 0 | 0.0% | 0 | 44 |
-| PAP | 15 | 11 | 30,774,260 | 21,673 | 0.1% | 0 | 33 |
+| BIO | 12 | 12 | 8,326,259 | 0 | 0.0% | 0 | 48 |
+| PAP | 15 | 12 | 30,774,260 | 21,673 | 0.1% | 0 | 36 |
 | PEL | 13 | 13 | 6,859,300 | 70,864 | 1.0% | 0 | 39 |
-| SAW | 121 | 94 | 45,178,430 | 219,063 | 0.5% | 0 | 94 |
+| SAW | 121 | 97 | 45,178,430 | 219,063 | 0.5% | 0 | 97 |
 
 ### 5.3 Capacity binding
 
@@ -232,7 +241,7 @@ No facility reached nameplate capacity in this run.
 | --- | --- | --- |
 | product revenue | 141.27 | assigned volume weighted |
 | supply (roadside proxy) | 84.33 | assigned volume weighted |
-| transport (FFCM TL graph) | 21.78 | assigned volume weighted; includes transload |
+| transport (real NRN road + FFCM fallback) | 21.78 | assigned volume weighted; fallback links may include transload |
 | gate | 0.00 | assigned volume weighted |
 | processing | 40.38 | assigned volume weighted |
 | delivered cost | 146.48 | supply + transport + gate + processing |
@@ -244,7 +253,7 @@ No facility reached nameplate capacity in this run.
 | --- | --- | --- | --- |
 | product_revenue | 44,018,710.11 | CAD | assigned volume x facility product revenue |
 | supply_cost | -26,275,684.72 | CAD | assigned volume x roadside cost proxy |
-| transport_cost | -6,785,708.27 | CAD | assigned volume x FFCM TL-graph transport cost |
+| transport_cost | -6,785,708.27 | CAD | assigned volume x transport cost |
 | gate_cost | -0.00 | CAD | assigned volume x contract gate cost |
 | processing_cost | -12,581,427.77 | CAD | assigned volume x line processing cost |
 | unassigned_penalty | 0.00 | CAD | unassigned volume x diagnostic penalty |
@@ -323,9 +332,8 @@ links, is written to `assumptions.csv`, `line_screen.csv`, and
 - Replace the Prince George mill proxy with a real TSA24 supply-node or FMU
   anchor once the AU-to-FMU crosswalk exists. The current anchor is documented
   and low-confidence, not a production route.
-- Replace the FFCM synthetic TL distances with an accepted BC road/rail network
-  or a validated haul-distance model; the graph is sparse and produces long
-  TL-TL paths.
+- Extend real-road coverage beyond the NRN BC 2018 layer and 5 km facility snap
+  tolerance; facilities without a real path still use flagged FFCM TL fallback.
 - Populate route and transload capacity before interpreting congestion or
   mode-shift limits.
 - Populate real contract minima, maxima, and gate costs.

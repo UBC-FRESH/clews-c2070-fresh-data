@@ -137,14 +137,6 @@
       "value": ""
     },
     {
-      "assumption": "BC-BIO-4017 rejected: missing_no_tl_route",
-      "category": "transport_screen",
-      "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
-      "unit": "km",
-      "value": ""
-    },
-    {
       "assumption": "BC-PAP-589 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
@@ -154,14 +146,6 @@
     },
     {
       "assumption": "BC-PAP-590 rejected: missing_no_tl_route",
-      "category": "transport_screen",
-      "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
-      "unit": "km",
-      "value": ""
-    },
-    {
-      "assumption": "BC-PAP-591 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
       "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
@@ -281,22 +265,6 @@
       "value": ""
     },
     {
-      "assumption": "BC-SAW-308 rejected: missing_no_tl_route",
-      "category": "transport_screen",
-      "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
-      "unit": "km",
-      "value": ""
-    },
-    {
-      "assumption": "BC-SAW-309 rejected: missing_no_tl_route",
-      "category": "transport_screen",
-      "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
-      "unit": "km",
-      "value": ""
-    },
-    {
       "assumption": "BC-SAW-363 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
@@ -362,14 +330,6 @@
     },
     {
       "assumption": "BC-SAW-935 rejected: missing_no_tl_route",
-      "category": "transport_screen",
-      "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
-      "unit": "km",
-      "value": ""
-    },
-    {
-      "assumption": "BC-SAW-945 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
       "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
@@ -614,6 +574,7 @@
       "nameplate_m3_y": 91138248.63119508
     },
     "period": "2026",
+    "real_road_links": "data/derived/national/assignments/tsa24_pilot/transport_links_bc_real.csv",
     "residue_density_odt_m3": 0.45,
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
     "target_agb_odt_ha": 204.7,
@@ -645,8 +606,8 @@
       }
     },
     "transport_summary": {
-      "accepted_facility_count": 129,
-      "accepted_link_count": 210,
+      "accepted_facility_count": 134,
+      "accepted_link_count": 220,
       "anchor": {
         "access_tl_nodes": [
           "TL19",
@@ -658,59 +619,60 @@
         "supply_node_id": "TSA24_AU23000"
       },
       "capacity": {
-        "capacity_none_count": 210,
+        "capacity_none_count": 220,
         "capacity_source": "absent",
         "route_capacity_table": "absent"
       },
       "confidence_counts": {
-        "direct_route": 61,
-        "graph_shortest_path": 68
+        "direct_route": 52,
+        "graph_shortest_path": 15,
+        "real_road_network": 67
       },
       "cost_cad_m3": {
         "HOGFUEL": {
-          "count": 11,
-          "max": 63.63864179210404,
-          "mean": 37.41305329990241,
-          "median": 29.96357761088821,
+          "count": 12,
+          "max": 50.714981,
+          "mean": 28.08556546333151,
+          "median": 25.707128807050058,
           "min": 19.52595778435373,
-          "p25": 26.264764614100116,
-          "p75": 52.92759101692055
+          "p25": 25.032288038227314,
+          "p75": 29.36434746994371
         },
         "OTHER_LOG": {
-          "count": 35,
-          "max": 87.1171386558402,
-          "mean": 44.2511388311889,
-          "median": 35.55972242175476,
+          "count": 37,
+          "max": 84.30264075358362,
+          "mean": 34.042203099676065,
+          "median": 30.307897,
           "min": 22.67792695149883,
-          "p25": 28.841267966734986,
-          "p75": 62.0775644937582
+          "p25": 28.175663850622204,
+          "p75": 35.408062952796044
         },
         "PULP": {
-          "count": 35,
-          "max": 87.1171386558402,
-          "mean": 44.2511388311889,
-          "median": 35.55972242175476,
+          "count": 37,
+          "max": 84.30264075358362,
+          "mean": 34.042203099676065,
+          "median": 30.307897,
           "min": 22.67792695149883,
-          "p25": 28.841267966734986,
-          "p75": 62.0775644937582
+          "p25": 28.175663850622204,
+          "p75": 35.408062952796044
         },
         "RESIDUE": {
-          "count": 24,
-          "max": 63.638641792104046,
-          "mean": 36.72960711477109,
-          "median": 31.629272550758248,
+          "count": 25,
+          "max": 50.714981,
+          "mean": 27.72612238176281,
+          "median": 25.149493,
           "min": 19.52595778435373,
-          "p25": 25.31110594175234,
-          "p75": 52.75389716411318
+          "p25": 24.590241431696782,
+          "p75": 30.089424638230156
         },
         "SAWLOG": {
-          "count": 105,
+          "count": 109,
           "max": 88.3120264414566,
-          "mean": 56.266909334857274,
-          "median": 61.387825103667495,
+          "mean": 40.25876915099879,
+          "median": 31.710499449478938,
           "min": 22.325173683267835,
-          "p25": 32.474380656988856,
-          "p75": 78.96049895377406
+          "p25": 30.307897,
+          "p75": 38.125779
         }
       },
       "diagnostic_comparison": {
@@ -995,17 +957,91 @@
         }
       },
       "distance_km": {
-        "count": 129,
-        "max": 2582.372763246,
-        "mean": 846.283647553736,
-        "median": 920.6438935022001,
+        "count": 134,
+        "max": 1313.7869169459002,
+        "mean": 631.4647262983175,
+        "median": 539.324494,
         "min": 315.95066527226,
-        "p25": 494.3744485625,
-        "p75": 1161.7624148261002
+        "p25": 485.812341,
+        "p75": 678.442546
+      },
+      "ffcm_fallback": {
+        "facilities": [
+          "BC-BIO-4010",
+          "BC-BIO-4011",
+          "BC-BIO-4015",
+          "BC-BIO-4016",
+          "BC-BIO-4018",
+          "BC-BIO-4022",
+          "BC-BIO-4023",
+          "BC-PAP-1007",
+          "BC-PAP-1008",
+          "BC-PAP-1319",
+          "BC-PAP-679",
+          "BC-PAP-938",
+          "BC-PAP-957",
+          "BC-PAP-963",
+          "BC-PAP-964",
+          "BC-PEL-1141",
+          "BC-PEL-1650",
+          "BC-PEL-1653",
+          "BC-PEL-1654",
+          "BC-PEL-1655",
+          "BC-PEL-1657",
+          "BC-PEL-1658",
+          "BC-PEL-210",
+          "BC-PEL-383",
+          "BC-SAW-1009",
+          "BC-SAW-1011",
+          "BC-SAW-1026",
+          "BC-SAW-1031",
+          "BC-SAW-114",
+          "BC-SAW-1253",
+          "BC-SAW-1276",
+          "BC-SAW-1287",
+          "BC-SAW-1288",
+          "BC-SAW-131",
+          "BC-SAW-132",
+          "BC-SAW-1377",
+          "BC-SAW-1383",
+          "BC-SAW-1386",
+          "BC-SAW-1387",
+          "BC-SAW-141",
+          "BC-SAW-1437",
+          "BC-SAW-1467",
+          "BC-SAW-1692",
+          "BC-SAW-1703",
+          "BC-SAW-1708",
+          "BC-SAW-1740",
+          "BC-SAW-208",
+          "BC-SAW-210",
+          "BC-SAW-242",
+          "BC-SAW-275",
+          "BC-SAW-281",
+          "BC-SAW-284",
+          "BC-SAW-379",
+          "BC-SAW-381",
+          "BC-SAW-383",
+          "BC-SAW-506",
+          "BC-SAW-611",
+          "BC-SAW-680",
+          "BC-SAW-682",
+          "BC-SAW-697",
+          "BC-SAW-74",
+          "BC-SAW-904",
+          "BC-SAW-905",
+          "BC-SAW-940",
+          "BC-SAW-977",
+          "BC-SAW-979",
+          "BC-SAW-981"
+        ],
+        "facility_count": 67,
+        "link_count": 122,
+        "path_confidence": "ffcm_fallback_no_real_road_path"
       },
       "mode_counts": {
-        "COMBINATION": 24,
-        "ROAD": 105
+        "COMBINATION": 15,
+        "ROAD": 119
       },
       "rate_table": {
         "BC_log_train": {
@@ -1032,6 +1068,12 @@
           "mode": "WATER",
           "rate_per_km": 8.8381333632287
         }
+      },
+      "real_road": {
+        "facility_count": 67,
+        "link_count": 98,
+        "path_confidence": "real_road_network",
+        "source": "transport_links_bc_real.csv"
       },
       "screened_facility_count": 161,
       "transload_cost_table": {
@@ -2175,7 +2217,8 @@
           "unit": "$/t",
           "value": 50.0
         }
-      }
+      },
+      "transport_basis": "real_nrn_bc_road_graph_with_ffcm_tl_fallback"
     },
     "tsa24_anchor": {
       "access_tl_nodes": [
@@ -2264,8 +2307,8 @@
     ]
   },
   "counts": {
-    "assignment_row_count": 197,
-    "assignment_variable_count": 4298,
+    "assignment_row_count": 203,
+    "assignment_variable_count": 4469,
     "contract_count": 161,
     "facility_count": 161,
     "facility_nameplate_m3_y": 91138248.63119508,
@@ -2278,17 +2321,17 @@
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
     "supply_offer_count": 53,
     "supply_volume_m3": 95364338.67999998,
-    "transport_link_count": 210,
+    "transport_link_count": 220,
     "unassigned_penalty_cad_m3": 1000.0,
     "unassigned_row_count": 9,
     "unassigned_variable_count": 53
   },
-  "generated_utc": "2026-11-17T00:36:09.606442+00:00",
+  "generated_utc": "2026-11-17T01:00:45.895368+00:00",
   "limitations": [
     "1,000 ha base area is diagnostic, not a TSA24 supply estimate.",
     "Assortment sorts are dimension-only; no BC official grade equivalence.",
     "TSA24 supply anchor is a geocoded Prince George mill proxy (BC-SAW-488); no TSA24 FMU exists in the FFCM graph.",
-    "Transport distances are FFCM route-graph shortest paths, not Euclidean or production routes.",
+    "Transport distances use the real NRN BC road graph where available and flagged FFCM TL fallback otherwise; neither is a production route.",
     "Only BC SAW/PAP/PEL/BIO facilities are in the LP; PLY/OSB/NSP rows are retained in facilities_bc.csv but out of scope.",
     "Many BC facilities lack a defensible coordinate; missing coordinates are not guessed.",
     "bdmt/y capacity converts at the declared 0.45 ODT/m3 density; admt/y and mbf/y are rejected without declared factors.",
@@ -2299,44 +2342,44 @@
   ],
   "outputs": {
     "ASSIGNMENT_REPORT.md": {
-      "bytes": 20534,
-      "sha256": "89bef78778cd24aa6db3e54ece538c1810f71ad99b9b1fefce826b894d3f741e"
+      "bytes": 21482,
+      "sha256": "c2c1685edb6c0f38394a595ef94a45995077374bd36c4cbc2c162fb7addb0197"
     },
     "assumptions.csv": {
-      "bytes": 9254,
-      "sha256": "514a94d130fc570125df593747f9a1759dad9d49b403ce7e32602082892b8995"
+      "bytes": 8468,
+      "sha256": "108d7ab672997e762a1385ba032cc53f72de616333c0514cd405f290b5339217"
     },
     "contract_compliance.csv": {
-      "bytes": 35195,
-      "sha256": "2bbf9327acbd3f30442a5415c2e48a5cab8b031bae30cd534db03d1916922eb6"
+      "bytes": 35301,
+      "sha256": "c3a43e8257a68c1de15d0cb7184ec08121f4c3ad164678384dc32956052e6b48"
     },
     "contracts.csv": {
       "bytes": 32011,
       "sha256": "1073b4ee44316b9f8e8bab8e2bd2689a47c3815680d03de4f06f41de281e195c"
     },
     "facilities_bc.csv": {
-      "bytes": 42819,
-      "sha256": "66074392660adbb00e0c3b506d51a1265f9ac00cbc2821ac7c45058abad2bddf"
+      "bytes": 43951,
+      "sha256": "59f059d53312866beb53f9a41b6c6c493f8b42328adbf71bf20d1779be592af6"
     },
     "facility_assignment.csv": {
-      "bytes": 64749,
-      "sha256": "9a1af3f96dbb5e01a6d9e05854bb891c6eae59f96a9591b1384268d00becbaa5"
+      "bytes": 65848,
+      "sha256": "0e10cca01ff66b56eaabe5037bbf1a9b089303852f52d5d3cf140172539b76b3"
     },
     "facility_capacity.csv": {
       "bytes": 22094,
       "sha256": "2f959caea31cfdbc0693fdd391343e0565f96cbd8a514482ef78cfc0028406b6"
     },
     "facility_grade_utilization.csv": {
-      "bytes": 19438,
-      "sha256": "76576fe0e9dde98c9c757f52654b3e3b99683f0cf67b7b961556c937dc5380ce"
+      "bytes": 19567,
+      "sha256": "e3d0306f843adf40cb9cfac35b40b1411ed929fc36607c3a8626137fa6b678d6"
     },
     "facility_offers.csv": {
       "bytes": 100522,
       "sha256": "183a538ea1644ede99d499b5eb445dba4cfea9723a9b7165ae4169345975219f"
     },
     "facility_utilization.csv": {
-      "bytes": 15934,
-      "sha256": "c2ece5ca5451fac9fcbe8feb025fed23b2e2e4aaf7ac426e443d7b5dd5ee066f"
+      "bytes": 15969,
+      "sha256": "716e5c454ef4d8d9ea8759ee74148564d8aac0c6ed050b5ad2f4b51bce3865b4"
     },
     "grades.csv": {
       "bytes": 908,
@@ -2347,8 +2390,8 @@
       "sha256": "86d4e387f8ef80967011a21c7b6e8ca81de03f4b89ec7da880ac0fe94c737802"
     },
     "objective_decomposition.csv": {
-      "bytes": 557,
-      "sha256": "04e02f89af11001800653a806ff7be4ba8b774624639a95c1291a8c18775d911"
+      "bytes": 544,
+      "sha256": "a172efbadef5e3532ee3d6b505652ceab88130aa1742032c39847f4c7f56328d"
     },
     "previous_pilot_class_mix.csv": {
       "bytes": 205,
@@ -2363,38 +2406,38 @@
       "sha256": "2d89d259f2d663c67bc3116adda5c52aebb31fe02f0e039325b09ed8f36200d9"
     },
     "stage_b_transport_link.csv": {
-      "bytes": 14879,
-      "sha256": "82551bb32482587c1614c00179ff0627f4a5e3bb527938fe890891131bb78e6b"
+      "bytes": 15060,
+      "sha256": "f60569c304d9d9b870f8637c042f8d151938f7876e0f9a22fd9eb0d2354721f4"
     },
     "supply_offers.csv": {
       "bytes": 15451,
       "sha256": "2fc27ad27e35dc85bb69ecdbbbfda6db28d14d23f4b5f2d5d7700c597377412f"
     },
     "transport_links.csv": {
-      "bytes": 73718,
-      "sha256": "bb436669a36af7e79ec9c87ab601ac205d578b76bd9bae3d9244db1f63b03275"
+      "bytes": 82968,
+      "sha256": "636ba29de19eb5dd785e7fe77827f0d67fe52027fd0d8eb9eaff49505ea75f16"
     },
     "transport_links_bc.csv": {
-      "bytes": 122809,
-      "sha256": "6afe9b4d73e7fff3e96502faebbf2ab0e4791bad2c96b4e0382bdc2255b491f2"
+      "bytes": 132097,
+      "sha256": "cd9e436a1e3c01aa041e97164d713ef09ec473a346cf8310bc13861898a26c4b"
     },
     "transport_screen.csv": {
-      "bytes": 22094,
-      "sha256": "845f0a899ae4eb2307f9875880282964599985754ff659d9005fb72ea7f3daf9"
+      "bytes": 23226,
+      "sha256": "34f5c4403b883343c188f5e2ff9cba3b330e0cb1c65bda6a9832485e2d0bec5b"
     },
     "unassigned_supply.csv": {
-      "bytes": 945,
-      "sha256": "2a46e07cee1c16df367685a799621a314bc54f1c564088ae99adc658b3c89573"
+      "bytes": 946,
+      "sha256": "90cad666211c590f010ba2ccec01bd0606272ce1cd9708ec21834ba50f791e34"
     },
     "validation_summary.json": {
-      "bytes": 67138,
-      "sha256": "2194f6eb630ed4487472d6bc22c4fbc33cf2e12aa5d72f2ab73ebc524da4a131"
+      "bytes": 67852,
+      "sha256": "0d990a23610bacb013c5804781994e39958f713aa6f654bee10a33da18c108c4"
     }
   },
   "pilot": "tsa24_bc_stage_a_facility_assignment",
   "report": "ASSIGNMENT_REPORT.md",
   "run": {
-    "objective_value_cad": -21346350988.75005,
+    "objective_value_cad": -18448503042.56279,
     "period": "2026",
     "run_id": "tsa24_bc_stage_a_pilot_ws4_quota_v1",
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
@@ -2404,6 +2447,7 @@
   },
   "sensitivity_label": "ws4_quota_306047.3_ha_period_not_annual",
   "source_hashes": {
+    "data/derived/national/assignments/tsa24_pilot/transport_links_bc_real.csv": "9d9dcf6de0e578c097246dcc1452a712b0ac4e9aaa82b6776d01203e0af8afa1",
     "data/derived/national/assortments/tsa24_prototype/assortment_matrix.csv": "a4533314cbe6ad7bdb639f040925bb9bcbd5d205cc21ec7cf296da82851e48b0",
     "data/derived/national/assortments/tsa24_prototype/residue_ledger.csv": "c98906728c46b3c07dfa978f7ef02792f5078bd184fc41631260afb0cddff601",
     "data/derived/national/assortments/tsa24_prototype/target_stand.json": "dd6039911cb6e791eb8f19f0d03547117da96c337fb5a290bd5845fde74753ce",
