@@ -1,0 +1,266 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "B1/B2 is a FRESH-side provisional crosswalk; C2070 has no published boundary.",
+    "Harvest is uniform within a TSA and allocated to ecoprovinces by THLB area.",
+    "The primary uses the 2018 AAC because it is the sustainable annual cut; the 2018 apportionment is a tenure snapshot and includes MPB-salvage over-allocation.",
+    "The parsed 36-TSA AAC artifact omits Prince George; the primary adds the PG 2018 AAC (8,375,000 m3/y).",
+    "The parsed 36-TSA apportionment artifact omits Dawson Creek, Fort Nelson, Fort St. John, Okanagan, and Prince George; the apportionment comparison adds their 2018 class sums.",
+    "The residue ratio is the national-batch taper residue, not full AGB-based harvest slash.",
+    "The cost is a Stage B mill-residue delivered-cost proxy, not a harvest-slash collection cost.",
+    "Stage B costs are CAD; no deflator or exchange rate to C2070 $2020 is applied.",
+    "The annual profile is flat; no time path is invented."
+  ],
+  "cost_basis": {
+    "B1": {
+      "processing_cad_per_odt": 20.89003076923075,
+      "residue_odt_weight": 1130672.529179064,
+      "source_count": 28,
+      "total_cad_per_odt": 55.39962257347099,
+      "transport_cad_per_odt": 34.509591804240245,
+      "variable_cost_usd_per_gj": 2.9945741931605943
+    },
+    "B2": {
+      "processing_cad_per_odt": 20.89003076923075,
+      "residue_odt_weight": 7194925.173962417,
+      "source_count": 66,
+      "total_cad_per_odt": 31.573132954973367,
+      "transport_cad_per_odt": 10.683102185742616,
+      "variable_cost_usd_per_gj": 1.7066558354039658
+    },
+    "CAN": {
+      "processing_cad_per_odt": 20.89003076923075,
+      "residue_odt_weight": 5036220.77676956,
+      "source_count": 94,
+      "total_cad_per_odt": 33.14895494284259,
+      "transport_cad_per_odt": 12.258924173611842,
+      "variable_cost_usd_per_gj": 1.7918354023158158
+    }
+  },
+  "energy_basis": {
+    "lhv_gj_per_odt": 18.5,
+    "moisture": "no moisture credit; dry-mass LHV",
+    "odt_definition": "oven-dry tonne",
+    "pj_gj": 1000000.0
+  },
+  "generated_utc": "2026-11-17T09:07:23+00:00",
+  "harvest_basis": {
+    "all_bc_apportionment_total_m3_y": 58424022.49999999,
+    "parsed_36_tsa_aac_total_m3_y": 44399801.0,
+    "parsed_36_tsa_apportionment_total_m3_y": 38726439.0,
+    "primary": "2018 AAC, all-BC including Prince George",
+    "primary_total_m3_y": 52774800.999999985,
+    "prince_george_aac_m3_y": 8375000.0,
+    "prince_george_apportionment_m3_y": 11019167.5,
+    "profile": "static_aac_2018_flat_2021_2070"
+  },
+  "inputs": [
+    {
+      "bytes": 33170,
+      "path": "data/derived/national/assignments/tsa24_pilot/tsa_apportionment_2018.csv",
+      "sha256": "4711036df25761eb94d7966d7d4fa33da0ac22444000d8b966c10f7314ffb7dd"
+    },
+    {
+      "bytes": 455819,
+      "path": "data/derived/national/assortments/bc_area_weights/bc_area_weights.csv",
+      "sha256": "a173afb4e32367096bae3db94b8e59554ab4950a9e238d9171afeb7e119c8c8e"
+    },
+    {
+      "bytes": 1154868,
+      "path": "data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv",
+      "sha256": "e0a51d5aa6b1ec22b9d27451f229a26bed525ee85641b7ce1766fe1c822e411e"
+    },
+    {
+      "bytes": 196273,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_supply.csv",
+      "sha256": "221ee5d8517c749a0dece65cfd1fd5f60bbec0f665ee15391461f1ecaa3e92b4"
+    },
+    {
+      "bytes": 988259,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/stage_b_transport_links.csv",
+      "sha256": "3445a960682bae9dbcca9ec274e678626dfaf7b9c60141f7eeeeca35815365ff"
+    },
+    {
+      "bytes": 13453,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_demand.csv",
+      "sha256": "f91f16deef2baa2505c20659cce0eb9c60ede1e713105768692097d553559018"
+    },
+    {
+      "bytes": 17877,
+      "path": "data/derived/national/assignments/tsa24_pilot/bc_facility_tsa.csv",
+      "sha256": "48257f3337b9819569e2ed4451c681a203a7b6018f9d7c8cd8727a13d4db0ae1"
+    }
+  ],
+  "key_totals": {
+    "B1": {
+      "annual_log_m3": 9182584.381008761,
+      "ratio_odt_per_m3": 0.03627328820199782,
+      "residue_odt": 333082.5296914946,
+      "residue_pj": 6.16202679929265
+    },
+    "B2": {
+      "annual_log_m3": 43592216.618991226,
+      "ratio_odt_per_m3": 0.10788940347275465,
+      "residue_odt": 4703138.247078065,
+      "residue_pj": 87.0080575709442
+    },
+    "CAN": {
+      "annual_log_m3": 52774800.999999985,
+      "ratio_odt_per_m3": 0.09542851287624109,
+      "residue_odt": 5036220.77676956,
+      "residue_pj": 93.17008437023686
+    }
+  },
+  "outputs": [
+    {
+      "bytes": 22561,
+      "path": "BC_CLEWS_SUPPLY_REPORT.md",
+      "sha256": "1e95543f83ef34da9c2141c74663c041597531d95b1d5fa4dbb8560bf81ac615"
+    },
+    {
+      "bytes": 2412,
+      "path": "README.md",
+      "sha256": "9b7c0f148ad4bedc980c315de26ff181d0f0434933cdd6b99a3e508a448934d1"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_activity_limits.csv",
+      "sha256": "87bfb7f659d8a62d48f00795251eff814c087c9c8881c6f93cff69757312182a"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_variable_cost.csv",
+      "sha256": "64410dd28211875867952c20c95054b23d2012f4782f49ead25c43c97caf5999"
+    },
+    {
+      "bytes": 1579,
+      "path": "SUPBCWB2_activity_limits.csv",
+      "sha256": "2ed4be9f6c06ef8c58ffdc1022ea2560d65406ce76d66930dfc499a735c41a23"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB2_variable_cost.csv",
+      "sha256": "8e68b936144b8ecd5d8461f0286d2eaf8deb236058d4806db4f5ebeceb830a83"
+    },
+    {
+      "bytes": 1157,
+      "path": "audit/bc_apportionment_adjustments.csv",
+      "sha256": "bb80947dc711c861cbe2afe3d33e8405902db3723fae17b1eede52fc68da4e5a"
+    },
+    {
+      "bytes": 1298,
+      "path": "audit/bc_cost_derivation.csv",
+      "sha256": "e25fea251e6ef96b8d423b9b92be21bd576089e8bb091910e0bcfd8285ea4bdf"
+    },
+    {
+      "bytes": 271,
+      "path": "audit/bc_pg_adjustment.csv",
+      "sha256": "5994cfd5b7a0de645b7003bcf163c23e4e05d44f5d5afd40b469e628ed4b73fa"
+    },
+    {
+      "bytes": 546,
+      "path": "audit/bc_residue_ratio_by_ecoprovince.csv",
+      "sha256": "0d991bdcff04d4ce57aa0b2a18c9ae708583fc1d83d26126d0c51ab24a270c25"
+    },
+    {
+      "bytes": 570,
+      "path": "audit/bc_residue_ratio_comparison.csv",
+      "sha256": "b0547c9964e3e8b928503e29efbd912057de8608b7839ae784d98e641d5be3b6"
+    },
+    {
+      "bytes": 9342,
+      "path": "audit/bc_tsa_volume_allocation.csv",
+      "sha256": "41857a4a8e31bcb7d1079a072f2f3cb56b673adaa1536be0355e2f9558e7dd09"
+    },
+    {
+      "bytes": 48030,
+      "path": "bc_annual_residue.csv",
+      "sha256": "203073360e3e554321a78599329a98ed7c460dca8bc28f8796b6e28567aef49d"
+    },
+    {
+      "bytes": 13966,
+      "path": "bc_tsa_zone_crosswalk.csv",
+      "sha256": "3ee66aaff978111c37a32e1c16145c978cb90d18834917487b1ee5772101884c"
+    },
+    {
+      "bytes": 2560,
+      "path": "bc_zone_crosswalk.csv",
+      "sha256": "a1d5ae6ff6d2bd0e2d5a80d9ba75ce63ccaab754f3eb276edce9ad1a662b3ef2"
+    },
+    {
+      "bytes": 1479,
+      "path": "comparison/SUPBCW_activity_limits.csv",
+      "sha256": "6a46e8ba72ad7f689c3a353fb63a6dca51d6cf2d53f01d555e833aea1694f308"
+    },
+    {
+      "bytes": 901,
+      "path": "comparison/SUPBCW_placeholder_comparison.csv",
+      "sha256": "6ae9fde2e5b2cfd5407c199afacd5b427f7abd49b6eebf6e382ba2953e9c9bac"
+    },
+    {
+      "bytes": 1429,
+      "path": "comparison/SUPBCW_variable_cost.csv",
+      "sha256": "ebfdd61e14defdcf7a1fb583249a8df99b37f04467f4fe00d4825ae04b9979f6"
+    },
+    {
+      "bytes": 48530,
+      "path": "comparison/bc_annual_residue_all_species_ratio.csv",
+      "sha256": "1ec4a1df2c75f2f6f01bfbe2800c6608f9171c0e37f83c56af9d2dd982cb3d92"
+    },
+    {
+      "bytes": 51080,
+      "path": "comparison/bc_annual_residue_apportionment_full.csv",
+      "sha256": "762063453315ef74816c59a8135ed9df968ef35f49e354bb298588b315aeda37"
+    },
+    {
+      "bytes": 53130,
+      "path": "comparison/bc_annual_residue_apportionment_parsed.csv",
+      "sha256": "752cf77cee30d4d6ee9ddb7a9fbd8a89ef2bb293dfb9acfa24213da3c70ff143"
+    },
+    {
+      "bytes": 50130,
+      "path": "comparison/bc_annual_residue_parsed_only.csv",
+      "sha256": "5bd5f1c11440379007ed9c4178f0d4526af86b4608ef0b8badc5b588cd99ee09"
+    }
+  ],
+  "residue_basis": {
+    "batch_log_m3": 8936253982.255674,
+    "batch_residue_odt": 722691930.9848208,
+    "bc_all_species_ratio_odt_per_m3": 0.0808719103574986,
+    "primary": "area-weighted national batch, ecoprovince-resolved",
+    "stage_b_status": "reported_not_used_mill_residue_different_basis",
+    "stage_b_total_ratio_odt_per_m3": 0.2595527054957869
+  },
+  "scenario_totals": {
+    "all_bc_aac": {
+      "national_log_m3": 52774800.999999985,
+      "national_residue_odt": 5036220.77676956,
+      "national_residue_pj": 93.17008437023686
+    },
+    "all_bc_aac_bc_all_species_ratio": {
+      "national_log_m3": 52774800.999999985,
+      "national_residue_odt": 4267998.975606828,
+      "national_residue_pj": 78.95798104872632
+    },
+    "all_bc_apportionment": {
+      "national_log_m3": 58424022.49999999,
+      "national_residue_odt": 5471734.20935055,
+      "national_residue_pj": 101.22708287298516
+    },
+    "parsed_36_tsa_aac": {
+      "national_log_m3": 44399801.0,
+      "national_residue_odt": 4213013.560012088,
+      "national_residue_pj": 77.94075086022363
+    },
+    "parsed_36_tsa_apportionment": {
+      "national_log_m3": 38726439.0,
+      "national_residue_odt": 3261974.209828157,
+      "national_residue_pj": 60.3465228818209
+    }
+  },
+  "zone_definition": {
+    "B1": "Georgia Depression + Southern Coastal Mountains",
+    "B2": "Northern Coastal Mountains + Montane Cordillera + Boreal Cordillera + Boreal Plains + Taiga Plains (BC portion) + Wrangel Mountains + NO_ECOPROVINCE fallback",
+    "status": "fresh_provisional_no_published_c2070_boundary"
+  }
+}
