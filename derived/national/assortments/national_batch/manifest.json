@@ -1,0 +1,118 @@
+{
+  "area_basis": "placeholder_equal_area",
+  "artifact": "national_representative_stand_batch",
+  "artifact_version": "0.1.0",
+  "config": {
+    "bin_end_cm": 100.0,
+    "bin_start_cm": 2.0,
+    "bin_width_cm": 2.0,
+    "config_hash": "f23475cb1e6756d4",
+    "n_trees": 300,
+    "sample_trees": 20,
+    "seed": 20261115,
+    "timebox_seconds": 780.0,
+    "workers": 48
+  },
+  "counts": {
+    "buck_yield_tables": 488,
+    "cells": 1191,
+    "log_rows": 8291,
+    "matrix_rows": 10673,
+    "plans": 1260,
+    "residue_rows": 1191,
+    "stands": 1191,
+    "statuses": {
+      "failed": 3,
+      "ok": 1191,
+      "skipped_no_fit": 19,
+      "skipped_no_taper_mapping": 33,
+      "skipped_no_tph": 3,
+      "synthesis_failed": 11
+    }
+  },
+  "generated_at_utc": "2026-11-17T08:11:20Z",
+  "git": {
+    "data_head": "e0bca3f3eef8db513f02e42edabecf9e90f2a25d",
+    "parent_branch": "feature/p7-source-triage-and-production-readiness",
+    "parent_head": "cf685fe2bc55ba983cf6b022c28bc5c8b2f930d3"
+  },
+  "inputs": {
+    "data/derived/national/assortments/national_coverage/coverage.csv": {
+      "bytes": 10164691,
+      "sha256": "12f85f85a8c803d1c841d5e817881c7277628ee69a170c45100076633b08fd5d"
+    },
+    "data/derived/national/assortments/national_fit/national_distribution_parameters.csv": {
+      "bytes": 6129722,
+      "sha256": "82996707356b4226c79debdf216ee8b22120c3f764972705e5fd1a4604288723"
+    },
+    "data/derived/national/assortments/national_fit/national_evidence_summary.json": {
+      "bytes": 64133,
+      "sha256": "5c5e1c10243677bb2de9c48a79d2aaf151cc321c52f0fcd9852de8c585f9a291"
+    },
+    "data/derived/national/assortments/national_fit/national_height_models.csv": {
+      "bytes": 1803837,
+      "sha256": "f9bb0dffc256833f089684808f2674116ffbb7a0267fc10ffb6739aa5dbfd77f"
+    },
+    "data/derived/national/assortments/national_fit/remaining_cells.csv": {
+      "bytes": 25912,
+      "sha256": "95d9e47c6bb4ee2cdfff314781e610eff04162553c070758d5519f55220539a5"
+    },
+    "external:/srv/shared-data/gep/ws4/nemora/config/log_prices/bc_interior_2026q3.yaml": {
+      "bytes": 827,
+      "sha256": "58674b7409ffc6cfd60292e04a7a753aff095a07788b2c1abbeed727bae86ce9"
+    },
+    "workflows/national/bucking/rules/bc_interior.yaml": {
+      "bytes": 4336,
+      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392"
+    }
+  },
+  "level": "ecoprovince",
+  "national_supply_estimate": false,
+  "outputs": {
+    "NATIONAL_BATCH_REPORT.md": {
+      "bytes": 4824,
+      "sha256": "5043e6bd312e2aecad084a835c5aefdcb51ebec838ed8479c1361087591b77d5"
+    },
+    "cell_status.csv": {
+      "bytes": 395875,
+      "sha256": "bf9dcce529f2f81879c5fe155a7c6245a5e0828c7e92017fe0192ab4010f87de"
+    },
+    "excluded_cells.csv": {
+      "bytes": 14563,
+      "sha256": "769bd39fd2f752be2262637ee2165bc3041263b6cf843c8eb42d442b301521f3"
+    },
+    "national_assortment_matrix.csv": {
+      "bytes": 3689182,
+      "sha256": "51dccbb1a28bbe5924085dd935dc665f1ac8e2a9e79df1a84f8bc322d57ea629"
+    },
+    "national_assortment_summary.json": {
+      "bytes": 24159,
+      "sha256": "92fb84078719ae322c658334c1632e78b769beefa7477a0c575e5d24ce9cb9b6"
+    },
+    "national_buck_yield_table.csv": {
+      "bytes": 12347457,
+      "sha256": "d5a144da9910239b04e791351f558ba3945d4f3bdb363c2dd437cf04e832b044"
+    },
+    "national_stands.csv": {
+      "bytes": 1332067,
+      "sha256": "dc3b49ee5018f062c1d9ec66cb062aef7e80c51d2b86191de05fd9dca32f80eb"
+    },
+    "national_tph_targets.csv": {
+      "bytes": 238771,
+      "sha256": "9deb095187ca14227df318f8958892ca533a8cfbe82496d0082c6bcacfcec096"
+    },
+    "remaining_cells.csv": {
+      "bytes": 229,
+      "sha256": "c2998bb29335449dfb2d1633a5026ca9b79058206560945338e4f34d265c2ff0"
+    }
+  },
+  "run_started_utc": "2026-11-17T08:03:03Z",
+  "runtime_seconds": 494.8839213848114,
+  "schema_version": 1,
+  "totals": {
+    "recovered_log_m3": 144415.81646603713,
+    "residue_m3": 23704.258133063926,
+    "residue_odt": 8822.229586555304,
+    "volume_m3": 168120.07459910103
+  }
+}

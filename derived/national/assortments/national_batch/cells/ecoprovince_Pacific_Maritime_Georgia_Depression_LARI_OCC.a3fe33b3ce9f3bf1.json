@@ -1,0 +1,12 @@
+{
+  "artifact_version": "0.1.0",
+  "cell_key": "ecoprovince:Pacific Maritime/Georgia Depression|LARI.OCC",
+  "config_hash": "f23475cb1e6756d4",
+  "error": "ValueError: small_end_dib_cm cannot exceed large_end_dib_cm",
+  "matrix": [],
+  "runtime_seconds": 45.58491826057434,
+  "schema_version": 1,
+  "stand": null,
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/national_batch.py\", line 1839, in _cell_task\n    aggregation, validation = aggregate_stand(\n                              ^^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/national_batch.py\", line 1484, in aggregate_stand\n    expansion, used_fallback = _estimate_tree_with_fallback(\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/national_batch.py\", line 1442, in _estimate_tree_with_fallback\n    _exact_tree_bucking(\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/national_batch.py\", line 1380, in _exact_tree_bucking\n    logs, residue = buck_tree(\n                    ^^^^^^^^^^\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/bucking/bucking.py\", line 284, in buck_tree\n    BuckedLog(\n  File \"<string>\", line 21, in __init__\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/bucking/schema.py\", line 193, in __post_init__\n    raise ValueError(\"small_end_dib_cm cannot exceed large_end_dib_cm\")\nValueError: small_end_dib_cm cannot exceed large_end_dib_cm\n"
+}

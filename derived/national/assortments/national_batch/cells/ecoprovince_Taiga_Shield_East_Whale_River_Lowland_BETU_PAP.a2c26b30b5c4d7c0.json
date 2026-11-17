@@ -1,0 +1,12 @@
+{
+  "artifact_version": "0.1.0",
+  "cell_key": "ecoprovince:Taiga Shield East/Whale River Lowland|BETU.PAP",
+  "config_hash": "f23475cb1e6756d4",
+  "error": "RuntimeError: Unable to sample values within the provided truncation bounds. Consider relaxing the bounds or reviewing the component parameters.",
+  "matrix": [],
+  "runtime_seconds": 0.006108999252319336,
+  "schema_version": 1,
+  "stand": null,
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/national_batch.py\", line 1832, in _cell_task\n    stand = synthesize_tree_list(\n            ^^^^^^^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/synthesize.py\", line 714, in synthesize_tree_list\n    dbh = _sample_dbh(spec, count, rng)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/assortments/synthesize.py\", line 443, in _sample_dbh\n    draws = sample_mixture(\n            ^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/ws4/nemora/src/nemora/fit/mixture.py\", line 345, in sample_mixture\n    samples[choices == idx] = _sample_from_distribution(\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/ws4/nemora/src/nemora/fit/mixture.py\", line 369, in _sample_from_distribution\n    return _truncate_draws(name, size, params, rng, lower, upper, initial_draws=draws)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/srv/shared-data/gep/ws4/nemora/src/nemora/fit/mixture.py\", line 424, in _truncate_draws\n    raise RuntimeError(\nRuntimeError: Unable to sample values within the provided truncation bounds. Consider relaxing the bounds or reviewing the component parameters.\n"
+}
