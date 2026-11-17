@@ -129,6 +129,10 @@ Matched real/FFCM cost comparison (same facility-grade pairs):
 | RESIDUE | 8 | 25.15 | 53.08 | -27.93 |
 | SAWLOG | 54 | 30.31 | 66.10 | -35.79 |
 
+FFCM costs in this comparison include transload at TL nodes; real NRN costs are
+direct road with no transload. The gap is therefore a combined distance and
+transload difference, not a like-for-like rate comparison.
+
 ## 4. Stage A re-run
 
 The base 1,000 ha and ws4-quota runs use real NRN links for facilities with a
