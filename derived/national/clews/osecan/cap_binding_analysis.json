@@ -1,0 +1,316 @@
+{
+  "breakevens": {
+    "bcw_vs_bio_usd_per_gj": 2.751112728553375,
+    "bcw_vs_gas_at_carbon_115_usd_per_gj": 1.8370534388167814,
+    "bcw_vs_gas_at_carbon_95_usd_per_gj": 1.5628598904296849,
+    "bcw_vs_hydro_usd_per_gj": 0.5684107554544712,
+    "carbon_price_for_base_bcw_parity_usd_per_t": 160.21799391924645,
+    "carbon_price_for_high_bcw_parity_usd_per_t": 124.3750273074818,
+    "carbon_price_for_low_bcw_parity_usd_per_t": 213.98244383689354
+  },
+  "cap_metrics": {
+    "base": {
+      "b1_cap_2028_pj": 3.672285606,
+      "b2_cap_2028_pj": 39.286509195,
+      "cap_2021_pj": 50.472521396,
+      "cap_2028_flat_pj": 42.958794801,
+      "cap_2028_pj": 42.958794801,
+      "cap_2070_pj": 42.958794801,
+      "case": "base",
+      "max_electricity_2021_pj": 13.567882095698923,
+      "max_electricity_2021_twh": 3.7688561376941454,
+      "max_electricity_2028_pj": 11.548063118548388,
+      "max_electricity_2028_twh": 3.2077953107078856
+    },
+    "base_2028_share_of_2025_hydro_generation_pct": 0.5098758213870973,
+    "baseline_2025_hydro_generation_pj": 2264.877571,
+    "efficiency_pwrbcw": 0.26881720430107525,
+    "gj_per_mwh": 3.6,
+    "high": {
+      "b1_cap_2028_pj": 4.590357008,
+      "b2_cap_2028_pj": 50.459500495,
+      "cap_2021_pj": 64.700260694,
+      "cap_2028_flat_pj": 55.049857503,
+      "cap_2028_pj": 55.049857503,
+      "cap_2070_pj": 55.049857503,
+      "case": "high",
+      "max_electricity_2021_pj": 17.392543197311824,
+      "max_electricity_2021_twh": 4.831261999253284,
+      "max_electricity_2028_pj": 14.798348791129031,
+      "max_electricity_2028_twh": 4.110652441980286
+    },
+    "low": {
+      "b1_cap_2028_pj": 2.142166604,
+      "b2_cap_2028_pj": 23.547766898,
+      "cap_2021_pj": 30.19345499,
+      "cap_2028_flat_pj": 25.689933501,
+      "cap_2028_pj": 25.689933501,
+      "cap_2070_pj": 25.689933501,
+      "case": "low",
+      "max_electricity_2021_pj": 8.11652015860215,
+      "max_electricity_2021_twh": 2.2545889329450417,
+      "max_electricity_2028_pj": 6.905896102419354,
+      "max_electricity_2028_twh": 1.918304472894265
+    },
+    "placeholder": {
+      "cap_pj": 50.0,
+      "case": "placeholder",
+      "max_electricity_pj": 13.440860215053762,
+      "max_electricity_twh": 3.733572281959378,
+      "note": "The 50 PJ placeholder is applied per SUP technology in build_params.py. SUPBCW and SUPBSW each get 50 PJ, so the combined placeholder feedstock cap is 100 PJ, not 50 PJ."
+    }
+  },
+  "case_checks": [
+    {
+      "bcw_cost_usd_per_gj": 3.194070814,
+      "bcw_lcoe_usd_per_mwh": 92.21475372153239,
+      "cap_2028_pj": 25.689933501,
+      "cap_binding": false,
+      "case": "low",
+      "reason": "PWRBCW is more expensive than the model's hydro and placeholder gas plants in every run.",
+      "utilisation_fraction": 0.0,
+      "utilisation_pj": 0.0
+    },
+    {
+      "bcw_cost_usd_per_gj": 2.456977549,
+      "bcw_lcoe_usd_per_mwh": 82.34360071665239,
+      "cap_2028_pj": 42.958794801,
+      "cap_binding": false,
+      "case": "base",
+      "reason": "PWRBCW is more expensive than the model's hydro and placeholder gas plants in every run.",
+      "utilisation_fraction": 0.0,
+      "utilisation_pj": 0.0
+    },
+    {
+      "bcw_cost_usd_per_gj": 1.965582039,
+      "bcw_lcoe_usd_per_mwh": 75.7628320467324,
+      "cap_2028_pj": 55.049857503,
+      "cap_binding": false,
+      "case": "high",
+      "reason": "PWRBCW is more expensive than the model's hydro and placeholder gas plants in every run.",
+      "utilisation_fraction": 0.0,
+      "utilisation_pj": 0.0
+    }
+  ],
+  "conclusion": "The 50 PJ placeholder and the 43-50 PJ BC base cap do not bind in any run. The model dispatches zero BCW because unconstrained hydro is cheaper in the base model, and the placeholder gas plant is cheaper than PWRBCW even when hydro is frozen. The generic-BIO bypass means a BCW cap would not cap biomass electricity in any case.",
+  "generic_bio_bypass": {
+    "description": "PWRBIO consumes BIO from the uncapped RNWBIO supply at $3/GJ. A BCW cap therefore cannot cap biomass electricity; it only shifts feedstock from BCW to generic BIO.",
+    "pwr_bio_delta_vs_gas95_usd_per_mwh": 15.913082008152458,
+    "pwr_bio_lcoe_usd_per_mwh": 86.2826590412312,
+    "status": "present"
+  },
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "horizon": "2021-2070",
+    "package": "osecan 0.1.0",
+    "region": "CAN",
+    "repository": "https://github.com/deltae/C2070",
+    "scenario": "Current Measures",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "zones": [
+      "B1",
+      "B2",
+      "A1",
+      "A2",
+      "S1",
+      "M1",
+      "O1",
+      "O2",
+      "Q1",
+      "Q2",
+      "T1",
+      "L1",
+      "N1"
+    ]
+  },
+  "runs": {
+    "baseline_placeholder": {
+      "cap_binding": false,
+      "cols": 234900,
+      "description": "50 PJ cap and $4/GJ placeholder on SUPBCW/SUPBSW",
+      "emissions_mt": {
+        "2021": 0.017136,
+        "2025": 0.0,
+        "2030": 1.031283,
+        "2050": 1.031283,
+        "2070": 0.0
+      },
+      "generation_2025_pj": {
+        "HYD": 2264.877571
+      },
+      "generation_2050_pj": {
+        "HYD": 3231.947788,
+        "NGS": 20.221232
+      },
+      "objective_musd": 1331287.25,
+      "pwr_bio_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "pwrbcw_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "rows": 273001,
+      "status": "optimal",
+      "supbcw_pj": {
+        "2021": 0.0,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 0.0
+      },
+      "supbsw_pj": {
+        "total": 0.0
+      }
+    },
+    "bc_base_national_rollup": {
+      "cap_binding": false,
+      "cols": 234900,
+      "description": "BC base national SUPBCW rollup (B1+B2)",
+      "emissions_mt": {
+        "2021": 0.017136,
+        "2025": 0.0,
+        "2030": 1.031283,
+        "2050": 1.031283,
+        "2070": 0.0
+      },
+      "generation_2025_pj": {
+        "HYD": 2264.877571
+      },
+      "generation_2050_pj": {
+        "HYD": 3231.947788,
+        "NGS": 20.221232
+      },
+      "objective_musd": 1331287.25,
+      "pwr_bio_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "pwrbcw_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "rows": 273001,
+      "status": "optimal",
+      "supbcw_pj": {
+        "2021": 0.0,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 0.0
+      },
+      "supbsw_pj": {
+        "total": 0.0
+      }
+    },
+    "diag_hydro_frozen_base": {
+      "cap_binding": false,
+      "cols": 234900,
+      "description": "BC base plus hydro activity frozen at 2021 (diagnostic)",
+      "emissions_mt": {
+        "2021": 0.295305,
+        "2025": 1.813657,
+        "2030": 9.336774,
+        "2050": 52.103015,
+        "2070": 52.103015
+      },
+      "generation_2025_pj": {
+        "HYD": 2229.3802,
+        "NGS": 35.561897
+      },
+      "generation_2050_pj": {
+        "HYD": 2230.54127,
+        "NGS": 1021.62775
+      },
+      "objective_musd": 1346217.65,
+      "pwr_bio_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "pwrbcw_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "rows": 273651,
+      "status": "optimal",
+      "supbcw_pj": {
+        "2021": 0.0,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 0.0
+      },
+      "supbsw_pj": {
+        "total": 0.0
+      }
+    },
+    "diag_hydro_frozen_high": {
+      "cap_binding": false,
+      "cols": 234900,
+      "description": "BC high plus hydro activity frozen at 2021 (diagnostic)",
+      "emissions_mt": {
+        "2021": 0.295305,
+        "2025": 1.813657,
+        "2030": 9.336774,
+        "2050": 52.103015,
+        "2070": 52.103015
+      },
+      "generation_2025_pj": {
+        "HYD": 2229.3802,
+        "NGS": 35.561897
+      },
+      "generation_2050_pj": {
+        "HYD": 2230.54127,
+        "NGS": 1021.62775
+      },
+      "objective_musd": 1346217.65,
+      "pwr_bio_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "pwrbcw_pj": {
+        "2025": 0.0,
+        "2050": 0.0,
+        "total": 0.0
+      },
+      "rows": 273651,
+      "status": "optimal",
+      "supbcw_pj": {
+        "2021": 0.0,
+        "2025": 0.0,
+        "2030": 0.0,
+        "2050": 0.0,
+        "2070": 0.0,
+        "total": 0.0
+      },
+      "supbsw_pj": {
+        "total": 0.0
+      }
+    }
+  },
+  "schema_version": "1.0",
+  "zonal_compatibility": {
+    "harmonize_exit": 1,
+    "harmonize_issues": [
+      "TotalTechnologyAnnualActivityUpperLimit.csv: TECHNOLOGY not in SETS: ['SUPBCWB1', 'SUPBCWB2']",
+      "VariableCost.csv: TECHNOLOGY not in SETS: ['SUPBCWB1', 'SUPBCWB2']"
+    ],
+    "reason": "The generated TECHNOLOGY set has SUPBCW, not SUPBCWB1/B2. The model also has no BCWB1/BCWB2 fuel; PWRBCWB1/B2 consume the national BCW fuel.",
+    "status": "rejected",
+    "technologies": [
+      "SUPBCWB1",
+      "SUPBCWB2"
+    ]
+  }
+}

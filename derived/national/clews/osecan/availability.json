@@ -1,0 +1,133 @@
+{
+  "checked_utc": "2026-11-17T19:15:00+00:00",
+  "generated_utc": "2026-11-17T19:36:13+00:00",
+  "github": {
+    "note": "The private repository was not cloned or read. The public deltae/C2070 repository was cloned to /tmp for the run.",
+    "private_repository_not_accessed": "one private repository matching 'osecan'",
+    "repositories": [
+      {
+        "checked_with": "git ls-remote",
+        "head": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+        "status": "public",
+        "url": "https://github.com/deltae/C2070"
+      },
+      {
+        "checked_with": "git ls-remote",
+        "head": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+        "status": "public, redirects to deltae/C2070",
+        "url": "https://github.com/eliasinul/CLEWsCAN2070"
+      },
+      {
+        "checked_with": "git ls-remote",
+        "status": "not found (404)",
+        "url": "https://github.com/UBC-FRESH/CLEWsCAN2070"
+      }
+    ]
+  },
+  "install": {
+    "cli_entry_point": "uv run osecan info -> success",
+    "method": "uv sync --frozen",
+    "package_version": "0.1.0",
+    "python": "3.12",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "status": "success",
+    "uv_version": "0.13.9"
+  },
+  "model_vocabulary": {
+    "bcw_supply_technologies": [
+      "SUPBCW"
+    ],
+    "note": "PWRBCWB1/B2 exist, but they consume the national BCW fuel. There is no SUPBCWB1/B2 supply technology and no BCWB1/BCWB2 fuel, so the zonal caps cannot be loaded.",
+    "zonal_bcw_plant_technologies": [
+      "PWRBCWB1",
+      "PWRBCWB2"
+    ],
+    "zonal_bcw_supply_technologies": []
+  },
+  "pypi": {
+    "available": false,
+    "json_http_status": 404,
+    "json_url": "https://pypi.org/pypi/osecan/json",
+    "note": "No PyPI distribution. The installable artifact is the public GitHub uv project, not a pip package.",
+    "package": "osecan",
+    "pip_download": "ERROR: No matching distribution found for osecan",
+    "pip_index_versions": "ERROR: No matching distribution found for osecan",
+    "pip_install": "ERROR: No matching distribution found for osecan"
+  },
+  "run": {
+    "blocker": "None for the national model. The zonal SUPBCWB1/B2 files are rejected because those codes are not in the TECHNOLOGY set.",
+    "commands": [
+      "uv sync --frozen",
+      "uv run python -m osecan.cli build-sets",
+      "uv run python -m osecan.cli build-params",
+      "uv run python -m osecan.cli retrieve",
+      "uv run python -m osecan.cli clean-demand \"Current Measures\"",
+      "uv run python -m osecan.cli harmonize",
+      "python -m osecan.pipeline.assemble --out results/base/input",
+      "otoole convert csv datafile results/base/input results/base/osecan.txt config/otoole.yaml",
+      "python -m osecan.pipeline.solve --run results/base",
+      "python -m osecan.cli report --run results/base --out /tmp/osecan_report.html"
+    ],
+    "demand_2025_pj": 9328.0016,
+    "model_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "objective_musd": 1331287.25,
+    "report": {
+      "bytes": 871305,
+      "path": "/tmp/osecan_report.html",
+      "status": "success"
+    },
+    "run_directory": "/tmp/osecan_src/results/base (temporary clone)",
+    "scenario": "Current Measures",
+    "status": "optimal"
+  },
+  "site": {
+    "base": "https://deltae.github.io/C2070/",
+    "documented_install": "git clone https://github.com/eliasinul/CLEWsCAN2070.git; cd CLEWsCAN2070; uv sync",
+    "documented_run": [
+      "uv run osecan build-sets",
+      "uv run osecan build-params",
+      "uv run osecan retrieve",
+      "uv run osecan clean-demand \"Current Measures\"",
+      "uv run osecan harmonize",
+      "uv run osecan solve --run results/base",
+      "uv run osecan report"
+    ],
+    "pages": {
+      "index": {
+        "status": 200
+      },
+      "site/api.html": {
+        "status": 200
+      },
+      "site/data.html": {
+        "status": 200
+      },
+      "site/diagnostics.html": {
+        "status": 200
+      },
+      "site/index.html": {
+        "status": 404
+      },
+      "site/model-description.html": {
+        "status": 200
+      },
+      "site/model.html": {
+        "status": 200
+      },
+      "site/policies.html": {
+        "status": 200
+      },
+      "site/results.html": {
+        "status": 200
+      }
+    },
+    "resources": [
+      "resources/osemosys_fast_osecan.txt",
+      "resources/preprocess_data.py",
+      "resources/otoole.yaml",
+      "config/otoole.yaml",
+      "config/data_sources.yaml",
+      "config/capacity.yaml"
+    ]
+  }
+}

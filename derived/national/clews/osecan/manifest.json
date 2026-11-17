@@ -1,0 +1,154 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "OSeCAN plant parameters are the documented v0.3 placeholders, not Canadian fleet averages.",
+    "PWRBCW and PWRBIO use the documented input activity ratios 3.72 and 2.85 (26.9% and 35.1% efficiency).",
+    "LCOE is a simplified busbar calculation at 5% discount; it excludes transmission, backup, and financing outside the discount rate.",
+    "Gas LCOE is the model's placeholder gas plant (capex 1100 $/kW, fuel $3/GJ, CO2 0.051 t/GJ, carbon $95 or $115/t), not a market forecast.",
+    "The BC zonal caps are FRESH-side provisional, not a C2070 official boundary.",
+    "The model has no SUPBCWB1/B2 technology; the BC base run is the national SUPBCW rollup.",
+    "The diagnostic hydro-frozen runs are sensitivity probes, not scenarios."
+  ],
+  "generated_utc": "2026-11-17T19:36:13+00:00",
+  "inputs": [
+    {
+      "bytes": 13271,
+      "path": "data/derived/national/clews/bc_residue_cases_summary.json",
+      "sha256": "427f900f56a117dffeeb4b8ffb5ecd220e354a76ac47dacf60d4b7aca43487c5"
+    },
+    {
+      "bytes": 7405,
+      "path": "data/derived/national/clews/manifest.json",
+      "sha256": "500cd7feca9de0048af562cdcf3a233be0ef719deb6a5365a0bfc5aef1eca682"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_low.csv",
+      "sha256": "6464e7f54b489b323edbbbbd23896e74af6bf4c3761c0371a1d435dde5335f9d"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_low.csv",
+      "sha256": "276b07aa0ba4fbdd78129098b78ca807f7e05460f1b3e89b0b0d4ef4839c6682"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_low.csv",
+      "sha256": "adcc4a3798123df9ae2edb8a162460af55955c93c142618f60eacdf5bdee8287"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_low.csv",
+      "sha256": "9decb982444bda3e3311be9fc69f7f9a290d3e8494f808b458ed77ead4faf3c0"
+    },
+    {
+      "bytes": 1479,
+      "path": "data/derived/national/clews/comparison/SUPBCW_activity_limits_low.csv",
+      "sha256": "d96dfdbf33de507fb4085d2835a7742752fd0618a5640ed13c8dc174c3ecb7ab"
+    },
+    {
+      "bytes": 1429,
+      "path": "data/derived/national/clews/comparison/SUPBCW_variable_cost_low.csv",
+      "sha256": "0682b7f91357786741910ec4ddc13f42a42934226ed911b15e993e580269abfc"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "740b8fe342d74ff5ad823dc57939b8ec59649a034363ad02609a9193ec492241"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "b392e05df7420c7a61e41960ef53ead59ecc4df79a49f3c0f9219ac6d139bbf5"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 1479,
+      "path": "data/derived/national/clews/comparison/SUPBCW_activity_limits_base.csv",
+      "sha256": "5c83b9a8863e2af3f46fe764b491f24fe00c64d31d42f466fcebd01fd3788e80"
+    },
+    {
+      "bytes": 1429,
+      "path": "data/derived/national/clews/comparison/SUPBCW_variable_cost_base.csv",
+      "sha256": "8be874e0db18c1a624f28e6643acf67915f1f963ef4d07ea7d14a86ebb311f32"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_high.csv",
+      "sha256": "7377e07144ca878a90d8e16fb22f23a2304a454a6c9ae79791a9475735bd9fa6"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_high.csv",
+      "sha256": "4cf5ac2ffa6c3326450721a4d1a7714f795059b3957bedbdcdaac8beb6930832"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_high.csv",
+      "sha256": "16b4f63fe1400fd4a3c91bf04ccc5444aa6ba076beb7d1ed3b42580c70f4264f"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_high.csv",
+      "sha256": "7b4331dea4199f67f948f4d73b91fea740d1b9c9d0075b8a8c0eea3b9f0d9321"
+    },
+    {
+      "bytes": 1479,
+      "path": "data/derived/national/clews/comparison/SUPBCW_activity_limits_high.csv",
+      "sha256": "24387017d8f1875f08b0028b4a1883a046d32a762961c16ae42be70d476a168d"
+    },
+    {
+      "bytes": 1429,
+      "path": "data/derived/national/clews/comparison/SUPBCW_variable_cost_high.csv",
+      "sha256": "2e03db0770b67ddd658cabc7506005b4cf880ebe20ae2e471ee1eb9159da82ca"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "outputs": [
+    {
+      "bytes": 4469,
+      "path": "data/derived/national/clews/osecan/availability.json",
+      "sha256": "428c28b675f645395d92315b6432c9c7846f91e92d71825260de98ce8b7c8306"
+    },
+    {
+      "bytes": 2053,
+      "path": "data/derived/national/clews/osecan/lcoe_by_plant.csv",
+      "sha256": "878004cad0f043a8536c8c73dd24e31f9b4d1042597faf72caf154f484f9096a"
+    },
+    {
+      "bytes": 1197,
+      "path": "data/derived/national/clews/osecan/bcw_vs_bio.csv",
+      "sha256": "42786b3f019d609b11d0d9b1a152c07bafabd18fea8ffdb88855e4804c6c80fc"
+    },
+    {
+      "bytes": 9152,
+      "path": "data/derived/national/clews/osecan/cap_binding_analysis.json",
+      "sha256": "4658a8919f280a697db76ad7a179181da1b4b5bcbdbe5c4d1dff12e4de93dada"
+    },
+    {
+      "bytes": 12341,
+      "path": "data/derived/national/clews/osecan/OSECAN_RUN_REPORT.md",
+      "sha256": "051c202ad5785b92eb239fc14119cb2790fa73a010d738ffcef1de30e2bbcca9"
+    },
+    {
+      "bytes": 3983,
+      "path": "data/derived/national/clews/osecan/model_runs.json",
+      "sha256": "5e88e8db14ee3f38c00cee91587ce88ea9ce9a169c58567794dbc4af5374aea9"
+    }
+  ],
+  "status": "fresh_side_provisional_not_c2070_official"
+}
