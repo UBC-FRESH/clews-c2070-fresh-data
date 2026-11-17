@@ -20,7 +20,7 @@
   "limitations": [
     "The model has a national SUPBCW cap only. Zonal BC caps (SUPBCWB1/B2) cannot be represented without a model-structure change.",
     "BCW is a national fuel. In the hydro-frozen run PWRBCW dispatches in A1/A2/S1/Q1/Q2/T1/L1, not in B1/B2; the model does not allocate BC residue to BC.",
-    "PWRBIO stays at zero in both sensitivity runs because wind is cheaper than generic BIO; the generic-BIO bypass is latent, not active."
+    "PWRBIO stays at zero in both sensitivity runs because the model's wind cost (about 86.03 $/MWh including the $3/GJ RNW resource placeholder) is marginally below generic BIO (86.28 $/MWh); the generic-BIO bypass is latent, not active."
   ],
   "model": {
     "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",

@@ -262,6 +262,13 @@ With $200/t and hydro frozen at 2021 activity, SUPBCW reaches
 2050, gas 32.7 PJ, and PWRBIO remains zero. The objective rises by
 40,266.10 M$.
 
+These dispatch comparisons use the model's costs, not the reduced
+LCOE table. The model charges the $3/GJ `RNW` resource placeholder,
+so hydro is about 67.85 $/MWh and wind about 86.03 $/MWh; the
+reduced table's 57.05 $/MWh hydro figure excludes that placeholder.
+Wind is only 0.25 $/MWh below generic BIO, which is why PWRBIO is
+just behind wind rather than far behind it.
+
 ### Conditions for BCW dispatch
 
 - The CO2 price must exceed the BCW-vs-gas parity price: about 160 $/t for the base case, 124 $/t for the high case, and 214 $/t for the low case.
@@ -279,7 +286,7 @@ earlier hydro-frozen diagnostic also had zero BCW.
 
 - The model has a national SUPBCW cap only. Zonal BC caps (SUPBCWB1/B2) cannot be represented without a model-structure change.
 - BCW is a national fuel. In the hydro-frozen run PWRBCW dispatches in A1/A2/S1/Q1/Q2/T1/L1, not in B1/B2; the model does not allocate BC residue to BC.
-- PWRBIO stays at zero in both sensitivity runs because wind is cheaper than generic BIO; the generic-BIO bypass is latent, not active.
+- PWRBIO stays at zero in both sensitivity runs because the model's wind cost (about 86.03 $/MWh including the $3/GJ RNW resource placeholder) is marginally below generic BIO (86.28 $/MWh); the generic-BIO bypass is latent, not active.
 
 Reproduction (disposable copy; the public clone is unchanged):
 
@@ -344,4 +351,4 @@ to the assembled input before `otoole convert`.
 5. Re-run the model after those changes; this report's run evidence is
    for the public v0.3 placeholder model only.
 
-Generated: 2026-11-17T19:48:53+00:00
+Generated: 2026-11-17T19:50:47+00:00
