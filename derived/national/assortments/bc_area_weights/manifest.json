@@ -1,0 +1,38 @@
+{
+  "artifact_version": "0.1.0",
+  "crs": "EPSG:3005",
+  "filter": "FOR_MGMT_LAND_BASE_IND = 'Y' (Crown management land base) AND BCLCS_LEVEL_1 = 'V' (vegetated) AND BCLCS_LEVEL_2 = 'T' (treed); polygon area = POLYGON_AREA (ha), validated against FEATURE_AREA_SQM/10000",
+  "generated_utc": "2026-11-17T08:52:33+00:00",
+  "inputs": {
+    "national_batch_cells": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/national_batch/cells",
+    "rsyc_ecostrat": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+    "species_crosswalk": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/raw/casfri_v5/translation_tables/species_code_mapping.csv",
+    "thlb": "/srv/shared-data/gep/ws4/femic/external/femic-public-data/data/misc.thlb.tif",
+    "tsa": "/srv/shared-data/gep/ws4/femic/external/femic-public-data/data/bc/tsa/FADM_TSA.gdb",
+    "vri": "/srv/shared-data/gep/ws4/femic/external/femic-public-data/data/bc/vri/2025/VEG_COMP_LYR_R1_POLY_2025.gdb"
+  },
+  "label_raster_resolution_m": 500.0,
+  "outputs": {
+    "BC_AREA_REPORT.md": {
+      "bytes": 6158,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/BC_AREA_REPORT.md",
+      "sha256": "2562b24fb35ce935ff18b07da2a549a4ae8e9d6f3df669ece1a7967be20ca881"
+    },
+    "bc_area_summary.json": {
+      "bytes": 24703,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_area_summary.json",
+      "sha256": "d0531e56ea00ca06d4cb89aa1a44660e9356bead7927f297227eb6f2a21e95be"
+    },
+    "bc_area_weights.csv": {
+      "bytes": 455819,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_area_weights.csv",
+      "sha256": "a173afb4e32367096bae3db94b8e59554ab4950a9e238d9171afeb7e119c8c8e"
+    },
+    "bc_national_batch_area_joined.csv": {
+      "bytes": 1154868,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv",
+      "sha256": "e0a51d5aa6b1ec22b9d27451f229a26bed525ee85641b7ce1766fe1c822e411e"
+    }
+  },
+  "runtime_seconds": 123.839754949091
+}
