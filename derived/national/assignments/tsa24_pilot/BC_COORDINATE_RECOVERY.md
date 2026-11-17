@@ -15,8 +15,8 @@
 | `missing` | 45 | 16 | 41 | 15 |
 
 The Stage A scope is the 161 BC SAW/PAP/PEL/BIO facilities.  The recovered
-input table has 98 corroborated Mills DB matches; 16 remain missing before the
-hub-proxy fallback, and 65 receive a low-confidence TL hub proxy.
+input table has 98 corroborated Mills DB matches; of the 81 unmatched facilities,
+65 receive a low-confidence TL hub proxy and 16 remain `missing`.
 
 ## 2. Matching method and confidence
 
