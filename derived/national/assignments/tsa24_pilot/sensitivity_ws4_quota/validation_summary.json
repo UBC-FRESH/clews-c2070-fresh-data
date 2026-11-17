@@ -57,36 +57,36 @@
       "value": ""
     },
     {
-      "assumption": "Coordinates use Mills DB first, CFS suppliers.dbf second, an FFCM TL/water hub proxy third, and missing last; no Euclidean guesses are used.",
+      "assumption": "Coordinates use a corroborated Mills DB 2015 crosswalk, then an FFCM TL/water hub proxy, then missing; exact codes alone are not trusted because the 2015 and 2018 code systems collide.",
       "category": "coordinate",
-      "evidence": "facility_geocoding.csv;routes.csv",
-      "impact": "TL/water proxy uses the median coordinate of geocoded facilities directly attached to the same hub; confidence is low.",
+      "evidence": "facilities_bc_recovered.csv;bc_facility_match_conflicts.csv;routes.csv",
+      "impact": "Name, city, and coordinate evidence corroborate every code match; collisions are rejected and written to the conflict table.",
       "unit": "facility_count",
-      "value": "mills_db=8;suppliers_dbf=0;tl_anchor_proxy=126;missing=45"
+      "value": "mills_db_2015=98;suppliers_dbf=0;tl_anchor_proxy=65;missing=16"
     },
     {
       "assumption": "Stage A scope coordinate coverage is tracked separately from all BC facilities.",
       "category": "coordinate",
-      "evidence": "facility_geocoding.csv;routes.csv",
+      "evidence": "facilities_bc_recovered.csv;routes.csv",
       "impact": "Missing coordinates do not fabricate a location and do not by themselves exclude a facility from the LP.",
       "unit": "facility_count",
-      "value": "mills_db=7;suppliers_dbf=0;tl_anchor_proxy=113;missing=41"
+      "value": "mills_db_2015=88;suppliers_dbf=0;tl_anchor_proxy=58;missing=15"
     },
     {
       "assumption": "The TSA24 supply anchor is a geocoded Prince George mill proxy because no TSA24 FMU exists in the FFCM graph.",
       "category": "transport",
       "evidence": "facility_geocoding.csv;routes.csv",
-      "impact": "Anchor coordinate is Mills DB 53.99,-122.69 (BC-SAW-488); all distances are relative to this proxy.",
+      "impact": "Anchor coordinate is Mills DB 53.99,-122.69 (FFCM BC-SAW-506, Canfor Prince George); all distances are relative to this proxy.",
       "unit": "facility_id",
-      "value": "BC-SAW-488"
+      "value": "BC-SAW-506"
     },
     {
       "assumption": "Distances are FFCM route-graph shortest paths from the anchor through TL nodes, not Euclidean distances.",
       "category": "transport",
       "evidence": "archive_parsed_routes",
-      "impact": "Median graph distance is 920.6438935022001 km versus 261.238130978 km in the previous 150 km diagnostic.",
+      "impact": "Median graph distance is 616.1618973962001 km versus 266.933279984 km in the previous 150 km diagnostic.",
       "unit": "km",
-      "value": 920.6438935022001
+      "value": 616.1618973962001
     },
     {
       "assumption": "Road and rail costs use BC transporters with archive fuel and operating rates and material capacities; transload costs are added at each TL node.",
@@ -105,9 +105,9 @@
       "value": ""
     },
     {
-      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate; no populated real contract table exists.",
+      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate. The BC Fibre Database contributes TSA apportionment volumes without facility IDs and residue shares without volumes, so no facility-level contract volume is inferred.",
       "category": "contracts",
-      "evidence": "diagnostic_absent",
+      "evidence": "diagnostic_absent;bc_fibre_db_2018_diagnostic",
       "impact": "contract_source=diagnostic_absent on every contract; compliance is a bound check, not commercial evidence.",
       "unit": "m3",
       "value": ""
@@ -137,6 +137,14 @@
       "value": ""
     },
     {
+      "assumption": "BC-BIO-4017 rejected: missing_no_tl_route",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
+      "unit": "km",
+      "value": ""
+    },
+    {
       "assumption": "BC-PAP-589 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
@@ -146,6 +154,14 @@
     },
     {
       "assumption": "BC-PAP-590 rejected: missing_no_tl_route",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-PAP-591 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
       "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
@@ -265,6 +281,22 @@
       "value": ""
     },
     {
+      "assumption": "BC-SAW-308 rejected: missing_no_tl_route",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-309 rejected: missing_no_tl_route",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
+      "unit": "km",
+      "value": ""
+    },
+    {
       "assumption": "BC-SAW-363 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
@@ -281,7 +313,7 @@
       "value": ""
     },
     {
-      "assumption": "BC-SAW-488 rejected: missing_anchor_proxy_self",
+      "assumption": "BC-SAW-506 rejected: missing_anchor_proxy_self",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
       "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
@@ -337,6 +369,14 @@
       "value": ""
     },
     {
+      "assumption": "BC-SAW-945 rejected: missing_no_tl_route",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
+      "unit": "km",
+      "value": ""
+    },
+    {
       "assumption": "BC-SAW-992 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
@@ -356,6 +396,10 @@
   "config": {
     "area_ha": 306047.3,
     "diagnostic_access_km": 150.0,
+    "diagnostic_contract_sources": [
+      "diagnostic_absent"
+    ],
+    "diagnostic_contracts": "data/derived/national/assignments/tsa24_pilot/contracts_bc_diagnostic.csv",
     "facility_classes": [
       "BIO",
       "PAP",
@@ -365,120 +409,303 @@
     "facility_coverage": {
       "anchor_hubs": [
         {
-          "geocoded_facilities": "BC-PLY-410;BC-SAW-418",
-          "geocoded_facility_count": 2,
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1031;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 13,
+          "hub": "TL12",
+          "lat": 49.2,
+          "lon": -122.86,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-BIO-4007;BC-BIO-4008;BC-BIO-4009;BC-BIO-4010;BC-BIO-4011;BC-BIO-4018;BC-BIO-4024;BC-OSB-2;BC-PAP-179;BC-PAP-511;BC-PAP-679;BC-PEL-1650;BC-PEL-1652;BC-PEL-1655;BC-PEL-1657;BC-PEL-1659;BC-PLY-1013;BC-PLY-1434;BC-PLY-1693;BC-PLY-410;BC-PLY-44;BC-PLY-473;BC-PLY-514;BC-SAW-1011;BC-SAW-1014;BC-SAW-1021;BC-SAW-1253;BC-SAW-131;BC-SAW-1316;BC-SAW-132;BC-SAW-1335;BC-SAW-1377;BC-SAW-1386;BC-SAW-1389;BC-SAW-1394;BC-SAW-1437;BC-SAW-167;BC-SAW-1740;BC-SAW-178;BC-SAW-352;BC-SAW-397;BC-SAW-418;BC-SAW-5;BC-SAW-506;BC-SAW-611;BC-SAW-66;BC-SAW-680;BC-SAW-682;BC-SAW-74;BC-SAW-979;BC-SAW-981;BC-SAW-987",
+          "geocoded_facility_count": 52,
           "hub": "TL13",
-          "lat": 50.875,
-          "lon": -119.505,
+          "lat": 51.614999999999995,
+          "lon": -120.7980185,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-SAW-418",
-          "geocoded_facility_count": 1,
+          "geocoded_facilities": "BC-BIO-4007;BC-BIO-4009;BC-BIO-4024;BC-PAP-179;BC-PAP-511;BC-PEL-1652;BC-PEL-1659;BC-PLY-1693;BC-PLY-44;BC-PLY-473;BC-PLY-514;BC-SAW-1064;BC-SAW-1316;BC-SAW-1335;BC-SAW-1377;BC-SAW-1389;BC-SAW-1394;BC-SAW-167;BC-SAW-178;BC-SAW-418;BC-SAW-66;BC-SAW-718;BC-SAW-987",
+          "geocoded_facility_count": 23,
           "hub": "TL14",
-          "lat": 50.99,
-          "lon": -118.2,
+          "lat": 50.23,
+          "lon": -119.66,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-SAW-384;BC-SAW-389;BC-SAW-488",
-          "geocoded_facility_count": 3,
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-718",
+          "geocoded_facility_count": 2,
+          "hub": "TL15",
+          "lat": 49.175,
+          "lon": -122.43,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-PLY-473;BC-SAW-1031;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-66;BC-SAW-697;BC-SAW-904",
+          "geocoded_facility_count": 14,
+          "hub": "TL17",
+          "lat": 49.21,
+          "lon": -122.8,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-BIO-4015;BC-BIO-4023;BC-PEL-1141;BC-PEL-1653;BC-PEL-1654;BC-PEL-1658;BC-SAW-1171;BC-SAW-1383;BC-SAW-1387;BC-SAW-1740;BC-SAW-275;BC-SAW-379;BC-SAW-381;BC-SAW-389;BC-SAW-488",
+          "geocoded_facility_count": 15,
           "hub": "TL19",
-          "lat": 50.15,
-          "lon": -120.78,
+          "lat": 54.23,
+          "lon": -124.33,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-SAW-383;BC-SAW-384;BC-SAW-389;BC-SAW-488",
-          "geocoded_facility_count": 4,
+          "geocoded_facilities": "BC-BIO-4010;BC-BIO-4011;BC-BIO-4015;BC-BIO-4018;BC-BIO-4022;BC-BIO-4023;BC-OSB-2;BC-OSB-382;BC-PAP-1319;BC-PAP-679;BC-PEL-1141;BC-PEL-1650;BC-PEL-1653;BC-PEL-1654;BC-PEL-1655;BC-PEL-1657;BC-PEL-1658;BC-PLY-1013;BC-PLY-1434;BC-SAW-1011;BC-SAW-1171;BC-SAW-1253;BC-SAW-131;BC-SAW-132;BC-SAW-1377;BC-SAW-1383;BC-SAW-1386;BC-SAW-1387;BC-SAW-1437;BC-SAW-1740;BC-SAW-208;BC-SAW-210;BC-SAW-275;BC-SAW-379;BC-SAW-381;BC-SAW-383;BC-SAW-389;BC-SAW-488;BC-SAW-5;BC-SAW-506;BC-SAW-611;BC-SAW-680;BC-SAW-682;BC-SAW-74;BC-SAW-979;BC-SAW-981",
+          "geocoded_facility_count": 46,
           "hub": "TL20",
-          "lat": 50.125,
-          "lon": -121.735,
+          "lat": 54.01,
+          "lon": -122.72999999999999,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-SAW-383;BC-SAW-389;BC-SAW-488",
-          "geocoded_facility_count": 3,
+          "geocoded_facilities": "BC-BIO-4015;BC-BIO-4022;BC-OSB-382;BC-PAP-1319;BC-PEL-1141;BC-PEL-1653;BC-PEL-1654;BC-PEL-1658;BC-SAW-1171;BC-SAW-1377;BC-SAW-1383;BC-SAW-1387;BC-SAW-1740;BC-SAW-208;BC-SAW-210;BC-SAW-275;BC-SAW-383;BC-SAW-389;BC-SAW-488",
+          "geocoded_facility_count": 19,
           "hub": "TL26",
-          "lat": 50.15,
-          "lon": -122.69,
+          "lat": 54.35,
+          "lon": -124.01,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-PLY-410",
-          "geocoded_facility_count": 1,
+          "geocoded_facilities": "BC-BIO-4008;BC-PAP-1163;BC-PLY-410;BC-SAW-1014;BC-SAW-1021;BC-SAW-352;BC-SAW-397",
+          "geocoded_facility_count": 7,
           "hub": "TL27",
-          "lat": 50.76,
-          "lon": -120.81,
+          "lat": 50.63,
+          "lon": -116.09,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-PLY-410",
-          "geocoded_facility_count": 1,
+          "geocoded_facilities": "BC-BIO-4008;BC-PAP-1163;BC-PAP-179;BC-PLY-410;BC-SAW-1014;BC-SAW-1335;BC-SAW-178;BC-SAW-352;BC-SAW-397",
+          "geocoded_facility_count": 9,
           "hub": "TL3",
-          "lat": 50.76,
-          "lon": -120.81,
+          "lat": 49.39,
+          "lon": -116.98,
           "method": "median_of_directly_attached_geocoded_facilities"
         },
         {
-          "geocoded_facilities": "BC-SAW-309",
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 12,
+          "hub": "W11",
+          "lat": 49.205,
+          "lon": -122.8,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 7,
+          "hub": "W12",
+          "lat": 49.19,
+          "lon": -122.7,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-1287;BC-SAW-1288;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 6,
+          "hub": "W13",
+          "lat": 49.185,
+          "lon": -122.67500000000001,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-114;BC-SAW-1467;BC-SAW-242",
+          "geocoded_facility_count": 4,
+          "hub": "W16",
+          "lat": 49.265,
+          "lon": -123.09,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-1276;BC-SAW-1287;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 8,
+          "hub": "W17",
+          "lat": 49.19,
+          "lon": -122.72,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 4,
+          "hub": "W18",
+          "lat": 49.195,
+          "lon": -122.54,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-697;BC-SAW-718",
+          "geocoded_facility_count": 3,
+          "hub": "W19",
+          "lat": 49.18,
+          "lon": -122.43,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-697;BC-SAW-718",
+          "geocoded_facility_count": 3,
+          "hub": "W20",
+          "lat": 49.18,
+          "lon": -122.43,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 7,
+          "hub": "W23",
+          "lat": 49.19,
+          "lon": -122.7,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-904",
+          "geocoded_facility_count": 10,
+          "hub": "W25",
+          "lat": 49.21,
+          "lon": -122.89,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-114;BC-SAW-1276;BC-SAW-1467;BC-SAW-242;BC-SAW-281",
+          "geocoded_facility_count": 6,
+          "hub": "W27",
+          "lat": 49.215,
+          "lon": -123.07,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 12,
+          "hub": "W28",
+          "lat": 49.205,
+          "lon": -122.8,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 12,
+          "hub": "W29",
+          "lat": 49.205,
+          "lon": -122.8,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1153",
+          "geocoded_facility_count": 1,
+          "hub": "W3",
+          "lat": 49.45,
+          "lon": -123.71,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 9,
+          "hub": "W30",
+          "lat": 49.19,
+          "lon": -122.73,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 9,
+          "hub": "W31",
+          "lat": 49.19,
+          "lon": -122.73,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-904",
+          "geocoded_facility_count": 9,
+          "hub": "W32",
+          "lat": 49.21,
+          "lon": -122.92,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-114;BC-SAW-1467;BC-SAW-242",
+          "geocoded_facility_count": 4,
+          "hub": "W33",
+          "lat": 49.265,
+          "lon": -123.09,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-1064;BC-SAW-1287;BC-SAW-1288;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 5,
+          "hub": "W34",
+          "lat": 49.18,
+          "lon": -122.7,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-718;BC-SAW-904",
+          "geocoded_facility_count": 12,
+          "hub": "W4",
+          "lat": 49.205,
+          "lon": -122.8,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PAP-591",
           "geocoded_facility_count": 1,
           "hub": "W7",
-          "lat": 49.18,
-          "lon": -116.56,
+          "lat": 49.84,
+          "lon": -124.52,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-1404;BC-SAW-1064;BC-SAW-114;BC-SAW-1276;BC-SAW-1287;BC-SAW-1288;BC-SAW-1467;BC-SAW-242;BC-SAW-281;BC-SAW-697;BC-SAW-904",
+          "geocoded_facility_count": 11,
+          "hub": "W8",
+          "lat": 49.21,
+          "lon": -122.86,
           "method": "median_of_directly_attached_geocoded_facilities"
         }
       ],
       "coordinate_confidence_counts": {
-        "high": 8,
-        "low": 126,
-        "missing": 45
+        "high": 55,
+        "low": 66,
+        "medium": 42,
+        "missing": 16
       },
       "coordinate_source_counts": {
-        "mills_db": 8,
-        "missing": 45,
+        "mills_db_2015": 98,
+        "missing": 16,
         "suppliers_dbf": 0,
-        "tl_anchor_proxy": 126
+        "tl_anchor_proxy": 65
       },
       "coordinate_source_counts_in_scope": {
-        "mills_db": 7,
-        "missing": 41,
+        "mills_db_2015": 88,
+        "missing": 15,
         "suppliers_dbf": 0,
-        "tl_anchor_proxy": 113
+        "tl_anchor_proxy": 58
       },
       "facility_count": 179,
-      "missing_coordinate_count": 45,
-      "missing_coordinate_count_in_scope": 41,
+      "match_confidence_counts": {
+        "high": 55,
+        "low": 1,
+        "medium": 42
+      },
+      "match_method_counts": {
+        "company_city_class": 47,
+        "coordinate_corroborated": 5,
+        "coordinate_named": 1,
+        "mill_name_class": 45
+      },
+      "missing_coordinate_count": 16,
+      "missing_coordinate_count_in_scope": 15,
       "missing_coordinates": [
-        "BC-SAW-281",
         "BC-SAW-1735",
-        "BC-SAW-114",
         "BC-SAW-163",
-        "BC-SAW-200",
-        "BC-SAW-242",
-        "BC-SAW-284",
-        "BC-SAW-363",
-        "BC-SAW-456",
+        "BC-SAW-308",
         "BC-SAW-609",
-        "BC-SAW-697",
-        "BC-SAW-810",
-        "BC-SAW-904",
-        "BC-SAW-905",
-        "BC-SAW-915",
-        "BC-SAW-916",
-        "BC-SAW-920",
         "BC-SAW-935",
-        "BC-SAW-940",
         "BC-SAW-992",
         "BC-SAW-994",
         "BC-SAW-1022",
-        "BC-SAW-1026",
-        "BC-SAW-1152",
-        "BC-SAW-1153",
-        "BC-SAW-1276",
-        "BC-SAW-1287",
-        "BC-SAW-1288",
-        "BC-SAW-1467",
         "BC-SAW-1472",
         "BC-SAW-1698",
         "BC-SAW-1700",
@@ -486,58 +713,24 @@
         "BC-SAW-1710",
         "BC-SAW-1728",
         "BC-SAW-1730",
-        "BC-SAW-1031",
-        "BC-PLY-38",
-        "BC-PLY-813",
-        "BC-PLY-1280",
-        "BC-PLY-1404",
-        "BC-PAP-589",
-        "BC-PAP-731",
-        "BC-PAP-590",
-        "BC-PAP-938"
+        "BC-PLY-813"
       ],
       "missing_coordinates_in_scope": [
-        "BC-SAW-281",
         "BC-SAW-1735",
-        "BC-SAW-114",
         "BC-SAW-163",
-        "BC-SAW-200",
-        "BC-SAW-242",
-        "BC-SAW-284",
-        "BC-SAW-363",
-        "BC-SAW-456",
+        "BC-SAW-308",
         "BC-SAW-609",
-        "BC-SAW-697",
-        "BC-SAW-810",
-        "BC-SAW-904",
-        "BC-SAW-905",
-        "BC-SAW-915",
-        "BC-SAW-916",
-        "BC-SAW-920",
         "BC-SAW-935",
-        "BC-SAW-940",
         "BC-SAW-992",
         "BC-SAW-994",
         "BC-SAW-1022",
-        "BC-SAW-1026",
-        "BC-SAW-1152",
-        "BC-SAW-1153",
-        "BC-SAW-1276",
-        "BC-SAW-1287",
-        "BC-SAW-1288",
-        "BC-SAW-1467",
         "BC-SAW-1472",
         "BC-SAW-1698",
         "BC-SAW-1700",
         "BC-SAW-1705",
         "BC-SAW-1710",
         "BC-SAW-1728",
-        "BC-SAW-1730",
-        "BC-SAW-1031",
-        "BC-PAP-589",
-        "BC-PAP-731",
-        "BC-PAP-590",
-        "BC-PAP-938"
+        "BC-SAW-1730"
       ],
       "stage_a_scope_count": 161,
       "zero_capacity_facilities": []
@@ -574,6 +767,7 @@
     },
     "period": "2026",
     "real_road_links": "data/derived/national/assignments/tsa24_pilot/transport_links_bc_real.csv",
+    "recovered_coordinates": "data/derived/national/assignments/tsa24_pilot/facilities_bc_recovered.csv",
     "residue_density_odt_m3": 0.45,
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
     "target_agb_odt_ha": 204.7,
@@ -605,73 +799,72 @@
       }
     },
     "transport_summary": {
-      "accepted_facility_count": 134,
-      "accepted_link_count": 220,
+      "accepted_facility_count": 129,
+      "accepted_link_count": 210,
       "anchor": {
         "access_tl_nodes": [
-          "TL19",
-          "TL20",
-          "TL26"
+          "TL13",
+          "TL20"
         ],
-        "anchor_basis": "tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-488;source=mills_db;note=no_TSA24_FMU_exists_in_FFCM_graph",
-        "anchor_id": "BC-SAW-488",
+        "anchor_basis": "tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-506;source=mills_db_2015;note=no_TSA24_FMU_exists_in_FFCM_graph;legacy_BC-SAW-488_was_a_code_collision_with_Canfor_Houston",
+        "anchor_id": "BC-SAW-506",
         "supply_node_id": "TSA24_AU23000"
       },
       "capacity": {
-        "capacity_none_count": 220,
+        "capacity_none_count": 210,
         "capacity_source": "absent",
         "route_capacity_table": "absent"
       },
       "confidence_counts": {
-        "direct_route": 52,
-        "graph_shortest_path": 15,
-        "real_road_network": 67
+        "direct_route": 5,
+        "graph_shortest_path": 6,
+        "real_road_network": 118
       },
       "cost_cad_m3": {
         "HOGFUEL": {
-          "count": 12,
-          "max": 50.714981,
-          "mean": 28.08556546333151,
-          "median": 25.707128807050058,
-          "min": 19.52595778435373,
-          "p25": 25.032288038227314,
-          "p75": 29.36434746994371
+          "count": 11,
+          "max": 38.393819,
+          "mean": 16.928066395885978,
+          "median": 11.474193,
+          "min": 0.559649,
+          "p25": 7.603055,
+          "p75": 31.533809
         },
         "OTHER_LOG": {
-          "count": 37,
-          "max": 84.30264075358362,
-          "mean": 34.042203099676065,
-          "median": 30.307897,
-          "min": 22.67792695149883,
-          "p25": 28.175663850622204,
-          "p75": 35.408062952796044
+          "count": 35,
+          "max": 57.245326,
+          "mean": 17.79411762704079,
+          "median": 13.449898,
+          "min": 0.674438,
+          "p25": 1.446751,
+          "p75": 31.371727
         },
         "PULP": {
-          "count": 37,
-          "max": 84.30264075358362,
-          "mean": 34.042203099676065,
-          "median": 30.307897,
-          "min": 22.67792695149883,
-          "p25": 28.175663850622204,
-          "p75": 35.408062952796044
+          "count": 35,
+          "max": 57.245326,
+          "mean": 17.79411762704079,
+          "median": 13.449898,
+          "min": 0.674438,
+          "p25": 1.446751,
+          "p75": 31.371727
         },
         "RESIDUE": {
-          "count": 25,
-          "max": 50.714981,
-          "mean": 27.72612238176281,
-          "median": 25.149493,
-          "min": 19.52595778435373,
-          "p25": 24.590241431696782,
-          "p75": 30.089424638230156
+          "count": 24,
+          "max": 38.393819,
+          "mean": 13.945563264781073,
+          "median": 11.3174595,
+          "min": 0.559649,
+          "p25": 5.181502,
+          "p75": 23.8975935
         },
         "SAWLOG": {
-          "count": 109,
-          "max": 88.3120264414566,
-          "mean": 40.25876915099879,
-          "median": 31.710499449478938,
-          "min": 22.325173683267835,
-          "p25": 30.307897,
-          "p75": 38.125779
+          "count": 105,
+          "max": 62.878051,
+          "mean": 27.881570102081003,
+          "median": 26.864819,
+          "min": 0.674438,
+          "p25": 10.112164,
+          "p75": 41.8262175
         }
       },
       "diagnostic_comparison": {
@@ -679,21 +872,21 @@
           "RESIDUE": {
             "delta": {
               "count": 24,
-              "max": 43.75842001478673,
-              "mean": 21.97123026918403,
-              "median": 12.192807636602389,
-              "min": 12.192807636602385,
-              "p25": 12.192807636602387,
-              "p75": 41.209454894284534
+              "max": 25.059977763841424,
+              "mean": 6.355098259227938,
+              "median": -1.8821692528590965,
+              "min": -1.8821692528591,
+              "p25": -1.8821692528590999,
+              "p75": 22.511012643339235
             },
             "new": {
               "count": 24,
-              "max": 63.638641792104046,
-              "mean": 36.72960711477109,
-              "median": 31.629272550758248,
-              "min": 19.52595778435373,
-              "p25": 25.31110594175234,
-              "p75": 52.75389716411318
+              "max": 44.94019954115874,
+              "mean": 21.113475104815002,
+              "median": 17.554295661296763,
+              "min": 5.4509808948922425,
+              "p25": 11.236129052290856,
+              "p75": 34.05545491316788
             },
             "old": {
               "count": 24,
@@ -708,339 +901,283 @@
           "SAWLOG": {
             "delta": {
               "count": 105,
-              "max": 74.47424226425656,
-              "mean": 40.47894968189922,
-              "median": 47.95592539682397,
-              "min": 13.840676833697739,
-              "p25": 13.840676833697742,
-              "p75": 69.12731320867783
+              "max": 52.79356227998891,
+              "mean": 21.414228036670618,
+              "median": 26.275245412556316,
+              "min": -3.121213850155584,
+              "p25": -3.1212138501555806,
+              "p75": 47.44663322441018
             },
             "new": {
               "count": 105,
-              "max": 88.3120264414566,
-              "mean": 56.266909334857274,
-              "median": 61.387825103667495,
-              "min": 22.325173683267835,
-              "p25": 32.474380656988856,
-              "p75": 78.96049895377406
+              "max": 66.63134645718894,
+              "mean": 37.363729505665376,
+              "median": 39.70714511939984,
+              "min": 5.363282999414514,
+              "p25": 16.132589907923077,
+              "p75": 57.279818969506415
             },
             "old": {
               "count": 105,
               "max": 36.632805233043804,
-              "mean": 15.787959652958058,
-              "median": 14.23175765361075,
+              "mean": 15.949501468994757,
+              "median": 14.496261052150343,
               "min": 8.484496849570094,
-              "p25": 9.72955707633398,
-              "p75": 19.475677173890872
+              "p25": 9.818825812924644,
+              "p75": 19.982697986593546
             }
           }
         },
         "delta_km": {
           "count": 129,
-          "max": 2095.79979461,
-          "mean": 558.7261894861408,
-          "median": 690.72359815,
-          "min": 164.97031036599992,
-          "p25": 164.97031036599998,
-          "p75": 986.1428160730002
+          "max": 1791.3177985039997,
+          "mean": 264.09429910036715,
+          "median": 386.241602044,
+          "min": -136.86400234980005,
+          "p25": -136.8640023498,
+          "p75": 681.6608199670001
         },
         "new_distance_km": {
           "count": 129,
-          "max": 2582.372763246,
-          "mean": 846.283647553736,
-          "median": 920.6438935022001,
-          "min": 315.95066527226,
-          "p25": 494.3744485625,
-          "p75": 1161.7624148261002
+          "max": 2277.8907671399998,
+          "mean": 553.9915580417282,
+          "median": 616.1618973962001,
+          "min": 14.11635255646,
+          "p25": 193.01839590370002,
+          "p75": 857.2804187201001
         },
         "old_diagnostic_distance_km": {
           "count": 129,
           "max": 651.875300723,
-          "mean": 287.5574580675952,
-          "median": 261.238130978,
+          "mean": 289.8972589413611,
+          "median": 266.933279984,
           "min": 150.98035490626,
-          "p25": 175.364475835,
-          "p75": 357.38043190999997
+          "p25": 175.3966615961,
+          "p75": 359.9876333905
         },
-        "outlier_count": 129,
+        "outlier_count": 71,
         "outliers": [
           {
-            "delta_km": 2095.79979461,
+            "delta_km": 1791.3177985039997,
             "facility_class": "PAP",
             "facility_id": "BC-PAP-1163",
-            "new_graph_km": 2582.372763246,
+            "new_graph_km": 2277.8907671399998,
             "old_diagnostic_km": 486.572968636,
             "path_confidence": "graph_shortest_path",
-            "ratio": 5.307267213148138
+            "ratio": 4.681498796625641
           },
           {
-            "delta_km": 1431.097555014,
+            "delta_km": 1126.6155589080001,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-352",
-            "new_graph_km": 1831.619870219,
+            "new_graph_km": 1527.1378741130002,
             "old_diagnostic_km": 400.52231520500004,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 4.573078204847385
+            "path_confidence": "direct_route",
+            "ratio": 3.812865890709142
           },
           {
-            "delta_km": 1396.6253291570001,
+            "delta_km": 1092.143333051,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-397",
-            "new_graph_km": 1810.527075875,
+            "new_graph_km": 1506.045079769,
             "old_diagnostic_km": 413.901746718,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 4.374291943030988
+            "path_confidence": "direct_route",
+            "ratio": 3.638653597649831
           },
           {
-            "delta_km": 1119.9971680869999,
+            "delta_km": 815.5151719810001,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1736",
-            "new_graph_km": 1557.35969007,
+            "new_graph_km": 1252.8776939640002,
             "old_diagnostic_km": 437.362521983,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 3.560798220681866
+            "path_confidence": "direct_route",
+            "ratio": 2.8646206087422796
           },
           {
-            "delta_km": 1113.766798382,
+            "delta_km": 809.2848022760002,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1014",
-            "new_graph_km": 1536.097792915,
+            "new_graph_km": 1231.6157968090001,
             "old_diagnostic_km": 422.330994533,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 3.637189343902091
+            "path_confidence": "direct_route",
+            "ratio": 2.9162335058332176
           },
           {
-            "delta_km": 1067.5456131618403,
+            "delta_km": 763.06361705584,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-940",
-            "new_graph_km": 1227.0451062185002,
+            "new_graph_km": 922.5631101125,
             "old_diagnostic_km": 159.49949305666001,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.693097217447639
+            "ratio": 5.784113118057197
           },
           {
-            "delta_km": 1062.5626269221002,
+            "delta_km": 758.0806308161,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1467",
-            "new_graph_km": 1244.2812978762001,
+            "new_graph_km": 939.7993017702,
             "old_diagnostic_km": 181.7186709541,
             "path_confidence": "graph_shortest_path",
-            "ratio": 6.847294729502457
+            "ratio": 5.171726696193933
           },
           {
-            "delta_km": 1062.5626269219001,
+            "delta_km": 758.0806308159,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-114",
-            "new_graph_km": 1313.7869169459002,
+            "new_graph_km": 1009.3049208399,
             "old_diagnostic_km": 251.224290024,
             "path_confidence": "graph_shortest_path",
-            "ratio": 5.229537784027139
+            "ratio": 4.017545121705703
           },
           {
-            "delta_km": 1061.3768291455003,
-            "facility_class": "SAW",
-            "facility_id": "BC-SAW-1026",
-            "new_graph_km": 1238.8972434300003,
-            "old_diagnostic_km": 177.5204142845,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 6.978900136209142
-          },
-          {
-            "delta_km": 1061.3768291455003,
-            "facility_class": "SAW",
-            "facility_id": "BC-SAW-242",
-            "new_graph_km": 1241.5163972303003,
-            "old_diagnostic_km": 180.1395680848,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 6.891969434754397
-          },
-          {
-            "delta_km": 1061.3768291455,
+            "delta_km": 756.8948330395,
             "facility_class": "PAP",
             "facility_id": "BC-PAP-938",
-            "new_graph_km": 1242.4404971353001,
+            "new_graph_km": 937.9585010293,
             "old_diagnostic_km": 181.0636679898,
             "path_confidence": "graph_shortest_path",
-            "ratio": 6.861898419098035
+            "ratio": 5.18026897081384
           },
           {
-            "delta_km": 1061.3768291455,
+            "delta_km": 756.8948330395,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1026",
+            "new_graph_km": 934.415247324,
+            "old_diagnostic_km": 177.5204142845,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 5.263705873435354
+          },
+          {
+            "delta_km": 756.8948330395,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1031",
-            "new_graph_km": 1239.3311942710002,
+            "new_graph_km": 934.849198165,
             "old_diagnostic_km": 177.9543651255,
             "path_confidence": "graph_shortest_path",
-            "ratio": 6.96432028175863
+            "ratio": 5.253308608112589
           },
           {
-            "delta_km": 1061.3721783259803,
+            "delta_km": 756.8948330395,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-242",
+            "new_graph_km": 937.0344011243,
+            "old_diagnostic_km": 180.1395680848,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 5.201713377502907
+          },
+          {
+            "delta_km": 756.8901822199799,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-697",
-            "new_graph_km": 1220.7211288445003,
+            "new_graph_km": 916.2391327385,
             "old_diagnostic_km": 159.34895051852,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.660678811327498
+            "ratio": 5.749891227755604
           },
           {
-            "delta_km": 1060.5501561899005,
-            "facility_class": "SAW",
-            "facility_id": "BC-SAW-284",
-            "new_graph_km": 1227.9455452817003,
-            "old_diagnostic_km": 167.39538909179998,
-            "path_confidence": "graph_shortest_path",
-            "ratio": 7.335599576212296
-          },
-          {
-            "delta_km": 1060.5501561899002,
+            "delta_km": 756.0681600839,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1276",
-            "new_graph_km": 1221.0958233760002,
+            "new_graph_km": 916.61382727,
             "old_diagnostic_km": 160.5456671861,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.60590955071083
+            "ratio": 5.709365088049914
           },
           {
-            "delta_km": 1060.5501561899002,
+            "delta_km": 756.0681600839,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1287",
-            "new_graph_km": 1214.5205830327502,
+            "new_graph_km": 910.03858692675,
             "old_diagnostic_km": 153.97042684285,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.888012054888639
+            "ratio": 5.910476482965014
           },
           {
-            "delta_km": 1060.5501561899002,
+            "delta_km": 756.0681600839,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-1288",
-            "new_graph_km": 1211.6752791189801,
+            "new_graph_km": 907.19328301298,
             "old_diagnostic_km": 151.12512292908,
             "path_confidence": "graph_shortest_path",
-            "ratio": 8.017695904125716
+            "ratio": 6.002928337988567
           },
           {
-            "delta_km": 1060.5501561899002,
+            "delta_km": 756.0681600839,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-281",
-            "new_graph_km": 1225.4475078777002,
+            "new_graph_km": 920.9655117717,
             "old_diagnostic_km": 164.8973516878,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.431577859405764
+            "ratio": 5.585083704166232
           },
           {
-            "delta_km": 1053.4882077540003,
+            "delta_km": 756.0681600839,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-284",
+            "new_graph_km": 923.4635491757,
+            "old_diagnostic_km": 167.39538909179998,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 5.516660609267264
+          },
+          {
+            "delta_km": 749.006211648,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-905",
-            "new_graph_km": 1211.5840992236203,
+            "new_graph_km": 907.10210311762,
             "old_diagnostic_km": 158.09589146962,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.663602690500282
+            "ratio": 5.737670313158836
           },
           {
-            "delta_km": 1052.9544187856443,
+            "delta_km": 748.4724226796441,
             "facility_class": "SAW",
             "facility_id": "BC-SAW-904",
-            "new_graph_km": 1211.3118454407643,
+            "new_graph_km": 906.829849334764,
             "old_diagnostic_km": 158.35742665512,
             "path_confidence": "graph_shortest_path",
-            "ratio": 7.649226632602647
+            "ratio": 5.726475028605452
           }
         ],
         "ratio": {
           "count": 129,
-          "max": 8.017695904125716,
-          "mean": 3.484660988673166,
-          "median": 2.2124425244542714,
-          "min": 1.2530703497786004,
-          "p25": 1.6048317055544312,
-          "p75": 5.268402498587639
+          "max": 6.002928337988567,
+          "mean": 2.28065618734065,
+          "median": 1.8943471686087507,
+          "min": 0.09349794259805852,
+          "p25": 0.5851126023874911,
+          "p75": 4.349521959165672
         }
       },
       "distance_km": {
-        "count": 134,
-        "max": 1313.7869169459002,
-        "mean": 631.4647262983175,
-        "median": 539.324494,
-        "min": 315.95066527226,
-        "p25": 485.812341,
-        "p75": 678.442546
+        "count": 129,
+        "max": 1118.905525,
+        "mean": 449.3319985032504,
+        "median": 375.145757,
+        "min": 12.001525,
+        "p25": 166.55981500000001,
+        "p75": 725.914547
       },
       "ffcm_fallback": {
         "facilities": [
-          "BC-BIO-4010",
-          "BC-BIO-4011",
-          "BC-BIO-4015",
-          "BC-BIO-4016",
-          "BC-BIO-4018",
-          "BC-BIO-4022",
-          "BC-BIO-4023",
-          "BC-PAP-1007",
-          "BC-PAP-1008",
-          "BC-PAP-1319",
-          "BC-PAP-679",
-          "BC-PAP-938",
-          "BC-PAP-957",
-          "BC-PAP-963",
-          "BC-PAP-964",
-          "BC-PEL-1141",
-          "BC-PEL-1650",
-          "BC-PEL-1653",
-          "BC-PEL-1654",
-          "BC-PEL-1655",
-          "BC-PEL-1657",
-          "BC-PEL-1658",
-          "BC-PEL-210",
-          "BC-PEL-383",
-          "BC-SAW-1009",
-          "BC-SAW-1011",
-          "BC-SAW-1026",
+          "BC-BIO-4007",
           "BC-SAW-1031",
-          "BC-SAW-114",
-          "BC-SAW-1253",
-          "BC-SAW-1276",
-          "BC-SAW-1287",
-          "BC-SAW-1288",
-          "BC-SAW-131",
-          "BC-SAW-132",
-          "BC-SAW-1377",
-          "BC-SAW-1383",
-          "BC-SAW-1386",
-          "BC-SAW-1387",
-          "BC-SAW-141",
-          "BC-SAW-1437",
-          "BC-SAW-1467",
-          "BC-SAW-1692",
-          "BC-SAW-1703",
-          "BC-SAW-1708",
-          "BC-SAW-1740",
-          "BC-SAW-208",
-          "BC-SAW-210",
-          "BC-SAW-242",
-          "BC-SAW-275",
-          "BC-SAW-281",
-          "BC-SAW-284",
-          "BC-SAW-379",
-          "BC-SAW-381",
-          "BC-SAW-383",
-          "BC-SAW-506",
-          "BC-SAW-611",
-          "BC-SAW-680",
-          "BC-SAW-682",
-          "BC-SAW-697",
-          "BC-SAW-74",
-          "BC-SAW-904",
-          "BC-SAW-905",
-          "BC-SAW-940",
-          "BC-SAW-977",
-          "BC-SAW-979",
-          "BC-SAW-981"
+          "BC-SAW-1707",
+          "BC-SAW-1714",
+          "BC-SAW-1725",
+          "BC-SAW-1732",
+          "BC-SAW-2013",
+          "BC-SAW-551",
+          "BC-SAW-708",
+          "BC-SAW-711",
+          "BC-SAW-730"
         ],
-        "facility_count": 67,
-        "link_count": 122,
+        "facility_count": 11,
+        "link_count": 14,
         "path_confidence": "ffcm_fallback_no_real_road_path"
       },
       "mode_counts": {
-        "COMBINATION": 15,
-        "ROAD": 119
+        "COMBINATION": 3,
+        "ROAD": 126
       },
       "rate_table": {
         "BC_log_train": {
@@ -1069,8 +1206,8 @@
         }
       },
       "real_road": {
-        "facility_count": 67,
-        "link_count": 98,
+        "facility_count": 118,
+        "link_count": 196,
         "path_confidence": "real_road_network",
         "source": "transport_links_bc_real.csv"
       },
@@ -2221,12 +2358,11 @@
     },
     "tsa24_anchor": {
       "access_tl_nodes": [
-        "TL19",
-        "TL20",
-        "TL26"
+        "TL13",
+        "TL20"
       ],
-      "anchor_basis": "tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-488;source=mills_db;note=no_TSA24_FMU_exists_in_FFCM_graph",
-      "anchor_id": "BC-SAW-488",
+      "anchor_basis": "tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-506;source=mills_db_2015;note=no_TSA24_FMU_exists_in_FFCM_graph;legacy_BC-SAW-488_was_a_code_collision_with_Canfor_Houston",
+      "anchor_id": "BC-SAW-506",
       "supply_node_id": "TSA24_AU23000"
     },
     "unassigned_penalty_cad_m3": 1000.0,
@@ -2307,16 +2443,16 @@
   },
   "data_gaps": [
     "no TSA24 supply-node-to-transload route in the parsed FFCM graph; a geocoded Prince George mill is the documented anchor proxy",
-    "only 8 of 179 BC facilities have direct Mills DB/suppliers.dbf coordinates; 113 in-scope facilities use a low-confidence TL hub proxy and 41 are missing",
+    "BC coordinate recovery: 98 facilities use a corroborated Mills DB 2015 coordinate; 65 use a low-confidence TL hub proxy and 16 are missing",
     "route capacity absent from routes.csv; all transport links use capacity=None and capacity_source=absent",
-    "no populated contract table; all contracts have contract_source=diagnostic_absent",
+    "BC Fibre Database has TSA apportionment volumes without facility IDs and residue allocation shares without volumes; no facility-level contract volume is available",
     "admt/y and mbf/y capacity units require declared moisture/recovery factors and are rejected without them",
     "no hogfuel supply in the TSA24 assortment matrix",
     "no mill-residue (sawdust/woodchips) supply in this pilot"
   ],
   "inputs": {
-    "assignment_row_count": 203,
-    "assignment_variable_count": 4469,
+    "assignment_row_count": 199,
+    "assignment_variable_count": 4298,
     "contract_count": 161,
     "facility_count": 161,
     "facility_nameplate_m3_y": 91138248.63119508,
@@ -2329,9 +2465,9 @@
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
     "supply_offer_count": 53,
     "supply_volume_m3": 95364338.67999998,
-    "transport_link_count": 220,
+    "transport_link_count": 210,
     "unassigned_penalty_cad_m3": 1000.0,
-    "unassigned_row_count": 9,
+    "unassigned_row_count": 7,
     "unassigned_variable_count": 53
   },
   "period": "2026",
