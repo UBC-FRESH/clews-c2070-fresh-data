@@ -1,0 +1,94 @@
+{
+  "assumptions": [
+    "residue ODT is outfeed value x Stage A log volume / FFCM line infeed",
+    "green m3 uses 0.45 ODT/m3 from the Stage A residue ledger",
+    "residue moisture is 0.45 wet basis from the Stage A residue grade",
+    "recipient capacity is the FFCM line infeed, not an added nameplate",
+    "product prices are FFCM commodity prices on the declared product mass or energy basis; CAD/t is read as the declared tonne basis"
+  ],
+  "counts": {
+    "allocation_count": 258,
+    "included_recipient_line_count": 24,
+    "recipient_candidate_count": 41,
+    "routed_source_count": 94,
+    "source_count": 94,
+    "supply_row_count": 376,
+    "transport_link_count": 2026,
+    "unassigned_count": 133
+  },
+  "data_gaps": [
+    "all three Stage A sawmills use the same low-confidence TL-hub proxy coordinate (54.01, -122.73); source-level transport distances are identical for NRN links and source allocation is degenerate",
+    "Stage A residue-consuming facilities BC-PAP-964, BC-PEL-210, and BC-PEL-383 have no corroborated coordinate and are excluded",
+    "FFCM sawmill outfeed ratios are applied linearly and the FFCM base case is not a closed mill mass balance",
+    "internally_used_woodfuel is reported as other and is not allocatable",
+    "road transport only; island recipients without a road path are unlinked and no water or rail residue route is assumed",
+    "route capacity is absent; transport links are uncapped"
+  ],
+  "model_stats": {
+    "assigned_odt": 6501439.9812561,
+    "feasible_pair_count": 2026,
+    "moisture_limit_wet_basis": null,
+    "objective_mode": "profit_max",
+    "raw_cbc_objective_cad": 759507707.4242796,
+    "solver_status": "Optimal",
+    "variable_count": 2026
+  },
+  "objective_mode": "profit_max",
+  "objective_mode_reason": "all included recipient classes have FFCM prices",
+  "period": "2026",
+  "run_id": "tsa24_bc_stage_b_pilot",
+  "scenario_id": "tsa24_bc_stage_b_pilot",
+  "stage_a_run": "sensitivity_ws4_quota",
+  "status": "pass",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "solver_status",
+        "detail": "status=Optimal",
+        "passed": true
+      },
+      {
+        "check_id": "residue_balance",
+        "detail": "assigned + unassigned equals generated residue for every source/type",
+        "passed": true
+      },
+      {
+        "check_id": "allocation_reference_integrity",
+        "detail": "all allocations reference a declared supply row and recipient line",
+        "passed": true
+      },
+      {
+        "check_id": "residue_type_eligibility",
+        "detail": "every allocation uses an eligible residue type and recipient class",
+        "passed": true
+      },
+      {
+        "check_id": "recipient_capacity",
+        "detail": "no recipient line exceeds its FFCM infeed capacity",
+        "passed": true
+      },
+      {
+        "check_id": "transport_link_existence",
+        "detail": "every allocation has a finite, cost-consistent road or fallback link",
+        "passed": true
+      },
+      {
+        "check_id": "unit_consistency",
+        "detail": "volume/ODT, capacity, moisture, and mass-price bases reconcile",
+        "passed": true
+      },
+      {
+        "check_id": "objective_reconciliation",
+        "detail": "assignment components reproduce the normalised objective; raw CBC delta 3.700435 CAD",
+        "passed": true
+      },
+      {
+        "check_id": "finite_nonnegative_values",
+        "detail": "all allocation and slack values are finite and non-negative",
+        "passed": true
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

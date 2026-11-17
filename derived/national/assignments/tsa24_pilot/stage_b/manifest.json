@@ -1,0 +1,167 @@
+{
+  "assumptions": [
+    "residue ODT is outfeed value x Stage A log volume / FFCM line infeed",
+    "green m3 uses 0.45 ODT/m3 from the Stage A residue ledger",
+    "residue moisture is 0.45 wet basis from the Stage A residue grade",
+    "recipient capacity is the FFCM line infeed, not an added nameplate",
+    "product prices are FFCM commodity prices on the declared product mass or energy basis; CAD/t is read as the declared tonne basis"
+  ],
+  "code_version": "0.1.0",
+  "config": {
+    "density_odt_m3": 0.45,
+    "facility_snap_tolerance_m": 5000.0,
+    "moisture_limit_wet_basis": null,
+    "nrn_zip": "data/raw/nrn/nrn_bc_gpkg.zip",
+    "objective_mode": "profit_max",
+    "objective_mode_reason": "all included recipient classes have FFCM prices",
+    "period": "2026"
+  },
+  "counts": {
+    "allocations": 258,
+    "included_demand_lines": 24,
+    "links": 2026,
+    "supplies": 376,
+    "unassigned": 133
+  },
+  "generated_at_utc": "2026-11-17T07:11:28.438000+00:00",
+  "inputs": [
+    {
+      "bytes": 66086,
+      "path": "data/derived/national/assignments/tsa24_pilot/sensitivity_ws4_quota/facility_assignment.csv",
+      "sha256": "9b1c289cd05d6471dac37a25abe4ce903b814c4e2b86adb08f41adb8076fa74f"
+    },
+    {
+      "bytes": 54929,
+      "path": "data/derived/national/assignments/tsa24_pilot/sensitivity_ws4_quota/facilities_bc.csv",
+      "sha256": "27d24084576219b1afd1b8ac099866ef612491dc5ea52f8272df69e4054bd0c1"
+    },
+    {
+      "bytes": 161839,
+      "path": "metadata/ffcm-archive/parsed/processing_lines.csv",
+      "sha256": "7f98d21bdbbcea5be3c9a9e13b0c4c3e21af04f9b2cc119ef5e1dfec5ed69d3e"
+    },
+    {
+      "bytes": 342157,
+      "path": "metadata/ffcm-archive/parsed/processing_line_flows.csv",
+      "sha256": "df6498046f88a70f3e90fee8d3b686e7031a5be583d5c818e39c8530d73953d3"
+    },
+    {
+      "bytes": 12317,
+      "path": "metadata/ffcm-archive/parsed/commodities.csv",
+      "sha256": "2169f411873ed781eaa70f09efc9a6858ddac03a48e08b5cd5b29ee456175015"
+    },
+    {
+      "bytes": 832,
+      "path": "metadata/ffcm-archive/parsed/markets.csv",
+      "sha256": "a7f97035920a16aa0aa0b9c2a53ae00e29093f3b56215afa0f6e8374624a380b"
+    },
+    {
+      "bytes": 2563,
+      "path": "metadata/ffcm-archive/parsed/transporters.csv",
+      "sha256": "202622ff1e9d324bd9858f2bf3b8ba17b971450ad5f7085d75ec973966808504"
+    },
+    {
+      "bytes": 4780,
+      "path": "metadata/ffcm-archive/parsed/transporter_materials.csv",
+      "sha256": "2c02959d1b37d846775d8df0c85531556e83361450e6318f66cbd4c6e7136998"
+    },
+    {
+      "bytes": 9407550,
+      "path": "metadata/ffcm-archive/parsed/routes.csv",
+      "sha256": "5166249c58465fc45551cb934af1b8efc61091a531279285675ffb6923591b63"
+    },
+    {
+      "bytes": 129429057,
+      "path": "data/raw/nrn/nrn_bc_gpkg.zip",
+      "sha256": "9ae6fb8069a46c4a745571871bf068bdd9d978da745001fd0f8462bfb3b82842"
+    }
+  ],
+  "out_dir": "data/derived/national/assignments/tsa24_pilot/stage_b",
+  "outputs": [
+    {
+      "bytes": 196273,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_supply.csv",
+      "rows": 376,
+      "sha256": "221ee5d8517c749a0dece65cfd1fd5f60bbec0f665ee15391461f1ecaa3e92b4"
+    },
+    {
+      "bytes": 28100,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_supply_coverage.csv",
+      "rows": 376,
+      "sha256": "2150469eaa94497b119ca6b2a5726c09b50e142c334bca3b95f0cbbd25fcd97d"
+    },
+    {
+      "bytes": 126152,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_conversions.csv",
+      "rows": 376,
+      "sha256": "b983fb60c0af3b7db5a94e27fd9a269eb03d1459984b48e68290793e51625a03"
+    },
+    {
+      "bytes": 13453,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_demand.csv",
+      "rows": 24,
+      "sha256": "f91f16deef2baa2505c20659cce0eb9c60ede1e713105768692097d553559018"
+    },
+    {
+      "bytes": 5886,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/stage_b_recipient_screen.csv",
+      "rows": 41,
+      "sha256": "f8030f524db6db8ea413b28a1125254f449c1ef4e038f2ce1c43f25453b52061"
+    },
+    {
+      "bytes": 899115,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/stage_b_transport_links.csv",
+      "rows": 2026,
+      "sha256": "320d1bf9cccd45fe5e5d832d148888049d0049a69a1f3a31963629a688119dcc"
+    },
+    {
+      "bytes": 110252,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/stage_b_assignment.csv",
+      "rows": 258,
+      "sha256": "94ba11827b9fc8eb824fc0e32937b6761c1b67c22241c9684c076e3864bd26eb"
+    },
+    {
+      "bytes": 5063,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/stage_b_utilization.csv",
+      "rows": 24,
+      "sha256": "8e6c50d3bf86bd5ae9965232435e7ec42878f923de889f41bb78717967a55bfb"
+    },
+    {
+      "bytes": 57464,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/residue_balance.csv",
+      "rows": 377,
+      "sha256": "b8704614ec395b46f1899b3e8d28972aa2ceca3dc1f66073ba128369691117e5"
+    },
+    {
+      "bytes": 892,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/bioenergy_share.csv",
+      "rows": 5,
+      "sha256": "99fbb8e146dd9ac4d0c286b9ec947c7dfdc6025394a9f9b3d6ed956d8d67b635"
+    },
+    {
+      "bytes": 654,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/objective_decomposition.csv",
+      "rows": 5,
+      "sha256": "0413c86f701d5f50761a635092917449903dbe75270a8399944bafbdf765256f"
+    },
+    {
+      "bytes": 18825,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/unassigned_residue.csv",
+      "rows": 133,
+      "sha256": "aa9f94b7d0fa33fa15421f9e7c0e7c8b659f64098ad6868cb8371b77147de950"
+    },
+    {
+      "bytes": 13257,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/STAGE_B_REPORT.md",
+      "rows": null,
+      "sha256": "a05f2bf208e96af16dc1994f0c7ccb4e5a48680f9eec80548db7b0e81649cf33"
+    },
+    {
+      "bytes": 3595,
+      "path": "data/derived/national/assignments/tsa24_pilot/stage_b/validation_summary.json",
+      "rows": null,
+      "sha256": "d05ebbe35f0353a3fdfc6d6e2ee20d88c5b939abc3c9e7a2138818c5f7a71596"
+    }
+  ],
+  "pilot_dir": "data/derived/national/assignments/tsa24_pilot/sensitivity_ws4_quota"
+}
