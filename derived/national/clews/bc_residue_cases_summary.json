@@ -1,0 +1,411 @@
+{
+  "agb_slash_sensitivity": {
+    "gap_note": "RSYC AGB is available by BC ecoprovince cell in the national batch; no AGB total was fabricated. The national batch is a placeholder equal-area distribution, so this is a sensitivity.",
+    "method": "RSYC age-100 AGB (national_stands.csv rsyc_agb_mg_ha) x (Bark+Foliar+Branch)/Above median at age 100",
+    "nonstem_fraction": {
+      "age": 100,
+      "au_count": 16,
+      "max": 0.366017964,
+      "median": 0.24683673,
+      "min": 0.169403284
+    },
+    "rsyc_agb_available": true,
+    "zones": {
+      "B1": {
+        "agb_odt_ha": 159.851487,
+        "annual_gross_slash_odt_2021": 1016536.340512,
+        "annual_gross_slash_pj_2021": 18.805922299,
+        "annual_log_m3_2021": 9135920.826688,
+        "annual_recoverable60_slash_pj_2021": 11.28355338,
+        "cell_count": 64,
+        "expansion_odt_per_m3": 0.450776012,
+        "missing_cell_count": 2,
+        "nonstem_fraction": 0.24683673,
+        "ratio_max_to_taper": 4.548584549,
+        "ratio_min_to_taper": 2.105211316,
+        "ratio_to_taper": 3.067493529,
+        "slash_max_odt_per_m3": 0.164992118,
+        "slash_min_odt_per_m3": 0.076362937,
+        "slash_odt_per_m3": 0.111268077,
+        "taper_ratio_odt_per_m3": 0.036273288,
+        "volume_m3ha": 354.614005
+      },
+      "B2": {
+        "agb_odt_ha": 94.817887,
+        "annual_gross_slash_odt_2021": 5060052.800172,
+        "annual_gross_slash_pj_2021": 93.610976803,
+        "annual_log_m3_2021": 40080898.973312,
+        "annual_recoverable60_slash_pj_2021": 56.166586082,
+        "cell_count": 359,
+        "expansion_odt_per_m3": 0.51145545,
+        "missing_cell_count": 4,
+        "nonstem_fraction": 0.24683673,
+        "ratio_max_to_taper": 1.735127606,
+        "ratio_min_to_taper": 0.803065268,
+        "ratio_to_taper": 1.170142634,
+        "slash_max_odt_per_m3": 0.187201882,
+        "slash_min_odt_per_m3": 0.086642233,
+        "slash_odt_per_m3": 0.126245991,
+        "taper_ratio_odt_per_m3": 0.107889403,
+        "volume_m3ha": 185.38836
+      }
+    }
+  },
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "B1/B2 is the FRESH-side provisional crosswalk; C2070 has no published boundary.",
+    "FFCM InitialContent is a stock, so the recovery comparison is per unit log volume, not annual stock-to-flow.",
+    "FFCM has no FMU-to-TSA/zone crosswalk in the repo; BC totals are allocated by the documented 2018 AAC zone log share and flagged.",
+    "FFCM logging_residue is a roadside-recoverable stream (0.063 ODT/m3), not full aboveground slash.",
+    "Cost is FFCM SupplyCost on a dry ODT basis; no moisture credit, deflator, or exchange-rate adjustment is applied.",
+    "The time path uses workbook AAC 2021-2028 and holds 2028 flat to 2070; no MPB, climate, or wildfire trajectory is invented.",
+    "The AGB non-stem sensitivity is not the base curve and does not replace the taper-residue base."
+  ],
+  "cases": {
+    "base": {
+      "cost_usd_per_gj_by_zone": {
+        "B1": 2.456977549,
+        "B2": 2.456977549,
+        "CAN": 2.456977549
+      },
+      "recovery_by_zone": {
+        "B1": 0.6,
+        "B2": 0.583931303
+      },
+      "y2021": {
+        "year": 2021,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.6,
+            "residue_odt": 198831.406659,
+            "residue_pj": 3.678381023
+          },
+          "B2": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.583931303,
+            "residue_odt": 2529412.993117,
+            "residue_pj": 46.794140373
+          },
+          "CAN": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.585073238,
+            "residue_odt": 2728244.399776,
+            "residue_pj": 50.472521396
+          }
+        }
+      },
+      "y2028": {
+        "year": 2028,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.6,
+            "residue_odt": 198501.92465,
+            "residue_pj": 3.672285606
+          },
+          "B2": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.583931303,
+            "residue_odt": 2123595.091628,
+            "residue_pj": 39.286509195
+          },
+          "CAN": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.585271199,
+            "residue_odt": 2322097.016279,
+            "residue_pj": 42.958794801
+          }
+        }
+      },
+      "y2070": {
+        "year": 2070,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.6,
+            "residue_odt": 198501.92465,
+            "residue_pj": 3.672285606
+          },
+          "B2": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.583931303,
+            "residue_odt": 2123595.091628,
+            "residue_pj": 39.286509195
+          },
+          "CAN": {
+            "cost_usd_per_gj": 2.456977549,
+            "recovery_fraction": 0.585271199,
+            "residue_odt": 2322097.016279,
+            "residue_pj": 42.958794801
+          }
+        }
+      }
+    },
+    "high": {
+      "cost_usd_per_gj_by_zone": {
+        "B1": 1.965582039,
+        "B2": 1.965582039,
+        "CAN": 1.965582039
+      },
+      "recovery_by_zone": {
+        "B1": 0.75,
+        "B2": 0.75
+      },
+      "y2021": {
+        "year": 2021,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 248539.258323,
+            "residue_pj": 4.597976279
+          },
+          "B2": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 3248772.13052,
+            "residue_pj": 60.102284415
+          },
+          "CAN": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 3497311.388843,
+            "residue_pj": 64.700260694
+          }
+        }
+      },
+      "y2028": {
+        "year": 2028,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 248127.405813,
+            "residue_pj": 4.590357008
+          },
+          "B2": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 2727540.567303,
+            "residue_pj": 50.459500495
+          },
+          "CAN": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 2975667.973116,
+            "residue_pj": 55.049857503
+          }
+        }
+      },
+      "y2070": {
+        "year": 2070,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 248127.405813,
+            "residue_pj": 4.590357008
+          },
+          "B2": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 2727540.567303,
+            "residue_pj": 50.459500495
+          },
+          "CAN": {
+            "cost_usd_per_gj": 1.965582039,
+            "recovery_fraction": 0.75,
+            "residue_odt": 2975667.973116,
+            "residue_pj": 55.049857503
+          }
+        }
+      }
+    },
+    "low": {
+      "cost_usd_per_gj_by_zone": {
+        "B1": 3.194070814,
+        "B2": 3.194070814,
+        "CAN": 3.194070814
+      },
+      "recovery_by_zone": {
+        "B1": 0.35,
+        "B2": 0.35
+      },
+      "y2021": {
+        "year": 2021,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 115984.987218,
+            "residue_pj": 2.145722264
+          },
+          "B2": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 1516093.660909,
+            "residue_pj": 28.047732727
+          },
+          "CAN": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 1632078.648127,
+            "residue_pj": 30.19345499
+          }
+        }
+      },
+      "y2028": {
+        "year": 2028,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 115792.789379,
+            "residue_pj": 2.142166604
+          },
+          "B2": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 1272852.264741,
+            "residue_pj": 23.547766898
+          },
+          "CAN": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 1388645.054121,
+            "residue_pj": 25.689933501
+          }
+        }
+      },
+      "y2070": {
+        "year": 2070,
+        "zones": {
+          "B1": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 115792.789379,
+            "residue_pj": 2.142166604
+          },
+          "B2": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 1272852.264741,
+            "residue_pj": 23.547766898
+          },
+          "CAN": {
+            "cost_usd_per_gj": 3.194070814,
+            "recovery_fraction": 0.35,
+            "residue_odt": 1388645.054121,
+            "residue_pj": 25.689933501
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "base_2021_pj": 50.472521396,
+    "base_2021_vs_placeholder": 1.009450428,
+    "base_2021_vs_previous_gross": 0.541724543,
+    "base_2028_pj": 42.958794801,
+    "base_2028_vs_previous_gross": 0.461079273,
+    "high_2021_pj": 64.700260694,
+    "low_2021_pj": 30.19345499,
+    "placeholder_cost_usd_per_gj": 4.0,
+    "placeholder_pj": 50.0,
+    "previous_gross_pj": 93.17008437
+  },
+  "ffcm_basis": {
+    "crosswalk_status": "no_fmu_tsa_map",
+    "fmu_count": 467,
+    "log_cost_usd_per_m3": 36.85,
+    "minimum_supply_odt": 0.0,
+    "residue_cost_max_usd_per_odt": 45.454084659,
+    "residue_cost_min_usd_per_odt": 45.454084659,
+    "residue_cost_usd_per_gj": 2.456977549,
+    "residue_cost_usd_per_odt": 45.454084659,
+    "residue_odt_per_m3": 0.063,
+    "total_log_m3": 134745540.345322,
+    "total_residue_odt": 8488969.041755,
+    "zone_allocation": "documented_2018_aac_zone_log_share"
+  },
+  "generated_utc": "2026-11-17T16:34:01+00:00",
+  "recovery": {
+    "B1": {
+      "base_recovery_fraction": 0.6,
+      "comparison_only": false,
+      "crosswalk_status": "no_fmu_tsa_map_documented_zone_share",
+      "ffcm_log_m3": 23445134.244761,
+      "ffcm_residue_odt": 1477043.45742,
+      "ffcm_residue_odt_per_m3": 0.063,
+      "ffcm_supply_cost_usd_per_gj": 2.456977549,
+      "ffcm_supply_cost_usd_per_odt": 45.454084659,
+      "flag": "implied_outside_0.2_1.0_used_0.60",
+      "gross_taper_ratio_odt_per_m3": 0.036273288,
+      "gross_taper_residue_odt_same_log_basis": 850432.111395,
+      "implied_recovery_fraction": 1.736815247,
+      "recovery_basis": "fallback_0.60_out_of_bounds",
+      "recovery_in_bounds": false,
+      "zone_share": 0.173995623,
+      "zone_share_basis": "aac_2018_zone_log_share"
+    },
+    "B2": {
+      "base_recovery_fraction": 0.583931303,
+      "comparison_only": false,
+      "crosswalk_status": "no_fmu_tsa_map_documented_zone_share",
+      "ffcm_log_m3": 111300406.100561,
+      "ffcm_residue_odt": 7011925.584335,
+      "ffcm_residue_odt_per_m3": 0.063,
+      "ffcm_supply_cost_usd_per_gj": 2.456977549,
+      "ffcm_supply_cost_usd_per_odt": 45.454084659,
+      "flag": "implied_within_0.2_1.0",
+      "gross_taper_ratio_odt_per_m3": 0.107889403,
+      "gross_taper_residue_odt_same_log_basis": 12008134.420465,
+      "implied_recovery_fraction": 0.583931303,
+      "recovery_basis": "ffcm_implied",
+      "recovery_in_bounds": true,
+      "zone_share": 0.826004377,
+      "zone_share_basis": "aac_2018_zone_log_share"
+    },
+    "CAN": {
+      "base_recovery_fraction": 0.660180046,
+      "comparison_only": true,
+      "crosswalk_status": "no_fmu_tsa_map_documented_zone_share",
+      "ffcm_log_m3": 134745540.345322,
+      "ffcm_residue_odt": 8488969.041755,
+      "ffcm_residue_odt_per_m3": 0.063,
+      "ffcm_supply_cost_usd_per_gj": 2.456977549,
+      "ffcm_supply_cost_usd_per_odt": 45.454084659,
+      "flag": "national_comparison_only",
+      "gross_taper_ratio_odt_per_m3": 0.095428513,
+      "gross_taper_residue_odt_same_log_basis": 12858566.53186,
+      "implied_recovery_fraction": 0.660180046,
+      "recovery_basis": "national_comparison_only",
+      "recovery_in_bounds": true,
+      "zone_share": 1.0,
+      "zone_share_basis": "national_rollup"
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official",
+  "time_path": {
+    "aac_2018_m3": 52774801.0,
+    "aac_2021_m3": 49216819.8,
+    "aac_2028_m3": 43370775.8,
+    "aac_years": [
+      2011,
+      2028
+    ],
+    "basis": "aac_2028_hold",
+    "horizon": [
+      2021,
+      2070
+    ],
+    "tsa_count": 37,
+    "zero_aac_sheets": [
+      "Kingcome",
+      "Mid Coast",
+      "North Coast",
+      "Strathcona"
+    ]
+  }
+}

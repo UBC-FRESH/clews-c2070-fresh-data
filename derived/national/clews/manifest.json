@@ -1,0 +1,193 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "B1/B2 is the FRESH-side provisional crosswalk; C2070 has no published boundary.",
+    "FFCM InitialContent is a stock, so the recovery comparison is per unit log volume, not annual stock-to-flow.",
+    "FFCM has no FMU-to-TSA/zone crosswalk in the repo; BC totals are allocated by the documented 2018 AAC zone log share and flagged.",
+    "FFCM logging_residue is a roadside-recoverable stream (0.063 ODT/m3), not full aboveground slash.",
+    "Cost is FFCM SupplyCost on a dry ODT basis; no moisture credit, deflator, or exchange-rate adjustment is applied.",
+    "The time path uses workbook AAC 2021-2028 and holds 2028 flat to 2070; no MPB, climate, or wildfire trajectory is invented.",
+    "The AGB non-stem sensitivity is not the base curve and does not replace the taper-residue base."
+  ],
+  "generated_utc": "2026-11-17T16:34:01+00:00",
+  "inputs": [
+    {
+      "bytes": 366537,
+      "path": "metadata/ffcm-archive/parsed/fmu_supply.csv",
+      "sha256": "c23ce62fc916eb723a1766e62a427572f1a18ceb59f038fdae0aedbb7d546591"
+    },
+    {
+      "bytes": 78080,
+      "path": "metadata/fmu_tl_anchors.csv",
+      "sha256": "fcd66e5984d7cc2ec30b55e47a2f943df7603f9a7daa7f1bc407de09a8ffeb9b"
+    },
+    {
+      "bytes": 17877,
+      "path": "data/derived/national/assignments/tsa24_pilot/bc_facility_tsa.csv",
+      "sha256": "48257f3337b9819569e2ed4451c681a203a7b6018f9d7c8cd8727a13d4db0ae1"
+    },
+    {
+      "bytes": 33170,
+      "path": "data/derived/national/assignments/tsa24_pilot/tsa_apportionment_2018.csv",
+      "sha256": "4711036df25761eb94d7966d7d4fa33da0ac22444000d8b966c10f7314ffb7dd"
+    },
+    {
+      "bytes": 1483776,
+      "path": "tmp/BC Fibre Database Benchmark 2018 V3  August/Tenure to Capacity Module/TSA Tenure Apportionment V5.xls",
+      "sha256": "4ce594a90c414bfdff9ec5bac88545edd4d944dd05aa690a9308767032f90802"
+    },
+    {
+      "bytes": 455819,
+      "path": "data/derived/national/assortments/bc_area_weights/bc_area_weights.csv",
+      "sha256": "a173afb4e32367096bae3db94b8e59554ab4950a9e238d9171afeb7e119c8c8e"
+    },
+    {
+      "bytes": 1154868,
+      "path": "data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv",
+      "sha256": "e0a51d5aa6b1ec22b9d27451f229a26bed525ee85641b7ce1766fe1c822e411e"
+    },
+    {
+      "bytes": 109243,
+      "path": "data/derived/national/bucking/tsa24_grade_curves/biomass_au_curves.csv",
+      "sha256": "3a3c4f6feb47766895c3d3e872d4c12c299251eb188c0c093d515647748111d0"
+    },
+    {
+      "bytes": 1332067,
+      "path": "data/derived/national/assortments/national_batch/national_stands.csv",
+      "sha256": "dc3b49ee5018f062c1d9ec66cb062aef7e80c51d2b86191de05fd9dca32f80eb"
+    },
+    {
+      "bytes": 48030,
+      "path": "data/derived/national/clews_supply/bc_woody_residue/bc_annual_residue.csv",
+      "sha256": "203073360e3e554321a78599329a98ed7c460dca8bc28f8796b6e28567aef49d"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 1635,
+      "path": "bc_residue_recovery.csv",
+      "sha256": "adae6e8bf5fc8661a98a05636bfbc082bba5d8c232b54707b386c8e4ab617942"
+    },
+    {
+      "bytes": 131656,
+      "path": "audit/bc_ffcm_fmu_supply.csv",
+      "sha256": "25c2e3b9c67b8c2f9c9bb7936a138407cf7c2584815f65787c4a2bcb2079e8d6"
+    },
+    {
+      "bytes": 83980,
+      "path": "audit/bc_aac_trajectory_2011_2028.csv",
+      "sha256": "c7208ae0cff050bd3260116d9150cfe16c44a55728d316723ba17eac8e923d5c"
+    },
+    {
+      "bytes": 52673,
+      "path": "bc_residue_time_path.csv",
+      "sha256": "bb8e9b96474e951c1ce3cb2ab05be93c36ac3ca92a6e8d9e4dd2805ed4c435d7"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_activity_limits_low.csv",
+      "sha256": "6464e7f54b489b323edbbbbd23896e74af6bf4c3761c0371a1d435dde5335f9d"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_variable_cost_low.csv",
+      "sha256": "276b07aa0ba4fbdd78129098b78ca807f7e05460f1b3e89b0b0d4ef4839c6682"
+    },
+    {
+      "bytes": 1579,
+      "path": "SUPBCWB2_activity_limits_low.csv",
+      "sha256": "adcc4a3798123df9ae2edb8a162460af55955c93c142618f60eacdf5bdee8287"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB2_variable_cost_low.csv",
+      "sha256": "9decb982444bda3e3311be9fc69f7f9a290d3e8494f808b458ed77ead4faf3c0"
+    },
+    {
+      "bytes": 1479,
+      "path": "comparison/SUPBCW_activity_limits_low.csv",
+      "sha256": "d96dfdbf33de507fb4085d2835a7742752fd0618a5640ed13c8dc174c3ecb7ab"
+    },
+    {
+      "bytes": 1429,
+      "path": "comparison/SUPBCW_variable_cost_low.csv",
+      "sha256": "0682b7f91357786741910ec4ddc13f42a42934226ed911b15e993e580269abfc"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_activity_limits_base.csv",
+      "sha256": "740b8fe342d74ff5ad823dc57939b8ec59649a034363ad02609a9193ec492241"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "SUPBCWB2_activity_limits_base.csv",
+      "sha256": "b392e05df7420c7a61e41960ef53ead59ecc4df79a49f3c0f9219ac6d139bbf5"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 1479,
+      "path": "comparison/SUPBCW_activity_limits_base.csv",
+      "sha256": "5c83b9a8863e2af3f46fe764b491f24fe00c64d31d42f466fcebd01fd3788e80"
+    },
+    {
+      "bytes": 1429,
+      "path": "comparison/SUPBCW_variable_cost_base.csv",
+      "sha256": "8be874e0db18c1a624f28e6643acf67915f1f963ef4d07ea7d14a86ebb311f32"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_activity_limits_high.csv",
+      "sha256": "7377e07144ca878a90d8e16fb22f23a2304a454a6c9ae79791a9475735bd9fa6"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB1_variable_cost_high.csv",
+      "sha256": "4cf5ac2ffa6c3326450721a4d1a7714f795059b3957bedbdcdaac8beb6930832"
+    },
+    {
+      "bytes": 1579,
+      "path": "SUPBCWB2_activity_limits_high.csv",
+      "sha256": "16b4f63fe1400fd4a3c91bf04ccc5444aa6ba076beb7d1ed3b42580c70f4264f"
+    },
+    {
+      "bytes": 1529,
+      "path": "SUPBCWB2_variable_cost_high.csv",
+      "sha256": "7b4331dea4199f67f948f4d73b91fea740d1b9c9d0075b8a8c0eea3b9f0d9321"
+    },
+    {
+      "bytes": 1479,
+      "path": "comparison/SUPBCW_activity_limits_high.csv",
+      "sha256": "24387017d8f1875f08b0028b4a1883a046d32a762961c16ae42be70d476a168d"
+    },
+    {
+      "bytes": 1429,
+      "path": "comparison/SUPBCW_variable_cost_high.csv",
+      "sha256": "2e03db0770b67ddd658cabc7506005b4cf880ebe20ae2e471ee1eb9159da82ca"
+    },
+    {
+      "bytes": 13271,
+      "path": "bc_residue_cases_summary.json",
+      "sha256": "427f900f56a117dffeeb4b8ffb5ecd220e354a76ac47dacf60d4b7aca43487c5"
+    },
+    {
+      "bytes": 11982,
+      "path": "BC_RESIDUE_RECOVERY_REPORT.md",
+      "sha256": "796979b4336c3151d12a24f0d9dedd603b2659a8bc9ed5011fc974c3de041bec"
+    }
+  ],
+  "status": "fresh_side_provisional_not_c2070_official",
+  "zone_definition": {
+    "B1": "Georgia Depression + Southern Coastal Mountains",
+    "B2": "Northern Coastal Mountains + Montane Cordillera + Boreal Cordillera + Boreal Plains + Taiga Plains (BC portion) + Wrangel Mountains + NO_ECOPROVINCE fallback",
+    "status": "fresh_provisional_no_published_c2070_boundary"
+  }
+}
