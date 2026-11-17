@@ -41,10 +41,10 @@
       "value": 0.45
     },
     {
-      "assumption": "m3/y infeed is used directly; odt/y infeed is converted at 1/0.45 m3 per ODT; bdmt/y is rejected.",
+      "assumption": "m3/y infeed is used directly; odt/y and bdmt/y infeed use the declared 0.45 ODT/m3 density; admt/y is rejected without a declared air-dry moisture; mbf/y is rejected without a declared recovery factor; energy units cannot become volume.",
       "category": "facility_capacity",
-      "evidence": "archive_parsed_processing_lines;ledger_density",
-      "impact": "PAP bdmt/y lines are duplicate alternatives of the m3/y log lines and are excluded.",
+      "evidence": "units.py;archive_parsed_processing_lines;ledger_density",
+      "impact": "PAP bdmt/y alternatives convert below the paired m3/y log line, so product capacity is unchanged.",
       "unit": "m3/ODT",
       "value": 2.2222222222222223
     },
@@ -57,50 +57,58 @@
       "value": ""
     },
     {
-      "assumption": "Operating cost is converted to CAD/m3 infeed with the same line's outfeed ratio when the archive unit is per mbf, kwh, admt, odt, or t.",
-      "category": "processing_cost",
-      "evidence": "archive_parsed_processing_line_flows",
-      "impact": "No global mbf/kwh/admt conversion is assumed.",
-      "unit": "CAD/m3",
-      "value": ""
+      "assumption": "Coordinates use Mills DB first, CFS suppliers.dbf second, an FFCM TL/water hub proxy third, and missing last; no Euclidean guesses are used.",
+      "category": "coordinate",
+      "evidence": "facility_geocoding.csv;routes.csv",
+      "impact": "TL/water proxy uses the median coordinate of geocoded facilities directly attached to the same hub; confidence is low.",
+      "unit": "facility_count",
+      "value": "mills_db=8;suppliers_dbf=0;tl_anchor_proxy=126;missing=45"
     },
     {
-      "assumption": "Product revenue uses parsed commodity prices and each line's outfeed mix.",
-      "category": "revenue",
-      "evidence": "archive_parsed_commodities;processing_line_flows",
-      "impact": "Mass prices are applied to odt/admt outfeed with an explicit flag.",
-      "unit": "CAD/m3",
-      "value": ""
+      "assumption": "Stage A scope coordinate coverage is tracked separately from all BC facilities.",
+      "category": "coordinate",
+      "evidence": "facility_geocoding.csv;routes.csv",
+      "impact": "Missing coordinates do not fabricate a location and do not by themselves exclude a facility from the LP.",
+      "unit": "facility_count",
+      "value": "mills_db=7;suppliers_dbf=0;tl_anchor_proxy=113;missing=41"
     },
     {
-      "assumption": "The TSA24 supply node has no archive route to an FFCM transload hub; a 150 km access leg is added to the minimum facility-to-TL road distance.",
+      "assumption": "The TSA24 supply anchor is a geocoded Prince George mill proxy because no TSA24 FMU exists in the FFCM graph.",
       "category": "transport",
-      "evidence": "diagnostic",
-      "impact": "This is the primary transport uncertainty; it is not a Euclidean estimate.",
+      "evidence": "facility_geocoding.csv;routes.csv",
+      "impact": "Anchor coordinate is Mills DB 53.99,-122.69 (BC-SAW-488); all distances are relative to this proxy.",
+      "unit": "facility_id",
+      "value": "BC-SAW-488"
+    },
+    {
+      "assumption": "Distances are FFCM route-graph shortest paths from the anchor through TL nodes, not Euclidean distances.",
+      "category": "transport",
+      "evidence": "archive_parsed_routes",
+      "impact": "Median graph distance is 920.6438935022001 km versus 261.238130978 km in the previous 150 km diagnostic.",
       "unit": "km",
-      "value": 150.0
+      "value": 920.6438935022001
     },
     {
-      "assumption": "Road cost uses BC_logging_truck for logs and BC_residue_truck for residue, with archive fuel and operating rates.",
+      "assumption": "Road and rail costs use BC transporters with archive fuel and operating rates and material capacities; transload costs are added at each TL node.",
       "category": "transport",
-      "evidence": "archive_parsed_transporters;transporter_materials",
-      "impact": "No transload cost is applied because the diagnostic path is direct road.",
-      "unit": "CAD/m3-km",
-      "value": 0.056196031959508314
+      "evidence": "archive_parsed_transporters;transporter_materials;transload_costs",
+      "impact": "Combination paths use the actual leg mode; no global average rate is assumed.",
+      "unit": "CAD/m3",
+      "value": ""
     },
     {
-      "assumption": "FFCM route capacity is absent from the parsed route table; pilot transport links are uncapped.",
+      "assumption": "FFCM route capacity is absent from the parsed route table; every transport link is uncapped.",
       "category": "transport",
       "evidence": "diagnostic",
-      "impact": "Add route capacity before interpreting congestion or rail/water limits.",
+      "impact": "capacity=None and capacity_source=absent; do not interpret congestion or rail/water limits.",
       "unit": "m3",
       "value": ""
     },
     {
-      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate.",
+      "assumption": "Contracts are diagnostic: min=0 and max=facility nameplate; no populated real contract table exists.",
       "category": "contracts",
-      "evidence": "diagnostic_no_populated_contract_table",
-      "impact": "Contract compliance is reported but does not constrain the base pilot.",
+      "evidence": "diagnostic_absent",
+      "impact": "contract_source=diagnostic_absent on every contract; compliance is a bound check, not commercial evidence.",
       "unit": "m3",
       "value": ""
     },
@@ -129,378 +137,258 @@
       "value": ""
     },
     {
-      "assumption": "BC-PAP-179 BC-PAP-179-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "1267354.2"
-    },
-    {
-      "assumption": "BC-PAP-589 BC-PAP-589-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "846764.9"
-    },
-    {
-      "assumption": "BC-PAP-589 BC-PAP-589-3 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "355195.8"
-    },
-    {
-      "assumption": "BC-PAP-511 BC-PAP-511-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "1399311.8"
-    },
-    {
-      "assumption": "BC-PAP-679 BC-PAP-679-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "540441.1"
-    },
-    {
-      "assumption": "BC-PAP-731 BC-PAP-731-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "960894.1"
-    },
-    {
-      "assumption": "BC-PAP-590 BC-PAP-590-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "260697"
-    },
-    {
-      "assumption": "BC-PAP-938 BC-PAP-938-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "986352.2"
-    },
-    {
-      "assumption": "BC-PAP-591 BC-PAP-591-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "301246.6"
-    },
-    {
-      "assumption": "BC-PAP-957 BC-PAP-957-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "1291304"
-    },
-    {
-      "assumption": "BC-PAP-963 BC-PAP-963-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "1374533"
-    },
-    {
-      "assumption": "BC-PAP-964 BC-PAP-964-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "692002.5"
-    },
-    {
-      "assumption": "BC-PAP-1007 BC-PAP-1007-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "745178.7"
-    },
-    {
-      "assumption": "BC-PAP-1008 BC-PAP-1008-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "444620.7"
-    },
-    {
-      "assumption": "BC-PAP-1163 BC-PAP-1163-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "567102.7"
-    },
-    {
-      "assumption": "BC-PAP-1319 BC-PAP-1319-1 rejected: rejected_capacity_unit:capacity unit 'bdmt/y' is rejected; supported units are ['m3/y', 'odt/y']",
-      "category": "facility_screen",
-      "evidence": "archive_parsed_processing_lines",
-      "impact": "The line is not used for capacity or cost.",
-      "unit": "bdmt/y",
-      "value": "276704.7"
-    },
-    {
-      "assumption": "BC-BIO-4017 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-BIO-4017 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-PAP-589 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-PAP-589 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-PAP-590 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-PAP-590 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-PAP-591 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-PAP-591 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-PAP-731 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-PAP-731 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1022 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1022 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1152 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1152 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1153 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1153 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1472 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1472 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-163 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-163 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1698 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1698 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1700 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1700 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1705 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1705 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1710 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1710 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1728 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1728 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1730 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1730 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-1735 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-1735 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-200 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-200 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-308 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-308 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-309 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-309 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-363 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-363 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-456 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-456 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-609 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-488 rejected: missing_anchor_proxy_self",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-810 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-609 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-915 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-810 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-916 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-915 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-920 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-916 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-935 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-920 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-945 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-935 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-992 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-945 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     },
     {
-      "assumption": "BC-SAW-994 rejected: rejected_no_ffcm_road_route_to_tl",
+      "assumption": "BC-SAW-992 rejected: missing_no_tl_route",
       "category": "transport_screen",
       "evidence": "archive_parsed_routes",
-      "impact": "The facility has no defensible FFCM facility-to-transload road distance.",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
+      "unit": "km",
+      "value": ""
+    },
+    {
+      "assumption": "BC-SAW-994 rejected: missing_no_tl_route",
+      "category": "transport_screen",
+      "evidence": "archive_parsed_routes",
+      "impact": "The facility has no defensible FFCM TL-graph path from the TSA24 anchor.",
       "unit": "km",
       "value": ""
     }
@@ -515,24 +403,1869 @@
       "PEL",
       "SAW"
     ],
+    "facility_coverage": {
+      "anchor_hubs": [
+        {
+          "geocoded_facilities": "BC-PLY-410;BC-SAW-418",
+          "geocoded_facility_count": 2,
+          "hub": "TL13",
+          "lat": 50.875,
+          "lon": -119.505,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-418",
+          "geocoded_facility_count": 1,
+          "hub": "TL14",
+          "lat": 50.99,
+          "lon": -118.2,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-384;BC-SAW-389;BC-SAW-488",
+          "geocoded_facility_count": 3,
+          "hub": "TL19",
+          "lat": 50.15,
+          "lon": -120.78,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-383;BC-SAW-384;BC-SAW-389;BC-SAW-488",
+          "geocoded_facility_count": 4,
+          "hub": "TL20",
+          "lat": 50.125,
+          "lon": -121.735,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-383;BC-SAW-389;BC-SAW-488",
+          "geocoded_facility_count": 3,
+          "hub": "TL26",
+          "lat": 50.15,
+          "lon": -122.69,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-410",
+          "geocoded_facility_count": 1,
+          "hub": "TL27",
+          "lat": 50.76,
+          "lon": -120.81,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-PLY-410",
+          "geocoded_facility_count": 1,
+          "hub": "TL3",
+          "lat": 50.76,
+          "lon": -120.81,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        },
+        {
+          "geocoded_facilities": "BC-SAW-309",
+          "geocoded_facility_count": 1,
+          "hub": "W7",
+          "lat": 49.18,
+          "lon": -116.56,
+          "method": "median_of_directly_attached_geocoded_facilities"
+        }
+      ],
+      "coordinate_confidence_counts": {
+        "high": 8,
+        "low": 126,
+        "missing": 45
+      },
+      "coordinate_source_counts": {
+        "mills_db": 8,
+        "missing": 45,
+        "suppliers_dbf": 0,
+        "tl_anchor_proxy": 126
+      },
+      "coordinate_source_counts_in_scope": {
+        "mills_db": 7,
+        "missing": 41,
+        "suppliers_dbf": 0,
+        "tl_anchor_proxy": 113
+      },
+      "facility_count": 179,
+      "missing_coordinate_count": 45,
+      "missing_coordinate_count_in_scope": 41,
+      "missing_coordinates": [
+        "BC-SAW-281",
+        "BC-SAW-1735",
+        "BC-SAW-114",
+        "BC-SAW-163",
+        "BC-SAW-200",
+        "BC-SAW-242",
+        "BC-SAW-284",
+        "BC-SAW-363",
+        "BC-SAW-456",
+        "BC-SAW-609",
+        "BC-SAW-697",
+        "BC-SAW-810",
+        "BC-SAW-904",
+        "BC-SAW-905",
+        "BC-SAW-915",
+        "BC-SAW-916",
+        "BC-SAW-920",
+        "BC-SAW-935",
+        "BC-SAW-940",
+        "BC-SAW-992",
+        "BC-SAW-994",
+        "BC-SAW-1022",
+        "BC-SAW-1026",
+        "BC-SAW-1152",
+        "BC-SAW-1153",
+        "BC-SAW-1276",
+        "BC-SAW-1287",
+        "BC-SAW-1288",
+        "BC-SAW-1467",
+        "BC-SAW-1472",
+        "BC-SAW-1698",
+        "BC-SAW-1700",
+        "BC-SAW-1705",
+        "BC-SAW-1710",
+        "BC-SAW-1728",
+        "BC-SAW-1730",
+        "BC-SAW-1031",
+        "BC-PLY-38",
+        "BC-PLY-813",
+        "BC-PLY-1280",
+        "BC-PLY-1404",
+        "BC-PAP-589",
+        "BC-PAP-731",
+        "BC-PAP-590",
+        "BC-PAP-938"
+      ],
+      "missing_coordinates_in_scope": [
+        "BC-SAW-281",
+        "BC-SAW-1735",
+        "BC-SAW-114",
+        "BC-SAW-163",
+        "BC-SAW-200",
+        "BC-SAW-242",
+        "BC-SAW-284",
+        "BC-SAW-363",
+        "BC-SAW-456",
+        "BC-SAW-609",
+        "BC-SAW-697",
+        "BC-SAW-810",
+        "BC-SAW-904",
+        "BC-SAW-905",
+        "BC-SAW-915",
+        "BC-SAW-916",
+        "BC-SAW-920",
+        "BC-SAW-935",
+        "BC-SAW-940",
+        "BC-SAW-992",
+        "BC-SAW-994",
+        "BC-SAW-1022",
+        "BC-SAW-1026",
+        "BC-SAW-1152",
+        "BC-SAW-1153",
+        "BC-SAW-1276",
+        "BC-SAW-1287",
+        "BC-SAW-1288",
+        "BC-SAW-1467",
+        "BC-SAW-1472",
+        "BC-SAW-1698",
+        "BC-SAW-1700",
+        "BC-SAW-1705",
+        "BC-SAW-1710",
+        "BC-SAW-1728",
+        "BC-SAW-1730",
+        "BC-SAW-1031",
+        "BC-PAP-589",
+        "BC-PAP-731",
+        "BC-PAP-590",
+        "BC-PAP-938"
+      ],
+      "stage_a_scope_count": 161,
+      "zero_capacity_facilities": []
+    },
+    "ffcm_bc_class_mix": {
+      "classes": {
+        "BIO": {
+          "facility_count": 12.0,
+          "facility_share": 0.07453416149068323,
+          "nameplate_m3_y": 8326258.886777147,
+          "nameplate_share": 0.09135855704744374
+        },
+        "PAP": {
+          "facility_count": 15.0,
+          "facility_share": 0.09316770186335403,
+          "nameplate_m3_y": 30774260.0,
+          "nameplate_share": 0.3376656942853134
+        },
+        "PEL": {
+          "facility_count": 13.0,
+          "facility_share": 0.08074534161490683,
+          "nameplate_m3_y": 6859300.0,
+          "nameplate_share": 0.07526258297717801
+        },
+        "SAW": {
+          "facility_count": 121.0,
+          "facility_share": 0.7515527950310559,
+          "nameplate_m3_y": 45178429.74441794,
+          "nameplate_share": 0.49571316569006496
+        }
+      },
+      "facility_count": 161.0,
+      "nameplate_m3_y": 91138248.63119508
+    },
     "period": "2026",
     "residue_density_odt_m3": 0.45,
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
     "target_agb_odt_ha": 204.7,
     "target_volume_m3ha": 311.6,
     "transport_rates": {
-      "bc_logging_truck_cost_per_km": 2.5906370733333333,
-      "bc_residue_truck_cost_per_km": 2.5906370733333333,
-      "log_cost_per_m3_km": 0.056196031959508314,
-      "log_truck_capacity_m3": 46.1,
-      "residue_cost_per_m3_km": 0.04663146732,
-      "residue_truck_capacity_bdt": 25.0
+      "BC_log_train": {
+        "mode": "RAIL",
+        "rate_per_km": 51.58256314621913
+      },
+      "BC_logging_truck": {
+        "mode": "ROAD",
+        "rate_per_km": 2.5906370733333333
+      },
+      "BC_residue_train": {
+        "mode": "RAIL",
+        "rate_per_km": 192.15111655555555
+      },
+      "BC_residue_truck": {
+        "mode": "ROAD",
+        "rate_per_km": 2.5906370733333333
+      },
+      "log_barge": {
+        "mode": "WATER",
+        "rate_per_km": 23.14533632287
+      },
+      "residue_barge": {
+        "mode": "WATER",
+        "rate_per_km": 8.8381333632287
+      }
     },
-    "unassigned_penalty_cad_m3": 1000.0
+    "transport_summary": {
+      "accepted_facility_count": 129,
+      "accepted_link_count": 210,
+      "anchor": {
+        "access_tl_nodes": [
+          "TL19",
+          "TL20",
+          "TL26"
+        ],
+        "anchor_basis": "tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-488;source=mills_db;note=no_TSA24_FMU_exists_in_FFCM_graph",
+        "anchor_id": "BC-SAW-488",
+        "supply_node_id": "TSA24_AU23000"
+      },
+      "capacity": {
+        "capacity_none_count": 210,
+        "capacity_source": "absent",
+        "route_capacity_table": "absent"
+      },
+      "confidence_counts": {
+        "direct_route": 61,
+        "graph_shortest_path": 68
+      },
+      "cost_cad_m3": {
+        "HOGFUEL": {
+          "count": 11,
+          "max": 63.63864179210404,
+          "mean": 37.41305329990241,
+          "median": 29.96357761088821,
+          "min": 19.52595778435373,
+          "p25": 26.264764614100116,
+          "p75": 52.92759101692055
+        },
+        "OTHER_LOG": {
+          "count": 35,
+          "max": 87.1171386558402,
+          "mean": 44.2511388311889,
+          "median": 35.55972242175476,
+          "min": 22.67792695149883,
+          "p25": 28.841267966734986,
+          "p75": 62.0775644937582
+        },
+        "PULP": {
+          "count": 35,
+          "max": 87.1171386558402,
+          "mean": 44.2511388311889,
+          "median": 35.55972242175476,
+          "min": 22.67792695149883,
+          "p25": 28.841267966734986,
+          "p75": 62.0775644937582
+        },
+        "RESIDUE": {
+          "count": 24,
+          "max": 63.638641792104046,
+          "mean": 36.72960711477109,
+          "median": 31.629272550758248,
+          "min": 19.52595778435373,
+          "p25": 25.31110594175234,
+          "p75": 52.75389716411318
+        },
+        "SAWLOG": {
+          "count": 105,
+          "max": 88.3120264414566,
+          "mean": 56.266909334857274,
+          "median": 61.387825103667495,
+          "min": 22.325173683267835,
+          "p25": 32.474380656988856,
+          "p75": 78.96049895377406
+        }
+      },
+      "diagnostic_comparison": {
+        "cost": {
+          "RESIDUE": {
+            "delta": {
+              "count": 24,
+              "max": 43.75842001478673,
+              "mean": 21.97123026918403,
+              "median": 12.192807636602389,
+              "min": 12.192807636602385,
+              "p25": 12.192807636602387,
+              "p75": 41.209454894284534
+            },
+            "new": {
+              "count": 24,
+              "max": 63.638641792104046,
+              "mean": 36.72960711477109,
+              "median": 31.629272550758248,
+              "min": 19.52595778435373,
+              "p25": 25.31110594175234,
+              "p75": 52.75389716411318
+            },
+            "old": {
+              "count": 24,
+              "max": 26.757969974019066,
+              "mean": 14.758376845587064,
+              "median": 13.698928203722968,
+              "min": 7.333150147751342,
+              "p25": 11.725445922407271,
+              "p75": 17.959540515298745
+            }
+          },
+          "SAWLOG": {
+            "delta": {
+              "count": 105,
+              "max": 74.47424226425656,
+              "mean": 40.47894968189922,
+              "median": 47.95592539682397,
+              "min": 13.840676833697739,
+              "p25": 13.840676833697742,
+              "p75": 69.12731320867783
+            },
+            "new": {
+              "count": 105,
+              "max": 88.3120264414566,
+              "mean": 56.266909334857274,
+              "median": 61.387825103667495,
+              "min": 22.325173683267835,
+              "p25": 32.474380656988856,
+              "p75": 78.96049895377406
+            },
+            "old": {
+              "count": 105,
+              "max": 36.632805233043804,
+              "mean": 15.787959652958058,
+              "median": 14.23175765361075,
+              "min": 8.484496849570094,
+              "p25": 9.72955707633398,
+              "p75": 19.475677173890872
+            }
+          }
+        },
+        "delta_km": {
+          "count": 129,
+          "max": 2095.79979461,
+          "mean": 558.7261894861408,
+          "median": 690.72359815,
+          "min": 164.97031036599992,
+          "p25": 164.97031036599998,
+          "p75": 986.1428160730002
+        },
+        "new_distance_km": {
+          "count": 129,
+          "max": 2582.372763246,
+          "mean": 846.283647553736,
+          "median": 920.6438935022001,
+          "min": 315.95066527226,
+          "p25": 494.3744485625,
+          "p75": 1161.7624148261002
+        },
+        "old_diagnostic_distance_km": {
+          "count": 129,
+          "max": 651.875300723,
+          "mean": 287.5574580675952,
+          "median": 261.238130978,
+          "min": 150.98035490626,
+          "p25": 175.364475835,
+          "p75": 357.38043190999997
+        },
+        "outlier_count": 129,
+        "outliers": [
+          {
+            "delta_km": 2095.79979461,
+            "facility_class": "PAP",
+            "facility_id": "BC-PAP-1163",
+            "new_graph_km": 2582.372763246,
+            "old_diagnostic_km": 486.572968636,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 5.307267213148138
+          },
+          {
+            "delta_km": 1431.097555014,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-352",
+            "new_graph_km": 1831.619870219,
+            "old_diagnostic_km": 400.52231520500004,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 4.573078204847385
+          },
+          {
+            "delta_km": 1396.6253291570001,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-397",
+            "new_graph_km": 1810.527075875,
+            "old_diagnostic_km": 413.901746718,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 4.374291943030988
+          },
+          {
+            "delta_km": 1119.9971680869999,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1736",
+            "new_graph_km": 1557.35969007,
+            "old_diagnostic_km": 437.362521983,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 3.560798220681866
+          },
+          {
+            "delta_km": 1113.766798382,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1014",
+            "new_graph_km": 1536.097792915,
+            "old_diagnostic_km": 422.330994533,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 3.637189343902091
+          },
+          {
+            "delta_km": 1067.5456131618403,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-940",
+            "new_graph_km": 1227.0451062185002,
+            "old_diagnostic_km": 159.49949305666001,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.693097217447639
+          },
+          {
+            "delta_km": 1062.5626269221002,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1467",
+            "new_graph_km": 1244.2812978762001,
+            "old_diagnostic_km": 181.7186709541,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 6.847294729502457
+          },
+          {
+            "delta_km": 1062.5626269219001,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-114",
+            "new_graph_km": 1313.7869169459002,
+            "old_diagnostic_km": 251.224290024,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 5.229537784027139
+          },
+          {
+            "delta_km": 1061.3768291455003,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1026",
+            "new_graph_km": 1238.8972434300003,
+            "old_diagnostic_km": 177.5204142845,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 6.978900136209142
+          },
+          {
+            "delta_km": 1061.3768291455003,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-242",
+            "new_graph_km": 1241.5163972303003,
+            "old_diagnostic_km": 180.1395680848,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 6.891969434754397
+          },
+          {
+            "delta_km": 1061.3768291455,
+            "facility_class": "PAP",
+            "facility_id": "BC-PAP-938",
+            "new_graph_km": 1242.4404971353001,
+            "old_diagnostic_km": 181.0636679898,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 6.861898419098035
+          },
+          {
+            "delta_km": 1061.3768291455,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1031",
+            "new_graph_km": 1239.3311942710002,
+            "old_diagnostic_km": 177.9543651255,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 6.96432028175863
+          },
+          {
+            "delta_km": 1061.3721783259803,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-697",
+            "new_graph_km": 1220.7211288445003,
+            "old_diagnostic_km": 159.34895051852,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.660678811327498
+          },
+          {
+            "delta_km": 1060.5501561899005,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-284",
+            "new_graph_km": 1227.9455452817003,
+            "old_diagnostic_km": 167.39538909179998,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.335599576212296
+          },
+          {
+            "delta_km": 1060.5501561899002,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1276",
+            "new_graph_km": 1221.0958233760002,
+            "old_diagnostic_km": 160.5456671861,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.60590955071083
+          },
+          {
+            "delta_km": 1060.5501561899002,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1287",
+            "new_graph_km": 1214.5205830327502,
+            "old_diagnostic_km": 153.97042684285,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.888012054888639
+          },
+          {
+            "delta_km": 1060.5501561899002,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-1288",
+            "new_graph_km": 1211.6752791189801,
+            "old_diagnostic_km": 151.12512292908,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 8.017695904125716
+          },
+          {
+            "delta_km": 1060.5501561899002,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-281",
+            "new_graph_km": 1225.4475078777002,
+            "old_diagnostic_km": 164.8973516878,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.431577859405764
+          },
+          {
+            "delta_km": 1053.4882077540003,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-905",
+            "new_graph_km": 1211.5840992236203,
+            "old_diagnostic_km": 158.09589146962,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.663602690500282
+          },
+          {
+            "delta_km": 1052.9544187856443,
+            "facility_class": "SAW",
+            "facility_id": "BC-SAW-904",
+            "new_graph_km": 1211.3118454407643,
+            "old_diagnostic_km": 158.35742665512,
+            "path_confidence": "graph_shortest_path",
+            "ratio": 7.649226632602647
+          }
+        ],
+        "ratio": {
+          "count": 129,
+          "max": 8.017695904125716,
+          "mean": 3.484660988673166,
+          "median": 2.2124425244542714,
+          "min": 1.2530703497786004,
+          "p25": 1.6048317055544312,
+          "p75": 5.268402498587639
+        }
+      },
+      "distance_km": {
+        "count": 129,
+        "max": 2582.372763246,
+        "mean": 846.283647553736,
+        "median": 920.6438935022001,
+        "min": 315.95066527226,
+        "p25": 494.3744485625,
+        "p75": 1161.7624148261002
+      },
+      "mode_counts": {
+        "COMBINATION": 24,
+        "ROAD": 105
+      },
+      "rate_table": {
+        "BC_log_train": {
+          "mode": "RAIL",
+          "rate_per_km": 51.58256314621913
+        },
+        "BC_logging_truck": {
+          "mode": "ROAD",
+          "rate_per_km": 2.5906370733333333
+        },
+        "BC_residue_train": {
+          "mode": "RAIL",
+          "rate_per_km": 192.15111655555555
+        },
+        "BC_residue_truck": {
+          "mode": "ROAD",
+          "rate_per_km": 2.5906370733333333
+        },
+        "log_barge": {
+          "mode": "WATER",
+          "rate_per_km": 23.14533632287
+        },
+        "residue_barge": {
+          "mode": "WATER",
+          "rate_per_km": 8.8381333632287
+        }
+      },
+      "screened_facility_count": 161,
+      "transload_cost_table": {
+        "TL10:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL10:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL10:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL10:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL10:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL11:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL11:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL11:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL11:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL11:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL12:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL12:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL12:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL12:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL12:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL13:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL13:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL13:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL13:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL13:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL14:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL14:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL14:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL14:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL14:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL15:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL15:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL15:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL15:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL15:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL16:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL16:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL16:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL16:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL16:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL17:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL17:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL17:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL17:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL17:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL18:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL18:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL18:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL18:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL18:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL19:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL19:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL19:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL19:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL19:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL1:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL1:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL1:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL1:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL1:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL20:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL20:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL20:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL20:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL20:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL21:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL21:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL21:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL21:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL21:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL22:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL22:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL22:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL22:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL22:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL23:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL23:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL23:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL23:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL23:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL24:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL24:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL24:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL24:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL24:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL25:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL25:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL25:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL25:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL25:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL26:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL26:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL26:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL26:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL26:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL27:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL27:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL27:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL27:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL27:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL28:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL28:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL28:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL28:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL28:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL2:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL2:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL2:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL2:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL2:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL3:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL3:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL3:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL3:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL3:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL4:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL4:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL4:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL4:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL4:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL5:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL5:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL5:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL5:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL5:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL6:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL6:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL6:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL6:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL6:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL7:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL7:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL7:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL7:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL7:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL8:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL8:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL8:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL8:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL8:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "TL9:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL9:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "TL9:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL9:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "TL9:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W11:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W11:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W11:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W11:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W11:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W12:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W12:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W12:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W12:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W12:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W13:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W13:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W13:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W13:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W13:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W14:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W14:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W14:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W14:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W14:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W15:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W15:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W15:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W15:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W15:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W16:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W16:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W16:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W16:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W16:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W17:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W17:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W17:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W17:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W17:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W18:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W18:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W18:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W18:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W18:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W19:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W19:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W19:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W19:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W19:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W1:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W1:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W1:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W1:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W1:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W20:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W20:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W20:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W20:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W20:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W21:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W21:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W21:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W21:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W21:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W22:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W22:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W22:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W22:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W22:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W23:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W23:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W23:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W23:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W23:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W25:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W25:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W25:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W25:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W25:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W27:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W27:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W27:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W27:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W27:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W28:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W28:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W28:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W28:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W28:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W29:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W29:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W29:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W29:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W29:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W2:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W2:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W2:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W2:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W2:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W30:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W30:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W30:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W30:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W30:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W31:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W31:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W31:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W31:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W31:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W32:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W32:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W32:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W32:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W32:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W33:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W33:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W33:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W33:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W33:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W34:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W34:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W34:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W34:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W34:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W3:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W3:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W3:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W3:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W3:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W4:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W4:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W4:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W4:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W4:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W7:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W7:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W7:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W7:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W7:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W8:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W8:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W8:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W8:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W8:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        },
+        "W9:hogfuel": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W9:log": {
+          "unit": "$/m3",
+          "value": 4.57
+        },
+        "W9:logging_residue": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W9:sawdust_shavings": {
+          "unit": "$/t",
+          "value": 10.0
+        },
+        "W9:woodchips": {
+          "unit": "$/t",
+          "value": 50.0
+        }
+      }
+    },
+    "tsa24_anchor": {
+      "access_tl_nodes": [
+        "TL19",
+        "TL20",
+        "TL26"
+      ],
+      "anchor_basis": "tsa24_prince_george_geocoded_mill_proxy;facility=BC-SAW-488;source=mills_db;note=no_TSA24_FMU_exists_in_FFCM_graph",
+      "anchor_id": "BC-SAW-488",
+      "supply_node_id": "TSA24_AU23000"
+    },
+    "unassigned_penalty_cad_m3": 1000.0,
+    "unit_registry": [
+      {
+        "accepted": "yes",
+        "dimension": "dry_mass",
+        "source": "FFCM unit-registry.csv: air-dry metric tonne; requires a declared air-dry moisture",
+        "unit": "admt"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "dry_mass",
+        "source": "FFCM unit-registry.csv: bone-dry metric tonne; 1 bdmt = 1 odt dry-mass equivalence (candidate)",
+        "unit": "bdmt"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "board_volume",
+        "source": "FFCM unit-registry.csv: board foot",
+        "unit": "bf"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "energy",
+        "source": "SI energy unit: gigajoule",
+        "unit": "gj"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "energy",
+        "source": "SI energy unit: kilowatt-hour",
+        "unit": "kwh"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "volume",
+        "source": "Stage A model basis: green solid cubic metre",
+        "unit": "m3_green"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "board_volume",
+        "source": "FFCM unit-registry.csv: thousand board feet; volume needs a declared recovery factor",
+        "unit": "mbf"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "energy",
+        "source": "SI energy unit: megawatt-hour",
+        "unit": "mwh"
+      },
+      {
+        "accepted": "yes",
+        "dimension": "dry_mass",
+        "source": "FFCM unit-registry.csv: oven-dry tonne",
+        "unit": "odt"
+      },
+      {
+        "accepted": "alias_of_m3_green",
+        "dimension": "volume",
+        "source": "Stage A green-volume alias; no separate meaning",
+        "unit": "m3"
+      },
+      {
+        "accepted": "conditional_archive_tonne",
+        "dimension": "dry_mass",
+        "source": "FFCM transload $/t may opt in as odt; otherwise rejected",
+        "unit": "t"
+      },
+      {
+        "accepted": "no",
+        "dimension": "ambiguous",
+        "source": "mixed volume/mass basis; rejected",
+        "unit": "m3_odt"
+      }
+    ]
   },
   "counts": {
-    "assignment_row_count": 200,
-    "assignment_variable_count": 4334,
+    "assignment_row_count": 197,
+    "assignment_variable_count": 4298,
     "contract_count": 161,
     "facility_count": 161,
     "facility_nameplate_m3_y": 91138248.63119508,
@@ -545,71 +2278,81 @@
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
     "supply_offer_count": 53,
     "supply_volume_m3": 95364338.67999998,
-    "transport_link_count": 211,
+    "transport_link_count": 210,
     "unassigned_penalty_cad_m3": 1000.0,
-    "unassigned_row_count": 7,
+    "unassigned_row_count": 9,
     "unassigned_variable_count": 53
   },
-  "generated_utc": "2026-11-16T08:44:46.310451+00:00",
+  "generated_utc": "2026-11-17T00:36:09.606442+00:00",
   "limitations": [
     "1,000 ha base area is diagnostic, not a TSA24 supply estimate.",
     "Assortment sorts are dimension-only; no BC official grade equivalence.",
-    "TSA24 access distance is a diagnostic 150 km leg; not Euclidean and not a production route.",
-    "Only BC SAW/PAP/PEL/BIO facilities are in scope.",
-    "bdmt/y capacity lines are rejected; PAP uses paired m3/y log lines.",
-    "Contracts are diagnostic min=0/max=nameplate; no populated contract data.",
-    "Transport links are road-only and uncapped; transload costs are not applied.",
+    "TSA24 supply anchor is a geocoded Prince George mill proxy (BC-SAW-488); no TSA24 FMU exists in the FFCM graph.",
+    "Transport distances are FFCM route-graph shortest paths, not Euclidean or production routes.",
+    "Only BC SAW/PAP/PEL/BIO facilities are in the LP; PLY/OSB/NSP rows are retained in facilities_bc.csv but out of scope.",
+    "Many BC facilities lack a defensible coordinate; missing coordinates are not guessed.",
+    "bdmt/y capacity converts at the declared 0.45 ODT/m3 density; admt/y and mbf/y are rejected without declared factors.",
+    "Contracts are diagnostic min=0/max=nameplate with contract_source=diagnostic_absent.",
+    "Transport links are uncapped: capacity=None and capacity_source=absent; transload costs are applied at TL nodes.",
     "One period; no multi-period inventory dynamics.",
     "No MKRF input or output is used."
   ],
   "outputs": {
     "ASSIGNMENT_REPORT.md": {
-      "bytes": 15589,
-      "sha256": "f31398564f4b8c55b6cb82e04ca3057324fd39da0bd4d9be990f03ae3b0344c1"
+      "bytes": 20534,
+      "sha256": "89bef78778cd24aa6db3e54ece538c1810f71ad99b9b1fefce826b894d3f741e"
     },
     "assumptions.csv": {
-      "bytes": 12575,
-      "sha256": "202845b8b0f87f39e57690f5550a6dbb1e39c8925349bad80ca564579f36aeef"
+      "bytes": 9254,
+      "sha256": "514a94d130fc570125df593747f9a1759dad9d49b403ce7e32602082892b8995"
     },
     "contract_compliance.csv": {
-      "bytes": 32282,
-      "sha256": "f326369a37fa2387d0437295a30b301211ed8ce2d5e85d9b611b67a2e80fe000"
+      "bytes": 35195,
+      "sha256": "2bbf9327acbd3f30442a5415c2e48a5cab8b031bae30cd534db03d1916922eb6"
     },
     "contracts.csv": {
-      "bytes": 29097,
-      "sha256": "0b5ae3dff27ecec61cb376c056ce6edff65eb6070b24ab478468d8c836687cdc"
+      "bytes": 32011,
+      "sha256": "1073b4ee44316b9f8e8bab8e2bd2689a47c3815680d03de4f06f41de281e195c"
+    },
+    "facilities_bc.csv": {
+      "bytes": 42819,
+      "sha256": "66074392660adbb00e0c3b506d51a1265f9ac00cbc2821ac7c45058abad2bddf"
     },
     "facility_assignment.csv": {
-      "bytes": 65716,
-      "sha256": "f108afe567df7b8113c4cf86bb6da5216d9797bd63f02e26995bcf827d5c54d8"
+      "bytes": 64749,
+      "sha256": "9a1af3f96dbb5e01a6d9e05854bb891c6eae59f96a9591b1384268d00becbaa5"
     },
     "facility_capacity.csv": {
-      "bytes": 17963,
-      "sha256": "1715dc19972b3a96b2c3c7d6c64db799989aafbbe2af01b6eada5a24f939815e"
+      "bytes": 22094,
+      "sha256": "2f959caea31cfdbc0693fdd391343e0565f96cbd8a514482ef78cfc0028406b6"
     },
     "facility_grade_utilization.csv": {
-      "bytes": 19366,
-      "sha256": "0e32913c04319951d11f022fada05ac8f70a26e41c3f9ade5b722a5716272a98"
+      "bytes": 19438,
+      "sha256": "76576fe0e9dde98c9c757f52654b3e3b99683f0cf67b7b961556c937dc5380ce"
     },
     "facility_offers.csv": {
       "bytes": 100522,
-      "sha256": "41f265d93c162e340eee5969e74e5c5f49ec9887383099fd9244b42fa86965c9"
+      "sha256": "183a538ea1644ede99d499b5eb445dba4cfea9723a9b7165ae4169345975219f"
     },
     "facility_utilization.csv": {
-      "bytes": 15811,
-      "sha256": "18d8555b9488b8e7fe09242ffcf53083fd6a1035cc48c172fea6914ddc193ee4"
+      "bytes": 15934,
+      "sha256": "c2ece5ca5451fac9fcbe8feb025fed23b2e2e4aaf7ac426e443d7b5dd5ee066f"
     },
     "grades.csv": {
       "bytes": 908,
       "sha256": "587aea326f926a8919280a9955084754a0826e4ee95c8ea6e3e98a8eec49a1dc"
     },
     "line_screen.csv": {
-      "bytes": 66216,
-      "sha256": "40bbff6e53758ae539d01862644094f0b75a81d4984eb2a055b211cee55c8a28"
+      "bytes": 65870,
+      "sha256": "86d4e387f8ef80967011a21c7b6e8ca81de03f4b89ec7da880ac0fe94c737802"
     },
     "objective_decomposition.csv": {
-      "bytes": 549,
-      "sha256": "c26fbc71d112673074db1bd28fdf580319656a7118ffafcf5a078ee3a3b28507"
+      "bytes": 557,
+      "sha256": "04e02f89af11001800653a806ff7be4ba8b774624639a95c1291a8c18775d911"
+    },
+    "previous_pilot_class_mix.csv": {
+      "bytes": 205,
+      "sha256": "943fa08c9249104dd97223d574a14ac75b8adc9a18d53d7e27d275e38c266db0"
     },
     "stage_b_supply_offer.csv": {
       "bytes": 6881,
@@ -620,34 +2363,38 @@
       "sha256": "2d89d259f2d663c67bc3116adda5c52aebb31fe02f0e039325b09ed8f36200d9"
     },
     "stage_b_transport_link.csv": {
-      "bytes": 14844,
-      "sha256": "4e6fff1ae52ca71abc64b1a52a4a33ec4f306168eb6f02558ed63fe851fbcb51"
+      "bytes": 14879,
+      "sha256": "82551bb32482587c1614c00179ff0627f4a5e3bb527938fe890891131bb78e6b"
     },
     "supply_offers.csv": {
       "bytes": 15451,
       "sha256": "2fc27ad27e35dc85bb69ecdbbbfda6db28d14d23f4b5f2d5d7700c597377412f"
     },
     "transport_links.csv": {
-      "bytes": 51420,
-      "sha256": "3d3c321e84fdefa4c46ff6f93e9292dc84792805c5119c751dde3fe259ee91cd"
+      "bytes": 73718,
+      "sha256": "bb436669a36af7e79ec9c87ab601ac205d578b76bd9bae3d9244db1f63b03275"
+    },
+    "transport_links_bc.csv": {
+      "bytes": 122809,
+      "sha256": "6afe9b4d73e7fff3e96502faebbf2ab0e4791bad2c96b4e0382bdc2255b491f2"
     },
     "transport_screen.csv": {
-      "bytes": 12511,
-      "sha256": "e2b17c68676cbdd057a582768d6981c79ff7b547846cca8f52e0288fada348b8"
+      "bytes": 22094,
+      "sha256": "845f0a899ae4eb2307f9875880282964599985754ff659d9005fb72ea7f3daf9"
     },
     "unassigned_supply.csv": {
-      "bytes": 755,
-      "sha256": "d283319da8139635ed2c68ee8325646886a2959771587d2a38b77eb33913b3a2"
+      "bytes": 945,
+      "sha256": "2a46e07cee1c16df367685a799621a314bc54f1c564088ae99adc658b3c89573"
     },
     "validation_summary.json": {
-      "bytes": 24871,
-      "sha256": "f0335d9ef00f1262a7532603af3def5c0926b9e9cfa24d489c752f1720a1646d"
+      "bytes": 67138,
+      "sha256": "2194f6eb630ed4487472d6bc22c4fbc33cf2e12aa5d72f2ab73ebc524da4a131"
     }
   },
   "pilot": "tsa24_bc_stage_a_facility_assignment",
   "report": "ASSIGNMENT_REPORT.md",
   "run": {
-    "objective_value_cad": -17611466710.14299,
+    "objective_value_cad": -21346350988.75005,
     "period": "2026",
     "run_id": "tsa24_bc_stage_a_pilot_ws4_quota_v1",
     "scenario_id": "tsa24_bc_stage_a_pilot_ws4_quota",
@@ -660,13 +2407,16 @@
     "data/derived/national/assortments/tsa24_prototype/assortment_matrix.csv": "a4533314cbe6ad7bdb639f040925bb9bcbd5d205cc21ec7cf296da82851e48b0",
     "data/derived/national/assortments/tsa24_prototype/residue_ledger.csv": "c98906728c46b3c07dfa978f7ef02792f5078bd184fc41631260afb0cddff601",
     "data/derived/national/assortments/tsa24_prototype/target_stand.json": "dd6039911cb6e791eb8f19f0d03547117da96c337fb5a290bd5845fde74753ce",
+    "metadata/facility_geocoding.csv": "162289cbb308bc86a996bf9c9ba737371bc03b62288304573eefac8c1961919d",
     "metadata/ffcm-archive/parsed/commodities.csv": "2169f411873ed781eaa70f09efc9a6858ddac03a48e08b5cd5b29ee456175015",
     "metadata/ffcm-archive/parsed/facilities.csv": "87d8b97cb995af49ad56900e2b77c493cfb87212d8668c97e23d16e02b64e645",
     "metadata/ffcm-archive/parsed/processing_line_flows.csv": "df6498046f88a70f3e90fee8d3b686e7031a5be583d5c818e39c8530d73953d3",
     "metadata/ffcm-archive/parsed/processing_lines.csv": "7f98d21bdbbcea5be3c9a9e13b0c4c3e21af04f9b2cc119ef5e1dfec5ed69d3e",
     "metadata/ffcm-archive/parsed/routes.csv": "5166249c58465fc45551cb934af1b8efc61091a531279285675ffb6923591b63",
+    "metadata/ffcm-archive/parsed/transload_costs.csv": "79f096b5a4c11c11e47d0605e0531af246d8f33e4164299f2ca70cea188e249f",
     "metadata/ffcm-archive/parsed/transporter_materials.csv": "2c02959d1b37d846775d8df0c85531556e83361450e6318f66cbd4c6e7136998",
-    "metadata/ffcm-archive/parsed/transporters.csv": "202622ff1e9d324bd9858f2bf3b8ba17b971450ad5f7085d75ec973966808504"
+    "metadata/ffcm-archive/parsed/transporters.csv": "202622ff1e9d324bd9858f2bf3b8ba17b971450ad5f7085d75ec973966808504",
+    "metadata/fmu_tl_anchors.csv": "fcd66e5984d7cc2ec30b55e47a2f943df7603f9a7daa7f1bc407de09a8ffeb9b"
   },
   "status": "pass"
 }
