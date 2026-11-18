@@ -1,0 +1,1636 @@
+{
+  "artifact_version": "0.1.0",
+  "caveats": [
+    "zone nodes are area-weighted TSA centroids, not harvest origins",
+    "facilities and capacities are FFCM/Mills DB proxies",
+    "apportionment contracts are diagnostic maximum entitlements",
+    "19.5% unmapped species area is excluded from species composition",
+    "NRN 2018 road-only shortest paths; no route capacity or rail/water",
+    "Stage A harvest residue and Stage B sawmill residue are separate models",
+    "roadside/stumpage cost is not modelled"
+  ],
+  "generated_utc": "2026-11-18T07:02:02+00:00",
+  "inputs": {
+    "data/derived/national/assignments/tsa24_pilot/contracts_bc_apportionment.csv": "c6a4a9a50d84e3d1a328008a6e54e8f5b4ef8221fe434c700149415dad40ab25",
+    "data/derived/national/assignments/tsa24_pilot/facilities_bc_recovered.csv": "0aaf8ae2b257fd728c0270629dca140a7df245f7e172efd9c419d147b0b9437b",
+    "data/derived/national/assortments/bc_area_weights/bc_area_weights.csv": "a173afb4e32367096bae3db94b8e59554ab4950a9e238d9171afeb7e119c8c8e",
+    "data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv": "e0a51d5aa6b1ec22b9d27451f229a26bed525ee85641b7ce1766fe1c822e411e",
+    "data/derived/national/clews/bc_residue_time_path.csv": "bb8e9b96474e951c1ce3cb2ab05be93c36ac3ca92a6e8d9e4dd2805ed4c435d7",
+    "data/derived/national/clews_supply/bc_woody_residue/bc_tsa_zone_crosswalk.csv": "3ee66aaff978111c37a32e1c16145c978cb90d18834917487b1ee5772101884c",
+    "data/derived/national/clews_supply/bc_woody_residue/bc_zone_crosswalk.csv": "a1d5ae6ff6d2bd0e2d5a80d9ba75ce63ccaab754f3eb276edce9ad1a662b3ef2"
+  },
+  "outputs": {
+    "BC_CHAIN_REPORT.md": {
+      "bytes": 5994,
+      "sha256": "a7e4e1bd88460404ae5bf9ed823e03dcfd865c37ec7a9c45e38446be3f6a556b"
+    },
+    "bc_facility_utilization.csv": {
+      "bytes": 18156,
+      "sha256": "be13771dc7b0c13da02f5e85d32780950f0375f0aedaa9bffc5f9f994698ff3d"
+    },
+    "bc_stage_a_assignment.csv": {
+      "bytes": 702614,
+      "sha256": "87048dade80add4df17a0cc82613f966a761171947c21435accc0eac0c00fa02"
+    },
+    "bc_stage_a_contracts.csv": {
+      "bytes": 35802,
+      "sha256": "1dde261575f0a54f289643b6d4073ccbff4107191d0d3f24dd57b702fe376e59"
+    },
+    "bc_stage_a_summary.json": {
+      "bytes": 27254,
+      "sha256": "17fe9dc5f4f679c16440b357bf18e1b7123883578cb005a2340f8efd979e2afa"
+    },
+    "bc_stage_a_transport_links.csv": {
+      "bytes": 85212,
+      "sha256": "21acebd4604bb10325e57118d4286d9874045fdb9abc4fff0f69dc8ae0d6b635"
+    },
+    "bc_stage_a_transport_screen.csv": {
+      "bytes": 2259,
+      "sha256": "f97752e8760bbd6c6a21cc59cb470d23043f007278b400b68713faccf42d4f6e"
+    },
+    "bc_stage_a_unassigned.csv": {
+      "bytes": 7623,
+      "sha256": "aa81af0ab36626432cb65e438835ce4773869062b487bfee2fba7eb7a89ec932"
+    },
+    "bc_stage_b_assignment.csv": {
+      "bytes": 67157,
+      "sha256": "e93040620752718dd80447b54128273bee745e64212d91dfe684803f0a366f34"
+    },
+    "bc_stage_b_residue.csv": {
+      "bytes": 17564,
+      "sha256": "97b55a7417a4e04ebb558b8bd3a9a5d90e15d23c9c6a4d39d95d61718cce5263"
+    },
+    "bc_stage_b_summary.json": {
+      "bytes": 19224,
+      "sha256": "3133f8787bb01f79d03038419ede02a540172daf965030885c76be63479f2df9"
+    },
+    "bc_stage_b_utilization.csv": {
+      "bytes": 4893,
+      "sha256": "2aefc896ccaab043be151b147c2ed67d404bfe31c445d13f458490c744ada274"
+    },
+    "bc_supply_by_zone.csv": {
+      "bytes": 758047,
+      "sha256": "7781a6bbf0bf07f40072c25e11a64b2803cbdbe9a0f077d70559b3fc1e2e7e52"
+    },
+    "bc_zone_nodes.csv": {
+      "bytes": 453,
+      "sha256": "10d3b2eeb38e50bd87eaf5931f71e88c21a284800bc63dd3fce2cccc35192922"
+    },
+    "facilities_bc.csv": {
+      "bytes": 73404,
+      "sha256": "5101aa31ffe3043dcfcd6de349e55abcc88558f75aab757bcc32adaf6fdf4d74"
+    },
+    "manifest.json": {
+      "bytes": 56253,
+      "sha256": "a80d10da2356a2d6546c9aab70440ee28b5542ca80745fa9a27b60061049b827"
+    }
+  },
+  "period": "2028",
+  "runtime_seconds": 49.656003,
+  "scenario": "bc_chain_b1_b2_stage_a_b",
+  "stage_a_summary": {
+    "assigned_m3": 45590661.36159784,
+    "assigned_share": 0.9457086620652037,
+    "binding_contract_count": 34,
+    "binding_contracts": [
+      {
+        "assigned_m3": 392313.002708697,
+        "contract_id": "APPT-BC-SAW-1171",
+        "contract_source": "apportionment_derived_diagnostic",
+        "facility_id": "BC-SAW-1171",
+        "max_volume_m3": 392313.0
+      },
+      {
+        "assigned_m3": 300000.002853875,
+        "contract_id": "APPT-BC-SAW-1253",
+        "contract_source": "apportionment_derived_diagnostic",
+        "facility_id": "BC-SAW-1253",
+        "max_volume_m3": 300000.0
+      },
+      {
+        "assigned_m3": 131000.005,
+        "contract_id": "APPT-BC-SAW-397",
+        "contract_source": "apportionment_derived_diagnostic",
+        "facility_id": "BC-SAW-397",
+        "max_volume_m3": 131000.0
+      },
+      {
+        "assigned_m3": 327621.0028534462,
+        "contract_id": "APPT-BC-SAW-418",
+        "contract_source": "apportionment_derived_diagnostic",
+        "facility_id": "BC-SAW-418",
+        "max_volume_m3": 327621.0
+      },
+      {
+        "assigned_m3": 61940.00025284,
+        "contract_id": "APPT-BC-SAW-66",
+        "contract_source": "apportionment_derived_diagnostic",
+        "facility_id": "BC-SAW-66",
+        "max_volume_m3": 61940.0
+      },
+      {
+        "assigned_m3": 181581.003787,
+        "contract_id": "APPT-BC-SAW-979",
+        "contract_source": "apportionment_derived_diagnostic",
+        "facility_id": "BC-SAW-979",
+        "max_volume_m3": 181581.0
+      },
+      {
+        "assigned_m3": 682610.295855752,
+        "contract_id": "DIAG-BC-BIO-4018",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-BIO-4018",
+        "max_volume_m3": 682610.295052343
+      },
+      {
+        "assigned_m3": 1146944.08534467,
+        "contract_id": "DIAG-BC-BIO-4023",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-BIO-4023",
+        "max_volume_m3": 1146944.08524426
+      },
+      {
+        "assigned_m3": 691761.75623013,
+        "contract_id": "DIAG-BC-PAP-1319",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-PAP-1319",
+        "max_volume_m3": 691761.75
+      },
+      {
+        "assigned_m3": 3168385.505183615,
+        "contract_id": "DIAG-BC-PAP-179",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-PAP-179",
+        "max_volume_m3": 3168385.5
+      },
+      {
+        "assigned_m3": 3498279.505596473,
+        "contract_id": "DIAG-BC-PAP-511",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-PAP-511",
+        "max_volume_m3": 3498279.5
+      },
+      {
+        "assigned_m3": 1257060.004001619,
+        "contract_id": "DIAG-BC-PEL-1653",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-PEL-1653",
+        "max_volume_m3": 1257060.0
+      },
+      {
+        "assigned_m3": 628530.006793787,
+        "contract_id": "DIAG-BC-PEL-1654",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-PEL-1654",
+        "max_volume_m3": 628530.0
+      },
+      {
+        "assigned_m3": 6861.45457,
+        "contract_id": "DIAG-BC-SAW-1011",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1011",
+        "max_volume_m3": 6861.45454545455
+      },
+      {
+        "assigned_m3": 223957.879456374,
+        "contract_id": "DIAG-BC-SAW-1064",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1064",
+        "max_volume_m3": 223957.876363636
+      },
+      {
+        "assigned_m3": 651838.184684988,
+        "contract_id": "DIAG-BC-SAW-1287",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1287",
+        "max_volume_m3": 651838.181818182
+      },
+      {
+        "assigned_m3": 479615.673733233,
+        "contract_id": "DIAG-BC-SAW-1335",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1335",
+        "max_volume_m3": 479615.672727273
+      },
+      {
+        "assigned_m3": 1822247.950835397,
+        "contract_id": "DIAG-BC-SAW-1387",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1387",
+        "max_volume_m3": 1822247.94454545
+      },
+      {
+        "assigned_m3": 343072.73,
+        "contract_id": "DIAG-BC-SAW-1437",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1437",
+        "max_volume_m3": 343072.727272727
+      },
+      {
+        "assigned_m3": 25250.153,
+        "contract_id": "DIAG-BC-SAW-1467",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1467",
+        "max_volume_m3": 25250.1527272727
+      },
+      {
+        "assigned_m3": 694886.949941,
+        "contract_id": "DIAG-BC-SAW-1740",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-1740",
+        "max_volume_m3": 694886.947636364
+      },
+      {
+        "assigned_m3": 1166447.2736506653,
+        "contract_id": "DIAG-BC-SAW-208",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-208",
+        "max_volume_m3": 1166447.27272727
+      },
+      {
+        "assigned_m3": 263479.85650369996,
+        "contract_id": "DIAG-BC-SAW-275",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-275",
+        "max_volume_m3": 263479.854545455
+      },
+      {
+        "assigned_m3": 423351.746408052,
+        "contract_id": "DIAG-BC-SAW-281",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-281",
+        "max_volume_m3": 423351.745454545
+      },
+      {
+        "assigned_m3": 428154.7673488788,
+        "contract_id": "DIAG-BC-SAW-379",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-379",
+        "max_volume_m3": 428154.763636364
+      },
+      {
+        "assigned_m3": 1034930.3447962923,
+        "contract_id": "DIAG-BC-SAW-383",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-383",
+        "max_volume_m3": 1034930.34272727
+      },
+      {
+        "assigned_m3": 1200754.5467641999,
+        "contract_id": "DIAG-BC-SAW-389",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-389",
+        "max_volume_m3": 1200754.54545455
+      },
+      {
+        "assigned_m3": 1353353.2971038532,
+        "contract_id": "DIAG-BC-SAW-506",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-506",
+        "max_volume_m3": 1353353.29454545
+      },
+      {
+        "assigned_m3": 905712.00248312,
+        "contract_id": "DIAG-BC-SAW-611",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-611",
+        "max_volume_m3": 905712.0
+      },
+      {
+        "assigned_m3": 480301.82061638404,
+        "contract_id": "DIAG-BC-SAW-697",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-697",
+        "max_volume_m3": 480301.818181818
+      },
+      {
+        "assigned_m3": 102921.82,
+        "contract_id": "DIAG-BC-SAW-718",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-718",
+        "max_volume_m3": 102921.818181818
+      },
+      {
+        "assigned_m3": 869534.98381382,
+        "contract_id": "DIAG-BC-SAW-74",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-74",
+        "max_volume_m3": 869534.980909091
+      },
+      {
+        "assigned_m3": 394121.94982096803,
+        "contract_id": "DIAG-BC-SAW-981",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-981",
+        "max_volume_m3": 394121.949090909
+      },
+      {
+        "assigned_m3": 490594.003639658,
+        "contract_id": "DIAG-BC-SAW-987",
+        "contract_source": "diagnostic_absent",
+        "facility_id": "BC-SAW-987",
+        "max_volume_m3": 490594.0
+      }
+    ],
+    "binding_facilities": [
+      {
+        "assigned_m3": 380991.74186456006,
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4015",
+        "facility_name": "West Fraser Mills Ltd.-West Fraser Mills Ltd.",
+        "nameplate_m3_y": 380991.744454135,
+        "utilization": 0.9999999932030681
+      },
+      {
+        "assigned_m3": 682610.295855752,
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4018",
+        "facility_name": "Cariboo Pulp and Paper Company-Cariboo Pulp and Paper Company",
+        "nameplate_m3_y": 682610.295052343,
+        "utilization": 1.0000000011769656
+      },
+      {
+        "assigned_m3": 1146944.0853446699,
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4023",
+        "facility_name": "Fort St. James Green Energy Limited Partnership-Fort St. James Green Energy Limited Partnership",
+        "nameplate_m3_y": 1146944.08524426,
+        "utilization": 1.0000000000875455
+      },
+      {
+        "assigned_m3": 1417756.7443643953,
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-1163",
+        "facility_name": "Paper Excellence-Skookumchuck",
+        "nameplate_m3_y": 1417756.75,
+        "utilization": 0.9999999960249847
+      },
+      {
+        "assigned_m3": 691761.75623013,
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-1319",
+        "facility_name": "Canfor Pulp-Taylor",
+        "nameplate_m3_y": 691761.75,
+        "utilization": 1.0000000090061787
+      },
+      {
+        "assigned_m3": 3168385.505183613,
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-179",
+        "facility_name": "Mercer-Celgar",
+        "nameplate_m3_y": 3168385.5,
+        "utilization": 1.0000000016360424
+      },
+      {
+        "assigned_m3": 3498279.505596474,
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-511",
+        "facility_name": "Domtar-Kamloops",
+        "nameplate_m3_y": 3498279.5,
+        "utilization": 1.000000001599779
+      },
+      {
+        "assigned_m3": 1351102.709646766,
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-679",
+        "facility_name": "Paper Excellence-Mackenzie",
+        "nameplate_m3_y": 1351102.75,
+        "utilization": 0.9999999701331125
+      },
+      {
+        "assigned_m3": 86099.99966,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1141",
+        "facility_name": "Vanderhoof Specialty Wood Products-Vanderhoof Specialty Wood",
+        "nameplate_m3_y": 86100.0,
+        "utilization": 0.9999999960511033
+      },
+      {
+        "assigned_m3": 1004499.99473074,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1650",
+        "facility_name": "Pacific Bioenergy Corp-Pacific BioEnergy Corp",
+        "nameplate_m3_y": 1004500.0,
+        "utilization": 0.9999999947543454
+      },
+      {
+        "assigned_m3": 1257060.004001619,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1653",
+        "facility_name": "Pinnacle Renewable Energy Inc-Pinnacle Pellet - Burns Lake",
+        "nameplate_m3_y": 1257060.0,
+        "utilization": 1.0000000031833158
+      },
+      {
+        "assigned_m3": 628530.006793787,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1654",
+        "facility_name": "Pinnacle Renewable Energy Inc-Pinnacle Pellet- Houston",
+        "nameplate_m3_y": 628530.0,
+        "utilization": 1.00000001080901
+      },
+      {
+        "assigned_m3": 662969.9970432271,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1655",
+        "facility_name": "Pinnacle Renewable Energy Inc-Pinnacle Pellet -Meadowbank",
+        "nameplate_m3_y": 662970.0,
+        "utilization": 0.9999999955401105
+      },
+      {
+        "assigned_m3": 628529.997030194,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1657",
+        "facility_name": "Pinnacle Renewable Energy Inc-Pinnacle Pellet - Williams Lake",
+        "nameplate_m3_y": 628530.0,
+        "utilization": 0.9999999952749973
+      },
+      {
+        "assigned_m3": 573999.9964160301,
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1658",
+        "facility_name": "Premium Pellet Ltd.-Premium Pellet Ltd.",
+        "nameplate_m3_y": 574000.0,
+        "utilization": 0.99999999375615
+      },
+      {
+        "assigned_m3": 6861.45457,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1011",
+        "facility_name": "M&K Mills Ltd.",
+        "nameplate_m3_y": 6861.45454545455,
+        "utilization": 1.0000000035772956
+      },
+      {
+        "assigned_m3": 223957.879456374,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1064",
+        "facility_name": "Andersen Pacific Forest Products Ltd.-Andersen Pacific Forest Products Mill",
+        "nameplate_m3_y": 223957.876363636,
+        "utilization": 1.0000000138094631
+      },
+      {
+        "assigned_m3": 79043.956,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-114",
+        "facility_name": "A.J. Forest Products Ltd.",
+        "nameplate_m3_y": 79043.9563636364,
+        "utilization": 0.9999999953995673
+      },
+      {
+        "assigned_m3": 168105.6340800377,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1276",
+        "facility_name": "MacKenzie Sawmill Ltd",
+        "nameplate_m3_y": 168105.636363636,
+        "utilization": 0.9999999864156947
+      },
+      {
+        "assigned_m3": 651838.1846849881,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1287",
+        "facility_name": "S & R Sawmills Ltd.",
+        "nameplate_m3_y": 651838.181818182,
+        "utilization": 1.0000000043980335
+      },
+      {
+        "assigned_m3": 295042.54520689003,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1288",
+        "facility_name": "Teal-Jones Group-Stag Timber Division",
+        "nameplate_m3_y": 295042.545454545,
+        "utilization": 0.9999999991606127
+      },
+      {
+        "assigned_m3": 650465.8864200126,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-131",
+        "facility_name": "Tolko Industries Ltd.-Quest Wood Division",
+        "nameplate_m3_y": 650465.890909091,
+        "utilization": 0.999999993098672
+      },
+      {
+        "assigned_m3": 57636.218,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1316",
+        "facility_name": "Lakeside Timber Ltd.",
+        "nameplate_m3_y": 57636.2181818182,
+        "utilization": 0.9999999968454176
+      },
+      {
+        "assigned_m3": 713591.2701369959,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-132",
+        "facility_name": "Tolko Industries Ltd.-Soda Creek Division",
+        "nameplate_m3_y": 713591.272727273,
+        "utilization": 0.999999996370083
+      },
+      {
+        "assigned_m3": 479615.6737332331,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1335",
+        "facility_name": "Kalesnikoff Lumber Co. Ltd.",
+        "nameplate_m3_y": 479615.672727273,
+        "utilization": 1.0000000020974296
+      },
+      {
+        "assigned_m3": 57636.21779683,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1377",
+        "facility_name": "Hauer Brothers Lumber Ltd.",
+        "nameplate_m3_y": 57636.2181818182,
+        "utilization": 0.9999999933203771
+      },
+      {
+        "assigned_m3": 823374.5440624,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1383",
+        "facility_name": "Sinclar Group-L & M Lumber Sawmill",
+        "nameplate_m3_y": 823374.545454545,
+        "utilization": 0.9999999983092204
+      },
+      {
+        "assigned_m3": 49402.472687815105,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1386",
+        "facility_name": "BC Custom Timber Products Ltd.",
+        "nameplate_m3_y": 49402.4727272727,
+        "utilization": 0.9999999992013032
+      },
+      {
+        "assigned_m3": 1822247.9508353972,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1387",
+        "facility_name": "Canfor Corporation-Plateau Forest Products Division",
+        "nameplate_m3_y": 1822247.94454545,
+        "utilization": 1.0000000034517516
+      },
+      {
+        "assigned_m3": 793733.0547075591,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1394",
+        "facility_name": "Tolko Industries Ltd.-Lavington Planer Mill",
+        "nameplate_m3_y": 793733.061818182,
+        "utilization": 0.9999999910415437
+      },
+      {
+        "assigned_m3": 343072.73,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1437",
+        "facility_name": "West Chilcotin FP",
+        "nameplate_m3_y": 343072.727272727,
+        "utilization": 1.0000000079495477
+      },
+      {
+        "assigned_m3": 25250.153,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1467",
+        "facility_name": "Cowichan Lumber Ltd.",
+        "nameplate_m3_y": 25250.1527272727,
+        "utilization": 1.0000000108010159
+      },
+      {
+        "assigned_m3": 347464.05724408204,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-167",
+        "facility_name": "Gorman Bros-Gorman Bros. Lumber Ltd.",
+        "nameplate_m3_y": 347464.058181818,
+        "utilization": 0.9999999973012001
+      },
+      {
+        "assigned_m3": 694886.9499410002,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-1740",
+        "facility_name": "Canfor Corporation-Isle Pierre Sawmill",
+        "nameplate_m3_y": 694886.947636364,
+        "utilization": 1.0000000033165628
+      },
+      {
+        "assigned_m3": 694928.1141406599,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-178",
+        "facility_name": "InterFor-Castlegar Division",
+        "nameplate_m3_y": 694928.116363636,
+        "utilization": 0.9999999968011424
+      },
+      {
+        "assigned_m3": 1166447.2736506658,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-208",
+        "facility_name": "West Fraser Timber Co. Ltd.-Chetwynd Forest Industries",
+        "nameplate_m3_y": 1166447.27272727,
+        "utilization": 1.000000000791631
+      },
+      {
+        "assigned_m3": 753926.333042672,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-210",
+        "facility_name": "Canfor Corporation-Chetwynd Division",
+        "nameplate_m3_y": 753926.333272727,
+        "utilization": 0.9999999996948575
+      },
+      {
+        "assigned_m3": 274458.17771824,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-242",
+        "facility_name": "Terminal Forest Products-Mainland Division",
+        "nameplate_m3_y": 274458.181818182,
+        "utilization": 0.9999999850616879
+      },
+      {
+        "assigned_m3": 263479.85650369996,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-275",
+        "facility_name": "Hampton Affiliates-Decker Lake Forest Products",
+        "nameplate_m3_y": 263479.854545455,
+        "utilization": 1.000000007432238
+      },
+      {
+        "assigned_m3": 423351.746408052,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-281",
+        "facility_name": "InterFor-InterFor Prod (Acorn Div)",
+        "nameplate_m3_y": 423351.745454545,
+        "utilization": 1.0000000022522808
+      },
+      {
+        "assigned_m3": 428154.7673488787,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-379",
+        "facility_name": "Sinclar Group-Apollo Forest Products",
+        "nameplate_m3_y": 428154.763636364,
+        "utilization": 1.0000000086709644
+      },
+      {
+        "assigned_m3": 961701.4678413031,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-381",
+        "facility_name": "Conifex-Fort St James",
+        "nameplate_m3_y": 961701.469090909,
+        "utilization": 0.9999999987006302
+      },
+      {
+        "assigned_m3": 1034930.3447962921,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-383",
+        "facility_name": "Canfor Corporation-Fort St. John Division",
+        "nameplate_m3_y": 1034930.34272727,
+        "utilization": 1.0000000019991897
+      },
+      {
+        "assigned_m3": 1200754.5467641996,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-389",
+        "facility_name": "West Fraser Timber Co. Ltd.-Fraser Lake Mills",
+        "nameplate_m3_y": 1200754.54545455,
+        "utilization": 1.0000000010906889
+      },
+      {
+        "assigned_m3": 1353353.2971038532,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-506",
+        "facility_name": "Canfor Corporation-Prince George",
+        "nameplate_m3_y": 1353353.29454545,
+        "utilization": 1.0000000018904178
+      },
+      {
+        "assigned_m3": 905712.00248312,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-611",
+        "facility_name": "Tolko Industries Ltd.-Lakeview Lumber Division",
+        "nameplate_m3_y": 905712.0,
+        "utilization": 1.000000002741622
+      },
+      {
+        "assigned_m3": 1080253.675923041,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-680",
+        "facility_name": "Canfor Corporation-Mackenzie Division",
+        "nameplate_m3_y": 1080253.68072727,
+        "utilization": 0.9999999955526845
+      },
+      {
+        "assigned_m3": 480301.82061638404,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-697",
+        "facility_name": "InterFor-Hammond Sawmill",
+        "nameplate_m3_y": 480301.818181818,
+        "utilization": 1.0000000050688254
+      },
+      {
+        "assigned_m3": 102921.82,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-718",
+        "facility_name": "Waldun Group-Twin Rivers Cedar Products Ltd.",
+        "nameplate_m3_y": 102921.818181818,
+        "utilization": 1.0000000176656616
+      },
+      {
+        "assigned_m3": 869534.98381382,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-74",
+        "facility_name": "Canfor Corporation-Polar Division",
+        "nameplate_m3_y": 869534.980909091,
+        "utilization": 1.0000000033405547
+      },
+      {
+        "assigned_m3": 181828.54503268,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-904",
+        "facility_name": "Halo Sawmill Ltd",
+        "nameplate_m3_y": 181828.545454545,
+        "utilization": 0.9999999976798748
+      },
+      {
+        "assigned_m3": 394121.94982096803,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-981",
+        "facility_name": "Sinclar Group-Lakeland Mills Ltd.",
+        "nameplate_m3_y": 394121.949090909,
+        "utilization": 1.0000000018523685
+      },
+      {
+        "assigned_m3": 490594.0036396579,
+        "facility_class": "SAW",
+        "facility_id": "BC-SAW-987",
+        "facility_name": "Weyerhaeuser-Princeton Division",
+        "nameplate_m3_y": 490594.0,
+        "utilization": 1.0000000074188797
+      }
+    ],
+    "binding_facility_count": 53,
+    "by_zone_grade": [
+      {
+        "assigned_m3": 349601.0766008,
+        "grade": "OTHER_LOG",
+        "mean_delivered_cost_cad_m3": 15.000738664916797,
+        "zone": "B1"
+      },
+      {
+        "assigned_m3": 30.412162,
+        "grade": "PULP",
+        "mean_delivered_cost_cad_m3": 15.081558726851622,
+        "zone": "B1"
+      },
+      {
+        "assigned_m3": 441415.593099014,
+        "grade": "RESIDUE",
+        "mean_delivered_cost_cad_m3": 12.178953831006632,
+        "zone": "B1"
+      },
+      {
+        "assigned_m3": 6153900.109129315,
+        "grade": "SAWLOG",
+        "mean_delivered_cost_cad_m3": 40.02631222426509,
+        "zone": "B1"
+      },
+      {
+        "assigned_m3": 3957031.266564257,
+        "grade": "OTHER_LOG",
+        "mean_delivered_cost_cad_m3": 8.043915971622557,
+        "zone": "B2"
+      },
+      {
+        "assigned_m3": 18111.9683628,
+        "grade": "PULP",
+        "mean_delivered_cost_cad_m3": 6.293437228022233,
+        "zone": "B2"
+      },
+      {
+        "assigned_m3": 4395743.273580346,
+        "grade": "RESIDUE",
+        "mean_delivered_cost_cad_m3": 9.974190830284769,
+        "zone": "B2"
+      },
+      {
+        "assigned_m3": 30274827.66209931,
+        "grade": "SAWLOG",
+        "mean_delivered_cost_cad_m3": 22.715439016123106,
+        "zone": "B2"
+      }
+    ],
+    "class_mix": {
+      "BIO": {
+        "assigned_m3": 4320243.59469362,
+        "nameplate_m3_y": 8326258.886777147,
+        "share_of_assigned": 0.09476159076588148
+      },
+      "PAP": {
+        "assigned_m3": 10127286.221021377,
+        "nameplate_m3_y": 30774260.0,
+        "share_of_assigned": 0.2221351022021331
+      },
+      "PEL": {
+        "assigned_m3": 4841689.995675597,
+        "nameplate_m3_y": 6859300.0,
+        "share_of_assigned": 0.10619916121142024
+      },
+      "SAW": {
+        "assigned_m3": 26301441.550207246,
+        "nameplate_m3_y": 45178429.74441794,
+        "share_of_assigned": 0.5769041458205652
+      }
+    },
+    "class_utilization": [
+      {
+        "assigned_m3": 4320243.59469362,
+        "binding_facility_count": 3,
+        "facility_class": "BIO",
+        "facility_count": 12,
+        "nameplate_m3_y": 8326258.886777147,
+        "utilization": 0.5188697172933883
+      },
+      {
+        "assigned_m3": 10127286.221021377,
+        "binding_facility_count": 5,
+        "facility_class": "PAP",
+        "facility_count": 15,
+        "nameplate_m3_y": 30774260.0,
+        "utilization": 0.3290830135646276
+      },
+      {
+        "assigned_m3": 4841689.995675597,
+        "binding_facility_count": 7,
+        "facility_class": "PEL",
+        "facility_count": 13,
+        "nameplate_m3_y": 6859300.0,
+        "utilization": 0.7058577399553303
+      },
+      {
+        "assigned_m3": 26301441.550207246,
+        "binding_facility_count": 38,
+        "facility_class": "SAW",
+        "facility_count": 121,
+        "nameplate_m3_y": 45178429.74441794,
+        "utilization": 0.5821681209152016
+      }
+    ],
+    "objective_decomposition": [
+      {
+        "component": "product_revenue",
+        "notes": "assigned volume x facility product revenue",
+        "unit": "CAD",
+        "value_cad": 6053981877.3316
+      },
+      {
+        "component": "supply_cost",
+        "notes": "assigned volume x roadside cost proxy",
+        "unit": "CAD",
+        "value_cad": -0.0
+      },
+      {
+        "component": "transport_cost",
+        "notes": "assigned volume x transport cost",
+        "unit": "CAD",
+        "value_cad": -1020432637.6184357
+      },
+      {
+        "component": "gate_cost",
+        "notes": "assigned volume x contract gate cost",
+        "unit": "CAD",
+        "value_cad": -0.0
+      },
+      {
+        "component": "processing_cost",
+        "notes": "assigned volume x line processing cost",
+        "unit": "CAD",
+        "value_cad": -1789764702.6255035
+      },
+      {
+        "component": "unassigned_penalty",
+        "notes": "unassigned volume x diagnostic penalty",
+        "unit": "CAD",
+        "value_cad": -2617273270.2354355
+      },
+      {
+        "component": "net_objective",
+        "notes": "solver objective 626511266.852227",
+        "unit": "CAD",
+        "value_cad": 626511266.8522253
+      }
+    ],
+    "objective_value_cad": 626511266.8522266,
+    "period": "2028",
+    "status": "Optimal",
+    "total_supply_m3": 48207934.63183328,
+    "transport_summary": {
+      "cost_cad_m3": {
+        "count": 258,
+        "max": 63.60328526311401,
+        "mean": 28.651692941524963,
+        "median": 29.92534317244477,
+        "min": 1.5360745002787517,
+        "p25": 14.815732441603789,
+        "p75": 38.95946768287599
+      },
+      "distance_km": {
+        "count": 258,
+        "max": 1131.8109668124423,
+        "mean": 526.245952290472,
+        "median": 574.5078043946659,
+        "min": 32.94072840851691,
+        "p25": 266.5639231710741,
+        "p75": 710.121642685632
+      },
+      "facility_rejected": 50,
+      "facility_snapped": 88,
+      "graph_edges": 242059,
+      "graph_nodes": 203511,
+      "link_count": 258,
+      "nrn_source": "data/raw/nrn/nrn_bc_gpkg.zip",
+      "origin_snap_m": {
+        "ZONE_B1": 11783.26235680389,
+        "ZONE_B2": 3982.2532493130866
+      },
+      "rates": {
+        "HOGFUEL": {
+          "cost_cad_m3_km": 0.046631467319999995,
+          "density_odt_m3": 0.45,
+          "transporter": "BC_residue_truck"
+        },
+        "OTHER_LOG": {
+          "cost_cad_m3_km": 0.056196031959508314,
+          "density_odt_m3": 0.3572349372342432,
+          "transporter": "BC_logging_truck"
+        },
+        "PULP": {
+          "cost_cad_m3_km": 0.056196031959508314,
+          "density_odt_m3": 0.3797989965233311,
+          "transporter": "BC_logging_truck"
+        },
+        "RESIDUE": {
+          "cost_cad_m3_km": 0.046631467319999995,
+          "density_odt_m3": 0.44999999999999996,
+          "transporter": "BC_residue_truck"
+        },
+        "SAWLOG": {
+          "cost_cad_m3_km": 0.056196031959508314,
+          "density_odt_m3": 0.3781671566355752,
+          "transporter": "BC_logging_truck"
+        }
+      }
+    },
+    "unassigned_by_zone_grade": [
+      {
+        "grade": "SAWLOG",
+        "reason": "unassigned_penalty_exceeds_net_value",
+        "unassigned_m3": 2617273.270235436,
+        "zone": "B1"
+      }
+    ],
+    "unassigned_m3": 2617273.2702354356
+  },
+  "stage_b_summary": {
+    "assigned_odt": 6145980.9602015,
+    "assigned_share": 0.9002976116392138,
+    "bioenergy_odt": 694619.5172296618,
+    "bioenergy_share_of_assigned": 0.11302012188578082,
+    "bioenergy_share_of_generated": 0.10175174580094132,
+    "class_utilization": [
+      {
+        "binding_facility_count": 3,
+        "capacity_odt_y": 2974911.102193415,
+        "facility_class": "BIO",
+        "facility_count": 10,
+        "received_odt": 694619.5172296619,
+        "utilization": 0.23349252914398547
+      },
+      {
+        "binding_facility_count": 5,
+        "capacity_odt_y": 4050914.4999999995,
+        "facility_class": "PAP",
+        "facility_count": 5,
+        "received_odt": 4050914.467716505,
+        "utilization": 0.9999999920305662
+      },
+      {
+        "binding_facility_count": 6,
+        "capacity_odt_y": 2158240.0,
+        "facility_class": "PEL",
+        "facility_count": 9,
+        "received_odt": 1400446.9752553336,
+        "utilization": 0.6488838012710976
+      }
+    ],
+    "counts": {
+      "allocation_count": 161,
+      "included_recipient_line_count": 24,
+      "recipient_candidate_count": 41,
+      "routed_source_count": 51,
+      "source_count": 51,
+      "supply_row_count": 204,
+      "transport_link_count": 1224,
+      "unassigned_count": 57
+    },
+    "data_gaps": [
+      "all three Stage A sawmills use the same low-confidence TL-hub proxy coordinate (54.01, -122.73); source-level transport distances are identical for NRN links and source allocation is degenerate",
+      "Stage A residue-consuming facilities BC-PAP-964, BC-PEL-210, and BC-PEL-383 have no corroborated coordinate and are excluded",
+      "FFCM sawmill outfeed ratios are applied linearly and the FFCM base case is not a closed mill mass balance",
+      "internally_used_woodfuel is reported as other and is not allocatable",
+      "road transport only; island recipients without a road path are unlinked and no water or rail residue route is assumed",
+      "route capacity is absent; transport links are uncapped"
+    ],
+    "generated_odt": 6826610.312795594,
+    "objective": [
+      {
+        "cad_per_assigned_odt": 238.16648608171985,
+        "component": "product_revenue",
+        "notes": "assigned odt x product revenue per input odt",
+        "sense": "positive",
+        "value_cad": 1463766688.8163457
+      },
+      {
+        "cad_per_assigned_odt": 37.70231199318077,
+        "component": "transport_cost",
+        "notes": "assigned odt x road transporter cost; no transload",
+        "sense": "negative",
+        "value_cad": 231717691.66566563
+      },
+      {
+        "cad_per_assigned_odt": 86.09672237142789,
+        "component": "processing_cost",
+        "notes": "assigned odt x FFCM line operating cost per output unit",
+        "sense": "negative",
+        "value_cad": 529148816.4305504
+      },
+      {
+        "cad_per_assigned_odt": 114.3674517171112,
+        "component": "net_contribution",
+        "notes": "product revenue - transport - processing",
+        "sense": "objective_profit_max",
+        "value_cad": 702900180.7201297
+      },
+      {
+        "cad_per_assigned_odt": 114.3674517171112,
+        "component": "solver_objective",
+        "notes": "objective recomputed from normalised allocations; raw CBC value is in model_stats",
+        "sense": "profit_max",
+        "value_cad": 702900180.7201297
+      }
+    ],
+    "objective_mode": "profit_max",
+    "objective_mode_reason": "all included recipient classes have FFCM prices",
+    "objective_net_contribution_cad": 702900180.7201297,
+    "status": "pass",
+    "unassigned_odt": 680629.3180932209,
+    "utilization": [
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 575015.4685942156,
+        "capacity_odt_y": 258756.960867397,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4007",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4007-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 4758475.877364119,
+        "received_m3": 142766.57621056656,
+        "received_odt": 64244.95929475496,
+        "unused_capacity_odt": 194512.00157264204,
+        "utilization": 0.2482830184718317
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 14110.68488977509,
+        "capacity_odt_y": 6349.80820039879,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4008",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4008-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 470315.63976267166,
+        "received_m3": 14110.684882654652,
+        "received_odt": 6349.808197194594,
+        "unused_capacity_odt": 3.2041962185758166e-06,
+        "utilization": 0.999999999495387
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 38804.71197518556,
+        "capacity_odt_y": 17462.1203888335,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4009",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4009-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 1293378.9589503417,
+        "received_m3": 38804.7119436931,
+        "received_odt": 17462.120374661896,
+        "unused_capacity_odt": 1.4171604561852291e-05,
+        "utilization": 0.9999999991884374
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 737289.790351169,
+        "capacity_odt_y": 331780.405658026,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4010",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4010-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 5168055.12703183,
+        "received_m3": 155055.01239663837,
+        "received_odt": 69774.75557848727,
+        "unused_capacity_odt": 262005.65007953875,
+        "utilization": 0.2103040275693851
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 1922597.8339980068,
+        "capacity_odt_y": 865169.025299103,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4011",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4011-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 5340962.186563404,
+        "received_m3": 160242.6711193371,
+        "received_odt": 72109.20200370169,
+        "unused_capacity_odt": 793059.8232954013,
+        "utilization": 0.0833469529018013
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 338659.3284036755,
+        "capacity_odt_y": 152396.697781654,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4015",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4015-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 11287671.688234422,
+        "received_m3": 338659.32745062903,
+        "received_odt": 152396.69735278306,
+        "unused_capacity_odt": 0.0004288709315005,
+        "utilization": 0.9999999971858252
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 606764.7067131934,
+        "capacity_odt_y": 273044.118020937,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4018",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4018-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 5892004.646011386,
+        "received_m3": 176775.36925830835,
+        "received_odt": 79548.91616623876,
+        "unused_capacity_odt": 193495.20185469824,
+        "utilization": 0.2913408893142278
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 338659.3284036755,
+        "capacity_odt_y": 152396.697781654,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4022",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4022-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 5914588.128593631,
+        "received_m3": 177452.93211042185,
+        "received_odt": 79853.81944968984,
+        "unused_capacity_odt": 72542.87833196415,
+        "utilization": 0.5239865470320112
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 1019505.853550458,
+        "capacity_odt_y": 458777.634097706,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4023",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4023-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 4525448.8193569295,
+        "received_m3": 135775.16213313796,
+        "received_odt": 61098.82295991208,
+        "unused_capacity_odt": 397678.81113779393,
+        "utilization": 0.1331774228272423
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 1019505.853550458,
+        "capacity_odt_y": 458777.634097706,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "BIO",
+        "facility_id": "BC-BIO-4024",
+        "price_status": "available",
+        "processing_lines": "BC-BIO-4024-1",
+        "product": "electricity_bc",
+        "product_revenue_cad": 6797963.601215579,
+        "received_m3": 203956.47967163924,
+        "received_odt": 91780.41585223768,
+        "unused_capacity_odt": 366997.21824546834,
+        "utilization": 0.2000542507542797
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 1260228.2222222222,
+        "capacity_odt_y": 567102.7,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-1163",
+        "price_status": "available",
+        "processing_lines": "BC-PAP-1163-1",
+        "product": "kraft_softwood",
+        "product_revenue_cad": 208315967.3792913,
+        "received_m3": 1260228.218467183,
+        "received_odt": 567102.6983102324,
+        "unused_capacity_odt": 0.0016897675814107,
+        "utilization": 0.99999999702035
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 614899.3333333334,
+        "capacity_odt_y": 276704.7,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-1319",
+        "price_status": "available",
+        "processing_lines": "BC-PAP-1319-1",
+        "product": "refiner_softwood",
+        "product_revenue_cad": 123287735.12130894,
+        "received_m3": 614899.3239633351,
+        "received_odt": 276704.6957835008,
+        "unused_capacity_odt": 0.0042164992191828,
+        "utilization": 0.999999984761736
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 2816342.6666666665,
+        "capacity_odt_y": 1267354.2,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-179",
+        "price_status": "available",
+        "processing_lines": "BC-PAP-179-1",
+        "product": "kraft_softwood",
+        "product_revenue_cad": 432866182.2498068,
+        "received_m3": 2816342.6357606445,
+        "received_odt": 1267354.18609229,
+        "unused_capacity_odt": 0.0139077098574489,
+        "utilization": 0.9999999890261856
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 3109581.777777778,
+        "capacity_odt_y": 1399311.8,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-511",
+        "price_status": "available",
+        "processing_lines": "BC-PAP-511-1",
+        "product": "kraft_softwood",
+        "product_revenue_cad": 269385863.71729654,
+        "received_m3": 3109581.771744094,
+        "received_odt": 1399311.7972848422,
+        "unused_capacity_odt": 0.0027151578105986,
+        "utilization": 0.9999999980596478
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 1200980.2222222222,
+        "capacity_odt_y": 540441.1,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PAP",
+        "facility_id": "BC-PAP-679",
+        "price_status": "available",
+        "processing_lines": "BC-PAP-679-1",
+        "product": "kraft_softwood",
+        "product_revenue_cad": 194134952.0160798,
+        "received_m3": 1200980.2005458642,
+        "received_odt": 540441.0902456389,
+        "unused_capacity_odt": 0.0097543611191213,
+        "utilization": 0.9999999819511116
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 76533.33333333334,
+        "capacity_odt_y": 34440.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1141",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1141-1",
+        "product": "pellet",
+        "product_revenue_cad": 4532999.992335696,
+        "received_m3": 76533.33320393233,
+        "received_odt": 34439.99994176955,
+        "unused_capacity_odt": 5.823044921271503e-05,
+        "utilization": 0.9999999983092204
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 892888.8888888889,
+        "capacity_odt_y": 401800.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1650",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1650-1",
+        "product": "pellet",
+        "product_revenue_cad": 52884999.92292015,
+        "received_m3": 892888.887587504,
+        "received_odt": 401799.9994143768,
+        "unused_capacity_odt": 0.0005856232019141,
+        "utilization": 0.9999999985425008
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 186231.11111111112,
+        "capacity_odt_y": 83804.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1652",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1652-1",
+        "product": "pellet",
+        "product_revenue_cad": 11030299.957221096,
+        "received_m3": 186231.1103888494,
+        "received_odt": 83803.99967498223,
+        "unused_capacity_odt": 0.0003250177687732,
+        "utilization": 0.9999999961216914
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 1117386.6666666667,
+        "capacity_odt_y": 502824.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1653",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1653-1",
+        "product": "pellet",
+        "product_revenue_cad": 10043188.127967669,
+        "received_m3": 169565.11465411988,
+        "received_odt": 76304.30159435395,
+        "unused_capacity_odt": 426519.698405646,
+        "utilization": 0.1517515106565198
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 558693.3333333334,
+        "capacity_odt_y": 251412.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1654",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1654-1",
+        "product": "pellet",
+        "product_revenue_cad": 11889473.026829269,
+        "received_m3": 200737.04,
+        "received_odt": 90331.668,
+        "unused_capacity_odt": 161080.332,
+        "utilization": 0.3592973605078516
+      },
+      {
+        "capacity_binding": false,
+        "capacity_m3_y": 589306.6666666667,
+        "capacity_odt_y": 265188.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1655",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1655-1",
+        "product": "pellet",
+        "product_revenue_cad": 12503262.909195868,
+        "received_m3": 211100.01940961624,
+        "received_odt": 94995.00873432732,
+        "unused_capacity_odt": 170192.99126567267,
+        "utilization": 0.3582175993420792
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 558693.3333333334,
+        "capacity_odt_y": 251412.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1657",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1657-1",
+        "product": "pellet",
+        "product_revenue_cad": 33090899.869002827,
+        "received_m3": 558693.33112163,
+        "received_odt": 251411.99900473357,
+        "unused_capacity_odt": 0.0009952664549928,
+        "utilization": 0.999999996041293
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 510222.2222222223,
+        "capacity_odt_y": 229600.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1658",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1658-1",
+        "product": "pellet",
+        "product_revenue_cad": 30219999.919595376,
+        "received_m3": 510222.2208647031,
+        "received_odt": 229599.9993891164,
+        "unused_capacity_odt": 0.0006108836096245,
+        "utilization": 0.9999999973393572
+      },
+      {
+        "capacity_binding": true,
+        "capacity_m3_y": 306133.3333333334,
+        "capacity_odt_y": 137760.0,
+        "coord_confidence": null,
+        "coord_source": "mills_db_2015",
+        "facility_class": "PEL",
+        "facility_id": "BC-PEL-1659",
+        "price_status": "available",
+        "processing_lines": "BC-PEL-1659-1",
+        "product": "pellet",
+        "product_revenue_cad": 18131999.9344102,
+        "received_m3": 306133.33222594176,
+        "received_odt": 137759.9995016738,
+        "unused_capacity_odt": 0.0004983262042514,
+        "utilization": 0.9999999963826496
+      }
+    ],
+    "validation": {
+      "checks": [
+        {
+          "check_id": "solver_status",
+          "detail": "status=Optimal",
+          "passed": true
+        },
+        {
+          "check_id": "residue_balance",
+          "detail": "assigned + unassigned equals generated residue for every source/type",
+          "passed": true
+        },
+        {
+          "check_id": "allocation_reference_integrity",
+          "detail": "all allocations reference a declared supply row and recipient line",
+          "passed": true
+        },
+        {
+          "check_id": "residue_type_eligibility",
+          "detail": "every allocation uses an eligible residue type and recipient class",
+          "passed": true
+        },
+        {
+          "check_id": "recipient_capacity",
+          "detail": "no recipient line exceeds its FFCM infeed capacity",
+          "passed": true
+        },
+        {
+          "check_id": "transport_link_existence",
+          "detail": "every allocation has a finite, cost-consistent road or fallback link",
+          "passed": true
+        },
+        {
+          "check_id": "unit_consistency",
+          "detail": "volume/ODT, capacity, moisture, and mass-price bases reconcile",
+          "passed": true
+        },
+        {
+          "check_id": "objective_reconciliation",
+          "detail": "assignment components reproduce the normalised objective; raw CBC delta 3.695755 CAD",
+          "passed": true
+        },
+        {
+          "check_id": "finite_nonnegative_values",
+          "detail": "all allocation and slack values are finite and non-negative",
+          "passed": true
+        }
+      ],
+      "failed_check_count": 0,
+      "passed": true
+    }
+  },
+  "status": "pass",
+  "tests": {
+    "stage_a_mass_balance": "pass",
+    "stage_a_unit_basis": "pass",
+    "stage_b_mass_balance": "pass",
+    "stage_b_validation": "pass",
+    "zone_supply_aac_conservation": "pass",
+    "zone_supply_recoverable_le_gross": "pass"
+  },
+  "transport_summary": {
+    "cost_cad_m3": {
+      "count": 258,
+      "max": 63.60328526311401,
+      "mean": 28.651692941524963,
+      "median": 29.92534317244477,
+      "min": 1.5360745002787517,
+      "p25": 14.815732441603789,
+      "p75": 38.95946768287599
+    },
+    "distance_km": {
+      "count": 258,
+      "max": 1131.8109668124423,
+      "mean": 526.245952290472,
+      "median": 574.5078043946659,
+      "min": 32.94072840851691,
+      "p25": 266.5639231710741,
+      "p75": 710.121642685632
+    },
+    "facility_rejected": 50,
+    "facility_snapped": 88,
+    "graph_edges": 242059,
+    "graph_nodes": 203511,
+    "link_count": 258,
+    "nrn_source": "data/raw/nrn/nrn_bc_gpkg.zip",
+    "origin_snap_m": {
+      "ZONE_B1": 11783.26235680389,
+      "ZONE_B2": 3982.2532493130866
+    },
+    "rates": {
+      "HOGFUEL": {
+        "cost_cad_m3_km": 0.046631467319999995,
+        "density_odt_m3": 0.45,
+        "transporter": "BC_residue_truck"
+      },
+      "OTHER_LOG": {
+        "cost_cad_m3_km": 0.056196031959508314,
+        "density_odt_m3": 0.3572349372342432,
+        "transporter": "BC_logging_truck"
+      },
+      "PULP": {
+        "cost_cad_m3_km": 0.056196031959508314,
+        "density_odt_m3": 0.3797989965233311,
+        "transporter": "BC_logging_truck"
+      },
+      "RESIDUE": {
+        "cost_cad_m3_km": 0.046631467319999995,
+        "density_odt_m3": 0.44999999999999996,
+        "transporter": "BC_residue_truck"
+      },
+      "SAWLOG": {
+        "cost_cad_m3_km": 0.056196031959508314,
+        "density_odt_m3": 0.3781671566355752,
+        "transporter": "BC_logging_truck"
+      }
+    }
+  },
+  "years": [
+    "2021",
+    "2028"
+  ],
+  "zone_nodes": [
+    {
+      "component_filter": "main_road_component",
+      "lat": 52.12623493069079,
+      "lon": -124.84967833346123,
+      "main_road_component": 6,
+      "node_id": "ZONE_B1",
+      "total_weight_m3": 2637815.020725064,
+      "weight_basis": "2018_apportionment_m3_x_zone_thlb_share",
+      "weighted_tsa_count": 4,
+      "x_m": 1078621.9405152695,
+      "y_m": 791218.4895944523,
+      "zone_id": "B1"
+    },
+    {
+      "component_filter": "main_road_component",
+      "lat": 53.62184584112562,
+      "lon": -122.5090433711447,
+      "main_road_component": 6,
+      "node_id": "ZONE_B2",
+      "total_weight_m3": 48208683.666520886,
+      "weight_basis": "2018_apportionment_m3_x_zone_thlb_share",
+      "weighted_tsa_count": 26,
+      "x_m": 1230289.4709026054,
+      "y_m": 963087.804690109,
+      "zone_id": "B2"
+    }
+  ]
+}
