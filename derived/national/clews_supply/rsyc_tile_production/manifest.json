@@ -1,0 +1,63 @@
+{
+  "artifact_version": "0.1.0",
+  "label": "RSYC-only v0, no local corrections",
+  "status": "derived_provisional",
+  "generated_utc": "2026-11-18T18:35:24+00:00",
+  "builder": "workflows/national/clews/rsyc_tile_supply.py",
+  "outputs": [
+    {
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_by_province.csv",
+      "bytes": 6453,
+      "sha256": "5ddda18a4620b2bde303f3f052d6ffb9abda13689fa776cf2280c97d7e0866f1"
+    },
+    {
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_by_tile.csv",
+      "bytes": 78340,
+      "sha256": "e77b36d0f4a6252788122050c9e117c00aef34e820ee1948f18a7ebffed82f7d"
+    },
+    {
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_by_evidence.csv",
+      "bytes": 848,
+      "sha256": "702ba5cd31fb2eac4fd3aeeb609b30784065fd2b9fb4b0cc8b74bb71e6fdb06c"
+    },
+    {
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_harvest_sensitivity.csv",
+      "bytes": 7734,
+      "sha256": "dd40aedbd53964e02b04f62294957fe880a80f38da1c1d424cc3a6aa6839486d"
+    },
+    {
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_summary.json",
+      "bytes": 290255,
+      "sha256": "44eb81eebf87ca8df9d74dd8b55437c32dacfa48a84bbfc507809a7ba52a6fd9"
+    },
+    {
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/RSYC_TILE_SUPPLY_REPORT.md",
+      "bytes": 10921,
+      "sha256": "06185856338a678a1c8a0bca752fef3874400e33658a5cf3bb0ba070bec6a10f"
+    }
+  ],
+  "validation_passed": true,
+  "validation_checks": 22,
+  "key_totals": {
+    "area_ha": 422475761.5224368,
+    "volume_m3": 55244132111.07746,
+    "residue_odt": 4879038251.415109,
+    "tile_mix_odt_per_m3_total": 0.08831776452936206,
+    "matrix_national_odt_per_m3_total": 0.08910108039774675,
+    "recoverable_odt_base": 2927422950.8490653,
+    "recoverable_pj_base": 54157.32459070771,
+    "hypothetical_all_hectares_age100_stock_pj_equivalent": 54157.32459070771
+  },
+  "notes": [
+    "RSYC-only v0: no local corrections, benchmark correction factors withheld.",
+    "Annual harvest rows assume a harvested volume and mix expressed on a total-volume basis; no adopted national AAC, THLB, or operability filter is applied.",
+    "The BC-only 43.523816 PJ value is a scale comparison, not a like-for-like annual supply comparison.",
+    "The national all-hectares-at-age-100 stock equivalent is a hypothetical one-time standing-stock figure, not an annual cap.",
+    "The 0.64% diagnostic gap (419.79 of 422.48 Mha emitted; failed PINU.BAN Great Bear Lowlands cell plus 0.69 Mha other gap) does not apply to the tile library, which covers all area.",
+    "Residue is taper/bucking residue scaled from the diagnostic batch, not full aboveground slash.",
+    "Province residue factors are area-share apportionments, not province-specific taper models.",
+    "Recovery (0.35/0.60/0.75) and cost ($2.456978/GJ, 1.30x/0.80x) are uniform envelopes.",
+    "Group cells (BROADLEAF, CONIFEROUS) use group RSYC curves; they are flagged by evidence_tier=rsyc_tile_group and are not species-exact fits.",
+    "Generic cells use the tile generic RSYC curve; they are flagged by evidence_tier=rsyc_tile_generic."
+  ]
+}

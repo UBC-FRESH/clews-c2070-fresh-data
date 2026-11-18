@@ -1,0 +1,147 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "RSYC-only v0: no local corrections, benchmark correction factors withheld.",
+    "The 150M m3 log/yr supply is converted through the fixed tile-mix factor 0.08831776452936206 ODT/m3 total and log share 0.762716956451988; no adopted AAC, THLB, or operability filter is applied.",
+    "The BC zonal SUPBCWB1/B2 caps and costs are unchanged; SUPBCW carries only the rest-of-Canada balance, so the three caps sum to the national total.",
+    "The stress hydro cap fixes every PWRHYD<z> at its 2021 base-run activity; it is a sensitivity probe, not a forecast.",
+    "The generic-BIO sensitivity raises RNWBIO VariableCost to 4.0 $/GJ for all consumers; it is not a dedicated power-biomass supply curve."
+  ],
+  "generated_utc": "2026-11-18T18:53:21+00:00",
+  "inputs": [
+    {
+      "bytes": 290255,
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_summary.json",
+      "sha256": "44eb81eebf87ca8df9d74dd8b55437c32dacfa48a84bbfc507809a7ba52a6fd9"
+    },
+    {
+      "bytes": 7734,
+      "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_harvest_sensitivity.csv",
+      "sha256": "dd40aedbd53964e02b04f62294957fe880a80f38da1c1d424cc3a6aa6839486d"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 1824,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_activity_limits_national_150m.csv",
+      "sha256": "e09f993e2989277d388640905042b0800012913d8e24f31f5b78703175005b3a"
+    },
+    {
+      "bytes": 1780,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_activity_limits_national_150m_low.csv",
+      "sha256": "1b05f981a1b8734d920bb874ce406e130be11562d0d680c91974fc0911f273a9"
+    },
+    {
+      "bytes": 1785,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_activity_limits_national_150m_high.csv",
+      "sha256": "659f92a45294386eacac99903f1d79ac86d592c5360013bbb8cb57125a295ebd"
+    },
+    {
+      "bytes": 1480,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_variable_cost_base.csv",
+      "sha256": "8c6e8c0aca471611efd7a13b106622cde8ab34e1195d82b7988eff12854804d1"
+    },
+    {
+      "bytes": 1530,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_variable_cost_low.csv",
+      "sha256": "cc085b06cc21867883c5771a495bdd4c19891acd26b2592d14cab3f7567547e3"
+    },
+    {
+      "bytes": 1530,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_variable_cost_high.csv",
+      "sha256": "b7fba6d48abe10f337861758ee7221a926a7686b1ae01e0942cdc8fca5d86c6c"
+    },
+    {
+      "bytes": 6425,
+      "path": "data/derived/national/clews/osecan/national_150m/supply_basis.json",
+      "sha256": "63a6c465cabf5898f2a430f72b328e2477ee4f5b718e8ae7f6315580b378ed2d"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "outputs": [
+    {
+      "bytes": 35798,
+      "path": "data/derived/national/clews/osecan/national_150m/run_summaries.json",
+      "sha256": "37568b03c53930640c0309233083ce25a88b921523b9eac6c33faf3b8aac441b"
+    },
+    {
+      "bytes": 631,
+      "path": "data/derived/national/clews/osecan/national_150m/run_summary_table.json",
+      "sha256": "f9f6dc6a22ce3833a91dd49012b81765fd8721751bc81f10733817810733d824"
+    },
+    {
+      "bytes": 179149,
+      "path": "data/derived/national/clews/osecan/national_150m/dispatch_by_zone.csv",
+      "sha256": "704d52c4b269cc1cf462e48b2d76a3480e8ea38e12aa442a44269d77c833f6b8"
+    },
+    {
+      "bytes": 7675,
+      "path": "data/derived/national/clews/osecan/national_150m/NATIONAL_150M_OSECAN_REPORT.md",
+      "sha256": "0bf83ecfd13227fc569d330caaa40909f981a98a557128c4f8f5d0767370bce7"
+    },
+    {
+      "bytes": 6425,
+      "path": "data/derived/national/clews/osecan/national_150m/supply_basis.json",
+      "sha256": "63a6c465cabf5898f2a430f72b328e2477ee4f5b718e8ae7f6315580b378ed2d"
+    },
+    {
+      "bytes": 1824,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_activity_limits_national_150m.csv",
+      "sha256": "e09f993e2989277d388640905042b0800012913d8e24f31f5b78703175005b3a"
+    },
+    {
+      "bytes": 1780,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_activity_limits_national_150m_low.csv",
+      "sha256": "1b05f981a1b8734d920bb874ce406e130be11562d0d680c91974fc0911f273a9"
+    },
+    {
+      "bytes": 1785,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_activity_limits_national_150m_high.csv",
+      "sha256": "659f92a45294386eacac99903f1d79ac86d592c5360013bbb8cb57125a295ebd"
+    },
+    {
+      "bytes": 1480,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_variable_cost_base.csv",
+      "sha256": "8c6e8c0aca471611efd7a13b106622cde8ab34e1195d82b7988eff12854804d1"
+    },
+    {
+      "bytes": 1530,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_variable_cost_low.csv",
+      "sha256": "cc085b06cc21867883c5771a495bdd4c19891acd26b2592d14cab3f7567547e3"
+    },
+    {
+      "bytes": 1530,
+      "path": "data/derived/national/clews/osecan/national_150m/SUPBCW_variable_cost_high.csv",
+      "sha256": "b7fba6d48abe10f337861758ee7221a926a7686b1ae01e0942cdc8fca5d86c6c"
+    }
+  ],
+  "run_evidence": {
+    "note": "Run summaries are derived from the solved CSVs in the disposable copy; only the summaries and report are committed.",
+    "public_repo_modified": false,
+    "runs_root": "/tmp/osecan_national/results"
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}
