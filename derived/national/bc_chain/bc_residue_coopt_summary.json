@@ -1,29 +1,32 @@
 {
+  "accepted_path_confidence": [
+    "real_road_network"
+  ],
   "artifact_version": "0.1.0",
-  "assigned_odt": 8841756.80707,
-  "assigned_share": 0.9999999962075711,
-  "bioenergy_odt": 2118365.97276,
-  "bioenergy_share_of_assigned": 0.23958654586225703,
-  "bioenergy_share_of_generated": 0.23958654495364207,
-  "capacity_double_booking_avoided_odt": 1309342.5747482546,
+  "assigned_odt": 8841756.84813,
+  "assigned_share": 0.9999999995590506,
+  "bioenergy_odt": 2118365.99573,
+  "bioenergy_share_of_assigned": 0.23958654734754742,
+  "bioenergy_share_of_generated": 0.23958654724190187,
+  "capacity_double_booking_avoided_odt": 1309342.57499005,
   "class_utilization": [
     {
       "binding_facility_count": 5,
       "capacity_odt_y": 2974911.102193415,
       "facility_class": "BIO",
-      "received_odt": 2118365.9727600003
+      "received_odt": 2118365.99573
     },
     {
       "binding_facility_count": 6,
       "capacity_odt_y": 6775712.899999999,
       "facility_class": "PAP",
-      "received_odt": 4565150.8368999995
+      "received_odt": 4565150.8469
     },
     {
       "binding_facility_count": 9,
       "capacity_odt_y": 2158240.0,
       "facility_class": "PEL",
-      "received_odt": 2158239.99741
+      "received_odt": 2158240.0055
     }
   ],
   "data_gaps": [
@@ -32,181 +35,592 @@
     "route capacity, rail/water modes, and moisture blending are absent",
     "TL-hub proxy coordinates remain for some sawmill sources"
   ],
-  "excluded_pair_count": 16,
+  "excluded_pair_count": 61,
+  "excluded_pair_reason_counts": {
+    "no_transport_link": 10,
+    "non_nrn_fallback": 51
+  },
   "excluded_pairs": [
     {
+      "path_confidence": "",
       "reason": "no_transport_link",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B1::BC-PEL-1657"
+      "source_id": "HARVEST::B1",
+      "source_odt": "194890.535503"
     },
     {
+      "path_confidence": "",
       "reason": "no_transport_link",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1141"
+      "source_id": "HARVEST::B2",
+      "source_odt": "1740782.205531"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1650"
+      "source_id": "SAWMILL::BC-SAW-1011::hogfuel",
+      "source_odt": "185.399999"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1653"
+      "source_id": "SAWMILL::BC-SAW-1014::hogfuel",
+      "source_odt": "5962.561848"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1654"
+      "source_id": "SAWMILL::BC-SAW-1021::hogfuel",
+      "source_odt": "1386.557470"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1655"
+      "source_id": "SAWMILL::BC-SAW-1064::hogfuel",
+      "source_odt": "6051.455952"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1657"
+      "source_id": "SAWMILL::BC-SAW-114::hogfuel",
+      "source_odt": "2135.808003"
     },
     {
+      "path_confidence": "",
       "reason": "no_transport_link",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "HARVEST::B2::BC-PEL-1658"
+      "source_id": "SAWMILL::BC-SAW-1153::hogfuel",
+      "source_odt": "1072.538986"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-1153::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-1171::hogfuel",
+      "source_odt": "10600.497349"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-200::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-1253::hogfuel",
+      "source_odt": "8106.152895"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-363::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-1276::hogfuel",
+      "source_odt": "4542.300004"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-456::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-1287::hogfuel",
+      "source_odt": "17612.999800"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-810::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-1288::hogfuel",
+      "source_odt": "7972.199936"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-915::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-131::hogfuel",
+      "source_odt": "17575.919975"
     },
     {
-      "reason": "no_transport_link",
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-916::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-1316::hogfuel",
+      "source_odt": "1557.359991"
     },
     {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-132::hogfuel",
+      "source_odt": "19281.599936"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1335::hogfuel",
+      "source_odt": "12959.459903"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1377::hogfuel",
+      "source_odt": "1557.360000"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1383::hogfuel",
+      "source_odt": "22247.999986"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1386::hogfuel",
+      "source_odt": "1334.879994"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1387::hogfuel",
+      "source_odt": "49238.068227"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1389::hogfuel",
+      "source_odt": "5664.525612"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1394::hogfuel",
+      "source_odt": "21447.071985"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1437::hogfuel",
+      "source_odt": "9269.999883"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1467::hogfuel",
+      "source_odt": "682.271989"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-167::hogfuel",
+      "source_odt": "9388.656006"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1740::hogfuel",
+      "source_odt": "18776.199598"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-178::hogfuel",
+      "source_odt": "18777.312114"
+    },
+    {
+      "path_confidence": "",
       "reason": "no_transport_link",
       "recipient_facility": "BC-BIO-4007",
       "residue_type": "hogfuel",
-      "source_id": "SAWMILL::BC-SAW-920::hogfuel"
+      "source_id": "SAWMILL::BC-SAW-200::hogfuel",
+      "source_odt": "12051.000046"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-208::hogfuel",
+      "source_odt": "31517.999950"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-210::hogfuel",
+      "source_odt": "20371.473824"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-242::hogfuel",
+      "source_odt": "7415.999988"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-275::hogfuel",
+      "source_odt": "7119.360001"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-281::hogfuel",
+      "source_odt": "11439.180049"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-352::hogfuel",
+      "source_odt": "12906.400501"
+    },
+    {
+      "path_confidence": "",
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-363::hogfuel",
+      "source_odt": "1494.324013"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-379::hogfuel",
+      "source_odt": "11568.959999"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-381::hogfuel",
+      "source_odt": "25985.663838"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-383::hogfuel",
+      "source_odt": "27964.345545"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-389::hogfuel",
+      "source_odt": "32445.000022"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-397::hogfuel",
+      "source_odt": "3539.686788"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-418::hogfuel",
+      "source_odt": "8852.486465"
+    },
+    {
+      "path_confidence": "",
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-456::hogfuel",
+      "source_odt": "845.423991"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-488::hogfuel",
+      "source_odt": "34178.891591"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-5::hogfuel",
+      "source_odt": "19084.802271"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-506::hogfuel",
+      "source_odt": "36568.296204"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-611::hogfuel",
+      "source_odt": "24472.800058"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-66::hogfuel",
+      "source_odt": "1673.650379"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-680::hogfuel",
+      "source_odt": "29189.005283"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-682::hogfuel",
+      "source_odt": "17090.472456"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-697::hogfuel",
+      "source_odt": "12978.000039"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-718::hogfuel",
+      "source_odt": "2780.999991"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-74::hogfuel",
+      "source_odt": "23495.278307"
+    },
+    {
+      "path_confidence": "",
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-810::hogfuel",
+      "source_odt": "16222.499818"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-904::hogfuel",
+      "source_odt": "4913.100004"
+    },
+    {
+      "path_confidence": "",
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-915::hogfuel",
+      "source_odt": "1779.840013"
+    },
+    {
+      "path_confidence": "",
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-916::hogfuel",
+      "source_odt": "16222.499999"
+    },
+    {
+      "path_confidence": "",
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-920::hogfuel",
+      "source_odt": "15480.899936"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-979::hogfuel",
+      "source_odt": "4906.411088"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-981::hogfuel",
+      "source_odt": "10649.375987"
+    },
+    {
+      "path_confidence": "ffcm_route_fallback_road",
+      "reason": "non_nrn_fallback",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-987::hogfuel",
+      "source_odt": "13256.100054"
     }
   ],
-  "generated_odt": 8841756.840601735,
+  "fallback_excluded_pair_count": 51,
+  "fallback_excluded_source_odt_upper_bound": 710678.3591391782,
+  "generated_odt": 8841756.852028769,
   "harvest_assigned_by_destination_type": [
     {
-      "assigned_odt": 1342518.586,
+      "assigned_odt": 1342518.6099999999,
       "residue_type": "hogfuel"
     },
     {
-      "assigned_odt": 593154.136,
+      "assigned_odt": 593154.143,
       "residue_type": "sawdust_shavings"
     }
   ],
+  "harvest_assigned_share_of_recoverable": 1.0000000061817527,
+  "harvest_assigned_share_of_stage_a_assigned": 1.0000000120851436,
+  "harvest_coopt_assigned_odt": 1935672.753,
+  "harvest_recoverable_odt": 1935672.74103415,
+  "harvest_stage_a_assigned_odt": 1935672.7296071171,
+  "harvest_stage_a_unassigned_odt": 0.011427032761275768,
   "objective": [
     {
       "component": "product_revenue",
       "sense": "positive",
-      "value_cad": 2085149279.5297546
+      "value_cad": 2085149286.1658187
     },
     {
       "component": "transport_cost",
       "sense": "negative",
-      "value_cad": 330282746.6686112
+      "value_cad": 326876053.64551085
     },
     {
       "component": "processing_cost",
       "sense": "negative",
-      "value_cad": 811130843.191437
+      "value_cad": 811130845.6429682
     },
     {
       "component": "net_contribution",
       "sense": "objective_profit_max",
-      "value_cad": 943735689.6697063
+      "value_cad": 947142386.8773396
     }
   ],
   "objective_mode": "service_max_then_profit",
-  "objective_reconciliation_delta_cad": -4.76837158203125e-07,
+  "objective_reconciliation_delta_cad": -3.5762786865234375e-07,
   "period": "2028",
-  "raw_solver_objective_cad": 943735689.6697068,
+  "raw_solver_objective_cad": 947142386.87734,
+  "remaining_review_items": [
+    "alias-area leakage / NO_ECOPROVINCE handling in bc_area_weights.py",
+    "NaN coercion in supply and demand parsers",
+    "period alignment between supply, Stage A, and Stage B tables",
+    "Stage B validation should be fatal",
+    "negative-margin service test at the shared-capacity boundary"
+  ],
   "residue_type_balance": [
     {
-      "assigned_odt": 1935672.7219999998,
-      "generated_odt": 1935672.7296071171,
+      "assigned_odt": 1935672.753,
+      "generated_odt": 1935672.74103415,
       "residue_type": "harvest_residue",
       "source_kind": "harvest_residue",
-      "unassigned_odt": 0.014825194426521193
+      "unassigned_odt": 0.0
     },
     {
-      "assigned_odt": 4565150.836899999,
+      "assigned_odt": 4565150.846899999,
       "generated_odt": 4565150.844025659,
       "residue_type": "chips",
       "source_kind": "sawmill_residue",
-      "unassigned_odt": 0.03554893897671718
+      "unassigned_odt": 0.03042361712141428
     },
     {
-      "assigned_odt": 775847.3867600001,
+      "assigned_odt": 775847.3857300001,
       "generated_odt": 775847.385942161,
       "residue_type": "hogfuel",
       "source_kind": "sawmill_residue",
-      "unassigned_odt": 0.002622196127049392
+      "unassigned_odt": 0.0031576543869960005
     },
     {
-      "assigned_odt": 1565085.8614099994,
+      "assigned_odt": 1565085.8624999993,
       "generated_odt": 1565085.881026797,
       "residue_type": "sawdust_shavings",
       "source_kind": "sawmill_residue",
-      "unassigned_odt": 0.023582108673963376
+      "unassigned_odt": 0.023090335480901558
     }
   ],
-  "separate_total_at_recipients_odt": 8791676.502070693,
+  "separate_total_at_recipients_odt": 8791676.501240786,
   "solver_status": "Optimal",
   "source_counts": {
-    "allocation_count": 205,
-    "harvest_source_count": 8,
+    "allocation_count": 199,
+    "harvest_source_count": 2,
     "recipient_count": 28,
     "sawmill_source_count": 177
   },
-  "unassigned_odt": 0.033531734719872475,
+  "unassigned_odt": 0.0038987677544355392,
   "validation": [
     {
       "check": "source_conservation",
@@ -225,7 +639,7 @@
     },
     {
       "check": "transport_link_existence",
-      "detail": "every allocation has a finite, non-negative transport link",
+      "detail": "every allocation uses an accepted, provenance-stamped arc",
       "passed": true
     },
     {

@@ -9,14 +9,16 @@
     "Stage A harvest residue and Stage B sawmill residue are separate models",
     "roadside/stumpage cost is not modelled",
     "Stage A log assignment is fixed; only harvest and sawmill residue are co-optimised",
+    "harvest residue is the period-specific recoverable supply; Stage A assigned residue is reported separately",
     "harvest residue is eligible at PEL and BIO under the Stage A RESIDUE grade, not PAP",
     "recipient capacity is facility-level FFCM line infeed capacity, shared across streams",
     "road and NRN ferry shortest paths only; no route capacity, rail, or water option",
+    "accepted route provenance is real_road_network; FFCM fallback links are excluded by default",
     "contracts are apportionment-derived diagnostic maxima, not supply agreements"
   ],
   "coopt_artifact_version": "0.1.0",
-  "coopt_generated_utc": "2026-11-18T14:50:23+00:00",
-  "generated_utc": "2026-11-18T14:38:51+00:00",
+  "coopt_generated_utc": "2026-11-18T15:18:53+00:00",
+  "generated_utc": "2026-11-18T15:16:55+00:00",
   "inputs": {
     "data/derived/national/assignments/tsa24_pilot/contracts_bc_apportionment.csv": "c6a4a9a50d84e3d1a328008a6e54e8f5b4ef8221fe434c700149415dad40ab25",
     "data/derived/national/assignments/tsa24_pilot/facilities_bc_recovered.csv": "0aaf8ae2b257fd728c0270629dca140a7df245f7e172efd9c419d147b0b9437b",
@@ -24,10 +26,11 @@
     "data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv": "fd12a1ace118b951ddf1e82d03c17c4b0e63bf4b288814c09526db371c103e7b",
     "data/derived/national/bc_chain/bc_stage_a_assignment.csv": "c91f9fb62a7318862da34c319e3011726b07907d23005ee9f7a3e79b6e7e1b4c",
     "data/derived/national/bc_chain/bc_stage_a_transport_links.csv": "554841bc31a8748fd1c38fbaa4713e79f55f12368187c38ed61d75544c517fb6",
+    "data/derived/national/bc_chain/bc_supply_by_zone.csv": "c26d04e39cc3fd1a7f61bd912b254f140695948fd19ea44a7e7fe9cef8f44da8",
     "data/derived/national/bc_chain/stage_b/residue_demand.csv": "087e0eb27a5b279803f4a10a65f91cf9b1ae3cc041b9d49a5379b4e6f935cd83",
     "data/derived/national/bc_chain/stage_b/residue_supply.csv": "94d05433cec0c832be397c55c1e7dff8f9dd4df9faa044bbf729042c88775a30",
-    "data/derived/national/bc_chain/stage_b/stage_b_assignment.csv": "655150533aa32272e988fbf77efe4a62020d37deade017a9d6baba5af979360e",
-    "data/derived/national/bc_chain/stage_b/stage_b_transport_links.csv": "0646222e00137c3f2f68428bf3e2d6e2f9c949ed23e245b81b8db3cc1384a4c3",
+    "data/derived/national/bc_chain/stage_b/stage_b_assignment.csv": "22ece6cfca7d21d9cfe33c39b2074899d73a68d85934ee9b075813e0c211b163",
+    "data/derived/national/bc_chain/stage_b/stage_b_transport_links.csv": "e549491846f8500646980d4063493a6825a69b91743dfe98f6595770066f64cb",
     "data/derived/national/clews/bc_residue_time_path.csv": "bb8e9b96474e951c1ce3cb2ab05be93c36ac3ca92a6e8d9e4dd2805ed4c435d7",
     "data/derived/national/clews_supply/bc_woody_residue/bc_tsa_zone_crosswalk.csv": "3ee66aaff978111c37a32e1c16145c978cb90d18834917487b1ee5772101884c",
     "data/derived/national/clews_supply/bc_woody_residue/bc_zone_crosswalk.csv": "a1d5ae6ff6d2bd0e2d5a80d9ba75ce63ccaab754f3eb276edce9ad1a662b3ef2"
@@ -35,35 +38,39 @@
   "outputs": {
     "BC_CHAIN_REPORT.md": {
       "bytes": 6311,
-      "sha256": "be08dd6fd67d3644cf589becf0d0b01d3f7babc5131d3bfe59aaea6d6c8fe920"
+      "sha256": "6469276f3360a84ee3ae07bc8547b20b6997cfa463ea03915d81bfe74b6e69f9"
+    },
+    "BC_COOPT_FIX_REPORT.md": {
+      "bytes": 6220,
+      "sha256": "8760005913e1e9ef61aeb117766409db1f6b6372bcdb51cfeea83a5f91bfcc50"
     },
     "BC_REFINEMENT_REPORT.md": {
       "bytes": 11122,
       "sha256": "dd32f38774201846937637688f7a78925bbfd58015e0e6e9d2df5daff9a51a9d"
     },
     "BC_RESIDUE_COOPT_REPORT.md": {
-      "bytes": 8517,
-      "sha256": "c36f0821f67579b160b62797ff9f4245cad42c01f3c27067ccbfadf497e0b6a3"
+      "bytes": 9350,
+      "sha256": "570ef4a2a15f2c2c90a2380d72a4b803e6ee00367c593fafd77dc706a52c6395"
     },
     "bc_facility_utilization.csv": {
       "bytes": 18500,
       "sha256": "353ddecad4293d886c0ec495dd9be91fc4b6db286e307413af8d5b75c5a83b62"
     },
     "bc_residue_coopt_assignment.csv": {
-      "bytes": 88676,
-      "sha256": "e490649b94f42b56824ebc1823c89ee67ae67d81f3d8f471bc8405ef2793a369"
+      "bytes": 127571,
+      "sha256": "f745272cf664746b5cb1a3b035f86325bbb13162af41a0dded6d0c768b5efc22"
     },
     "bc_residue_coopt_balance.csv": {
-      "bytes": 20777,
-      "sha256": "4d2be89a55563a5adc934acd54c4402237352742088c3c2766abc57e332b779d"
+      "bytes": 24100,
+      "sha256": "b00b41b8dd336621714b16e72bda3d753f7c420b6de5001497aec5acbf6a966b"
     },
     "bc_residue_coopt_summary.json": {
-      "bytes": 7003,
-      "sha256": "da177eae71d3eb2eccfe220469d8ba8dc9e012ac1ac8893f4162f6879ecc4345"
+      "bytes": 20948,
+      "sha256": "bc07711470dfadd6efca4f8b40ec3073fb48990f4c6bcfb2c588a472bb77f969"
     },
     "bc_residue_coopt_utilization.csv": {
-      "bytes": 4765,
-      "sha256": "99789a153a7d9aa99a039f589f86e0f6e846f2b333f935801904ec838b343e63"
+      "bytes": 4631,
+      "sha256": "dc1ec57e94e6fd11bd075c6f916056aface457d703a953b72eb1a896e74419a4"
     },
     "bc_stage_a_assignment.csv": {
       "bytes": 746347,
@@ -74,8 +81,8 @@
       "sha256": "1dde261575f0a54f289643b6d4073ccbff4107191d0d3f24dd57b702fe376e59"
     },
     "bc_stage_a_summary.json": {
-      "bytes": 42410,
-      "sha256": "db16e5c9beb871a3445237a908aafedff479acaddd6edf732065802d82c57b05"
+      "bytes": 42467,
+      "sha256": "aa5b919d902db42e4e500eb4e80632dcdabb9a78d93a909003aac84e4f04056f"
     },
     "bc_stage_a_transport_links.csv": {
       "bytes": 125070,
@@ -90,20 +97,20 @@
       "sha256": "ec95df29aa34b04f37468fb0d9d746af8ed05cf77be79fe55042ca038c266731"
     },
     "bc_stage_b_assignment.csv": {
-      "bytes": 77958,
-      "sha256": "53b3d58dcc4ef354976ad76cc8d2e43fd2bf2e262428897c88c021a30c16ca1b"
+      "bytes": 83911,
+      "sha256": "a9993f60fa2f308e15a6c0427497de5b6b3a1510240be0092d4eb0c89eb100bb"
     },
     "bc_stage_b_residue.csv": {
-      "bytes": 20346,
-      "sha256": "c4208ea7878a63f920ca5a8e5d831b62b44710ba7da3949f3dad909c251307cd"
+      "bytes": 20354,
+      "sha256": "e96b0416e2443eed38163210924b492f10bb1e7bf17604cdf87077c6c513bab2"
     },
     "bc_stage_b_summary.json": {
-      "bytes": 21464,
-      "sha256": "2e8ee5a269b7b3526f4b875dae8834897d2ee87dabb3008b9d788778747f85ce"
+      "bytes": 21470,
+      "sha256": "6e8c1334fa6bcfb69e2a5d8fe8488638647d3cc4df7c539b688644f4e7be3b61"
     },
     "bc_stage_b_utilization.csv": {
-      "bytes": 5548,
-      "sha256": "a015bd070498e33bb99d7312b68e103bc80228dd388bcb7cbb7589628ce8de59"
+      "bytes": 5555,
+      "sha256": "fd28285b684218cf504522a3131218930115a5bdf69bf3bd3c85f06d83915286"
     },
     "bc_supply_by_zone.csv": {
       "bytes": 800421,
@@ -118,12 +125,12 @@
       "sha256": "5101aa31ffe3043dcfcd6de349e55abcc88558f75aab757bcc32adaf6fdf4d74"
     },
     "manifest.json": {
-      "bytes": 91580,
-      "sha256": "16752285db1342185e603fbe7fed55f20ae9bf619d33d0de401a6f722304c204"
+      "bytes": 99248,
+      "sha256": "629d3865ca4dba8832cea70a3afab62dee443cfd160f420311fd06aa64961880"
     }
   },
   "period": "2028",
-  "runtime_seconds": 54.792153,
+  "runtime_seconds": 52.155944,
   "scenario": "bc_chain_b1_b2_stage_a_b",
   "stage_a_summary": {
     "assigned_m3": 47672270.73866207,
@@ -951,6 +958,7 @@
       "ferry_fare_basis": "placeholder_not_a_bc_ferries_tariff",
       "ferry_fare_placeholder_cad_m3_km": 0.03,
       "ferry_graph_summary": {
+        "candidate_edges": 54,
         "edges_added": 54,
         "fare_basis": "placeholder_not_a_bc_ferries_tariff",
         "fare_placeholder_cad_m3_km": 0.03,
@@ -1458,8 +1466,9 @@
             "terminal_snap_m": 48.40738527198849
           }
         ],
+        "shadowed_edges": 0,
         "speed_kmh": 33.0,
-        "total_ferry_km": 1951.953606990948
+        "total_ferry_km": 1951.9536069909466
       },
       "ferry_link_count": 64,
       "graph_edges": 242113,
@@ -1502,10 +1511,10 @@
     "unassigned_m3": 0.0
   },
   "stage_b_summary": {
-    "assigned_odt": 6856003.772463576,
-    "assigned_share": 0.9199468266493378,
+    "assigned_odt": 6856003.771633669,
+    "assigned_share": 0.9199468265379799,
     "bioenergy_odt": 758943.118391174,
-    "bioenergy_share_of_assigned": 0.1106975934639053,
+    "bioenergy_share_of_assigned": 0.11069759347730504,
     "bioenergy_share_of_generated": 0.10183589982483816,
     "class_utilization": [
       {
@@ -1521,16 +1530,16 @@
         "capacity_odt_y": 6775712.899999999,
         "facility_class": "PAP",
         "facility_count": 9,
-        "received_odt": 4565150.809699804,
-        "utilization": 0.6737521021145693
+        "received_odt": 4565150.808776129,
+        "utilization": 0.6737521019782479
       },
       {
         "binding_facility_count": 6,
         "capacity_odt_y": 2158240.0,
         "facility_class": "PEL",
         "facility_count": 9,
-        "received_odt": 1531909.8443725975,
-        "utilization": 0.7097958727354685
+        "received_odt": 1531909.8444663654,
+        "utilization": 0.709795872778915
       }
     ],
     "counts": {
@@ -1554,44 +1563,44 @@
     "generated_odt": 7452608.7528718915,
     "objective": [
       {
-        "cad_per_assigned_odt": 271.14045680149934,
+        "cad_per_assigned_odt": 271.14045681631734,
         "component": "product_revenue",
         "notes": "assigned odt x product revenue per input odt",
         "sense": "positive",
-        "value_cad": 1858939994.6985765
+        "value_cad": 1858939994.5751476
       },
       {
-        "cad_per_assigned_odt": 40.68505995080098,
+        "cad_per_assigned_odt": 40.07723914250255,
         "component": "transport_cost",
         "notes": "assigned odt x road transporter cost; no transload",
         "sense": "negative",
-        "value_cad": 278936924.5055982
+        "value_cad": 274769702.717662
       },
       {
-        "cad_per_assigned_odt": 104.1483704792261,
+        "cad_per_assigned_odt": 104.1483704802726,
         "component": "processing_cost",
         "notes": "assigned odt x FFCM line operating cost per output unit",
         "sense": "negative",
-        "value_cad": 714041620.9015082
+        "value_cad": 714041620.8222495
       },
       {
-        "cad_per_assigned_odt": 126.30702637147228,
+        "cad_per_assigned_odt": 126.91484719354216,
         "component": "net_contribution",
         "notes": "product revenue - transport - processing",
         "sense": "objective_profit_max",
-        "value_cad": 865961449.2914702
+        "value_cad": 870128671.0352358
       },
       {
-        "cad_per_assigned_odt": 126.30702637147228,
+        "cad_per_assigned_odt": 126.91484719354216,
         "component": "solver_objective",
         "notes": "objective recomputed from normalised allocations; raw CBC value is in model_stats",
         "sense": "profit_max",
-        "value_cad": 865961449.2914702
+        "value_cad": 870128671.0352358
       }
     ],
     "objective_mode": "profit_max",
     "objective_mode_reason": "all included recipient classes have FFCM prices",
-    "objective_net_contribution_cad": 865961449.2914702,
+    "objective_net_contribution_cad": 870128671.0352358,
     "status": "pass",
     "unassigned_odt": 596604.9404965814,
     "utilization": [
@@ -1776,11 +1785,11 @@
         "price_status": "available",
         "processing_lines": "BC-PAP-1163-1",
         "product": "kraft_softwood",
-        "product_revenue_cad": 208315965.7017391,
-        "received_m3": 1260228.2083186633,
-        "received_odt": 567102.6937433985,
-        "unused_capacity_odt": 0.0062566014239564,
-        "utilization": 0.999999988967428
+        "product_revenue_cad": 208315967.1210027,
+        "received_m3": 1260228.2169046402,
+        "received_odt": 567102.6976070881,
+        "unused_capacity_odt": 0.0023929118178784,
+        "utilization": 0.9999999957804612
       },
       {
         "capacity_binding": true,
@@ -1810,11 +1819,11 @@
         "price_status": "available",
         "processing_lines": "BC-PAP-179-1",
         "product": "kraft_softwood",
-        "product_revenue_cad": 432866183.4761464,
-        "received_m3": 2816342.643739537,
-        "received_odt": 1267354.1896827917,
-        "unused_capacity_odt": 0.0103172082453966,
-        "utilization": 0.9999999918592544
+        "product_revenue_cad": 432866183.5469008,
+        "received_m3": 2816342.644199884,
+        "received_odt": 1267354.189889948,
+        "unused_capacity_odt": 0.0101100520696491,
+        "utilization": 0.99999999202271
       },
       {
         "capacity_binding": false,
@@ -1844,11 +1853,11 @@
         "price_status": "available",
         "processing_lines": "BC-PAP-589-1;BC-PAP-589-3",
         "product": "kraft_softwood;refiner_softwood",
-        "product_revenue_cad": 282775177.7259104,
-        "received_m3": 1881699.7692994736,
-        "received_odt": 846764.8961847632,
-        "unused_capacity_odt": 355195.8038152368,
-        "utilization": 0.7044863415124665
+        "product_revenue_cad": 282775177.5170219,
+        "received_m3": 1881699.7679094456,
+        "received_odt": 846764.8955592506,
+        "unused_capacity_odt": 355195.80444074934,
+        "utilization": 0.7044863409920563
       },
       {
         "capacity_binding": true,
@@ -1912,11 +1921,11 @@
         "price_status": "available",
         "processing_lines": "BC-PAP-731-1",
         "product": "kraft_softwood",
-        "product_revenue_cad": 261419540.23016205,
-        "received_m3": 1791302.754684467,
-        "received_odt": 806086.2396080103,
-        "unused_capacity_odt": 154807.8603919897,
-        "utilization": 0.8388918608283787
+        "product_revenue_cad": 261419538.81326163,
+        "received_m3": 1791302.7449755615,
+        "received_odt": 806086.2352390029,
+        "unused_capacity_odt": 154807.86476099712,
+        "utilization": 0.838891856281564
       },
       {
         "capacity_binding": true,
@@ -1929,11 +1938,11 @@
         "price_status": "available",
         "processing_lines": "BC-PEL-1141-1",
         "product": "pellet",
-        "product_revenue_cad": 4532999.971766165,
-        "received_m3": 76533.33285664472,
-        "received_odt": 34439.99978549012,
-        "unused_capacity_odt": 0.0002145098769688,
-        "utilization": 0.9999999937714902
+        "product_revenue_cad": 4532999.998962738,
+        "received_m3": 76533.33331582062,
+        "received_odt": 34439.99999211928,
+        "unused_capacity_odt": 7.880720659159124e-06,
+        "utilization": 0.9999999997711754
       },
       {
         "capacity_binding": true,
@@ -2014,11 +2023,11 @@
         "price_status": "available",
         "processing_lines": "BC-PEL-1655-1",
         "product": "pellet",
-        "product_revenue_cad": 29581962.91256626,
-        "received_m3": 499449.8628373568,
-        "received_odt": 224752.4382768105,
-        "unused_capacity_odt": 40435.56172318946,
-        "utilization": 0.8475211483053929
+        "product_revenue_cad": 29581962.89972993,
+        "received_m3": 499449.86262063327,
+        "received_odt": 224752.43817928497,
+        "unused_capacity_odt": 40435.56182071503,
+        "utilization": 0.8475211479376328
       },
       {
         "capacity_binding": true,
@@ -2031,11 +2040,11 @@
         "price_status": "available",
         "processing_lines": "BC-PEL-1657-1",
         "product": "pellet",
-        "product_revenue_cad": 33090899.90750242,
-        "received_m3": 558693.3317716419,
-        "received_odt": 251411.99929723883,
-        "unused_capacity_odt": 0.0007027611718513,
-        "utilization": 0.999999997204743
+        "product_revenue_cad": 33090899.95216389,
+        "received_m3": 558693.3325256879,
+        "received_odt": 251411.9996365596,
+        "unused_capacity_odt": 0.0003634404274635,
+        "utilization": 0.999999998554403
       },
       {
         "capacity_binding": true,
@@ -2048,11 +2057,11 @@
         "price_status": "available",
         "processing_lines": "BC-PEL-1658-1",
         "product": "pellet",
-        "product_revenue_cad": 30219999.96610881,
-        "received_m3": 510222.2216500172,
-        "received_odt": 229599.99974250773,
-        "unused_capacity_odt": 0.0002574922691565,
-        "utilization": 0.999999998878518
+        "product_revenue_cad": 30219999.938912243,
+        "received_m3": 510222.2211908413,
+        "received_odt": 229599.9995358786,
+        "unused_capacity_odt": 0.0004641214036382,
+        "utilization": 0.9999999979785652
       },
       {
         "capacity_binding": true,
@@ -2065,11 +2074,11 @@
         "price_status": "available",
         "processing_lines": "BC-PEL-1659-1",
         "product": "pellet",
-        "product_revenue_cad": 18131999.945895195,
-        "received_m3": 306133.3324198499,
-        "received_odt": 137759.99958893243,
-        "unused_capacity_odt": 0.0004110675654374,
-        "utilization": 0.99999999701606
+        "product_revenue_cad": 18131999.926411785,
+        "received_m3": 306133.33209089976,
+        "received_odt": 137759.99944090488,
+        "unused_capacity_odt": 0.0005590951186604,
+        "utilization": 0.999999995941528
       }
     ],
     "validation": {
@@ -2111,7 +2120,7 @@
         },
         {
           "check_id": "objective_reconciliation",
-          "detail": "assignment components reproduce the normalised objective; raw CBC delta 3.973071 CAD",
+          "detail": "assignment components reproduce the normalised objective; raw CBC delta 4.769771 CAD",
           "passed": true
         },
         {
@@ -2175,6 +2184,7 @@
     "ferry_fare_basis": "placeholder_not_a_bc_ferries_tariff",
     "ferry_fare_placeholder_cad_m3_km": 0.03,
     "ferry_graph_summary": {
+      "candidate_edges": 54,
       "edges_added": 54,
       "fare_basis": "placeholder_not_a_bc_ferries_tariff",
       "fare_placeholder_cad_m3_km": 0.03,
@@ -2682,8 +2692,9 @@
           "terminal_snap_m": 48.40738527198849
         }
       ],
+      "shadowed_edges": 0,
       "speed_kmh": 33.0,
-      "total_ferry_km": 1951.953606990948
+      "total_ferry_km": 1951.9536069909466
     },
     "ferry_link_count": 64,
     "graph_edges": 242113,

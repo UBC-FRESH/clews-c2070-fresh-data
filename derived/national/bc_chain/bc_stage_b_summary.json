@@ -1,8 +1,8 @@
 {
-  "assigned_odt": 6856003.772463576,
-  "assigned_share": 0.9199468266493378,
+  "assigned_odt": 6856003.771633669,
+  "assigned_share": 0.9199468265379799,
   "bioenergy_odt": 758943.118391174,
-  "bioenergy_share_of_assigned": 0.1106975934639053,
+  "bioenergy_share_of_assigned": 0.11069759347730504,
   "bioenergy_share_of_generated": 0.10183589982483816,
   "class_utilization": [
     {
@@ -18,16 +18,16 @@
       "capacity_odt_y": 6775712.899999999,
       "facility_class": "PAP",
       "facility_count": 9,
-      "received_odt": 4565150.809699804,
-      "utilization": 0.6737521021145693
+      "received_odt": 4565150.808776129,
+      "utilization": 0.6737521019782479
     },
     {
       "binding_facility_count": 6,
       "capacity_odt_y": 2158240.0,
       "facility_class": "PEL",
       "facility_count": 9,
-      "received_odt": 1531909.8443725975,
-      "utilization": 0.7097958727354685
+      "received_odt": 1531909.8444663654,
+      "utilization": 0.709795872778915
     }
   ],
   "counts": {
@@ -51,44 +51,44 @@
   "generated_odt": 7452608.7528718915,
   "objective": [
     {
-      "cad_per_assigned_odt": 271.14045680149934,
+      "cad_per_assigned_odt": 271.14045681631734,
       "component": "product_revenue",
       "notes": "assigned odt x product revenue per input odt",
       "sense": "positive",
-      "value_cad": 1858939994.6985765
+      "value_cad": 1858939994.5751476
     },
     {
-      "cad_per_assigned_odt": 40.68505995080098,
+      "cad_per_assigned_odt": 40.07723914250255,
       "component": "transport_cost",
       "notes": "assigned odt x road transporter cost; no transload",
       "sense": "negative",
-      "value_cad": 278936924.5055982
+      "value_cad": 274769702.717662
     },
     {
-      "cad_per_assigned_odt": 104.1483704792261,
+      "cad_per_assigned_odt": 104.1483704802726,
       "component": "processing_cost",
       "notes": "assigned odt x FFCM line operating cost per output unit",
       "sense": "negative",
-      "value_cad": 714041620.9015082
+      "value_cad": 714041620.8222495
     },
     {
-      "cad_per_assigned_odt": 126.30702637147228,
+      "cad_per_assigned_odt": 126.91484719354216,
       "component": "net_contribution",
       "notes": "product revenue - transport - processing",
       "sense": "objective_profit_max",
-      "value_cad": 865961449.2914702
+      "value_cad": 870128671.0352358
     },
     {
-      "cad_per_assigned_odt": 126.30702637147228,
+      "cad_per_assigned_odt": 126.91484719354216,
       "component": "solver_objective",
       "notes": "objective recomputed from normalised allocations; raw CBC value is in model_stats",
       "sense": "profit_max",
-      "value_cad": 865961449.2914702
+      "value_cad": 870128671.0352358
     }
   ],
   "objective_mode": "profit_max",
   "objective_mode_reason": "all included recipient classes have FFCM prices",
-  "objective_net_contribution_cad": 865961449.2914702,
+  "objective_net_contribution_cad": 870128671.0352358,
   "status": "pass",
   "unassigned_odt": 596604.9404965814,
   "utilization": [
@@ -273,11 +273,11 @@
       "price_status": "available",
       "processing_lines": "BC-PAP-1163-1",
       "product": "kraft_softwood",
-      "product_revenue_cad": 208315965.7017391,
-      "received_m3": 1260228.2083186633,
-      "received_odt": 567102.6937433985,
-      "unused_capacity_odt": 0.0062566014239564,
-      "utilization": 0.999999988967428
+      "product_revenue_cad": 208315967.1210027,
+      "received_m3": 1260228.2169046402,
+      "received_odt": 567102.6976070881,
+      "unused_capacity_odt": 0.0023929118178784,
+      "utilization": 0.9999999957804612
     },
     {
       "capacity_binding": true,
@@ -307,11 +307,11 @@
       "price_status": "available",
       "processing_lines": "BC-PAP-179-1",
       "product": "kraft_softwood",
-      "product_revenue_cad": 432866183.4761464,
-      "received_m3": 2816342.643739537,
-      "received_odt": 1267354.1896827917,
-      "unused_capacity_odt": 0.0103172082453966,
-      "utilization": 0.9999999918592544
+      "product_revenue_cad": 432866183.5469008,
+      "received_m3": 2816342.644199884,
+      "received_odt": 1267354.189889948,
+      "unused_capacity_odt": 0.0101100520696491,
+      "utilization": 0.99999999202271
     },
     {
       "capacity_binding": false,
@@ -341,11 +341,11 @@
       "price_status": "available",
       "processing_lines": "BC-PAP-589-1;BC-PAP-589-3",
       "product": "kraft_softwood;refiner_softwood",
-      "product_revenue_cad": 282775177.7259104,
-      "received_m3": 1881699.7692994736,
-      "received_odt": 846764.8961847632,
-      "unused_capacity_odt": 355195.8038152368,
-      "utilization": 0.7044863415124665
+      "product_revenue_cad": 282775177.5170219,
+      "received_m3": 1881699.7679094456,
+      "received_odt": 846764.8955592506,
+      "unused_capacity_odt": 355195.80444074934,
+      "utilization": 0.7044863409920563
     },
     {
       "capacity_binding": true,
@@ -409,11 +409,11 @@
       "price_status": "available",
       "processing_lines": "BC-PAP-731-1",
       "product": "kraft_softwood",
-      "product_revenue_cad": 261419540.23016205,
-      "received_m3": 1791302.754684467,
-      "received_odt": 806086.2396080103,
-      "unused_capacity_odt": 154807.8603919897,
-      "utilization": 0.8388918608283787
+      "product_revenue_cad": 261419538.81326163,
+      "received_m3": 1791302.7449755615,
+      "received_odt": 806086.2352390029,
+      "unused_capacity_odt": 154807.86476099712,
+      "utilization": 0.838891856281564
     },
     {
       "capacity_binding": true,
@@ -426,11 +426,11 @@
       "price_status": "available",
       "processing_lines": "BC-PEL-1141-1",
       "product": "pellet",
-      "product_revenue_cad": 4532999.971766165,
-      "received_m3": 76533.33285664472,
-      "received_odt": 34439.99978549012,
-      "unused_capacity_odt": 0.0002145098769688,
-      "utilization": 0.9999999937714902
+      "product_revenue_cad": 4532999.998962738,
+      "received_m3": 76533.33331582062,
+      "received_odt": 34439.99999211928,
+      "unused_capacity_odt": 7.880720659159124e-06,
+      "utilization": 0.9999999997711754
     },
     {
       "capacity_binding": true,
@@ -511,11 +511,11 @@
       "price_status": "available",
       "processing_lines": "BC-PEL-1655-1",
       "product": "pellet",
-      "product_revenue_cad": 29581962.91256626,
-      "received_m3": 499449.8628373568,
-      "received_odt": 224752.4382768105,
-      "unused_capacity_odt": 40435.56172318946,
-      "utilization": 0.8475211483053929
+      "product_revenue_cad": 29581962.89972993,
+      "received_m3": 499449.86262063327,
+      "received_odt": 224752.43817928497,
+      "unused_capacity_odt": 40435.56182071503,
+      "utilization": 0.8475211479376328
     },
     {
       "capacity_binding": true,
@@ -528,11 +528,11 @@
       "price_status": "available",
       "processing_lines": "BC-PEL-1657-1",
       "product": "pellet",
-      "product_revenue_cad": 33090899.90750242,
-      "received_m3": 558693.3317716419,
-      "received_odt": 251411.99929723883,
-      "unused_capacity_odt": 0.0007027611718513,
-      "utilization": 0.999999997204743
+      "product_revenue_cad": 33090899.95216389,
+      "received_m3": 558693.3325256879,
+      "received_odt": 251411.9996365596,
+      "unused_capacity_odt": 0.0003634404274635,
+      "utilization": 0.999999998554403
     },
     {
       "capacity_binding": true,
@@ -545,11 +545,11 @@
       "price_status": "available",
       "processing_lines": "BC-PEL-1658-1",
       "product": "pellet",
-      "product_revenue_cad": 30219999.96610881,
-      "received_m3": 510222.2216500172,
-      "received_odt": 229599.99974250773,
-      "unused_capacity_odt": 0.0002574922691565,
-      "utilization": 0.999999998878518
+      "product_revenue_cad": 30219999.938912243,
+      "received_m3": 510222.2211908413,
+      "received_odt": 229599.9995358786,
+      "unused_capacity_odt": 0.0004641214036382,
+      "utilization": 0.9999999979785652
     },
     {
       "capacity_binding": true,
@@ -562,11 +562,11 @@
       "price_status": "available",
       "processing_lines": "BC-PEL-1659-1",
       "product": "pellet",
-      "product_revenue_cad": 18131999.945895195,
-      "received_m3": 306133.3324198499,
-      "received_odt": 137759.99958893243,
-      "unused_capacity_odt": 0.0004110675654374,
-      "utilization": 0.99999999701606
+      "product_revenue_cad": 18131999.926411785,
+      "received_m3": 306133.33209089976,
+      "received_odt": 137759.99944090488,
+      "unused_capacity_odt": 0.0005590951186604,
+      "utilization": 0.999999995941528
     }
   ],
   "validation": {
@@ -608,7 +608,7 @@
       },
       {
         "check_id": "objective_reconciliation",
-        "detail": "assignment components reproduce the normalised objective; raw CBC delta 3.973071 CAD",
+        "detail": "assignment components reproduce the normalised objective; raw CBC delta 4.769771 CAD",
         "passed": true
       },
       {

@@ -1,6 +1,6 @@
 # All-BC forest-sector chain at CLEWS B1/B2 zone level
 
-Generated 2026-11-18T14:38:51+00:00.
+Generated 2026-11-18T15:16:55+00:00.
 
 This is a diagnostic chain, not an operational plan.  It links the 2025 VRI/RSYC area-weighted assortment batch to the 2028 AAC, the FFCM-derived BC facility network through the 2018 NRN road graph, and the Stage B sawmill-residue allocation.  Every proxy is named in the caveats.
 
@@ -62,7 +62,7 @@ Recipient class utilization:
 | PAP | 9 | 6,775,713 | 4,565,151 | 67.4% | 5 |
 | PEL | 9 | 2,158,240 | 1,531,910 | 71.0% | 6 |
 
-Stage B net contribution 865,961,449 CAD (revenue - transport - processing).  Full objective decomposition is in `bc_stage_b_summary.json`.
+Stage B net contribution 870,128,671 CAD (revenue - transport - processing).  Full objective decomposition is in `bc_stage_b_summary.json`.
 
 ## Comparison to OSeCAN caps
 
