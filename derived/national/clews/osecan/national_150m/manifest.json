@@ -4,15 +4,15 @@
     "RSYC-only v0: no local corrections, benchmark correction factors withheld.",
     "The 150M m3 log/yr supply is converted through the fixed tile-mix factor 0.08831776452936206 ODT/m3 total and log share 0.762716956451988; no adopted AAC, THLB, or operability filter is applied.",
     "The BC zonal SUPBCWB1/B2 caps and costs are unchanged; SUPBCW carries only the rest-of-Canada balance, so the three caps sum to the national total.",
-    "The stress hydro cap fixes every PWRHYD<z> at its 2021 base-run activity; it is a sensitivity probe, not a forecast.",
+    "The stress hydro constraint is a TotalTechnologyAnnualActivityUpperLimit cap at every PWRHYD<z>'s 2021 base-run activity; it is an upper bound, not fixed dispatch, and a sensitivity probe, not a forecast.",
     "The generic-BIO sensitivity raises RNWBIO VariableCost to 4.0 $/GJ for all consumers; it is not a dedicated power-biomass supply curve."
   ],
-  "generated_utc": "2026-11-18T18:53:21+00:00",
+  "generated_utc": "2026-11-18T22:33:28+00:00",
   "inputs": [
     {
       "bytes": 290255,
       "path": "data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_summary.json",
-      "sha256": "44eb81eebf87ca8df9d74dd8b55437c32dacfa48a84bbfc507809a7ba52a6fd9"
+      "sha256": "893b3dc4cd41fee7855e3e008ae35ef676fa96d9bbd6ed61c182fcb7e612108f"
     },
     {
       "bytes": 7734,
@@ -83,9 +83,9 @@
   },
   "outputs": [
     {
-      "bytes": 35798,
+      "bytes": 37733,
       "path": "data/derived/national/clews/osecan/national_150m/run_summaries.json",
-      "sha256": "37568b03c53930640c0309233083ce25a88b921523b9eac6c33faf3b8aac441b"
+      "sha256": "71e03933bf750a40af48b1329cf7485471b3621b79cf8b3ac6a6cf2ec4d446e9"
     },
     {
       "bytes": 631,
@@ -98,9 +98,9 @@
       "sha256": "704d52c4b269cc1cf462e48b2d76a3480e8ea38e12aa442a44269d77c833f6b8"
     },
     {
-      "bytes": 7675,
+      "bytes": 8573,
       "path": "data/derived/national/clews/osecan/national_150m/NATIONAL_150M_OSECAN_REPORT.md",
-      "sha256": "0bf83ecfd13227fc569d330caaa40909f981a98a557128c4f8f5d0767370bce7"
+      "sha256": "8e7ddab3f86e42c6de4388d2d64f4deee7701b7d8b5b5c9113e09f43b999af16"
     },
     {
       "bytes": 6425,

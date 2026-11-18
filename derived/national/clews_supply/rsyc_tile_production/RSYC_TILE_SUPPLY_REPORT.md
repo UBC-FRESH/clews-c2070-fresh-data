@@ -2,7 +2,7 @@
 
 **Label: RSYC-only v0, no local corrections.** Benchmark correction factors are withheld and were not applied.
 
-Generated 2026-11-18T18:35:24+00:00 from the tile-level production library
+Generated 2026-11-18T22:33:22+00:00 from the tile-level production library
 (`data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv`), 3,948 tile x province x species cells
 covering 422.48 Mha.
 

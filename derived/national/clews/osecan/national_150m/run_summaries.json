@@ -184,10 +184,48 @@
     },
     "hydro": {
       "baseline": "normal (no cap)",
-      "stress": "every PWRHYD<z> fixed at 2021 base activity"
+      "stress": "every PWRHYD<z> capped at 2021 base activity through TotalTechnologyAnnualActivityUpperLimit (upper bound, not fixed dispatch)"
     }
   },
-  "generated_utc": "2026-11-18T18:53:02+00:00",
+  "generated_utc": "2026-11-18T22:33:28+00:00",
+  "harmonize": {
+    "all_passed": true,
+    "checks": [
+      {
+        "exit_code": 0,
+        "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+        "parameter_set": "base",
+        "parameter_set_sha256": "b692fd21f743b9f6605a7f6801d9a376b5c311bc61d6c64f9d2bee0e0d46636e",
+        "params": "/tmp/osecan_national/data/params"
+      },
+      {
+        "exit_code": 0,
+        "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+        "parameter_set": "baseline",
+        "parameter_set_sha256": "c42ef722d91444e04aa046a5d9f5141976a3d38036a638f1fc0d935c3437b3e1",
+        "params": "/tmp/osecan_national/results/baseline/params"
+      },
+      {
+        "exit_code": 0,
+        "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+        "parameter_set": "stress",
+        "parameter_set_sha256": "1bd042e3c98b7af371c5795995cb8ec7a0ae66b4cb21690b5a365aae690b11a2",
+        "params": "/tmp/osecan_national/results/stress/params"
+      },
+      {
+        "exit_code": 0,
+        "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+        "parameter_set": "baseline_bio",
+        "parameter_set_sha256": "931f941d1cf79bee8ee0f442078d132f7aeb0ab127a893e1f4a6cfd75013295b",
+        "params": "/tmp/osecan_national/results/baseline_bio/params"
+      }
+    ],
+    "note": "Recorded in the disposable model copy; the public github.com/deltae/C2070 clone was not modified.",
+    "public_repo_modified": false,
+    "sets": "/tmp/osecan_national/SETs",
+    "tool": "python -m osecan.cli harmonize",
+    "verified_utc": "2026-11-18T22:33:28+00:00"
+  },
   "model": {
     "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
     "horizon": "2021-2070",
@@ -382,12 +420,13 @@
         "total": 25.714753
       },
       "generic_bio_cost_usd_per_gj": 3.0,
-      "hydro_frozen_2021": false,
+      "hydro_capped_at_2021": false,
       "label": "Current Measures baseline",
       "lp_cols": 235800,
       "lp_rows": 274201,
       "objective_musd": 1331289.52,
       "pwr_bio_total_pj": 0,
+      "pwr_hyd_b2_2021_pj": 62.479153,
       "pwrbcw_other_zone_pj": {
         "2021": 0.0,
         "2022": 0.0,
@@ -664,12 +703,13 @@
         "total": 25.714753
       },
       "generic_bio_cost_usd_per_gj": 4.0,
-      "hydro_frozen_2021": false,
+      "hydro_capped_at_2021": false,
       "label": "baseline + generic-BIO cost",
       "lp_cols": 235800,
       "lp_rows": 274201,
       "objective_musd": 1344942.45,
       "pwr_bio_total_pj": 0,
+      "pwr_hyd_b2_2021_pj": 62.479153,
       "pwrbcw_other_zone_pj": {
         "2021": 0.0,
         "2022": 0.0,
@@ -900,7 +940,7 @@
         }
       },
       "carbon_price_from_2026_usd_per_t": 200.0,
-      "description": "The baseline national cap/cost with CO2 at 200 $/t from 2026 and every PWRHYD<z> fixed at its 2021 base-run activity.",
+      "description": "The baseline national cap/cost with CO2 at 200 $/t from 2026 and every PWRHYD<z> capped at its 2021 base-run activity through TotalTechnologyAnnualActivityUpperLimit (an upper bound, not fixed dispatch).",
       "emissions_mt": {
         "2021": 0.023274,
         "2022": 1.487827,
@@ -948,12 +988,13 @@
         "total": 38.544682
       },
       "generic_bio_cost_usd_per_gj": 3.0,
-      "hydro_frozen_2021": true,
-      "label": "carbon $200/t + hydro frozen",
+      "hydro_capped_at_2021": true,
+      "label": "carbon $200/t + hydro capped at 2021 activity",
       "lp_cols": 235800,
       "lp_rows": 274851,
       "objective_musd": 1370983.13,
       "pwr_bio_total_pj": 0,
+      "pwr_hyd_b2_2021_pj": 62.410055,
       "pwrbcw_other_zone_pj": {
         "2021": 0.0,
         "2022": 15.102923,

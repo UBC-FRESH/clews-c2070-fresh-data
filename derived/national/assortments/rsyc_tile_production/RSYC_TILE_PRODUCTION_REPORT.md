@@ -1,7 +1,7 @@
 # Tile-level RSYC production curve library
 
 **Status:** generated artefact; diagnostic, not wired into the national batch.
-**Generated:** 2026-11-18T18:35:23.414245+00:00. **Commit:** none.
+**Generated:** 2026-11-18T22:33:02.000330+00:00. **Commit:** none.
 
 ## 1. Method
 
@@ -47,8 +47,8 @@
 | Province polygons | 13 |
 | Tile x ecodistrict x province rows | 2,642 |
 | District x province pairs | 831 |
-| Province share of tile x ecodistrict area | 93.6753% |
-| Tile x ecodistrict area outside province polygons (ha) | 43,667,304.3738 |
+| Province share of tile x ecodistrict area | 93.5681% |
+| Tile x ecodistrict area outside province polygons (ha) | 44,458,531.4646 |
 | Province boundary-only contacts skipped | 0 |
 
 The intersection is the forested-ecozone portion of the tile grid:
@@ -59,9 +59,9 @@ intersection, and tile and ecodistrict areas each equal the intersection plus
 their outside part (see §5).
 
 Province polygons cover
-93.6753% of the tile x
+93.5681% of the tile x
 ecodistrict area. The remaining
-43,667,304.3738 ha is coastal, offshore, or
+44,458,531.4646 ha is coastal, offshore, or
 simplified-boundary area outside the province polygons; it is retained as a
 reported geometric gap and never assigned to a province. Province attribution
 does not rely on this gap: SCANFI forest blocks are allocated only through
@@ -159,9 +159,9 @@ capping would break the SCANFI total reconciliation.
 
 | allocation_basis | cells | area_ha | area_share_pct |
 |---|---|---|---|
-| district_fallback_no_province_intersection | 169 | 99,475.2300 | 0.0235 |
+| district_fallback_no_province_intersection | 175 | 99,475.2328 | 0.0235 |
 | mixed_province_intersection_and_district_fallback | 85 | 2,757,637.2462 | 0.6527 |
-| province_intersection | 3,694 | 419,618,649.0462 | 99.3237 |
+| province_intersection | 3,688 | 419,618,649.0435 | 99.3237 |
 
 ### Nearest-fill area with no valid geographic intersection
 
@@ -327,7 +327,7 @@ Validation summary: **PASS**.
 | province_district_fractions_sum_to_one | PASS | {'max_abs_deviation': 2.220446049250313e-16} |
 | province_tile_fractions_do_not_exceed_one | PASS | {'max_tile_fraction_sum': 1.000000000000002} |
 | province_intersections_are_polygonal_and_positive | PASS | {'min_intersection_area_ha': 0.9773301779606569} |
-| province_cover_share_recorded | PASS | {'province_cover_share_of_intersection': 0.9367534352652593, 'note': 'coastal and offshore tile/ecodistrict area is outside simplified province polygons'} |
+| province_cover_share_recorded | PASS | {'province_cover_share_of_intersection': 0.9356811518519571, 'note': 'coastal and offshore tile/ecodistrict area is outside simplified province polygons'} |
 | every_positive_tile_species_cell_has_a_curve | PASS | {'cells': 3948, 'missing': 0} |
 | library_area_equals_tile_species_area | PASS | {'library_area_ha': 422475761.5224368, 'tile_species_area_ha': 422475761.5224368, 'abs_difference_ha': 0.0} |
 | library_area_reconciles_to_scanfi | PASS | {'library_area_ha': 422475761.5224368, 'scanfi_area_ha': 422475761.52243674, 'abs_difference_ha': 5.960464477539063e-08} |

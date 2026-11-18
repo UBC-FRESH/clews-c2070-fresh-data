@@ -30,17 +30,18 @@ The BC zonal total is the 2028+ sum of the unchanged `SUPBCWB1` (3.605475 PJ) an
 | `SUPBCW_variable_cost_{base,low,high}.csv` | 2.456978, 3.194071, 1.965582 $/GJ |
 | `supply_basis.json` | full conversion and cap-split record |
 
-`osecan harmonize` returned exit 0 for the base parameters and for all three scenario parameter sets: **HARMONIZED — all params reference valid SET codes.**  `PWRBCWB1`/`PWRBCWB2` consume `BCWB1`/`BCWB2`; the other eleven `PWRBCW<z>` plants consume the national `BCW` pool.
+`osecan harmonize` evidence recorded: base exit 0 (SHA-256 b692fd21f743…), baseline exit 0 (SHA-256 c42ef722d914…), stress exit 0 (SHA-256 1bd042e3c98b…), baseline_bio exit 0 (SHA-256 931f941d1cf7…).  **HARMONIZED — all params reference valid SET codes.**  `PWRBCWB1`/`PWRBCWB2` consume `BCWB1`/`BCWB2`; the other eleven `PWRBCW<z>` plants consume the national `BCW` pool.
 
 ## Baseline (objective, dispatch, binding, emissions)
 
 `Current Measures`, 2021-2070, CO2 95 $/t to 2025 and 115 $/t thereafter, normal hydro, national base cap 149.273 PJ (2028+).
 
-| Metric | Baseline | Stress $200/hydro-frozen | Δ stress |
+| Metric | Baseline | Stress $200/hydro-capped | Δ stress |
 |---|---:|---:|---:|
 | Solver status | optimal | optimal | — |
 | Objective (M$) | 1,331,289.52 | 1,370,983.13 | 39,693.61 |
 | Emissions total (Mt) | 25.715 | 38.545 | 12.830 |
+| `PWRHYDB2` 2021 dispatch (PJ) | 62.479153 | 62.410055 | -0.069098 |
 
 ### SUP activity by year (PJ)
 
@@ -102,11 +103,11 @@ The BC zonal total is the 2028+ sum of the unchanged `SUPBCWB1` (3.605475 PJ) an
 | stress | 0.023 | 0.241 | 1.465 | 1.488 | 0.000 | 38.545 |
 | baseline_bio | 0.017 | 0.000 | 1.031 | 1.031 | 0.000 | 25.715 |
 
-## Stress $200/hydro-frozen
+## Stress $200/hydro-capped
 
-The stress run raises the 2026+ carbon price from 115 to 200 $/t and fixes every `PWRHYD<z>` at its 2021 base activity.  It keeps the same national/zonal caps and costs as the baseline.
+The stress run raises the 2026+ carbon price from 115 to 200 $/t.  Its only hydro constraint is a `TotalTechnologyAnnualActivityUpperLimit` at each `PWRHYD<z>`'s 2021 base activity; it is a **cap at the 2021 activity, not fixed dispatch**.  `PWRHYDB2` dispatches 62.410055 PJ in 2021 in the stress run versus 62.479153 PJ in the baseline.  A true fixed-dispatch hydro run is deferred.  The run keeps the same national/zonal caps and costs as the baseline.
 
-Objective 1,370,983.13 M$ vs baseline 1,331,289.52 M$ (39,693.61 M$); cumulative CO2 38.545 Mt vs 25.715 Mt.  In the stress run `SUPBCW` binds in 2028-2070 (43 years), `SUPBCWB1` in 2026-2070 and `SUPBCWB2` in 2032-2070.
+Objective 1,370,983.13 M$ vs baseline 1,331,289.52 M$ (39,693.61 M$); cumulative CO2 38.544682 Mt vs 25.714753 Mt (12.829929 Mt vs baseline).  The −23.114 Mt figure is relative to the BC-only stress run (61.659 Mt), not the national baseline.  In the stress run `SUPBCW` binds in 2028-2070 (43 years), `SUPBCWB1` in 2026-2070 and `SUPBCWB2` in 2032-2070.
 
 ### Comparison to the 50 PJ placeholder and the BC zonal 43.5238 PJ run
 
@@ -114,10 +115,10 @@ Objective 1,370,983.13 M$ vs baseline 1,331,289.52 M$ (39,693.61 M$); cumulative
 |---|---|---:|---:|---:|
 | 50 PJ placeholder | baseline (95/115 $/t, normal hydro) | 1,331,287.25 | 25.750 | 0.000 |
 | National 150M baseline | baseline (95/115 $/t, normal hydro) | 1,331,289.52 | 25.715 | 0.000 |
-| BC zonal 43.5238 PJ | stress (200 $/t, hydro frozen) | 1,371,599.09 | 61.659 | 1,872.589 |
-| National 150M stress | stress (200 $/t, hydro frozen) | 1,370,983.13 | 38.545 | 8,819.496 |
+| BC zonal 43.5238 PJ | stress (200 $/t, hydro capped at 2021 activity) | 1,371,599.09 | 61.659 | 1,872.589 |
+| National 150M stress | stress (200 $/t, hydro capped at 2021 activity) | 1,370,983.13 | 38.545 | 8,819.496 |
 
-At the baseline carbon schedule gas outcompetes biomass, so all three biomass supply technologies are zero and the national cap is slack; the 150M cap changes the objective only by the small `SUPBCW` cost difference relative to the 50 PJ placeholder.  Under the stress forcing the national cap binds and supplies about 8.8 EJ over 2021-2070, versus 1.87 EJ in the BC-only zonal run, lowering cumulative CO2 from 61.659 to 38.545 Mt.
+At the baseline carbon schedule gas outcompetes biomass, so all three national biomass supply technologies are zero and the national cap is slack.  The 50 PJ placeholder and the national 150M baseline differ by 2.27 M$ (1,331,289.52 vs 1,331,287.25 M$); this delta is an **unexplained controlled comparison** and is not attributed to `SUPBCW`, whose baseline activity and variable-cost contribution are both zero.  Under the stress forcing the national cap binds and supplies about 8.8 EJ over 2021-2070, versus 1.87 EJ in the BC-only zonal run.  Relative to that BC-only stress run, emissions fall from 61.659 to 38.545 Mt; relative to the national baseline they rise by 12.829929 Mt (25.714753 to 38.544682 Mt).
 
 ## Generic-BIO sensitivity
 
