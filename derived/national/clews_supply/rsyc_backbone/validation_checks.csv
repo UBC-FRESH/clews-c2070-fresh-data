@@ -1,0 +1,15 @@
+check,status,value,note
+residue_odt_equals_volume_times_density,PASS,max cell relative error < 1e-9,checked per residue row and per cell
+log_plus_residue_equals_total,PASS,max cell relative error < 1e-9,checked for every emitted cell
+no_nan_or_negative,PASS,265 cells checked,all matrix numeric fields finite and non-negative
+stand_area_and_density_crosscheck,PASS,max area rel 0.000e+00; max density rel 0.000e+00,national_stands.csv matches matrix cells
+batch_summary_area_reconciliation,PASS,summary emitted 419793451.316; mapped 422475761.522,national_assortment_summary.json area reconciliation matches this builder
+province_sums_equal_national_log,PASS,42159162914.456 vs 42159162914.456,species-resolved SCANFI area-share allocation
+province_sums_equal_national_residue_odt,PASS,4925060250.174 vs 4925060250.174,same allocation
+province_sums_equal_national_area,PASS,419793451.316 vs 419793451.316,same allocation
+ecoprovince_sums_equal_national,PASS,log 42159162914.456; ODT 4925060250.174; area 419793451.316,direct ecoprovince rollup
+species_province_allocation_area_match,PASS,max rel 2.143e-15,each cell area equals the sum of its species x province weights
+area_coverage_vs_mapped_forest,INFO,emitted 419.793451 Mha / mapped 422.475761 Mha = 0.993650974,gap 2.682310 Mha = 0.006349 fraction
+area_base_crosscheck,INFO,ecodistrict sum 422475761.070 ha; area-join mapped 422475761.522 ha,"difference -0.452 ha; negligible aggregation rounding, not a missing cell"
+failed_cell_documented,INFO,ecoprovince:Taiga Plains/Great Bear Lowlands|PINU.BAN at 1.987823 Mha,status=failed; excluded from emitted area and totals
+zero_log_cell,INFO,1 cell(s): ecoprovince:Boreal Shield East/Newfoundland|PINU.BAN,ratio undefined at cell level; national and ecoprovince aggregates have positive log

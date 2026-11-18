@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-11-18T18:35:23.785791+00:00",
+  "committed": false,
+  "command": "python -m workflows.national.assortments.rsyc_tile_production",
+  "parameters": {
+    "response": "volume",
+    "model_scale": "national",
+    "publish_ok": true,
+    "fit_ok": true,
+    "converged": true,
+    "age_grid": [
+      50.0,
+      100.0,
+      150.0
+    ],
+    "operational_age_range": [
+      1,
+      150
+    ],
+    "overlay": "exact_polygon_intersection_epsg3978",
+    "province_overlay": "tile_x_ecodistrict_x_province_intersection",
+    "area_allocation": "province_fraction_normalised_within_district_province_and_tile_footprint_with_reported_district_fallback",
+    "curve_ladder": [
+      "tile exact species",
+      "tile group",
+      "tile generic",
+      "dominant ecoregion/ecoprovince control fallback"
+    ]
+  },
+  "inputs": [
+    {
+      "path": "data/raw/national/rsyc/RSYC_tiles.gpkg",
+      "sha256": "f61e0ec06b29146264ff676c98fcfa1e431d6ddd5f1d97d17e957d4d9e77308b",
+      "bytes": 278528
+    },
+    {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4",
+      "bytes": 15421440
+    },
+    {
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940",
+      "bytes": 1468706
+    },
+    {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449",
+      "bytes": 26022306
+    },
+    {
+      "path": "data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv",
+      "sha256": "1fa20bc69469519e603348e96480b3e8f180794da41afacd3973ef4ebd28b09c",
+      "bytes": 1579339
+    },
+    {
+      "path": "planning/national-rsyc-backbone.md",
+      "sha256": "2bd0bed7eef952badd3eae2975e6e386d88bc5af3869c60a7d2de83d6e91862d",
+      "bytes": 34722
+    }
+  ],
+  "outputs": [
+    {
+      "name": "rsyc_tile_production_library.csv",
+      "path": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
+      "sha256": "4c1046cdd7a547eb900e9c485f6da09a98d3727649a9cdc34d8d76368164c502",
+      "bytes": 1413229,
+      "rows": 3948
+    },
+    {
+      "name": "tile_ecodistrict_weights.csv",
+      "path": "data/derived/national/assortments/rsyc_tile_production/tile_ecodistrict_weights.csv",
+      "sha256": "8f97eed09d3e3d188ad3640dbd49effbedc3e8a949c9841dde541aee9bbd6865",
+      "bytes": 1003631,
+      "rows": 2370
+    },
+    {
+      "name": "tile_ecodistrict_province_weights.csv",
+      "path": "data/derived/national/assortments/rsyc_tile_production/tile_ecodistrict_province_weights.csv",
+      "sha256": "a702d077f9c09fd474a94a3d7e1072bca08e15fc47f8e598ce814152e5d788ed",
+      "bytes": 315766,
+      "rows": 2642
+    },
+    {
+      "name": "rsyc_tile_production_summary.json",
+      "path": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_summary.json",
+      "sha256": "ef1740246a90669fa0e4f8b17f587f7d016cdcfd3bdce2fe325b4d92264f5de5",
+      "bytes": 110869
+    },
+    {
+      "name": "RSYC_TILE_PRODUCTION_REPORT.md",
+      "path": "data/derived/national/assortments/rsyc_tile_production/RSYC_TILE_PRODUCTION_REPORT.md",
+      "sha256": "7ee4b0819c92e6b136865b8207d779df0aedf1486ded28aa707034e0983f073d",
+      "bytes": 29125
+    }
+  ],
+  "validation_passed": true
+}

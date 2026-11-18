@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-11-18T17:36:32.899209+00:00",
+  "committed": false,
+  "command": "python -m workflows.national.assortments.rsyc_backbone",
+  "parameters": {
+    "responses": [
+      "volume"
+    ],
+    "response_units": [
+      "m3/ha"
+    ],
+    "model_scale": "national",
+    "publish_ok": true,
+    "fit_ok": true,
+    "converged": true,
+    "age_grid": [
+      50,
+      100,
+      150
+    ],
+    "operational_age_range": [
+      1,
+      150
+    ],
+    "target_levels": [
+      "ecodistrict",
+      "ecoprovince (residual only)"
+    ],
+    "ladder": [
+      "ecodistrict",
+      "ecoregion",
+      "ecoprovince",
+      "ecozone",
+      "tile"
+    ],
+    "selected_model_strata": {
+      "ecodistrict": 672,
+      "ecoregion": 138,
+      "ecoprovince": 36,
+      "ecozone": 12
+    }
+  },
+  "inputs": [
+    {
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940",
+      "bytes": 1468706
+    },
+    {
+      "path": "data/raw/national/rsyc/RSYC_tiles.gpkg",
+      "sha256": "f61e0ec06b29146264ff676c98fcfa1e431d6ddd5f1d97d17e957d4d9e77308b",
+      "bytes": 278528
+    },
+    {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4",
+      "bytes": 15421440
+    },
+    {
+      "path": "data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv",
+      "sha256": "1fa20bc69469519e603348e96480b3e8f180794da41afacd3973ef4ebd28b09c",
+      "bytes": 1579339
+    },
+    {
+      "path": "data/derived/national/assortments/national_area_weights/national_area_weights.csv",
+      "sha256": "9a68c6a641f30d0560bc8e8b6bcb53becc7fe4c69b8751a2670c2f0a6cd2affa",
+      "bytes": 68775
+    },
+    {
+      "path": "data/derived/national/assortments/national_area_weights/national_area_weights_province.csv",
+      "sha256": "4341b1633f55528f6f62ef94b1842ff4c219b8aeccf8babc9b53e39f0089fc0c",
+      "bytes": 24458
+    },
+    {
+      "path": "data/derived/national/assortments/national_fit/national_distribution_parameters.csv",
+      "sha256": "82996707356b4226c79debdf216ee8b22120c3f764972705e5fd1a4604288723",
+      "bytes": 6129722
+    },
+    {
+      "path": "data/derived/national/assortments/national_batch/national_stands.csv",
+      "sha256": "dc3b49ee5018f062c1d9ec66cb062aef7e80c51d2b86191de05fd9dca32f80eb",
+      "bytes": 1332067
+    },
+    {
+      "path": "planning/national-rsyc-backbone.md",
+      "sha256": "ae42c60fe049e1b13b43fe76cc667fec714026d0ebf7fc0b16b3b6a2b887ec66",
+      "bytes": 30798
+    }
+  ],
+  "outputs": [
+    {
+      "name": "rsyc_curve_library.csv",
+      "path": "data/derived/national/assortments/rsyc_backbone/rsyc_curve_library.csv",
+      "sha256": "dbd20841bde8bc0d92e4f46788329f722fab7e25d414d96b9508de727ad3ea29",
+      "bytes": 4555537,
+      "rows": 5800
+    },
+    {
+      "name": "rsyc_curve_library_tile_first.csv",
+      "path": "data/derived/national/assortments/rsyc_backbone/rsyc_curve_library_tile_first.csv",
+      "sha256": "5eca091199366a5e6882bf7e52954411c3440dfe4fa98561ff442142def45ff3",
+      "bytes": 3763616,
+      "rows": 5800
+    },
+    {
+      "name": "rsyc_coverage_summary.json",
+      "path": "data/derived/national/assortments/rsyc_backbone/rsyc_coverage_summary.json",
+      "sha256": "398facea62378d273acc4f7a320302d535a4725f2db46b0bea4bf58e3621df2f",
+      "bytes": 27796,
+      "rows": 0
+    },
+    {
+      "name": "RSYC_BACKBONE_LIBRARY_REPORT.md",
+      "path": "data/derived/national/assortments/rsyc_backbone/RSYC_BACKBONE_LIBRARY_REPORT.md",
+      "sha256": "d89c1e17f87e0bc63e6fb8e7897a64ed4db9bc97b86b20fa74fd31a48326f34d",
+      "bytes": 8229,
+      "rows": 0
+    }
+  ],
+  "validation_passed": true
+}

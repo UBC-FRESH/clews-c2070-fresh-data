@@ -1,0 +1,633 @@
+{
+  "generated_utc": "2026-11-18T18:15:48+00:00",
+  "status": "exploratory_volume_only",
+  "claim": "Volume-only benchmark. AGB, height, taper, and grade were not validated; no AGB backbone claim is made.",
+  "rsyc_curves_available": {
+    "national_ecoprovince_volume_curves": 346,
+    "national_ecozone_fallback_curves": 143,
+    "species_curves": 242,
+    "coniferous_group_curves": 36,
+    "broadleaf_group_curves": 32,
+    "generic_group_curves": 36,
+    "ecoprovinces": 36,
+    "operational_age_range": [
+      1,
+      150
+    ],
+    "attributes": [
+      "total volume (m3/ha)",
+      "above-ground biomass (not used here)"
+    ]
+  },
+  "bc": {
+    "visits_input": 19542,
+    "visits_with_composition": 19542,
+    "matched_visits": 19536,
+    "unmatched_visits": 6,
+    "skip_counts": {
+      "no_composition": 0,
+      "no_code_mapped_leader": 1,
+      "no_geography": 0,
+      "no_curve": 5
+    },
+    "median_code_mapped_ba_share": 1.0,
+    "median_curve_resolved_ba_share": 1.0,
+    "visits_with_curve_unresolved_ba": 0,
+    "visits_with_code_unmapped_ba": 6727,
+    "ba_totals_m2ha": {
+      "total": 935457.8055768771,
+      "code_mapped": 914494.202306615,
+      "curve_resolved": 914494.202306615,
+      "species_resolved": 914494.202306615,
+      "group_resolved": 0.0,
+      "code_unmapped": 20963.603270262,
+      "curve_unresolved": 0.0
+    },
+    "ecoprovince_mapping_sources": {
+      "tsa_dominant_vri": 17992,
+      "bec_zone_fallback": 1544
+    },
+    "bec_fallback_zone_counts": {
+      "CWH": 1544,
+      "ICH": 3,
+      "IDF": 2
+    },
+    "bec_fallback_reason_counts": {
+      "tsa_not_in_vri_area_table": 1549
+    },
+    "age_bins": [
+      "40-60",
+      "80-100",
+      "120-140"
+    ],
+    "age_range_used": [
+      20,
+      150
+    ]
+  },
+  "qc": {
+    "units": [
+      2651,
+      3151,
+      3152,
+      3451,
+      3551
+    ],
+    "unit_ecoprovince": {
+      "3451": "Atlantic Maritime/Appalachian-Acadian Highlands",
+      "2651": "Boreal Shield East/Southern Boreal Shield",
+      "3152": "Atlantic Maritime/Appalachian-Acadian Highlands",
+      "3551": "Atlantic Maritime/Appalachian-Acadian Highlands",
+      "3151": "Atlantic Maritime/Appalachian-Acadian Highlands"
+    },
+    "curves_at_target_ages": 693,
+    "productive_curves": 231,
+    "ages": [
+      50,
+      100,
+      150
+    ],
+    "total_positive_rows": 690,
+    "zero_total_rows": 3,
+    "invalid_mix_rows": 0,
+    "excluded_total_rows": 3,
+    "zero_total_by_age": {
+      "50": 1,
+      "100": 1,
+      "150": 1
+    },
+    "invalid_mix_by_age": {},
+    "zero_total_tables": 1,
+    "mix_rule": "A total-volume prediction is emitted only when components are finite, non-negative, sum to total, and total > 0. Zero-total rows are a separate stratum; invalid/mismatched rows are excluded. No fabricated mix is used.",
+    "flat_curve_share_by_age": {
+      "50": 0.6666666666666666,
+      "100": 1.0,
+      "150": 1.0
+    },
+    "bfec_caveat": "BFEC curves are AAC/wood-supply model outputs with treatment themes, not unmanaged observations; productive tables are kept, but many flatten at rotation, so absolute levels are policy and management assumptions, not independent ground truth. RSYC has no height-age model, so BFEC height is reported for context only."
+  },
+  "mgm": {
+    "provinces": [
+      "AB",
+      "BC",
+      "MB",
+      "SK"
+    ],
+    "species": [
+      "PICE.GLA",
+      "PICE.MAR",
+      "PINU.BAN",
+      "POPU.TRE"
+    ],
+    "rows": 63,
+    "equation": "V(age) = c_a*age**c_b*exp(-c_c*age) + d_a*age**d_b*exp(-d_c*age)",
+    "equation_note": "Verified against UBC-FRESH/spades_ws3 commit 1847872 python/spadesws3.py bootstrap_yields.f: V = a*pow(x,b)*exp(-c*x), x in years from age 0, c and d components summed for total volume. Absolute levels are conditional on the pinned coefficients; MGM still has no spatial/FMU join key.",
+    "equation_verification": {
+      "status": "verified",
+      "repository": "https://github.com/UBC-FRESH/spades_ws3",
+      "commit": "1847872",
+      "commit_sha": "184787233aaa761f7b3eda54155d9dbbe50bf779",
+      "file": "python/spadesws3.py",
+      "file_sha256": "2b591065c25869a48d4a396edfb2502e78013ae44228abcb6847a2ecd3eea590",
+      "function": "bootstrap_yields.f",
+      "expression": "a * pow(x,b) * math.exp(-c*x)",
+      "age_origin": 0,
+      "age_units": "years",
+      "native_max_age": 350,
+      "period_length": 10,
+      "total_volume": "cvol + dvol via _SUM"
+    },
+    "cohort_rule": "Fixed yield group evaluated at each requested age inside its stored 31-year window; starting age is retained as a covariate, not required to equal the evaluation age.",
+    "mai_rule": "MAI endpoint maximum over native 0-350-year support; maxima at 350 are right-censored. RSYC comparison is truncated at 150.",
+    "vph": "VPH is empty in the pinned CSVs and was not used."
+  },
+  "holdout": {
+    "status": "evaluated_but_not_sufficient_to_release_factors",
+    "protocol_reference": "planning/national-rsyc-backbone.md section 5.2",
+    "bc": {
+      "evaluable": true,
+      "protocol": "leave_one_unit_out_level_multiplier",
+      "unit_column": "tsa",
+      "stratum_columns": [
+        "ecoprovince_stratum",
+        "leading_species"
+      ],
+      "min_train_rows": 20,
+      "n_units_evaluable": 38,
+      "n_holdout_rows": 18482,
+      "observed_sum": 8139950.471389289,
+      "bias_before": -0.309216923513485,
+      "bias_after": -0.017677574394537526,
+      "median_unit_abs_bias_before": 0.3376781752684479,
+      "median_unit_abs_bias_after": 0.1586425955871692,
+      "share_units_improved": 0.7105263157894737,
+      "share_units_materially_improved": 0.631578947368421,
+      "folds": [
+        {
+          "unit": "100 Mile House",
+          "n_rows": 386,
+          "observed_sum": 46665.78644559596,
+          "bias_before": 1.0236825207466569,
+          "bias_after": 0.7370592387421031,
+          "rmse_before": 179.91981549029907,
+          "rmse_after": 144.91463827155215
+        },
+        {
+          "unit": "Arrow",
+          "n_rows": 1079,
+          "observed_sum": 361517.4396483462,
+          "bias_before": -0.02320897134740713,
+          "bias_after": -0.12061416245812198,
+          "rmse_before": 191.1955737031998,
+          "rmse_after": 175.53941450884386
+        },
+        {
+          "unit": "Arrowsmith",
+          "n_rows": 1352,
+          "observed_sum": 758566.6040243595,
+          "bias_before": -0.433626098872054,
+          "bias_after": 0.10729227910963192,
+          "rmse_before": 426.60930828863263,
+          "rmse_after": 338.27841654075905
+        },
+        {
+          "unit": "Boundary",
+          "n_rows": 593,
+          "observed_sum": 103860.56039952525,
+          "bias_before": 0.8307901416938067,
+          "bias_after": 0.578933401005635,
+          "rmse_before": 188.33228622676853,
+          "rmse_after": 141.23749899553968
+        },
+        {
+          "unit": "Bulkley",
+          "n_rows": 32,
+          "observed_sum": 9731.627840283687,
+          "bias_before": -0.22265729739476847,
+          "bias_after": -0.31186834327002344,
+          "rmse_before": 169.0042823622997,
+          "rmse_after": 171.1298219749144
+        },
+        {
+          "unit": "Cascadia",
+          "n_rows": 524,
+          "observed_sum": 181334.6877150039,
+          "bias_before": -0.12646570796394202,
+          "bias_after": -0.08398368987012396,
+          "rmse_before": 183.82029044041067,
+          "rmse_after": 143.90317695897696
+        },
+        {
+          "unit": "Cranbrook",
+          "n_rows": 511,
+          "observed_sum": 97854.25472702224,
+          "bias_before": 0.7235038046180507,
+          "bias_after": 0.3817798125529935,
+          "rmse_before": 197.68363001322146,
+          "rmse_after": 130.25742820184107
+        },
+        {
+          "unit": "Dawson Creek",
+          "n_rows": 411,
+          "observed_sum": 87995.76031144179,
+          "bias_before": -0.1433431269203873,
+          "bias_after": -0.03700651508414317,
+          "rmse_before": 124.50823883673775,
+          "rmse_after": 114.05293831543263
+        },
+        {
+          "unit": "Fraser",
+          "n_rows": 1044,
+          "observed_sum": 605766.1706375596,
+          "bias_before": -0.4339754253010165,
+          "bias_after": 0.13104632051496212,
+          "rmse_before": 425.3827382492229,
+          "rmse_after": 353.2159321291212
+        },
+        {
+          "unit": "GBR North",
+          "n_rows": 302,
+          "observed_sum": 192377.09398386398,
+          "bias_before": -0.42449625508895783,
+          "bias_after": 0.15759527699664305,
+          "rmse_before": 376.36659944279086,
+          "rmse_after": 280.5511640901015
+        },
+        {
+          "unit": "GBR South",
+          "n_rows": 227,
+          "observed_sum": 159065.84724168526,
+          "bias_before": -0.5012722572434819,
+          "bias_after": -0.03466710698859603,
+          "rmse_before": 537.9554975690146,
+          "rmse_after": 365.8734571881847
+        },
+        {
+          "unit": "Golden",
+          "n_rows": 53,
+          "observed_sum": 12294.227216921354,
+          "bias_before": 0.1300554176769059,
+          "bias_after": 0.2725668171405106,
+          "rmse_before": 194.05413795861287,
+          "rmse_after": 184.33273502539654
+        },
+        {
+          "unit": "Haida Gwaii",
+          "n_rows": 1412,
+          "observed_sum": 1264059.7474305932,
+          "bias_before": -0.5620690135441107,
+          "bias_after": -0.08562796540774328,
+          "rmse_before": 670.8359347825395,
+          "rmse_after": 413.9015493652962
+        },
+        {
+          "unit": "Invermere",
+          "n_rows": 255,
+          "observed_sum": 60311.751326322235,
+          "bias_before": 0.3310962889232993,
+          "bias_after": 0.1684347993140545,
+          "rmse_before": 149.30653441736862,
+          "rmse_after": 123.09388308596344
+        },
+        {
+          "unit": "Kalum",
+          "n_rows": 78,
+          "observed_sum": 47256.14484381601,
+          "bias_before": -0.4170332994160469,
+          "bias_after": 0.05964320584993741,
+          "rmse_before": 450.23586651403286,
+          "rmse_after": 399.6708959600316
+        },
+        {
+          "unit": "Kamloops",
+          "n_rows": 954,
+          "observed_sum": 207733.22209898895,
+          "bias_before": 0.3548442849411995,
+          "bias_after": 0.3031461703789741,
+          "rmse_before": 168.53682881199416,
+          "rmse_after": 154.78524321596078
+        },
+        {
+          "unit": "Kingcome",
+          "n_rows": 6,
+          "observed_sum": 4057.0166918082296,
+          "bias_before": -0.5424860744618643,
+          "bias_after": -0.18313788168194803,
+          "rmse_before": 523.5914945807932,
+          "rmse_after": 262.8565684807182
+        },
+        {
+          "unit": "Kispiox",
+          "n_rows": 244,
+          "observed_sum": 69612.54109601292,
+          "bias_before": 0.05010983929469281,
+          "bias_after": 0.8159870171636083,
+          "rmse_before": 151.221902482882,
+          "rmse_after": 358.36757684486054
+        },
+        {
+          "unit": "Kootenay Lake",
+          "n_rows": 315,
+          "observed_sum": 93821.19681806379,
+          "bias_before": 0.12824766913488142,
+          "bias_after": -0.10271394835160207,
+          "rmse_before": 211.24076083638488,
+          "rmse_after": 170.03255931088125
+        },
+        {
+          "unit": "Lakes",
+          "n_rows": 61,
+          "observed_sum": 13660.791383459511,
+          "bias_before": -0.14873564756581864,
+          "bias_after": -0.0382433558626422,
+          "rmse_before": 151.02532787844737,
+          "rmse_after": 147.99637743517036
+        },
+        {
+          "unit": "Lillooet",
+          "n_rows": 14,
+          "observed_sum": 6310.391375072159,
+          "bias_before": -0.3442600616135965,
+          "bias_after": -0.25806223578770693,
+          "rmse_before": 302.8565497602691,
+          "rmse_after": 284.289697293558
+        },
+        {
+          "unit": "MacKenzie",
+          "n_rows": 854,
+          "observed_sum": 168900.01857081498,
+          "bias_before": -0.06296440232490459,
+          "bias_after": 0.15968991417769532,
+          "rmse_before": 112.95427789995499,
+          "rmse_after": 116.82580194281165
+        },
+        {
+          "unit": "Merritt",
+          "n_rows": 496,
+          "observed_sum": 94413.51288994346,
+          "bias_before": 0.5132921204136378,
+          "bias_after": 0.3986994008712401,
+          "rmse_before": 163.2062928063194,
+          "rmse_after": 145.63211119520344
+        },
+        {
+          "unit": "Mid Coast",
+          "n_rows": 3,
+          "observed_sum": 2308.082222656268,
+          "bias_before": -0.38719311812636964,
+          "bias_after": 0.45338298817580475,
+          "rmse_before": 305.58592758687536,
+          "rmse_after": 355.7512892772458
+        },
+        {
+          "unit": "Morice",
+          "n_rows": 259,
+          "observed_sum": 73094.14240410695,
+          "bias_before": -0.3138189280642798,
+          "bias_after": -0.31494533206736813,
+          "rmse_before": 150.5938802947871,
+          "rmse_after": 144.550952545844
+        },
+        {
+          "unit": "Nass",
+          "n_rows": 3,
+          "observed_sum": 1008.4699243633894,
+          "bias_before": 0.22492062833307086,
+          "bias_after": 1.3327867881684914,
+          "rmse_before": 107.5486068143171,
+          "rmse_after": 453.66912335245127
+        },
+        {
+          "unit": "North Island",
+          "n_rows": 1928,
+          "observed_sum": 1420320.9364665467,
+          "bias_before": -0.5227113983629135,
+          "bias_after": -0.13299589536424689,
+          "rmse_before": 561.7164000597375,
+          "rmse_after": 398.92586101487683
+        },
+        {
+          "unit": "Okanagan",
+          "n_rows": 1511,
+          "observed_sum": 537711.2970152991,
+          "bias_before": -0.14911765328344945,
+          "bias_after": -0.3932899683236774,
+          "rmse_before": 192.88868435433596,
+          "rmse_after": 213.52564656504762
+        },
+        {
+          "unit": "Pacific",
+          "n_rows": 656,
+          "observed_sum": 499397.93010135094,
+          "bias_before": -0.5001383633053031,
+          "bias_after": -0.04642650882933535,
+          "rmse_before": 503.09680729451526,
+          "rmse_after": 314.0790973998576
+        },
+        {
+          "unit": "Prince George",
+          "n_rows": 795,
+          "observed_sum": 195570.21381900465,
+          "bias_before": -0.09214140432115414,
+          "bias_after": -0.039062429557019336,
+          "rmse_before": 129.38359687293342,
+          "rmse_after": 122.15754236523041
+        },
+        {
+          "unit": "Quesnel",
+          "n_rows": 704,
+          "observed_sum": 151157.66809116374,
+          "bias_before": -0.18141640614804128,
+          "bias_after": -0.12025321204688781,
+          "rmse_before": 116.74475735624192,
+          "rmse_after": 111.65855123441347
+        },
+        {
+          "unit": "Revelstoke",
+          "n_rows": 62,
+          "observed_sum": 24065.50668442775,
+          "bias_before": -0.15147790029739464,
+          "bias_after": -0.1300541192659856,
+          "rmse_before": 233.31731349502954,
+          "rmse_after": 223.3136469163094
+        },
+        {
+          "unit": "Robson Valley",
+          "n_rows": 106,
+          "observed_sum": 36033.686428062225,
+          "bias_before": -0.18090391845390286,
+          "bias_after": -0.05607771058711345,
+          "rmse_before": 239.63510447782787,
+          "rmse_after": 230.60594919957828
+        },
+        {
+          "unit": "Soo",
+          "n_rows": 53,
+          "observed_sum": 18434.452962354004,
+          "bias_before": -0.25927312035130706,
+          "bias_after": 0.3336806727510649,
+          "rmse_before": 191.0164079636839,
+          "rmse_after": 192.81510510459717
+        },
+        {
+          "unit": "Strathcona",
+          "n_rows": 82,
+          "observed_sum": 86642.41390318018,
+          "bias_before": -0.651560286433017,
+          "bias_after": -0.33684346052492525,
+          "rmse_before": 887.5263448830243,
+          "rmse_after": 672.2491092319965
+        },
+        {
+          "unit": "Sunshine Coast",
+          "n_rows": 560,
+          "observed_sum": 340284.84606292465,
+          "bias_before": -0.4560214179600766,
+          "bias_after": 0.05527314244702241,
+          "rmse_before": 415.22623468362804,
+          "rmse_after": 305.2394981215541
+        },
+        {
+          "unit": "Williams Lake",
+          "n_rows": 516,
+          "observed_sum": 93852.25071679853,
+          "bias_before": 0.37118918139623486,
+          "bias_after": -0.06498324322163018,
+          "rmse_before": 172.90532233738023,
+          "rmse_after": 167.51357515476352
+        },
+        {
+          "unit": "nan",
+          "n_rows": 41,
+          "observed_sum": 12902.179870544915,
+          "bias_before": -0.10976401239822008,
+          "bias_after": 0.7210347451654602,
+          "rmse_before": 241.59135152371837,
+          "rmse_after": 336.2704720255848
+        }
+      ]
+    },
+    "qc": {
+      "evaluable": true,
+      "protocol": "leave_one_unit_out_level_multiplier",
+      "unit_column": "unit",
+      "stratum_columns": [
+        "component"
+      ],
+      "min_train_rows": 20,
+      "n_units_evaluable": 5,
+      "n_holdout_rows": 690,
+      "observed_sum": 118057.89,
+      "bias_before": 0.06835271593786128,
+      "bias_after": -0.0062132342879061605,
+      "median_unit_abs_bias_before": 0.2724846967557993,
+      "median_unit_abs_bias_after": 0.3417730196584416,
+      "share_units_improved": 0.6,
+      "share_units_materially_improved": 0.2,
+      "folds": [
+        {
+          "unit": "2651",
+          "n_rows": 57,
+          "observed_sum": 4409.1,
+          "bias_before": 1.038812969534015,
+          "bias_after": 0.9780801765390277,
+          "rmse_before": 86.5442690652038,
+          "rmse_after": 82.1072465388956
+        },
+        {
+          "unit": "3151",
+          "n_rows": 213,
+          "observed_sum": 33172.100000000006,
+          "bias_before": 0.2092258850957809,
+          "bias_after": 0.19335240821363012,
+          "rmse_before": 54.47400119706634,
+          "rmse_after": 53.00062440195505
+        },
+        {
+          "unit": "3152",
+          "n_rows": 165,
+          "observed_sum": 22275.4,
+          "bias_before": 0.3494530576961518,
+          "bias_after": 0.34544449056646886,
+          "rmse_before": 68.52764155296497,
+          "rmse_after": 68.16597363462803
+        },
+        {
+          "unit": "3451",
+          "n_rows": 45,
+          "observed_sum": 11536.2,
+          "bias_before": -0.2724846967557993,
+          "bias_after": -0.3417730196584416,
+          "rmse_before": 97.2073448402441,
+          "rmse_after": 110.03818729594576
+        },
+        {
+          "unit": "3551",
+          "n_rows": 210,
+          "observed_sum": 46665.09,
+          "bias_before": -0.1734033623476461,
+          "bias_after": -0.3259831354181052,
+          "rmse_before": 81.55172584132217,
+          "rmse_after": 100.99968234945968
+        }
+      ]
+    },
+    "mgm": {
+      "evaluable": false,
+      "reason": "pinned MGM CSVs have no FMU/polygon key; a whole-FMU holdout cannot be constructed"
+    },
+    "release_rule": "Do not release a correction unless it generalises across held-out whole units, has the same sign in most folds, and is material against benchmark uncertainty."
+  },
+  "correction_factors": {
+    "status": "withheld",
+    "reason": "The planning protocol requires a predeclared whole-unit holdout before release. The benchmark now evaluates a leave-one-unit-out proxy, but it is not sufficient to release factors; MGM has no FMU key and QC has only five units. All numeric candidates are withheld.",
+    "candidate_rows": 33,
+    "file": "local_correction_factors.csv"
+  },
+  "overall": {
+    "bc_leading_species": {
+      "rows": 1,
+      "median_abs_relative_bias": 0.3040816257989843,
+      "mean_abs_relative_rmse": 0.8277292560761798,
+      "share_within_20pct": 0.18555487305487306,
+      "share_within_30pct": 0.2854217854217854,
+      "mean_bias_m3ha": -130.73966625652002,
+      "mean_abs_relative_bias": 0.3040816257989843
+    },
+    "bc_composite": {
+      "rows": 1,
+      "median_abs_relative_bias": 0.3244966062746674,
+      "mean_abs_relative_rmse": 0.8257875068253513,
+      "share_within_20pct": 0.18693693693693694,
+      "share_within_30pct": 0.28792997542997545,
+      "mean_bias_m3ha": -139.51707175417604,
+      "mean_abs_relative_bias": 0.3244966062746674
+    },
+    "qc_total": {
+      "rows": 3,
+      "median_abs_relative_bias": 0.13394004320278644,
+      "mean_abs_relative_rmse": 0.4253786163942182,
+      "share_within_20pct": 0.3710144927536232,
+      "share_within_30pct": 0.5217391304347826,
+      "mean_bias_m3ha": 11.695039738251104,
+      "mean_abs_relative_bias": 0.11335642568696723
+    },
+    "mgm_volume": {
+      "rows": 47,
+      "median_abs_relative_bias": 0.5374656399477499,
+      "mean_abs_relative_rmse": 11.852685043934008,
+      "share_within_20pct": 0.13102196739082345,
+      "share_within_30pct": 0.21365841827747828,
+      "mean_bias_m3ha": 26.801543099078252,
+      "mean_abs_relative_bias": 0.8943466093240491
+    },
+    "mgm_mai_endpoint_max": {
+      "rows": 16,
+      "median_mai_age_mgm": 116.5,
+      "median_mai_age_rsyc": 27.5,
+      "median_age_difference": -88.5,
+      "share_mgm_endpoint_right_censored": 0.005247767413797715,
+      "status_note": "MGM maxima at the 350-year native endpoint are right-censored; do not report them as culmination ages."
+    }
+  }
+}

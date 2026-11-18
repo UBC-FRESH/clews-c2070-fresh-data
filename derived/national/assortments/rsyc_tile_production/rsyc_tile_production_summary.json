@@ -1,0 +1,2930 @@
+{
+  "generated_at": "2026-11-18T18:35:23.414245+00:00",
+  "committed": false,
+  "status": "diagnostic_tile_production_library",
+  "inputs": {
+    "tiles": "data/raw/national/rsyc/RSYC_tiles.gpkg",
+    "ecodistricts": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+    "models": "data/raw/national/rsyc/RSYC_models.zip",
+    "provinces": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+    "area_weights": "data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv"
+  },
+  "method": {
+    "overlay": "exact_polygon_intersection_epsg3978",
+    "province_overlay": "tile x ecodistrict x province exact intersection; fractions normalised within district x province",
+    "area_allocation": "province_constrained_ecodistrict_fraction_normalised_within_published_tile_footprint; explicit district fallback when a source province has no geographic intersection",
+    "curve_selection": [
+      "tile exact species",
+      "tile species group",
+      "tile generic",
+      "dominant ecoregion/ecoprovince control fallback"
+    ],
+    "response": "volume",
+    "age_grid": [
+      50.0,
+      100.0,
+      150.0
+    ],
+    "operational_age_range": [
+      1,
+      150
+    ],
+    "ecodistrict_composition_role": "diagnostic_only",
+    "benchmark_correction_applied": false
+  },
+  "overlay": {
+    "tiles": 385,
+    "ecodistricts": 672,
+    "intersection_pairs": 2370,
+    "tiles_touched": 385,
+    "ecodistricts_touched": 672,
+    "total_intersection_area_ha": 691220890.0605261,
+    "tile_area_ha": 866250000.0,
+    "ecodistrict_area_ha": 692081504.5642028,
+    "union_area_ha": 867110614.5036722,
+    "tile_only_area_ha": 175029109.93947333,
+    "ecodistrict_only_area_ha": 860614.5036725525,
+    "intersection_share_of_tile_area": 0.7979461934320649,
+    "intersection_share_of_ecodistrict_area": 0.9987564838852058,
+    "min_intersection_area_ha": 0.019678794098820635,
+    "intersection_geometry_types": [
+      "MultiPolygon",
+      "Polygon"
+    ],
+    "zero_area_contacts_skipped": 0,
+    "non_polygonal_parts_coerced": 0,
+    "ecodistricts_with_partial_tile_coverage": 10,
+    "ecodistrict_area_outside_tile_grid_ha": 860614.5036726008,
+    "province_polygons": 13,
+    "province_geometry_repaired": 2,
+    "province_intersection_pairs": 2642,
+    "province_district_pairs": 831,
+    "province_overlay_zero_area_contacts_skipped": 0,
+    "parent_intersection_area_ha": 690429662.9697709,
+    "province_covered_area_ha": 646762358.5959681,
+    "parent_area_outside_provinces_ha": 43667304.37380279,
+    "province_cover_share_of_intersection": 0.9367534352652593
+  },
+  "area": {
+    "source_rows": 5800,
+    "positive_source_rows": 5800,
+    "zero_area_rows_excluded": 0,
+    "zero_area_ha_excluded": 0.0,
+    "source_total_ha": 422475761.52243674,
+    "allocated_total_ha": 422475761.5224368,
+    "difference_ha": 5.960464477539063e-08,
+    "redistributed_area_ha": 73055.18485455604,
+    "redistributed_area_share_pct": 0.017292160049914778,
+    "geographic_allocation_area_ha": 422319381.6623234,
+    "fallback_area_ha": 156379.86011338176,
+    "fallback_area_share_pct": 0.03701510816853732,
+    "fallback_source_rows": 86,
+    "fallback_source_groups": 86,
+    "fallback_table": [
+      {
+        "ecodistrict_id": 192,
+        "province": "YT",
+        "target_species": "BROADLEAF",
+        "area_ha": 0.3512173728086054,
+        "ecodistrict": "MacKenzie Delta West",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Mackenzie Delta",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 192,
+        "province": "YT",
+        "target_species": "LARI.LAR",
+        "area_ha": 1.219686103053391,
+        "ecodistrict": "MacKenzie Delta West",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Mackenzie Delta",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 192,
+        "province": "YT",
+        "target_species": "PICE.GLA",
+        "area_ha": 0.108796464279294,
+        "ecodistrict": "MacKenzie Delta West",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Mackenzie Delta",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 192,
+        "province": "YT",
+        "target_species": "PICE.MAR",
+        "area_ha": 3.4999855794012547,
+        "ecodistrict": "MacKenzie Delta West",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Mackenzie Delta",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 192,
+        "province": "YT",
+        "target_species": "PINU.CON",
+        "area_ha": 0.1303147184662521,
+        "ecodistrict": "MacKenzie Delta West",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Mackenzie Delta",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 202,
+        "province": "NU",
+        "target_species": "BROADLEAF",
+        "area_ha": 301.1645108424127,
+        "ecodistrict": "Deese Arm",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Great Bear Lake Plain",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 202,
+        "province": "NU",
+        "target_species": "LARI.LAR",
+        "area_ha": 165.60093540186062,
+        "ecodistrict": "Deese Arm",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Great Bear Lake Plain",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 202,
+        "province": "NU",
+        "target_species": "PICE.GLA",
+        "area_ha": 383.6006715325639,
+        "ecodistrict": "Deese Arm",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Great Bear Lake Plain",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 202,
+        "province": "NU",
+        "target_species": "PICE.MAR",
+        "area_ha": 842.683085065335,
+        "ecodistrict": "Deese Arm",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Great Bear Lake Plain",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 202,
+        "province": "NU",
+        "target_species": "PINU.CON",
+        "area_ha": 0.7507997443899512,
+        "ecodistrict": "Deese Arm",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Great Bear Lake Plain",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 214,
+        "province": "NU",
+        "target_species": "BROADLEAF",
+        "area_ha": 6.846630692016333,
+        "ecodistrict": "Aubry Lake",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Colville Hills",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 214,
+        "province": "NU",
+        "target_species": "LARI.LAR",
+        "area_ha": 19.30580499395728,
+        "ecodistrict": "Aubry Lake",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Colville Hills",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 214,
+        "province": "NU",
+        "target_species": "PICE.GLA",
+        "area_ha": 5.021780235692859,
+        "ecodistrict": "Aubry Lake",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Colville Hills",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 214,
+        "province": "NU",
+        "target_species": "PICE.MAR",
+        "area_ha": 70.676753513515,
+        "ecodistrict": "Aubry Lake",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Colville Hills",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 214,
+        "province": "NU",
+        "target_species": "PINU.CON",
+        "area_ha": 0.0290322564542293,
+        "ecodistrict": "Aubry Lake",
+        "ecozone": "Taiga Plains",
+        "ecoprovince": "Great Bear Lowlands",
+        "ecoregion": "Colville Hills",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 258,
+        "province": "NU",
+        "target_species": "BROADLEAF",
+        "area_ha": 172.72833540127613,
+        "ecodistrict": "Walmesley - Warburton",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 258,
+        "province": "NU",
+        "target_species": "LARI.LAR",
+        "area_ha": 7238.352510452969,
+        "ecodistrict": "Walmesley - Warburton",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 258,
+        "province": "NU",
+        "target_species": "PICE.GLA",
+        "area_ha": 5826.19289989234,
+        "ecodistrict": "Walmesley - Warburton",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 258,
+        "province": "NU",
+        "target_species": "PICE.MAR",
+        "area_ha": 42517.49956610426,
+        "ecodistrict": "Walmesley - Warburton",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 258,
+        "province": "NU",
+        "target_species": "PINU.BAN",
+        "area_ha": 362.40011399379,
+        "ecodistrict": "Walmesley - Warburton",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 258,
+        "province": "NU",
+        "target_species": "PINU.CON",
+        "area_ha": 34.90661528613418,
+        "ecodistrict": "Walmesley - Warburton",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 259,
+        "province": "NU",
+        "target_species": "BROADLEAF",
+        "area_ha": 4.321785535197705,
+        "ecodistrict": "Whitefish Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 259,
+        "province": "NU",
+        "target_species": "LARI.LAR",
+        "area_ha": 42.9666517234873,
+        "ecodistrict": "Whitefish Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 259,
+        "province": "NU",
+        "target_species": "PICE.GLA",
+        "area_ha": 110.01890792441554,
+        "ecodistrict": "Whitefish Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 259,
+        "province": "NU",
+        "target_species": "PICE.MAR",
+        "area_ha": 351.7162506552413,
+        "ecodistrict": "Whitefish Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 259,
+        "province": "NU",
+        "target_species": "PINU.BAN",
+        "area_ha": 2.8964098035357893,
+        "ecodistrict": "Whitefish Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Coppermine River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 266,
+        "province": "NU",
+        "target_species": "BROADLEAF",
+        "area_ha": 5.451832526363432,
+        "ecodistrict": "Beaverhill Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Kazan River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 266,
+        "province": "NU",
+        "target_species": "LARI.LAR",
+        "area_ha": 11.536390838911757,
+        "ecodistrict": "Beaverhill Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Kazan River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 266,
+        "province": "NU",
+        "target_species": "PICE.GLA",
+        "area_ha": 6.6038558289874345,
+        "ecodistrict": "Beaverhill Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Kazan River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 266,
+        "province": "NU",
+        "target_species": "PICE.MAR",
+        "area_ha": 79.6111615318805,
+        "ecodistrict": "Beaverhill Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Kazan River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 266,
+        "province": "NU",
+        "target_species": "PINU.BAN",
+        "area_ha": 0.9267614907585084,
+        "ecodistrict": "Beaverhill Lake",
+        "ecozone": "Taiga Shield West",
+        "ecoprovince": "Western Taiga Shield",
+        "ecoregion": "Kazan River Upland",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "ABIE.BAL",
+        "area_ha": 7.76001539407298,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "BROADLEAF",
+        "area_ha": 3247.526638894225,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "LARI.LAR",
+        "area_ha": 6839.371644866886,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "PICE.GLA",
+        "area_ha": 922.9189468130936,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "PICE.MAR",
+        "area_ha": 8970.679096862674,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "PINU.BAN",
+        "area_ha": 1.6883419174700975,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 298,
+        "province": "NU",
+        "target_species": "PINU.CON",
+        "area_ha": 0.0453289682045578,
+        "ecodistrict": "Lac aux Feuilles Hills",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "Ungava Bay Basin",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 302,
+        "province": "NL",
+        "target_species": "ABIE.BAL",
+        "area_ha": 409.9687441922724,
+        "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 302,
+        "province": "NL",
+        "target_species": "BROADLEAF",
+        "area_ha": 56.66181162302382,
+        "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 302,
+        "province": "NL",
+        "target_species": "LARI.LAR",
+        "area_ha": 164.84114506526385,
+        "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 302,
+        "province": "NL",
+        "target_species": "PICE.GLA",
+        "area_ha": 347.5647064198274,
+        "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 302,
+        "province": "NL",
+        "target_species": "PICE.MAR",
+        "area_ha": 2390.872818686068,
+        "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 302,
+        "province": "NL",
+        "target_species": "PINU.BAN",
+        "area_ha": 161.06079835770652,
+        "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 303,
+        "province": "NL",
+        "target_species": "ABIE.BAL",
+        "area_ha": 399.9564850809984,
+        "ecodistrict": "George River Lower Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 303,
+        "province": "NL",
+        "target_species": "BROADLEAF",
+        "area_ha": 64.71077084576245,
+        "ecodistrict": "George River Lower Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 303,
+        "province": "NL",
+        "target_species": "LARI.LAR",
+        "area_ha": 188.0590320713818,
+        "ecodistrict": "George River Lower Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 303,
+        "province": "NL",
+        "target_species": "PICE.GLA",
+        "area_ha": 748.8778919780161,
+        "ecodistrict": "George River Lower Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 303,
+        "province": "NL",
+        "target_species": "PICE.MAR",
+        "area_ha": 2097.3412522948347,
+        "ecodistrict": "George River Lower Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 303,
+        "province": "NL",
+        "target_species": "PINU.BAN",
+        "area_ha": 122.38457983452828,
+        "ecodistrict": "George River Lower Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 304,
+        "province": "NL",
+        "target_species": "ABIE.BAL",
+        "area_ha": 40.47159564495087,
+        "ecodistrict": "George Rriver Upper Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 304,
+        "province": "NL",
+        "target_species": "BROADLEAF",
+        "area_ha": 9.56642773177009,
+        "ecodistrict": "George Rriver Upper Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 304,
+        "province": "NL",
+        "target_species": "LARI.LAR",
+        "area_ha": 12.899005398270674,
+        "ecodistrict": "George Rriver Upper Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 304,
+        "province": "NL",
+        "target_species": "PICE.GLA",
+        "area_ha": 108.07825762126596,
+        "ecodistrict": "George Rriver Upper Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 304,
+        "province": "NL",
+        "target_species": "PICE.MAR",
+        "area_ha": 284.8565253727138,
+        "ecodistrict": "George Rriver Upper Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 304,
+        "province": "NL",
+        "target_species": "PINU.BAN",
+        "area_ha": 30.30819257721305,
+        "ecodistrict": "George Rriver Upper Plateau",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Whale River Lowland",
+        "ecoregion": "George Plateau",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 305,
+        "province": "QC",
+        "target_species": "BROADLEAF",
+        "area_ha": 0.0065454547293484,
+        "ecodistrict": "Central Ranges",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Labrador Uplands",
+        "ecoregion": "Kingarutuk-Fraser River",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 305,
+        "province": "QC",
+        "target_species": "LARI.LAR",
+        "area_ha": 0.101797929033637,
+        "ecodistrict": "Central Ranges",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Labrador Uplands",
+        "ecoregion": "Kingarutuk-Fraser River",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 305,
+        "province": "QC",
+        "target_species": "PICE.GLA",
+        "area_ha": 0.1384615451097488,
+        "ecodistrict": "Central Ranges",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Labrador Uplands",
+        "ecoregion": "Kingarutuk-Fraser River",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 305,
+        "province": "QC",
+        "target_species": "PICE.MAR",
+        "area_ha": 1.2189846150577068,
+        "ecodistrict": "Central Ranges",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Labrador Uplands",
+        "ecoregion": "Kingarutuk-Fraser River",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 305,
+        "province": "QC",
+        "target_species": "PINU.BAN",
+        "area_ha": 0.154210539534688,
+        "ecodistrict": "Central Ranges",
+        "ecozone": "Taiga Shield East",
+        "ecoprovince": "Labrador Uplands",
+        "ecoregion": "Kingarutuk-Fraser River",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 509,
+        "province": "NB",
+        "target_species": "ABIE.BAL",
+        "area_ha": 0.0139044942334294,
+        "ecodistrict": "North Mountain",
+        "ecozone": "Atlantic Maritime",
+        "ecoprovince": "Fundy Uplands",
+        "ecoregion": "Fundy Coast",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 509,
+        "province": "NB",
+        "target_species": "BROADLEAF",
+        "area_ha": 0.0745786502957344,
+        "ecodistrict": "North Mountain",
+        "ecozone": "Atlantic Maritime",
+        "ecoprovince": "Fundy Uplands",
+        "ecoregion": "Fundy Coast",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 509,
+        "province": "NB",
+        "target_species": "CONIFEROUS",
+        "area_ha": 0.1162921339273452,
+        "ecodistrict": "North Mountain",
+        "ecozone": "Atlantic Maritime",
+        "ecoprovince": "Fundy Uplands",
+        "ecoregion": "Fundy Coast",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 509,
+        "province": "NB",
+        "target_species": "LARI.LAR",
+        "area_ha": 0.2085674107074737,
+        "ecodistrict": "North Mountain",
+        "ecozone": "Atlantic Maritime",
+        "ecoprovince": "Fundy Uplands",
+        "ecoregion": "Fundy Coast",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 509,
+        "province": "NB",
+        "target_species": "PINU.BAN",
+        "area_ha": 0.036657303571701,
+        "ecodistrict": "North Mountain",
+        "ecozone": "Atlantic Maritime",
+        "ecoprovince": "Fundy Uplands",
+        "ecoregion": "Fundy Coast",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "ABIE.BAL",
+        "area_ha": 1.9335972188273445,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "BROADLEAF",
+        "area_ha": 41511.20556733804,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "LARI.LAR",
+        "area_ha": 125.75926197215448,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "PICE.GLA",
+        "area_ha": 1186.9689877100757,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "PICE.MAR",
+        "area_ha": 84.3500673957169,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "PINU.BAN",
+        "area_ha": 113.0932017705636,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 695,
+        "province": "AB",
+        "target_species": "PINU.CON",
+        "area_ha": 6.319343716255389,
+        "ecodistrict": "Turtle River Plain",
+        "ecozone": "Boreal Plains",
+        "ecoprovince": "Central Boreal Plains",
+        "ecoregion": "Boreal Transition",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 857,
+        "province": "NT",
+        "target_species": "BROADLEAF",
+        "area_ha": 16.96162079134956,
+        "ecodistrict": "Babbage River",
+        "ecozone": "Taiga Cordillera",
+        "ecoprovince": "Northern Yukon Mountains",
+        "ecoregion": "British-Richardson Mountains",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 857,
+        "province": "NT",
+        "target_species": "LARI.LAR",
+        "area_ha": 4.2677250248380005,
+        "ecodistrict": "Babbage River",
+        "ecozone": "Taiga Cordillera",
+        "ecoprovince": "Northern Yukon Mountains",
+        "ecoregion": "British-Richardson Mountains",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 857,
+        "province": "NT",
+        "target_species": "PICE.GLA",
+        "area_ha": 19.677062435541306,
+        "ecodistrict": "Babbage River",
+        "ecozone": "Taiga Cordillera",
+        "ecoprovince": "Northern Yukon Mountains",
+        "ecoregion": "British-Richardson Mountains",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 857,
+        "province": "NT",
+        "target_species": "PICE.MAR",
+        "area_ha": 12.15231721289456,
+        "ecodistrict": "Babbage River",
+        "ecozone": "Taiga Cordillera",
+        "ecoprovince": "Northern Yukon Mountains",
+        "ecoregion": "British-Richardson Mountains",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 857,
+        "province": "NT",
+        "target_species": "PINU.BAN",
+        "area_ha": 0.4912749275099486,
+        "ecodistrict": "Babbage River",
+        "ecozone": "Taiga Cordillera",
+        "ecoprovince": "Northern Yukon Mountains",
+        "ecoregion": "British-Richardson Mountains",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "ABIE.BAL",
+        "area_ha": 659.6126624740427,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "BROADLEAF",
+        "area_ha": 15679.60630500107,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "CONIFEROUS",
+        "area_ha": 6283.763703049859,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "LARI.LAR",
+        "area_ha": 21.11643536493648,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "PICE.MAR",
+        "area_ha": 4.340005402453244,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "PINU.BAN",
+        "area_ha": 36.45179223630112,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "PINU.CON",
+        "area_ha": 4410.748008521507,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      },
+      {
+        "ecodistrict_id": 1018,
+        "province": "SK",
+        "target_species": "PSEU.MEN",
+        "area_ha": 1.3810657233698294,
+        "ecodistrict": "Blairmore Foothills",
+        "ecozone": "Montane Cordillera",
+        "ecoprovince": "Columbia Montane Cordillera",
+        "ecoregion": "Northern Continental Divide",
+        "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+      }
+    ],
+    "district_province_species_groups": 5800,
+    "district_province_species_closure_max_abs_error_ha": 4.656612873077393e-10,
+    "district_province_species_closure_failures": 0,
+    "province_reconciliation_max_abs_error_ha": 4.656612873077393e-10,
+    "source_province_area_ha": {
+      "AB": 38345566.46872932,
+      "BC": 66607737.050736144,
+      "MB": 33753909.97676766,
+      "NB": 6692497.659203672,
+      "NL": 23531836.32981137,
+      "NS": 4727696.942226688,
+      "NT": 43460564.15861774,
+      "NU": 2834208.4556980436,
+      "ON": 68517060.22705284,
+      "PE": 274471.83034601156,
+      "QC": 81663538.55922952,
+      "SK": 26160931.275394518,
+      "YT": 25905742.588623255
+    },
+    "allocated_province_area_ha": {
+      "AB": 38345566.46872932,
+      "BC": 66607737.050736144,
+      "MB": 33753909.97676766,
+      "NB": 6692497.659203672,
+      "NL": 23531836.32981137,
+      "NS": 4727696.942226688,
+      "NT": 43460564.15861774,
+      "NU": 2834208.455698043,
+      "ON": 68517060.22705284,
+      "PE": 274471.83034601156,
+      "QC": 81663538.55922952,
+      "SK": 26160931.275394518,
+      "YT": 25905742.588623255
+    },
+    "source_species_area_ha": {
+      "ABIE.BAL": 17465104.979301684,
+      "BROADLEAF": 82649859.93459882,
+      "CONIFEROUS": 34616820.46806637,
+      "LARI.LAR": 27150318.06884686,
+      "PICE.GLA": 39033902.519337416,
+      "PICE.MAR": 153682120.5158236,
+      "PINU.BAN": 39126191.37211102,
+      "PINU.CON": 21195759.299150717,
+      "PINU.PON": 211686.43934008584,
+      "PINU.RES": 1025102.4654655596,
+      "PINU.STR": 1025102.4654655596,
+      "PSEU.MEN": 5293792.994929092
+    },
+    "allocated_species_area_ha": {
+      "ABIE.BAL": 17465104.979301684,
+      "BROADLEAF": 82649859.93459882,
+      "CONIFEROUS": 34616820.46806637,
+      "LARI.LAR": 27150318.06884686,
+      "PICE.GLA": 39033902.519337416,
+      "PICE.MAR": 153682120.5158236,
+      "PINU.BAN": 39126191.37211102,
+      "PINU.CON": 21195759.299150717,
+      "PINU.PON": 211686.43934008584,
+      "PINU.RES": 1025102.4654655595,
+      "PINU.STR": 1025102.4654655595,
+      "PSEU.MEN": 5293792.994929092
+    },
+    "ecodistricts_with_scanfi_area_above_polygon": 12,
+    "max_ecodistrict_scanfi_to_geometry_ratio": 2.249662478834757,
+    "tile_species_cells": 3948,
+    "tiles_with_area": 385,
+    "province_attribution_change": {
+      "legacy_total_ha": 422475761.52243674,
+      "constrained_total_ha": 422475761.52243674,
+      "total_difference_ha": -1.7462298274040222e-10,
+      "tile_province_cells_changed": 672,
+      "max_abs_tile_province_change_ha": 976472.0789254947,
+      "top_tile_province_changes": [
+        {
+          "tile_id": "D23",
+          "province": "ON",
+          "legacy_area_ha": 1032372.202314709,
+          "constrained_area_ha": 2008844.2812402037,
+          "difference_ha": 976472.0789254947
+        },
+        {
+          "tile_id": "D23",
+          "province": "QC",
+          "legacy_area_ha": 894476.0058677982,
+          "constrained_area_ha": 0.0,
+          "difference_ha": -894476.0058677982
+        },
+        {
+          "tile_id": "G30",
+          "province": "QC",
+          "legacy_area_ha": 1208672.0408967247,
+          "constrained_area_ha": 433174.6845674438,
+          "difference_ha": -775497.3563292809
+        },
+        {
+          "tile_id": "L8",
+          "province": "AB",
+          "legacy_area_ha": 1047778.0615596429,
+          "constrained_area_ha": 1765337.7161800342,
+          "difference_ha": 717559.6546203913
+        },
+        {
+          "tile_id": "E23",
+          "province": "ON",
+          "legacy_area_ha": 1107466.5872494644,
+          "constrained_area_ha": 1798558.6726850916,
+          "difference_ha": 691092.0854356273
+        },
+        {
+          "tile_id": "F17",
+          "province": "ON",
+          "legacy_area_ha": 1125020.8005328297,
+          "constrained_area_ha": 1784314.0937677892,
+          "difference_ha": 659293.2932349595
+        },
+        {
+          "tile_id": "F17",
+          "province": "MB",
+          "legacy_area_ha": 659125.309634292,
+          "constrained_area_ha": 25630.039830027436,
+          "difference_ha": -633495.2698042647
+        },
+        {
+          "tile_id": "L8",
+          "province": "BC",
+          "legacy_area_ha": 583310.5975782166,
+          "constrained_area_ha": 0.0,
+          "difference_ha": -583310.5975782166
+        },
+        {
+          "tile_id": "F23",
+          "province": "ON",
+          "legacy_area_ha": 973699.5606149866,
+          "constrained_area_ha": 399369.8915738675,
+          "difference_ha": -574329.669041119
+        },
+        {
+          "tile_id": "I17",
+          "province": "MB",
+          "legacy_area_ha": 417310.34577062406,
+          "constrained_area_ha": 989792.6170194079,
+          "difference_ha": 572482.2712487839
+        }
+      ],
+      "b25": [
+        {
+          "tile_id": "B25",
+          "province": "ON",
+          "legacy_area_ha": 2177791.781421071,
+          "constrained_area_ha": 2292578.114204502,
+          "difference_ha": 114786.33278343128
+        },
+        {
+          "tile_id": "B25",
+          "province": "QC",
+          "legacy_area_ha": 449158.55005253607,
+          "constrained_area_ha": 444128.09298451256,
+          "difference_ha": -5030.457068023505
+        }
+      ]
+    }
+  },
+  "area_geometry_consistency": {
+    "tiles_with_allocated_area_above_polygon": 1,
+    "tiles_above_polygon": [
+      {
+        "tile_id": "B25",
+        "allocated_area_ha": 2736706.2071890146,
+        "tile_polygon_area_ha": 2250000.0,
+        "allocated_to_polygon_area_ratio": 1.2163138698617844,
+        "excess_area_ha": 486706.20718901465,
+        "over_capacity": true
+      }
+    ],
+    "max_allocated_to_tile_area_ratio": 1.2163138698617844,
+    "max_ratio_tile": "B25",
+    "excess_area_above_tile_polygon_ha": 486706.20718901465,
+    "b25": [
+      {
+        "tile_id": "B25",
+        "allocated_area_ha": 2736706.2071890146,
+        "tile_polygon_area_ha": 2250000.0,
+        "allocated_to_polygon_area_ratio": 1.2163138698617844,
+        "excess_area_ha": 486706.20718901465,
+        "over_capacity": true
+      }
+    ],
+    "note": "Inherited from SCANFI ecodistrict forest area exceeding the ecodistrict polygon area in over-dense ecodistricts; the geometric overlay is exact and is not the source of the excess. Excess area is flagged, not clipped."
+  },
+  "library": {
+    "cells": 3948,
+    "tiles": 385,
+    "species": 12,
+    "provinces": 13,
+    "total_area_ha": 422475761.5224368,
+    "tier_table": [
+      {
+        "evidence_tier": "rsyc_tile_exact",
+        "cells": 1143,
+        "area_ha": 252102763.51097408,
+        "area_share_pct": 59.67271651336746
+      },
+      {
+        "evidence_tier": "rsyc_tile_generic",
+        "cells": 213,
+        "area_ha": 5564438.972838354,
+        "area_share_pct": 1.317102536909171
+      },
+      {
+        "evidence_tier": "rsyc_tile_group",
+        "cells": 2592,
+        "area_ha": 164808559.03862435,
+        "area_share_pct": 39.01018094972336
+      }
+    ],
+    "allocation_basis_table": [
+      {
+        "allocation_basis": "district_fallback_no_province_intersection",
+        "cells": 169,
+        "area_ha": 99475.22999646883,
+        "area_share_pct": 0.023545783937520853
+      },
+      {
+        "allocation_basis": "mixed_province_intersection_and_district_fallback",
+        "cells": 85,
+        "area_ha": 2757637.24620625,
+        "area_share_pct": 0.6527326529381965
+      },
+      {
+        "allocation_basis": "province_intersection",
+        "cells": 3694,
+        "area_ha": 419618649.0462341,
+        "area_share_pct": 99.32372156312428
+      }
+    ],
+    "selected_level_table": [
+      {
+        "selected_level": "tile",
+        "cells": 3948,
+        "area_ha": 422475761.5224368
+      }
+    ],
+    "species_table": [
+      {
+        "species": "PICE.MAR",
+        "cells": 547,
+        "area_ha": 153682120.5158236,
+        "exact_area_ha": 153257190.98078644,
+        "group_area_ha": 424929.5350371808,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 99.72350099438314,
+        "group_pct": 0.27649900561687574,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "BROADLEAF",
+        "cells": 555,
+        "area_ha": 82649859.93459882,
+        "exact_area_ha": 0.0,
+        "group_area_ha": 77085420.96176046,
+        "generic_area_ha": 5564438.972838354,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 0.0,
+        "group_pct": 93.2674550480285,
+        "generic_pct": 6.732544951971507,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PINU.BAN",
+        "cells": 500,
+        "area_ha": 39126191.37211102,
+        "exact_area_ha": 35183430.047404274,
+        "group_area_ha": 3942761.3247067523,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 89.92296161103702,
+        "group_pct": 10.07703838896299,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PICE.GLA",
+        "cells": 474,
+        "area_ha": 39033902.519337416,
+        "exact_area_ha": 23830311.099987164,
+        "group_area_ha": 15203591.419350255,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 61.05029105962853,
+        "group_pct": 38.94970894037149,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "CONIFEROUS",
+        "cells": 110,
+        "area_ha": 34616820.46806637,
+        "exact_area_ha": 0.0,
+        "group_area_ha": 34616820.468066365,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 0.0,
+        "group_pct": 99.99999999999997,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "LARI.LAR",
+        "cells": 547,
+        "area_ha": 27150318.06884686,
+        "exact_area_ha": 0.0,
+        "group_area_ha": 27150318.06884686,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 0.0,
+        "group_pct": 100.0,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PINU.CON",
+        "cells": 277,
+        "area_ha": 21195759.299150717,
+        "exact_area_ha": 20540596.217986774,
+        "group_area_ha": 655163.08116394,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 96.90898980349246,
+        "group_pct": 3.0910101965075225,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "ABIE.BAL",
+        "cells": 460,
+        "area_ha": 17465104.979301684,
+        "exact_area_ha": 13055456.964565322,
+        "group_area_ha": 4409648.014736358,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 74.75166613677764,
+        "group_pct": 25.24833386322234,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PSEU.MEN",
+        "cells": 81,
+        "area_ha": 5293792.994929092,
+        "exact_area_ha": 5059165.25049024,
+        "group_area_ha": 234627.7444388513,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 95.5678708127877,
+        "group_pct": 4.432129187212279,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PINU.RES",
+        "cells": 179,
+        "area_ha": 1025102.4654655595,
+        "exact_area_ha": 340265.061422248,
+        "group_area_ha": 684837.4040433116,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 33.19327314930548,
+        "group_pct": 66.80672685069453,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PINU.STR",
+        "cells": 179,
+        "area_ha": 1025102.4654655595,
+        "exact_area_ha": 780545.4852378961,
+        "group_area_ha": 244556.98022766353,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 76.14316729629603,
+        "group_pct": 23.856832703703994,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "species": "PINU.PON",
+        "cells": 39,
+        "area_ha": 211686.43934008584,
+        "exact_area_ha": 55802.40309373285,
+        "group_area_ha": 155884.03624635297,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "exact_pct": 26.36087756385908,
+        "group_pct": 73.63912243614091,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      }
+    ],
+    "province_table": [
+      {
+        "province": "QC",
+        "cells": 674,
+        "area_ha": 81663538.55922952,
+        "exact_area_ha": 52477058.43884349,
+        "group_area_ha": 28574476.319816843,
+        "generic_area_ha": 612003.8005691809,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 19.32975711196926,
+        "exact_pct": 64.260083955072,
+        "group_pct": 34.990494930723756,
+        "generic_pct": 0.7494211142042324,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "ON",
+        "cells": 470,
+        "area_ha": 68517060.22705284,
+        "exact_area_ha": 37397486.80720587,
+        "group_area_ha": 30705898.62994746,
+        "generic_area_ha": 413674.78989951045,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 16.217986087567308,
+        "exact_pct": 54.581277543545404,
+        "group_pct": 44.81496802138592,
+        "generic_pct": 0.6037544350686805,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "BC",
+        "cells": 485,
+        "area_ha": 66607737.050736144,
+        "exact_area_ha": 28948789.2507898,
+        "group_area_ha": 37252834.801424205,
+        "generic_area_ha": 406112.998522135,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 15.76604934936575,
+        "exact_pct": 43.46160150845398,
+        "group_pct": 55.92869004549448,
+        "generic_pct": 0.6097084460515336,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "NT",
+        "cells": 434,
+        "area_ha": 43460564.15861774,
+        "exact_area_ha": 29316675.75920584,
+        "group_area_ha": 13335651.54925546,
+        "generic_area_ha": 808236.8501564467,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 10.2871142244949,
+        "exact_pct": 67.45581040367759,
+        "group_pct": 30.68448789708394,
+        "generic_pct": 1.8597016992384863,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "AB",
+        "cells": 300,
+        "area_ha": 38345566.46872932,
+        "exact_area_ha": 20911430.22062589,
+        "group_area_ha": 17434136.248103432,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 9.076394425693666,
+        "exact_pct": 54.53415387064132,
+        "group_pct": 45.46584612935869,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "MB",
+        "cells": 285,
+        "area_ha": 33753909.97676766,
+        "exact_area_ha": 22157208.848671254,
+        "group_area_ha": 11099949.287663389,
+        "generic_area_ha": 496751.8404330237,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 7.989549472644731,
+        "exact_pct": 65.64338431879966,
+        "group_pct": 32.884928872842664,
+        "generic_pct": 1.4716868083577013,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "SK",
+        "cells": 225,
+        "area_ha": 26160931.275394518,
+        "exact_area_ha": 17319334.719068438,
+        "group_area_ha": 8726259.152341895,
+        "generic_area_ha": 115337.40398418446,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 6.192291643222511,
+        "exact_pct": 66.20305117103388,
+        "group_pct": 33.35607230675812,
+        "generic_pct": 0.4408765222080005,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "YT",
+        "cells": 260,
+        "area_ha": 25905742.588623255,
+        "exact_area_ha": 19925295.093606208,
+        "group_area_ha": 4488136.891791966,
+        "generic_area_ha": 1492310.603225079,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 6.131888488766581,
+        "exact_pct": 76.91458766503989,
+        "group_pct": 17.324872570002963,
+        "generic_pct": 5.760539764957136,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "NL",
+        "cells": 265,
+        "area_ha": 23531836.32981137,
+        "exact_area_ha": 18420525.549559202,
+        "group_area_ha": 3988163.115779086,
+        "generic_area_ha": 1123147.6644730784,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 5.569984948961775,
+        "exact_pct": 78.27916738577308,
+        "group_pct": 16.9479468575373,
+        "generic_pct": 4.772885756689613,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "NB",
+        "cells": 88,
+        "area_ha": 6692497.659203672,
+        "exact_area_ha": 2414412.0944301984,
+        "group_area_ha": 4278085.564773474,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 1.5841139939215771,
+        "exact_pct": 36.07639804116846,
+        "group_pct": 63.92360195883155,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "NS",
+        "cells": 80,
+        "area_ha": 4727696.942226688,
+        "exact_area_ha": 1121676.0517833997,
+        "group_area_ha": 3606020.890443288,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 1.119045723520309,
+        "exact_pct": 23.725633548226206,
+        "group_pct": 76.27436645177377,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "NU",
+        "cells": 334,
+        "area_ha": 2834208.4556980436,
+        "exact_area_ha": 1642980.684139824,
+        "group_area_ha": 1094364.7499825032,
+        "generic_area_ha": 96863.02157571603,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 0.6708570559136148,
+        "exact_pct": 57.969648662810535,
+        "group_pct": 38.61271205307196,
+        "generic_pct": 3.4176392841174916,
+        "fallback_pct": 0.0
+      },
+      {
+        "province": "PE",
+        "cells": 48,
+        "area_ha": 274471.83034601156,
+        "exact_area_ha": 49889.99304467242,
+        "group_area_ha": 224581.8373013391,
+        "generic_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "area_share_pct": 0.06496747395801426,
+        "exact_pct": 18.17672618052601,
+        "group_pct": 81.82327381947397,
+        "generic_pct": 0.0,
+        "fallback_pct": 0.0
+      }
+    ],
+    "negative_b4_cells": 872,
+    "fallback_cells": 0,
+    "no_province_intersection": {
+      "area_ha": 156379.86011338176,
+      "area_share_pct": 0.03701510816853732,
+      "source_rows": 86,
+      "source_groups": 86,
+      "groups": [
+        {
+          "ecodistrict_id": 192,
+          "province": "YT",
+          "target_species": "BROADLEAF",
+          "area_ha": 0.3512173728086054,
+          "ecodistrict": "MacKenzie Delta West",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Mackenzie Delta",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 192,
+          "province": "YT",
+          "target_species": "LARI.LAR",
+          "area_ha": 1.219686103053391,
+          "ecodistrict": "MacKenzie Delta West",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Mackenzie Delta",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 192,
+          "province": "YT",
+          "target_species": "PICE.GLA",
+          "area_ha": 0.108796464279294,
+          "ecodistrict": "MacKenzie Delta West",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Mackenzie Delta",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 192,
+          "province": "YT",
+          "target_species": "PICE.MAR",
+          "area_ha": 3.4999855794012547,
+          "ecodistrict": "MacKenzie Delta West",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Mackenzie Delta",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 192,
+          "province": "YT",
+          "target_species": "PINU.CON",
+          "area_ha": 0.1303147184662521,
+          "ecodistrict": "MacKenzie Delta West",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Mackenzie Delta",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 202,
+          "province": "NU",
+          "target_species": "BROADLEAF",
+          "area_ha": 301.1645108424127,
+          "ecodistrict": "Deese Arm",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Great Bear Lake Plain",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 202,
+          "province": "NU",
+          "target_species": "LARI.LAR",
+          "area_ha": 165.60093540186062,
+          "ecodistrict": "Deese Arm",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Great Bear Lake Plain",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 202,
+          "province": "NU",
+          "target_species": "PICE.GLA",
+          "area_ha": 383.6006715325639,
+          "ecodistrict": "Deese Arm",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Great Bear Lake Plain",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 202,
+          "province": "NU",
+          "target_species": "PICE.MAR",
+          "area_ha": 842.683085065335,
+          "ecodistrict": "Deese Arm",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Great Bear Lake Plain",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 202,
+          "province": "NU",
+          "target_species": "PINU.CON",
+          "area_ha": 0.7507997443899512,
+          "ecodistrict": "Deese Arm",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Great Bear Lake Plain",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 214,
+          "province": "NU",
+          "target_species": "BROADLEAF",
+          "area_ha": 6.846630692016333,
+          "ecodistrict": "Aubry Lake",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Colville Hills",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 214,
+          "province": "NU",
+          "target_species": "LARI.LAR",
+          "area_ha": 19.30580499395728,
+          "ecodistrict": "Aubry Lake",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Colville Hills",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 214,
+          "province": "NU",
+          "target_species": "PICE.GLA",
+          "area_ha": 5.021780235692859,
+          "ecodistrict": "Aubry Lake",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Colville Hills",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 214,
+          "province": "NU",
+          "target_species": "PICE.MAR",
+          "area_ha": 70.676753513515,
+          "ecodistrict": "Aubry Lake",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Colville Hills",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 214,
+          "province": "NU",
+          "target_species": "PINU.CON",
+          "area_ha": 0.0290322564542293,
+          "ecodistrict": "Aubry Lake",
+          "ecozone": "Taiga Plains",
+          "ecoprovince": "Great Bear Lowlands",
+          "ecoregion": "Colville Hills",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 258,
+          "province": "NU",
+          "target_species": "BROADLEAF",
+          "area_ha": 172.72833540127613,
+          "ecodistrict": "Walmesley - Warburton",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 258,
+          "province": "NU",
+          "target_species": "LARI.LAR",
+          "area_ha": 7238.352510452969,
+          "ecodistrict": "Walmesley - Warburton",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 258,
+          "province": "NU",
+          "target_species": "PICE.GLA",
+          "area_ha": 5826.19289989234,
+          "ecodistrict": "Walmesley - Warburton",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 258,
+          "province": "NU",
+          "target_species": "PICE.MAR",
+          "area_ha": 42517.49956610426,
+          "ecodistrict": "Walmesley - Warburton",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 258,
+          "province": "NU",
+          "target_species": "PINU.BAN",
+          "area_ha": 362.40011399379,
+          "ecodistrict": "Walmesley - Warburton",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 258,
+          "province": "NU",
+          "target_species": "PINU.CON",
+          "area_ha": 34.90661528613418,
+          "ecodistrict": "Walmesley - Warburton",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 259,
+          "province": "NU",
+          "target_species": "BROADLEAF",
+          "area_ha": 4.321785535197705,
+          "ecodistrict": "Whitefish Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 259,
+          "province": "NU",
+          "target_species": "LARI.LAR",
+          "area_ha": 42.9666517234873,
+          "ecodistrict": "Whitefish Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 259,
+          "province": "NU",
+          "target_species": "PICE.GLA",
+          "area_ha": 110.01890792441554,
+          "ecodistrict": "Whitefish Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 259,
+          "province": "NU",
+          "target_species": "PICE.MAR",
+          "area_ha": 351.7162506552413,
+          "ecodistrict": "Whitefish Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 259,
+          "province": "NU",
+          "target_species": "PINU.BAN",
+          "area_ha": 2.8964098035357893,
+          "ecodistrict": "Whitefish Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Coppermine River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 266,
+          "province": "NU",
+          "target_species": "BROADLEAF",
+          "area_ha": 5.451832526363432,
+          "ecodistrict": "Beaverhill Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Kazan River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 266,
+          "province": "NU",
+          "target_species": "LARI.LAR",
+          "area_ha": 11.536390838911757,
+          "ecodistrict": "Beaverhill Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Kazan River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 266,
+          "province": "NU",
+          "target_species": "PICE.GLA",
+          "area_ha": 6.6038558289874345,
+          "ecodistrict": "Beaverhill Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Kazan River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 266,
+          "province": "NU",
+          "target_species": "PICE.MAR",
+          "area_ha": 79.6111615318805,
+          "ecodistrict": "Beaverhill Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Kazan River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 266,
+          "province": "NU",
+          "target_species": "PINU.BAN",
+          "area_ha": 0.9267614907585084,
+          "ecodistrict": "Beaverhill Lake",
+          "ecozone": "Taiga Shield West",
+          "ecoprovince": "Western Taiga Shield",
+          "ecoregion": "Kazan River Upland",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "ABIE.BAL",
+          "area_ha": 7.76001539407298,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "BROADLEAF",
+          "area_ha": 3247.526638894225,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "LARI.LAR",
+          "area_ha": 6839.371644866886,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "PICE.GLA",
+          "area_ha": 922.9189468130936,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "PICE.MAR",
+          "area_ha": 8970.679096862674,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "PINU.BAN",
+          "area_ha": 1.6883419174700975,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 298,
+          "province": "NU",
+          "target_species": "PINU.CON",
+          "area_ha": 0.0453289682045578,
+          "ecodistrict": "Lac aux Feuilles Hills",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "Ungava Bay Basin",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 302,
+          "province": "NL",
+          "target_species": "ABIE.BAL",
+          "area_ha": 409.9687441922724,
+          "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 302,
+          "province": "NL",
+          "target_species": "BROADLEAF",
+          "area_ha": 56.66181162302382,
+          "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 302,
+          "province": "NL",
+          "target_species": "LARI.LAR",
+          "area_ha": 164.84114506526385,
+          "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 302,
+          "province": "NL",
+          "target_species": "PICE.GLA",
+          "area_ha": 347.5647064198274,
+          "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 302,
+          "province": "NL",
+          "target_species": "PICE.MAR",
+          "area_ha": 2390.872818686068,
+          "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 302,
+          "province": "NL",
+          "target_species": "PINU.BAN",
+          "area_ha": 161.06079835770652,
+          "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 303,
+          "province": "NL",
+          "target_species": "ABIE.BAL",
+          "area_ha": 399.9564850809984,
+          "ecodistrict": "George River Lower Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 303,
+          "province": "NL",
+          "target_species": "BROADLEAF",
+          "area_ha": 64.71077084576245,
+          "ecodistrict": "George River Lower Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 303,
+          "province": "NL",
+          "target_species": "LARI.LAR",
+          "area_ha": 188.0590320713818,
+          "ecodistrict": "George River Lower Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 303,
+          "province": "NL",
+          "target_species": "PICE.GLA",
+          "area_ha": 748.8778919780161,
+          "ecodistrict": "George River Lower Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 303,
+          "province": "NL",
+          "target_species": "PICE.MAR",
+          "area_ha": 2097.3412522948347,
+          "ecodistrict": "George River Lower Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 303,
+          "province": "NL",
+          "target_species": "PINU.BAN",
+          "area_ha": 122.38457983452828,
+          "ecodistrict": "George River Lower Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 304,
+          "province": "NL",
+          "target_species": "ABIE.BAL",
+          "area_ha": 40.47159564495087,
+          "ecodistrict": "George Rriver Upper Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 304,
+          "province": "NL",
+          "target_species": "BROADLEAF",
+          "area_ha": 9.56642773177009,
+          "ecodistrict": "George Rriver Upper Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 304,
+          "province": "NL",
+          "target_species": "LARI.LAR",
+          "area_ha": 12.899005398270674,
+          "ecodistrict": "George Rriver Upper Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 304,
+          "province": "NL",
+          "target_species": "PICE.GLA",
+          "area_ha": 108.07825762126596,
+          "ecodistrict": "George Rriver Upper Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 304,
+          "province": "NL",
+          "target_species": "PICE.MAR",
+          "area_ha": 284.8565253727138,
+          "ecodistrict": "George Rriver Upper Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 304,
+          "province": "NL",
+          "target_species": "PINU.BAN",
+          "area_ha": 30.30819257721305,
+          "ecodistrict": "George Rriver Upper Plateau",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Whale River Lowland",
+          "ecoregion": "George Plateau",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 305,
+          "province": "QC",
+          "target_species": "BROADLEAF",
+          "area_ha": 0.0065454547293484,
+          "ecodistrict": "Central Ranges",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Labrador Uplands",
+          "ecoregion": "Kingarutuk-Fraser River",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 305,
+          "province": "QC",
+          "target_species": "LARI.LAR",
+          "area_ha": 0.101797929033637,
+          "ecodistrict": "Central Ranges",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Labrador Uplands",
+          "ecoregion": "Kingarutuk-Fraser River",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 305,
+          "province": "QC",
+          "target_species": "PICE.GLA",
+          "area_ha": 0.1384615451097488,
+          "ecodistrict": "Central Ranges",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Labrador Uplands",
+          "ecoregion": "Kingarutuk-Fraser River",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 305,
+          "province": "QC",
+          "target_species": "PICE.MAR",
+          "area_ha": 1.2189846150577068,
+          "ecodistrict": "Central Ranges",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Labrador Uplands",
+          "ecoregion": "Kingarutuk-Fraser River",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 305,
+          "province": "QC",
+          "target_species": "PINU.BAN",
+          "area_ha": 0.154210539534688,
+          "ecodistrict": "Central Ranges",
+          "ecozone": "Taiga Shield East",
+          "ecoprovince": "Labrador Uplands",
+          "ecoregion": "Kingarutuk-Fraser River",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 509,
+          "province": "NB",
+          "target_species": "ABIE.BAL",
+          "area_ha": 0.0139044942334294,
+          "ecodistrict": "North Mountain",
+          "ecozone": "Atlantic Maritime",
+          "ecoprovince": "Fundy Uplands",
+          "ecoregion": "Fundy Coast",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 509,
+          "province": "NB",
+          "target_species": "BROADLEAF",
+          "area_ha": 0.0745786502957344,
+          "ecodistrict": "North Mountain",
+          "ecozone": "Atlantic Maritime",
+          "ecoprovince": "Fundy Uplands",
+          "ecoregion": "Fundy Coast",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 509,
+          "province": "NB",
+          "target_species": "CONIFEROUS",
+          "area_ha": 0.1162921339273452,
+          "ecodistrict": "North Mountain",
+          "ecozone": "Atlantic Maritime",
+          "ecoprovince": "Fundy Uplands",
+          "ecoregion": "Fundy Coast",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 509,
+          "province": "NB",
+          "target_species": "LARI.LAR",
+          "area_ha": 0.2085674107074737,
+          "ecodistrict": "North Mountain",
+          "ecozone": "Atlantic Maritime",
+          "ecoprovince": "Fundy Uplands",
+          "ecoregion": "Fundy Coast",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 509,
+          "province": "NB",
+          "target_species": "PINU.BAN",
+          "area_ha": 0.036657303571701,
+          "ecodistrict": "North Mountain",
+          "ecozone": "Atlantic Maritime",
+          "ecoprovince": "Fundy Uplands",
+          "ecoregion": "Fundy Coast",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "ABIE.BAL",
+          "area_ha": 1.9335972188273445,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "BROADLEAF",
+          "area_ha": 41511.20556733804,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "LARI.LAR",
+          "area_ha": 125.75926197215448,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "PICE.GLA",
+          "area_ha": 1186.9689877100757,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "PICE.MAR",
+          "area_ha": 84.3500673957169,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "PINU.BAN",
+          "area_ha": 113.0932017705636,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 695,
+          "province": "AB",
+          "target_species": "PINU.CON",
+          "area_ha": 6.319343716255389,
+          "ecodistrict": "Turtle River Plain",
+          "ecozone": "Boreal Plains",
+          "ecoprovince": "Central Boreal Plains",
+          "ecoregion": "Boreal Transition",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 857,
+          "province": "NT",
+          "target_species": "BROADLEAF",
+          "area_ha": 16.96162079134956,
+          "ecodistrict": "Babbage River",
+          "ecozone": "Taiga Cordillera",
+          "ecoprovince": "Northern Yukon Mountains",
+          "ecoregion": "British-Richardson Mountains",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 857,
+          "province": "NT",
+          "target_species": "LARI.LAR",
+          "area_ha": 4.2677250248380005,
+          "ecodistrict": "Babbage River",
+          "ecozone": "Taiga Cordillera",
+          "ecoprovince": "Northern Yukon Mountains",
+          "ecoregion": "British-Richardson Mountains",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 857,
+          "province": "NT",
+          "target_species": "PICE.GLA",
+          "area_ha": 19.677062435541306,
+          "ecodistrict": "Babbage River",
+          "ecozone": "Taiga Cordillera",
+          "ecoprovince": "Northern Yukon Mountains",
+          "ecoregion": "British-Richardson Mountains",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 857,
+          "province": "NT",
+          "target_species": "PICE.MAR",
+          "area_ha": 12.15231721289456,
+          "ecodistrict": "Babbage River",
+          "ecozone": "Taiga Cordillera",
+          "ecoprovince": "Northern Yukon Mountains",
+          "ecoregion": "British-Richardson Mountains",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 857,
+          "province": "NT",
+          "target_species": "PINU.BAN",
+          "area_ha": 0.4912749275099486,
+          "ecodistrict": "Babbage River",
+          "ecozone": "Taiga Cordillera",
+          "ecoprovince": "Northern Yukon Mountains",
+          "ecoregion": "British-Richardson Mountains",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "ABIE.BAL",
+          "area_ha": 659.6126624740427,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "BROADLEAF",
+          "area_ha": 15679.60630500107,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "CONIFEROUS",
+          "area_ha": 6283.763703049859,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "LARI.LAR",
+          "area_ha": 21.11643536493648,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "PICE.MAR",
+          "area_ha": 4.340005402453244,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "PINU.BAN",
+          "area_ha": 36.45179223630112,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "PINU.CON",
+          "area_ha": 4410.748008521507,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        },
+        {
+          "ecodistrict_id": 1018,
+          "province": "SK",
+          "target_species": "PSEU.MEN",
+          "area_ha": 1.3810657233698294,
+          "ecodistrict": "Blairmore Foothills",
+          "ecozone": "Montane Cordillera",
+          "ecoprovince": "Columbia Montane Cordillera",
+          "ecoregion": "Northern Continental Divide",
+          "reason": "province has no geographic intersection with any tile in this district; district-wide tile share used"
+        }
+      ],
+      "note": "SCANFI blocks assigned by nearest fill to a province that has no geographic intersection with any tile in the ecodistrict; allocated with the district-wide tile share and flagged, never silently assigned to a province."
+    }
+  },
+  "model_catalogue": {
+    "volume_models": 8670,
+    "tile_curves": 2443,
+    "ecological_curves_by_level": {
+      "ecodistrict": 672,
+      "ecoregion": 138,
+      "ecoprovince": 36,
+      "ecozone": 12
+    }
+  },
+  "partial_tile_coverage_ecodistricts": [
+    {
+      "ecodistrict_id": 297,
+      "ecodistrict": "La Baleine Coastal Plain",
+      "ecodistrict_area_ha": 1393747.1122348905,
+      "covered_area_ha": 770646.3366096312,
+      "covered_fraction": 0.5529312526243663
+    },
+    {
+      "ecodistrict_id": 516,
+      "ecodistrict": "Atlantic",
+      "ecodistrict_area_ha": 3051895.146558305,
+      "covered_area_ha": 2945409.816934987,
+      "covered_fraction": 0.9651084573651215
+    },
+    {
+      "ecodistrict_id": 471,
+      "ecodistrict": "Northeastern Barrens",
+      "ecodistrict_area_ha": 1204726.679904273,
+      "covered_area_ha": 1168045.7757692302,
+      "covered_fraction": 0.9695525095053449
+    },
+    {
+      "ecodistrict_id": 477,
+      "ecodistrict": "Oceanic Barrens",
+      "ecodistrict_area_ha": 1318427.281413194,
+      "covered_area_ha": 1278800.329901008,
+      "covered_fraction": 0.9699437715899577
+    },
+    {
+      "ecodistrict_id": 1021,
+      "ecodistrict": "York Factory",
+      "ecodistrict_area_ha": 2924365.2585046426,
+      "covered_area_ha": 2895019.773579209,
+      "covered_fraction": 0.9899651779680767
+    },
+    {
+      "ecodistrict_id": 404,
+      "ecodistrict": "Dog River",
+      "ecodistrict_area_ha": 2203127.557373784,
+      "covered_area_ha": 2181238.945426762,
+      "covered_fraction": 0.990064755046179
+    },
+    {
+      "ecodistrict_id": 411,
+      "ecodistrict": "Nipissing",
+      "ecodistrict_area_ha": 2631392.378952416,
+      "covered_area_ha": 2628737.8353630016,
+      "covered_fraction": 0.9989912019162754
+    },
+    {
+      "ecodistrict_id": 302,
+      "ecodistrict": "Port-Nouveau Qu\u00e9bec Coast",
+      "ecodistrict_area_ha": 711196.0093385996,
+      "covered_area_ha": 710821.9987290258,
+      "covered_fraction": 0.9994741103652682
+    },
+    {
+      "ecodistrict_id": 937,
+      "ecodistrict": "Alask Ranges",
+      "ecodistrict_area_ha": 255162.65480501842,
+      "covered_area_ha": 255060.25514628988,
+      "covered_fraction": 0.9995986886920941
+    },
+    {
+      "ecodistrict_id": 319,
+      "ecodistrict": "Harbour",
+      "ecodistrict_area_ha": 1082797.751535623,
+      "covered_area_ha": 1082481.024124921,
+      "covered_fraction": 0.9997074916250492
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "check": "tile_layer_has_no_overlaps",
+        "passed": true,
+        "detail": {
+          "sum_feature_area_minus_union_area_ha": 0.0
+        }
+      },
+      {
+        "check": "ecodistrict_layer_has_no_overlaps",
+        "passed": true,
+        "detail": {
+          "sum_feature_area_minus_union_area_ha": 4.172325134277344e-06
+        }
+      },
+      {
+        "check": "pairwise_intersection_equals_union_intersection",
+        "passed": true,
+        "detail": {
+          "pair_area_ha": 691220890.0605261,
+          "union_intersection_ha": 691220890.0605223,
+          "abs_error_ha": 3.814697265625e-06
+        }
+      },
+      {
+        "check": "tile_area_closes_with_intersection_and_outside_part",
+        "passed": true,
+        "detail": {
+          "tile_area_ha": 866250000.0,
+          "intersection_plus_tile_only_ha": 866249999.9999995,
+          "abs_error_ha": 4.76837158203125e-07
+        }
+      },
+      {
+        "check": "ecodistrict_area_closes_with_intersection_and_outside_part",
+        "passed": true,
+        "detail": {
+          "ecodistrict_area_ha": 692081504.5642028,
+          "intersection_plus_ecodistrict_only_ha": 692081504.5641987,
+          "abs_error_ha": 4.0531158447265625e-06
+        }
+      },
+      {
+        "check": "union_area_closes_with_three_components",
+        "passed": true,
+        "detail": {
+          "union_area_ha": 867110614.5036722,
+          "components_ha": 867110614.5036721,
+          "abs_error_ha": 1.1920928955078125e-07
+        }
+      },
+      {
+        "check": "ecodistrict_fractions_sum_to_one",
+        "passed": true,
+        "detail": {
+          "max_abs_deviation": 2.220446049250313e-16
+        }
+      },
+      {
+        "check": "raw_ecodistrict_fractions_sum_to_covered_fraction",
+        "passed": true,
+        "detail": {
+          "max_abs_deviation": 2.220446049250313e-16
+        }
+      },
+      {
+        "check": "tile_fractions_do_not_exceed_one",
+        "passed": true,
+        "detail": {
+          "max_tile_fraction_sum": 1.000000000000001
+        }
+      },
+      {
+        "check": "no_duplicate_tile_ecodistrict_pairs",
+        "passed": true,
+        "detail": {
+          "duplicates": 0
+        }
+      },
+      {
+        "check": "all_intersection_areas_positive",
+        "passed": true,
+        "detail": {
+          "min_intersection_area_ha": 0.019678794098820635
+        }
+      },
+      {
+        "check": "all_intersection_geometries_polygonal",
+        "passed": true,
+        "detail": {
+          "geometry_types": [
+            "MultiPolygon",
+            "Polygon"
+          ]
+        }
+      },
+      {
+        "check": "province_layer_has_no_overlaps",
+        "passed": true,
+        "detail": {
+          "sum_feature_area_minus_union_area_ha": -2.86102294921875e-06
+        }
+      },
+      {
+        "check": "province_district_fractions_sum_to_one",
+        "passed": true,
+        "detail": {
+          "max_abs_deviation": 2.220446049250313e-16
+        }
+      },
+      {
+        "check": "province_tile_fractions_do_not_exceed_one",
+        "passed": true,
+        "detail": {
+          "max_tile_fraction_sum": 1.000000000000002
+        }
+      },
+      {
+        "check": "province_intersections_are_polygonal_and_positive",
+        "passed": true,
+        "detail": {
+          "min_intersection_area_ha": 0.9773301779606569
+        }
+      },
+      {
+        "check": "province_cover_share_recorded",
+        "passed": true,
+        "detail": {
+          "province_cover_share_of_intersection": 0.9367534352652593,
+          "note": "coastal and offshore tile/ecodistrict area is outside simplified province polygons"
+        }
+      },
+      {
+        "check": "every_positive_tile_species_cell_has_a_curve",
+        "passed": true,
+        "detail": {
+          "cells": 3948,
+          "missing": 0
+        }
+      },
+      {
+        "check": "library_area_equals_tile_species_area",
+        "passed": true,
+        "detail": {
+          "library_area_ha": 422475761.5224368,
+          "tile_species_area_ha": 422475761.5224368,
+          "abs_difference_ha": 0.0
+        }
+      },
+      {
+        "check": "library_area_reconciles_to_scanfi",
+        "passed": true,
+        "detail": {
+          "library_area_ha": 422475761.5224368,
+          "scanfi_area_ha": 422475761.52243674,
+          "abs_difference_ha": 5.960464477539063e-08
+        }
+      },
+      {
+        "check": "source_keys_are_complete_and_canonical",
+        "passed": true,
+        "detail": {
+          "blank_keys": 0,
+          "cell_key_mismatches": 0
+        }
+      },
+      {
+        "check": "no_duplicate_library_cells",
+        "passed": true,
+        "detail": {
+          "duplicate_cell_keys": 0,
+          "duplicate_tile_province_species": 0
+        }
+      },
+      {
+        "check": "all_numeric_values_finite",
+        "passed": true,
+        "detail": {
+          "non_finite_values": 0,
+          "columns_with_nan": []
+        }
+      },
+      {
+        "check": "all_areas_strictly_positive",
+        "passed": true,
+        "detail": {
+          "non_positive_cells": 0
+        }
+      },
+      {
+        "check": "b1_b2_b3_strictly_positive_b4_finite",
+        "passed": true,
+        "detail": {
+          "non_positive_coefficients": 0
+        }
+      },
+      {
+        "check": "predictions_finite_and_non_negative",
+        "passed": true,
+        "detail": {
+          "ages": [
+            50.0,
+            100.0,
+            150.0
+          ],
+          "invalid_predictions": 0
+        }
+      },
+      {
+        "check": "negative_b4_is_flagged_not_dropped",
+        "passed": true,
+        "detail": {
+          "negative_b4": 872,
+          "flagged": 872
+        }
+      },
+      {
+        "check": "province_area_sums_reconcile_to_source",
+        "passed": true,
+        "detail": {
+          "max_abs_difference_ha": 0.0,
+          "extra_provinces": []
+        }
+      },
+      {
+        "check": "species_area_sums_reconcile_to_source",
+        "passed": true,
+        "detail": {
+          "max_abs_difference_ha": 1.1641532182693481e-10,
+          "species": 12
+        }
+      },
+      {
+        "check": "district_province_species_allocation_closes",
+        "passed": true,
+        "detail": {
+          "groups": 5800,
+          "max_abs_error_ha": 4.656612873077393e-10
+        }
+      },
+      {
+        "check": "no_province_intersection_area_is_reported",
+        "passed": true,
+        "detail": {
+          "fallback_area_ha": 156379.86011338176,
+          "reported_fallback_area_ha": 156379.86011338176,
+          "fallback_groups": 86
+        }
+      },
+      {
+        "check": "evidence_tiers_are_known",
+        "passed": true,
+        "detail": {
+          "tiers": [
+            "rsyc_tile_exact",
+            "rsyc_tile_generic",
+            "rsyc_tile_group"
+          ]
+        }
+      },
+      {
+        "check": "allocation_bases_are_known",
+        "passed": true,
+        "detail": {
+          "bases": [
+            "district_fallback_no_province_intersection",
+            "mixed_province_intersection_and_district_fallback",
+            "province_intersection"
+          ]
+        }
+      }
+    ]
+  }
+}

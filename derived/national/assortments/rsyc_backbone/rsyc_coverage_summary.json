@@ -1,0 +1,936 @@
+{
+  "generated_at": "2026-11-18T17:36:32.899209+00:00",
+  "inputs": {
+    "RSYC_models.zip": "data/raw/national/rsyc/RSYC_models.zip",
+    "RSYC_tiles.gpkg": "data/raw/national/rsyc/RSYC_tiles.gpkg",
+    "RSYC_ecostrat.gpkg": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+    "national_area_weights_ecodistrict.csv": "data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv",
+    "national_area_weights.csv": "data/derived/national/assortments/national_area_weights/national_area_weights.csv",
+    "national_area_weights_province.csv": "data/derived/national/assortments/national_area_weights/national_area_weights_province.csv",
+    "national_distribution_parameters.csv": "data/derived/national/assortments/national_fit/national_distribution_parameters.csv",
+    "national_stands.csv": "data/derived/national/assortments/national_batch/national_stands.csv",
+    "national-rsyc-backbone.md": "planning/national-rsyc-backbone.md",
+    "species_group_check": {
+      "species_checked": "35",
+      "mismatches": "0",
+      "backbone_only_labels": ""
+    },
+    "published_tiles": 385
+  },
+  "parameters": {
+    "responses": [
+      "volume"
+    ],
+    "response_units": [
+      "m3/ha"
+    ],
+    "model_scale": "national",
+    "publish_ok": true,
+    "fit_ok": true,
+    "converged": true,
+    "age_grid": [
+      50,
+      100,
+      150
+    ],
+    "operational_age_range": [
+      1,
+      150
+    ],
+    "target_levels": [
+      "ecodistrict",
+      "ecoprovince (residual only)"
+    ],
+    "ladder": [
+      "ecodistrict",
+      "ecoregion",
+      "ecoprovince",
+      "ecozone",
+      "tile"
+    ],
+    "selected_model_strata": {
+      "ecodistrict": 672,
+      "ecoregion": 138,
+      "ecoprovince": 36,
+      "ecozone": 12
+    }
+  },
+  "target_cells": {
+    "total": 5800,
+    "ecodistrict_level": 5800,
+    "ecoprovince_level": 0,
+    "unique_ecodistricts": 672,
+    "unique_ecodistrict_species_cells": 4677,
+    "total_area_ha": 422475761.5224375,
+    "unique_species": 12
+  },
+  "selection": {
+    "target_cells": 5800,
+    "covered_cells": 5800,
+    "failed_cells": 0,
+    "by_evidence_tier": {
+      "rsyc_group": 2618,
+      "rsyc_direct": 1880,
+      "rsyc_fallback": 1302
+    },
+    "by_selected_level": {
+      "ecodistrict": 4308,
+      "ecozone": 638,
+      "ecoregion": 558,
+      "ecoprovince": 290,
+      "tile": 6
+    },
+    "by_source_species": {
+      "coniferous": 1776,
+      "broadleaf": 842,
+      "PICE.MAR": 823,
+      "PICE.GLA": 656,
+      "PINU.BAN": 626,
+      "PINU.CON": 428,
+      "ABIE.BAL": 249,
+      "PINU.STR": 165,
+      "PINU.RES": 96,
+      "PSEU.MEN": 95,
+      "PINU.PON": 44
+    },
+    "fallback_depth_distribution": [
+      {
+        "fallback_depth": 0,
+        "cells": 1880,
+        "area_ha": 255722993.03826162
+      },
+      {
+        "fallback_depth": 1,
+        "cells": 468,
+        "area_ha": 9692602.359849395
+      },
+      {
+        "fallback_depth": 2,
+        "cells": 241,
+        "area_ha": 2556555.679749397
+      },
+      {
+        "fallback_depth": 3,
+        "cells": 587,
+        "area_ha": 7835877.424643931
+      },
+      {
+        "fallback_depth": 4,
+        "cells": 6,
+        "area_ha": 7721.578748234897
+      },
+      {
+        "fallback_depth": 5,
+        "cells": 2428,
+        "area_ha": 143200839.22282368
+      },
+      {
+        "fallback_depth": 6,
+        "cells": 90,
+        "area_ha": 1514084.1688606585
+      },
+      {
+        "fallback_depth": 7,
+        "cells": 49,
+        "area_ha": 1032589.7799304696
+      },
+      {
+        "fallback_depth": 8,
+        "cells": 51,
+        "area_ha": 912498.2695693988
+      }
+    ],
+    "negative_b4_curves": 2201
+  },
+  "area_coverage": {
+    "total_area_ha": 422475761.52243674,
+    "covered_area_ha": 422475761.52243674,
+    "coverage_fraction": 1.0,
+    "direct_area_ha": 255722993.0382616,
+    "direct_share": 0.6052962473320039,
+    "fallback_area_ha": 20092757.04299096,
+    "fallback_share": 0.04755954985579422,
+    "group_area_ha": 146660011.44118422,
+    "group_share": 0.3471442028122019,
+    "failed_area_ha": 0.0,
+    "zero_area_excluded_ha": 0.0,
+    "zero_area_cells": 0,
+    "unmapped_area_ha": 0.0,
+    "unmapped_cells": 0,
+    "ecoprovince_only_area_ha": 0.0,
+    "ecoprovince_only_cells": 0,
+    "unique_ecodistricts": 672,
+    "by_province": [
+      {
+        "province": "AB",
+        "target_cells": 763,
+        "area_ha": 38345566.46872932,
+        "covered_area_ha": 38345566.46872932,
+        "direct_area_ha": 20924725.15349723,
+        "fallback_area_ha": 664826.1003737017,
+        "group_area_ha": 16756015.21485839,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.5456882523970867,
+        "fallback_share": 0.01733775665867044,
+        "group_share": 0.43697399094424294
+      },
+      {
+        "province": "BC",
+        "target_cells": 732,
+        "area_ha": 66607737.050736144,
+        "covered_area_ha": 66607737.050736144,
+        "direct_area_ha": 29602768.088377085,
+        "fallback_area_ha": 1229752.0262312829,
+        "group_area_ha": 35775216.936127774,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.4444343765323869,
+        "fallback_share": 0.018462600302642945,
+        "group_share": 0.5371030231649702
+      },
+      {
+        "province": "MB",
+        "target_cells": 454,
+        "area_ha": 33753909.97676766,
+        "covered_area_ha": 33753909.97676766,
+        "direct_area_ha": 22300554.199642416,
+        "fallback_area_ha": 816225.4862191778,
+        "group_area_ha": 10637130.290906066,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.6606806208522679,
+        "fallback_share": 0.02418165737779636,
+        "group_share": 0.31513772176993576
+      },
+      {
+        "province": "NB",
+        "target_cells": 229,
+        "area_ha": 6692497.659203672,
+        "covered_area_ha": 6692497.659203672,
+        "direct_area_ha": 2386695.3383084834,
+        "fallback_area_ha": 302064.8842903154,
+        "group_area_ha": 4003737.4366048733,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.35662251372269765,
+        "fallback_share": 0.04513485094386384,
+        "group_share": 0.5982426353334386
+      },
+      {
+        "province": "NL",
+        "target_cells": 437,
+        "area_ha": 23531836.32981137,
+        "covered_area_ha": 23531836.32981137,
+        "direct_area_ha": 18201599.45873093,
+        "fallback_area_ha": 2347263.897189646,
+        "group_area_ha": 2982972.9738907944,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.7734882736572575,
+        "fallback_share": 0.09974843715090814,
+        "group_share": 0.12676328919183444
+      },
+      {
+        "province": "NS",
+        "target_cells": 215,
+        "area_ha": 4727696.942226688,
+        "covered_area_ha": 4727696.942226688,
+        "direct_area_ha": 984113.6465856389,
+        "fallback_area_ha": 155843.4080262474,
+        "group_area_ha": 3587739.887614802,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.20815920703287152,
+        "fallback_share": 0.03296391666612349,
+        "group_share": 0.758876876301005
+      },
+      {
+        "province": "NT",
+        "target_cells": 592,
+        "area_ha": 43460564.15861774,
+        "covered_area_ha": 43460564.15861774,
+        "direct_area_ha": 29131948.688785512,
+        "fallback_area_ha": 1965096.984351725,
+        "group_area_ha": 12363518.485480508,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.6703076513793707,
+        "fallback_share": 0.045215634504414695,
+        "group_share": 0.2844767141162147
+      },
+      {
+        "province": "NU",
+        "target_cells": 176,
+        "area_ha": 2834208.4556980436,
+        "covered_area_ha": 2834208.4556980436,
+        "direct_area_ha": 1915942.3396989394,
+        "fallback_area_ha": 159166.75511375838,
+        "group_area_ha": 759099.3608853457,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.676006147623696,
+        "fallback_share": 0.056159156110680945,
+        "group_share": 0.26783469626562295
+      },
+      {
+        "province": "ON",
+        "target_cells": 446,
+        "area_ha": 68517060.22705284,
+        "covered_area_ha": 68517060.22705284,
+        "direct_area_ha": 39094841.09434574,
+        "fallback_area_ha": 4637195.820979506,
+        "group_area_ha": 24785023.311727595,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.5705855003818419,
+        "fallback_share": 0.06767943349601833,
+        "group_share": 0.3617350661221398
+      },
+      {
+        "province": "PE",
+        "target_cells": 40,
+        "area_ha": 274471.83034601156,
+        "covered_area_ha": 274471.83034601156,
+        "direct_area_ha": 49889.99304467242,
+        "fallback_area_ha": 4318.604040092789,
+        "group_area_ha": 220263.23326124635,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.1817672618052601,
+        "fallback_share": 0.015734234127591753,
+        "group_share": 0.8024985040671482
+      },
+      {
+        "province": "QC",
+        "target_cells": 589,
+        "area_ha": 81663538.55922952,
+        "covered_area_ha": 81663538.55922952,
+        "direct_area_ha": 53739650.68524754,
+        "fallback_area_ha": 7129438.632443297,
+        "group_area_ha": 20794449.24153868,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.6580617449765646,
+        "fallback_share": 0.08730259254284464,
+        "group_share": 0.2546356624805908
+      },
+      {
+        "province": "SK",
+        "target_cells": 621,
+        "area_ha": 26160931.275394518,
+        "covered_area_ha": 26160931.275394518,
+        "direct_area_ha": 17350190.253239866,
+        "fallback_area_ha": 503983.468287703,
+        "group_area_ha": 8306757.553866948,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.6632099626192768,
+        "fallback_share": 0.019264737290209586,
+        "group_share": 0.31752530009051366
+      },
+      {
+        "province": "YT",
+        "target_cells": 506,
+        "area_ha": 25905742.588623255,
+        "covered_area_ha": 25905742.588623255,
+        "direct_area_ha": 20040074.098757558,
+        "fallback_area_ha": 177580.97544450522,
+        "group_area_ha": 5688087.514421193,
+        "coverage_fraction": 1.0,
+        "direct_share": 0.7735765161025857,
+        "fallback_share": 0.006854888441703714,
+        "group_share": 0.2195685954557106
+      }
+    ]
+  },
+  "qc": {
+    "curves_selected": 5800,
+    "nan_coefficients": 0,
+    "negative_b1_b2_b3": 0,
+    "negative_b4": 2201,
+    "nan_or_negative_predictions": 0,
+    "median_volume_age50": 92.95683515033919,
+    "median_volume_age100": 115.15208469565677,
+    "median_volume_age150": 118.95548699869885,
+    "min_volume_age50": 16.867822747816223,
+    "max_volume_age150": 637.5951003530736
+  },
+  "species": {
+    "by_target_species": [
+      {
+        "target_species": "ABIE.BAL",
+        "target_cells": 683,
+        "area_ha": 17465104.97930168,
+        "direct_area_ha": 13249861.208257176,
+        "fallback_area_ha": 2938111.9153462043,
+        "group_area_ha": 1277131.855698303,
+        "selected_level_counts": {
+          "ecodistrict": 585,
+          "ecoregion": 41,
+          "ecozone": 35,
+          "ecoprovince": 22
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "BROADLEAF",
+        "target_cells": 842,
+        "area_ha": 82649859.9345988,
+        "direct_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "group_area_ha": 82649859.9345988,
+        "selected_level_counts": {
+          "ecodistrict": 652,
+          "ecoregion": 90,
+          "ecozone": 51,
+          "ecoprovince": 49
+        },
+        "national_species_curves_available": false
+      },
+      {
+        "target_species": "CONIFEROUS",
+        "target_cells": 164,
+        "area_ha": 34616820.468066365,
+        "direct_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "group_area_ha": 34616820.468066365,
+        "selected_level_counts": {
+          "ecodistrict": 164
+        },
+        "national_species_curves_available": false
+      },
+      {
+        "target_species": "LARI.LAR",
+        "target_cells": 814,
+        "area_ha": 27150318.06884686,
+        "direct_area_ha": 0.0,
+        "fallback_area_ha": 0.0,
+        "group_area_ha": 27150318.06884686,
+        "selected_level_counts": {
+          "ecodistrict": 814
+        },
+        "national_species_curves_available": false
+      },
+      {
+        "target_species": "PICE.GLA",
+        "target_cells": 679,
+        "area_ha": 39033902.519337416,
+        "direct_area_ha": 25093658.796633154,
+        "fallback_area_ha": 13404780.30313591,
+        "group_area_ha": 535463.419568349,
+        "selected_level_counts": {
+          "ecodistrict": 316,
+          "ecozone": 154,
+          "ecoregion": 151,
+          "ecoprovince": 58
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PICE.MAR",
+        "target_cells": 823,
+        "area_ha": 153682120.5158236,
+        "direct_area_ha": 153464778.18365058,
+        "fallback_area_ha": 217342.33217302442,
+        "group_area_ha": 0.0,
+        "selected_level_counts": {
+          "ecodistrict": 763,
+          "ecozone": 24,
+          "ecoprovince": 19,
+          "ecoregion": 17
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PINU.BAN",
+        "target_cells": 717,
+        "area_ha": 39126191.37211102,
+        "direct_area_ha": 36603541.04440113,
+        "fallback_area_ha": 2491686.869746925,
+        "group_area_ha": 30963.457962967805,
+        "selected_level_counts": {
+          "ecodistrict": 442,
+          "ecozone": 128,
+          "ecoregion": 96,
+          "ecoprovince": 49,
+          "tile": 2
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PINU.CON",
+        "target_cells": 476,
+        "area_ha": 21195759.299150717,
+        "direct_area_ha": 20766049.018656008,
+        "fallback_area_ha": 361860.28828654485,
+        "group_area_ha": 67849.99220816197,
+        "selected_level_counts": {
+          "ecodistrict": 276,
+          "ecoregion": 113,
+          "ecozone": 62,
+          "ecoprovince": 25
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PINU.PON",
+        "target_cells": 59,
+        "area_ha": 211686.43934008584,
+        "direct_area_ha": 58017.753121090354,
+        "fallback_area_ha": 152750.2470898527,
+        "group_area_ha": 918.4391291427892,
+        "selected_level_counts": {
+          "ecozone": 32,
+          "ecodistrict": 19,
+          "ecoregion": 4,
+          "ecoprovince": 3,
+          "tile": 1
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PINU.RES",
+        "target_cells": 205,
+        "area_ha": 1025102.4654655597,
+        "direct_area_ha": 612885.7589927284,
+        "fallback_area_ha": 146030.84849620564,
+        "group_area_ha": 266185.8579766255,
+        "selected_level_counts": {
+          "ecodistrict": 118,
+          "ecozone": 68,
+          "ecoregion": 19
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PINU.STR",
+        "target_cells": 205,
+        "area_ha": 1025102.4654655597,
+        "direct_area_ha": 741243.2985291381,
+        "fallback_area_ha": 221168.26934360908,
+        "group_area_ha": 62690.89759281237,
+        "selected_level_counts": {
+          "ecozone": 82,
+          "ecodistrict": 64,
+          "ecoprovince": 40,
+          "ecoregion": 19
+        },
+        "national_species_curves_available": true
+      },
+      {
+        "target_species": "PSEU.MEN",
+        "target_cells": 133,
+        "area_ha": 5293792.994929091,
+        "direct_area_ha": 5132957.976020598,
+        "fallback_area_ha": 159025.96937268344,
+        "group_area_ha": 1809.049535810249,
+        "selected_level_counts": {
+          "ecodistrict": 95,
+          "ecoprovince": 25,
+          "ecoregion": 8,
+          "tile": 3,
+          "ecozone": 2
+        },
+        "national_species_curves_available": true
+      }
+    ],
+    "target_species_without_any_national_species_curve": [
+      "LARI.LAR"
+    ]
+  },
+  "tile_first": {
+    "selection": {
+      "target_cells": 5800,
+      "covered_cells": 5800,
+      "failed_cells": 0,
+      "by_evidence_tier": {
+        "rsyc_group": 3890,
+        "rsyc_fallback": 1910
+      },
+      "by_selected_level": {
+        "tile": 5800
+      },
+      "by_source_species": {
+        "coniferous": 3048,
+        "PICE.MAR": 769,
+        "broadleaf": 637,
+        "PINU.BAN": 359,
+        "PICE.GLA": 281,
+        "PINU.CON": 229,
+        "generic": 205,
+        "ABIE.BAL": 159,
+        "PSEU.MEN": 68,
+        "PINU.STR": 34,
+        "PINU.RES": 7,
+        "PINU.PON": 4
+      },
+      "fallback_depth_distribution": [
+        {
+          "fallback_depth": 4,
+          "cells": 1910,
+          "area_ha": 251999781.8065544
+        },
+        {
+          "fallback_depth": 9,
+          "cells": 3685,
+          "area_ha": 165612823.5463543
+        },
+        {
+          "fallback_depth": 14,
+          "cells": 205,
+          "area_ha": 4863156.169528085
+        }
+      ],
+      "negative_b4_curves": 1416
+    },
+    "area_coverage": {
+      "total_area_ha": 422475761.52243674,
+      "direct_area_ha": 0.0,
+      "fallback_area_ha": 251999781.80655438,
+      "group_area_ha": 170475979.7158824,
+      "covered_area_ha": 422475761.52243674,
+      "coverage_fraction": 1.0
+    }
+  },
+  "comparison_ecodistrict_vs_tile_first": {
+    "cells_compared": 5800,
+    "cells_with_different_selected_level": 5794,
+    "area_with_different_selected_level_ha": 422468039.9436886,
+    "by_age": {
+      "50": {
+        "common_cells": 5800,
+        "median_diff_m3ha": 1.2456990788859734,
+        "median_abs_diff_m3ha": 13.661771754173746,
+        "mean_abs_diff_m3ha": 25.73159563793581,
+        "p95_abs_diff_m3ha": 94.00986138236618,
+        "area_weighted_median_abs_diff_m3ha": 8.700945066281541,
+        "median_relative_abs_diff_pct": 15.2552345717159
+      },
+      "100": {
+        "common_cells": 5800,
+        "median_diff_m3ha": 1.9878094974262694,
+        "median_abs_diff_m3ha": 16.93608442919809,
+        "mean_abs_diff_m3ha": 31.055205055086628,
+        "p95_abs_diff_m3ha": 110.59729424842037,
+        "area_weighted_median_abs_diff_m3ha": 11.116625808773875,
+        "median_relative_abs_diff_pct": 15.044800220097432
+      },
+      "150": {
+        "common_cells": 5800,
+        "median_diff_m3ha": 1.8493749522530578,
+        "median_abs_diff_m3ha": 17.23673591764806,
+        "mean_abs_diff_m3ha": 31.52375324329603,
+        "p95_abs_diff_m3ha": 114.30702243300311,
+        "area_weighted_median_abs_diff_m3ha": 12.030353919888256,
+        "median_relative_abs_diff_pct": 15.147167198398364
+      }
+    },
+    "by_species": [
+      {
+        "target_species": "ABIE.BAL",
+        "common_cells": 683,
+        "area_ha": 17465104.97930168,
+        "median_abs_diff_age50": 12.507674074536055,
+        "median_abs_diff_age100": 14.830358389657889,
+        "median_abs_diff_age150": 14.950446158458035
+      },
+      {
+        "target_species": "BROADLEAF",
+        "common_cells": 842,
+        "area_ha": 82649859.9345988,
+        "median_abs_diff_age50": 16.082945349160873,
+        "median_abs_diff_age100": 19.57593511428172,
+        "median_abs_diff_age150": 19.82969619359909
+      },
+      {
+        "target_species": "CONIFEROUS",
+        "common_cells": 164,
+        "area_ha": 34616820.468066365,
+        "median_abs_diff_age50": 16.332433424757866,
+        "median_abs_diff_age100": 19.935126929046433,
+        "median_abs_diff_age150": 19.86549980339869
+      },
+      {
+        "target_species": "LARI.LAR",
+        "common_cells": 814,
+        "area_ha": 27150318.06884686,
+        "median_abs_diff_age50": 9.149095563365833,
+        "median_abs_diff_age100": 11.046472138143045,
+        "median_abs_diff_age150": 11.371226237587187
+      },
+      {
+        "target_species": "PICE.GLA",
+        "common_cells": 679,
+        "area_ha": 39033902.519337416,
+        "median_abs_diff_age50": 23.315621901885404,
+        "median_abs_diff_age100": 29.286493064047605,
+        "median_abs_diff_age150": 29.283722130012436
+      },
+      {
+        "target_species": "PICE.MAR",
+        "common_cells": 823,
+        "area_ha": 153682120.5158236,
+        "median_abs_diff_age50": 6.998478256227031,
+        "median_abs_diff_age100": 9.363419746943649,
+        "median_abs_diff_age150": 10.026650948856954
+      },
+      {
+        "target_species": "PINU.BAN",
+        "common_cells": 717,
+        "area_ha": 39126191.37211102,
+        "median_abs_diff_age50": 13.646539546041708,
+        "median_abs_diff_age100": 17.798026443390427,
+        "median_abs_diff_age150": 18.63496732206032
+      },
+      {
+        "target_species": "PINU.CON",
+        "common_cells": 476,
+        "area_ha": 21195759.299150717,
+        "median_abs_diff_age50": 24.117582449522267,
+        "median_abs_diff_age100": 28.899090187474812,
+        "median_abs_diff_age150": 27.96350510886907
+      },
+      {
+        "target_species": "PINU.PON",
+        "common_cells": 59,
+        "area_ha": 211686.43934008584,
+        "median_abs_diff_age50": 158.96305686677835,
+        "median_abs_diff_age100": 183.6421861644731,
+        "median_abs_diff_age150": 188.21446746307248
+      },
+      {
+        "target_species": "PINU.RES",
+        "common_cells": 205,
+        "area_ha": 1025102.4654655597,
+        "median_abs_diff_age50": 14.78318974842773,
+        "median_abs_diff_age100": 19.6968602720124,
+        "median_abs_diff_age150": 22.96006237115533
+      },
+      {
+        "target_species": "PINU.STR",
+        "common_cells": 205,
+        "area_ha": 1025102.4654655597,
+        "median_abs_diff_age50": 26.87545714457883,
+        "median_abs_diff_age100": 29.649814149701626,
+        "median_abs_diff_age150": 28.388213350751855
+      },
+      {
+        "target_species": "PSEU.MEN",
+        "common_cells": 133,
+        "area_ha": 5293792.994929091,
+        "median_abs_diff_age50": 46.127414051101624,
+        "median_abs_diff_age100": 52.44556639526985,
+        "median_abs_diff_age150": 50.866414099495415
+      }
+    ]
+  },
+  "area_diagnostics": {
+    "zero_area_rows": 0,
+    "zero_area_ha": 0.0,
+    "unmapped_rows": 0,
+    "unmapped_area_ha": 0.0,
+    "duplicate_unit_species_rows": 0,
+    "ecoprovince_residual_rows": 0,
+    "ecoprovince_residual_area_ha": 0.0,
+    "ecodistrict_area_ha": 422475761.52243674,
+    "target_area_ha": 422475761.5224375,
+    "province_area_max_abs_diff_ha": 1.043081283569336e-07,
+    "province_area_max_rel_diff": 1.2772913125884233e-15
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      {
+        "check": "every_positive_area_target_has_a_curve",
+        "passed": true,
+        "detail": {
+          "targets": 5800,
+          "covered": 5800,
+          "failed_area_ha": 0.0
+        }
+      },
+      {
+        "check": "no_nan_coefficients",
+        "passed": true,
+        "detail": 0
+      },
+      {
+        "check": "b1_b2_b3_strictly_positive",
+        "passed": true,
+        "detail": 0
+      },
+      {
+        "check": "negative_b4_is_flagged",
+        "passed": true,
+        "detail": {
+          "negative_b4": 2201,
+          "flagged": 2201
+        }
+      },
+      {
+        "check": "predictions_finite_and_non_negative",
+        "passed": true,
+        "detail": "ages 50/100/150"
+      },
+      {
+        "check": "area_sums_match_targets",
+        "passed": true,
+        "detail": {
+          "library_area_ha": 422475761.52243674,
+          "target_area_ha": 422475761.5224375
+        }
+      },
+      {
+        "check": "no_duplicate_target_cells",
+        "passed": true,
+        "detail": 0
+      },
+      {
+        "check": "fallback_depth_within_ladder",
+        "passed": true,
+        "detail": {
+          "min": 0,
+          "max": 8
+        }
+      },
+      {
+        "check": "tile_assignment_recorded",
+        "passed": true,
+        "detail": {
+          "centroid_within_single_tile": 5800
+        }
+      },
+      {
+        "check": "unmapped_area_reported",
+        "passed": true,
+        "detail": 0.0
+      },
+      {
+        "check": "province_area_sums_match_reference",
+        "passed": true,
+        "detail": {
+          "max_abs_diff_ha": 1.043081283569336e-07,
+          "max_rel_diff": 1.2772913125884233e-15
+        }
+      },
+      {
+        "check": "tile_first_comparison_complete",
+        "passed": true,
+        "detail": 5800
+      }
+    ]
+  },
+  "gaps": {
+    "target_species_without_national_species_curve": [
+      "LARI.LAR"
+    ],
+    "target_species_without_ecodistrict_species_curve": [
+      "LARI.LAR"
+    ],
+    "group_fallback_area_by_target_species": [
+      {
+        "target_species": "BROADLEAF",
+        "area_ha": 82649859.93459882
+      },
+      {
+        "target_species": "CONIFEROUS",
+        "area_ha": 34616820.46806637
+      },
+      {
+        "target_species": "LARI.LAR",
+        "area_ha": 27150318.06884686
+      },
+      {
+        "target_species": "ABIE.BAL",
+        "area_ha": 1277131.855698303
+      },
+      {
+        "target_species": "PICE.GLA",
+        "area_ha": 535463.419568349
+      },
+      {
+        "target_species": "PINU.RES",
+        "area_ha": 266185.85797662556
+      },
+      {
+        "target_species": "PINU.CON",
+        "area_ha": 67849.99220816197
+      },
+      {
+        "target_species": "PINU.STR",
+        "area_ha": 62690.89759281237
+      },
+      {
+        "target_species": "PINU.BAN",
+        "area_ha": 30963.457962967805
+      },
+      {
+        "target_species": "PSEU.MEN",
+        "area_ha": 1809.049535810249
+      },
+      {
+        "target_species": "PINU.PON",
+        "area_ha": 918.4391291427892
+      }
+    ],
+    "fallback_area_by_depth_level": [
+      {
+        "fallback_depth": 0,
+        "selected_level": "ecodistrict",
+        "evidence_tier": "rsyc_direct",
+        "cells": 1880,
+        "area_ha": 255722993.03826162
+      },
+      {
+        "fallback_depth": 1,
+        "selected_level": "ecoregion",
+        "evidence_tier": "rsyc_fallback",
+        "cells": 468,
+        "area_ha": 9692602.359849395
+      },
+      {
+        "fallback_depth": 2,
+        "selected_level": "ecoprovince",
+        "evidence_tier": "rsyc_fallback",
+        "cells": 241,
+        "area_ha": 2556555.679749397
+      },
+      {
+        "fallback_depth": 3,
+        "selected_level": "ecozone",
+        "evidence_tier": "rsyc_fallback",
+        "cells": 587,
+        "area_ha": 7835877.424643931
+      },
+      {
+        "fallback_depth": 4,
+        "selected_level": "tile",
+        "evidence_tier": "rsyc_fallback",
+        "cells": 6,
+        "area_ha": 7721.578748234897
+      },
+      {
+        "fallback_depth": 5,
+        "selected_level": "ecodistrict",
+        "evidence_tier": "rsyc_group",
+        "cells": 2428,
+        "area_ha": 143200839.22282368
+      },
+      {
+        "fallback_depth": 6,
+        "selected_level": "ecoregion",
+        "evidence_tier": "rsyc_group",
+        "cells": 90,
+        "area_ha": 1514084.1688606585
+      },
+      {
+        "fallback_depth": 7,
+        "selected_level": "ecoprovince",
+        "evidence_tier": "rsyc_group",
+        "cells": 49,
+        "area_ha": 1032589.7799304696
+      },
+      {
+        "fallback_depth": 8,
+        "selected_level": "ecozone",
+        "evidence_tier": "rsyc_group",
+        "cells": 51,
+        "area_ha": 912498.2695693988
+      }
+    ],
+    "target_cells_not_direct": 3920,
+    "area_not_direct_ha": 166752768.48417518,
+    "ecodistricts_with_at_least_one_non_direct_cell": 672,
+    "published_tiles_in_index": 385,
+    "tiles_without_broadleaf_group_curve": 140
+  }
+}

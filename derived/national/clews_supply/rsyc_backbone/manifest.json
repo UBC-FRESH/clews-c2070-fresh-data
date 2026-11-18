@@ -1,0 +1,119 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "The batch is area-weighted and emitted at ecoprovince level.",
+    "Province shares use species-resolved SCANFI area within ecoprovince.",
+    "Recovery envelope is low 0.35, base 0.60, high 0.75.",
+    "Cost is $2.456978/GJ base with low/high multipliers 1.30/0.80.",
+    "No national reference harvest is selected."
+  ],
+  "builder": "workflows/national/clews/rsyc_national_residue.py",
+  "generated_utc": "2026-11-18T17:54:55+00:00",
+  "inputs": [
+    {
+      "bytes": 866068,
+      "name": "national_assortment_matrix.csv",
+      "path": "/tmp/rsyc_backbone_repo/out/full/national_assortment_matrix.csv",
+      "role": "bucking matrix",
+      "sha256": "1a805a995dea19754ffc78b610462d14aaf4b6fef0fa1cb7b5d785eff5780f09"
+    },
+    {
+      "bytes": 298367,
+      "name": "national_stands.csv",
+      "path": "/tmp/rsyc_backbone_repo/out/full/national_stands.csv",
+      "role": "stand area and density cross-check",
+      "sha256": "a05e5e231815929b481cd1a53a0ec084a205aaf6b0737b9bda3dd794a8185a42"
+    },
+    {
+      "bytes": 360174,
+      "name": "national_batch_area_join_full.csv",
+      "path": "/tmp/rsyc_backbone_repo/out/national_batch_area_join_full.csv",
+      "role": "area join",
+      "sha256": "480aed97ba54c0aef41f0e0cc8a20db760dcbc763cac646d303319ded9cb205e"
+    },
+    {
+      "bytes": 17371,
+      "name": "national_assortment_summary.json",
+      "path": "/tmp/rsyc_backbone_repo/out/full/national_assortment_summary.json",
+      "role": "batch summary",
+      "sha256": "6835b50ab1fa7851d166a5f80341fe85338540d6febdfd2eabfe0a3a86c4919f"
+    },
+    {
+      "bytes": 1579339,
+      "name": "national_area_weights_ecodistrict.csv",
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv",
+      "role": "province allocation",
+      "sha256": "1fa20bc69469519e603348e96480b3e8f180794da41afacd3973ef4ebd28b09c"
+    },
+    {
+      "bytes": 477302,
+      "name": "cell_status.csv",
+      "path": "/tmp/rsyc_backbone_repo/out/full/cell_status.csv",
+      "role": "cell status and failed-cell audit",
+      "sha256": "24552b85542996ba4425fb9aeb3c87cb9fe47f7ba3b3853e3ce6f53b4697b713"
+    },
+    {
+      "bytes": 1479,
+      "name": "SUPBCW_activity_limits_base.csv",
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/comparison/SUPBCW_activity_limits_base.csv",
+      "role": "current BC comparison",
+      "sha256": "a6a19becdee3fbff5246257ccc9fd8d483ee5c2c9097ef9adfa54cbdb93bf50f"
+    },
+    {
+      "bytes": 52673,
+      "name": "bc_residue_time_path.csv",
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/bc_residue_time_path.csv",
+      "role": "BC 2028-2070 harvest basis for normalization",
+      "sha256": "c79a5641539cf04b4a441879ee12c6dc6344e8d39c7cd0c043f8623be9e020be"
+    }
+  ],
+  "key_totals": {
+    "area_emitted_ha": 419793451.3162919,
+    "log_m3": 42159162914.45559,
+    "mapped_area_ha": 422475761.06999743,
+    "odt_per_m3_log": 0.1168206365996346,
+    "residue_odt": 4925060250.174408
+  },
+  "notes": [
+    "declared path missing; used out/national_batch_area_join_full.csv",
+    "The failed PINU.BAN Great Bear Lowlands cell is excluded from all totals."
+  ],
+  "outputs": [
+    {
+      "bytes": 4712,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/residue_factor_by_province.csv",
+      "sha256": "3cc14dce5cdfe0b47cdb1103effdcb09cf9a8af4061ae45b032a5fe9eb883c05"
+    },
+    {
+      "bytes": 11753,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/residue_factor_by_ecoprovince.csv",
+      "sha256": "a4d854ffdbd761b64d6a2fe1ea9b92db7aa407e4218675d72c539a18d4452269"
+    },
+    {
+      "bytes": 2231,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/harvest_sensitivity.csv",
+      "sha256": "17b5b877ef5e13e5549cc92c3b9c897a1cd2a2e15c2ae7ad66078d7f9b6292bf"
+    },
+    {
+      "bytes": 123348,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/province_allocation.csv",
+      "sha256": "00691d773501d5aa4c5ec469eb9cfa1942e2d915bc9e8b256b0be5b2499c5b95"
+    },
+    {
+      "bytes": 1793,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/validation_checks.csv",
+      "sha256": "41df8c2942a50e471cf393f21c7e05be261ef0b20beaeb443e9144a6cee37f12"
+    },
+    {
+      "bytes": 70129,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+      "sha256": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32"
+    },
+    {
+      "bytes": 15795,
+      "path": "data/derived/national/clews_supply/rsyc_backbone/NATIONAL_RESIDUE_FACTOR_REPORT.md",
+      "sha256": "ce862dff5bb90dd6b44df710e648729bb06052a715dfcd3584cfbb6073b6b203"
+    }
+  ],
+  "status": "derived_provisional"
+}
