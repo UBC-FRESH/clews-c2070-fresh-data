@@ -1,0 +1,84 @@
+{
+  "product": "national managed-landbase proxy",
+  "status": "screening proxy; NOT a legal THLB or AAC landbase",
+  "generated_at_utc": "2026-11-18T23:44:51+00:00",
+  "resolution_m": 500,
+  "inputs": {
+    "tenure": {
+      "path": "data/raw/gfw/tenures/Canada_Forest_Tenures_2016.shp",
+      "sha256": "785c69fe244a7be659ae2a600fbe6e236f6d27d45dc38f47f84469f51dc32e59",
+      "bytes": 302119304,
+      "licence": "unknown_public (GFW Canada compilation)"
+    },
+    "cpcad": {
+      "path": "data/raw/cpcad/cpcad_rest_current.gpkg",
+      "sha256": "958182d5692f5bffcc3a4fa84fa71af06a5ba50258babe9b7362800966759eaa",
+      "bytes": 408764416,
+      "licence": "Open Government Licence - Canada",
+      "provenance": {
+        "dataset": "Canadian Protected and Conserved Areas Database (CPCAD)",
+        "dataset_url": "https://open.canada.ca/data/en/dataset/6c343726-1e92-451a-876a-76e17d398a1c",
+        "service_url": "https://maps-cartes.ec.gc.ca/arcgis/rest/services/CWS_SCF/CPCAD/MapServer/0",
+        "licence": "Open Government Licence - Canada",
+        "retrieved_at_utc": "2026-11-18T23:29:03+00:00",
+        "feature_count": 22438,
+        "query_fields": [
+          "NAME_E",
+          "NAME_F",
+          "JUR_ID",
+          "TYPE_E",
+          "IUCN_CAT",
+          "STATUS",
+          "ESTYEAR",
+          "OWNER_E",
+          "O_AREA_HA"
+        ],
+        "source_crs": "EPSG:4326",
+        "gpkg_bytes": 408764416,
+        "gpkg_sha256": "958182d5692f5bffcc3a4fa84fa71af06a5ba50258babe9b7362800966759eaa",
+        "pages": 16
+      }
+    },
+    "province_boundaries": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "ecodistricts": {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    },
+    "scanfi_area_weights": {
+      "path": "data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv",
+      "sha256": "1fa20bc69469519e603348e96480b3e8f180794da41afacd3973ef4ebd28b09c"
+    }
+  },
+  "outputs": {
+    "by_province": "managed_landbase_by_province.csv",
+    "by_ecoprovince": "managed_landbase_by_ecoprovince.csv",
+    "province_summary": "managed_landbase_province_summary.csv"
+  },
+  "validation": {
+    "tenure_duplicate_geometries_removed": 216,
+    "tenure_union_forest_le_scanfi_forest": true,
+    "protected_exclusion_le_tenure_forest": true,
+    "class_managed_sums_to_union": true,
+    "class_forest_to_union_forest_ratio": 1.287902263332933,
+    "national_managed_proxy_ha": 166275934.7734233,
+    "national_scanfi_forest_ha": 422475761.0699974,
+    "missing_jurisdictions": [
+      "NU",
+      "PE"
+    ],
+    "cpcad_features": 22438,
+    "tenure_input_features_raw": 3680,
+    "tenure_analysis_features": 3464
+  },
+  "caveats": [
+    "Tenure polygons are a 2016 national compilation, not a legal tenure registry.",
+    "Class footprints overlap; managed_proxy_ha is apportioned to the tenure union.",
+    "CPCAD protected areas are excluded in full; IUCN VI areas that may permit forestry are therefore conservative.",
+    "Forest-area equivalents assume forest is uniformly distributed within an ecodistrict.",
+    "No operability, accessibility, economic, or AAC constraints are applied.",
+    "No tenure coverage for NU or PE; values are blank, not zero."
+  ]
+}
