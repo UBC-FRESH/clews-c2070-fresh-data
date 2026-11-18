@@ -44,7 +44,7 @@ Generated 2026-11-18 for 2028. Diagnostic, not an operating plan.
 
 - Stage B alone assigned **6,856,004 odt** and **758,943 odt** to BIO; the co-opt assigns **8,841,757 odt** and **2,118,366 odt** to BIO.
 - Stage B PEL receipts plus the Stage A PEL harvest assignment claim **3,467,583 odt** against **2,158,240 odt** of shared PEL capacity; the co-opt books PEL once at **2,158,240 odt**.
-- No source/recipient infeasibility was found. **16** eligible pairs were excluded because no NRN road/ferry link exists (mostly BIO-4007, which has no Stage A harvest-residue link).
+- No source/recipient infeasibility was found. **16** eligible pairs were excluded because no NRN road/ferry link exists (all BIO-4007, which lacks links from eight harvest sources and eight sawmill hogfuel sources).
 
 ## Recipient utilization
 
