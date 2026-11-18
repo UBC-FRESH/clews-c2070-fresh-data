@@ -1,0 +1,39 @@
+{
+  "generated_utc": "2026-11-18T16:25:50Z",
+  "inputs": {
+    "area_weights": "data/derived/national/assortments/national_area_weights/national_area_weights.csv",
+    "batch": "data/derived/national/assortments/national_batch/national_stands.csv",
+    "coverage": "data/derived/national/assortments/national_coverage/coverage.csv"
+  },
+  "counts": {
+    "batch_cells": 1191,
+    "batch_cells_mapped_positive": 265,
+    "batch_cells_mapped_zero": 159,
+    "batch_cells_unmapped_species": 767,
+    "batch_cells_zero_forest_area": 0,
+    "batch_cells_supply_eligible": 1032,
+    "target_province_weak_cells": 398,
+    "donor_rows": 1911,
+    "no_plot_ecodistricts": 371,
+    "no_plot_donor_rows": 1113
+  },
+  "target_provinces": [
+    "AB",
+    "MB",
+    "NS",
+    "NU",
+    "ON"
+  ],
+  "method": {
+    "target_cells": "Batch cells whose ecoprovince intersects AB/ON/NS/NU/MB and whose coverage_class is no_data or distribution_borrowed is true.",
+    "donor_score": "0.30 same ecozone + 0.20 distance decay (800 km) + 0.25 exact direct fit / 0.15 exact pooled / 0.05 species-group proxy + 0.15 log10 site support + 0.05 group match + 0.05 donor SCANFI area.",
+    "confidence": "high >= 0.75 with exact direct fit and >= 20 sites; medium >= 0.55; otherwise low.",
+    "no_plot_ecodistricts": "Ecodistricts with zero sites in every coverage row. Donor ecodistricts are ranked by same ecoprovince, same ecozone, distance (500 km), site support, and species richness."
+  },
+  "caveats": [
+    "MGM curves are not joined; all rows carry mgm_join_pending=true.",
+    "Batch cells are ecoprovince-level and can span multiple provinces; target_provinces lists the overlap.",
+    "Donor support is measured by plot counts, not by ecological representativeness or variance compatibility.",
+    "SCANFI resolves ten species/classes; unmapped RSYC species cannot receive SCANFI area."
+  ]
+}
