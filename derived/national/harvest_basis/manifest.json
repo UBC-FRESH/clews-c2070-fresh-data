@@ -1,0 +1,88 @@
+{
+  "artifact_version": "0.2.0",
+  "assumptions": [
+    "2021-2024 actual harvest is the FSD published management volume.",
+    "2024 observed harvest is held flat from 2025 to 2070 as the base path; it is not a forecast.",
+    "The low-100M and high-150M paths are scenario bounds; 150M is an upper bound, not a central case.",
+    "2024 NFD wood supply is potential supply, not harvest; NT is not reported.",
+    "BC keeps the repo-parsed TSA AAC path for 2021-2028; the 2024 observed harvest does not overwrite it.",
+    "Missing AAC values are left blank and labelled; no midpoint or interpolation is fabricated.",
+    "NFD live download failed TLS certificate validation; 2024 NFD values are the reviewed compilation values, not a fresh download."
+  ],
+  "coverage": {
+    "national_rollup_basis": "Sum of 12 provincial FSD 2024 actual values equals 118,977,339 m3; Nunavut has no FSD row and is not assumed zero.",
+    "national_rollup_included": true,
+    "national_rows": 150,
+    "provinces_with_aac_2024": [
+      "QC",
+      "AB",
+      "ON",
+      "NB",
+      "SK",
+      "NS",
+      "NL",
+      "YT",
+      "NT"
+    ],
+    "provinces_with_actual_harvest": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT"
+    ],
+    "provinces_without_numeric_aac_2024": [
+      "BC",
+      "MB",
+      "PE"
+    ],
+    "provincial_rows": 600
+  },
+  "fallback": {
+    "action": "used FSD CSV for 2021-2024 harvest and the reviewed 2024 NFD values supplied with the task",
+    "nfd_live_download": "failed_tls_certificate_validation"
+  },
+  "generated_utc": "2026-11-18T23:11:47+00:00",
+  "inputs": [
+    {
+      "bytes": 9178,
+      "path": "data/raw/nrcan_fsd/StatProfile_Management_volume_EN.csv",
+      "role": "FSD provincial harvest volume, 2000-2024",
+      "sha256": "0bd33514406864cd2d85557369390f235a3b52965c7e380e6af80dd387b701eb",
+      "url": "https://raw.githubusercontent.com/NRCan/statisticalprofile-datasets/refs/heads/main/FSD-EN-datasets/StatProfile_Management_volume_EN.csv"
+    },
+    {
+      "bytes": 8424,
+      "path": "data/raw/nrcan_fsd/StatProfile_Management_harvest_EN.csv",
+      "role": "FSD harvested area, 2000-2024; provenance only",
+      "sha256": "3091c806a021812426d723a46d89701d69f98e8d60ddf13ca239f625e7ebfbb5",
+      "url": "https://raw.githubusercontent.com/NRCan/statisticalprofile-datasets/refs/heads/main/FSD-EN-datasets/StatProfile_Management_harvest_EN.csv"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "harvest_basis_template.csv",
+      "rows": 750,
+      "sha256": "223b4e54a118317b7aed70dfbfcf652391204e8cc41b45c61aa99eb49152d4b6"
+    },
+    {
+      "path": "harvest_reference_paths.csv",
+      "rows": 50,
+      "sha256": "4c95af65a2e4082aee99b52c19b4232268336857a4c780cc2845110681ac97bb"
+    },
+    {
+      "path": "provinces.csv",
+      "rows": 13,
+      "sha256": "9a2b1ba07e31e61c42052e63111381163272f23fb27f54c7e098bd5f3b43ed02"
+    }
+  ],
+  "scope": "national harvest/AAC/wood-supply basis, 2021-2070",
+  "status": "observed_2024_harvest_filled_base_hold_scenarios_documented"
+}
