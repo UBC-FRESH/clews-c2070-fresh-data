@@ -57,12 +57,22 @@
     "FFCM InitialContent is a stock, so the recovery comparison is per unit log volume, not annual stock-to-flow.",
     "FFCM has no FMU-to-TSA/zone crosswalk in the repo; BC totals are allocated by the documented 2018 AAC zone log share and flagged.",
     "The zone taper ratio is the matched-cell batch aggregate, the same basis as the refined all-BC chain; ecoprovince-ratio weighting is not used for the cap.",
-    "Base recovery is held at the published 2026-11-17 FFCM calibration; the refined-batch FFCM-implied fraction is a diagnostic, not the cap driver.",
+    "The B2 base recovery is the refined-batch FFCM-implied fraction (recomputed and asserted, not hard-coded); B1 uses the documented 0.60 fallback because its implied value is out of bounds.",
     "FFCM logging_residue is a roadside-recoverable stream (0.063 ODT/m3), not full aboveground slash.",
     "Cost is FFCM SupplyCost on a dry ODT basis; no moisture credit, deflator, or exchange-rate adjustment is applied.",
     "The time path uses workbook AAC 2021-2028 and holds 2028 flat to 2070; no MPB, climate, or wildfire trajectory is invented.",
     "The AGB non-stem sensitivity is not the base curve and does not replace the taper-residue base."
   ],
+  "base_recovery": {
+    "basis": "ffcm_implied_refined_batch_2026_11_18",
+    "by_zone": {
+      "B1": 0.6,
+      "B2": 0.723799161
+    },
+    "expected_ffcm_implied_b2": 0.723799,
+    "ffcm_implied_b2_tolerance": 1e-05,
+    "note": "The B2 base is recomputed as ffcm_residue_B2 / (ffcm_log_B2 * taper_ratio_B2) from the current batch and FFCM ledger and asserted at build time; B1 remains the documented 0.60 fallback because its implied value is out of bounds."
+  },
   "batch_basis": {
     "bc_all_species_ratio": 0.073011891,
     "by_zone_ratio": {
@@ -92,7 +102,7 @@
       },
       "recovery_by_zone": {
         "B1": 0.6,
-        "B2": 0.583931303
+        "B2": 0.723799161
       },
       "y2021": {
         "year": 2021,
@@ -105,15 +115,15 @@
           },
           "B2": {
             "cost_usd_per_gj": 2.456977549,
-            "recovery_fraction": 0.583931303,
-            "residue_odt": 2037143.793383,
-            "residue_pj": 37.687160178
+            "recovery_fraction": 0.723799161,
+            "residue_odt": 2525096.635319,
+            "residue_pj": 46.714287753
           },
           "CAN": {
             "cost_usd_per_gj": 2.456977549,
-            "recovery_fraction": 0.585302045,
-            "residue_odt": 2232357.322084,
-            "residue_pj": 41.298610459
+            "recovery_fraction": 0.713238461,
+            "residue_odt": 2720310.16402,
+            "residue_pj": 50.325738034
           }
         }
       },
@@ -128,15 +138,15 @@
           },
           "B2": {
             "cost_usd_per_gj": 2.456977549,
-            "recovery_fraction": 0.583931303,
-            "residue_odt": 1740782.205531,
-            "residue_pj": 32.204470802
+            "recovery_fraction": 0.723799161,
+            "residue_odt": 2157748.168925,
+            "residue_pj": 39.918341125
           },
           "CAN": {
             "cost_usd_per_gj": 2.456977549,
-            "recovery_fraction": 0.585510087,
-            "residue_odt": 1935672.741034,
-            "residue_pj": 35.809945709
+            "recovery_fraction": 0.711635631,
+            "residue_odt": 2352638.704429,
+            "residue_pj": 43.523816032
           }
         }
       },
@@ -151,15 +161,15 @@
           },
           "B2": {
             "cost_usd_per_gj": 2.456977549,
-            "recovery_fraction": 0.583931303,
-            "residue_odt": 1740782.205531,
-            "residue_pj": 32.204470802
+            "recovery_fraction": 0.723799161,
+            "residue_odt": 2157748.168925,
+            "residue_pj": 39.918341125
           },
           "CAN": {
             "cost_usd_per_gj": 2.456977549,
-            "recovery_fraction": 0.585510087,
-            "residue_odt": 1935672.741034,
-            "residue_pj": 35.809945709
+            "recovery_fraction": 0.711635631,
+            "residue_odt": 2352638.704429,
+            "residue_pj": 43.523816032
           }
         }
       }
@@ -326,11 +336,11 @@
     }
   },
   "comparison": {
-    "base_2021_pj": 41.298610459,
-    "base_2021_vs_placeholder": 0.825972209,
-    "base_2021_vs_previous_gross": 0.443260417,
-    "base_2028_pj": 35.809945709,
-    "base_2028_vs_previous_gross": 0.384350255,
+    "base_2021_pj": 50.325738034,
+    "base_2021_vs_placeholder": 1.006514761,
+    "base_2021_vs_previous_gross": 0.540149109,
+    "base_2028_pj": 43.523816032,
+    "base_2028_vs_previous_gross": 0.46714368,
     "high_2021_pj": 52.919613249,
     "low_2021_pj": 24.695819516,
     "placeholder_cost_usd_per_gj": 4.0,
@@ -351,14 +361,15 @@
     "total_residue_odt": 8488969.041755,
     "zone_allocation": "documented_2018_aac_zone_log_share"
   },
-  "generated_utc": "2026-11-18T15:37:13+00:00",
-  "published_base_recovery": {
-    "basis": "published_2026_11_17_ffcm_calibration_held",
-    "by_zone": {
+  "generated_utc": "2026-11-18T15:52:46+00:00",
+  "historical_bases": {
+    "interim_held_calibration_base_2021_pj": 41.298610459,
+    "interim_held_calibration_base_2028_pj": 35.809945709,
+    "interim_held_recovery_by_zone": {
       "B1": 0.6,
       "B2": 0.583931303
     },
-    "note": "Base recovery is held at the 2026-11-17 calibration when the batch taper estimate is refined; ffcm_implied_recovery_fraction is a diagnostic, not the base cap driver."
+    "old_published_2026_11_17_base_2028_pj": 42.958794801
   },
   "recovery": {
     "B1": {
@@ -370,17 +381,17 @@
       "ffcm_residue_odt_per_m3": 0.063,
       "ffcm_supply_cost_usd_per_gj": 2.456977549,
       "ffcm_supply_cost_usd_per_odt": 45.454084659,
-      "flag": "published_base_held;ffcm_implied_1.769025997_diagnostic;implied_in_bounds_false",
+      "flag": "implied_outside_0.2_1.0_used_0.60",
       "gross_taper_ratio_odt_per_m3": 0.035612818,
       "gross_taper_residue_odt_same_log_basis": 834947.28731,
       "implied_recovery_fraction": 1.769025997,
-      "recovery_basis": "published_2026_11_17_ffcm_calibration_held",
+      "recovery_basis": "fallback_0.60_out_of_bounds",
       "recovery_in_bounds": false,
       "zone_share": 0.173995623,
       "zone_share_basis": "aac_2018_zone_log_share"
     },
     "B2": {
-      "base_recovery_fraction": 0.583931303,
+      "base_recovery_fraction": 0.723799161,
       "comparison_only": false,
       "crosswalk_status": "no_fmu_tsa_map_documented_zone_share",
       "ffcm_log_m3": 111300406.100561,
@@ -388,17 +399,17 @@
       "ffcm_residue_odt_per_m3": 0.063,
       "ffcm_supply_cost_usd_per_gj": 2.456977549,
       "ffcm_supply_cost_usd_per_odt": 45.454084659,
-      "flag": "published_base_held;ffcm_implied_0.723799161_diagnostic;implied_in_bounds_true",
+      "flag": "implied_within_0.2_1.0",
       "gross_taper_ratio_odt_per_m3": 0.08704072,
       "gross_taper_residue_odt_same_log_basis": 9687667.466707,
       "implied_recovery_fraction": 0.723799161,
-      "recovery_basis": "published_2026_11_17_ffcm_calibration_held",
+      "recovery_basis": "ffcm_implied",
       "recovery_in_bounds": true,
       "zone_share": 0.826004377,
       "zone_share_basis": "aac_2018_zone_log_share"
     },
     "CAN": {
-      "base_recovery_fraction": 0.586727186,
+      "base_recovery_fraction": 0.806735706,
       "comparison_only": true,
       "crosswalk_status": "no_fmu_tsa_map_documented_zone_share",
       "ffcm_log_m3": 134745540.345322,
@@ -410,7 +421,7 @@
       "gross_taper_ratio_odt_per_m3": 0.07809249,
       "gross_taper_residue_odt_same_log_basis": 10522614.754017,
       "implied_recovery_fraction": 0.806735706,
-      "recovery_basis": "national_comparison_only_published_weighted",
+      "recovery_basis": "national_comparison_only",
       "recovery_in_bounds": true,
       "zone_share": 1.0,
       "zone_share_basis": "national_rollup"

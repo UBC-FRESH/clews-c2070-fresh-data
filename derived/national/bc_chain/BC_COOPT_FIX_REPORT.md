@@ -12,9 +12,11 @@ the report guard. Diagnostic only; not an operating plan.
   offers in `bc_supply_by_zone.csv`, grouped by zone (`HARVEST::B1`,
   `HARVEST::B2`). Stage A log assignment remains fixed. Stage A-assigned
   residue is carried as `stage_a_assigned_odt` for reporting only.
-- Current data on this branch: recoverable **1,935,673 odt** (B1 194,891; B2
-  1,740,782), Stage A assigned **1,935,673 odt**, Stage A unassigned
-  **0.011 odt**, co-opt assigned **1,935,673 odt** (100.00% of recoverable).
+- Current data after the 2026-11-18 FFCM-implied basis rebuild: recoverable
+  **2,352,639 odt** (B1 194,891; B2 2,157,748), Stage A assigned
+  **2,352,639 odt**, Stage A unassigned **0.004 odt**, co-opt assigned
+  **2,352,639 odt** (100.00% of recoverable). The previous 1,935,673 odt case
+  held B2 recovery at 0.583931; the adopted B2 recovery is 0.723799.
 - The review cited 2,176,721 odt (B1 198,637; B2 1,978,084). That total is the
   pre-refinement `bc_supply_by_zone.csv` at data commit `3a76984`; the current
   regenerated file at `8473cac`/`f6e824a` sums to 1,935,673 odt. The code now
@@ -34,14 +36,16 @@ the report guard. Diagnostic only; not an operating plan.
   `excluded_pairs` with reason `non_nrn_fallback`; they enter only with
   explicit `allow_fallback_links=True` / `--allow-fallback-links`. Missing,
   NaN, or empty provenance fails closed.
-- Default run: **51** fallback pairs excluded, covering at most
+- Current default run: **51** fallback pairs excluded, covering at most
   **710,678 odt** of source supply; **10** pairs have no transport link.
-  No allocation uses a fallback arc.
-- Sensitivity (`allow_fallback_links=True`, written to a temporary directory,
-  not published): 10 fallback allocations, **80,304 odt**, net contribution
-  CAD 947,920,764 versus CAD 947,142,387 default. Total assigned residue is
-  effectively unchanged (8,841,757 odt); the fallback sensitivity only
-  changes routing and net contribution.
+  Net contribution is CAD 957,802,389 on the adopted 2,352,639 odt harvest
+  basis.
+- Previous sensitivity (`allow_fallback_links=True`, written to a temporary
+  directory, not published, on the 1,935,673 odt case): 10 fallback
+  allocations, **80,304 odt**, net contribution CAD 947,920,764 versus
+  CAD 947,142,387 default. Total assigned residue was effectively unchanged
+  (8,841,757 odt); the fallback sensitivity only changed routing and net
+  contribution. It was not rerun on the adopted basis.
 - Validation now checks every allocation against the accepted arc set and its
   accepted provenance, with no defaulting.
 

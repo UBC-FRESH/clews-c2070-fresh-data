@@ -14,12 +14,12 @@ proxy-located sawmills are at their proxy coordinates.
 - Solver status: **Optimal**
 - Validation: **PASS**
 - Objective mode: `profit_max` (all included recipient classes have FFCM prices)
-- Residue generated: **7452608.753 ODT** (16561352.784 m3 green equivalent)
-- Residue assigned: **6856003.772 ODT**
-- Residue unassigned: **596604.981 ODT**
+- Residue generated: **7452608.763 ODT** (16561352.807 m3 green equivalent)
+- Residue assigned: **6856003.785 ODT**
+- Residue unassigned: **596604.978 ODT**
 - Bioenergy (BIO) share of generated residue: **10.18%**
 - Bioenergy share of assigned residue: **11.07%**
-- Electricity from allocated hogfuel: **562131.654 MWh**
+- Electricity from allocated hogfuel: **562131.655 MWh**
 - Capacity-binding recipient facilities: **14 of 28**
 
 ## Residue supply (Stage A sawmill log volume x FFCM outfeed ratio)
@@ -31,11 +31,11 @@ recorded line by line in `residue_conversions.csv`.
 
 | type | generated ODT | generated m3 | assigned ODT | unassigned ODT | assigned share | unassigned reasons |
 |---|---|---|---|---|---|---|
-| chips | 4565150.844 | 10144779.653 | 4565150.809 | 0.035 | 100.00% |  |
-| sawdust/shavings | 1565085.881 | 3477968.625 | 1531909.844 | 33176.037 | 97.88% | capacity_exhausted |
-| hogfuel/bark | 775847.386 | 1724105.302 | 758943.118 | 16904.268 | 97.82% | capacity_exhausted;negative_net_contribution |
-| other (internally used woodfuel) | 546524.642 | 1214499.204 | 0.000 | 546524.642 | 0.00% | no_consumer_class |
-| all residue | 7452608.753 | 16561352.784 | 6856003.772 | 596604.981 | 91.99% |  |
+| chips | 4565150.850 | 10144779.668 | 4565150.819 | 0.031 | 100.00% |  |
+| sawdust/shavings | 1565085.883 | 3477968.629 | 1531909.846 | 33176.037 | 97.88% | capacity_exhausted |
+| hogfuel/bark | 775847.387 | 1724105.305 | 758943.119 | 16904.268 | 97.82% | capacity_exhausted;negative_net_contribution |
+| other (internally used woodfuel) | 546524.643 | 1214499.206 | 0.000 | 546524.643 | 0.00% | no_consumer_class |
+| all residue | 7452608.763 | 16561352.807 | 6856003.785 | 596604.978 | 91.99% |  |
 
 ### Sawmill outfeed ratio coverage
 
@@ -178,16 +178,16 @@ Full link evidence, snap distances, and components are in
 
 | component | value CAD | CAD per assigned ODT | sense |
 |---|---|---|---|
-| product_revenue | 1858939994.58 | 271.14 | positive |
-| transport_cost | 274769702.72 | 40.08 | negative |
-| processing_cost | 714041620.82 | 104.15 | negative |
-| net_contribution | 870128671.04 | 126.91 | objective_profit_max |
-| solver_objective | 870128671.04 | 126.91 | profit_max |
+| product_revenue | 1858939998.27 | 271.14 | positive |
+| transport_cost | 274769703.48 | 40.08 | negative |
+| processing_cost | 714041622.29 | 104.15 | negative |
+| net_contribution | 870128672.49 | 126.91 | objective_profit_max |
+| solver_objective | 870128672.49 | 126.91 | profit_max |
 
-Reported objective: **CAD 870,128,671.04**
+Reported objective: **CAD 870,128,672.49**
 (`profit_max`); normalized objective: CAD
-870,128,671.04; raw CBC objective: CAD
-870,128,675.81.
+870,128,672.49; raw CBC objective: CAD
+870,128,677.56.
 The assignment-level components reproduce the normalized value; the raw CBC
 delta is caused by the solver-tolerance allocation normalization and is
 reported in `validation_summary.json`.
@@ -203,7 +203,7 @@ reported in `validation_summary.json`.
 | recipient_capacity | yes | no recipient line exceeds its FFCM infeed capacity |
 | transport_link_existence | yes | every allocation has a finite, cost-consistent road or fallback link |
 | unit_consistency | yes | volume/ODT, capacity, moisture, and mass-price bases reconcile |
-| objective_reconciliation | yes | assignment components reproduce the normalised objective; raw CBC delta 4.769771 CAD |
+| objective_reconciliation | yes | assignment components reproduce the normalised objective; raw CBC delta 5.065057 CAD |
 | finite_nonnegative_values | yes | all allocation and slack values are finite and non-negative |
 
 ## Data gaps and next steps

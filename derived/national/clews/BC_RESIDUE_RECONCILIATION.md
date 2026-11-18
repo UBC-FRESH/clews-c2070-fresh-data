@@ -1,8 +1,10 @@
 # BC OSeCAN residue cap reconciliation
 
-Status: **FRESH-side provisional**.  This note bridges the 2026-11-17 cap
-(`bc_national_batch_area_joined.csv` sha256 `e0a51d5aa6b1...`) to
-the refined 2026-11-18 all-BC chain (`fd12a1a...`).
+Status: **FRESH-side provisional; basis resolved 2026-11-18**.  This note
+bridges the 2026-11-17 cap (`bc_national_batch_area_joined.csv` sha256
+`e0a51d5aa6b1...`) through the interim held-calibration cap to the
+adopted FFCM-implied basis on the refined 2026-11-18 all-BC chain
+(`fd12a1a...`).
 
 ## 1. Input-hash bridge
 
@@ -15,88 +17,107 @@ the refined 2026-11-18 all-BC chain (`fd12a1a...`).
 | Area weights sha256 | `a173afb4e323...` | `a1882d5e1d0d...` |
 
 The batch totals rose because the species-alias refinement recovered
-10,845,346 ha of formerly `UNMAPPED_BC` area into named species.  The cap did
-not see that batch: it was built from the stale `e0a51d5...` file.  The
-chain manifest already records the current `fd12a1a...` file, so the cap
-predates the refinement.
+10,845,346 ha of formerly `UNMAPPED_BC` area into named species.
 
-## 2. Old vs new caps (2028+, PJ/yr)
+## 2. Basis decision
 
-| Case | Zone | Old | New | Delta | Delta % |
+The refined batch changed the B2 gross taper ratio from 0.106181 to
+0.087041 ODT/m3, so the FFCM-implied B2 recovery is now recomputed from the
+current batch and FFCM ledger:
+
+`implied_B2 = ffcm_residue_B2 / (ffcm_log_B2 x taper_ratio_B2)`
+
+= 7,011,925.584 / (111,300,406.101 x
+0.087040720) =
+**0.723799161**.
+
+This is the adopted base (asserted at build time to 0.723799
+within 1e-05 and to [0.2, 1.0]).  B1 stays at the
+documented **0.600000** fallback because its implied
+1.769026 is out of bounds.
+
+| Basis | B1 2028+ (PJ) | B2 2028+ (PJ) | Total 2028+ (PJ) |
+|---|---:|---:|---:|
+| Old published 2026-11-17 | 3.672286 | 39.286509 | 42.958795 |
+| Interim held calibration | 3.605475 | 32.204471 | 35.809946 |
+| Adopted FFCM-implied | 3.605475 | 39.918341 | 43.523816 |
+
+The old published 42.958795 PJ held B2 at 0.583931, a calibration tied to the
+pre-refinement taper.  The interim 35.809946 PJ deliberately held that stale
+calibration and is superseded.  The adopted total is
+**43.523816 PJ**.
+
+## 3. Old published vs adopted caps (2028+, PJ/yr)
+
+| Case | Zone | Old | Adopted | Delta | Delta % |
 |---|---|---:|---:|---:|---:|
 | low | B1 | 2.142167 | 2.103194 | -0.038973 | -1.82% |
 | low | B2 | 23.547767 | 19.302895 | -4.244872 | -18.03% |
 | low | CAN | 25.689934 | 21.406089 | -4.283845 | -16.68% |
 | base | B1 | 3.672286 | 3.605475 | -0.066811 | -1.82% |
-| base | B2 | 39.286509 | 32.204471 | -7.082038 | -18.03% |
-| base | CAN | 42.958795 | 35.809946 | -7.148849 | -16.64% |
+| base | B2 | 39.286509 | 39.918341 | +0.631832 | +1.61% |
+| base | CAN | 42.958795 | 43.523816 | +0.565021 | +1.32% |
 | high | B1 | 4.590357 | 4.506844 | -0.083513 | -1.82% |
 | high | B2 | 50.459500 | 41.363347 | -9.096154 | -18.03% |
 | high | CAN | 55.049858 | 45.870191 | -9.179667 | -16.68% |
 
 2021 values:
 
-| Case | Zone | Old | New | Delta | Delta % |
+| Case | Zone | Old | Adopted | Delta | Delta % |
 |---|---|---:|---:|---:|---:|
 | low | B1 | 2.145722 | 2.106679 | -0.039043 | -1.82% |
 | low | B2 | 28.047733 | 22.589140 | -5.458593 | -19.46% |
 | low | CAN | 30.193455 | 24.695820 | -5.497635 | -18.21% |
 | base | B1 | 3.678381 | 3.611450 | -0.066931 | -1.82% |
-| base | B2 | 46.794140 | 37.687160 | -9.106980 | -19.46% |
-| base | CAN | 50.472521 | 41.298610 | -9.173911 | -18.18% |
+| base | B2 | 46.794140 | 46.714288 | -0.079853 | -0.17% |
+| base | CAN | 50.472521 | 50.325738 | -0.146783 | -0.29% |
 | high | B1 | 4.597976 | 4.514313 | -0.083663 | -1.82% |
 | high | B2 | 60.102284 | 48.405300 | -11.696984 | -19.46% |
 | high | CAN | 64.700261 | 52.919613 | -11.780647 | -18.21% |
 
-The base 2028+ total falls from **42.958795 PJ**
-to **35.809946 PJ**.  Low/high cases move proportionally; costs are
-unchanged at 2.456978 / 3.194071 / 1.965582 $/GJ.
+Costs are unchanged at 2.456978 / 3.194071 / 1.965582 $/GJ.
 
-## 3. Decomposition of the change (2028, base case)
+## 4. Decomposition vs the old published basis (2028, base case)
 
-`cap = log volume x taper ratio x recovery x 18.5 / 1e6`.  The three factors
-are shown as ratios; the final column is the exact cap change.
+`cap = log volume x taper ratio x recovery x 18.5 / 1e6`.
 
 | Zone | Old log (m3) | New log (m3) | Log | Old taper (ODT/m3) | New taper (ODT/m3) | Taper | Old recovery | New recovery | Recovery | Cap change |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | B1 | 9,120,804.865 | 9,120,804.865 | -0.00% | 0.036272735 | 0.035612818 | -1.82% | 0.600000000 | 0.600000000 | +0.00% | -1.82% |
-| B2 | 34,249,970.935 | 34,249,970.935 | +0.00% | 0.106181718 | 0.087040720 | -18.03% | 0.583931303 | 0.583931303 | +0.00% | -18.03% |
+| B2 | 34,249,970.935 | 34,249,970.935 | +0.00% | 0.106181718 | 0.087040720 | -18.03% | 0.583931303 | 0.723799161 | +23.95% | +1.61% |
 
-The recovery factor is deliberately **1.000000**: the base recovery is held at
-the published 2026-11-17 calibration.  The refined batch reduces the B2 gross
-taper ratio from 0.106181 to 0.087041 (-18.03%), which is the dominant driver.
-The FFCM-implied recovery on the refined batch is
-0.723799
-for B2, not 0.583931; re-deriving it would raise the B2 cap to about 39.9 PJ
-and would not reconcile with the chain.  It is reported as a diagnostic and an
-open evidence question.
+For B2 the taper refinement (-18.03%) is more than offset by adopting the
+FFCM-implied recovery (0.583931 -> 0.723799,
++23.95%), so the cap rises +1.61% versus the old published value.
+B1 is unchanged in recovery and moves only with the zone taper.
 
-## 4. Chain and energy cap agreement
+## 5. Chain and energy cap agreement
 
 Chain recoverable residue from `bc_supply_by_zone.csv`:
 
 | Year | Zone | Cap (PJ) | Chain recoverable (PJ) | Difference |
 |---:|---|---:|---:|---:|
 | 2021 | B1 | 3.611450 | 3.611450 | +0.000000% |
-| 2021 | B2 | 37.687160 | 37.687160 | -0.000000% |
+| 2021 | B2 | 46.714288 | 46.714288 | -0.000000% |
 | 2028 | B1 | 3.605475 | 3.605475 | +0.000000% |
-| 2028 | B2 | 32.204471 | 32.204471 | -0.000000% |
+| 2028 | B2 | 39.918341 | 39.918341 | -0.000000% |
 
-The 2028 values agree exactly because the time path now uses the same
-matched-cell zone taper ratio as the chain and the same published recovery
-fractions.  The zone split of the batch is:
+The time path and the chain share the same matched-cell zone taper ratio and
+the same base recovery fraction, so the cap and chain recoverable residue agree
+per zone.  The zone split of the batch is:
 
 | Zone | Matched log (m3) | Matched residue (ODT) | Ratio (ODT/m3) |
 |---|---:|---:|---:|
 | B1 | 3,077,735,121.344 | 109,606,819.214 | 0.035612818 |
 | B2 | 8,204,850,322.074 | 714,156,078.303 | 0.087040720 |
 
-## 5. Residual disagreement and smallest fix
+## 6. Validation
 
-No cap/chain disagreement remains at the published basis.  The residual issue
-is the FFCM-implied recovery diagnostic: on the refined B2 taper the FFCM
-roadside stream is 0.723799 of gross taper, versus the published 0.583931.
-If the project decides the FFCM-implied basis is authoritative, the smallest
-fix is to replace `PUBLISHED_BASE_RECOVERY["B2"]` with the implied value,
-rebuild the time path and chain together, and update the manifest; that would
-raise the B2 cap to about 39.9 PJ, not lower it to 32.2 PJ.
+- B2 implied recovery is recomputed and asserted at
+  0.723799161 (expected
+  0.723799, tolerance 1e-05).
+- B1 uses the documented 0.60 fallback; its implied value is out of bounds.
+- Cases remain monotonic: low 0.35 < base < high 0.75.
+- Cap equals chain recoverable residue per zone within 1% after the chain
+  rebuild; the test suite re-checks the 2028 rows.
+- `SUPBCW` is the exact B1+B2 rollup and remains comparison-only.

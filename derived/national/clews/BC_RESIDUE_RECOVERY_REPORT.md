@@ -59,19 +59,19 @@ year of gross taper ODT.
 | Zone | Zone share | FFCM log (m3) | FFCM residue (ODT) | Gross taper ratio (ODT/m3) | Gross taper same basis (ODT) | Implied recovery | In [0.2, 1.0] | Base recovery |
 |---|---:|---:|---:|---:|---:|---:|---|---:|
 | B1 | 17.399562% | 23,445,134.245 | 1,477,043.457 | 0.035612818 | 834,947.287 | 1.769026 | no | 0.600000 |
-| B2 | 82.600438% | 111,300,406.101 | 7,011,925.584 | 0.087040720 | 9,687,667.467 | 0.723799 | yes | 0.583931 |
-| CAN comparison | 100.000000% | 134,745,540.345 | 8,488,969.042 | 0.078092490 | 10,522,614.754 | 0.806736 | yes | 0.586727 |
+| B2 | 82.600438% | 111,300,406.101 | 7,011,925.584 | 0.087040720 | 9,687,667.467 | 0.723799 | yes | 0.723799 |
+| CAN comparison | 100.000000% | 134,745,540.345 | 8,488,969.042 | 0.078092490 | 10,522,614.754 | 0.806736 | yes | 0.806736 |
 
 The B1 implied fraction is **1.769026**, above 1.0:
 the uniform FFCM roadside-residue ratio (0.063 ODT/m3) is larger than the
 coastal taper-residue ratio (0.035613 ODT/m3).
 B1 is therefore flagged and the documented **0.60** fallback is used. The B2
-implied fraction on the refined batch is **0.723799**,
-inside the bounds, but the base cap **does not** re-derive recovery from it.
-The base recovery is held at the published 2026-11-17 calibration
-(0.583931); the FFCM-implied value is reported as a
-diagnostic because re-deriving it would raise the B2 cap to about 39.9 PJ and
-would not reconcile with the refined all-BC chain. The national comparison
+implied fraction on the refined batch is **0.723799**
+and is the adopted base recovery. It is recomputed at build time as
+`ffcm_residue_B2 / (ffcm_log_B2 * taper_ratio_B2)` and asserted against
+0.723799 (tolerance 1e-05); it is
+not a hard-coded calibration constant. The previous held value 0.583931 was a
+stale calibration tied to the pre-refinement taper. The national comparison
 ratio is 0.806736; it is reported only,
 not used to set the national cap (the rollup is the sum of B1 and B2).
 
@@ -88,7 +88,7 @@ The case definitions are fixed:
 | Case | Recovery B1 | Recovery B2 | Cost multiplier | Cost B1 ($/GJ) | Cost B2 ($/GJ) |
 |---|---:|---:|---:|---:|---:|
 | low | 0.350000 | 0.350000 | 1.30 | 3.194071 | 3.194071 |
-| base | 0.600000 | 0.583931 | 1.00 | 2.456978 | 2.456978 |
+| base | 0.600000 | 0.723799 | 1.00 | 2.456978 | 2.456978 |
 | high | 0.750000 | 0.750000 | 0.80 | 1.965582 | 1.965582 |
 
 Caps in 2021 (the first model year):
@@ -96,7 +96,7 @@ Caps in 2021 (the first model year):
 | Case | B1 (PJ/yr) | B2 (PJ/yr) | CAN rollup (PJ/yr) | Cost B1 ($/GJ) |
 |---|---:|---:|---:|---:|
 | low | 2.106679 | 22.589140 | 24.695820 | 3.194071 |
-| base | 3.611450 | 37.687160 | 41.298610 | 2.456978 |
+| base | 3.611450 | 46.714288 | 50.325738 | 2.456978 |
 | high | 4.514313 | 48.405300 | 52.919613 | 1.965582 |
 
 Caps in 2028 and held flat to 2070:
@@ -104,11 +104,11 @@ Caps in 2028 and held flat to 2070:
 | Case | B1 (PJ/yr) | B2 (PJ/yr) | CAN rollup (PJ/yr) | Cost B1 ($/GJ) |
 |---|---:|---:|---:|---:|
 | low | 2.103194 | 19.302895 | 21.406089 | 3.194071 |
-| base | 3.605475 | 32.204471 | 35.809946 | 2.456978 |
+| base | 3.605475 | 39.918341 | 43.523816 | 2.456978 |
 | high | 4.506844 | 41.363347 | 45.870191 | 1.965582 |
 
-The base national cap is **41.298610 PJ/yr in 2021** and
-**35.809946 PJ/yr in 2028-2070**. The low case is
+The base national cap is **50.325738 PJ/yr in 2021** and
+**43.523816 PJ/yr in 2028-2070**. The low case is
 24.695820 / 21.406089 PJ/yr; the high case is
 52.919613 / 45.870191 PJ/yr.
 
@@ -188,7 +188,7 @@ values are not a BC inventory estimate.
 | Case | 2021 cap (PJ) | 2028-2070 cap (PJ) | Cost ($/GJ) | 2021 / 50 PJ | Cost / $4 | 2021 / 93.170084 PJ |
 |---|---:|---:|---:|---:|---:|---:|
 | low | 24.695820 | 21.406089 | 3.194071 | 0.494 | 0.799 | 0.265 |
-| base | 41.298610 | 35.809946 | 2.456978 | 0.826 | 0.614 | 0.443 |
+| base | 50.325738 | 43.523816 | 2.456978 | 1.007 | 0.614 | 0.540 |
 | high | 52.919613 | 45.870191 | 1.965582 | 1.058 | 0.491 | 0.568 |
 
 The previous **93.170084 PJ** was gross taper residue on the 2018 AAC, with no
@@ -197,7 +197,7 @@ recovery factor. The new base is lower for two reasons: the 2021 AAC is
 below 2018, and the B1/B2 recovery factors remove the non-recoverable share.
 On the 2021 gross taper base the national residue is
 70.559484 PJ;
-the base case is 0.585x that gross value.
+the base case is 0.713x that gross value.
 
 The 50 PJ/$4 placeholder is close to the **base 2021 cap** and above the
 2028-2070 base cap. Its $4/GJ cost is above all three cases; the base cost is
@@ -211,7 +211,7 @@ The build performs and the tests re-check:
 - **Recovery bounds**: B1 implied 1.769026 is flagged
   and uses the 0.60 fallback; B2 implied 0.723799 is
   in [0.2, 1.0] but is a diagnostic; the base recovery is the published
-  0.583931 calibration, and every base recovery is in
+  0.723799 calibration, and every base recovery is in
   [0.2, 1.0].
 - **ODT -> PJ**: `PJ = ODT x 18.5 / 1,000,000` within 1e-9 PJ.
 - **Cost conversion**: `$/GJ = $/ODT / 18.5`; low = base x 1.30, high =
@@ -235,10 +235,10 @@ The build performs and the tests re-check:
 3. **FFCM InitialContent is a stock.** The implied recovery is a per-m3 ratio,
    not a calibrated annual recovery rate. The 0.60 B1 fallback is a documented
    base, not a measured coastal recovery. On the refined batch the B2
-   FFCM-implied recovery is 0.723799, above the
-   published 0.583931; this is an open evidence question.
-   The cap holds the published calibration so the batch refinement lowers the
-   gross taper estimate instead of silently reflating the cap.
+   FFCM-implied recovery is 0.723799 and is the
+   adopted base; the old published 0.583931 was tied to the pre-refinement
+   taper and is superseded. The remaining evidence gap is the stock-to-flow
+   interpretation, not the arithmetic basis.
 4. **Cost is a single FFCM provincial value.** It does not vary by zone and
    excludes collection, grinding, bundling, stumpage, and opportunity cost.
    It is a lower bound for a harvest-residue supply curve.

@@ -1,0 +1,75 @@
+{
+  "artifact_version": "0.1.0",
+  "generated_utc": "2026-11-18T15:48:28+00:00",
+  "inputs": [
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 1479,
+      "path": "data/derived/national/clews/comparison/SUPBCW_activity_limits_base.csv",
+      "sha256": "a6a19becdee3fbff5246257ccc9fd8d483ee5c2c9097ef9adfa54cbdb93bf50f"
+    },
+    {
+      "bytes": 1429,
+      "path": "data/derived/national/clews/comparison/SUPBCW_variable_cost_base.csv",
+      "sha256": "8be874e0db18c1a624f28e6643acf67915f1f963ef4d07ea7d14a86ebb311f32"
+    },
+    {
+      "bytes": 14937,
+      "path": "data/derived/national/clews/bc_residue_cases_summary.json",
+      "sha256": "da279f9dd57ea33d79cc2616955a0cd4e028b2893875fd91316155081ba7647e"
+    },
+    {
+      "bytes": 7925,
+      "path": "data/derived/national/clews/manifest.json",
+      "sha256": "9c4c0185aca5b22c35d71fda2db6979e52ace8343d6b4623514d776468d6efcb"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "outputs": [
+    {
+      "bytes": 35316,
+      "path": "data/derived/national/clews/osecan/reconcile_ffcm/run_summaries.json",
+      "sha256": "fd9e68179ac113390ee67073d8e357bb4d3305dc069085673c643a5410de58df"
+    },
+    {
+      "bytes": 112086,
+      "path": "data/derived/national/clews/osecan/reconcile_ffcm/dispatch_by_zone.csv",
+      "sha256": "f172d9e235bd009dd629bd55cc2a4fb733847292af1065354fc286375f26dfc2"
+    },
+    {
+      "bytes": 4915,
+      "path": "data/derived/national/clews/osecan/reconcile_ffcm/RECONCILE_FFCM_REPORT.md",
+      "sha256": "c2bf8617bacc1d53e2ed2077e71197f0c93b9241db4fce795e135f93d2dca745"
+    }
+  ],
+  "run_evidence": {
+    "note": "Only summaries are committed; the disposable OSeCAN copy and the public repository are not modified.",
+    "public_repo_modified": false,
+    "runs_root": "/tmp/osecan_zonal/results"
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}

@@ -5,13 +5,13 @@
     "FFCM InitialContent is a stock, so the recovery comparison is per unit log volume, not annual stock-to-flow.",
     "FFCM has no FMU-to-TSA/zone crosswalk in the repo; BC totals are allocated by the documented 2018 AAC zone log share and flagged.",
     "The zone taper ratio is the matched-cell batch aggregate, the same basis as the refined all-BC chain; ecoprovince-ratio weighting is not used for the cap.",
-    "Base recovery is held at the published 2026-11-17 FFCM calibration; the refined-batch FFCM-implied fraction is a diagnostic, not the cap driver.",
+    "The B2 base recovery is the refined-batch FFCM-implied fraction (recomputed and asserted, not hard-coded); B1 uses the documented 0.60 fallback because its implied value is out of bounds.",
     "FFCM logging_residue is a roadside-recoverable stream (0.063 ODT/m3), not full aboveground slash.",
     "Cost is FFCM SupplyCost on a dry ODT basis; no moisture credit, deflator, or exchange-rate adjustment is applied.",
     "The time path uses workbook AAC 2021-2028 and holds 2028 flat to 2070; no MPB, climate, or wildfire trajectory is invented.",
     "The AGB non-stem sensitivity is not the base curve and does not replace the taper-residue base."
   ],
-  "generated_utc": "2026-11-18T15:37:13+00:00",
+  "generated_utc": "2026-11-18T15:52:46+00:00",
   "inputs": [
     {
       "bytes": 366537,
@@ -66,9 +66,9 @@
   ],
   "outputs": [
     {
-      "bytes": 1800,
+      "bytes": 1634,
       "path": "bc_residue_recovery.csv",
-      "sha256": "70a7d565bc59196513db01c51e7144cb329662dc9ff34a13e69d940b4086b0d4"
+      "sha256": "52beff00be52ae9e7e29544d4b0e1e7566c6e1acc5f6ef3b396a9923472587dd"
     },
     {
       "bytes": 131656,
@@ -83,7 +83,7 @@
     {
       "bytes": 52673,
       "path": "bc_residue_time_path.csv",
-      "sha256": "0cdb523abc403f9cbec6ea5c57fd46aa633a71ad6a480f25de1250aafda41caf"
+      "sha256": "c79a5641539cf04b4a441879ee12c6dc6344e8d39c7cd0c043f8623be9e020be"
     },
     {
       "bytes": 1529,
@@ -128,7 +128,7 @@
     {
       "bytes": 1579,
       "path": "SUPBCWB2_activity_limits_base.csv",
-      "sha256": "21d558c38c131622aff32073571a049d19c2eaadfeb0c6adc08a9cb98bee788a"
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
     },
     {
       "bytes": 1529,
@@ -138,7 +138,7 @@
     {
       "bytes": 1479,
       "path": "comparison/SUPBCW_activity_limits_base.csv",
-      "sha256": "1b77330dcfe20d522cb350fa8dae4c3489c00be42d418cdb396ec66bf821d6bf"
+      "sha256": "a6a19becdee3fbff5246257ccc9fd8d483ee5c2c9097ef9adfa54cbdb93bf50f"
     },
     {
       "bytes": 1429,
@@ -176,19 +176,19 @@
       "sha256": "2e03db0770b67ddd658cabc7506005b4cf880ebe20ae2e471ee1eb9159da82ca"
     },
     {
-      "bytes": 14641,
+      "bytes": 14937,
       "path": "bc_residue_cases_summary.json",
-      "sha256": "162fd153074b375a1b95d1af3a6ac887d52f1772c118a30281f79a2e4368927b"
+      "sha256": "07083a562593a565cdb6fe41efe2f977eaeeecb6f038d92cdfd0b482296845e3"
     },
     {
-      "bytes": 12632,
+      "bytes": 12608,
       "path": "BC_RESIDUE_RECOVERY_REPORT.md",
-      "sha256": "78da557c9697ee1914cae234e748b3773b62d2efd1b269cce80e7580c3f9c2fd"
+      "sha256": "21d87540eac47f8ebc10522b252ff25b510737fdd7904bcd101205416517942c"
     },
     {
-      "bytes": 4979,
+      "bytes": 5432,
       "path": "BC_RESIDUE_RECONCILIATION.md",
-      "sha256": "35ab6c5a8bb541e1fe6cd0c95c8d1be7e2550fdbfbeb096aa64139638834bcdd"
+      "sha256": "b0bc91c645b2d095f3e6f45fc237a86463d6ac68cdcceafec22cad04688dbba9"
     }
   ],
   "status": "fresh_side_provisional_not_c2070_official",
