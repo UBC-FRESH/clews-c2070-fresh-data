@@ -1,0 +1,83 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "OSeCAN plant parameters are the documented v0.3 placeholders, not Canadian fleet averages.",
+    "PWRBCWB1/B2 keep the PWRBCW input activity ratio 3.72 (26.9% efficiency), capex 3200 $/kW, fixed 95 $/kW-yr, variable 0, life 30 years, capacity factor 0.70 and zero CO2.",
+    "The BC zonal caps and costs are FRESH-side provisional values, not a C2070 official boundary.",
+    "The hydro cap is a sensitivity probe: every PWRHYD<z> is fixed at its 2021 base-run activity, not a forecast of hydro availability.",
+    "The generic-BIO sensitivity raises RNWBIO VariableCost to 4.0 $/GJ for all consumers; it is not a dedicated power-biomass supply curve.",
+    "The national control disables SUPBCWB1/B2 (cap 0); the zonal runs disable SUPBCW (cap 0) so the B1+B2 rollup is not double counted."
+  ],
+  "generated_utc": "2026-11-18T06:35:28+00:00",
+  "inputs": [
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "740b8fe342d74ff5ad823dc57939b8ec59649a034363ad02609a9193ec492241"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "b392e05df7420c7a61e41960ef53ead59ecc4df79a49f3c0f9219ac6d139bbf5"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 1479,
+      "path": "data/derived/national/clews/comparison/SUPBCW_activity_limits_base.csv",
+      "sha256": "5c83b9a8863e2af3f46fe764b491f24fe00c64d31d42f466fcebd01fd3788e80"
+    },
+    {
+      "bytes": 1429,
+      "path": "data/derived/national/clews/comparison/SUPBCW_variable_cost_base.csv",
+      "sha256": "8be874e0db18c1a624f28e6643acf67915f1f963ef4d07ea7d14a86ebb311f32"
+    },
+    {
+      "bytes": 13271,
+      "path": "data/derived/national/clews/bc_residue_cases_summary.json",
+      "sha256": "427f900f56a117dffeeb4b8ffb5ecd220e354a76ac47dacf60d4b7aca43487c5"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "outputs": [
+    {
+      "bytes": 15926,
+      "path": "data/derived/national/clews/osecan/zonal/zonal_structure.json",
+      "sha256": "e7750501f2f593b619e86df1817055eceaeb1f7bf233121130143af29a9f29a2"
+    },
+    {
+      "bytes": 40642,
+      "path": "data/derived/national/clews/osecan/zonal/run_summaries.json",
+      "sha256": "d65c3923f8a22cab88850382f269d0b7e5f003afd65395c8b57acbd52953c0fd"
+    },
+    {
+      "bytes": 172275,
+      "path": "data/derived/national/clews/osecan/zonal/dispatch_by_zone.csv",
+      "sha256": "cf1f5fb6af8479c525ea425efdfc8e8cbd2c42a6fef4297bcb79558ab4fdd9b1"
+    },
+    {
+      "bytes": 8824,
+      "path": "data/derived/national/clews/osecan/zonal/ZONAL_OSECAN_REPORT.md",
+      "sha256": "a48314774575d994f943939b9fd840416dd7fed3f74c0c0b6cccb0a62193c914"
+    }
+  ],
+  "run_evidence": {
+    "note": "Run summaries are derived from the solved CSVs in the disposable copy; only the summaries and report are committed.",
+    "public_repo_modified": false,
+    "runs_root": "/tmp/osecan_zonal/results"
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}
