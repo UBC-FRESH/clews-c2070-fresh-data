@@ -2,7 +2,7 @@
   "artifact_version": "0.1.0",
   "crs": "EPSG:3005",
   "filter": "FOR_MGMT_LAND_BASE_IND = 'Y' (Crown management land base) AND BCLCS_LEVEL_1 = 'V' (vegetated) AND BCLCS_LEVEL_2 = 'T' (treed); polygon area = POLYGON_AREA (ha), validated against FEATURE_AREA_SQM/10000",
-  "generated_utc": "2026-11-17T08:52:33+00:00",
+  "generated_utc": "2026-11-18T14:35:42+00:00",
   "inputs": {
     "national_batch_cells": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/national_batch/cells",
     "rsyc_ecostrat": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/raw/national/rsyc/RSYC_ecostrat.gpkg",
@@ -14,25 +14,30 @@
   "label_raster_resolution_m": 500.0,
   "outputs": {
     "BC_AREA_REPORT.md": {
-      "bytes": 6158,
+      "bytes": 10844,
       "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/BC_AREA_REPORT.md",
-      "sha256": "2562b24fb35ce935ff18b07da2a549a4ae8e9d6f3df669ece1a7967be20ca881"
+      "sha256": "dd09b4947f6c55bc931ec03492927b6e583d646a74b80de8ec911113996412cf"
     },
     "bc_area_summary.json": {
-      "bytes": 24703,
+      "bytes": 67057,
       "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_area_summary.json",
-      "sha256": "d0531e56ea00ca06d4cb89aa1a44660e9356bead7927f297227eb6f2a21e95be"
+      "sha256": "bbd1a983ea26b1b127e7cd1e67f6bf558310c993ca87cd4b0b03441515cb20b6"
     },
     "bc_area_weights.csv": {
-      "bytes": 455819,
+      "bytes": 595815,
       "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_area_weights.csv",
-      "sha256": "a173afb4e32367096bae3db94b8e59554ab4950a9e238d9171afeb7e119c8c8e"
+      "sha256": "a1882d5e1d0d8d2c36ce040ca20e75a16c67ee71ec33cd798f455c026e1918d6"
     },
     "bc_national_batch_area_joined.csv": {
-      "bytes": 1154868,
+      "bytes": 1160180,
       "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv",
-      "sha256": "e0a51d5aa6b1ec22b9d27451f229a26bed525ee85641b7ce1766fe1c822e411e"
+      "sha256": "fd12a1ace118b951ddf1e82d03c17c4b0e63bf4b288814c09526db371c103e7b"
+    },
+    "bc_species_alias_table.csv": {
+      "bytes": 2505,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/assortments/bc_area_weights/bc_species_alias_table.csv",
+      "sha256": "ed601a36fadf611660259e4c09a147a5633d76eb173cbede008b736cd0a6570e"
     }
   },
-  "runtime_seconds": 123.839754949091
+  "runtime_seconds": 136.52391743985936
 }

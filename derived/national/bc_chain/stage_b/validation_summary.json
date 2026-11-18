@@ -7,14 +7,14 @@
     "product prices are FFCM commodity prices on the declared product mass or energy basis; CAD/t is read as the declared tonne basis"
   ],
   "counts": {
-    "allocation_count": 161,
-    "included_recipient_line_count": 24,
+    "allocation_count": 187,
+    "included_recipient_line_count": 29,
     "recipient_candidate_count": 41,
-    "routed_source_count": 51,
-    "source_count": 51,
-    "supply_row_count": 204,
-    "transport_link_count": 1224,
-    "unassigned_count": 57
+    "routed_source_count": 59,
+    "source_count": 59,
+    "supply_row_count": 236,
+    "transport_link_count": 1644,
+    "unassigned_count": 64
   },
   "data_gaps": [
     "all three Stage A sawmills use the same low-confidence TL-hub proxy coordinate (54.01, -122.73); source-level transport distances are identical for NRN links and source allocation is degenerate",
@@ -25,13 +25,13 @@
     "route capacity is absent; transport links are uncapped"
   ],
   "model_stats": {
-    "assigned_odt": 6145980.9602015,
-    "feasible_pair_count": 1224,
+    "assigned_odt": 6856003.772463575,
+    "feasible_pair_count": 1703,
     "moisture_limit_wet_basis": null,
     "objective_mode": "profit_max",
-    "raw_cbc_objective_cad": 702900184.415885,
+    "raw_cbc_objective_cad": 865961453.2645408,
     "solver_status": "Optimal",
-    "variable_count": 1224
+    "variable_count": 1703
   },
   "objective_mode": "profit_max",
   "objective_mode_reason": "all included recipient classes have FFCM prices",
@@ -79,7 +79,7 @@
       },
       {
         "check_id": "objective_reconciliation",
-        "detail": "assignment components reproduce the normalised objective; raw CBC delta 3.695755 CAD",
+        "detail": "assignment components reproduce the normalised objective; raw CBC delta 3.973071 CAD",
         "passed": true
       },
       {
