@@ -1,0 +1,242 @@
+{
+  "artifact_version": "0.1.0",
+  "assigned_odt": 8841756.80707,
+  "assigned_share": 0.9999999962075711,
+  "bioenergy_odt": 2118365.97276,
+  "bioenergy_share_of_assigned": 0.23958654586225703,
+  "bioenergy_share_of_generated": 0.23958654495364207,
+  "capacity_double_booking_avoided_odt": 1309342.5747482546,
+  "class_utilization": [
+    {
+      "binding_facility_count": 5,
+      "capacity_odt_y": 2974911.102193415,
+      "facility_class": "BIO",
+      "received_odt": 2118365.9727600003
+    },
+    {
+      "binding_facility_count": 6,
+      "capacity_odt_y": 6775712.899999999,
+      "facility_class": "PAP",
+      "received_odt": 4565150.8368999995
+    },
+    {
+      "binding_facility_count": 9,
+      "capacity_odt_y": 2158240.0,
+      "facility_class": "PEL",
+      "received_odt": 2158239.99741
+    }
+  ],
+  "data_gaps": [
+    "PAP cannot accept the generic Stage A RESIDUE grade; harvest chips to PAP require an eligibility change",
+    "Stage A harvest residue baseline BIO assignment is zero; BIO receipts in this run are diagnostic",
+    "route capacity, rail/water modes, and moisture blending are absent",
+    "TL-hub proxy coordinates remain for some sawmill sources"
+  ],
+  "excluded_pair_count": 16,
+  "excluded_pairs": [
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B1::BC-PEL-1657"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1141"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1650"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1653"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1654"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1655"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1657"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "HARVEST::B2::BC-PEL-1658"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-1153::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-200::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-363::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-456::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-810::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-915::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-916::hogfuel"
+    },
+    {
+      "reason": "no_transport_link",
+      "recipient_facility": "BC-BIO-4007",
+      "residue_type": "hogfuel",
+      "source_id": "SAWMILL::BC-SAW-920::hogfuel"
+    }
+  ],
+  "generated_odt": 8841756.840601735,
+  "harvest_assigned_by_destination_type": [
+    {
+      "assigned_odt": 1342518.586,
+      "residue_type": "hogfuel"
+    },
+    {
+      "assigned_odt": 593154.136,
+      "residue_type": "sawdust_shavings"
+    }
+  ],
+  "objective": [
+    {
+      "component": "product_revenue",
+      "sense": "positive",
+      "value_cad": 2085149279.5297546
+    },
+    {
+      "component": "transport_cost",
+      "sense": "negative",
+      "value_cad": 330282746.6686112
+    },
+    {
+      "component": "processing_cost",
+      "sense": "negative",
+      "value_cad": 811130843.191437
+    },
+    {
+      "component": "net_contribution",
+      "sense": "objective_profit_max",
+      "value_cad": 943735689.6697063
+    }
+  ],
+  "objective_mode": "service_max_then_profit",
+  "objective_reconciliation_delta_cad": -4.76837158203125e-07,
+  "period": "2028",
+  "raw_solver_objective_cad": 943735689.6697068,
+  "residue_type_balance": [
+    {
+      "assigned_odt": 1935672.7219999998,
+      "generated_odt": 1935672.7296071171,
+      "residue_type": "harvest_residue",
+      "source_kind": "harvest_residue",
+      "unassigned_odt": 0.014825194426521193
+    },
+    {
+      "assigned_odt": 4565150.836899999,
+      "generated_odt": 4565150.844025659,
+      "residue_type": "chips",
+      "source_kind": "sawmill_residue",
+      "unassigned_odt": 0.03554893897671718
+    },
+    {
+      "assigned_odt": 775847.3867600001,
+      "generated_odt": 775847.385942161,
+      "residue_type": "hogfuel",
+      "source_kind": "sawmill_residue",
+      "unassigned_odt": 0.002622196127049392
+    },
+    {
+      "assigned_odt": 1565085.8614099994,
+      "generated_odt": 1565085.881026797,
+      "residue_type": "sawdust_shavings",
+      "source_kind": "sawmill_residue",
+      "unassigned_odt": 0.023582108673963376
+    }
+  ],
+  "separate_total_at_recipients_odt": 8791676.502070693,
+  "solver_status": "Optimal",
+  "source_counts": {
+    "allocation_count": 205,
+    "harvest_source_count": 8,
+    "recipient_count": 28,
+    "sawmill_source_count": 177
+  },
+  "unassigned_odt": 0.033531734719872475,
+  "validation": [
+    {
+      "check": "source_conservation",
+      "detail": "all sources assigned <= generated",
+      "passed": true
+    },
+    {
+      "check": "shared_capacity",
+      "detail": "no recipient exceeds facility-level shared capacity",
+      "passed": true
+    },
+    {
+      "check": "residue_type_eligibility",
+      "detail": "every allocation matches the declared consumer class",
+      "passed": true
+    },
+    {
+      "check": "transport_link_existence",
+      "detail": "every allocation has a finite, non-negative transport link",
+      "passed": true
+    },
+    {
+      "check": "objective_reconciliation",
+      "detail": "assignment components - raw CBC objective = 0.000000 CAD",
+      "passed": true
+    },
+    {
+      "check": "finite_nonnegative_values",
+      "detail": "all allocated ODT are finite",
+      "passed": true
+    }
+  ]
+}

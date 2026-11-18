@@ -7,14 +7,27 @@
     "19.5% unmapped species area is excluded from species composition",
     "NRN 2018 road+ferry shortest paths; no route capacity or rail/water",
     "Stage A harvest residue and Stage B sawmill residue are separate models",
-    "roadside/stumpage cost is not modelled"
+    "roadside/stumpage cost is not modelled",
+    "Stage A log assignment is fixed; only harvest and sawmill residue are co-optimised",
+    "harvest residue is eligible at PEL and BIO under the Stage A RESIDUE grade, not PAP",
+    "recipient capacity is facility-level FFCM line infeed capacity, shared across streams",
+    "road and NRN ferry shortest paths only; no route capacity, rail, or water option",
+    "contracts are apportionment-derived diagnostic maxima, not supply agreements"
   ],
+  "coopt_artifact_version": "0.1.0",
+  "coopt_generated_utc": "2026-11-18T14:49:27+00:00",
   "generated_utc": "2026-11-18T14:38:51+00:00",
   "inputs": {
     "data/derived/national/assignments/tsa24_pilot/contracts_bc_apportionment.csv": "c6a4a9a50d84e3d1a328008a6e54e8f5b4ef8221fe434c700149415dad40ab25",
     "data/derived/national/assignments/tsa24_pilot/facilities_bc_recovered.csv": "0aaf8ae2b257fd728c0270629dca140a7df245f7e172efd9c419d147b0b9437b",
     "data/derived/national/assortments/bc_area_weights/bc_area_weights.csv": "a1882d5e1d0d8d2c36ce040ca20e75a16c67ee71ec33cd798f455c026e1918d6",
     "data/derived/national/assortments/bc_area_weights/bc_national_batch_area_joined.csv": "fd12a1ace118b951ddf1e82d03c17c4b0e63bf4b288814c09526db371c103e7b",
+    "data/derived/national/bc_chain/bc_stage_a_assignment.csv": "c91f9fb62a7318862da34c319e3011726b07907d23005ee9f7a3e79b6e7e1b4c",
+    "data/derived/national/bc_chain/bc_stage_a_transport_links.csv": "554841bc31a8748fd1c38fbaa4713e79f55f12368187c38ed61d75544c517fb6",
+    "data/derived/national/bc_chain/stage_b/residue_demand.csv": "087e0eb27a5b279803f4a10a65f91cf9b1ae3cc041b9d49a5379b4e6f935cd83",
+    "data/derived/national/bc_chain/stage_b/residue_supply.csv": "94d05433cec0c832be397c55c1e7dff8f9dd4df9faa044bbf729042c88775a30",
+    "data/derived/national/bc_chain/stage_b/stage_b_assignment.csv": "655150533aa32272e988fbf77efe4a62020d37deade017a9d6baba5af979360e",
+    "data/derived/national/bc_chain/stage_b/stage_b_transport_links.csv": "0646222e00137c3f2f68428bf3e2d6e2f9c949ed23e245b81b8db3cc1384a4c3",
     "data/derived/national/clews/bc_residue_time_path.csv": "bb8e9b96474e951c1ce3cb2ab05be93c36ac3ca92a6e8d9e4dd2805ed4c435d7",
     "data/derived/national/clews_supply/bc_woody_residue/bc_tsa_zone_crosswalk.csv": "3ee66aaff978111c37a32e1c16145c978cb90d18834917487b1ee5772101884c",
     "data/derived/national/clews_supply/bc_woody_residue/bc_zone_crosswalk.csv": "a1d5ae6ff6d2bd0e2d5a80d9ba75ce63ccaab754f3eb276edce9ad1a662b3ef2"
@@ -28,9 +41,29 @@
       "bytes": 11122,
       "sha256": "dd32f38774201846937637688f7a78925bbfd58015e0e6e9d2df5daff9a51a9d"
     },
+    "BC_RESIDUE_COOPT_REPORT.md": {
+      "bytes": 8483,
+      "sha256": "2e35e97e10215f1aae5ee2b7465b59e1402b2d3db1ab249d828f93607d52a356"
+    },
     "bc_facility_utilization.csv": {
       "bytes": 18500,
       "sha256": "353ddecad4293d886c0ec495dd9be91fc4b6db286e307413af8d5b75c5a83b62"
+    },
+    "bc_residue_coopt_assignment.csv": {
+      "bytes": 88676,
+      "sha256": "e490649b94f42b56824ebc1823c89ee67ae67d81f3d8f471bc8405ef2793a369"
+    },
+    "bc_residue_coopt_balance.csv": {
+      "bytes": 20777,
+      "sha256": "4d2be89a55563a5adc934acd54c4402237352742088c3c2766abc57e332b779d"
+    },
+    "bc_residue_coopt_summary.json": {
+      "bytes": 7003,
+      "sha256": "da177eae71d3eb2eccfe220469d8ba8dc9e012ac1ac8893f4162f6879ecc4345"
+    },
+    "bc_residue_coopt_utilization.csv": {
+      "bytes": 4765,
+      "sha256": "99789a153a7d9aa99a039f589f86e0f6e846f2b333f935801904ec838b343e63"
     },
     "bc_stage_a_assignment.csv": {
       "bytes": 746347,
