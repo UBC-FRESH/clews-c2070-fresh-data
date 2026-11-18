@@ -173,15 +173,15 @@ plant at the documented $95-115/t carbon schedule.
 
 | Case | 2021 cap (PJ) | 2028 cap (PJ) | Max electricity 2021 (PJ) | Max electricity 2028 (PJ) | Max electricity 2028 (TWh) |
 |---|---:|---:|---:|---:|---:|
-| low | 30.193 | 25.690 | 8.117 | 6.906 | 1.918 |
-| base | 50.473 | 42.959 | 13.568 | 11.548 | 3.208 |
-| high | 64.700 | 55.050 | 17.393 | 14.798 | 4.111 |
+| low | 24.696 | 21.406 | 6.639 | 5.754 | 1.598 |
+| base | 41.299 | 35.810 | 11.102 | 9.626 | 2.674 |
+| high | 52.920 | 45.870 | 14.226 | 12.331 | 3.425 |
 
 The 50 PJ placeholder is 13.441 PJ
 of electricity (3.734 TWh).
-The base 2028 cap is 11.548 PJ
-(3.208 TWh), or
-0.51% of the model's
+The base 2028 cap is 9.626 PJ
+(2.674 TWh), or
+0.43% of the model's
 2025 hydro generation. The cap is small relative to the power
 system; the binding constraint is economics, not the cap.
 
@@ -351,4 +351,4 @@ to the assembled input before `otoole convert`.
 5. Re-run the model after those changes; this report's run evidence is
    for the public v0.3 placeholder model only.
 
-Generated: 2026-11-17T19:50:47+00:00
+Generated: 2026-11-18T15:33:33+00:00

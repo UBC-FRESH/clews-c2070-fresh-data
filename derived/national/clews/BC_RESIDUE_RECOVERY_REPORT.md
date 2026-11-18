@@ -58,18 +58,22 @@ year of gross taper ODT.
 
 | Zone | Zone share | FFCM log (m3) | FFCM residue (ODT) | Gross taper ratio (ODT/m3) | Gross taper same basis (ODT) | Implied recovery | In [0.2, 1.0] | Base recovery |
 |---|---:|---:|---:|---:|---:|---:|---|---:|
-| B1 | 17.399562% | 23,445,134.245 | 1,477,043.457 | 0.036273288 | 850,432.111 | 1.736815 | no | 0.600000 |
-| B2 | 82.600438% | 111,300,406.101 | 7,011,925.584 | 0.107889403 | 12,008,134.420 | 0.583931 | yes | 0.583931 |
-| CAN comparison | 100.000000% | 134,745,540.345 | 8,488,969.042 | 0.095428513 | 12,858,566.532 | 0.660180 | yes | 0.660180 |
+| B1 | 17.399562% | 23,445,134.245 | 1,477,043.457 | 0.035612818 | 834,947.287 | 1.769026 | no | 0.600000 |
+| B2 | 82.600438% | 111,300,406.101 | 7,011,925.584 | 0.087040720 | 9,687,667.467 | 0.723799 | yes | 0.583931 |
+| CAN comparison | 100.000000% | 134,745,540.345 | 8,488,969.042 | 0.078092490 | 10,522,614.754 | 0.806736 | yes | 0.586727 |
 
-The B1 implied fraction is **1.736815**, above 1.0:
+The B1 implied fraction is **1.769026**, above 1.0:
 the uniform FFCM roadside-residue ratio (0.063 ODT/m3) is larger than the
-coastal taper-residue ratio (0.036273 ODT/m3).
+coastal taper-residue ratio (0.035613 ODT/m3).
 B1 is therefore flagged and the documented **0.60** fallback is used. The B2
-implied fraction is **0.583931**, inside the bounds,
-so B2 uses the FFCM-implied value. The national comparison ratio is
-0.660180; it is reported only, not used
-to set the national cap (the rollup is the sum of B1 and B2).
+implied fraction on the refined batch is **0.723799**,
+inside the bounds, but the base cap **does not** re-derive recovery from it.
+The base recovery is held at the published 2026-11-17 calibration
+(0.583931); the FFCM-implied value is reported as a
+diagnostic because re-deriving it would raise the B2 cap to about 39.9 PJ and
+would not reconcile with the refined all-BC chain. The national comparison
+ratio is 0.806736; it is reported only,
+not used to set the national cap (the rollup is the sum of B1 and B2).
 
 Supporting evidence: the BC Fibre Database `Roadside Residue` sheet uses 18%
 of harvest with regional inclusion factors of 0.2 to 0.8. The FFCM uniform
@@ -91,22 +95,22 @@ Caps in 2021 (the first model year):
 
 | Case | B1 (PJ/yr) | B2 (PJ/yr) | CAN rollup (PJ/yr) | Cost B1 ($/GJ) |
 |---|---:|---:|---:|---:|
-| low | 2.145722 | 28.047733 | 30.193455 | 3.194071 |
-| base | 3.678381 | 46.794140 | 50.472521 | 2.456978 |
-| high | 4.597976 | 60.102284 | 64.700261 | 1.965582 |
+| low | 2.106679 | 22.589140 | 24.695820 | 3.194071 |
+| base | 3.611450 | 37.687160 | 41.298610 | 2.456978 |
+| high | 4.514313 | 48.405300 | 52.919613 | 1.965582 |
 
 Caps in 2028 and held flat to 2070:
 
 | Case | B1 (PJ/yr) | B2 (PJ/yr) | CAN rollup (PJ/yr) | Cost B1 ($/GJ) |
 |---|---:|---:|---:|---:|
-| low | 2.142167 | 23.547767 | 25.689934 | 3.194071 |
-| base | 3.672286 | 39.286509 | 42.958795 | 2.456978 |
-| high | 4.590357 | 50.459500 | 55.049858 | 1.965582 |
+| low | 2.103194 | 19.302895 | 21.406089 | 3.194071 |
+| base | 3.605475 | 32.204471 | 35.809946 | 2.456978 |
+| high | 4.506844 | 41.363347 | 45.870191 | 1.965582 |
 
-The base national cap is **50.472521 PJ/yr in 2021** and
-**42.958795 PJ/yr in 2028-2070**. The low case is
-30.193455 / 25.689934 PJ/yr; the high case is
-64.700261 / 55.049858 PJ/yr.
+The base national cap is **41.298610 PJ/yr in 2021** and
+**35.809946 PJ/yr in 2028-2070**. The low case is
+24.695820 / 21.406089 PJ/yr; the high case is
+52.919613 / 45.870191 PJ/yr.
 
 The six OSeCAN parameter files per case are:
 
@@ -131,9 +135,9 @@ all-BC AAC of **52,774,801 m3/y**.
 
 | Year | All-BC AAC (m3/y) | B1 log (m3/y) | B2 log (m3/y) | Gross taper (PJ/yr) |
 |---:|---:|---:|---:|---:|
-| 2021 | 49,216,819.800 | 9,135,920.827 | 40,080,898.973 | 86.267014 |
-| 2028 | 43,370,775.800 | 9,120,804.865 | 34,249,970.935 | 73.399810 |
-| 2029-2070 | 43,370,775.800 (held) | 9,120,804.865 | 34,249,970.935 | 73.399810 |
+| 2021 | 49,216,819.800 | 9,135,920.827 | 40,080,898.973 | 70.559484 |
+| 2028 | 43,370,775.800 | 9,120,804.865 | 34,249,970.935 | 61.160254 |
+| 2029-2070 | 43,370,775.800 (held) | 9,120,804.865 | 34,249,970.935 | 61.160254 |
 
 The TSA-level 2011-2028 values are in
 `audit/bc_aac_trajectory_2011_2028.csv`; blank 2011-2016 forecast cells for
@@ -158,12 +162,12 @@ was fabricated. The area-weighted BC values are:
 
 | Zone | RSYC cells (used / missing) | AGB (ODT/ha) | Volume (m3/ha) | Expansion (ODT/m3) | Non-stem fraction | AGB slash (ODT/m3) | Taper ratio (ODT/m3) | Ratio to taper |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| B1 | 64 / 2 | 159.851 | 354.614 | 0.450776 | 0.246837 | 0.111268 | 0.036273 | 3.067x |
-| B2 | 359 / 4 | 94.818 | 185.388 | 0.511455 | 0.246837 | 0.126246 | 0.107889 | 1.170x |
+| B1 | 64 / 2 | 159.851 | 354.614 | 0.450776 | 0.246837 | 0.111268 | 0.035613 | 3.124x |
+| B2 | 359 / 4 | 94.818 | 185.388 | 0.511455 | 0.246837 | 0.126246 | 0.087041 | 1.450x |
 
-The B1 AGB non-stem slash is **3.07x** the B1 taper
+The B1 AGB non-stem slash is **3.12x** the B1 taper
 base, consistent with the expected ~3x coastal uplift. B2 is
-**1.17x** because its taper residue already includes a
+**1.45x** because its taper residue already includes a
 large non-merchantable stem component. The AGB-slash coefficient range from
 the fraction range is 0.076363 to
 0.164992 ODT/m3 in B1 and
@@ -183,16 +187,16 @@ values are not a BC inventory estimate.
 
 | Case | 2021 cap (PJ) | 2028-2070 cap (PJ) | Cost ($/GJ) | 2021 / 50 PJ | Cost / $4 | 2021 / 93.170084 PJ |
 |---|---:|---:|---:|---:|---:|---:|
-| low | 30.193455 | 25.689934 | 3.194071 | 0.604 | 0.799 | 0.324 |
-| base | 50.472521 | 42.958795 | 2.456978 | 1.009 | 0.614 | 0.542 |
-| high | 64.700261 | 55.049858 | 1.965582 | 1.294 | 0.491 | 0.694 |
+| low | 24.695820 | 21.406089 | 3.194071 | 0.494 | 0.799 | 0.265 |
+| base | 41.298610 | 35.809946 | 2.456978 | 0.826 | 0.614 | 0.443 |
+| high | 52.919613 | 45.870191 | 1.965582 | 1.058 | 0.491 | 0.568 |
 
 The previous **93.170084 PJ** was gross taper residue on the 2018 AAC, with no
 recovery factor. The new base is lower for two reasons: the 2021 AAC is
 6.7%
 below 2018, and the B1/B2 recovery factors remove the non-recoverable share.
 On the 2021 gross taper base the national residue is
-86.267014 PJ;
+70.559484 PJ;
 the base case is 0.585x that gross value.
 
 The 50 PJ/$4 placeholder is close to the **base 2021 cap** and above the
@@ -204,9 +208,11 @@ supply estimate: it is a mid-range cap and a high cost.
 
 The build performs and the tests re-check:
 
-- **Recovery bounds**: B1 implied 1.736815 is flagged
-  and uses the 0.60 fallback; B2 implied 0.583931 is
-  in [0.2, 1.0]; every base recovery is in [0.2, 1.0].
+- **Recovery bounds**: B1 implied 1.769026 is flagged
+  and uses the 0.60 fallback; B2 implied 0.723799 is
+  in [0.2, 1.0] but is a diagnostic; the base recovery is the published
+  0.583931 calibration, and every base recovery is in
+  [0.2, 1.0].
 - **ODT -> PJ**: `PJ = ODT x 18.5 / 1,000,000` within 1e-9 PJ.
 - **Cost conversion**: `$/GJ = $/ODT / 18.5`; low = base x 1.30, high =
   base x 0.80.
@@ -228,7 +234,11 @@ The build performs and the tests re-check:
    defensible FMU boundary layer would replace the share allocation.
 3. **FFCM InitialContent is a stock.** The implied recovery is a per-m3 ratio,
    not a calibrated annual recovery rate. The 0.60 B1 fallback is a documented
-   base, not a measured coastal recovery.
+   base, not a measured coastal recovery. On the refined batch the B2
+   FFCM-implied recovery is 0.723799, above the
+   published 0.583931; this is an open evidence question.
+   The cap holds the published calibration so the batch refinement lowers the
+   gross taper estimate instead of silently reflating the cap.
 4. **Cost is a single FFCM provincial value.** It does not vary by zone and
    excludes collection, grinding, bundling, stumpage, and opportunity cost.
    It is a lower bound for a harvest-residue supply curve.
