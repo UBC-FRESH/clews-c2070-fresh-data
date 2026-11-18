@@ -1,0 +1,209 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": [
+    "RSYC-only v0 basis; log share 0.762716956451988 and tile-mix factor 0.08831776452936206 ODT/m3 total.",
+    "National total = log volume / log share; ODT = total m3 * tile factor; PJ = ODT * recovery * 18.5 / 1e6; base recovery 0.60.",
+    "BC zonal SUPBCWB1/B2 caps are unchanged; SUPBCW is national minus B1+B2 in every year.",
+    "Stress is CO2 200 $/t from 2026 plus a 2021-activity upper cap on every PWRHYD<z>; no fixed lower+upper hydro variant.",
+    "The 100M and 200M runs use the base recovery and base SUPBCW cost; low/high recovery are arithmetic only, not solved."
+  ],
+  "basis": {
+    "bc_zonal_total_pj": 43.523816032,
+    "cost_base_usd_per_gj": 2.456977549,
+    "lhv_gj_per_odt": 18.5,
+    "log_share": 0.762716956451988,
+    "recovery_fractions": {
+      "base": 0.6,
+      "high": 0.75,
+      "low": 0.35
+    },
+    "tile_factor_odt_per_m3": 0.08831776452936206
+  },
+  "cases": {
+    "100m": {
+      "gross_odt_per_year": 11579362.931722306,
+      "log_volume_m3_per_year": 100000000.0,
+      "national_total_pj": {
+        "base": 128.53092854211758,
+        "high": 160.663660677647,
+        "low": 74.97637498290193
+      },
+      "rest_of_canada_pj_2028plus": {
+        "base": 85.00711251,
+        "high": 117.139844646,
+        "low": 31.452558951
+      },
+      "total_volume_m3_per_year": 131110235.78809719
+    },
+    "200m": {
+      "gross_odt_per_year": 23158725.86344461,
+      "log_volume_m3_per_year": 200000000.0,
+      "national_total_pj": {
+        "base": 257.06185708423516,
+        "high": 321.327321355294,
+        "low": 149.95274996580386
+      },
+      "rest_of_canada_pj_2028plus": {
+        "base": 213.538041052,
+        "high": 277.803505323,
+        "low": 106.428933934
+      },
+      "total_volume_m3_per_year": 262220471.57619438
+    }
+  },
+  "experiment": "national harvest sensitivity 100M and 200M m3 log/yr, stress only",
+  "generated_utc": "2026-11-18T22:40:14+00:00",
+  "inputs": [
+    {
+      "bytes": 290255,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews_supply/rsyc_tile_production/rsyc_tile_supply_summary.json",
+      "sha256": "893b3dc4cd41fee7855e3e008ae35ef676fa96d9bbd6ed61c182fcb7e612108f"
+    },
+    {
+      "bytes": 10921,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews_supply/rsyc_tile_production/RSYC_TILE_SUPPLY_REPORT.md",
+      "sha256": "ec4c5947ad7f8b7c94e4e4206601a4d7ff44f441979324c86146e7409ce437fd"
+    },
+    {
+      "bytes": 1529,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1529,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 1529,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 6425,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/national_150m/supply_basis.json",
+      "sha256": "63a6c465cabf5898f2a430f72b328e2477ee4f5b718e8ae7f6315580b378ed2d"
+    },
+    {
+      "bytes": 37733,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/national_150m/run_summaries.json",
+      "sha256": "71e03933bf750a40af48b1329cf7485471b3621b79cf8b3ac6a6cf2ec4d446e9"
+    },
+    {
+      "bytes": 928,
+      "path": "/tmp/osecan_sens_100_200/data/params/EmissionsPenalty.csv",
+      "sha256": "a6c2264d6760339f947f3eb958820035fa4641d3e4438ee04e57dabd188f219f"
+    },
+    {
+      "bytes": 149798,
+      "path": "/tmp/osecan_sens_100_200/data/params/VariableCost.csv",
+      "sha256": "c8165999915813e026666279863c3c8c876accea25b954f1a45e0412fc418d0a"
+    },
+    {
+      "bytes": 4630,
+      "path": "/tmp/osecan_sens_100_200/data/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "1a750f2b1d86a819b8788501adf6a3d47d47c3e178031f6eef6f5862740d7eac"
+    },
+    {
+      "bytes": 385501,
+      "path": "/tmp/osecan_sens_100_200/results/base/results_csv/ProductionByTechnologyAnnual.csv",
+      "sha256": "4ddfee64edc30eac2b2c2c7f7906f47781df7791a76ddb7981f0ee9dcc1f8b78"
+    },
+    {
+      "bytes": 12834,
+      "path": "/tmp/osecan_sens_100_200/config/otoole.yaml",
+      "sha256": "cea1e2546377533f03c90b769e6a17e3cdff2496886b782f01b66ad93097d37c"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "copy_path": "/tmp/osecan_sens_100_200",
+    "horizon": "2021-2070",
+    "package": "osecan 0.1.0",
+    "region": "CAN",
+    "repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "source_copy_path": "/tmp/osecan_national"
+  },
+  "outputs": [
+    {
+      "bytes": 47529,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/harvest_sensitivity_100_200/run_summaries.json",
+      "sha256": "1b92ab1647b1fc92078bdb382d2b99ec0a1efa193f7aa513b3a8027237a8a272"
+    },
+    {
+      "bytes": 167972,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/harvest_sensitivity_100_200/dispatch_by_zone.csv",
+      "sha256": "ff1e99922e97eddf54380cf2cab2829285df6348cf21a1e0c1c2d668a01eefc2"
+    },
+    {
+      "bytes": 9394,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/harvest_sensitivity_100_200/HARVEST_SENSITIVITY_REPORT.md",
+      "sha256": "a7eec38a193bc676fcaf97cb3cfae35542975983107a1c4e3da9dd0a60d5aaa6"
+    }
+  ],
+  "outputs_note": "manifest.json is excluded from its own outputs list to avoid a self-referential hash.",
+  "run_evidence": {
+    "committed": false,
+    "note": "Solved CSVs stay in the disposable copy; only summaries are written to the repository.",
+    "public_repo_modified": false,
+    "runs_root": "/tmp/osecan_sens_100_200/results",
+    "source_copy_modified": false
+  },
+  "runs": {
+    "100m": {
+      "elapsed_s": 76.3,
+      "lp_cols": 235800,
+      "lp_rows": 274851,
+      "objective_musd": 1371219.04,
+      "run": "harvest_100m_stress",
+      "run_dir": "/tmp/osecan_sens_100_200/results/harvest_100m_stress",
+      "solver_status": "optimal"
+    },
+    "200m": {
+      "elapsed_s": 76.8,
+      "lp_cols": 235800,
+      "lp_rows": 274851,
+      "objective_musd": 1370767.51,
+      "run": "harvest_200m_stress",
+      "run_dir": "/tmp/osecan_sens_100_200/results/harvest_200m_stress",
+      "solver_status": "optimal"
+    }
+  },
+  "schema_version": "1.0",
+  "source_integrity": {
+    "copy_params_matches_source": true,
+    "copy_sets_matches_source": true,
+    "copy_src_matches_source": true,
+    "editable_venv_target": "/tmp/osecan_zonal/src",
+    "imported_osecan_path": "/tmp/osecan_sens_100_200/src/osecan/__init__.py",
+    "parameter_loader": "osecan harmonize returned 0 for both scenario parameter sets",
+    "runtime_pythonpath": "/tmp/osecan_sens_100_200/src",
+    "source_copy_git_status": [
+      " M src/osecan/model_structure.py",
+      " M src/osecan/sets_n_ratios.py",
+      "?? apply_scenarios.py",
+      "?? run_one.py"
+    ],
+    "source_tree_fingerprints": {
+      "SETs": {
+        "copy": "2a7800e953f25e72555c8d87dd9de97f19f383ffea6d361cecb463b76a7c3aca",
+        "source": "2a7800e953f25e72555c8d87dd9de97f19f383ffea6d361cecb463b76a7c3aca"
+      },
+      "data/params": {
+        "copy": "28f3ff19e0b77eb272859714342c50d14dddf638b8c36f740c0c3ea0a803025a",
+        "source": "28f3ff19e0b77eb272859714342c50d14dddf638b8c36f740c0c3ea0a803025a"
+      },
+      "src": {
+        "copy": "ae6cfbd732f21085c06cd90b9d01e02641a3f23d1eace9004ef38ff2cd36a16b",
+        "source": "ae6cfbd732f21085c06cd90b9d01e02641a3f23d1eace9004ef38ff2cd36a16b"
+      }
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}
