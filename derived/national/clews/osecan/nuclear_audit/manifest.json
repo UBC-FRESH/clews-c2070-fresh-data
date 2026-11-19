@@ -1,0 +1,183 @@
+{
+  "artifact_version": "0.1.0",
+  "caveats": [
+    "The 0 GW and 10 GW caps are scenario assumptions, not policy. The 10 GW national cap is allocated across zonal PWRURN technologies by their uncapped stacked-case 2050 shares; the model has no national nuclear technology.",
+    "The model has a single annual timeslice (ANN): no diurnal or seasonal balancing, ramping, curtailment, reserve margin, or firm-capacity constraint.",
+    "There is no nuclear build-rate limit, fuel-chain constraint, or endogenous construction lead time beyond the annual capacity bound.",
+    "Existing Canadian nuclear capacity is not represented as residual capacity in this model; all PWRURN build is new capacity.",
+    "BCW tiers, BC zonal caps, corrected EAR, PWRBIO 5% cap and +$3/GJ wind adder are unchanged from the audited stress case.",
+    "The public OSeCAN repository was not modified."
+  ],
+  "checks": {
+    "tests": [
+      {
+        "failures": [],
+        "name": "cap_loading",
+        "passed": true
+      },
+      {
+        "failures": [],
+        "name": "dispatch_reconciliation",
+        "passed": true
+      },
+      {
+        "failures": [],
+        "name": "tier_caps",
+        "passed": true
+      },
+      {
+        "failures": [],
+        "name": "osecan_harmonize",
+        "passed": true
+      }
+    ],
+    "tests_passed": true
+  },
+  "generated_utc": "2026-11-19T07:27:56+00:00",
+  "inputs": [
+    {
+      "bytes": 7233,
+      "path": "data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv",
+      "sha256": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374"
+    },
+    {
+      "bytes": 2050,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/pwrbio_caps.json",
+      "sha256": "e7023f8f00f0ad0bb45f2003237e4015fe4c870cc40ea56449ac93cab6b5b698"
+    },
+    {
+      "bytes": 891751,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/dispatch_by_zone.csv",
+      "sha256": "5c73b1897dd57e02c01e833ca99d34fd8f97fc2173b9f4709f073c6f367e89a2"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 41007,
+      "path": "/tmp/osecan_nuclear_audit/data/params/EmissionActivityRatio.csv",
+      "sha256": "a37a530793f4e7305cabde79197ffdd9bd296f362e025f659f32048a4ac82db7"
+    },
+    {
+      "bytes": 928,
+      "path": "/tmp/osecan_nuclear_audit/data/params/EmissionsPenalty.csv",
+      "sha256": "a6c2264d6760339f947f3eb958820035fa4641d3e4438ee04e57dabd188f219f"
+    },
+    {
+      "bytes": 42647,
+      "path": "/tmp/osecan_nuclear_audit/run_nuclear_audit.py",
+      "sha256": "61cf7141111476e5bd57e5dfe37909d7cf6fda75967110647559b699449e08b4"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "scenario": "Current Measures",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "source_copy": "/tmp/osecan_nuclear_audit copied from /tmp/osecan_emfix",
+    "source_model_root": "/tmp/osecan_nuclear_audit"
+  },
+  "nuclear_cap_implementation": {
+    "case_0gw": "all 13 PWRURN<z> = 0.0 in both capacity files in every year",
+    "case_10gw": "national 10.0 GW allocated across the 13 PWRURN<z> in proportion to the uncapped pwrbio_cap5_windint3_tier200 2050 nuclear dispatch; per-zone values in nuclear_caps.json",
+    "indices": [
+      "REGION",
+      "TECHNOLOGY",
+      "YEAR"
+    ],
+    "parameters": [
+      "TotalAnnualMaxCapacity.csv",
+      "TotalAnnualMaxCapacityInvestment.csv"
+    ],
+    "residual_capacity": "PWRURN residual capacity is zero in 2021, so the annual total-capacity bound is the binding representation; the investment bound is set to the same value and is non-additional",
+    "technologies": "PWRURN<z> (13 zonal nuclear technologies)",
+    "units": "GW (CapacityToActivityUnit 31.536 PJ/GW-year; CapacityFactor 0.9)",
+    "years": "2021-2070 (all years)"
+  },
+  "outputs": [
+    {
+      "bytes": 236186,
+      "path": "run_summaries.json",
+      "sha256": "002b7b12aab8b03b388bc080346a1a33e379ea32a607c6ea0300fa2142f2b49f"
+    },
+    {
+      "bytes": 757174,
+      "path": "dispatch_by_zone.csv",
+      "sha256": "7ccf32e173bc9d861874593f7a9431cb6e13654f28b7d91a389da0577cac85b8"
+    },
+    {
+      "bytes": 8129,
+      "path": "NUCLEAR_AUDIT_REPORT.md",
+      "sha256": "9aa5e851f05f934872ee970e84d0d7e99088f3d163155e9cf70f070bc32bb31f"
+    },
+    {
+      "bytes": 2004,
+      "path": "nuclear_caps.json",
+      "sha256": "89d823107afbb1197aea8a5572acd5140c892252b3e407ae830b14bedf31c7c4"
+    },
+    {
+      "bytes": 393,
+      "path": "tests.json",
+      "sha256": "001732040f99ccdd48160155f96bd6d7b166083003d69ccbf695ca255da42a5e"
+    }
+  ],
+  "references": {
+    "efix_tier_200": {
+      "emissions_total_mt": 0.460752,
+      "gas_2050_pj": 0.0,
+      "nuclear_2050_pj": 0.0,
+      "objective_musd": 1371773.03,
+      "status": "optimal"
+    },
+    "pwrbio_cap5_windint3_tier200": {
+      "emissions_total_mt": 0.489886,
+      "gas_2050_pj": 0.0,
+      "nuclear_2050_pj": 807.187228,
+      "objective_musd": 1382042.24,
+      "status": "optimal"
+    }
+  },
+  "revisions": {
+    "clews_commit": "04d685cef70f676736bb7990de0021b31314c923",
+    "data_commit": "9ed73985d876238044c1291b646ba5464dc1d5e0",
+    "disposable_copy_status": "M src/osecan/data/build_params.py\n M src/osecan/model_structure.py\n M src/osecan/sets_n_ratios.py\n?? apply_scenarios.py\n?? build_all.py\n?? nuclear_audit.log\n?? run_emfix.py\n?? run_mandate.py\n?? run_nuclear_audit.py\n?? run_one.py\n?? summarize_emfix.py"
+  },
+  "runs": {
+    "nuclear_cap0_pwrbio5_wind3": {
+      "emissions_total_mt": 0.465597,
+      "gas_2050_pj": 0.0,
+      "nuclear_2050_pj": 0.0,
+      "objective_musd": 1387922.37,
+      "status": "optimal",
+      "t4_total_pj": 2531.55,
+      "wind_2050_pj": 789.911556
+    },
+    "nuclear_cap0_tier200_reference": {
+      "emissions_total_mt": 0.460752,
+      "gas_2050_pj": 0.0,
+      "nuclear_2050_pj": 0.0,
+      "objective_musd": 1371773.03,
+      "status": "optimal",
+      "t4_total_pj": 0.0,
+      "wind_2050_pj": 967.980678
+    },
+    "nuclear_cap10gw_pwrbio5_wind3": {
+      "emissions_total_mt": 0.496039,
+      "gas_2050_pj": 0.0,
+      "nuclear_2050_pj": 283.823942,
+      "objective_musd": 1385098.46,
+      "status": "optimal",
+      "t4_total_pj": 2142.210329,
+      "wind_2050_pj": 506.087612
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}
