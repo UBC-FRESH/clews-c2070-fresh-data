@@ -1,0 +1,54 @@
+{
+  "artifact_dir": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/full_constraint",
+  "generated_utc": "2026-11-19T07:40:57+00:00",
+  "inputs": {
+    "hydro_caps": {
+      "path": "/tmp/osecan_fullconstraint/results/efix_tier_200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "3fb67c76100cc234b07677804a166647ae6fb47290a7ba9da073ede43660118b"
+    },
+    "nuclear_audit_summary": {
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/nuclear_audit/run_summaries.json",
+      "sha256": "002b7b12aab8b03b388bc080346a1a33e379ea32a607c6ea0300fa2142f2b49f"
+    },
+    "pwrbio_caps": {
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/pwrbio_cap/pwrbio_caps.json",
+      "sha256": "e7023f8f00f0ad0bb45f2003237e4015fe4c870cc40ea56449ac93cab6b5b698"
+    },
+    "tier_limits": {
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv",
+      "sha256": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374"
+    }
+  },
+  "model_root": "/tmp/osecan_fullconstraint",
+  "notes": [
+    "The 5% PWRBIO cap is a scenario assumption, not policy.",
+    "The +$3/GJ wind adder is a scenario stress, not a measured integration cost.",
+    "The 0 GW nuclear cap is a scenario assumption; PWRURN residual capacity is zero in 2021.",
+    "T4 and T3 are documented scenario supply tiers, not empirical marginal costs.",
+    "RNWBIO remains uncapped for non-power BIO demand.",
+    "Single annual timeslice; no reserve margin or build-rate limits."
+  ],
+  "outputs": {
+    "FULL_CONSTRAINT_REPORT.md": {
+      "bytes": 9845,
+      "sha256": "c86ac033069591d3895755db591a8041cc376081952026aca0fb330d5d7219e1"
+    },
+    "dispatch_by_zone.csv": {
+      "bytes": 395633,
+      "sha256": "914ed161b8b07c24ba442dc0e1df9ee352d134cc19c28f52334b387eff966c65"
+    },
+    "run_summaries.json": {
+      "bytes": 256356,
+      "sha256": "33ba1b86e1fa1c53e5c1f3dfd88541f9762b6905808851ba3530f4cb03b53830"
+    },
+    "tests.json": {
+      "bytes": 393,
+      "sha256": "001732040f99ccdd48160155f96bd6d7b166083003d69ccbf695ca255da42a5e"
+    }
+  },
+  "schema_version": "1.0.0",
+  "source_model_root": "/tmp/osecan_emfix",
+  "source_revision": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+  "status": "fresh_side_provisional_not_c2070_official",
+  "tests_passed": true
+}
