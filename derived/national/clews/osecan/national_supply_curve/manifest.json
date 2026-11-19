@@ -1,0 +1,176 @@
+{
+  "artifact_version": "0.1.0",
+  "caveats": [
+    "Tier costs are adopted scenario values, not a fitted marginal-cost curve.",
+    "T4 is a documented marginal high-cost tier, flagged as scenario.",
+    "This is an RSYC-only curve: no AAC, THLB, operability, or local correction applies.",
+    "The hydro cap is an annual upper bound, not fixed dispatch; the fixed-hydro variant is a separate sensitivity.",
+    "The public OSeCAN repository was not modified."
+  ],
+  "checks": {
+    "SUPBCW_cap_disabled": true,
+    "all_years_reconcile": true,
+    "national_total_equals_200m": true,
+    "tier_cap_sum_equals_rest": true,
+    "tier_cap_sum_pj": 213.538041
+  },
+  "generated_utc": "2026-11-19T05:37:24+00:00",
+  "harmonize": [
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_supply_curve/data/params",
+      "params_sha256": "43cc25904d23fb47973428cb561e793833400617c4a32e88c73df76dc8d1746f"
+    },
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_supply_curve/results/baseline/params",
+      "params_sha256": "d6cabeab2c46cd22c95e95d473d915370c1b5b77f0844aa2d534698404969584"
+    },
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_supply_curve/results/stress/params",
+      "params_sha256": "58d2304d073a39eadd44ff2d948c7d44cf2bc162621b91586ad0669e15405e11"
+    },
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_supply_curve/results/stress_fixed_hydro/params",
+      "params_sha256": "df622bec0b1669b52f39134e5bdf2d56b2003abbc6de975c0678bfabef03fc26"
+    }
+  ],
+  "inputs": [
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "scenario": "Current Measures",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "outputs": [
+    {
+      "bytes": 483,
+      "path": "tier_definitions.csv",
+      "sha256": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f"
+    },
+    {
+      "bytes": 7233,
+      "path": "tier_activity_limits.csv",
+      "sha256": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374"
+    },
+    {
+      "bytes": 5798,
+      "path": "tier_variable_costs.csv",
+      "sha256": "907653f925f8812057b09ecfd56d811ec118a9fb76534c03a1075231459af577"
+    },
+    {
+      "bytes": 4404,
+      "path": "bc_zonal_activity_limits.csv",
+      "sha256": "c6ffe5f99461b5731cd16095b36f4850403864c31bf3a00ad2871f3e0f17abf3"
+    },
+    {
+      "bytes": 7002,
+      "path": "national_cap_reconciliation.csv",
+      "sha256": "8ea3922b9578e6c3e0a5875f97fedce6e33fb903c2086e258456934feb0a8c08"
+    },
+    {
+      "bytes": 4577,
+      "path": "supply_curve_definition.json",
+      "sha256": "01aab658fe29ac97d736c0bb06d2702782f07d6fd45a050143acaad039c11f6e"
+    },
+    {
+      "bytes": 109953,
+      "path": "run_summaries.json",
+      "sha256": "880e756af4b27fb6b26cf6a4dc228f797400f52f6c264e106611a750e8012bc0"
+    },
+    {
+      "bytes": 162555,
+      "path": "dispatch_by_zone.csv",
+      "sha256": "a947496cb7ba4bb5600d0b4a3727182bf8b7dc14371582a6729b0feda7a778ed"
+    },
+    {
+      "bytes": 7138,
+      "path": "NATIONAL_SUPPLY_CURVE_REPORT.md",
+      "sha256": "03fce934240b5db469ae88c20809abbb43f92094151b1f057db1bac8c17bf812"
+    }
+  ],
+  "runs": {
+    "baseline": {
+      "emissions_total_mt": 25.714753,
+      "objective": 1331289.52,
+      "status": "optimal"
+    },
+    "stress": {
+      "emissions_total_mt": 38.457287,
+      "objective": 1371124.5,
+      "status": "optimal"
+    },
+    "stress_fixed_hydro": {
+      "emissions_total_mt": 39.540457,
+      "objective": 1371135.69,
+      "status": "optimal"
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official",
+  "tier_structure": [
+    {
+      "incremental_cap_pj": 85.007113,
+      "lower_pj": 0.0,
+      "scenario_flag": "base_cost",
+      "technology": "SUPBCWT1",
+      "tier": "T1",
+      "upper_pj": 85.007113,
+      "variable_cost_usd_per_gj": 2.456978
+    },
+    {
+      "incremental_cap_pj": 24.39175,
+      "lower_pj": 85.007113,
+      "scenario_flag": "base_cost",
+      "technology": "SUPBCWT2",
+      "tier": "T2",
+      "upper_pj": 109.398863,
+      "variable_cost_usd_per_gj": 2.456978
+    },
+    {
+      "incremental_cap_pj": 39.873714,
+      "lower_pj": 109.398863,
+      "scenario_flag": "mid_cost",
+      "technology": "SUPBCWT3",
+      "tier": "T3",
+      "upper_pj": 149.272577,
+      "variable_cost_usd_per_gj": 3.194071
+    },
+    {
+      "incremental_cap_pj": 64.265464,
+      "lower_pj": 149.272577,
+      "scenario_flag": "scenario_high_cost_marginal_tier",
+      "technology": "SUPBCWT4",
+      "tier": "T4",
+      "upper_pj": 213.538041,
+      "variable_cost_usd_per_gj": 3.5
+    }
+  ]
+}
