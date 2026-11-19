@@ -24,7 +24,7 @@ The total cap is **35.72 PJ/yr of BIO input**, equal to **12.533855 PJ/yr of ele
 | `PWRBIOS1` | 0.000000 | 0.000000 |
 | `PWRBIOT1` | 0.937395 | 2.671576 |
 
-`RNWBIO` is uncapped. It remains the sole BIO producer and continues to serve the fixed non-power BIO demand. The tier stack, BC zonal caps, demand, and corrected emission factors are unchanged.
+`RNWBIO` is uncapped. It remains the sole BIO producer and continues to serve the fixed non-power BIO demand. The tier stack, BC zonal caps, demand, and corrected emission factors are unchanged.  The BC zonal caps `SUPBCWB1` / `SUPBCWB2` remain at their reference values and bind in every solved case (3.6055 and 39.9183 PJ in 2050).
 
 ## 2. Headline results
 
@@ -74,7 +74,7 @@ The cap-0 case has slightly higher emissions than the reference (0.542358 vs 0.4
 
 ## 4. Verdict
 
-- **Cap 35.72 PJ:** the cap reproduces the reference: gas 2050 0.000 PJ, emissions 0.460752 Mt, T1/T2 bind, T3/T4 idle. The cap is non-binding beyond the reference because it equals the reference zonal maxima.
+- **Cap 35.72 PJ:** the cap reproduces the reference: gas 2050 0.000 PJ, emissions 0.460752 Mt, T1/T2 bind, T3/T4 idle. The cap is set at the reference zonal maxima, so it reproduces the reference instead of cutting it.
 - **Cap 0 PJ:** PWRBIO output is zero. Gas 2050 is 0.000 PJ and emissions are 0.542358 Mt. The 12.5 PJ gap is small enough for existing zero-carbon capacity to absorb.
 - **Wind +$3 with the 35.72 PJ cap:** gas 2050 is 0.000 PJ, wind 2050 is 0.000 PJ, uranium 2050 is 957.262 PJ, PWRBCW 2050 is 51.827 PJ, and emissions are 0.530558 Mt. Gas does not return at scale in 2050; uranium and additional PWRBCW fill the gap.  Post-2026 gas is a 0.037 PJ `PWRNGSN1` sliver in 2037 and 2042 (0.00509 Mt each), so near-zero emissions survive numerically but not with exactly the reference timing.
 - **T3/T4:** T3 activates in the wind +$3 capped case at its 39.8737 PJ cap; T4 remains idle. The tight PWRBIO cap alone does not pull the high-cost tiers in; the T3 activation is driven by the larger PWRBCW requirement.
