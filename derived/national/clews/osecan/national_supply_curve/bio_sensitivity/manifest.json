@@ -1,0 +1,182 @@
+{
+  "artifact_version": "0.1.0",
+  "assumptions": {
+    "bc_zonal": [
+      "SUPBCWB1",
+      "SUPBCWB2"
+    ],
+    "carbon_price_from_2026_usd_per_t": 200.0,
+    "carbon_price_pre_2026_usd_per_t": 95.0,
+    "hydro_mode": "annual upper cap at 2021 activity",
+    "rwnbio_reference_cap": "uncapped",
+    "rwnbio_reference_cost_usd_per_gj": 3.0,
+    "supbcw": "disabled (annual cap 0)",
+    "tier_stack": [
+      {
+        "incremental_cap_pj": 85.007113,
+        "technology": "SUPBCWT1",
+        "variable_cost_usd_per_gj": 2.456978
+      },
+      {
+        "incremental_cap_pj": 24.39175,
+        "technology": "SUPBCWT2",
+        "variable_cost_usd_per_gj": 2.456978
+      },
+      {
+        "incremental_cap_pj": 39.873714,
+        "technology": "SUPBCWT3",
+        "variable_cost_usd_per_gj": 3.194071
+      },
+      {
+        "incremental_cap_pj": 64.265464,
+        "technology": "SUPBCWT4",
+        "variable_cost_usd_per_gj": 3.5
+      }
+    ]
+  },
+  "cases": {
+    "bio_10usd": {
+      "label": "RNWBIO $10.00/GJ, uncapped (diagnostic); CO2 $200/t from 2026; hydro upper cap at 2021",
+      "rwnbio_cap": null,
+      "rwnbio_cost_usd_per_gj": 10.0
+    },
+    "bio_4usd": {
+      "label": "RNWBIO $4.00/GJ, uncapped; CO2 $200/t from 2026; hydro upper cap at 2021",
+      "rwnbio_cap": null,
+      "rwnbio_cost_usd_per_gj": 4.0
+    },
+    "bio_cap_2021": {
+      "label": "RNWBIO $3.00/GJ capped at 2021 BIO supply (diagnostic scenario)",
+      "result": "infeasible",
+      "rwnbio_cap_pj": 531.055925,
+      "rwnbio_cost_usd_per_gj": 3.0
+    },
+    "bio_cap_50pj": {
+      "label": "RNWBIO $3.00/GJ with 50 PJ/yr cap (scenario)",
+      "result": "infeasible",
+      "rwnbio_cap_pj": 50.0,
+      "rwnbio_cost_usd_per_gj": 3.0
+    }
+  },
+  "caveats": [
+    "T1/T2 have identical variable cost (2.456978 $/GJ), so their split is degenerate; combined T1+T2 is the stable quantity.",
+    "The RNWBIO cost is a scenario input; it is not a fitted biomass price.",
+    "Case B caps are diagnostic scenarios, not policy recommendations.",
+    "All other assumptions are inherited from the committed stress run.",
+    "The public OSeCAN repository was not modified.",
+    "The disposable copy /tmp/osecan_supply_curve was copied to /tmp/osecan_bio_sens before editing."
+  ],
+  "checks": {
+    "case_a_physical_dispatch_identical_to_reference_at_6dp": true,
+    "case_a_t3_t4_zero": true,
+    "case_b_2021_cap_infeasible_no_primal_feasible": true,
+    "case_b_50pj_infeasible_no_primal_feasible": true,
+    "case_high_t3_t4_zero": true,
+    "national_total_pj": 257.061857,
+    "reference_emissions_matches_committed": true,
+    "reference_objective_matches_committed": true,
+    "reference_stress_params_sha256_matches_committed_manifest": true,
+    "rwnbio_sole_bio_producer": true,
+    "source_src_matches_installed_zonal_src": true,
+    "tier_cap_sum_rest_of_canada_pj": 213.538041,
+    "tier_caps_match_committed": true
+  },
+  "generated_utc": "2026-11-19T05:46:20+00:00",
+  "inputs": [
+    {
+      "bytes": 483,
+      "description": "committed tier stack",
+      "path": "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv",
+      "sha256": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f"
+    },
+    {
+      "bytes": 7233,
+      "description": "committed tier caps",
+      "path": "data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv",
+      "sha256": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374"
+    },
+    {
+      "bytes": 5798,
+      "description": "committed tier costs",
+      "path": "data/derived/national/clews/osecan/national_supply_curve/tier_variable_costs.csv",
+      "sha256": "907653f925f8812057b09ecfd56d811ec118a9fb76534c03a1075231459af577"
+    },
+    {
+      "bytes": 4404,
+      "description": "committed BC zonal caps",
+      "path": "data/derived/national/clews/osecan/national_supply_curve/bc_zonal_activity_limits.csv",
+      "sha256": "c6ffe5f99461b5731cd16095b36f4850403864c31bf3a00ad2871f3e0f17abf3"
+    },
+    {
+      "bytes": 156348,
+      "description": "reference generic biomass and technology costs",
+      "path": "/tmp/osecan_bio_sens/results/stress/params/VariableCost.csv",
+      "sha256": "f93bd087da154d34a11c536622407c6ea506b5a1769fe47c1cf743975cffdfe9"
+    },
+    {
+      "bytes": 30482,
+      "description": "reference tier, BC zonal, SUPBCW and hydro caps",
+      "path": "/tmp/osecan_bio_sens/results/stress/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "3fb67c76100cc234b07677804a166647ae6fb47290a7ba9da073ede43660118b"
+    },
+    {
+      "bytes": 1023,
+      "description": "reference CO2 price",
+      "path": "/tmp/osecan_bio_sens/results/stress/params/EmissionsPenalty.csv",
+      "sha256": "857040ab7280dfc4f58397bc04b44bc2f022813584ae63d2f1493ec39ac6aaf2"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "disposable_copy": "/tmp/osecan_bio_sens",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "scenario": "Current Measures",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "source_copy": "/tmp/osecan_supply_curve"
+  },
+  "outputs": [
+    {
+      "bytes": 164599,
+      "path": "run_summaries.json",
+      "sha256": "a8e9928404599254fd0fabee6e55a2294c88e7fe2b8c29f5e63ab749d8465bf8"
+    },
+    {
+      "bytes": 199758,
+      "path": "dispatch_by_zone.csv",
+      "sha256": "657a182409660d7cfa4555fb7da90f21d08c60c1992b8c1b5b8f912337710b8c"
+    },
+    {
+      "bytes": 6411,
+      "path": "BIO_SENSITIVITY_REPORT.md",
+      "sha256": "07f929b78ab46accff460b13f25ce47437e1d1ea25dbc7954f806fa22babb2e5"
+    }
+  ],
+  "purpose": "Generic-biomass cost and cap sensitivity for the tiered national rest-of-Canada BCW supply curve under the committed stress case.",
+  "runs": {
+    "bio_10usd": {
+      "emissions_total_mt": 38.457287,
+      "objective_musd": 1466694.98,
+      "status": "optimal"
+    },
+    "bio_4usd": {
+      "emissions_total_mt": 38.457287,
+      "objective_musd": 1384777.42,
+      "status": "optimal"
+    },
+    "bio_cap_2021": {
+      "glpk_simplex_return": 10,
+      "status": "infeasible"
+    },
+    "bio_cap_50pj": {
+      "glpk_simplex_return": 10,
+      "status": "infeasible"
+    },
+    "stress_3usd_reference": {
+      "emissions_total_mt": 38.457287,
+      "objective_musd": 1371124.5,
+      "status": "optimal"
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}
