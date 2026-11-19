@@ -1,0 +1,159 @@
+{
+  "cap_definition": "Primary caps are a fraction of each zone's total 2050 generation in efix_tier_200 (all PWR technologies except PWRTRN). The tight sensitivity uses the same fraction of each zone's reference 2050 PWRBIO output. Caps are held constant in every year 2021-2070.",
+  "cases": {
+    "efix_tier_200": {
+      "emissions_total_mt": 0.460752,
+      "objective_musd": 1371773.03,
+      "seconds": null,
+      "status": "optimal"
+    },
+    "pwrbio_cap10_windint3_tier200": {
+      "emissions_total_mt": 0.491194,
+      "objective_musd": 1379320.13,
+      "seconds": 138.1,
+      "status": "optimal"
+    },
+    "pwrbio_cap5_tier200": {
+      "emissions_total_mt": 0.461645,
+      "objective_musd": 1371773.07,
+      "seconds": 130.7,
+      "status": "optimal"
+    },
+    "pwrbio_cap5_windint3_tier200": {
+      "emissions_total_mt": 0.489886,
+      "objective_musd": 1382042.24,
+      "seconds": 151.9,
+      "status": "optimal"
+    },
+    "pwrbio_cap5ofbio_tier200": {
+      "emissions_total_mt": 0.542358,
+      "objective_musd": 1371788.34,
+      "seconds": 117.7,
+      "status": "optimal"
+    },
+    "wind_int3_refhydro_tier200": {
+      "emissions_total_mt": 0.446139,
+      "objective_musd": 1372498.99,
+      "seconds": 89.7,
+      "status": "optimal"
+    },
+    "wind_int3_tier200": {
+      "emissions_total_mt": 0.449816,
+      "objective_musd": 1372459.69,
+      "seconds": null,
+      "status": "optimal"
+    }
+  },
+  "caveats": [
+    "5% and 10% caps are scenario shares of zonal reference 2050 generation, not policy.",
+    "Single annual timeslice; no reserve margin or firm-capacity constraint.",
+    "RNWBIO remains uncapped for non-power BIO; PWRURN nuclear is also uncapped.",
+    "BCW tiers and BC zonal caps unchanged.",
+    "Public OSeCAN repository untouched; solves ran in a disposable copy."
+  ],
+  "clews_commit": "45ce3af6a6bfb767f20bc84b4d73a2f3b0fd3ee9",
+  "data_commit": "2910f5cab0704a6086f4ea22c2b6f1da03f60d9b",
+  "disposable_copy_status": "M src/osecan/data/build_params.py\n M src/osecan/model_structure.py\n M src/osecan/sets_n_ratios.py\n?? apply_scenarios.py\n?? build_all.py\n?? check_pwrbio_cap.py\n?? run_emfix.py\n?? run_mandate.py\n?? run_one.py\n?? run_pwrbio_cap.py\n?? run_wind_audit.py\n?? summarize_emfix.py\n?? write_pwrbio_report.py",
+  "generated_utc": "2026-11-19T07:20:43+00:00",
+  "inputs": [
+    {
+      "bytes": 41007,
+      "path": "/tmp/osecan_pwrbio_cap/data/params/EmissionActivityRatio.csv",
+      "sha256": "a37a530793f4e7305cabde79197ffdd9bd296f362e025f659f32048a4ac82db7"
+    },
+    {
+      "bytes": 928,
+      "path": "/tmp/osecan_pwrbio_cap/data/params/EmissionsPenalty.csv",
+      "sha256": "a6c2264d6760339f947f3eb958820035fa4641d3e4438ee04e57dabd188f219f"
+    },
+    {
+      "bytes": 161,
+      "path": "/tmp/osecan_pwrbio_cap/results/efix_tier_200/status.json",
+      "sha256": "a6ad26f4fd5c1ced5216b127b86375904a21f453953752f68f5cf6fcf811ffb4"
+    },
+    {
+      "bytes": 2050,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/pwrbio_cap/pwrbio_caps.json",
+      "sha256": "e7023f8f00f0ad0bb45f2003237e4015fe4c870cc40ea56449ac93cab6b5b698"
+    },
+    {
+      "bytes": 48882,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap5_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "2a37792c2f2d684b4a351c7a39155f3a5dca26248f487d861f520dfccbf5fe45"
+    },
+    {
+      "bytes": 156348,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap5_tier200/params/VariableCost.csv",
+      "sha256": "f93bd087da154d34a11c536622407c6ea506b5a1769fe47c1cf743975cffdfe9"
+    },
+    {
+      "bytes": 48882,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap5_windint3_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "2a37792c2f2d684b4a351c7a39155f3a5dca26248f487d861f520dfccbf5fe45"
+    },
+    {
+      "bytes": 172598,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap5_windint3_tier200/params/VariableCost.csv",
+      "sha256": "a4ac7bba9b73e111804e791db3b3eb0b401ab2f2673a5bdec5af7a200937c1ca"
+    },
+    {
+      "bytes": 49182,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap10_windint3_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "a35f91e174039bd0fe774c2329b386c9c23f264e3fd3e0e5e1e44c6c3327f861"
+    },
+    {
+      "bytes": 172598,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap10_windint3_tier200/params/VariableCost.csv",
+      "sha256": "a4ac7bba9b73e111804e791db3b3eb0b401ab2f2673a5bdec5af7a200937c1ca"
+    },
+    {
+      "bytes": 46632,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap5ofbio_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "42d761848d2b94bf4ff8a5be1f5e9d41faad630f1a6f258e7dbcab1d8db85587"
+    },
+    {
+      "bytes": 156348,
+      "path": "/tmp/osecan_pwrbio_cap/results/pwrbio_cap5ofbio_tier200/params/VariableCost.csv",
+      "sha256": "f93bd087da154d34a11c536622407c6ea506b5a1769fe47c1cf743975cffdfe9"
+    }
+  ],
+  "model_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+  "model_root": "/tmp/osecan_pwrbio_cap",
+  "outputs": [
+    {
+      "bytes": 423484,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/run_summaries.json",
+      "sha256": "8b6622537571f56a28514194c0374dece1e4142db6391cf9764d1b55d53eac9b"
+    },
+    {
+      "bytes": 891751,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/dispatch_by_zone.csv",
+      "sha256": "5c73b1897dd57e02c01e833ca99d34fd8f97fc2173b9f4709f073c6f367e89a2"
+    },
+    {
+      "bytes": 12646,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/PWRBIO_CAP_REPORT.md",
+      "sha256": "793f706172d6c20c35221ff2f3251ae980f4afa1e1c4297d6ec480514adad0df"
+    },
+    {
+      "bytes": 483,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/tests.json",
+      "sha256": "ae673327a8c9335fcbd4666a94e5f2a627f732d0c548f3f3f39f818331684a58"
+    },
+    {
+      "bytes": 2050,
+      "path": "data/derived/national/clews/osecan/pwrbio_cap/pwrbio_caps.json",
+      "sha256": "e7023f8f00f0ad0bb45f2003237e4015fe4c870cc40ea56449ac93cab6b5b698"
+    }
+  ],
+  "public_repository": "https://github.com/deltae/C2070",
+  "public_repository_modified": false,
+  "reference_run": "efix_tier_200",
+  "schema_version": "1.0.0",
+  "source_model_root": "/tmp/osecan_emfix",
+  "status": "fresh_side_provisional_not_c2070_official",
+  "wind_reference_runs": [
+    "wind_int3_tier200",
+    "wind_int3_refhydro_tier200"
+  ]
+}
