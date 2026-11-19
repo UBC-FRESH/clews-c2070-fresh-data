@@ -1,0 +1,58 @@
+{
+  "cap_definition": {
+    "input_ratio_pj_bio_per_pj_output": 2.85,
+    "mode": "zero",
+    "note": "PWRBIO has one mode, one output fuel, an output ratio of 1, and a constant BIO input ratio of 2.85 in every year.  Capping technology activity at the reference output is therefore exactly equivalent to capping BIO fuel input at 2.85 times that value.",
+    "reference_run": "efix_tier_200",
+    "reference_year": 2050,
+    "technology_activity_units": "PJ electricity output",
+    "total_bio_input_pj": 0.0,
+    "total_output_pj": 0.0,
+    "years": [
+      2021,
+      2070
+    ],
+    "zonal_bio_input_caps_pj": {
+      "PWRBIOA1": 0.0,
+      "PWRBIOA2": 0.0,
+      "PWRBIOB1": 0.0,
+      "PWRBIOB2": 0.0,
+      "PWRBIOL1": 0.0,
+      "PWRBIOM1": 0.0,
+      "PWRBION1": 0.0,
+      "PWRBIOO1": 0.0,
+      "PWRBIOO2": 0.0,
+      "PWRBIOQ1": 0.0,
+      "PWRBIOQ2": 0.0,
+      "PWRBIOS1": 0.0,
+      "PWRBIOT1": 0.0
+    },
+    "zonal_output_caps_pj": {
+      "PWRBIOA1": 0.0,
+      "PWRBIOA2": 0.0,
+      "PWRBIOB1": 0.0,
+      "PWRBIOB2": 0.0,
+      "PWRBIOL1": 0.0,
+      "PWRBIOM1": 0.0,
+      "PWRBION1": 0.0,
+      "PWRBIOO1": 0.0,
+      "PWRBIOO2": 0.0,
+      "PWRBIOQ1": 0.0,
+      "PWRBIOQ2": 0.0,
+      "PWRBIOS1": 0.0,
+      "PWRBIOT1": 0.0
+    }
+  },
+  "carbon_price_from_2026_usd_per_t": 200.0,
+  "case": "pwrbio_cap0_tier200",
+  "harmonize": {
+    "exit_code": 0,
+    "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+    "params": "/tmp/osecan_pwrbio_tight/results/pwrbio_cap0_tier200/params",
+    "params_sha256": "36d5a34ec9ba7062c11925937a7659a53529f2a375af997938c34c52688bc6c5"
+  },
+  "hydro_mode": "upper_2021",
+  "label": "PWRBIO BIO-input cap 0 PJ/yr, CO2 $200/t, hydro capped",
+  "params": "/tmp/osecan_pwrbio_tight/results/pwrbio_cap0_tier200/params",
+  "wind_integration_usd_per_gj": 0.0
+}

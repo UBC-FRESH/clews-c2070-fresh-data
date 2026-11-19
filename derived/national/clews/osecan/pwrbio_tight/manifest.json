@@ -1,0 +1,79 @@
+{
+  "cases": [
+    "pwrbio_cap3572_tier200",
+    "pwrbio_cap0_tier200",
+    "pwrbio_cap3572_windint3_tier200"
+  ],
+  "caveats": [
+    "Cap is a scenario constraint, not policy.",
+    "Single annual timeslice.",
+    "RNWBIO non-power demand is uncapped.",
+    "Per-zone caps use the reference 2050 distribution held in every year."
+  ],
+  "generated_utc": "2026-11-19T07:32:17+00:00",
+  "inputs": [
+    {
+      "bytes": 7233,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv",
+      "sha256": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374"
+    },
+    {
+      "bytes": 1529,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1579,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 435073,
+      "path": "/tmp/osecan_pwrbio_tight/results/efix_tier_200/results_csv/ProductionByTechnologyAnnual.csv",
+      "sha256": "29acd06ffab2ba90c2102e729e7bfe769fa55570e79c2abe781e9bc2ee09ccf6"
+    },
+    {
+      "bytes": 41007,
+      "path": "/tmp/osecan_pwrbio_tight/data/params/EmissionActivityRatio.csv",
+      "sha256": "a37a530793f4e7305cabde79197ffdd9bd296f362e025f659f32048a4ac82db7"
+    },
+    {
+      "bytes": 928,
+      "path": "/tmp/osecan_pwrbio_tight/data/params/EmissionsPenalty.csv",
+      "sha256": "a6c2264d6760339f947f3eb958820035fa4641d3e4438ee04e57dabd188f219f"
+    }
+  ],
+  "model": {
+    "copy_root": "/tmp/osecan_pwrbio_tight",
+    "public_modified": false,
+    "public_repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "source_root": "/tmp/osecan_emfix"
+  },
+  "outputs": [
+    {
+      "bytes": 311931,
+      "path": "run_summaries.json",
+      "sha256": "07d88ade81623ad78bf4de7c10d1c6eb0e9d4cd9c9327778dd8b1ee797067ea7"
+    },
+    {
+      "bytes": 400371,
+      "path": "dispatch_by_zone.csv",
+      "sha256": "7572dd4b4c2499f808c0ac85ca32d0e0d982a2336283ed00e084cd31256709fc"
+    },
+    {
+      "bytes": 1607,
+      "path": "tests.json",
+      "sha256": "708d7d306966caf95c71a02a38a82602d8df34fb9f19c900a23806c28a3efcc2"
+    },
+    {
+      "bytes": 7529,
+      "path": "PWRBIO_TIGHT_REPORT.md",
+      "sha256": "6a6dfc5b0d2108f507a0ac6b704a1ae8e991429fb56497bb504132bd85bbeb14"
+    }
+  ],
+  "reference_run": "efix_tier_200",
+  "schema_version": "1.0.0",
+  "source_git_status": "M src/osecan/data/build_params.py\n M src/osecan/model_structure.py\n M src/osecan/sets_n_ratios.py\n?? apply_scenarios.py\n?? build_all.py\n?? run_emfix.py\n?? run_mandate.py\n?? run_one.py\n?? summarize_emfix.py",
+  "status": "fresh_side_provisional_not_c2070_official"
+}
