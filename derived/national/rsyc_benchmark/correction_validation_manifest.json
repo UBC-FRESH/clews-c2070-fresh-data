@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-11-19T04:29:12.563918+00:00",
+  "script": "workflows/national/rsyc_benchmark/validate_corrections.py",
+  "seed": 20261119,
+  "protocol": {
+    "holdout_fraction": 0.2,
+    "bc_holdout_unit": "tsa",
+    "bc_stratifier": "ecoprovince",
+    "qc_holdout_unit": "unit",
+    "qc_stratifier": "administrative_region",
+    "min_train_rows": 30,
+    "min_test_rows": 30,
+    "min_train_units": 2,
+    "min_test_units": 1,
+    "bias_reduction_threshold": 0.5,
+    "relative_rmse_worsen_threshold": 0.05,
+    "material_bias_threshold": 0.1,
+    "lo_min_folds": 3,
+    "lo_median_bias_reduction_threshold": 0.5,
+    "lo_share_folds_rmse_ok_threshold": 0.5
+  },
+  "inputs": {
+    "bc_visits": {
+      "path": "data/derived/national/rsyc_benchmark/rsyc_vs_bc_visits.csv",
+      "sha256": "c0c58016ebc904a06473330dcfbe2a7fac60db0349a9f24baedcc0e4c61f35f1"
+    },
+    "qc_curves": {
+      "path": "data/derived/national/qc_bfec_full/qc_bfec_curves.csv",
+      "sha256": "ae036854ce4e64b578363ff9935f4ddaf85ea398f3e12810b32efb0667841248"
+    },
+    "qc_development_types": {
+      "path": "data/derived/national/qc_bfec_full/qc_bfec_development_types.csv",
+      "sha256": "6ad7f58e2ee9387e080a111f931517b30c485c5fa21ceb4565071403b2175eda"
+    },
+    "qc_inventory_crosswalk": {
+      "path": "data/derived/national/qc_bfec_full/qc_bfec_inventory_crosswalk.csv",
+      "sha256": "239c317724a627be6db06747aaff85ce08d1b4610c24499e207341132f66b9ab",
+      "columns": [
+        "unit",
+        "polygon_id",
+        "THEME1",
+        "THEME2",
+        "THEME3",
+        "THEME4",
+        "THEME5",
+        "THEME6",
+        "THEME7",
+        "THEME8",
+        "THEME9",
+        "THEME10",
+        "THEME11",
+        "THEME12",
+        "THEME13",
+        "THEME14",
+        "THEME15",
+        "THEME16",
+        "THEME17",
+        "THEME18",
+        "THEME19",
+        "THEME20",
+        "STRATE",
+        "area_ha",
+        "CRS"
+      ],
+      "has_coordinates": false
+    },
+    "rsyc_models": {
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940"
+    },
+    "national_fit": {
+      "path": "data/derived/national/assortments/national_fit/national_distribution_parameters.csv",
+      "sha256": "82996707356b4226c79debdf216ee8b22120c3f764972705e5fd1a4604288723"
+    }
+  },
+  "counts": {
+    "bc": {
+      "raw_rows": 19536,
+      "missing_tsa_rows": 41,
+      "age_outside_40_150_rows": 1424,
+      "zero_or_negative_observed_rows": 0,
+      "zero_or_negative_predicted_rows": 0,
+      "used_rows": 18081,
+      "used_tsas": 40,
+      "used_ecoprovinces": 8,
+      "fallback_rows_used": 1252,
+      "fallback_share_used": 0.0692439577456999
+    },
+    "qc": {
+      "curves_rows": 107502,
+      "development_type_rows": 898661,
+      "productive_development_types": 805570,
+      "productive_tables": 2458,
+      "target_rows_after_join": 7374,
+      "positive_total_rows": 7281,
+      "zero_total_rows": 93,
+      "invalid_rows": 0,
+      "units_used": 51,
+      "restricted_units_excluded": [
+        "06451",
+        "08462",
+        "08562"
+      ]
+    }
+  },
+  "outputs": {
+    "correction_validation.csv": {
+      "rows": 131,
+      "bytes": 88341,
+      "sha256": "35d4e11a4511ad8d3118b55c942c1061b79f41fdaf2f15d66511b9bdbe7f39d1"
+    },
+    "local_correction_factors_validated.csv": {
+      "rows": 72,
+      "bytes": 30176,
+      "sha256": "e73c18a6453dec4fc66ee0bc1d4123c06576f85dd3047cfc44caa3e3350332d3"
+    }
+  },
+  "report": {
+    "path": "CORRECTION_VALIDATION_REPORT.md",
+    "bytes": 29967,
+    "sha256": "e3209ffb5c74c42e18beb8316023a5b45cc8496e1fd4d1d4e73b3786d42f6589"
+  },
+  "summary": {
+    "path": "correction_validation_summary.json",
+    "bytes": 14241,
+    "sha256": "095b21ed2c215c1822f42b8ca35e334f04bbb8ca3925473f4a89400aa2be1153"
+  },
+  "recommendation": {
+    "decision": "Apply BC-only",
+    "text": "BC has 10 strata that pass the predeclared holdout rule; 5 of them also survive the leave-one-TSA-out check and are recommended for application. The BC scalar is age-blind: in the held-out 40-60 bin applying it without an age floor would move bias from +3.7% to +36.6%; the recommended application floor is 61 years, so the 40-60 bin stays uncorrected. QC has 1 proxy strata that pass the primary rule, but 0 survive leave-one-unit-out. The QC proxy is also not a spatial unit\u2192ecoprovince join: the public BFEC crosswalk has no coordinates and no published eco-code lookup. Release the recommended BC strata only, at ages >=61; keep every QC factor as a candidate until BFEC geometry or a published eco-code crosswalk is available. Do not apply any withheld, insufficient-support, or validated-primary-only-lo-unstable stratum.",
+    "apply_bc": [
+      "Montane Cordillera/Columbia Montane Cordillera|LARI.OCC",
+      "Montane Cordillera/Northern Montane Cordillera|PICE.GLA",
+      "Pacific Maritime/Southern Coastal Mountains|PSEU.MEN",
+      "Pacific Maritime/Southern Coastal Mountains|THUJ.PLI",
+      "Pacific Maritime/Southern Coastal Mountains|TSUG.HET"
+    ],
+    "apply_qc": [],
+    "bc_application_age_floor": 61,
+    "validated_primary_only": [
+      "Atlantic Maritime/Appalachian-Acadian Highlands",
+      "Montane Cordillera/Northern Montane Cordillera|PINU.CON",
+      "Montane Cordillera/Northern Montane Cordillera|POPU.TRE",
+      "Montane Cordillera/Southern Montane Cordillera|PINU.CON",
+      "Montane Cordillera/Southern Montane Cordillera|PSEU.MEN",
+      "Pacific Maritime/Southern Coastal Mountains|ABIE.AMA"
+    ],
+    "withheld_or_insufficient": 61,
+    "applied": false
+  },
+  "caveats": [
+    "QC unit->ecoprovince is an administrative-region proxy; the public crosswalk has no coordinates and no eco-code lookup.",
+    "Restricted BFEC units 06451, 08462 and 08562 were excluded.",
+    "BC coastal stratum includes bec_zone_fallback visits, dominated by Haida Gwaii.",
+    "BC single-TSA ecoprovinces cannot be validated with a whole-TSA holdout.",
+    "Volume only; no AGB, height, taper, grade or rotation-age claim.",
+    "No correction was applied to the 119M/150M/100M/200M artifacts and no C2070 run was repeated."
+  ]
+}

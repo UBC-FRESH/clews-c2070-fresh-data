@@ -1,0 +1,382 @@
+{
+  "generated_at": "2026-11-19T04:29:12.563918+00:00",
+  "script": "workflows/national/rsyc_benchmark/validate_corrections.py",
+  "seed": 20261119,
+  "protocol": {
+    "holdout_fraction": 0.2,
+    "bc_holdout_unit": "tsa",
+    "bc_stratifier": "ecoprovince",
+    "qc_holdout_unit": "unit",
+    "qc_stratifier": "administrative_region",
+    "min_train_rows": 30,
+    "min_test_rows": 30,
+    "min_train_units": 2,
+    "min_test_units": 1,
+    "bias_reduction_threshold": 0.5,
+    "relative_rmse_worsen_threshold": 0.05,
+    "material_bias_threshold": 0.1,
+    "lo_min_folds": 3,
+    "lo_median_bias_reduction_threshold": 0.5,
+    "lo_share_folds_rmse_ok_threshold": 0.5
+  },
+  "bc_split": [
+    "Cranbrook",
+    "Kalum",
+    "Kamloops",
+    "Kingcome",
+    "Pacific",
+    "Prince George",
+    "Robson Valley",
+    "Williams Lake"
+  ],
+  "qc_split": [
+    "01171",
+    "02751",
+    "03152",
+    "03453",
+    "04352",
+    "06151",
+    "06252",
+    "07151",
+    "08251",
+    "08751",
+    "09452",
+    "11262"
+  ],
+  "bc_counts": {
+    "raw_rows": 19536,
+    "missing_tsa_rows": 41,
+    "age_outside_40_150_rows": 1424,
+    "zero_or_negative_observed_rows": 0,
+    "zero_or_negative_predicted_rows": 0,
+    "used_rows": 18081,
+    "used_tsas": 40,
+    "used_ecoprovinces": 8,
+    "fallback_rows_used": 1252,
+    "fallback_share_used": 0.0692439577456999
+  },
+  "qc_counts": {
+    "curves_rows": 107502,
+    "development_type_rows": 898661,
+    "productive_development_types": 805570,
+    "productive_tables": 2458,
+    "target_rows_after_join": 7374,
+    "positive_total_rows": 7281,
+    "zero_total_rows": 93,
+    "invalid_rows": 0,
+    "units_used": 51,
+    "restricted_units_excluded": [
+      "06451",
+      "08462",
+      "08562"
+    ]
+  },
+  "qc_geometry": {
+    "mass_balance_max_abs": 0.00010000000003174137,
+    "proxy_mapping": {
+      "R01": {
+        "ecoprovince": "Atlantic Maritime/Appalachian-Acadian Highlands",
+        "confidence": "high"
+      },
+      "R02": {
+        "ecoprovince": "Boreal Shield East/Eastern Boreal Shield",
+        "confidence": "medium"
+      },
+      "R03": {
+        "ecoprovince": "Boreal Shield East/Southern Boreal Shield",
+        "confidence": "medium"
+      },
+      "R04": {
+        "ecoprovince": "Boreal Shield East/Southern Boreal Shield",
+        "confidence": "high"
+      },
+      "R05": {
+        "ecoprovince": "Atlantic Maritime/Appalachian-Acadian Highlands",
+        "confidence": "high"
+      },
+      "R07": {
+        "ecoprovince": "Boreal Shield East/Southern Boreal Shield",
+        "confidence": "high"
+      },
+      "R08": {
+        "ecoprovince": "Boreal Shield East/Mid-Boreal Shield",
+        "confidence": "medium"
+      },
+      "R09": {
+        "ecoprovince": "Boreal Shield East/Eastern Boreal Shield",
+        "confidence": "medium"
+      },
+      "R10": {
+        "ecoprovince": "Taiga Shield East/Eastern Taiga",
+        "confidence": "low"
+      },
+      "R11": {
+        "ecoprovince": "Atlantic Maritime/Appalachian-Acadian Highlands",
+        "confidence": "high"
+      },
+      "R12": {
+        "ecoprovince": "Atlantic Maritime/Appalachian-Acadian Highlands",
+        "confidence": "high"
+      },
+      "R14": {
+        "ecoprovince": "Boreal Shield East/Southern Boreal Shield",
+        "confidence": "high"
+      },
+      "R15": {
+        "ecoprovince": "Boreal Shield East/Southern Boreal Shield",
+        "confidence": "high"
+      }
+    }
+  },
+  "inputs": {
+    "bc_visits": {
+      "path": "data/derived/national/rsyc_benchmark/rsyc_vs_bc_visits.csv",
+      "sha256": "c0c58016ebc904a06473330dcfbe2a7fac60db0349a9f24baedcc0e4c61f35f1"
+    },
+    "qc_curves": {
+      "path": "data/derived/national/qc_bfec_full/qc_bfec_curves.csv",
+      "sha256": "ae036854ce4e64b578363ff9935f4ddaf85ea398f3e12810b32efb0667841248"
+    },
+    "qc_development_types": {
+      "path": "data/derived/national/qc_bfec_full/qc_bfec_development_types.csv",
+      "sha256": "6ad7f58e2ee9387e080a111f931517b30c485c5fa21ceb4565071403b2175eda"
+    },
+    "qc_inventory_crosswalk": {
+      "path": "data/derived/national/qc_bfec_full/qc_bfec_inventory_crosswalk.csv",
+      "sha256": "239c317724a627be6db06747aaff85ce08d1b4610c24499e207341132f66b9ab",
+      "columns": [
+        "unit",
+        "polygon_id",
+        "THEME1",
+        "THEME2",
+        "THEME3",
+        "THEME4",
+        "THEME5",
+        "THEME6",
+        "THEME7",
+        "THEME8",
+        "THEME9",
+        "THEME10",
+        "THEME11",
+        "THEME12",
+        "THEME13",
+        "THEME14",
+        "THEME15",
+        "THEME16",
+        "THEME17",
+        "THEME18",
+        "THEME19",
+        "THEME20",
+        "STRATE",
+        "area_ha",
+        "CRS"
+      ],
+      "has_coordinates": false
+    },
+    "rsyc_models": {
+      "path": "data/raw/national/rsyc/RSYC_models.zip",
+      "sha256": "86da5737720613f686b3f14b3cdea43c18b5cde87a4b113a3cb0df6dcfe24940"
+    },
+    "national_fit": {
+      "path": "data/derived/national/assortments/national_fit/national_distribution_parameters.csv",
+      "sha256": "82996707356b4226c79debdf216ee8b22120c3f764972705e5fd1a4604288723"
+    }
+  },
+  "outputs": {},
+  "summary": {
+    "bc": {
+      "aggregate": [
+        {
+          "dataset": "BC_FAIB",
+          "stratum_level": "aggregate_release_policy_all_test_rows",
+          "stratum_key": "ALL",
+          "release_scope": "reporting",
+          "ecoprovince": null,
+          "ecoprovince_stratum": null,
+          "species": null,
+          "age_basis": "ages_40_150",
+          "candidate_status": null,
+          "multiplier": null,
+          "multiplier_ratio": null,
+          "multiplier_basis": null,
+          "n_train": 14536,
+          "n_train_units": 32,
+          "n_test": 3545,
+          "n_test_units": 8,
+          "status": "aggregate",
+          "reason": "all_test_rows",
+          "release_decision": "reporting_only",
+          "ecozone": null,
+          "leading_species": null,
+          "test_unit_ids": null,
+          "fallback_rows": null,
+          "fallback_share": null,
+          "train_n": null,
+          "train_observed_sum": null,
+          "train_predicted_sum": null,
+          "train_mean_observed": null,
+          "train_mean_predicted": null,
+          "train_bias": null,
+          "train_mae": null,
+          "train_rmse": null,
+          "train_relative_rmse": null,
+          "train_within20": null,
+          "train_within30": null,
+          "test_before_n": 3545,
+          "test_before_observed_sum": 1190778.8193601198,
+          "test_before_predicted_sum": 1019738.3447976197,
+          "test_before_mean_observed": 335.9037572242933,
+          "test_before_mean_predicted": 287.6553864027136,
+          "test_before_bias": -0.14363748479705965,
+          "test_before_mae": 192.28463454596036,
+          "test_before_rmse": 271.08278809042133,
+          "test_before_relative_rmse": 0.8070251739084031,
+          "test_before_within20": 0.19379407616361072,
+          "test_before_within30": 0.2930888575458392,
+          "test_after_n": 3545,
+          "test_after_observed_sum": 1190778.8193601198,
+          "test_after_predicted_sum": 1286769.2270898493,
+          "test_after_mean_observed": 335.9037572242933,
+          "test_after_mean_predicted": 362.9814462876867,
+          "test_after_bias": 0.08061145039623006,
+          "test_after_mae": 154.3102101510312,
+          "test_after_rmse": 208.01238099674134,
+          "test_after_relative_rmse": 0.6192618466540255,
+          "test_after_within20": 0.2629055007052186,
+          "test_after_within30": 0.3856135401974612,
+          "bias_reduction": 0.4387854221332047,
+          "rel_rmse_change": -0.23266105361378553,
+          "material": null,
+          "lo_folds": null,
+          "lo_median_bias_reduction": null,
+          "lo_share_folds_bias_reduced": null,
+          "lo_share_folds_reduction_ge50": null,
+          "lo_median_rel_rmse_change": null,
+          "lo_share_folds_rmse_ok": null,
+          "lo_bias_before": null,
+          "lo_bias_after": null,
+          "lo_share_folds_same_sign_before": null,
+          "lo_holdout_rows": null,
+          "lo_robust": null,
+          "coverage_rows": 1071.0,
+          "coverage_share": 0.3021156558533145,
+          "n_factor_strata": 5.0
+        }
+      ],
+      "n_strata": 67,
+      "n_validated_primary": 10,
+      "n_recommended": 5,
+      "n_withheld": 8,
+      "n_insufficient": 49
+    },
+    "qc": {
+      "aggregate": [
+        {
+          "dataset": "QC_BFEC",
+          "stratum_level": "aggregate_release_policy_all_test_rows",
+          "stratum_key": "ALL",
+          "release_scope": "reporting",
+          "ecoprovince": null,
+          "ecoprovince_proxy": null,
+          "admin_region": null,
+          "region": null,
+          "species": null,
+          "age_basis": "ages_50_100_150",
+          "candidate_status": null,
+          "multiplier": null,
+          "multiplier_ratio": null,
+          "multiplier_basis": null,
+          "n_train": 5574,
+          "n_train_units": 39,
+          "n_test": 1707,
+          "n_test_units": 12,
+          "status": "aggregate",
+          "reason": "all_test_rows",
+          "release_decision": "reporting_only",
+          "proxy_confidence": null,
+          "test_unit_ids": null,
+          "train_n": null,
+          "train_observed_sum": null,
+          "train_predicted_sum": null,
+          "train_mean_observed": null,
+          "train_mean_predicted": null,
+          "train_bias": null,
+          "train_mae": null,
+          "train_rmse": null,
+          "train_relative_rmse": null,
+          "train_within20": null,
+          "train_within30": null,
+          "test_before_n": 1707,
+          "test_before_observed_sum": 310578.0451,
+          "test_before_predicted_sum": 271789.77180767414,
+          "test_before_mean_observed": 181.94378740480374,
+          "test_before_mean_predicted": 159.2207216213674,
+          "test_before_bias": -0.12489058355633861,
+          "test_before_mae": 52.83552906073378,
+          "test_before_rmse": 70.32204833104561,
+          "test_before_relative_rmse": 0.3865042568042581,
+          "test_before_within20": 0.39718804920913886,
+          "test_before_within30": 0.5916813122437024,
+          "test_after_n": 1707,
+          "test_after_observed_sum": 310578.0451,
+          "test_after_predicted_sum": 271789.77180767414,
+          "test_after_mean_observed": 181.94378740480374,
+          "test_after_mean_predicted": 159.2207216213674,
+          "test_after_bias": -0.12489058355633861,
+          "test_after_mae": 52.83552906073378,
+          "test_after_rmse": 70.32204833104561,
+          "test_after_relative_rmse": 0.3865042568042581,
+          "test_after_within20": 0.39718804920913886,
+          "test_after_within30": 0.5916813122437024,
+          "bias_reduction": 0.0,
+          "rel_rmse_change": 0.0,
+          "material": null,
+          "lo_folds": null,
+          "lo_median_bias_reduction": null,
+          "lo_share_folds_bias_reduced": null,
+          "lo_share_folds_reduction_ge50": null,
+          "lo_median_rel_rmse_change": null,
+          "lo_share_folds_rmse_ok": null,
+          "lo_bias_before": null,
+          "lo_bias_after": null,
+          "lo_share_folds_same_sign_before": null,
+          "lo_holdout_rows": null,
+          "lo_robust": null,
+          "coverage_rows": 0.0,
+          "coverage_share": 0.0,
+          "n_factor_strata": 0.0
+        }
+      ],
+      "n_proxy_strata": 5,
+      "n_validated_primary": 1,
+      "n_recommended": 0,
+      "n_withheld": 4,
+      "n_insufficient": 0
+    },
+    "decision": "Apply BC-only",
+    "text": "BC has 10 strata that pass the predeclared holdout rule; 5 of them also survive the leave-one-TSA-out check and are recommended for application. The BC scalar is age-blind: in the held-out 40-60 bin applying it without an age floor would move bias from +3.7% to +36.6%; the recommended application floor is 61 years, so the 40-60 bin stays uncorrected. QC has 1 proxy strata that pass the primary rule, but 0 survive leave-one-unit-out. The QC proxy is also not a spatial unit\u2192ecoprovince join: the public BFEC crosswalk has no coordinates and no published eco-code lookup. Release the recommended BC strata only, at ages >=61; keep every QC factor as a candidate until BFEC geometry or a published eco-code crosswalk is available. Do not apply any withheld, insufficient-support, or validated-primary-only-lo-unstable stratum."
+  },
+  "recommendation": {
+    "decision": "Apply BC-only",
+    "text": "BC has 10 strata that pass the predeclared holdout rule; 5 of them also survive the leave-one-TSA-out check and are recommended for application. The BC scalar is age-blind: in the held-out 40-60 bin applying it without an age floor would move bias from +3.7% to +36.6%; the recommended application floor is 61 years, so the 40-60 bin stays uncorrected. QC has 1 proxy strata that pass the primary rule, but 0 survive leave-one-unit-out. The QC proxy is also not a spatial unit\u2192ecoprovince join: the public BFEC crosswalk has no coordinates and no published eco-code lookup. Release the recommended BC strata only, at ages >=61; keep every QC factor as a candidate until BFEC geometry or a published eco-code crosswalk is available. Do not apply any withheld, insufficient-support, or validated-primary-only-lo-unstable stratum.",
+    "apply_bc": [
+      "Montane Cordillera/Columbia Montane Cordillera|LARI.OCC",
+      "Montane Cordillera/Northern Montane Cordillera|PICE.GLA",
+      "Pacific Maritime/Southern Coastal Mountains|PSEU.MEN",
+      "Pacific Maritime/Southern Coastal Mountains|THUJ.PLI",
+      "Pacific Maritime/Southern Coastal Mountains|TSUG.HET"
+    ],
+    "apply_qc": [],
+    "bc_application_age_floor": 61,
+    "validated_primary_only": [
+      "Atlantic Maritime/Appalachian-Acadian Highlands",
+      "Montane Cordillera/Northern Montane Cordillera|PINU.CON",
+      "Montane Cordillera/Northern Montane Cordillera|POPU.TRE",
+      "Montane Cordillera/Southern Montane Cordillera|PINU.CON",
+      "Montane Cordillera/Southern Montane Cordillera|PSEU.MEN",
+      "Pacific Maritime/Southern Coastal Mountains|ABIE.AMA"
+    ],
+    "withheld_or_insufficient": 61,
+    "applied": false
+  }
+}
