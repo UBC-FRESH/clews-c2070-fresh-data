@@ -1,0 +1,344 @@
+{
+  "artifact_version": "0.1.0",
+  "caveats": [
+    "Scenario carbon prices, not forecasts.",
+    "Hydro is an annual upper bound at 2021 activity, not a forecast.",
+    "The curve is RSYC-only: no AAC, THLB, operability, or local correction.",
+    "The public OSeCAN repository was not modified."
+  ],
+  "checks": {
+    "all_optimal": true,
+    "bc_zonal_total_pj": 43.523816,
+    "case_parameters": [
+      {
+        "carbon_price_from_2026": 250.0,
+        "carbon_price_pre_2026": 95.0,
+        "carbon_price_series_ok": true,
+        "hydro_cap_is_2021_activity": true,
+        "params": "/tmp/osecan_demand_sens/results/carbon_250/params",
+        "supbcw_cap_disabled": true,
+        "tier_caps_match_artifact": true
+      },
+      {
+        "carbon_price_from_2026": 300.0,
+        "carbon_price_pre_2026": 95.0,
+        "carbon_price_series_ok": true,
+        "hydro_cap_is_2021_activity": true,
+        "params": "/tmp/osecan_demand_sens/results/carbon_300/params",
+        "supbcw_cap_disabled": true,
+        "tier_caps_match_artifact": true
+      },
+      {
+        "carbon_price_from_2026": 400.0,
+        "carbon_price_pre_2026": 95.0,
+        "carbon_price_series_ok": true,
+        "hydro_cap_is_2021_activity": true,
+        "params": "/tmp/osecan_demand_sens/results/carbon_400/params",
+        "supbcw_cap_disabled": true,
+        "tier_caps_match_artifact": true
+      },
+      {
+        "carbon_price_from_2026": 200.0,
+        "carbon_price_pre_2026": 95.0,
+        "carbon_price_series_ok": true,
+        "hydro_cap_is_2021_activity": true,
+        "lower_limit_sum_pj": 57.333609,
+        "lower_limits": [
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWA1",
+            "value_pj": 17.529340973006292,
+            "year": 2050
+          },
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWA2",
+            "value_pj": 7.723468451712226,
+            "year": 2050
+          },
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWL1",
+            "value_pj": 0.9770405875442069,
+            "year": 2050
+          },
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWQ1",
+            "value_pj": 9.504600988928132,
+            "year": 2050
+          },
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWQ2",
+            "value_pj": 4.202542139299201,
+            "year": 2050
+          },
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWS1",
+            "value_pj": 10.194931410523985,
+            "year": 2050
+          },
+          {
+            "basis": "national BCW cap saturation diagnostic, not policy",
+            "technology": "PWRBCWT1",
+            "value_pj": 7.201684530437551,
+            "year": 2050
+          }
+        ],
+        "params": "/tmp/osecan_demand_sens/results/mandate_saturation/params",
+        "supbcw_cap_disabled": true,
+        "tier_caps_match_artifact": true
+      }
+    ],
+    "national_total_pj": 257.061857,
+    "tier_caps_sum_pj": 213.538041
+  },
+  "comparison": [
+    {
+      "binding_tiers": "SUPBCWT1,SUPBCWT2",
+      "case": "reference_200",
+      "emissions_2050_mt": 1.484692,
+      "emissions_total_mt": 38.457287,
+      "label": "CO2 $200/t from 2026 + hydro capped at 2021",
+      "national_bcw_2050_pj": 152.92257,
+      "national_bcw_cumulative_pj": 7087.666476,
+      "objective_musd": 1371124.5,
+      "pwrbcw_2050_pj": 41.108217,
+      "pwrbcw_cumulative_pj": 1905.286669,
+      "status": "optimal",
+      "t1_2050_pj": 85.0071,
+      "t1_cumulative_pj": 4095.001069,
+      "t2_2050_pj": 24.3917,
+      "t2_cumulative_pj": 1120.076321,
+      "t3_2050_pj": 0.0,
+      "t3_cumulative_pj": 0.0,
+      "t4_2050_pj": 0.0,
+      "t4_cumulative_pj": 0.0,
+      "tiers_2050_pj": 109.3988,
+      "tiers_cumulative_pj": 5215.07739
+    },
+    {
+      "binding_tiers": "SUPBCWT1,SUPBCWT2",
+      "case": "carbon_250",
+      "emissions_2050_mt": 0.0,
+      "emissions_total_mt": 2.446648,
+      "label": "CO2 $250/t from 2026 + hydro capped at 2021",
+      "national_bcw_2050_pj": 152.92257,
+      "national_bcw_cumulative_pj": 7161.569122,
+      "objective_musd": 1371648.82,
+      "pwrbcw_2050_pj": 41.108219,
+      "pwrbcw_cumulative_pj": 1925.153011,
+      "status": "optimal",
+      "t1_2050_pj": 85.0071,
+      "t1_cumulative_pj": 4137.020922,
+      "t2_2050_pj": 24.3917,
+      "t2_cumulative_pj": 1134.615002,
+      "t3_2050_pj": 0.0,
+      "t3_cumulative_pj": 0.0,
+      "t4_2050_pj": 0.0,
+      "t4_cumulative_pj": 0.0,
+      "tiers_2050_pj": 109.3988,
+      "tiers_cumulative_pj": 5271.635924
+    },
+    {
+      "binding_tiers": "SUPBCWT1,SUPBCWT2",
+      "case": "carbon_300",
+      "emissions_2050_mt": 0.0,
+      "emissions_total_mt": 2.445288,
+      "label": "CO2 $300/t from 2026 + hydro capped at 2021",
+      "national_bcw_2050_pj": 152.92257,
+      "national_bcw_cumulative_pj": 7161.569122,
+      "objective_musd": 1371649.82,
+      "pwrbcw_2050_pj": 41.108219,
+      "pwrbcw_cumulative_pj": 1925.15303,
+      "status": "optimal",
+      "t1_2050_pj": 85.0071,
+      "t1_cumulative_pj": 4098.222988,
+      "t2_2050_pj": 24.3917,
+      "t2_cumulative_pj": 1173.412936,
+      "t3_2050_pj": 0.0,
+      "t3_cumulative_pj": 0.0,
+      "t4_2050_pj": 0.0,
+      "t4_cumulative_pj": 0.0,
+      "tiers_2050_pj": 109.3988,
+      "tiers_cumulative_pj": 5271.635924
+    },
+    {
+      "binding_tiers": "SUPBCWT1,SUPBCWT2",
+      "case": "carbon_400",
+      "emissions_2050_mt": 0.0,
+      "emissions_total_mt": 2.417297,
+      "label": "CO2 $400/t from 2026 + hydro capped at 2021 (diagnostic)",
+      "national_bcw_2050_pj": 152.92257,
+      "national_bcw_cumulative_pj": 7161.569123,
+      "objective_musd": 1371650.78,
+      "pwrbcw_2050_pj": 41.10822,
+      "pwrbcw_cumulative_pj": 1925.153041,
+      "status": "optimal",
+      "t1_2050_pj": 85.0071,
+      "t1_cumulative_pj": 4159.53091,
+      "t2_2050_pj": 24.3917,
+      "t2_cumulative_pj": 1112.105015,
+      "t3_2050_pj": 0.0,
+      "t3_cumulative_pj": 0.0,
+      "t4_2050_pj": 0.0,
+      "t4_cumulative_pj": 0.0,
+      "tiers_2050_pj": 109.3988,
+      "tiers_cumulative_pj": 5271.635925
+    },
+    {
+      "binding_tiers": "SUPBCWT1,SUPBCWT2,SUPBCWT3",
+      "case": "mandate_saturation",
+      "emissions_2050_mt": 1.471004,
+      "emissions_total_mt": 38.027154,
+      "label": "BCW-cap saturation PWRBCW lower limit in 2050 (diagnostic)",
+      "national_bcw_2050_pj": 256.804505,
+      "national_bcw_cumulative_pj": 7458.085196,
+      "objective_musd": 1371191.11,
+      "pwrbcw_2050_pj": 69.033469,
+      "pwrbcw_cumulative_pj": 2004.861596,
+      "status": "optimal",
+      "t1_2050_pj": 85.0071,
+      "t1_cumulative_pj": 4112.87565,
+      "t2_2050_pj": 24.3917,
+      "t2_cumulative_pj": 1114.454398,
+      "t3_2050_pj": 39.8737,
+      "t3_cumulative_pj": 217.875708,
+      "t4_2050_pj": 64.008235,
+      "t4_cumulative_pj": 138.49099,
+      "tiers_2050_pj": 213.280735,
+      "tiers_cumulative_pj": 5583.696746
+    }
+  ],
+  "generated_utc": "2026-11-19T06:26:56+00:00",
+  "harmonize": [
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_demand_sens/results/carbon_250/params",
+      "params_sha256": "8f7c37237a71526140ee7047cec091277a4c1491e0138078e52d87ec6f93d65a"
+    },
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_demand_sens/results/carbon_300/params",
+      "params_sha256": "295fd9888758821556518ab35f0e7b137918eedf3309c62d3c99fd5d95377cfe"
+    },
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_demand_sens/results/carbon_400/params",
+      "params_sha256": "ded3056cf3b9de33c79744326847f7243f57002d6e64f2533c2a388d2ca396bf"
+    },
+    {
+      "exit_code": 0,
+      "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+      "params": "/tmp/osecan_demand_sens/results/mandate_saturation/params",
+      "params_sha256": "70f414d33e7306ecb3a70cd0863cdae1da0c5b3a26219066ce04fe622b8e4272"
+    }
+  ],
+  "inputs": [
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "sha256": "92e8ddbb10479331740f9a685c173200274b86977900d7f71252435f3930190a"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "sha256": "62d6331954433bec50a5936e063a5c2caae76c1d81f5e3563a9ecc887e8ae3f1"
+    },
+    {
+      "bytes": 1579,
+      "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
+    },
+    {
+      "bytes": 1529,
+      "path": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv",
+      "sha256": "7a05322658f5a2b02adfb620c0dff63c8b7b25da219d39f53dd9897bdef4866e"
+    },
+    {
+      "bytes": 7233,
+      "path": "data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv",
+      "sha256": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374"
+    },
+    {
+      "bytes": 5798,
+      "path": "data/derived/national/clews/osecan/national_supply_curve/tier_variable_costs.csv",
+      "sha256": "907653f925f8812057b09ecfd56d811ec118a9fb76534c03a1075231459af577"
+    }
+  ],
+  "model": {
+    "commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "package": "osecan 0.1.0",
+    "repository": "https://github.com/deltae/C2070",
+    "scenario": "Current Measures",
+    "solver": "GLPK via swiglpk 5.0.13"
+  },
+  "outputs": [
+    {
+      "bytes": 225016,
+      "path": "run_summaries.json",
+      "sha256": "67ca2018b98197c477d3e9e7a494b193e7c4028b5f09463ba19c9855ac099db3"
+    },
+    {
+      "bytes": 357108,
+      "path": "dispatch_by_zone.csv",
+      "sha256": "37c1389d74b8d86187c5d2915c5e0533b6990891232f9b7f58df3ddd8fe40ec2"
+    },
+    {
+      "bytes": 5694,
+      "path": "DEMAND_SENSITIVITY_REPORT.md",
+      "sha256": "2b6e3751cce97b471f0d113b23f52d398af5fe87a21bf8f59a60edd68d3a56b8"
+    }
+  ],
+  "reference": {
+    "carbon_price_from_2026": 200.0,
+    "case": "reference_200",
+    "emissions_total_mt": 38.457287,
+    "objective": 1371124.5
+  },
+  "runs": {
+    "carbon_250": {
+      "binding_tiers": [
+        "SUPBCWT1",
+        "SUPBCWT2"
+      ],
+      "emissions_total_mt": 2.446648,
+      "objective": 1371648.82,
+      "status": "optimal"
+    },
+    "carbon_300": {
+      "binding_tiers": [
+        "SUPBCWT1",
+        "SUPBCWT2"
+      ],
+      "emissions_total_mt": 2.445288,
+      "objective": 1371649.82,
+      "status": "optimal"
+    },
+    "carbon_400": {
+      "binding_tiers": [
+        "SUPBCWT1",
+        "SUPBCWT2"
+      ],
+      "emissions_total_mt": 2.417297,
+      "objective": 1371650.78,
+      "status": "optimal"
+    },
+    "mandate_saturation": {
+      "binding_tiers": [
+        "SUPBCWT1",
+        "SUPBCWT2",
+        "SUPBCWT3"
+      ],
+      "emissions_total_mt": 38.027154,
+      "objective": 1371191.11,
+      "status": "optimal"
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official"
+}
