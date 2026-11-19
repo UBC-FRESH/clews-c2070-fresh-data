@@ -1,0 +1,135 @@
+{
+  "artifact_version": "1.0.0",
+  "caveats": [
+    "Local patch only; public OSeCAN was not modified or committed.",
+    "model_structure.py comment still says Mt/PJ of activity and should be corrected upstream.",
+    "osecan_biomass_module.py LCOE carbon line omits IAR and remains output-basis inconsistent.",
+    "Mandate saturation solve did not finish within the timebox; no status or dispatch reported.",
+    "Scenario carbon prices are sensitivities, not forecasts."
+  ],
+  "checks": {
+    "all_solved_runs_optimal": true,
+    "no_double_counting": true,
+    "raw_fuel_factor_not_written": true
+  },
+  "correction": {
+    "bug": "fuel-input factor written as output-activity factor",
+    "coal": {
+      "after": 0.261,
+      "before": 0.09,
+      "iar": 2.9
+    },
+    "fix": "multiply by plant InputActivityRatio",
+    "gas": {
+      "after": 0.1377,
+      "before": 0.051,
+      "iar": 2.7
+    },
+    "model_equations": "E4/E5/E8/E9 apply EmissionActivityRatio to RateOfActivity (output activity); fuel use = RateOfActivity * InputActivityRatio",
+    "parameter": "EmissionActivityRatio and UDCMultiplierActivity emission terms",
+    "rows_changed": 1300
+  },
+  "generated_utc": "2026-11-19T06:48:18+00:00",
+  "model_copy": {
+    "model_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "path": "/tmp/osecan_emfix",
+    "public_repo_modified": false,
+    "public_repository": "https://github.com/deltae/C2070",
+    "solver": "GLPK via swiglpk 5.0.13",
+    "source_copy": "/tmp/osecan_supply_curve"
+  },
+  "outputs": [
+    {
+      "bytes": 2338,
+      "path": "emission_factor_fix.patch",
+      "sha256": "a9103fccf145384e6ba39ab7ef59da9067564589c882c368c20f851b5935921a"
+    },
+    {
+      "bytes": 48164,
+      "path": "emission_activity_ratio_diff.csv",
+      "sha256": "66f8cbedd8994e57aedcc4fac87f27f8627c1ddfcd6b16ff03e4f4b41b164615"
+    },
+    {
+      "bytes": 39707,
+      "path": "EmissionActivityRatio_prefix.csv",
+      "sha256": "b05b31ffff5d01957a4827fa4821a8f1fc7e0452c41dc85e1db5276804ded763"
+    },
+    {
+      "bytes": 41007,
+      "path": "EmissionActivityRatio_fixed.csv",
+      "sha256": "a37a530793f4e7305cabde79197ffdd9bd296f362e025f659f32048a4ac82db7"
+    },
+    {
+      "bytes": 162486,
+      "path": "run_summaries.json",
+      "sha256": "64aa076eaa2bf928b66f08a5bea3fd3e0f8dd8f06f9ee9cf2a7bfe4c87710992"
+    },
+    {
+      "bytes": 444898,
+      "path": "dispatch_by_zone.csv",
+      "sha256": "76697218c9c58f1114f2438a93b872a7f3412161fe0eed065054e1227c5a2dbf"
+    },
+    {
+      "bytes": 1074,
+      "path": "unit_check.json",
+      "sha256": "452485ce0758c252b02e2c4e132271718abeb6c863a842bb11f511aa917454fd"
+    },
+    {
+      "bytes": 226,
+      "path": "parameter_diff.json",
+      "sha256": "ba440b8298ba62f00acf0b8c288a7240b8cee857e5df9b5e77b25bffff8155cd"
+    },
+    {
+      "bytes": 7882,
+      "path": "EMISSION_FACTOR_FIX_REPORT.md",
+      "sha256": "faf2ecc8ab02005c814592cfde31d45d42d439c8014d7b413eec803b0af838bc"
+    }
+  ],
+  "resume_commands": {
+    "baseline_119m": "cd /tmp/osecan_emfix && PYTHONPATH=/tmp/osecan_emfix/src:/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh .venv/bin/python run_emfix.py baseline_119m",
+    "mandate_saturation": "cd /tmp/osecan_emfix && PYTHONPATH=/tmp/osecan_emfix/src:/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh .venv/bin/python run_mandate.py",
+    "stress_119m": "cd /tmp/osecan_emfix && PYTHONPATH=/tmp/osecan_emfix/src:/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh .venv/bin/python run_emfix.py stress_119m",
+    "tier_250": "cd /tmp/osecan_emfix && PYTHONPATH=/tmp/osecan_emfix/src:/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh .venv/bin/python run_emfix.py tier_250",
+    "tier_300": "cd /tmp/osecan_emfix && PYTHONPATH=/tmp/osecan_emfix/src:/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh .venv/bin/python run_emfix.py tier_300"
+  },
+  "runs": {
+    "efix_baseline_119m": {
+      "emissions_total_mt": 0.484962,
+      "objective_musd": 1331575.72,
+      "status": "optimal"
+    },
+    "efix_stress_119m": {
+      "emissions_total_mt": 0.460752,
+      "objective_musd": 1371773.42,
+      "status": "optimal"
+    },
+    "efix_tier_200": {
+      "emissions_total_mt": 0.460752,
+      "objective_musd": 1371773.03,
+      "status": "optimal"
+    },
+    "efix_tier_250": {
+      "emissions_total_mt": 0.450327,
+      "objective_musd": 1371773.13,
+      "status": "optimal"
+    },
+    "efix_tier_300": {
+      "emissions_total_mt": 0.450327,
+      "objective_musd": 1371773.13,
+      "status": "optimal"
+    }
+  },
+  "status": "fresh_side_provisional_not_c2070_official",
+  "superseded": [
+    "national_150m",
+    "national_base_119m",
+    "national_supply_curve",
+    "national_supply_curve/demand_sensitivity"
+  ],
+  "unit_check": {
+    "coal_10pj_matches": true,
+    "gas_10pj_matches": true,
+    "negative_factors": false,
+    "run_reconciliation_max_abs_year_diff_mt": 4.77e-07
+  }
+}
