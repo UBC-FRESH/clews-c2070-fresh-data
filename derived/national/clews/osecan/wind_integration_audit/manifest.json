@@ -1,0 +1,120 @@
+{
+  "cases": {
+    "efix_tier_200": {
+      "emissions_total_mt": 0.460752,
+      "objective_musd": 1371773.03,
+      "seconds": null,
+      "status": "optimal"
+    },
+    "wind_cap20_tier200": {
+      "emissions_total_mt": 0.457246,
+      "objective_musd": 1372234.71,
+      "seconds": 71.9,
+      "status": "optimal"
+    },
+    "wind_int3_tier200": {
+      "emissions_total_mt": 0.449816,
+      "objective_musd": 1372459.69,
+      "seconds": 75.7,
+      "status": "optimal"
+    },
+    "wind_int5_tier200": {
+      "emissions_total_mt": 0.449816,
+      "objective_musd": 1372459.69,
+      "seconds": 70.7,
+      "status": "optimal"
+    }
+  },
+  "caveats": [
+    "Single annual timeslice; no reserve margin or integration constraint.",
+    "20% wind cap is relative to each zone's own post-fix 2050 wind activity.",
+    "Hydro capped at 2021; tier curve and BC zonal caps unchanged.",
+    "Public OSeCAN repository untouched; solves ran in a disposable copy."
+  ],
+  "clews_commit": "eb83a85c153de1be63ad19d735b3f1aff3399a59",
+  "data_commit": "71a7e5e21e0b3403758306b9ec9465b423c92396",
+  "disposable_copy_status": "M src/osecan/data/build_params.py\n M src/osecan/model_structure.py\n M src/osecan/sets_n_ratios.py",
+  "generated_utc": "2026-11-19T07:09:03+00:00",
+  "inputs": [
+    {
+      "bytes": 41007,
+      "path": "/tmp/osecan_wind_audit/data/params/EmissionActivityRatio.csv",
+      "sha256": "a37a530793f4e7305cabde79197ffdd9bd296f362e025f659f32048a4ac82db7"
+    },
+    {
+      "bytes": 928,
+      "path": "/tmp/osecan_wind_audit/data/params/EmissionsPenalty.csv",
+      "sha256": "a6c2264d6760339f947f3eb958820035fa4641d3e4438ee04e57dabd188f219f"
+    },
+    {
+      "bytes": 161,
+      "path": "/tmp/osecan_wind_audit/results/efix_tier_200/status.json",
+      "sha256": "a6ad26f4fd5c1ced5216b127b86375904a21f453953752f68f5cf6fcf811ffb4"
+    },
+    {
+      "bytes": 962,
+      "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/clews/osecan/wind_integration_audit/wind_caps_20pct.json",
+      "sha256": "40d2e62fbbd2966309f51c57849c91e4353e5ddff5e56efd855cdeffb5776f9b"
+    },
+    {
+      "bytes": 156348,
+      "path": "/tmp/osecan_wind_audit/results/wind_cap20_tier200/params/VariableCost.csv",
+      "sha256": "f93bd087da154d34a11c536622407c6ea506b5a1769fe47c1cf743975cffdfe9"
+    },
+    {
+      "bytes": 48832,
+      "path": "/tmp/osecan_wind_audit/results/wind_cap20_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "93b7d59edc8a2bcf727b03be32842699090b73c0db3b6485d0c148b984de50b5"
+    },
+    {
+      "bytes": 172598,
+      "path": "/tmp/osecan_wind_audit/results/wind_int3_tier200/params/VariableCost.csv",
+      "sha256": "a4ac7bba9b73e111804e791db3b3eb0b401ab2f2673a5bdec5af7a200937c1ca"
+    },
+    {
+      "bytes": 30482,
+      "path": "/tmp/osecan_wind_audit/results/wind_int3_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "73f2db20d3ebed8d273ba2c534305f620051866810d66f1286157d5244be3e7d"
+    },
+    {
+      "bytes": 172598,
+      "path": "/tmp/osecan_wind_audit/results/wind_int5_tier200/params/VariableCost.csv",
+      "sha256": "8c7d9f6e5be26b36534ccfe42b442a47857181cdd23348f81d366679fad321d5"
+    },
+    {
+      "bytes": 30482,
+      "path": "/tmp/osecan_wind_audit/results/wind_int5_tier200/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "73f2db20d3ebed8d273ba2c534305f620051866810d66f1286157d5244be3e7d"
+    }
+  ],
+  "model_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+  "model_root": "/tmp/osecan_wind_audit",
+  "outputs": [
+    {
+      "bytes": 184377,
+      "path": "data/derived/national/clews/osecan/wind_integration_audit/run_summaries.json",
+      "sha256": "7839402a7a730f63a194ed991bfc52b245350a2b4c1a603974b1cc01d6693704"
+    },
+    {
+      "bytes": 439547,
+      "path": "data/derived/national/clews/osecan/wind_integration_audit/dispatch_by_zone.csv",
+      "sha256": "190505ca30cd04b6aa349d2f9fae816f630677e36f034d03cf49fc513a9fa718"
+    },
+    {
+      "bytes": 962,
+      "path": "data/derived/national/clews/osecan/wind_integration_audit/wind_caps_20pct.json",
+      "sha256": "40d2e62fbbd2966309f51c57849c91e4353e5ddff5e56efd855cdeffb5776f9b"
+    },
+    {
+      "bytes": 7248,
+      "path": "data/derived/national/clews/osecan/wind_integration_audit/WIND_INTEGRATION_REPORT.md",
+      "sha256": "36057d0ce15d2b3e3ae42e0219145fe5b53c66d7b5c2b01a8573ef5184798e9c"
+    }
+  ],
+  "public_repository": "https://github.com/deltae/C2070",
+  "public_repository_modified": false,
+  "reference_run": "efix_tier_200",
+  "schema_version": "1.0.0",
+  "source_model_root": "/tmp/osecan_emfix",
+  "status": "fresh_side_provisional_not_c2070_official"
+}

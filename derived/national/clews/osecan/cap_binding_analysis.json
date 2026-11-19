@@ -1,28 +1,28 @@
 {
   "breakevens": {
     "bcw_vs_bio_usd_per_gj": 2.751112728553375,
-    "bcw_vs_gas_at_carbon_115_usd_per_gj": 1.8370534388167814,
-    "bcw_vs_gas_at_carbon_95_usd_per_gj": 1.5628598904296849,
+    "bcw_vs_gas_at_carbon_115_usd_per_gj": 4.517295374300651,
+    "bcw_vs_gas_at_carbon_95_usd_per_gj": 3.776972793655491,
     "bcw_vs_hydro_usd_per_gj": 0.5684107554544712,
-    "carbon_price_for_base_bcw_parity_usd_per_t": 160.21799391924645,
-    "carbon_price_for_high_bcw_parity_usd_per_t": 124.3750273074818,
-    "carbon_price_for_low_bcw_parity_usd_per_t": 213.98244383689354
+    "carbon_price_for_base_bcw_parity_usd_per_t": 59.33999774786906,
+    "carbon_price_for_high_bcw_parity_usd_per_t": 46.06482492869697,
+    "carbon_price_for_low_bcw_parity_usd_per_t": 79.25275697662724
   },
   "cap_metrics": {
     "base": {
       "b1_cap_2028_pj": 3.605474907,
-      "b2_cap_2028_pj": 32.204470802,
-      "cap_2021_pj": 41.298610459,
-      "cap_2028_flat_pj": 35.809945709,
-      "cap_2028_pj": 35.809945709,
-      "cap_2070_pj": 35.809945709,
+      "b2_cap_2028_pj": 39.918341125,
+      "cap_2021_pj": 50.325738034,
+      "cap_2028_flat_pj": 43.523816032,
+      "cap_2028_pj": 43.523816032,
+      "cap_2070_pj": 43.523816032,
       "case": "base",
-      "max_electricity_2021_pj": 11.101777005107527,
-      "max_electricity_2021_twh": 3.0838269458632017,
-      "max_electricity_2028_pj": 9.626329491666665,
-      "max_electricity_2028_twh": 2.6739804143518513
+      "max_electricity_2021_pj": 13.52842420268817,
+      "max_electricity_2021_twh": 3.757895611857825,
+      "max_electricity_2028_pj": 11.699950546236558,
+      "max_electricity_2028_twh": 3.249986262843488
     },
-    "base_2028_share_of_2025_hydro_generation_pct": 0.42502648332626647,
+    "base_2028_share_of_2025_hydro_generation_pct": 0.5165820305717778,
     "baseline_2025_hydro_generation_pj": 2264.877571,
     "efficiency_pwrbcw": 0.26881720430107525,
     "gj_per_mwh": 3.6,
@@ -74,7 +74,7 @@
     {
       "bcw_cost_usd_per_gj": 2.456977549,
       "bcw_lcoe_usd_per_mwh": 82.34360071665239,
-      "cap_2028_pj": 35.809945709,
+      "cap_2028_pj": 43.523816032,
       "cap_binding": false,
       "case": "base",
       "reason": "PWRBCW is more expensive than the model's hydro and placeholder gas plants in every run.",
@@ -95,7 +95,7 @@
   "conclusion": "The 50 PJ placeholder and the 43-50 PJ BC base cap do not bind in any baseline or diagnostic run. The model dispatches zero BCW because unconstrained hydro is cheaper in the base model, and the placeholder gas plant is cheaper than PWRBCW even when hydro is frozen. The generic-BIO bypass means a BCW cap would not cap biomass electricity in any case. The policy sensitivity recorded in the run report shows the cap can bind when the CO2 price is $200/t and hydro is frozen at 2021 activity.",
   "generic_bio_bypass": {
     "description": "PWRBIO consumes BIO from the uncapped RNWBIO supply at $3/GJ. A BCW cap therefore cannot cap biomass electricity; it only shifts feedstock from BCW to generic BIO.",
-    "pwr_bio_delta_vs_gas95_usd_per_mwh": 15.913082008152458,
+    "pwr_bio_delta_vs_gas95_usd_per_mwh": -13.738317991847538,
     "pwr_bio_lcoe_usd_per_mwh": 86.2826590412312,
     "status": "present"
   },

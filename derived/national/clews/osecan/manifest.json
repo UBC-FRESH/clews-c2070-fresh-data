@@ -4,22 +4,22 @@
     "OSeCAN plant parameters are the documented v0.3 placeholders, not Canadian fleet averages.",
     "PWRBCW and PWRBIO use the documented input activity ratios 3.72 and 2.85 (26.9% and 35.1% efficiency).",
     "LCOE is a simplified busbar calculation at 5% discount; it excludes transmission, backup, and financing outside the discount rate.",
-    "Gas LCOE is the model's placeholder gas plant (capex 1100 $/kW, fuel $3/GJ, CO2 0.051 t/GJ, carbon $95 or $115/t), not a market forecast.",
+    "Gas LCOE is the model's placeholder gas plant (capex 1100 $/kW, fuel $3/GJ, CO2 0.051 t/GJ of fuel input x 2.70 IAR = 0.1377 t/GJ of output, carbon $95 or $115/t), not a market forecast.",
     "The BC zonal caps are FRESH-side provisional, not a C2070 official boundary.",
     "The model has no SUPBCWB1/B2 technology; the BC base run is the national SUPBCW rollup.",
     "The diagnostic hydro-frozen runs are sensitivity probes, not scenarios."
   ],
-  "generated_utc": "2026-11-18T15:33:33+00:00",
+  "generated_utc": "2026-11-19T07:09:10+00:00",
   "inputs": [
     {
-      "bytes": 14327,
+      "bytes": 14937,
       "path": "data/derived/national/clews/bc_residue_cases_summary.json",
-      "sha256": "da5d9d621c124f6205b2c33622a68b1c284fd1700c089a93d4107e92db73e6ae"
+      "sha256": "07083a562593a565cdb6fe41efe2f977eaeeecb6f038d92cdfd0b482296845e3"
     },
     {
-      "bytes": 7568,
+      "bytes": 7925,
       "path": "data/derived/national/clews/manifest.json",
-      "sha256": "40420d1999d53507459c1041a408afd47ce2c1f21d2f2d0e485e7efe9053d5b5"
+      "sha256": "31577294b2127cc2a7de10fd659b0509fe01df5d4517cbb3e192dbe174f4eed2"
     },
     {
       "bytes": 1529,
@@ -64,7 +64,7 @@
     {
       "bytes": 1579,
       "path": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv",
-      "sha256": "21d558c38c131622aff32073571a049d19c2eaadfeb0c6adc08a9cb98bee788a"
+      "sha256": "76677fd72cfb5de1abc2085fb8ce3d4c9789da088d93488b2d5b4240481266e3"
     },
     {
       "bytes": 1529,
@@ -74,7 +74,7 @@
     {
       "bytes": 1479,
       "path": "data/derived/national/clews/comparison/SUPBCW_activity_limits_base.csv",
-      "sha256": "1b77330dcfe20d522cb350fa8dae4c3489c00be42d418cdb396ec66bf821d6bf"
+      "sha256": "a6a19becdee3fbff5246257ccc9fd8d483ee5c2c9097ef9adfa54cbdb93bf50f"
     },
     {
       "bytes": 1429,
@@ -122,27 +122,27 @@
     {
       "bytes": 4469,
       "path": "data/derived/national/clews/osecan/availability.json",
-      "sha256": "942b5ba097638de7a10db5045384f9489a353225d80252b6bd4a1dee0cef60ed"
+      "sha256": "00ad95e87f7f6976ad6526db672e7ac91768cd37bf5540308f2fe5e246c37132"
     },
     {
-      "bytes": 2053,
+      "bytes": 2032,
       "path": "data/derived/national/clews/osecan/lcoe_by_plant.csv",
-      "sha256": "878004cad0f043a8536c8c73dd24e31f9b4d1042597faf72caf154f484f9096a"
+      "sha256": "fc1d6daf6c64521ac20a34761765b96619d3f35bf96014bcdc0a7c393b920102"
     },
     {
-      "bytes": 1197,
+      "bytes": 1192,
       "path": "data/derived/national/clews/osecan/bcw_vs_bio.csv",
-      "sha256": "42786b3f019d609b11d0d9b1a152c07bafabd18fea8ffdb88855e4804c6c80fc"
+      "sha256": "482a7caabd0732c49405bd7b1ba9eb95c71f522342516d2fe24b234dbc58e6e9"
     },
     {
-      "bytes": 9394,
+      "bytes": 9388,
       "path": "data/derived/national/clews/osecan/cap_binding_analysis.json",
-      "sha256": "d1e82c65d91e8b5136910e09a9f4c7a5d4cd2bc14f0a5cf73b60090d11c41236"
+      "sha256": "a98e1914a400bba63b7e375d2cb3d9a2b8e8f1927e6cf8a19bd10a8124979cae"
     },
     {
-      "bytes": 17107,
+      "bytes": 17323,
       "path": "data/derived/national/clews/osecan/OSECAN_RUN_REPORT.md",
-      "sha256": "d3c1dd337b8c69564a1a28f10fad7ae3a06b0135a65f0c49ae76a39e7b39a991"
+      "sha256": "4cfc5bc1c599db930fdf37b95b3c95abb3f7a4b556f64b0b5c79cdea8b5f4f6f"
     },
     {
       "bytes": 4061,
@@ -150,9 +150,9 @@
       "sha256": "76632b0dd545bd4f11893997e11b27c472975b05304449ea14e3e7f417dea769"
     },
     {
-      "bytes": 5112,
+      "bytes": 5122,
       "path": "data/derived/national/clews/osecan/sensitivity/sensitivity_runs.json",
-      "sha256": "a0336826cf053b0efc9010288f8beb2fff552bb53e607c9f4198eb355a3d975d"
+      "sha256": "5283b911bc68c6a728ca81a0600e36067b6017b3795150c327ef03e1ae4333f3"
     },
     {
       "bytes": 687,

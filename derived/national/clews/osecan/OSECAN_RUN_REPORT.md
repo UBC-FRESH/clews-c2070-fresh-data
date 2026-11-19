@@ -120,7 +120,7 @@ reported split, not the aggregate BCW use or the cap-binding conclusion.
 
 ### Plant parameters
 
-| Plant | Fuel | IAR | Efficiency | Capex ($/kW) | Fixed ($/kW-yr) | Var ($/GJ) | Life (yr) | CF | CO2 (t/GJ) |
+| Plant | Fuel | IAR | Efficiency | Capex ($/kW) | Fixed ($/kW-yr) | Var ($/GJ) | Life (yr) | CF | CO2 fuel input (t/GJ) |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 | PWRBCW | BCW | 3.72 | 26.9% | 3,200 | 95 | 0 | 30 | 0.70 | 0 |
 | PWRBIO | BIO | 2.85 | 35.1% | 3,000 | 90 | 2.5 | 30 | 0.70 | 0 |
@@ -141,23 +141,23 @@ the table rounds it to the documented 26.9%.
 | PWRBCW | placeholder | 4.000 | 0 | 49.44 | 53.57 | 0.00 | 0.00 | **103.01** |
 | PWRBIO | generic | 3.000 | 0 | 46.50 | 30.78 | 0.00 | 9.00 | **86.28** |
 | PWRBSW | placeholder | 4.000 | 0 | 49.44 | 53.57 | 0.00 | 0.00 | **103.01** |
-| PWRNGS | carbon_2026 | 3.000 | 95 | 12.97 | 29.16 | 17.44 | 10.80 | **70.37** |
-| PWRNGS | carbon_2030 | 3.000 | 115 | 12.97 | 29.16 | 21.11 | 10.80 | **74.04** |
+| PWRNGS | carbon_2026 | 3.000 | 95 | 12.97 | 29.16 | 47.09 | 10.80 | **100.02** |
+| PWRNGS | carbon_2030 | 3.000 | 115 | 12.97 | 29.16 | 57.01 | 10.80 | **109.94** |
 | PWRHYD | generic | 0.000 | 0 | 57.05 | 0.00 | 0.00 | 0.00 | **57.05** |
 
 The PWRBCW low/base/high LCOEs are **92.21**, **82.34**, and **75.76 $/MWh**.
 Generic BIO is 86.28 $/MWh.
-The model's gas plant is 70.37 $/MWh
-at $95/t and 74.04 $/MWh at $115/t.
+The model's gas plant is 100.02 $/MWh
+at $95/t and 109.94 $/MWh at $115/t.
 Hydro is 57.05 $/MWh.
 
 ### BCW versus generic BIO and gas
 
 | Case | BCW $/GJ | BCW fuel $/MWh | BCW LCOE | BIO LCOE | Delta vs BIO | Breakeven vs BIO | Delta vs gas $95 | Delta vs gas $115 | Carbon parity vs gas |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| low | 3.194 | 42.77 | 92.21 | 86.28 | 5.93 | 2.751 | 21.85 | 18.17 | 214.0 |
-| base | 2.457 | 32.90 | 82.34 | 86.28 | -3.94 | 2.751 | 11.97 | 8.30 | 160.2 |
-| high | 1.966 | 26.32 | 75.76 | 86.28 | -10.52 | 2.751 | 5.39 | 1.72 | 124.4 |
+| low | 3.194 | 42.77 | 92.21 | 86.28 | 5.93 | 2.751 | -7.81 | -17.72 | 79.3 |
+| base | 2.457 | 32.90 | 82.34 | 86.28 | -3.94 | 2.751 | -17.68 | -27.59 | 59.3 |
+| high | 1.966 | 26.32 | 75.76 | 86.28 | -10.52 | 2.751 | -24.26 | -34.17 | 46.1 |
 
 The per-MWh feedstock costs are:
 
@@ -166,22 +166,23 @@ The per-MWh feedstock costs are:
 - Break-even BCW price against generic BIO: **2.751 $/GJ**.
 
 The base and high cases beat generic BIO (base by 3.94 $/MWh, high by 10.52 $/MWh).
-The low case loses to BIO. All three cases lose to the model's gas
-plant at the documented $95-115/t carbon schedule.
+The low case loses to BIO. Every case beats the model's gas plant at
+both carbon prices on the corrected output-basis gas factor:
+low 7.81, base 17.68, high 24.26 $/MWh below gas at $95/t.
 
 ### Cap metrics
 
 | Case | 2021 cap (PJ) | 2028 cap (PJ) | Max electricity 2021 (PJ) | Max electricity 2028 (PJ) | Max electricity 2028 (TWh) |
 |---|---:|---:|---:|---:|---:|
 | low | 24.696 | 21.406 | 6.639 | 5.754 | 1.598 |
-| base | 41.299 | 35.810 | 11.102 | 9.626 | 2.674 |
+| base | 50.326 | 43.524 | 13.528 | 11.700 | 3.250 |
 | high | 52.920 | 45.870 | 14.226 | 12.331 | 3.425 |
 
 The 50 PJ placeholder is 13.441 PJ
 of electricity (3.734 TWh).
-The base 2028 cap is 9.626 PJ
-(2.674 TWh), or
-0.43% of the model's
+The base 2028 cap is 11.700 PJ
+(3.250 TWh), or
+0.52% of the model's
 2025 hydro generation. The cap is small relative to the power
 system; the binding constraint is economics, not the cap.
 
@@ -200,12 +201,12 @@ The cap is an upper bound that is never approached. The reasons are:
    82.34 /
    75.76 $/MWh). Hydro expands to meet demand.
 2. When hydro is frozen at 2021 activity as a diagnostic, the model's
-   gas plant is 70.37-74.04 $/MWh;
+   gas plant is 100.02-109.94 $/MWh;
    even the high BCW case is above the $115/t gas LCOE.
-3. The break-even BCW prices are **1.563 $/GJ** at $95/t and **1.837 $/GJ** at $115/t.
+3. The break-even BCW prices are **3.777 $/GJ** at $95/t and **4.517 $/GJ** at $115/t.
    The base case is $2.457/GJ; the high case is $1.966/GJ. Both are above
    the $115/t break-even.
-4. Carbon-price parity with gas is reached at **124.4 $/t** for the high case, **160.2 $/t** for the base case, and **214.0 $/t** for the low case.
+4. Carbon-price parity with gas is reached at **46.1 $/t** for the high case, **59.3 $/t** for the base case, and **79.3 $/t** for the low case.
    The model's schedule is $95/t in 2026 and $115/t in 2030, so none
    of the cases reach parity.
 
@@ -218,7 +219,7 @@ economic, the model could meet any biomass electricity target with
 feedstock from BCW to generic BIO; it would not cap biomass generation.
 In the current runs the bypass is latent because PWRBIO is also above
 the gas LCOE (86.28 vs
-74.04 $/MWh at $115/t).
+109.94 $/MWh at $115/t).
 
 ## 4. Policy sensitivity
 
@@ -271,16 +272,17 @@ just behind wind rather than far behind it.
 
 ### Conditions for BCW dispatch
 
-- The CO2 price must exceed the BCW-vs-gas parity price: about 160 $/t for the base case, 124 $/t for the high case, and 214 $/t for the low case.
+- The CO2 price must exceed the output-basis BCW-vs-gas parity price: about 59 $/t for the base case, 46 $/t for the high case, and 79 $/t for the low case.
 - A cheaper clean firm resource must be constrained. With unconstrained hydro, even $200/t leaves BCW at zero because hydro expands to 3,252 PJ in 2050.
 - With $200/t and hydro frozen at 2021 activity, SUPBCW reaches the 42.959 PJ cap and PWRBCW produces 11.548 PJ/yr of electricity.
 
 The cap that binds is the national `SUPBCW` cap. The model has no
 zonal BC supply technology, so a zonal cap cannot be tested here.
 
-The documented 95-115 $/t schedule is below the base-case parity
-price of about 160 $/t even with hydro frozen, which is why the
-earlier hydro-frozen diagnostic also had zero BCW.
+The documented 95-115 $/t schedule is above the output-basis
+base-case parity price of about 59 $/t, so BCW is competitive with
+gas on carbon cost alone; the binding competitor is hydro, which is
+why the earlier hydro-frozen diagnostic still had zero BCW.
 
 ### Sensitivity limitations
 
@@ -312,8 +314,9 @@ to the assembled input before `otoole convert`.
 - PWRBCW and PWRBIO use the documented v0.3 input activity ratios and
   placeholder costs. They are not Canadian fleet averages.
 - The gas comparator is the model's placeholder plant (capex 1,100 $/kW,
-  fuel $3/GJ, CO2 0.051 t/GJ, carbon $95-115/t). A market gas price or
-  a different capex would move the break-even.
+  fuel $3/GJ, CO2 0.051 t/GJ of fuel input (0.1377 t/GJ output),
+  carbon $95-115/t). A market gas price or a different capex would
+  move the break-even.
 - The BC zonal caps are FRESH-side provisional and not a C2070 boundary.
 - The hydro-frozen diagnostic is a sensitivity probe, not a scenario.
 - The model has no `SUPBCWB1/B2`; the BC base run is the national
@@ -351,4 +354,4 @@ to the assembled input before `otoole convert`.
 5. Re-run the model after those changes; this report's run evidence is
    for the public v0.3 placeholder model only.
 
-Generated: 2026-11-18T15:33:33+00:00
+Generated: 2026-11-19T07:09:10+00:00
