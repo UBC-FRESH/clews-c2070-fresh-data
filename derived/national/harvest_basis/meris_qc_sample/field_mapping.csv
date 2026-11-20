@@ -1,0 +1,50 @@
+source_table,source_field,ledger_field_or_component,unit,value_basis,perspective,confidence,status,notes
+tbl_redevances_F1234,Zone_Redev,spatial_unit,zone id,administered_rate:standing,crown,medium,mapped,191 tarification zones; not a QC UA crosswalk
+tbl_redevances_F1234,CategorieEssence,species,code,administered_rate:standing,crown,medium,mapped,"14 species groups; map Auf->AUF, Boj->BOJ, etc."
+tbl_redevances_F1234,Redev_Der,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,mapped,DER -> product=peeler; quality class DER
+tbl_redevances_F1234,Redev_f1,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,mapped,F1 -> product=sawlog; quality F1
+tbl_redevances_F1234,Redev_f2,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,not_in_sample,"F2 -> sawlog; ledger has no quality dimension, would collide with F1 in the 9-field key"
+tbl_redevances_F1234,Redev_f3,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,partially_mapped,F3 used for SAB sample; same quality-collision caveat
+tbl_redevances_F1234,Redev_f4,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,not_in_sample,F4 -> sawlog; quality collision
+tbl_redevances_F1234,Redev_Pate,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,mapped,PATE -> product=pulpwood
+tbl_redevances_F1234,Redev_Autre,stumpage_base,CAD_per_m3_log,administered_rate:standing,crown + forest_sector mirror,medium,not_mapped,"AUTRE product has no ledger product enum; 191 non-zero rows, all Mel-Pru-Tho in zone sample"
+tbl_redevances_F1234,RdvVariable,flag,boolean,administered_rate:standing,crown,medium,not_mapped,"0 for all 2,674 rows; no variable-rate component in this release"
+tbl_redevances_F1234,DateMaj,year,yyyy-mm-dd,administered_rate:standing,crown,medium,mapped,2025-09-19 for all rows; ledger year=2025
+tbl_Zones_RedevBenefRentSal_F1234,Rdv_*,stumpage_base,CAD_per_m3_log,model_derived:standing,crown + forest_sector mirror,low,mapped_demo,"trend redevance in $2023; economic mode, not the 2025 administered rate"
+tbl_Zones_RedevBenefRentSal_F1234,Bnf_*,none,CAD_per_m3_log,model_derived:standing,n/a,low,not_mapped,"profit of harvesting/processing firms; factor income, not a ledger component"
+tbl_Zones_RedevBenefRentSal_F1234,Rsl_*,none,CAD_per_m3_log,model_derived:standing,n/a,low,not_mapped,"labour rent; factor income, not a ledger component"
+tbl_Zones_RedevBenefRentSal_F1234,Aut1_*,none,CAD_per_m3_log,model_derived:standing,n/a,low,not_mapped,"CPRS adjustment of 25 $/m3 net in MERIS 3.3.0; policy adjustment, not Crown revenue"
+tbl_Zones_RedevBenefRentSal_F1234,Tot_*,none,CAD_per_m3_log,model_derived:standing,n/a,low,not_mapped,total economic value = Rdv+Bnf+Rsl+Aut1+Aut2; not a market price and not delivered log revenue
+tbl_couts_zones,chemin_entretien_dol_m3,road,CAD_per_m3_log,published_average:roadside,forest_sector,medium,mapped,included in road=0.90 for zone 151
+tbl_couts_zones,chemin_constr_prim_sec_dol_m3,road,CAD_per_m3_log,published_average:roadside,forest_sector,medium,mapped,included in road=0.90 for zone 151
+tbl_couts_zones,chemin_constr_tertiaire_dol_ha,road,CAD_per_ha,published_average:roadside,forest_sector,medium,not_mapped,ledger allows CAD_per_ha only for silviculture; needs m3/ha yield conversion
+tbl_couts_zones,transport_usine_sci_boj_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,mapped,mill transport for BOJ sawlog; zone 151 = 15.20
+tbl_couts_zones,transport_usine_pate_fd_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,not_in_sample,mill transport for hardwood pulp; map by species/product
+tbl_couts_zones,transport_usine_sci_bop_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,not_in_sample,mill transport for BOP sawlog
+tbl_couts_zones,transport_usine_sci_auf_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,not_in_sample,mill transport for AUF sawlog
+tbl_couts_zones,transport_usine_sci_pib_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,not_in_sample,mill transport for PIB sawlog
+tbl_couts_zones,transport_usine_sepm_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,not_in_sample,mill transport for SEPM
+tbl_couts_zones,transport_marche_*,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,not_in_sample,market alternative; do not add to mill transport for the same volume
+tbl_couts_zones,transport_fardier_dol_m3,haul,CAD_per_m3_log,published_average:roadside,forest_sector,medium,mapped,included in haul=17.10 for zone 151
+tbl_couts_zones,chargement_dol_m3,harvest,CAD_per_m3_log,published_average:roadside,forest_sector,low,partially_mapped,loading is inside the ledger harvest boundary; full falling/bucking/skidding cost is equation-based and missing
+tbl_couts_zones,dechargement_dol_m3,haul,CAD_per_m3_log,published_average:mill_gate,forest_sector,medium,mapped,included in haul=17.10 for zone 151
+tbl_couts_zones,mesurage_dol_m3,overhead,CAD_per_m3_log,published_average:roadside,forest_sector,medium,mapped,included in overhead=6.10 for zone 151
+tbl_couts_zones,admin_dol_m3,overhead,CAD_per_m3_log,published_average:roadside,forest_sector,medium,mapped,"operator administration, not a Crown admin_fee; included in overhead=6.10"
+tbl_couts_zones,hebergement_dol_m3,overhead,CAD_per_m3_log,published_average:roadside,forest_sector,medium,not_in_sample,zero in zone 151; 163 zones nonzero
+tbl_couts_zones,sopfim_sopfeu_dol_m3,overhead,CAD_per_m3_log,published_average:roadside,forest_sector,medium,not_in_sample,zero in all 191 zones in this release
+tbl_couts_zones,autre1_fixe_dol_ha,overhead,CAD_per_ha,published_average:roadside,forest_sector,medium,not_mapped,ledger CAD_per_ha only for silviculture; zero in all zones
+tbl_couts_zones,autre1_var_dol_m3,overhead,CAD_per_m3_log,published_average:roadside,forest_sector,medium,not_mapped,zero in all zones
+tbl_Liste_Traitements,Traitement,licence/treatment id,code,appraisal_allowance:roadside,forest_sector,medium,mapped,treatment code identifies the silviculture activity
+tbl_Liste_Traitements,Valeur_Tot (DolHa),silviculture,CAD_per_ha,appraisal_allowance:roadside,forest_sector,medium,mapped,40 DolHa treatments; sample uses BPR=1026 $/ha
+tbl_Liste_Traitements,Valeur_Tot (Dol1000Plants),silviculture,CAD_per_1000_plants,appraisal_allowance:roadside,forest_sector,medium,not_mapped,needs plants/ha density to convert to CAD_per_ha or yield to CAD_per_m3
+tbl_Liste_Traitements,Valeur_Tot (Dol1000Micro),silviculture,CAD_per_1000_microsites,appraisal_allowance:roadside,forest_sector,medium,not_mapped,needs microsites/ha density
+tbl_Equations_Recolte,1_C1..2_C11,harvest,CAD_per_m3_log,model_derived:roadside,forest_sector,low,not_mapped,"logarithmic harvest-skidding equation; requires m3/tige, cutting mode, stand type"
+tbl_Profil_Rentabilite_EqGraph,Cout_CT/Cout_CPplus/Cout_CPmoins,harvest,CAD_per_m3_log,model_derived:roadside,forest_sector,low,not_mapped,computed lookup by m3/tige; can be sampled once a volume/tige is supplied
+tbl_770rq_Resultats_Rentabilite,Valeurs_Produits,delivered_log_revenue,CAD_per_m3_log,model_derived:mill_gate,forest_sector,low,demo_only,shipped demo simulation; total $/ha divided by M3ha_Tot_Net; not an observed sale
+tbl_770rq_Resultats_Rentabilite,Redevances,stumpage_total,CAD_per_m3_log,model_derived:standing,crown + forest_sector mirror,low,demo_only,demo simulation; total redevances divided by M3ha_Tot_Net
+tbl_775rq_Resultats_Rentabilite_Frais,Recolte_Debardage + Abattage + Chargement,harvest,CAD_per_m3_log,model_derived:roadside,forest_sector,low,demo_only,grouped for the demo; original fields are separate
+tbl_775rq_Resultats_Rentabilite_Frais,Chemin_* + Entretien_Chemin,road,CAD_per_m3_log,model_derived:roadside,forest_sector,low,demo_only,includes tertiary road fixed cost; only possible in the demo because M3ha is known
+tbl_775rq_Resultats_Rentabilite_Frais,Transport_Usine + Transport_Marche + Transport_Fardier + Dechargement,haul,CAD_per_m3_log,model_derived:mill_gate,forest_sector,low,demo_only,mill and market transport summed because the demo reports both for the same stand; allocation not documented
+tbl_775rq_Resultats_Rentabilite_Frais,Administration + Mesurage,overhead,CAD_per_m3_log,model_derived:roadside,forest_sector,low,demo_only,grouped for the demo
+tbl_essences_revenus_EssDhp,SCIAGE,delivered_log_revenue,CAD_per_m3_log,observed_price:mill_gate,forest_sector,low,not_mapped,"all 1,824 rows are 0.0100; placeholder, not a price"
+tbl_essences_revenus_EssDhp,PATE,delivered_log_revenue,CAD_per_m3_log,observed_price:mill_gate,forest_sector,low,not_mapped,"all 1,824 rows are 0.0100; placeholder, not a price"
