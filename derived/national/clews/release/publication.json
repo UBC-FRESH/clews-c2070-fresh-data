@@ -1,0 +1,178 @@
+{
+  "schema_version": "clews.release_publication.v1",
+  "release": {
+    "label": "clews-c2070-fresh-v1",
+    "date": "2026-11-20",
+    "status": "restore_drill_passed; tag_and_signoff_pending",
+    "parent_commit": "18a11163853aa2156d501ee0c6a4709b0bd6a364",
+    "data_commit": "00cba3c50966a6b1ccd3519bfafece0c03cc46ef",
+    "model_source_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "archive_sha256": "6a9c7574d967e7dd6ba9fa4dcd428309e1fdbe957718157aa6b89cdec344da15",
+    "acceptance_record": "docs/release-acceptance.md"
+  },
+  "model": {
+    "tree_sha256": "61dace92f89d6b66db7627fc7512d19a4ef69bc5f7dfea986bc417118fdf1fb0",
+    "tree_hash_matches_existing_runtime": true,
+    "rebuild_manifest_sha256": "d35111f24cbe14e1d6961a5d3d215b48610b6d09db7a2a21822b4dd9b022a166",
+    "existing_runtime_manifest_sha256": "a8dc6dce93fad3cfbbc869159a06c0ae52eaabf9bd93104c9a262f537f5eec6e",
+    "source_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "patch_sha256": {
+      "01_emission_factors.patch": "f89dc52214ae40c4d8567192e15e1228852cc85d684d543a71466b120240ed91",
+      "02_zonal_bc.patch": "2fa35791d2cd82fbf67ca81a4f5c6f03c37c3df33a3a80debeff1d51bf19f26b",
+      "03_tiered_supply.patch": "54b466ae9c803808a6541a8cdc17946c9674541945f1aacc7b6b4a6fdb4a8cdb",
+      "04_capacity_bounds.patch": "5b3bdd09d283df32ebd73339fa5acf33240e200ed6de855559d3ca2e6e8e6432"
+    },
+    "demand": {
+      "basis": "CER EF2026 Current Measures",
+      "sha256": "ec178ec02c3f5560b98056232d1fc9e705f243a31744d557e8a2442a290d70f0",
+      "demand_2050_pj": 10300.8871
+    },
+    "capacity": {
+      "basis": "CER EF2026 Current Measures",
+      "sha256": "8db7b8140765621b764af640248551741dbbb62200b6bce770b897863faf5fcc",
+      "observed_2021_gw": 145.02,
+      "residual_years": [2021, 2070],
+      "pwr_rows_2021_nonzero": 70,
+      "pwrbio_2021_gw": 2.56888,
+      "pwr_bsw_bcw_2021_gw": 0.0,
+      "coal_phase_out_2030": true
+    }
+  },
+  "canonical_119m": {
+    "scenario_id": "screening_119m",
+    "constraint_set": "screening_v0",
+    "status": "screening_only",
+    "screening_only": true,
+    "policy_grade": false,
+    "solver_status": "optimal",
+    "objective_musd": 1445655.44,
+    "emissions_total_mt": 424.710127,
+    "emissions_2050_mt": 0.0,
+    "national_bcw_2050_pj": 152.922679,
+    "pwrbcw_2050_pj": 41.108217,
+    "model_copy_tree_sha256": "4f2c1826dcab91f51c917a9787b3f76bdc395f13b895e9d5b98c6cae4f41e992",
+    "restored_run_result": "pass",
+    "restored_solve_seconds": 185.28,
+    "artifact_paths": {
+      "run_summaries": "data/derived/national/clews/osecan/fleet_capacity_119m/run_summaries.json",
+      "dispatch": "data/derived/national/clews/osecan/fleet_capacity_119m/dispatch_by_zone.csv",
+      "manifest": "data/derived/national/clews/osecan/fleet_capacity_119m/manifest.json"
+    }
+  },
+  "policy_test_v1": {
+    "scenario_id": "policy_119m",
+    "constraint_set": "policy_test_v1",
+    "status": "draft",
+    "policy_grade": false,
+    "solver_status": "optimal",
+    "objective_musd": 1458305.16,
+    "emissions_total_mt": 1024.824,
+    "emissions_2050_mt": 0.490203,
+    "recorded_utc": "2026-11-20T06:19:16+00:00",
+    "source": "v1 acceptance run; draft interface test, not a release artifact",
+    "note": "Different constraint family from the canonical row. The difference is not a policy effect and this row must not be reported as policy-grade."
+  },
+  "ui": {
+    "scenario_count": 53,
+    "family_count": 18,
+    "pareto_eligible_count": 1,
+    "output_count": 53,
+    "canonical_scenario_id": "fleet_capacity__screening_119m_fleet",
+    "manifest_files_verified": 63,
+    "manifest_files_missing": 0,
+    "manifest_hash_mismatches": 0,
+    "static_assets_http_failures": 0,
+    "scenarios_sha256": "25ac243781d419770a7bce3025eb944656a9f0122f6b33b720f70865d1444547",
+    "manifest_sha256": "2a924d6cc7dbbf9be36e31aae4d9924b397a93ec20e2d0f5127b54e27dc5e102",
+    "index_sha256": "f24f4171bed82c9b8c7478838fe0e791fb771dbeb87d0a2142688fa862c06982",
+    "app_sha256": "668c963b8ed92ff3d55f99a4ef0162b365b6d4cc3f7852d0e853c6cc719cc635",
+    "api_sha256": "9f8483ad22ae8d5694331c3345795ab5765cd5ddf88945f868397ae45c52592e",
+    "styles_sha256": "0434ddf53c5e660f3e48c5afc67b17d518f5ef63c043d9fc12fb8242481dde4f"
+  },
+  "tests": {
+    "ui_passed": 142,
+    "ui_seconds": 27.65,
+    "ledger_lp_passed": 50,
+    "ledger_lp_seconds": 8.31,
+    "failures": 0
+  },
+  "server_smoke": {
+    "public_health": 200,
+    "public_version": 200,
+    "public_roles": 200,
+    "public_post_scenarios": 403,
+    "public_post_runs": 403,
+    "analyst_health": 200,
+    "analyst_version": 200,
+    "analyst_roles": 200,
+    "static_index": 200,
+    "static_scenarios": 200,
+    "static_404_count": 0
+  },
+  "artifacts": [
+    {
+      "role": "canonical_run_summaries",
+      "path": "data/derived/national/clews/osecan/fleet_capacity_119m/run_summaries.json",
+      "sha256": "c6fd0c13a0604b87063c08f220186d2a27e3ee84e16d58304884202904881035"
+    },
+    {
+      "role": "canonical_dispatch",
+      "path": "data/derived/national/clews/osecan/fleet_capacity_119m/dispatch_by_zone.csv",
+      "sha256": "eeba3efda2a81f112418a656a5ed12af478f57f0c2bd73e0080c26cfb8d4da96"
+    },
+    {
+      "role": "canonical_manifest",
+      "path": "data/derived/national/clews/osecan/fleet_capacity_119m/manifest.json",
+      "sha256": "fc7b2be913a1017b110f60491e4d4c074b770fecb89038608dbc69eb7b578240"
+    },
+    {
+      "role": "ui_scenarios",
+      "path": "ui/public/data/scenarios.json",
+      "sha256": "25ac243781d419770a7bce3025eb944656a9f0122f6b33b720f70865d1444547"
+    },
+    {
+      "role": "ui_manifest",
+      "path": "ui/public/data/manifest.json",
+      "sha256": "2a924d6cc7dbbf9be36e31aae4d9924b397a93ec20e2d0f5127b54e27dc5e102"
+    },
+    {
+      "role": "ui_index",
+      "path": "ui/index.html",
+      "sha256": "f24f4171bed82c9b8c7478838fe0e791fb771dbeb87d0a2142688fa862c06982"
+    },
+    {
+      "role": "ui_app",
+      "path": "ui/app.js",
+      "sha256": "668c963b8ed92ff3d55f99a4ef0162b365b6d4cc3f7852d0e853c6cc719cc635"
+    },
+    {
+      "role": "ui_api",
+      "path": "ui/api.js",
+      "sha256": "9f8483ad22ae8d5694331c3345795ab5765cd5ddf88945f868397ae45c52592e"
+    },
+    {
+      "role": "ui_styles",
+      "path": "ui/styles.css",
+      "sha256": "0434ddf53c5e660f3e48c5afc67b17d518f5ef63c043d9fc12fb8242481dde4f"
+    }
+  ],
+  "drill": {
+    "date": "2026-11-20",
+    "result": "pass",
+    "source_archive": "git archive HEAD (no .git)",
+    "data_materialization": "local data/derived symlink proxy; remote datalad get not exercised",
+    "environment": "shared project virtualenv; code imported from archive",
+    "model_setup_seconds": 4.34,
+    "dry_run_seconds": 1.54,
+    "real_solve_seconds": 185.28,
+    "failures": 0
+  },
+  "caveats": [
+    "data/derived was a local materialization proxy, not a remote datalad get from arbutus-s3.",
+    "The drill reused the project virtualenv instead of installing a fresh environment from the archive.",
+    "The OSeCAN base was a local clone at the pinned public commit; pinned CER source hashes were verified.",
+    "UI acceptance was HTTP-level; a Chromium interaction pass was not repeated.",
+    "No job was enqueued through POST /api/runs; the 119 Mm3 solve used the CLI runner.",
+    "Deployment-host, edge/Access, curated public-runtime publication, and tag/sign-off gates remain open."
+  ]
+}
