@@ -1,0 +1,73 @@
+{
+  "product": "provincial harvest-allocation LP",
+  "status": "screening allocation; not a legal AAC and not a forecast",
+  "generated_at_utc": "2026-11-20T06:49:58+00:00",
+  "solver": {
+    "name": "PuLP",
+    "version": "2.9.0",
+    "backend": "CBC (bundled)",
+    "threads": 1
+  },
+  "objective": {
+    "primary": "minimize sum_p |h_p - observed_2024_share_p * national_total|",
+    "secondary": "lexicographic: after fixing the L1 optimum within 1 m3, minimize the maximum proportional increase above the 2024-share target; cap-forced decreases are fixed",
+    "solver": "PuLP 2.9.0 / CBC (bundled), threads=1"
+  },
+  "national_observed_2024_m3": 118977339.0,
+  "documented_aac_partial_sum_m3": 157343387.0,
+  "nfd_wood_supply_sum_m3": 207680142.0,
+  "upper_bound_sum_m3": 169523386.8,
+  "case_statuses": {
+    "100m": "optimal",
+    "119m": "optimal",
+    "150m": "optimal",
+    "200m": "infeasible"
+  },
+  "inputs": {
+    "data/derived/national/harvest_basis/harvest_basis_template.csv": {
+      "sha256": "223b4e54a118317b7aed70dfbfcf652391204e8cc41b45c61aa99eb49152d4b6",
+      "bytes": 292894
+    },
+    "data/derived/national/harvest_basis/provinces.csv": {
+      "sha256": "9a2b1ba07e31e61c42052e63111381163272f23fb27f54c7e098bd5f3b43ed02",
+      "bytes": 3086
+    },
+    "data/derived/national/managed_landbase/managed_landbase_province_summary.csv": {
+      "sha256": "88b67624d8343703a83c05d177a2b52fabc2928f11670dcc6b03263b077c7868",
+      "bytes": 1516
+    },
+    "planning/harvest-aac-feasibility.md": {
+      "sha256": "b54895c39db2ec478f7efe491081a3fdc2a51998633e8767ff1f2830929c3209",
+      "bytes": 33135
+    }
+  },
+  "outputs": {
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": {
+      "sha256": "ba2faff85ff19565fa5521cf84cb39cc512f92ef94c69958893324d20652d64d",
+      "bytes": 2353
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": {
+      "sha256": "de3f5bf12bc33317dba93c2cb075a6026c948b0a472fd0debc4a1da1a944872d",
+      "bytes": 2353
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/150m.csv": {
+      "sha256": "a83593da07d6277af426d7410a145f7a20ed82f22d51cd24dec6a14f510d5cf8",
+      "bytes": 2349
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/provincial_allocation_summary.json": {
+      "sha256": "c11270793d497c0624abcec07c25aadf1a5409a02cc6cf639f0eaef8de5039d6",
+      "bytes": 71998
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/PROVINCIAL_ALLOCATION_REPORT.md": {
+      "sha256": "0064bb2af2a752cbf4f000ea8efd0d55695b7023523a2c41a24e33b521b20f24",
+      "bytes": 12911
+    }
+  },
+  "caveats": [
+    "Upper bounds are a mixed set of statutory AAC, approximate AAC, a repo TSA path, a documented range midpoint, planning volumes, and actual-mean proxies. Their sum is not a national AAC.",
+    "NB, NS, and QC AACs are Crown-only; FSD harvest is total provincial harvest. NB private supply is undocumented, so the NB cap is conservative.",
+    "The managed-landbase proxy is a 2016 tenure union, not a THLB; intensity caps are sensitivities only.",
+    "The allocation minimizes deviation from 2024 shares. It is not a forecast, a sustainable-supply estimate, or an economic equilibrium.",
+    "No harvest, transport, stumpage, silviculture, or forest-sector opportunity cost enters the objective."
+  ]
+}
