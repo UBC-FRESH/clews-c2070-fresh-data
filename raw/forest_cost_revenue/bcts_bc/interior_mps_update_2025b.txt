@@ -1,0 +1,424 @@
+        Interior
+MARKET PRICING SYSTEM
+       Update – 2025
+
+
+
+
+                       July 1, 2025
+
+
+
+
+                       Timber Pricing Branch
+                             Interior Market Pricing System: Update – 2025
+
+
+
+Table of Contents
+
+
+1.      Introduction ............................................................................................................................ 1
+
+2.      Auction Dataset ...................................................................................................................... 1
+
+3.      Equations................................................................................................................................ 2
+
+4.      Specified Operations .............................................................................................................. 4
+
+5.      Tenure Obligation Adjustments ............................................................................................. 5
+
+6.      Summary ................................................................................................................................ 5
+
+Appendix 1 ...................................................................................................................................... 5
+
+        Description of Specified Operations ...................................................................................... 6
+
+Appendix 2 ...................................................................................................................................... 7
+
+        Variables and Definitions for Equations ................................................................................ 7
+
+Appendix 3 .................................................................................................................................. 100
+
+        Regressions .......................................................................................................................... 10
+
+
+
+
+           Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                                                            i
+                         Interior Market Pricing System: Update – 2025
+
+
+1.       INTRODUCTION
+
+The purpose of this paper is to provide an overview of the July 1, 2025, update to the Interior
+Market Pricing System (MPS). 1
+
+2.       AUCTION DATASET
+
+The new auction dataset used in the update contains winning bids and data from 3,342 sales over
+the 15-year period from January 1, 2010, through December 31, 2024.
+
+
+
+
+1
+  This paper is not intended to provide the basis for calculating stumpage rates nor should it be used as guidance for
+interpreting the legal policies and procedures for calculating stumpage rates, which are contained in the Interior
+Appraisal Manual. The Interior Appraisal Manual contains the policies and procedures referred to in Section 105
+of the Forest Act.
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                                           1
+                         Interior Market Pricing System: Update – 2025
+
+
+3.        EQUATIONS
+
+                                        Estimated Winning Bid Equation
+                                  Variable                           2025 Final Equation
+                                                            Co-efficient             t – Statistic
+                         LN (Number of Bidders)                     13.2074                   20.1552
+                                 Constant                           67.4208                   15.1677
+                      Real Stand Selling Price (Scale                                         23.7970
+                              Based) – 2MA                            0.3088
+                      Real Stand Selling Price (Cruise                                        13.7411
+                              Based) – 2MA                            0.1697
+                              Cedar Fraction                        45.3386                     5.6324
+                       Cedar Fraction*Cedar Decay                -173.6970                     -4.9232
+                             Hemlock Fraction                      -34.4010                  -11.1177
+                         Balsam Fraction Squared                   -18.1089                    -4.4300
+                       Larch Fraction + Yellow Pine
+                                  Fraction                         -26.0423                  -4.8141
+                         Cable Yarding post 2013                   -20.4154                  -7.1583
+                       LN(Coniferous Volume/1000)                    4.2762                  10.3658
+                            Net Decay Fraction                     -15.4232                  -1.7689
+                          Fire Damaged Fraction                    -33.9972                 -14.5599
+                          LN (Volume per Tree)                       9.5257                  12.2319
+                                   Cycle                            -2.2255                 -10.5397
+                                  Zone 9                            -6.9384                  -5.8599
+                        Cruise Based * (1 – RG35)                    8.6760                   6.0418
+                                Slope (>15)                         -0.2410                  -4.6864
+                          Grey Fraction Squared                    -14.1801                  -7.2993
+                           Exchange Rate - 2MA                     -48.9355                 -14.4940
+                       AAC Delta (AAC – Harvest)                    -0.7641                 -13.0161
+                              Net Blowdown                         -27.4139                  -3.5378
+                       Net Deciduous (Cruise Based)                -18.2576                  -4.8142
+                                   Camp                             -2.8888                  -2.2700
+                        Distance to Support Centre                  -0.0467                  -7.0616
+                      Distance to Support Centre 200                -0.1257                  -4.1973
+                               Partial Cut 20                      -31.1385                  -3.8848
+                               Other Attack                        -32.1192                  -3.6116
+
+                               Count of Sales:                            3,342
+                                Adjusted R2                               0.7622
+
+
+         LN means the natural logarithm
+
+
+
+
+The 2025 dataset spans 15 years of timber sale data (2010–2024), following the adoption of a
+rolling average in the previous modelling year (2024). Further to dropping (2009) and adding a
+year of data (2024), TPB also made the following changes:
+
+     •    For the Partial Cut 20 variable, the calculation method has changed. Previously, values
+          from all blocks were averaged first, and then the 20% partial cut retention rule was
+          applied. Now, the 20% rule is applied first at the harvest method level, and the results are
+          then averaged using harvest method volumes as weights.
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                                2
+                         Interior Market Pricing System: Update – 2025
+
+
+    •    The harvest-method volume-weighted slope variable is now calculated in the same way
+         as partial cut 20. The slope adjustment (e.g., max(slope – 15, 0)) is applied first at the
+         harvest method level, and the results are then averaged using harvest method volumes.
+
+    •    The CAMP variable has been improved by reducing the search radius from 8 km to 3 km,
+         which enhanced its performance and statistical significance.
+
+    •    The CYCLE variable has been simplified. Previously, it was modified by adding half of
+         the hours exceeding 6 to the original cycle time to force a hinge (using a piecewise
+         function). Now, it is reported as the raw cycle time in hours, without the application of
+         hinges.
+
+    •    Finally, prices for zone 9 are now based on a volume-weighted average of prices from
+         both zones 5 and 9, while zone 5 prices remain unchanged.
+
+
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                             3
+                         Interior Market Pricing System: Update – 2025
+
+
+4.       SPECIFIED OPERATIONS
+
+The auction dataset used to develop the MPS equation is comprised of 3,342 auctions. There are
+some harvesting and transportation situations that are not accounted for in the data and equation,
+and therefore a specified operation cost estimate may be used for these situations in the
+calculation of stumpage rates.
+
+The specified operations are shown below and described in Appendix 2.
+
+                            Specified Operations              Update July 1, 2025
+                           1. Rail Haul                        Appraisal Manual
+                           2. Barge/Ferry                      Appraisal Manual
+                           3. Dump, Boom, Tow,
+                                                               Appraisal Manual
+                              Dewater and Reload
+                                                                   $3.17/m3
+                           4. Skyline Yarding
+                                                                   $8.67/m3
+                           5. Horse Logging
+                           6. Market Logger                         $0.10/m3
+                              Specified Operations          Combined in Final Tenure
+                              Cost                           Obligation Adjustment
+                           7. Helicopter                           $90.96/m3
+
+
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                       4
+                         Interior Market Pricing System: Update – 2025
+
+
+5.       TENURE OBLIGATION ADJUSTMENTS
+
+As outlined in the Interior Tenure Obligations Adjustment paper (June 5, 2006), the adjustments
+are based on licensee data submitted in the Interior Log Cost Report.
+
+The tenure obligation adjustments are shown below.
+
+                             Tenure Obligation               Update July 1, 2025
+                  Total Administration Cost                   2022/23 Cost Base
+                  Development Cost                            2022/23 Cost Base
+                  Total Road Management Cost                  2022/23 Cost Base
+                  Market Logger Development Cost                  $2.06/m3
+                  Total Silviculture Cost                     2022/23 Cost Base
+                  Return to Forest Management                      $1.033
+                                                                Mark Specific
+                  Low Grade Percent Adjustment
+                                                            1/(1-%low grade/100)
+
+
+6.       SUMMARY
+
+The new final equation, specified operations and tenure obligation adjustments will be used in
+the MPS for the Interior, starting July 1, 2025.
+
+
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                        5
+                         Interior Market Pricing System: Update – 2025
+
+
+                                                      APPENDIX 1
+
+                             DESCRIPTION OF SPECIFIED OPERATIONS
+
+If sufficient auction data is not available for an activity employed by either BCTS or other
+licences, the ministry may, for those identified situations, implement a specified operations cost
+estimate in the calculation of the stumpage rate.
+
+The specified operations will be used to adjust the MPS stumpage rate for the estimated
+incremental cost of the identified situation. The explicit assumption is that if a bidder was faced
+with a similar situation he or she would lower the bid by the extra cost incurred because of the
+identified situation.
+
+The situations that may be eligible for specified operations adjustment will be determined
+according to the following principles:
+
+    •    the expectation that a bid would be influenced by this situation;
+    •    representation (number of samples, if any, in the auction data set);
+    •    materiality of estimated cost differential (supported by verifiable financial data); and,
+    •    statistical analysis (including the premise that other represented situations and variables
+         in the MPS database and equations may serve as a proxy for the situation in question).
+
+The ministry, after considering the above and any other relevant technical information, may or
+may not designate the situation as an identified situation eligible for specified operations and, if
+eligible, will specify the dollars per cubic meter adjustment.
+
+The ultimate objective is to have a representative auction database and hence, few, if any,
+specified operations adjustments.
+
+The following are identified as specified operations for the Interior MPS. Cost estimates from the
+updated Interior Appraisal Manual are used for the following:
+
+    •    Rail Haul
+    •    Rail haul including truck to rail transfer and rail transport.
+    •    Barge/Ferry
+    •    Barge/ferry used to truck haul (private).
+    •    Barge/ferry not used for truck haul (private).
+    •    Dump and boom
+    •    Tow
+    •    Dewater and reload
+    •    Skyline Yarding
+    •    Horse Logging
+    •    Market Logger Specified Operations Cost
+    •    High Development Cost (BCTS only)
+    •    Helicopter Logging
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                          6
+                         Interior Market Pricing System: Update – 2025
+
+
+                                                      APPENDIX 2
+
+                        VARIABLES AND DEFINITIONS FOR EQUATIONS
+
+                   Variable                                                        Definition
+    Balsam Fraction Squared                                 The balsam fraction squared.
+    Blowdown                                                Blowdown fraction – grey fraction (can’t be < 0)
+    Camp                                                    1 if eligible for CAMP under IAM Section 3.2.27
+    Cable Yard Fraction                                     Fraction of harvest method volume that is appraised
+                                                            as overhead cable yarding, tethered or winch-assist, or
+                                                            skyline methods.
+    Cable Yarding                                           Cable Yard Fraction – from 2013 to present.
+    Cedar Decay Fraction                                    Cedar decay (%) from the appraisal summary
+                                                            report/100.
+    Cedar Fraction                                          Fraction of total net coniferous volume that is cedar.
+
+    Cedar Fraction * Cedar Decay Fraction                   Fraction of total net coniferous volume that is cedar *
+                                                            Cedar decay (%) from the appraisal summary
+                                                            report/100.
+    Constant                                                Fixed value.
+    Cruise Based                                            1 if cruise based, 0 if scale based.
+
+    CYCLE                                                   Hauling round trip cycle time (Primary CT (hrs) +
+                                                            Secondary CT (hrs). See sections 3.2.12 of the
+                                                            Interior Appraisal Manual.
+
+    Decay Fraction                                          Decay fraction minus other attack fraction (can’t be <
+                                                            0).
+    Deciduous Fraction                                      Fraction of the total net cruise volume that is the total
+                                                            net deciduous volume
+    Deciduous (Cruise Based)                                Same as Deciduous Fraction but applies to cruise
+                                                            based only.
+
+    DSC (Distance to Support Centre)                        Distance to Support Centre: see IAM section 3.2.26
+
+    District Average Number of Bidders                      Average number of bidders for the district, in which
+                                                            the cutting authority area is located (see Table 3-3,
+                                                            section 3.2.19 Appraisal Manual).
+
+    Exchange Rate                                           US$/C$ (a stronger C$ leads to a higher value) in
+                                                            decimal form.
+
+    Fir Fraction + Yellow Pine Fraction                     Fraction of total net coniferous volume that is
+                                                            Douglas fir and yellow pine.
+
+    Fire Damaged Fraction                                   Fraction of total net coniferous volume that is fire
+                                                            damaged.
+
+    First and Second Quarter Auctions                       If the auction sold in January to June, D_Q1 + Q2 =1.
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                                               7
+                         Interior Market Pricing System: Update – 2025
+
+
+    Forecast Real Winning Bid                               Estimated winning bid from the estimated winning
+                                                            bid equation.
+    Grey                                                    Fraction of total net coniferous volume that is grey
+                                                            Mountain Pine Beetle attacked lodgepole pine.
+
+    Grey Squared                                            Grey fraction squared.
+
+    Slope (>15)                                             See ‘SLOPE15 definition in Section 3.2.21
+                                                            ‘Estimated Winning Bid Variables’ of the Interior
+                                                            Appraisal Manual for more information.
+    Hemlock Fraction                                        Fraction of the Total Net Coniferous Volume that is
+                                                            hemlock.
+    Highway Haul                                            1 if primary haul method is highway, otherwise HWY
+                                                            = 0.
+    Larch Fraction + Yellow Pine Fraction                   Fraction of total net coniferous volume that is larch
+                                                            and yellow pine.
+    Other Attack                                            Other Attack is the fraction of the Total Net
+                                                            Coniferous Volume that is insect attack other than
+                                                            Mountain Pine Beetle attacked Lodgepole Pine. Split
+                                                            at pre Jan 2020 and post Jan 2020.
+    Partial Cut Fraction                                    Fraction of the harvest method volume that is
+                                                            appraised as partial cut. PC = (100-CAPCUT%)/100.
+                                                            See section 4.5 of Appraisal Manual for definition of
+                                                            CAPCUT%. The 80% limit in the definition of
+                                                            CAPCUT in section 4.5 does not apply.
+
+    Partial Cut 20                                          Partial Cut 20 is for cutting authorities with greater
+                                                            than 20% partial cut retention levels. See section
+                                                            3.2.20 of the Appraisal Manual.
+
+    RBID                                                    Real Winning bid ($/m3).
+
+    Real Stand Selling Price                                Real estimated stand lumber value ($/m3). Weighted
+                                                            average of (LRF * Lumber price by coniferous
+                                                            species). See Appraisal Manual section 3.2.2
+    Red + Grey Attack Fraction                              Fraction of total net coniferous volume that is red and
+                                                            grey mountain pine beetle attack.
+    RG35                                                    1 if Total Net Coniferous Volume of timber on the
+                                                            cutting authority area is comprised of 35% or greater
+                                                            red and grey Mountain Pine Beetle attacked
+                                                            Lodgepole pine, otherwise RG35 = 0.
+
+    Slope                                                   SLOPE15 = (SLOPE-15), if slope is < then SLOPE
+                                                            15 then SLOPE15 = 0.
+    Total Interior Harvest                                  Total Interior harvest (million m3) in a recent 12
+                                                            month period. Includes all species and tenure types.
+                                                            Excludes waste.
+
+
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                                             8
+                         Interior Market Pricing System: Update – 2025
+
+
+    AAC Delta                                               Allowed Annual Cut 12 month moving Average (net
+                                                            of partitioned AAC) – Total Interior Harvest volume
+                                                            12 MA (million m3).
+
+    Volume                                                  The zonal volume from Table 3-2 (See Appraisal
+                                                            Manual section 3.2.7) for the cutting authority unless:
+                                                              1. The cutting authority is a BCTS cutting
+                                                                  authority; if so then use the Total Net
+                                                                  Coniferous Volume for the cutting authority.
+                                                              2. The cutting authority is not a BCTS cutting
+                                                                  authority and, the sum of all the AAC’s for all
+                                                                  the licences that the licensee has in the same
+                                                                  TSA as the cutting authority being appraised is
+                                                                  less than the zonal volume indicated in Table
+                                                                  3-3 for the selling price zone in which the
+                                                                  cutting authority is located, if so, then use the
+                                                                  greater of:
+                                                                    - The Total Net Coniferous Volume, or
+                                                                    - the sum of the AAC volumes described
+                                                                         above
+
+    Volume per Tree                                         Cutting authority average net volume per tree, from
+                                                            appraisal summary report (m3).
+    Volume per hectare                                      Natural logarithm of volume per hectare.
+
+    Zone 9                                                  Fort Nelson – Peace selling price zone variable. Zone
+                                                            9 = 1 if cutting authority is appraised with selling
+                                                            price zone 9, otherwise Zone 9 = 0.
+
+
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                                                             9
+                         Interior Market Pricing System: Update – 2025
+
+
+                                         APPENDIX 3 - REGRESSIONS
+
+                                     FINAL ESTIMATED WINNING BID
+
+
+
+
+Timber Pricing Branch, Ministry of Forests (July 1, 2025)                10
+

@@ -1,0 +1,94 @@
+{
+  "artifact_version": "0.1.0",
+  "gaps": [
+    "Delivered log prices are not in any ingested source.",
+    "Harvest, road, haul, and silviculture actuals are not in any ingested source.",
+    "BCTS auction bid bulk data (upset, winning bid, bonus, bidder count) is absent from the ArcGIS sale-schedule layer.",
+    "BCTS sales schedule has no geometry in this deliverable; only the published geographic-location text is retained.",
+    "No BCTS-to-forest-zone crosswalk exists, so non-appraised zone rates are not applied to BCTS sale volumes."
+  ],
+  "generated_utc": "2026-11-20T15:34:02+00:00",
+  "inputs": [
+    {
+      "bytes": 138367,
+      "kind": "pdf",
+      "path": "data/raw/forest_cost_revenue/bcts_bc/interior_non_appraised_tabular_rates_2026_11.pdf",
+      "role": "Interior non-appraised tabular stumpage rates, effective 2026-11-01",
+      "sha256": "8baf282c8bddcace3888bb704147166d0bbe8048d7eba5aae5e86bca52a5980f",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior_non_appraised_tabular_rates_nov_26.pdf"
+    },
+    {
+      "bytes": 6178,
+      "kind": "pdftotext_layout",
+      "path": "data/raw/forest_cost_revenue/bcts_bc/interior_non_appraised_tabular_rates_2026_11.txt",
+      "role": "Interior non-appraised tabular stumpage rates, effective 2026-11-01",
+      "sha256": "962725099330896c28a700b092f2c44e427577551ac7a7b300a7ceab76ccc69d",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior_non_appraised_tabular_rates_nov_26.pdf"
+    },
+    {
+      "bytes": 392968,
+      "kind": "pdf",
+      "path": "data/raw/forest_cost_revenue/bcts_bc/interior_mps_update_2025b.pdf",
+      "role": "Interior Market Pricing System update, July 1, 2025",
+      "sha256": "f704c6f1089a1c1a6fe0e23f40e578d62379688d751d17ba087e8109aca77859",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior_mps_update_2025b.pdf"
+    },
+    {
+      "bytes": 25269,
+      "kind": "pdftotext_layout",
+      "path": "data/raw/forest_cost_revenue/bcts_bc/interior_mps_update_2025b.txt",
+      "role": "Interior Market Pricing System update, July 1, 2025",
+      "sha256": "c206c58748a2c459bd7dede5770f1cce12c86ba51346fee7e4b5ffacdfaa79a8",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior_mps_update_2025b.pdf"
+    },
+    {
+      "bytes": 398404,
+      "kind": "pdf",
+      "path": "data/raw/forest_cost_revenue/bcts_bc/coast_mps_update_2025_01.pdf",
+      "role": "Coast Market Pricing System update, January 1, 2025",
+      "sha256": "2669e394de5373ddc541566cef51b32fb476b872f65366313cfc1335e33b7a3b",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/coast-timber-pricing/coast_mps_update_jan_25.pdf"
+    },
+    {
+      "bytes": 18486,
+      "kind": "pdftotext_layout",
+      "path": "data/raw/forest_cost_revenue/bcts_bc/coast_mps_update_2025_01.txt",
+      "role": "Coast Market Pricing System update, January 1, 2025",
+      "sha256": "1acadfb5e058f66b81699fbeeb0a09ab6dea663ae3deaa26b7c10a053b0f604a",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/coast-timber-pricing/coast_mps_update_jan_25.pdf"
+    }
+  ],
+  "licence": {
+    "applies_to": [
+      "https://delivery.maps.gov.bc.ca/arcgis/rest/services/whse/bcgw_pub_whse_forest_tenure/MapServer/35",
+      "https://www2.gov.bc.ca/gov/content/industry/forestry/competitive-forest-industry/timber-pricing/interior-timber-pricing/interior-non-appraised-tabular-stumpage-rates",
+      "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior_non_appraised_tabular_rates_nov_26.pdf",
+      "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior_mps_update_2025b.pdf",
+      "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/coast-timber-pricing/coast_mps_update_jan_25.pdf"
+    ],
+    "name": "Open Government Licence - British Columbia",
+    "url": "https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc"
+  },
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_sales.csv",
+      "rows": 162,
+      "sha256": "d0d5ecce12de6b0b3ec87e995e5ffb3f53c027e592e9c49858effd560d8a5e2e"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/stumpage_nonappraised_2026_11.csv",
+      "rows": 350,
+      "sha256": "c5aaa8c610a78099b88dffd5f25f466816fa8c7cc5c5895616e0c6c572db747b"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/ledger_sample.csv",
+      "rows": 63,
+      "sha256": "751f0d2f3c8ab399d1fde295b483e0d7615c9988d5510b91cba1a03a85f78240"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/mps_updates_2025.csv",
+      "rows": 18,
+      "sha256": "b9bbe0ff2726fa7d14e4b3884480f9bef95b1d8df19f2d98242526d81fab8bc9"
+    }
+  ]
+}

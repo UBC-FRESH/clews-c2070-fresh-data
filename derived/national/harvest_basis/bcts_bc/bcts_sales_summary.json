@@ -1,0 +1,97 @@
+{
+  "area_ha": {
+    "max": 224.405486,
+    "min": 1.2,
+    "missing_rows": 2,
+    "reported_rows": 160,
+    "total": 6217.031276
+  },
+  "artifact_version": "0.1.0",
+  "counts": {
+    "auction_fiscal": {
+      "2026": 68,
+      "2027": 94
+    },
+    "auction_quarter": {
+      "Q1": 24,
+      "Q2": 38,
+      "Q3": 32,
+      "Q4": 68
+    },
+    "primary_species_rows": {
+      "AT": 8,
+      "B": 13,
+      "C": 9,
+      "F": 36,
+      "H": 27,
+      "PL": 43,
+      "S": 26
+    },
+    "source_count": 162,
+    "staged_rows": 162,
+    "status_codes": {
+      "D": 22,
+      "P": 140
+    },
+    "unique_licence_block": 162,
+    "unique_licences": 99,
+    "unique_objectid": 162
+  },
+  "gaps": [
+    "No upset price, winning bid, bonus bid, or bidder count field in this layer.",
+    "No delivered log price, harvest cost, road cost, haul cost, or silviculture actual.",
+    "AUCTION_STATUS codes are preserved as published; P/D semantics are not documented in the layer metadata.",
+    "TERM contains negative values (44 rows); their semantics are unresolved and the values are preserved, not interpreted.",
+    "BCTS is a selected auction sample, not the provincial harvest population."
+  ],
+  "generated_utc": "2026-11-20T15:34:02+00:00",
+  "scope": "BC Timber Sales scheduled sale blocks; attributes only, no geometry",
+  "source": {
+    "access": "ArcGIS REST query, f=json, returnGeometry=false",
+    "dataset_url": "https://catalogue.data.gov.bc.ca/dataset/307fbe58-79ea-466e-a994-347dfd2e83aa",
+    "id": "bcts_sales_schedule",
+    "licence": "Open Government Licence - British Columbia",
+    "licence_url": "https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc",
+    "name": "BCTS Sales Schedule - Public Access",
+    "query": "where=1=1; outFields=*; paginated at 1000 records",
+    "retrieved_utc": "2026-11-20T15:34:02+00:00",
+    "url": "https://delivery.maps.gov.bc.ca/arcgis/rest/services/whse/bcgw_pub_whse_forest_tenure/MapServer/35"
+  },
+  "validation": {
+    "count_matches_arcgis": true,
+    "geometry_stored": false,
+    "licence_block_unique": true,
+    "objectid_unique": true,
+    "species_sums_within_1pct": true,
+    "species_weighted_volume_reconciles": true,
+    "volume_positive": true
+  },
+  "volume_m3": {
+    "by_status": {
+      "D": 247400.003109,
+      "P": 1692631.225491
+    },
+    "max": 56330.1512,
+    "median": 8292.3152,
+    "min": 279.89768,
+    "p90": 24000.0,
+    "total": 1940031.2286,
+    "weighted_by_species": {
+      "AC": 28434.76971,
+      "AT": 107150.746575,
+      "B": 292328.994055,
+      "C": 120243.812515,
+      "D": 3511.885938,
+      "E": 735.497994,
+      "F": 262817.384961,
+      "H": 369781.750715,
+      "L": 12778.504973,
+      "MB": 1575.706498,
+      "PL": 388331.696511,
+      "PW": 4712.393347,
+      "PY": 3.171141,
+      "S": 327695.236778,
+      "Y": 19929.676888
+    }
+  }
+}
