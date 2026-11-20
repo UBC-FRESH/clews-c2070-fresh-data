@@ -144,7 +144,7 @@ The 200M diagnostic is infeasible by construction: the model ceiling is 169.523 
 
 ## Managed-landbase intensity sensitivity
 
-The tenure-union proxy is not a THLB. The intensity cap is applied as `upper_bound_p = min(upper_bound_p, I * managed_proxy_ha)` and excludes PE/NU, which have no proxy.
+The tenure-union proxy is not a THLB. The intensity cap is applied as `upper_bound_p = min(upper_bound_p, I * managed_proxy_ha)` and excludes PE/NU, which have no proxy. This is a landbase feasibility screen, not an energy solve and not a legal constraint.
 
 | Case | Intensity (m3/ha/yr) | Status | Capacity (Mm3) | Binding provinces | L1 (Mm3) | Deficit (Mm3) |
 |---|---:|---|---:|---|---:|---:|
@@ -155,7 +155,9 @@ The tenure-union proxy is not a THLB. The intensity cap is applied as `upper_bou
 | 150M | 1.0 | infeasible | 143.887 | — | — | 6.113 |
 | 150M | 1.2 | optimal | 157.090 | BC, AB, QC, NB, NS, NL, PE, NT | 32.984 | — |
 
-At 150M the effective caps under a 1.0 m3/ha/yr screen sum to 143.887 Mm3/yr, so that screen is infeasible by 6.113 Mm3. The 1.2 m3/ha/yr effective caps sum to 157.090 Mm3/yr and the case remains feasible. This confirms that the proxy cannot certify a 150M provincial pattern under a 1.0 m3/ha/yr screen; it does not establish a legal constraint.
+At 150M the effective caps under a 1.0 m3/ha/yr screen sum to 143.887 Mm3/yr, so that screen is infeasible by **6.113 Mm3**. The 1.2 m3/ha/yr effective caps sum to 157.090 Mm3/yr and the case remains feasible with 82.115% maximum proportional increase over 2024 shares. The 100M and 119M cases are feasible at both intensities; their binding sets are 100M `NB, NS, NL` and 119M `AB, QC, NB, NS, NL, NT` at 1.0.
+
+This confirms that the proxy cannot certify a 150M provincial pattern under a 1.0 m3/ha/yr screen; it does not establish a legal constraint. Per-intensity outputs are under `intensity_1.0/` and `intensity_1.2/` (CSVs for feasible cases plus `provincial_allocation_summary.json`). The 150M 1.0 case is infeasible and has no CSV.
 
 ## Caveats
 
@@ -178,5 +180,6 @@ At 150M the effective caps under a 1.0 m3/ha/yr screen sum to 143.887 Mm3/yr, so
 ## Outputs
 
 - `100m.csv`, `119m.csv`, `150m.csv`: provincial allocations.
-- `provincial_allocation_summary.json`: totals, objectives, binding provinces, sensitivities, 200M deficit.
+- `provincial_allocation_summary.json`: totals, objectives, binding provinces, sensitivities, 200M deficit, THLB intensity deficits.
 - `manifest.json`: input/output hashes, solver, statuses, caveats.
+- `intensity_1.0/`, `intensity_1.2/`: feasible-case CSVs and per-intensity summary JSON for the managed-proxy screen.
