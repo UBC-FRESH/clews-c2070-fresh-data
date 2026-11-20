@@ -1629,6 +1629,67 @@
         "PE"
       ],
       "missing_policy": "documented cap retained; flagged operable_missing; no zero substitution",
+      "threshold_sensitivity": {
+        "default_case": "base",
+        "cases": {
+          "base": {
+            "height_m": 5.0,
+            "biomass_mg_ha": 20.0,
+            "closure_pct": 10.0
+          },
+          "low": {
+            "height_m": 3.0,
+            "biomass_mg_ha": 10.0,
+            "closure_pct": 5.0
+          },
+          "high": {
+            "height_m": 7.0,
+            "biomass_mg_ha": 30.0,
+            "closure_pct": 20.0
+          }
+        },
+        "national_merchantable_ha": {
+          "treed": 422475761.06995845,
+          "height_ge_5": 371523809.2499688,
+          "biomass_ge_20": 356318493.0299762,
+          "closure_ge_10": 420877065.6899575,
+          "base": 332599169.87997824,
+          "low": 383377980.689969,
+          "high": 267938856.3599848
+        },
+        "cases_area": {
+          "low": {
+            "label": "height >= 3 m, biomass >= 10 Mg/ha, closure >= 5%",
+            "national_ha": 383377980.689969,
+            "share_of_treed": 0.9074555655430485
+          },
+          "base": {
+            "label": "height >= 5 m, biomass >= 20 Mg/ha, closure >= 10%",
+            "national_ha": 332599169.87997824,
+            "share_of_treed": 0.7872621355545711
+          },
+          "high": {
+            "label": "height >= 7 m, biomass >= 30 Mg/ha, closure >= 20%",
+            "national_ha": 267938856.3599848,
+            "share_of_treed": 0.634211192806435
+          },
+          "height_ge_5": {
+            "label": "treed and height >= 5 m",
+            "national_ha": 371523809.2499688,
+            "share_of_treed": 0.8793967452926786
+          },
+          "biomass_ge_20": {
+            "label": "treed and biomass >= 20 Mg/ha",
+            "national_ha": 356318493.0299762,
+            "share_of_treed": 0.8434057663511086
+          },
+          "closure_ge_10": {
+            "label": "treed and crown closure >= 10%",
+            "national_ha": 420877065.6899575,
+            "share_of_treed": 0.9962158885140484
+          }
+        }
+      },
       "by_province": [
         {
           "province": "BC",
