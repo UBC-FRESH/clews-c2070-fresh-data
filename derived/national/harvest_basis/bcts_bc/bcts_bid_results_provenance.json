@@ -1,0 +1,72 @@
+{
+  "access_policy": {
+    "client_numbers_stored": false,
+    "delay_seconds": 0.0,
+    "personal_names_stored": false,
+    "user_agent": "clews-c2070-fresh/0.1 (BCTS bid-results audit)"
+  },
+  "artifact_version": "0.1.0",
+  "counts": {
+    "awarded_block_count": 84,
+    "awarded_sales": 51,
+    "bid_entries": 126,
+    "eligible_bidders": 122,
+    "result_rows": 99,
+    "schedule_blocks": 162,
+    "schedule_blocks_covered": 162,
+    "status": {
+      "AWARDED": 51,
+      "NOT_FOUND": 38,
+      "NO_BIDS": 3,
+      "NO_BIDS_PENDING": 2,
+      "NO_RESULT": 1,
+      "PENDING_APPROVAL": 1,
+      "STALE_RESULT": 3
+    },
+    "unique_tsls_queried": 99
+  },
+  "gaps": [
+    "The public result page has no bidder identity requirement; personal names and client numbers are deliberately not stored.",
+    "The result page is a legacy ASP service with no documented API or bulk export; this is a rate-limited page-by-page snapshot.",
+    "Sales not yet approved return 'not found' or 'results not yet final'; absence is not a zero bid.",
+    "Two awarded lump-sum sales (TA1945, TA1946) publish a bonus offer but no upset value, so only the premium is ledger-eligible.",
+    "The schedule's planned auction date can differ from the approved result date; the result date is authoritative for the bid.",
+    "BCTS is a selected auction sample, not the provincial harvest population."
+  ],
+  "generated_utc": "2026-11-20T15:51:47+00:00",
+  "ledger": {
+    "components": [
+      "stumpage_base",
+      "stumpage_bid_premium"
+    ],
+    "confidence": "medium",
+    "note": "Premium is the bonus bid; base is the upset. Mirrors are genuine Crown-to-sector transfers. A bid is not delivered revenue and the sale volume is a weight, not harvest.",
+    "perspectives": [
+      "crown",
+      "forest_sector"
+    ],
+    "value_basis": "observed_sale:standing"
+  },
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_bid_results.csv",
+      "rows": 99,
+      "sha256": "50b9ce6889981579326760f59dc4b77ef7f45eb12d17a2381a95e65e7f991e46"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_bid_ledger.csv",
+      "rows": 200,
+      "sha256": "52e210ab9d7b4466869f272f461d560cf05e439eb086f31a451989aeb325c86d"
+    }
+  ],
+  "source": {
+    "access": "HTTP GET with ?timbersale=<TSL>; the public form posts the same field to results.asp",
+    "id": "prov_bcts_auction_results",
+    "index_url": "https://www.for.gov.bc.ca/mof/wapr/bcts02/",
+    "licence": "Open Government Licence - British Columbia",
+    "licence_url": "https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc",
+    "name": "BC Timber Sales public sale results",
+    "query_url_template": "https://www.for.gov.bc.ca/pscripts/mof/wapr/bcts02/results.asp?timbersale={tsl}",
+    "results_url": "https://www.for.gov.bc.ca/pscripts/mof/wapr/bcts02/results.asp"
+  }
+}
