@@ -1,11 +1,12 @@
 {
   "artifact": "forest_cost_revenue_merged",
   "caveats": [
-    "The merged file is a sample ledger, not a provincial or national population estimate.",
+    "The ledger combines a BCTS auction sample with the full QC MERIS model-input deck; it is not a provincial or national population estimate.",
+    "Observed rows and model-input rows are counted separately; model-input values are never monetised.",
     "BCTS and MERIS rows are never summed; each remains a separate source under its own province.",
     "Crown and forest-sector rows are never summed into a combined total; only the reconciliation identity may relate them.",
     "BCTS sells standing timber: its upset and bonus are stumpage, not delivered log revenue.",
-    "MERIS is a tarification/cost parameter set, not an observed harvest or delivered-price register.",
+    "MERIS is a tarification/cost parameter set, not an observed harvest or delivered-price register; its delivered-log values are mill-gate model inputs, not settlements.",
     "Missing components are missing, not zero; no value, volume, or component was imputed."
   ],
   "coverage": {
@@ -70,8 +71,16 @@
     "qc_meris": {
       "current_rate_row_share": {
         "denominator": 2674,
-        "numerator": 5,
-        "share": 0.00187
+        "numerator": 0,
+        "share": 0.0,
+        "status": "not_in_full_model_input_deck"
+      },
+      "delivered_log_revenue": {
+        "model_input_rows": 127,
+        "observed_rows": 0,
+        "price_point": "mill_gate",
+        "reason": "MERIS price-deck values are model inputs net of processing cost; they are not mill settlements",
+        "status": "model_input_not_observed"
       },
       "harvest_volume_share": {
         "denominator": 25939056.0,
@@ -83,40 +92,67 @@
       "ledger": {
         "cost_components": [
           "harvest",
-          "haul",
           "overhead",
           "road",
           "silviculture"
         ],
-        "current_stumpage_rate_rows": 5,
+        "current_stumpage_rate_rows": 0,
+        "delivered_log_revenue_model_input_rows": 127,
+        "delivered_log_revenue_observed_rows": 0,
+        "delivered_log_revenue_rows": 127,
+        "model_input_rows": 740,
+        "observed_rows": 0,
+        "observed_transactions": false,
         "observed_volume_m3": 0.0,
-        "rows": 17,
-        "stumpage_years": [
-          2023,
-          2025
-        ]
+        "rows": 740,
+        "stumpage_years": [],
+        "treatments_covered": 40,
+        "zones_covered": 191
       },
+      "model_input_only": true,
+      "observed_transactions": false,
       "sample_frame": {
-        "sample_zone": "QC-ZONE_151",
-        "source": "MERIS 3.3.0 tables_key.csv and README.md",
+        "deck": "full_model_input",
+        "price_deck_cells": 630,
+        "source": "meris_qc_full/manifest.json and QC_MERIS_DECK_REPORT.md (MERIS 3.3.0, database release 2025-09-23)",
         "stumpage_rate_rows": 2674,
         "tarification_zones": 191,
-        "treatments": 94
+        "treatments": 94,
+        "treatments_usable": 40
       },
       "sample_not_population": true,
       "treatment_share": {
         "denominator": 94,
-        "numerator": 1,
-        "share": 0.010638
+        "numerator": 40,
+        "share": 0.425532
       },
       "zone_share": {
         "denominator": 191,
-        "numerator": 1,
-        "share": 0.005236
+        "numerator": 191,
+        "share": 1.0,
+        "status": "full_cost_deck_zone_coverage"
       }
     }
   },
-  "generated_utc": "2026-11-20T16:12:34+00:00",
+  "evidence_classes": {
+    "by_jurisdiction": {
+      "BC": {
+        "model_input": 0,
+        "observed": 200,
+        "other": 0
+      },
+      "QC": {
+        "model_input": 740,
+        "observed": 0,
+        "other": 0
+      }
+    },
+    "model_input_rows": 740,
+    "observed_rows": 200,
+    "other_rows": 0,
+    "rule": "observed = observed_payment/observed_sale/observed_price; model_input = model_input evidence with model_input=1 and not_observed=1; the classes are counted separately and never summed"
+  },
+  "generated_utc": "2026-11-20T16:42:00+00:00",
   "inputs": [
     {
       "jurisdiction": "BC",
@@ -126,23 +162,25 @@
     },
     {
       "jurisdiction": "QC",
-      "path": "data/derived/national/harvest_basis/meris_qc_sample/forest_cost_revenue_sample.csv",
-      "rows": 17,
-      "sha256": "9ba0a165c0b8ab97430c74ff82d060429ebc346579d872d862fa52383cf8b8b5"
+      "path": "data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv",
+      "rows": 740,
+      "sha256": "888a18128f04e54f627a43680028b29e86888a39aa275e64e8361d3161f9e01c"
     }
   ],
   "merge_rules": {
     "mirrors_preserved": true,
-    "no_delivered_log_revenue_unless_observed": true,
+    "model_input_not_monetised": true,
     "no_imputation": true,
+    "no_observed_delivered_log_revenue_injected": true,
+    "observed_and_model_input_rows_separated": true,
     "perspectives_not_added": true,
     "province_partitioned": true,
     "sources_not_added": true
   },
   "mirrors": {
-    "mirror_rows": 106,
+    "mirror_rows": 100,
     "note": "load_ledger validated every mirror pair; all are Crown/sector transfers",
-    "transfer_pairs": 106,
+    "transfer_pairs": 100,
     "unpaired": 0
   },
   "net_value_readiness": {
@@ -301,11 +339,23 @@
       "components": [
         {
           "component": "delivered_log_revenue",
-          "reasons": [
-            "no row in the merged sample"
+          "confidence": [
+            "low",
+            "medium"
           ],
-          "rows": 0,
-          "status": "missing"
+          "reasons": [
+            "model-input deck, not an observed transaction",
+            "source marks the row not_observed=1",
+            "at least one row is low confidence"
+          ],
+          "rows": 127,
+          "status": "partial",
+          "units": [
+            "CAD_per_m3_log"
+          ],
+          "years": [
+            2025
+          ]
         },
         {
           "component": "residue_revenue",
@@ -317,22 +367,11 @@
         },
         {
           "component": "stumpage_base",
-          "confidence": [
-            "low",
-            "medium"
-          ],
           "reasons": [
-            "at least one row is low confidence"
+            "no row in the merged sample"
           ],
-          "rows": 6,
-          "status": "partial",
-          "units": [
-            "CAD_per_m3_log"
-          ],
-          "years": [
-            2023,
-            2025
-          ]
+          "rows": 0,
+          "status": "missing"
         },
         {
           "component": "stumpage_bid_premium",
@@ -356,11 +395,11 @@
             "low"
           ],
           "reasons": [
-            "at least one row is low confidence",
-            "source marks the row not_for_net_value=1",
-            "source declares partial completeness"
+            "model-input deck, not an observed transaction",
+            "source marks the row not_observed=1",
+            "at least one row is low confidence"
           ],
-          "rows": 1,
+          "rows": 191,
           "status": "partial",
           "units": [
             "CAD_per_m3_log"
@@ -375,9 +414,11 @@
             "medium"
           ],
           "reasons": [
+            "model-input deck, not an observed transaction",
+            "source marks the row not_observed=1",
             "tertiary road cost is excluded from the per-m3 rate"
           ],
-          "rows": 1,
+          "rows": 191,
           "status": "partial",
           "units": [
             "CAD_per_m3_log"
@@ -388,18 +429,11 @@
         },
         {
           "component": "haul",
-          "confidence": [
-            "medium"
+          "reasons": [
+            "no row in the merged sample"
           ],
-          "reasons": [],
-          "rows": 1,
-          "status": "present",
-          "units": [
-            "CAD_per_m3_log"
-          ],
-          "years": [
-            2025
-          ]
+          "rows": 0,
+          "status": "missing"
         },
         {
           "component": "silviculture",
@@ -407,9 +441,11 @@
             "medium"
           ],
           "reasons": [
+            "model-input deck, not an observed transaction",
+            "source marks the row not_observed=1",
             "CAD_per_ha requires a yield conversion before net value"
           ],
-          "rows": 1,
+          "rows": 40,
           "status": "partial",
           "units": [
             "CAD_per_ha"
@@ -431,9 +467,12 @@
           "confidence": [
             "medium"
           ],
-          "reasons": [],
-          "rows": 1,
-          "status": "present",
+          "reasons": [
+            "model-input deck, not an observed transaction",
+            "source marks the row not_observed=1"
+          ],
+          "rows": 191,
+          "status": "partial",
           "units": [
             "CAD_per_m3_log"
           ],
@@ -472,6 +511,8 @@
         "crown_other",
         "delivered_log_revenue",
         "harvest",
+        "haul",
+        "overhead",
         "residue_recovery",
         "residue_revenue",
         "road",
@@ -481,31 +522,35 @@
         "stumpage_total"
       ],
       "net_value_status": "not_estimated",
-      "reason": "delivered log revenue is absent, harvest is loading-only, and silviculture is CAD/ha without a yield conversion",
+      "reason": "the full MERIS deck is model input only: delivered log revenue is a mill-gate model price, harvest is loading-only, road excludes tertiary road, silviculture is CAD/ha without a yield conversion, and no observed volume or full cost exists",
       "source": "prov_qc_meris"
     }
   },
   "net_value_status": "not_estimated",
   "output": {
     "path": "data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv",
-    "rows": 217,
-    "sha256": "5b06836bfa6a8a2abbdce2d6cee982d088d853dbf52d31e3a6b9ec07764e65fb"
+    "rows": 940,
+    "sha256": "11fc4b091f92a755deac77722ba463b1e55bd044a24d4be1241c0e6a6919c114"
   },
   "partial_coverage": true,
   "policy_grade": false,
   "row_counts": {
     "by_component": {
-      "harvest": 1,
-      "haul": 1,
-      "overhead": 1,
-      "road": 1,
-      "silviculture": 1,
-      "stumpage_base": 110,
+      "delivered_log_revenue": 127,
+      "harvest": 191,
+      "overhead": 191,
+      "road": 191,
+      "silviculture": 40,
+      "stumpage_base": 98,
       "stumpage_bid_premium": 102
+    },
+    "by_evidence_class": {
+      "model_input": 740,
+      "observed": 200
     },
     "by_jurisdiction": {
       "BC": 200,
-      "QC": 17
+      "QC": 740
     },
     "by_jurisdiction_source_perspective_component": [
       {
@@ -513,6 +558,9 @@
         "confidence": [
           "medium"
         ],
+        "evidence": [
+          "observed"
+        ],
         "jurisdiction": "BC",
         "licences": 49,
         "perspective": "crown",
@@ -532,6 +580,9 @@
         "component": "stumpage_bid_premium",
         "confidence": [
           "medium"
+        ],
+        "evidence": [
+          "observed"
         ],
         "jurisdiction": "BC",
         "licences": 51,
@@ -553,6 +604,9 @@
         "confidence": [
           "medium"
         ],
+        "evidence": [
+          "observed"
+        ],
         "jurisdiction": "BC",
         "licences": 49,
         "perspective": "forest_sector",
@@ -573,6 +627,9 @@
         "confidence": [
           "medium"
         ],
+        "evidence": [
+          "observed"
+        ],
         "jurisdiction": "BC",
         "licences": 51,
         "perspective": "forest_sector",
@@ -589,46 +646,26 @@
         ]
       },
       {
-        "component": "stumpage_base",
+        "component": "delivered_log_revenue",
         "confidence": [
           "low",
           "medium"
         ],
-        "jurisdiction": "QC",
-        "licences": 1,
-        "perspective": "crown",
-        "quantity_note": "rate denominator, not observed volume",
-        "quantity_unit": "m3_log",
-        "quantity_weight": 6.0,
-        "rows": 6,
-        "source": "prov_qc_meris",
-        "units": [
-          "CAD_per_m3_log"
-        ],
-        "years": [
-          2023,
-          2025
-        ]
-      },
-      {
-        "component": "stumpage_base",
-        "confidence": [
-          "low",
-          "medium"
+        "evidence": [
+          "model_input"
         ],
         "jurisdiction": "QC",
-        "licences": 1,
+        "licences": 127,
         "perspective": "forest_sector",
         "quantity_note": "rate denominator, not observed volume",
         "quantity_unit": "m3_log",
-        "quantity_weight": 6.0,
-        "rows": 6,
+        "quantity_weight": 127.0,
+        "rows": 127,
         "source": "prov_qc_meris",
         "units": [
           "CAD_per_m3_log"
         ],
         "years": [
-          2023,
           2025
         ]
       },
@@ -637,13 +674,16 @@
         "confidence": [
           "low"
         ],
+        "evidence": [
+          "model_input"
+        ],
         "jurisdiction": "QC",
-        "licences": 1,
+        "licences": 191,
         "perspective": "forest_sector",
         "quantity_note": "rate denominator, not observed volume",
         "quantity_unit": "m3_log",
-        "quantity_weight": 1.0,
-        "rows": 1,
+        "quantity_weight": 191.0,
+        "rows": 191,
         "source": "prov_qc_meris",
         "units": [
           "CAD_per_m3_log"
@@ -657,33 +697,16 @@
         "confidence": [
           "medium"
         ],
+        "evidence": [
+          "model_input"
+        ],
         "jurisdiction": "QC",
-        "licences": 1,
+        "licences": 191,
         "perspective": "forest_sector",
         "quantity_note": "rate denominator, not observed volume",
         "quantity_unit": "m3_log",
-        "quantity_weight": 1.0,
-        "rows": 1,
-        "source": "prov_qc_meris",
-        "units": [
-          "CAD_per_m3_log"
-        ],
-        "years": [
-          2025
-        ]
-      },
-      {
-        "component": "haul",
-        "confidence": [
-          "medium"
-        ],
-        "jurisdiction": "QC",
-        "licences": 1,
-        "perspective": "forest_sector",
-        "quantity_note": "rate denominator, not observed volume",
-        "quantity_unit": "m3_log",
-        "quantity_weight": 1.0,
-        "rows": 1,
+        "quantity_weight": 191.0,
+        "rows": 191,
         "source": "prov_qc_meris",
         "units": [
           "CAD_per_m3_log"
@@ -697,13 +720,16 @@
         "confidence": [
           "medium"
         ],
+        "evidence": [
+          "model_input"
+        ],
         "jurisdiction": "QC",
-        "licences": 1,
+        "licences": 40,
         "perspective": "forest_sector",
         "quantity_note": "rate denominator, not observed volume",
         "quantity_unit": "ha",
-        "quantity_weight": 1.0,
-        "rows": 1,
+        "quantity_weight": 40.0,
+        "rows": 40,
         "source": "prov_qc_meris",
         "units": [
           "CAD_per_ha"
@@ -717,13 +743,16 @@
         "confidence": [
           "medium"
         ],
+        "evidence": [
+          "model_input"
+        ],
         "jurisdiction": "QC",
-        "licences": 1,
+        "licences": 191,
         "perspective": "forest_sector",
         "quantity_note": "rate denominator, not observed volume",
         "quantity_unit": "m3_log",
-        "quantity_weight": 1.0,
-        "rows": 1,
+        "quantity_weight": 191.0,
+        "rows": 191,
         "source": "prov_qc_meris",
         "units": [
           "CAD_per_m3_log"
@@ -734,97 +763,146 @@
       }
     ],
     "by_perspective": {
-      "crown": 106,
-      "forest_sector": 111
+      "crown": 100,
+      "forest_sector": 840
     },
     "by_probable_origin": {
       "BC/prov_bcts_auction_results": 200,
-      "QC/prov_qc_meris": 17
+      "QC/prov_qc_meris": 740
     },
     "by_source": {
       "prov_bcts_auction_results": 200,
-      "prov_qc_meris": 17
+      "prov_qc_meris": 740
     },
-    "total_rows": 217
+    "total_rows": 940
   },
   "sample_not_population": true,
   "status": "screening_only",
   "value_totals_cad": [
     {
+      "component": "stumpage_base",
       "currency_basis": "CAD_nominal",
+      "evidence_class": "observed",
       "jurisdiction": "BC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
       "perspective": "crown",
-      "rows": 100,
+      "rows": 49,
       "source": "prov_bcts_auction_results",
+      "status": "within_source_perspective_component_total",
       "unit": "CAD_per_m3_log",
-      "value_cad": 54004922.3771,
+      "value_cad": 34576793.9762,
       "year": 2026
     },
     {
+      "component": "stumpage_bid_premium",
       "currency_basis": "CAD_nominal",
+      "evidence_class": "observed",
       "jurisdiction": "BC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
-      "perspective": "forest_sector",
-      "rows": 100,
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "crown",
+      "rows": 51,
       "source": "prov_bcts_auction_results",
+      "status": "within_source_perspective_component_total",
       "unit": "CAD_per_m3_log",
-      "value_cad": -54004922.3771,
+      "value_cad": 19428128.4009,
       "year": 2026
     },
     {
-      "currency_basis": "CAD_real_2023",
-      "jurisdiction": "QC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
-      "perspective": "crown",
-      "rows": 1,
-      "source": "prov_qc_meris",
-      "unit": "CAD_per_m3_log",
-      "value_cad": 20.0,
-      "year": 2023
-    },
-    {
-      "currency_basis": "CAD_real_2023",
-      "jurisdiction": "QC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
-      "perspective": "forest_sector",
-      "rows": 1,
-      "source": "prov_qc_meris",
-      "unit": "CAD_per_m3_log",
-      "value_cad": -20.0,
-      "year": 2023
-    },
-    {
+      "component": "stumpage_base",
       "currency_basis": "CAD_nominal",
-      "jurisdiction": "QC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
-      "perspective": "crown",
-      "rows": 5,
-      "source": "prov_qc_meris",
+      "evidence_class": "observed",
+      "jurisdiction": "BC",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "forest_sector",
+      "rows": 49,
+      "source": "prov_bcts_auction_results",
+      "status": "within_source_perspective_component_total",
       "unit": "CAD_per_m3_log",
-      "value_cad": 34.8578,
+      "value_cad": -34576793.9762,
+      "year": 2026
+    },
+    {
+      "component": "stumpage_bid_premium",
+      "currency_basis": "CAD_nominal",
+      "evidence_class": "observed",
+      "jurisdiction": "BC",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "forest_sector",
+      "rows": 51,
+      "source": "prov_bcts_auction_results",
+      "status": "within_source_perspective_component_total",
+      "unit": "CAD_per_m3_log",
+      "value_cad": -19428128.4009,
+      "year": 2026
+    },
+    {
+      "component": "delivered_log_revenue",
+      "currency_basis": "CAD_nominal",
+      "evidence_class": "model_input",
+      "jurisdiction": "QC",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "forest_sector",
+      "rows": 127,
+      "source": "prov_qc_meris",
+      "status": "not_summed_model_input",
+      "unit": "CAD_per_m3_log",
+      "value_cad": null,
       "year": 2025
     },
     {
+      "component": "harvest",
       "currency_basis": "CAD_nominal",
+      "evidence_class": "model_input",
       "jurisdiction": "QC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
       "perspective": "forest_sector",
-      "rows": 1,
+      "rows": 191,
       "source": "prov_qc_meris",
+      "status": "not_summed_model_input",
+      "unit": "CAD_per_m3_log",
+      "value_cad": null,
+      "year": 2025
+    },
+    {
+      "component": "overhead",
+      "currency_basis": "CAD_nominal",
+      "evidence_class": "model_input",
+      "jurisdiction": "QC",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "forest_sector",
+      "rows": 191,
+      "source": "prov_qc_meris",
+      "status": "not_summed_model_input",
+      "unit": "CAD_per_m3_log",
+      "value_cad": null,
+      "year": 2025
+    },
+    {
+      "component": "road",
+      "currency_basis": "CAD_nominal",
+      "evidence_class": "model_input",
+      "jurisdiction": "QC",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "forest_sector",
+      "rows": 191,
+      "source": "prov_qc_meris",
+      "status": "not_summed_model_input",
+      "unit": "CAD_per_m3_log",
+      "value_cad": null,
+      "year": 2025
+    },
+    {
+      "component": "silviculture",
+      "currency_basis": "CAD_nominal",
+      "evidence_class": "model_input",
+      "jurisdiction": "QC",
+      "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
+      "perspective": "forest_sector",
+      "rows": 40,
+      "source": "prov_qc_meris",
+      "status": "not_summed_model_input",
       "unit": "CAD_per_ha",
-      "value_cad": -1026.0,
-      "year": 2025
-    },
-    {
-      "currency_basis": "CAD_nominal",
-      "jurisdiction": "QC",
-      "note": "sum(value_cad * quantity * sign) within one perspective, year, currency basis, and unit; never added across any of them or across provinces",
-      "perspective": "forest_sector",
-      "rows": 9,
-      "source": "prov_qc_meris",
-      "unit": "CAD_per_m3_log",
-      "value_cad": -61.7578,
+      "value_cad": null,
       "year": 2025
     }
   ]
