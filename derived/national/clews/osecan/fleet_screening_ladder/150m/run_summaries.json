@@ -1,0 +1,123 @@
+{
+  "artifacts": [
+    {
+      "bytes": 14999,
+      "kind": "supply_caps",
+      "path": "supply_caps.json",
+      "sha256": "6e8b16eb0f542e331e4378ce13010a5c451e3b0ba94ecd2274a9de6ef832d36d"
+    },
+    {
+      "bytes": 72629,
+      "kind": "parameter",
+      "path": "run/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "0052cc2d7f4a71346fa391c6dd2a6bf5d84091275f9977fcfd5b051eda201dea"
+    },
+    {
+      "bytes": 172598,
+      "kind": "parameter",
+      "path": "run/params/VariableCost.csv",
+      "sha256": "e314534f06b97ac8d2a5357b46ad640c2434d1f2020b8d23dac955afbff36edb"
+    },
+    {
+      "bytes": 871797,
+      "kind": "dispatch",
+      "path": "dispatch_by_zone.csv",
+      "sha256": "4519b247f76fc62753315f592fa25ba16e77b5c08629a67cbf480c0d81993409"
+    },
+    {
+      "bytes": 160,
+      "kind": "solver_status",
+      "path": "run/status.json",
+      "sha256": "d95a4984ef6c052f1a9f2afab741add75556ed8cbedcd15fc09186f1194001d5"
+    },
+    {
+      "bytes": 355,
+      "kind": "emissions",
+      "path": "run/results_csv/AnnualEmissions.csv",
+      "sha256": "5b6e174b988a22589fc3e602f8f3c33a02df8460e8a539f8d6dd87254386fa4a"
+    },
+    {
+      "bytes": 18410,
+      "kind": "manifest",
+      "path": "manifest.json",
+      "sha256": "58a12e4021341206a341326f2467011d3dc487e69cc0a4d48c7d6789a8604f8a"
+    }
+  ],
+  "constraints": {
+    "notes": [
+      "Screening only. This set has no reserve-margin, transmission, curtailment, or build-rate constraints.",
+      "Not policy-grade. Results may be labelled screening or diagnostic, never policy or forecast.",
+      "The 5% PWRBIO cap, 0 GW nuclear cap, +$3/GJ wind adder, and 20% zonal wind cap are scenario assumptions, not policy.",
+      "The RSYC-only supply curve has no AAC, THLB, operability, or local correction.",
+      "A future policy_test_v1 is a distinct set. It is not defined here and screening_v0 must not be relabelled as policy-grade."
+    ],
+    "policy_grade": false,
+    "set_id": "screening_v0",
+    "status": "screening_only"
+  },
+  "dispatch_by_zone": "dispatch_by_zone.csv",
+  "dispatch_rows": 17259,
+  "dry_run": false,
+  "emissions_2050_mt": 0.0,
+  "emissions_mt_by_year": {
+    "2021": 94.162606,
+    "2022": 83.001055,
+    "2023": 67.323703,
+    "2024": 60.185581,
+    "2025": 49.877725,
+    "2026": 27.14509,
+    "2027": 17.47607,
+    "2028": 10.496815,
+    "2029": 5.297782,
+    "2030": 5.053116,
+    "2031": 2.283919,
+    "2032": 0.38666,
+    "2037": 0.000245,
+    "2042": 0.000245
+  },
+  "emissions_total_mt": 422.690612,
+  "generated_utc": "2026-11-20T05:59:10+00:00",
+  "harmonize": {
+    "exit_code": 0,
+    "log": "/tmp/fleet_ladder.M7NAvt/runs/150m/run/harmonize.log",
+    "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+    "tool": "python -m osecan.cli harmonize"
+  },
+  "manifest": "manifest.json",
+  "message": "Screening-only OSeCAN solve completed.",
+  "model": {
+    "copy_tree_sha256": "4f2c1826dcab91f51c917a9787b3f76bdc395f13b895e9d5b98c6cae4f41e992",
+    "source_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "source_dirty": true,
+    "source_root": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/runtime/osecan_model"
+  },
+  "objective_musd": 1443635.15,
+  "policy_grade": false,
+  "scenario_id": "screening_150m",
+  "scenario_label": "150 Mm3 harvest ladder - fleet-corrected",
+  "scenario_path": "/tmp/fleet_ladder.M7NAvt/scenarios/screening_150m.json",
+  "schema_version": "clews.scenario.v1",
+  "screening_only": true,
+  "solver_status": "optimal",
+  "status": "completed",
+  "supply": {
+    "bc_zonal_pj_2050": 43.523816,
+    "checks": {
+      "bc_zonal_2028_pj": 43.523816032,
+      "bc_zonal_matches_canonical": true,
+      "national_equals_tiers_plus_bc_all_years": true,
+      "tier_cap_sum_pj": 213.538041,
+      "tier_sum_equals_rest_all_years": true
+    },
+    "harvest_level_m3_per_year": 150000000.0,
+    "harvest_path": "custom",
+    "national_total_pj_2050": 192.796393,
+    "rest_of_canada_pj_2050": 149.272577,
+    "tier_caps_pj_2050": {
+      "SUPBCWT1": 85.007113,
+      "SUPBCWT2": 24.39175,
+      "SUPBCWT3": 39.873714,
+      "SUPBCWT4": 0.0
+    }
+  }
+}
