@@ -1,0 +1,171 @@
+{
+  "schema_version": "clews.constraint_set.v1",
+  "set_id": "screening_v0",
+  "status": "screening_only",
+  "label": "Screening v0: RSYC-only biomass supply with zonal BC caps and backstop levers",
+  "policy_grade": false,
+  "notes": [
+    "Screening only. This set has no reserve-margin, transmission, curtailment, or build-rate constraints.",
+    "Not policy-grade. Results may be labelled screening or diagnostic, never policy or forecast.",
+    "The 5% PWRBIO cap, 0 GW nuclear cap, +$3/GJ wind adder, and 20% zonal wind cap are scenario assumptions, not policy.",
+    "The RSYC-only supply curve has no AAC, THLB, operability, or local correction.",
+    "A future policy_test_v1 is a distinct set. It is not defined here and screening_v0 must not be relabelled as policy-grade."
+  ],
+  "omitted_constraints": [
+    "reserve_margin",
+    "transmission",
+    "curtailment",
+    "build_rate"
+  ],
+  "future_sets": {
+    "policy_test_v1": {
+      "status": "not_defined",
+      "description": "Reserved identifier for a future policy-test constraint set with reserve margin, transmission, curtailment, build-rate, and reviewed supply-curve constraints. Do not treat screening_v0 as a substitute."
+    }
+  },
+  "emission_factors": {
+    "basis": "Mt CO2 per PJ of plant output activity",
+    "correction": "Multiplying the fuel-input factor by the plant InputActivityRatio converts it to the output-activity basis used by OSeMOSYS EmissionActivityRatio.",
+    "gas": {
+      "archetype": "NGS",
+      "fuel_basis_mt_per_pj": 0.051,
+      "input_activity_ratio": 2.7,
+      "output_basis_mt_per_pj": 0.1377
+    },
+    "coal": {
+      "archetype": "COA",
+      "fuel_basis_mt_per_pj": 0.09,
+      "input_activity_ratio": 2.9,
+      "output_basis_mt_per_pj": 0.261
+    },
+    "model_patch": {
+      "required": true,
+      "file": "data/derived/national/clews/osecan/emission_factor_fix/emission_factor_fix.patch",
+      "target": "src/osecan/data/build_params.py",
+      "description": "The disposable model copy must apply emission_factor_per_output_pj(arch) = ARCH[arch]['co2'] * PowerPlants[arch][1] to EmissionActivityRatio and UDCMultiplierActivity.",
+      "verification": "Check EmissionActivityRatio for PWRNGSN1/PWRNGSQ1/PWRNGSQ2/PWRNGST1 is 0.1377 and for coal archetypes is 0.261 Mt/PJ output; no raw 0.051/0.090 row may remain."
+    }
+  },
+  "supply": {
+    "log_share": 0.762716956451988,
+    "tile_factor_odt_per_m3": 0.08831776452936206,
+    "lhv_gj_per_odt": 18.5,
+    "pj_per_m3_log_at_60pct_recovery": 1.285309285421176e-06,
+    "bc_zonal_total_pj": 43.523816,
+    "tier_definitions_csv": "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv",
+    "bc_zonal_caps": {
+      "SUPBCWB1": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "SUPBCWB2": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv"
+    },
+    "bc_zonal_costs": {
+      "SUPBCWB1": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "SUPBCWB2": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv"
+    },
+    "tier_caps_pj": {
+      "T1": 85.007113,
+      "T2": 24.39175,
+      "T3": 39.873714,
+      "T4": 64.265464
+    },
+    "tier_variable_costs_usd_per_gj": {
+      "T1": 2.456978,
+      "T2": 2.456978,
+      "T3": 3.194071,
+      "T4": 3.5
+    },
+    "cost_usd_per_gj": {
+      "adopted_rest_of_canada_curve": 2.456977549,
+      "base": 2.456977549,
+      "low": 3.1940708137,
+      "high": 1.9655820392
+    }
+  },
+  "energy_defaults": {
+    "pwr_bio_cap_fraction": 0.05,
+    "nuclear_cap_gw": 0.0,
+    "wind_cost_usd_per_gj": 3.0,
+    "wind_cap_fraction": 0.2,
+    "generic_bio_cost_usd_per_gj": 3.0,
+    "t3_cap_pj": 39.873714,
+    "t4_cap_pj": 64.265464,
+    "hydro_mode": "cap_2021"
+  },
+  "reference_values": {
+    "hydro_cap_2021_pj": {
+      "PWRHYDA1": 197.204587,
+      "PWRHYDA2": 106.187162,
+      "PWRHYDB1": 187.437464,
+      "PWRHYDB2": 62.479153,
+      "PWRHYDL1": 39.891291,
+      "PWRHYDM1": 86.459343,
+      "PWRHYDN1": 6.276273,
+      "PWRHYDO1": 470.323642,
+      "PWRHYDO2": 82.94384,
+      "PWRHYDQ1": 649.900247,
+      "PWRHYDQ2": 162.020062,
+      "PWRHYDS1": 82.314492,
+      "PWRHYDT1": 97.10391
+    },
+    "pwrbio_reference_2050_generation_pj": {
+      "A1": 333.153069,
+      "A2": 179.389875,
+      "B1": 323.021655,
+      "B2": 107.673774,
+      "L1": 49.238823,
+      "M1": 106.485741,
+      "N1": 8.728152,
+      "O1": 740.654604,
+      "O2": 130.703721,
+      "Q1": 812.373147,
+      "Q2": 203.093149,
+      "S1": 126.146838,
+      "T1": 131.506473
+    },
+    "wind_reference_2050_activity_pj": {
+      "PWRWNDA1": 134.410738,
+      "PWRWNDA2": 70.416817,
+      "PWRWNDB1": 134.615443,
+      "PWRWNDB2": 34.463848,
+      "PWRWNDL1": 9.309792,
+      "PWRWNDM1": 18.195891,
+      "PWRWNDN1": 1.852812,
+      "PWRWNDO1": 270.431604,
+      "PWRWNDO2": 47.714049,
+      "PWRWNDQ1": 142.157026,
+      "PWRWNDQ2": 35.629091,
+      "PWRWNDS1": 39.947043,
+      "PWRWNDT1": 28.836524
+    },
+    "nuclear_zone_shares": {
+      "PWRURNA1": 0.132570278,
+      "PWRURNA2": 0.06801249,
+      "PWRURNB1": 0.146761915,
+      "PWRURNB2": 0.036026534,
+      "PWRURNL1": 0.008358461,
+      "PWRURNM1": 0.016228145,
+      "PWRURNN1": 0.001958757,
+      "PWRURNO1": 0.289150888,
+      "PWRURNO2": 0.051015251,
+      "PWRURNQ1": 0.143896218,
+      "PWRURNQ2": 0.03529688,
+      "PWRURNS1": 0.040215774,
+      "PWRURNT1": 0.03050841
+    }
+  },
+  "reference_inputs": {
+    "harvest_reference_paths": "data/derived/national/harvest_basis/harvest_reference_paths.csv",
+    "bc_zonal_caps": {
+      "SUPBCWB1": "data/derived/national/clews/SUPBCWB1_activity_limits_base.csv",
+      "SUPBCWB2": "data/derived/national/clews/SUPBCWB2_activity_limits_base.csv"
+    },
+    "bc_zonal_costs": {
+      "SUPBCWB1": "data/derived/national/clews/SUPBCWB1_variable_cost_base.csv",
+      "SUPBCWB2": "data/derived/national/clews/SUPBCWB2_variable_cost_base.csv"
+    },
+    "tier_definitions": "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv",
+    "pwrbio_reference": "data/derived/national/clews/osecan/pwrbio_cap/pwrbio_caps.json",
+    "wind_reference": "data/derived/national/clews/osecan/wind_integration_audit/wind_caps_20pct.json",
+    "nuclear_reference": "data/derived/national/clews/osecan/nuclear_audit/nuclear_caps.json",
+    "hydro_reference": "/tmp/osecan_emfix/results/base/results_csv/ProductionByTechnologyAnnual.csv"
+  }
+}
