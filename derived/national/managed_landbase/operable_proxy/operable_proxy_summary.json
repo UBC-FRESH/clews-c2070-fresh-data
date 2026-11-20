@@ -1,0 +1,275 @@
+{
+  "product": "national operable merchantable-forest screening proxy",
+  "status": "screening proxy; NOT a legal THLB, AAC landbase, or operability model",
+  "generated_at_utc": "2026-11-20T15:01:27+00:00",
+  "runtime_seconds": 81.279,
+  "command": "scripts/national/build_operable_proxy.py --workers 24",
+  "resolution_m": 30.0,
+  "aggregation_block_m": 990.0,
+  "thresholds": {
+    "default_case": "base",
+    "cases": {
+      "base": {
+        "height_m": 5.0,
+        "biomass_mg_ha": 20.0,
+        "closure_pct": 10.0
+      },
+      "low": {
+        "height_m": 3.0,
+        "biomass_mg_ha": 10.0,
+        "closure_pct": 5.0
+      },
+      "high": {
+        "height_m": 7.0,
+        "biomass_mg_ha": 30.0,
+        "closure_pct": 20.0
+      }
+    },
+    "marginal_cases": {
+      "height_ge_5": {
+        "height_m": 5.0,
+        "biomass_mg_ha": null,
+        "closure_pct": null
+      },
+      "biomass_ge_20": {
+        "height_m": null,
+        "biomass_mg_ha": 20.0,
+        "closure_pct": null
+      },
+      "closure_ge_10": {
+        "height_m": null,
+        "biomass_mg_ha": null,
+        "closure_pct": 10.0
+      }
+    },
+    "units": {
+      "height": "m",
+      "biomass": "Mg/ha (oven-dry aboveground biomass; SCANFI v2 attr_biomass)",
+      "closure": "percent crown closure"
+    }
+  },
+  "national": {
+    "treed": 422475761.06995845,
+    "height_ge_5": 371523809.2499688,
+    "biomass_ge_20": 356318493.0299762,
+    "closure_ge_10": 420877065.6899575,
+    "base": 332599169.87997824,
+    "low": 383377980.689969,
+    "high": 267938856.3599848
+  },
+  "managed_share_application": "Managed proxy numerator from managed_landbase_by_ecoprovince.csv divided by the SCANFI treed area in the same province-ecoprovince, held constant inside that unit and applied to merchantable area. The source managed_share column uses an ecoprovincial denominator, which is not applicable when an ecoprovince spans provinces; the numerator is unchanged. Tenure was not re-intersected with the merchantable raster.",
+  "by_province_base": {
+    "AB": {
+      "scanfi_forest_ha": 38345566.40999271,
+      "merchantable_ha": 32029496.459993772,
+      "operable_proxy_ha": 18401454.479620453,
+      "managed_share": 0.47988480031488345,
+      "coverage": "tenure_2016"
+    },
+    "BC": {
+      "scanfi_forest_ha": 66607736.939987905,
+      "merchantable_ha": 60432015.23999472,
+      "operable_proxy_ha": 49257580.36439982,
+      "managed_share": 0.7395173988388137,
+      "coverage": "tenure_2016"
+    },
+    "MB": {
+      "scanfi_forest_ha": 33753909.959998615,
+      "merchantable_ha": 23872338.90000002,
+      "operable_proxy_ha": 5485367.3400049945,
+      "managed_share": 0.16251057570828514,
+      "coverage": "tenure_2016"
+    },
+    "NB": {
+      "scanfi_forest_ha": 6692497.649999632,
+      "merchantable_ha": 5616901.799999997,
+      "operable_proxy_ha": 2136294.081110904,
+      "managed_share": 0.31920729641362244,
+      "coverage": "tenure_2016"
+    },
+    "NL": {
+      "scanfi_forest_ha": 23531836.319998927,
+      "merchantable_ha": 21430183.31999933,
+      "operable_proxy_ha": 883914.7797446247,
+      "managed_share": 0.03756250756314393,
+      "coverage": "tenure_2016"
+    },
+    "NS": {
+      "scanfi_forest_ha": 4727696.939999726,
+      "merchantable_ha": 4414288.229999907,
+      "operable_proxy_ha": 1023683.680972077,
+      "managed_share": 0.2165290402417665,
+      "coverage": "tenure_2016"
+    },
+    "NT": {
+      "scanfi_forest_ha": 43460564.12999662,
+      "merchantable_ha": 24529382.279998627,
+      "operable_proxy_ha": 638786.103891078,
+      "managed_share": 0.014698062868682043,
+      "coverage": "tenure_2016"
+    },
+    "NU": {
+      "scanfi_forest_ha": 2834208.4500042857,
+      "merchantable_ha": 2114678.880004076,
+      "operable_proxy_ha": null,
+      "managed_share": null,
+      "coverage": "missing"
+    },
+    "ON": {
+      "scanfi_forest_ha": 68517060.12000237,
+      "merchantable_ha": 53481550.49999781,
+      "operable_proxy_ha": 30011171.696027674,
+      "managed_share": 0.4380102071435261,
+      "coverage": "tenure_2016"
+    },
+    "PE": {
+      "scanfi_forest_ha": 274471.8299999991,
+      "merchantable_ha": 250918.10999999856,
+      "operable_proxy_ha": null,
+      "managed_share": null,
+      "coverage": "missing"
+    },
+    "QC": {
+      "scanfi_forest_ha": 81663538.49999607,
+      "merchantable_ha": 72180959.03999725,
+      "operable_proxy_ha": 26158593.66205905,
+      "managed_share": 0.3203215797716175,
+      "coverage": "tenure_2016"
+    },
+    "SK": {
+      "scanfi_forest_ha": 26160931.25998441,
+      "merchantable_ha": 14514359.939992972,
+      "operable_proxy_ha": 4933086.317863078,
+      "managed_share": 0.1885669232810796,
+      "coverage": "tenure_2016"
+    },
+    "YT": {
+      "scanfi_forest_ha": 25905742.559997227,
+      "merchantable_ha": 17732097.179999795,
+      "operable_proxy_ha": 5759877.625505024,
+      "managed_share": 0.2223398002263495,
+      "coverage": "tenure_2016"
+    }
+  },
+  "sensitivity": {
+    "low": {
+      "label": "height >= 3 m, biomass >= 10 Mg/ha, closure >= 5%",
+      "national_ha": 383377980.689969,
+      "share_of_treed": 0.9074555655430485,
+      "thresholds": {
+        "height_m": 3.0,
+        "biomass_mg_ha": 10.0,
+        "closure_pct": 5.0
+      }
+    },
+    "base": {
+      "label": "height >= 5 m, biomass >= 20 Mg/ha, closure >= 10%",
+      "national_ha": 332599169.87997824,
+      "share_of_treed": 0.7872621355545711,
+      "thresholds": {
+        "height_m": 5.0,
+        "biomass_mg_ha": 20.0,
+        "closure_pct": 10.0
+      }
+    },
+    "high": {
+      "label": "height >= 7 m, biomass >= 30 Mg/ha, closure >= 20%",
+      "national_ha": 267938856.3599848,
+      "share_of_treed": 0.634211192806435,
+      "thresholds": {
+        "height_m": 7.0,
+        "biomass_mg_ha": 30.0,
+        "closure_pct": 20.0
+      }
+    },
+    "height_ge_5": {
+      "label": "treed and height >= 5 m",
+      "national_ha": 371523809.2499688,
+      "share_of_treed": 0.8793967452926786,
+      "thresholds": null
+    },
+    "biomass_ge_20": {
+      "label": "treed and biomass >= 20 Mg/ha",
+      "national_ha": 356318493.0299762,
+      "share_of_treed": 0.8434057663511086,
+      "thresholds": null
+    },
+    "closure_ge_10": {
+      "label": "treed and crown closure >= 10%",
+      "national_ha": 420877065.6899575,
+      "share_of_treed": 0.9962158885140484,
+      "thresholds": null
+    }
+  },
+  "validation": {
+    "strip_pixel_conservation_max_residual": 0,
+    "blocks_filled_by_nearest_unit": 22672788,
+    "national_treed_ha": 422475761.07,
+    "area_weights_forest_ha": 422475761.06999743,
+    "treed_vs_area_weights_abs_diff_ha": 2.562999725341797e-06,
+    "treed_matches_area_weights": true,
+    "no_nan_in_area_fields": true,
+    "no_negative_area_fields": true,
+    "operable_defined_where_coverage_available": true,
+    "operable_blank_where_coverage_missing": true,
+    "no_negative_operable": true,
+    "managed_share_le_one": true,
+    "operable_le_merchantable": true,
+    "merchantable_le_treed": true,
+    "threshold_ordering_low_ge_base_ge_high": true,
+    "province_sum_equals_ecoprovince_sum_base": true,
+    "province_sum_equals_national_base": true,
+    "national_base_merchantable_ha": 332599169.87997824,
+    "national_operable_proxy_ha": 144689810.13119876,
+    "existing_managed_proxy_ha": 166275934.7734233,
+    "operable_le_existing_managed_proxy": true,
+    "operable_share_of_managed_proxy": 0.8701789006831386,
+    "nfi_forest_land_ha": 369019352.0,
+    "scanfi_treed_to_nfi_ratio": 1.144860720122884,
+    "base_merchantable_to_nfi_ratio": 0.9013054954363972,
+    "operable_to_nfi_ratio": 0.39209274350251083,
+    "all_checks_pass": true
+  },
+  "inputs": {
+    "scanfi_landcover": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_nfiLandcover_2025_v2_20260119.tif",
+      "sha256": "668438f6388731a1cf6a9e899a3d7aeb8a998e35c97e5199007db9da03ef46b2",
+      "bytes": 1666500786
+    },
+    "scanfi_height": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_height_2025_v2_20260119.tif",
+      "sha256": "d69ac3d77ce4cbfc885542a86ffc1622360c870d2d6c80c46c096a7cc1e0d845",
+      "bytes": 3152239611
+    },
+    "scanfi_biomass": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_biomass_2025_v2_20260119.tif",
+      "sha256": "7e1c54f8b82f7c8e39d5f05377ecb6d003f084d731cee7a6f156edc9d89aaab4",
+      "bytes": 6871947673
+    },
+    "scanfi_closure": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_closure_2025_v2_20260119.tif",
+      "sha256": "84e7490d97cf72d22949843ffb7935f4fa4a453da44901f4ce88b67d021d1a94",
+      "bytes": 4265150822
+    },
+    "managed_landbase": {
+      "path": "data/derived/national/managed_landbase/managed_landbase_by_ecoprovince.csv",
+      "sha256": "012d382fe0e81db0621f5d043a4f4bc5ff0a271618e1af2686af5a2196981956"
+    },
+    "provinces": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "ecodistricts": {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    }
+  },
+  "caveats": [
+    "Screening proxy only; not a legal THLB, AAC landbase, or harvest feasibility test.",
+    "Tenure/managed forest is assumed uniformly distributed inside each province-ecoprovince.",
+    "No slope, operability, road access, economic, silvicultural, or age constraint is applied.",
+    "SCANFI is a 30 m prediction surface, not a census or provincial inventory.",
+    "Managed values are blank for NU and PE because the 2016 tenure compilation has no coverage there.",
+    "Thresholds are screening conventions, not statutory merchantability rules."
+  ]
+}
