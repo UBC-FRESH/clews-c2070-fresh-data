@@ -1,0 +1,162 @@
+{
+  "artifacts": [
+    {
+      "bytes": 17049,
+      "kind": "supply_caps",
+      "path": "supply_caps.json",
+      "sha256": "a252be2452655717f656c88961673adebfd0fe6589a3782ff955528443239a5a"
+    },
+    {
+      "bytes": 72673,
+      "kind": "parameter",
+      "path": "run/params/TotalTechnologyAnnualActivityUpperLimit.csv",
+      "sha256": "c0c0de3effebbcfff693cbd1da9e70851267cf0c3fdada8f547b7846981e7a4d"
+    },
+    {
+      "bytes": 172598,
+      "kind": "parameter",
+      "path": "run/params/VariableCost.csv",
+      "sha256": "e314534f06b97ac8d2a5357b46ad640c2434d1f2020b8d23dac955afbff36edb"
+    },
+    {
+      "bytes": 924908,
+      "kind": "dispatch",
+      "path": "dispatch_by_zone.csv",
+      "sha256": "1e6a1578f46675217d8b2b26a8689d3a87b0fd24008a9e00c4081cdfc8e32b41"
+    },
+    {
+      "bytes": 146,
+      "kind": "solver_status",
+      "path": "run/status.json",
+      "sha256": "e324062589aa074179b2827fe06feb651dda6bcc55b91d1ef2ec2497a9bc4ccd"
+    },
+    {
+      "bytes": 356,
+      "kind": "emissions",
+      "path": "run/results_csv/AnnualEmissions.csv",
+      "sha256": "d7c82a829c7058a536bfb064ef3af073a778005907d4e7f1617c0c115ea5437d"
+    },
+    {
+      "bytes": 21717,
+      "kind": "manifest",
+      "path": "manifest.json",
+      "sha256": "f25e74f23190329cef03088f4d12f4047c43d778b4e473c10e7bcf391c3fe4fa"
+    }
+  ],
+  "constraint_status": "screening_only",
+  "constraints": {
+    "notes": [
+      "Screening only. This set has no reserve-margin, transmission, curtailment, or build-rate constraints.",
+      "Not policy-grade. Results may be labelled screening or diagnostic, never policy or forecast.",
+      "The 5% PWRBIO cap, 0 GW nuclear cap, +$3/GJ wind adder, and 20% zonal wind cap are scenario assumptions, not policy.",
+      "The RSYC-only supply curve has no AAC, THLB, operability, or local correction.",
+      "A future policy_test_v1 is a distinct set. It is not defined here and screening_v0 must not be relabelled as policy-grade."
+    ],
+    "policy_grade": false,
+    "set_id": "screening_v0",
+    "status": "screening_only"
+  },
+  "diagnostic": false,
+  "dispatch_by_zone": "dispatch_by_zone.csv",
+  "dispatch_rows": 17283,
+  "dry_run": false,
+  "emissions_2050_mt": 0.0,
+  "emissions_mt_by_year": {
+    "2021": 94.20443,
+    "2022": 83.024032,
+    "2023": 67.328171,
+    "2024": 60.189048,
+    "2025": 49.867175,
+    "2026": 27.180372,
+    "2027": 17.516492,
+    "2028": 10.537751,
+    "2029": 5.302665,
+    "2030": 5.096399,
+    "2031": 2.293684,
+    "2032": 0.38666,
+    "2037": 0.000245,
+    "2042": 0.000245
+  },
+  "emissions_total_mt": 422.927369,
+  "feasibility_notes": [
+    "150 Mm3 is the adopted high scenario bound and is 7.34 Mm3 below the partial AAC sum, but the status-quo provincial mix exceeds the BC repo AAC (3.79 Mm3; 5.64 against the 2028+ hold), NB Crown AAC (5.54 Mm3), NB NFD (2.19 Mm3), NS Crown AAC (1.21 Mm3; under the combined Crown+private ceiling), and the NT proxy (0.01 Mm3).",
+    "No provincial harvest allocation model exists. The national bound is conditional, not a feasible provincial-mix case.",
+    "NB, NS, and QC report Crown AAC while FSD harvest is total provincial harvest; a total-harvest/Crown-AAC comparison is not automatically an AAC breach.",
+    "The 157.34 Mm3 AAC sum is partial and mixed-basis (MB, PE, and NU are missing); it is not a legal national AAC.",
+    "Harvest is exogenous and free in the energy objective; this is not a policy or Pareto frontier."
+  ],
+  "feasibility_status": "conditional",
+  "generated_utc": "2026-11-20T06:55:59+00:00",
+  "harmonize": {
+    "exit_code": 0,
+    "log": "/tmp/alloc_runs/150m/run/harmonize.log",
+    "message": "HARMONIZED \u2014 all params reference valid SET codes.",
+    "tool": "python -m osecan.cli harmonize"
+  },
+  "harvest_exogenous": true,
+  "harvest_feasibility": {
+    "diagnostic": false,
+    "documented_aac_partial_sum_m3": 157343387,
+    "label": "conditional \u2014 national bound only",
+    "max_normal_harvest_m3": 150000000,
+    "nfd_wood_supply_sum_m3": 207680142,
+    "notes": [
+      "150 Mm3 is the adopted high scenario bound and is 7.34 Mm3 below the partial AAC sum, but the status-quo provincial mix exceeds the BC repo AAC (3.79 Mm3; 5.64 against the 2028+ hold), NB Crown AAC (5.54 Mm3), NB NFD (2.19 Mm3), NS Crown AAC (1.21 Mm3; under the combined Crown+private ceiling), and the NT proxy (0.01 Mm3).",
+      "No provincial harvest allocation model exists. The national bound is conditional, not a feasible provincial-mix case.",
+      "NB, NS, and QC report Crown AAC while FSD harvest is total provincial harvest; a total-harvest/Crown-AAC comparison is not automatically an AAC breach.",
+      "The 157.34 Mm3 AAC sum is partial and mixed-basis (MB, PE, and NU are missing); it is not a legal national AAC.",
+      "Harvest is exogenous and free in the energy objective; this is not a policy or Pareto frontier."
+    ],
+    "observed_harvest_m3": 118977339,
+    "pareto_eligible": false,
+    "status": "conditional"
+  },
+  "manifest": "manifest.json",
+  "message": "Screening-only OSeCAN solve completed.",
+  "model": {
+    "copy_tree_sha256": "4f2c1826dcab91f51c917a9787b3f76bdc395f13b895e9d5b98c6cae4f41e992",
+    "source_commit": "40d5b43bb3f8b3f69c16e953144d35eeed5f0f44",
+    "source_dirty": true,
+    "source_root": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/runtime/osecan_model"
+  },
+  "objective_musd": 1444917.38,
+  "pareto_eligible": false,
+  "policy_grade": false,
+  "scenario_id": "screening_150m_lp",
+  "scenario_label": "150 Mm3 harvest ladder - LP allocation",
+  "scenario_path": "/tmp/alloc_scenarios/screening_150m_lp.json",
+  "schema_version": "clews.scenario.v1",
+  "screening_only": true,
+  "solver_status": "optimal",
+  "status": "completed",
+  "supply": {
+    "bc_zonal_pj_2050": 43.523816,
+    "checks": {
+      "allocation": {
+        "allocation_case": "150m",
+        "allocation_total_m3": 150000000.2,
+        "allocation_total_matches_harvest_from_2025": true,
+        "basis": "harvest_allocation",
+        "national_total_pj_base": 166.8010931797649,
+        "residue_factor_total_basis_odt_per_m3": 0.07640962301026852,
+        "weighted_gross_odt_per_m3_log": 0.10018083689355922,
+        "weighted_recoverable_odt_per_m3_log_base": 0.060108501966617454
+      },
+      "bc_zonal_2028_pj": 43.523816032,
+      "bc_zonal_matches_canonical": true,
+      "national_equals_tiers_plus_bc_all_years": true,
+      "tier_cap_sum_pj": 213.538041,
+      "tier_sum_equals_rest_all_years": true
+    },
+    "harvest_level_m3_per_year": 150000000.0,
+    "harvest_path": "custom",
+    "national_total_pj_2050": 166.801093,
+    "rest_of_canada_pj_2050": 123.277277,
+    "tier_caps_pj_2050": {
+      "SUPBCWT1": 85.007113,
+      "SUPBCWT2": 24.39175,
+      "SUPBCWT3": 13.878414,
+      "SUPBCWT4": 0.0
+    }
+  }
+}

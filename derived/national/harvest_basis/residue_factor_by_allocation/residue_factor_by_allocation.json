@@ -1,0 +1,119 @@
+{
+  "product": "harvest-weighted national residue factors",
+  "status": "screening comparison; provincial allocation is not a forecast",
+  "generated_at_utc": "2026-11-20T06:52:23+00:00",
+  "basis": "sum_p(h_p * factor_p) / sum_p(h_p)",
+  "constants": {
+    "lhv_gj_per_odt": 18.5,
+    "recovery_fractions": {
+      "low": 0.35,
+      "base": 0.6,
+      "high": 0.75
+    },
+    "allocation_totals_m3": {
+      "100m": 100000000.0,
+      "119m": 118977339.0,
+      "150m": 150000000.0,
+      "observed": 118977339.0
+    }
+  },
+  "area_share_reference": {
+    "gross_odt_per_m3_log": 0.116820637,
+    "recoverable_odt_per_m3_log_base": 0.070092382,
+    "pj_per_100m_log_base": 129.670907,
+    "note": "Species-resolved SCANFI area-share apportionment of standing inventory; the province weights are not a harvest allocation."
+  },
+  "cases": {
+    "observed": {
+      "total_harvest_m3": 118977339.0,
+      "gross_odt_per_m3_log": 0.09821052656452142,
+      "recoverable_odt_per_m3_log": {
+        "low": 0.0343736841196051,
+        "base": 0.05892631574983421,
+        "high": 0.0736578949342923
+      },
+      "pj_per_100m_log": {
+        "low": 63.59131562126943,
+        "base": 109.01368413719328,
+        "high": 136.26710562844073
+      },
+      "national_total_pj": {
+        "low": 75.65925516127768,
+        "base": 129.70158053229767,
+        "high": 162.12697620903805
+      }
+    },
+    "100m": {
+      "total_harvest_m3": 100000000.1,
+      "gross_odt_per_m3_log": 0.09881141978912235,
+      "recoverable_odt_per_m3_log": {
+        "low": 0.03458399675649594,
+        "base": 0.05928685168829839,
+        "high": 0.07410856485731991
+      },
+      "pj_per_100m_log": {
+        "low": 63.980393999517496,
+        "base": 109.68067562335202,
+        "high": 137.10084498604184
+      },
+      "national_total_pj": {
+        "low": 63.980394063497876,
+        "base": 109.68067573303269,
+        "high": 137.10084512314265
+      }
+    },
+    "119m": {
+      "total_harvest_m3": 118977339.1,
+      "gross_odt_per_m3_log": 0.09917942012736132,
+      "recoverable_odt_per_m3_log": {
+        "low": 0.03471279687997264,
+        "base": 0.05950765189351612,
+        "high": 0.07438456511381784
+      },
+      "pj_per_100m_log": {
+        "low": 64.21867422794938,
+        "base": 110.08915600300482,
+        "high": 137.611445460563
+      },
+      "national_total_pj": {
+        "low": 76.40566980171165,
+        "base": 130.98114845002303,
+        "high": 163.7264361060256
+      }
+    },
+    "150m": {
+      "total_harvest_m3": 150000000.2,
+      "gross_odt_per_m3_log": 0.10018083689355922,
+      "recoverable_odt_per_m3_log": {
+        "low": 0.03506329278703432,
+        "base": 0.060108501966617454,
+        "high": 0.07513562771397608
+      },
+      "pj_per_100m_log": {
+        "low": 64.8670916560135,
+        "base": 111.2007286382423,
+        "high": 139.00091127085577
+      },
+      "national_total_pj": {
+        "low": 97.30063761375442,
+        "base": 166.8010931797649,
+        "high": 208.50136718428544
+      }
+    }
+  },
+  "province_factor_count": 13,
+  "inputs": {
+    "data/derived/national/clews_supply/rsyc_backbone/residue_factor_by_province.csv": {
+      "sha256": "3cc14dce5cdfe0b47cdb1103effdcb09cf9a8af4061ae45b032a5fe9eb883c05"
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": {
+      "sha256": "ba2faff85ff19565fa5521cf84cb39cc512f92ef94c69958893324d20652d64d"
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": {
+      "sha256": "de3f5bf12bc33317dba93c2cb075a6026c948b0a472fd0debc4a1da1a944872d"
+    },
+    "data/derived/national/harvest_basis/provincial_allocation/150m.csv": {
+      "sha256": "a83593da07d6277af426d7410a145f7a20ed82f22d51cd24dec6a14f510d5cf8"
+    }
+  }
+}
