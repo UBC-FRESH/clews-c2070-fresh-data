@@ -30,21 +30,21 @@ The secondary stage breaks the L1 tie so the shortfall is distributed in proport
 
 ## Caps and basis
 
-| Province | 2024 observed (Mm3) | AAC (Mm3) | NFD (Mm3) | Managed proxy (Mha) | Upper bound (Mm3) | Basis |
-|---|---:|---:|---:|---:|---:|---|
-| BC | 38.877 | 45.224 | 63.775 | 54.37 | 45.224 | `repo_parsed_tsa_aac` |
-| AB | 22.260 | 30.100 | 31.632 | 21.79 | 30.100 | `crown_aac_approx` |
-| SK | 4.225 | 8.940 | 8.940 | 7.49 | 8.940 | `crown_aac_approx` |
-| MB | 1.104 | — | 7.990 | 6.90 | 7.690 | `documented_range_midpoint_proxy` |
-| ON | 13.122 | 28.700 | 28.803 | 33.81 | 28.700 | `crown_aac_approx` |
-| QC | 25.939 | 34.115 | 48.467 | 28.27 | 34.115 | `legal_crown_aac` |
-| NB | 9.341 | 6.235 | 9.590 | 2.56 | 6.235 | `legal_crown_aac` |
-| NS | 2.322 | 1.720 | 5.750 | 1.10 | 5.750 | `crown_plus_documented_private_aac` |
-| NL | 1.414 | 2.012 | 2.012 | 1.11 | 2.012 | `legal_crown_aac` |
-| PE | 0.294 | — | 0.460 | — | 0.460 | `nfd_planning_volume_no_aac` |
-| YT | 0.043 | 0.261 | 0.261 | 8.07 | 0.261 | `legal_crown_aac` |
-| NT | 0.037 | 0.036 | — | 0.82 | 0.036 | `actual_mean_proxy_no_territory_aac` |
-| NU | 0.000 | — | — | — | 0.000 | `not_assessed_no_data` |
+| Province | 2024 observed (Mm3) | AAC (Mm3) | NFD (Mm3) | Managed proxy (Mha) | Operable proxy (Mha) | Upper bound (Mm3) | Basis |
+|---|---:|---:|---:|---:|---:|---:|---|
+| BC | 38.877 | 45.224 | 63.775 | 54.37 | 49.26 | 45.224 | `repo_parsed_tsa_aac` |
+| AB | 22.260 | 30.100 | 31.632 | 21.79 | 18.40 | 30.100 | `crown_aac_approx` |
+| SK | 4.225 | 8.940 | 8.940 | 7.49 | 4.93 | 8.940 | `crown_aac_approx` |
+| MB | 1.104 | — | 7.990 | 6.90 | 5.49 | 7.690 | `documented_range_midpoint_proxy` |
+| ON | 13.122 | 28.700 | 28.803 | 33.81 | 30.01 | 28.700 | `crown_aac_approx` |
+| QC | 25.939 | 34.115 | 48.467 | 28.27 | 26.16 | 34.115 | `legal_crown_aac` |
+| NB | 9.341 | 6.235 | 9.590 | 2.56 | 2.14 | 6.235 | `legal_crown_aac` |
+| NS | 2.322 | 1.720 | 5.750 | 1.10 | 1.02 | 5.750 | `crown_plus_documented_private_aac` |
+| NL | 1.414 | 2.012 | 2.012 | 1.11 | 0.88 | 2.012 | `legal_crown_aac` |
+| PE | 0.294 | — | 0.460 | — | missing | 0.460 | `nfd_planning_volume_no_aac+operable_missing` |
+| YT | 0.043 | 0.261 | 0.261 | 8.07 | 5.76 | 0.261 | `legal_crown_aac` |
+| NT | 0.037 | 0.036 | — | 0.82 | 0.64 | 0.036 | `actual_mean_proxy_no_territory_aac` |
+| NU | 0.000 | — | — | — | missing | 0.000 | `not_assessed_no_data+operable_missing` |
 
 The documented AAC partial sum is 157.343 Mm3/yr (mixed basis; excludes MB, PE, NU). Adding the MB range midpoint (7.690), the PE planning volume (0.460), and documented NS private AAC (4.030) gives the model ceiling of **169.523 Mm3/yr**. The most generous documented set (BC 60M, MB 7.99M, NS 5.75M, PE 0.46M) gives **184.600 Mm3/yr**.
 
@@ -72,10 +72,10 @@ The documented AAC partial sum is 157.343 Mm3/yr (mixed basis; excludes MB, PE, 
 | NB | 6.235 | 9.341 | 7.851% | 6.235% | 6.235 | 9.590 | 6.235 | yes | `legal_crown_aac` |
 | NS | 1.986 | 2.322 | 1.952% | 1.986% | 1.720 | 5.750 | 5.750 |  | `crown_plus_documented_private_aac` |
 | NL | 1.209 | 1.414 | 1.188% | 1.209% | 2.012 | 2.012 | 2.012 |  | `legal_crown_aac` |
-| PE | 0.251 | 0.294 | 0.247% | 0.251% | — | 0.460 | 0.460 |  | `nfd_planning_volume_no_aac` |
+| PE | 0.251 | 0.294 | 0.247% | 0.251% | — | 0.460 | 0.460 |  | `nfd_planning_volume_no_aac+operable_missing` |
 | YT | 0.037 | 0.043 | 0.036% | 0.037% | 0.261 | 0.261 | 0.261 |  | `legal_crown_aac` |
 | NT | 0.031 | 0.037 | 0.031% | 0.031% | 0.036 | — | 0.036 |  | `actual_mean_proxy_no_territory_aac` |
-| NU | 0.000 | 0.000 | 0.000% | 0.000% | — | — | 0.000 |  | `not_assessed_no_data` |
+| NU | 0.000 | 0.000 | 0.000% | 0.000% | — | — | 0.000 |  | `not_assessed_no_data+operable_missing` |
 
 Binding provinces: **NB**. Achieved L1 = 3.233 Mm3; maximum proportional increase = 1.474%; maximum absolute deviation = 1.617 Mm3.
 
@@ -92,10 +92,10 @@ Binding provinces: **NB**. Achieved L1 = 3.233 Mm3; maximum proportional increas
 | NB | 6.235 | 9.341 | 7.851% | 5.240% | 6.235 | 9.590 | 6.235 | yes | `legal_crown_aac` |
 | NS | 2.388 | 2.322 | 1.952% | 2.007% | 1.720 | 5.750 | 5.750 |  | `crown_plus_documented_private_aac` |
 | NL | 1.454 | 1.414 | 1.188% | 1.222% | 2.012 | 2.012 | 2.012 |  | `legal_crown_aac` |
-| PE | 0.302 | 0.294 | 0.247% | 0.254% | — | 0.460 | 0.460 |  | `nfd_planning_volume_no_aac` |
+| PE | 0.302 | 0.294 | 0.247% | 0.254% | — | 0.460 | 0.460 |  | `nfd_planning_volume_no_aac+operable_missing` |
 | YT | 0.044 | 0.043 | 0.036% | 0.037% | 0.261 | 0.261 | 0.261 |  | `legal_crown_aac` |
 | NT | 0.036 | 0.037 | 0.031% | 0.031% | 0.036 | — | 0.036 | yes | `actual_mean_proxy_no_territory_aac` |
-| NU | 0.000 | 0.000 | 0.000% | 0.000% | — | — | 0.000 |  | `not_assessed_no_data` |
+| NU | 0.000 | 0.000 | 0.000% | 0.000% | — | — | 0.000 |  | `not_assessed_no_data+operable_missing` |
 
 Binding provinces: **NB, NT**. Achieved L1 = 6.213 Mm3; maximum proportional increase = 2.835%; maximum absolute deviation = 3.106 Mm3.
 
@@ -112,10 +112,10 @@ Binding provinces: **NB, NT**. Achieved L1 = 6.213 Mm3; maximum proportional inc
 | NB | 6.235 | 9.341 | 7.851% | 4.156% | 6.235 | 9.590 | 6.235 | yes | `legal_crown_aac` |
 | NS | 3.551 | 2.322 | 1.952% | 2.367% | 1.720 | 5.750 | 5.750 |  | `crown_plus_documented_private_aac` |
 | NL | 2.012 | 1.414 | 1.188% | 1.341% | 2.012 | 2.012 | 2.012 | yes | `legal_crown_aac` |
-| PE | 0.449 | 0.294 | 0.247% | 0.300% | — | 0.460 | 0.460 |  | `nfd_planning_volume_no_aac` |
+| PE | 0.449 | 0.294 | 0.247% | 0.300% | — | 0.460 | 0.460 |  | `nfd_planning_volume_no_aac+operable_missing` |
 | YT | 0.065 | 0.043 | 0.036% | 0.044% | 0.261 | 0.261 | 0.261 |  | `legal_crown_aac` |
 | NT | 0.036 | 0.037 | 0.031% | 0.024% | 0.036 | — | 0.036 | yes | `actual_mean_proxy_no_territory_aac` |
-| NU | 0.000 | 0.000 | 0.000% | 0.000% | — | — | 0.000 |  | `not_assessed_no_data` |
+| NU | 0.000 | 0.000 | 0.000% | 0.000% | — | — | 0.000 |  | `not_assessed_no_data+operable_missing` |
 
 At 150M the 2024-share mix exceeds ceilings by **9.341 Mm3** (BC 3.790, NB 5.542, NT 0.010 Mm3). The LP removes those volumes and redistributes them to provinces with headroom:
 
@@ -142,22 +142,28 @@ Sensitivity with the separately reported BC current Crown AAC of 60M: BC no long
 
 The 200M diagnostic is infeasible by construction: the model ceiling is 169.523 Mm3/yr, so the exact deficit is **30.477 Mm3**. Even the most generous documented ceiling (184.600 Mm3/yr: BC 60M, MB 7.99M, NS 5.75M, PE 0.46M) leaves a deficit of **15.400 Mm3**. No allocation is forced; the case is reported as infeasible.
 
-## Managed-landbase intensity sensitivity
+## Operable-proxy intensity sensitivity
 
-The tenure-union proxy is not a THLB. The intensity cap is applied as `upper_bound_p = min(upper_bound_p, I * managed_proxy_ha)` and excludes PE/NU, which have no proxy. This is a landbase feasibility screen, not an energy solve and not a legal constraint.
+The screening landbase is the national **operable merchantable-forest proxy** (SCANFI height >= 5 m, biomass >= 20 Mg/ha, closure >= 10%, intersected with a share-based 2016 tenure proxy). It is **not a legal THLB**. The intensity cap is applied as `upper_bound_p = min(documented AAC/NFD/planning proxy, I * operable_proxy_ha)`. PE and NU have no operable proxy: their documented caps are retained and flagged `operable_missing`; no area is substituted with zero. The 166.28 Mha managed proxy is retained only as a comparison basis.
 
-| Case | Intensity (m3/ha/yr) | Status | Capacity (Mm3) | Binding provinces | L1 (Mm3) | Deficit (Mm3) |
-|---|---:|---|---:|---|---:|---:|
-| 100M | 1.0 | optimal | 143.887 | NB, NS, NL | 12.459 | — |
-| 100M | 1.2 | optimal | 157.090 | NB, NS | 10.832 | — |
-| 119M | 1.0 | optimal | 143.887 | AB, QC, NB, NS, NL, NT | 17.578 | — |
-| 119M | 1.2 | optimal | 157.090 | NB, NS, NL, NT | 14.726 | — |
-| 150M | 1.0 | infeasible | 143.887 | — | — | 6.113 |
-| 150M | 1.2 | optimal | 157.090 | BC, AB, QC, NB, NS, NL, PE, NT | 32.984 | — |
+National operable proxy: **144.690 Mha** (87.0% of the 166.28 Mha managed proxy). The national envelope `I * national operable area` is 144.690 Mm3/yr at I=1.0 and 173.628 Mm3/yr at I=1.2. That envelope is a diagnostic only; the model of record applies the cap per province, so a documented cap below `I * operable_proxy_ha` still binds.
 
-At 150M the effective caps under a 1.0 m3/ha/yr screen sum to 143.887 Mm3/yr, so that screen is infeasible by **6.113 Mm3**. The 1.2 m3/ha/yr effective caps sum to 157.090 Mm3/yr and the case remains feasible with 82.115% maximum proportional increase over 2024 shares. The 100M and 119M cases are feasible at both intensities; their binding sets are 100M `NB, NS, NL` and 119M `AB, QC, NB, NS, NL, NT` at 1.0.
+| Case | Intensity (m3/ha/yr) | Status | Provincial capacity (Mm3) | National envelope (Mm3) | Binding provinces | L1 (Mm3) | Provincial deficit (Mm3) | Envelope deficit (Mm3) |
+|---|---:|---|---:|---:|---|---:|---:|---:|
+| 100M | 1.0 | optimal | 133.704 | 144.690 | AB, NB, NS, NL | 14.512 | — | — |
+| 100M | 1.2 | optimal | 145.508 | 173.628 | NB, NS, NL | 12.278 | — | — |
+| 119M | 1.0 | optimal | 133.704 | 144.690 | BC, AB, SK, QC, NB, NS, NL, NT | 25.786 | — | — |
+| 119M | 1.2 | optimal | 145.508 | 173.628 | AB, NB, NS, NL, NT | 16.808 | — | — |
+| 150M | 1.0 | infeasible | 133.704 | 144.690 | — | — | 16.296 | 5.310 |
+| 150M | 1.2 | infeasible | 145.508 | 173.628 | — | — | 4.492 | — |
 
-This confirms that the proxy cannot certify a 150M provincial pattern under a 1.0 m3/ha/yr screen; it does not establish a legal constraint. Per-intensity outputs are under `intensity_1.0/` and `intensity_1.2/` (CSVs for feasible cases plus `provincial_allocation_summary.json`). The 150M 1.0 case is infeasible and has no CSV.
+At 150M the per-province min caps under a 1.0 m3/ha/yr screen sum to 133.704 Mm3/yr, so the LP is infeasible by **16.296 Mm3**. The national operable envelope alone would be short by 5.310 Mm3; the larger provincial deficit arises because BC, ON, YT, and NT documented caps bind below `1.0 * operable_proxy_ha`.
+
+At 1.2 m3/ha/yr the per-province min caps sum to 145.508 Mm3/yr, so the LP is **still infeasible by 4.492 Mm3** under the per-province formula. The national envelope is 173.628 Mm3/yr and would clear 150M by 23.628 Mm3, but it cannot be allocated because BC (45.224), ON (28.700), YT (0.261), and NT (0.036 Mm3/yr) documented caps bind first. Reporting 1.2 as feasible would require dropping either the documented-cap constraint or the per-province operable constraint; neither is done here.
+
+The 100M and 119M cases are feasible at both intensities. At 1.0 the binding sets are 100M `AB, NB, NS, NL` and 119M `BC, AB, SK, QC, NB, NS, NL, NT`; at 1.2 they are 100M `NB, NS, NL` and 119M `AB, NB, NS, NL, NT`. PE and NU retain their documented caps and are flagged `operable_missing`.
+
+For comparison, the superseded managed-proxy screen at 1.0 has a 150M deficit of 6.113 Mm3 and is feasible at 1.2. The tighter operable proxy therefore moves the 150M screen from '1.2 feasible' to '1.2 still short by 4.492 Mm3'. Per-intensity outputs are under `intensity_1.0/` and `intensity_1.2/` (CSVs for feasible cases plus `provincial_allocation_summary.json`). The 150M cases are infeasible at both intensities and have no CSV.
 
 ## Caveats
 
@@ -166,13 +172,13 @@ This confirms that the proxy cannot certify a 150M provincial pattern under a 1.
 - NS uses Crown 1.72M plus documented private 4.03M. The Crown-only comparison is retained in the feasibility note.
 - BC uses the repo-parsed 2024 TSA AAC (45.22M). The current reported Crown AAC (~58-60M) and the 2028+ path (43.37M) bracket this value; the 60M sensitivity is reported above.
 - MB uses the midpoint of the documented 7.39-7.99M range; it is non-binding at every ladder level, so the choice does not affect the allocations.
-- PE has no statutory AAC; 460,000 m3/yr is a planning volume. NT uses the 2020-2024 actual-harvest mean, not a legal AAC. NU is not assessed.
-- The managed-landbase proxy has no growth, yield, operability, accessibility, or economic content. Intensity caps are sensitivity screens, not constraints.
+- PE has no statutory AAC; 460,000 m3/yr is a planning volume. NT uses the 2020-2024 actual-harvest mean, not a legal AAC. NU is not assessed. PE and NU have no operable proxy and keep their documented caps with `operable_missing`.
+- The operable proxy has no slope, road access, age/disturbance, growth, yield, silvicultural, or economic content. Intensity caps are sensitivity screens, not constraints.
 - The objective is a share-deviation rule. It has no harvest cost, log value, stumpage, silviculture, transport, or forest-sector employment content.
 
 ## Next steps
 
-1. Replace the tenure-union proxy with a real THLB and operability filter before interpreting intensity.
+1. Replace the share-based operable proxy with a legal THLB that removes slope, road-access, age/disturbance, and non-commercial stands before interpreting intensity.
 2. Build a harvest/residue cost curve (stumpage, harvest, road, haul, silviculture) and integrate it with the forest-sector LP.
 3. Carry the 100/119/150 provincial allocations into runner metadata as `screening_only`, not as a legal allocation.
 4. Revisit the NB private-supply gap and the BC current-Crown-AAC discrepancy with provincial sources.
@@ -182,4 +188,4 @@ This confirms that the proxy cannot certify a 150M provincial pattern under a 1.
 - `100m.csv`, `119m.csv`, `150m.csv`: provincial allocations.
 - `provincial_allocation_summary.json`: totals, objectives, binding provinces, sensitivities, 200M deficit, THLB intensity deficits.
 - `manifest.json`: input/output hashes, solver, statuses, caveats.
-- `intensity_1.0/`, `intensity_1.2/`: feasible-case CSVs and per-intensity summary JSON for the managed-proxy screen.
+- `intensity_1.0/`, `intensity_1.2/`: feasible-case CSVs and per-intensity summary JSON for the operable-proxy screen.

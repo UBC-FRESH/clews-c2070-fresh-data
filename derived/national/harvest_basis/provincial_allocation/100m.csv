@@ -1,14 +1,14 @@
-province,harvest_m3,observed_2024_m3,observed_share,allocated_share,aac_m3,nfd_m3,upper_bound,binding,basis,caveat
-BC,33248823.0,38876568.0,0.326756072,0.332488230,45223877.8,63774601.0,45223877.8,false,repo_parsed_tsa_aac,Repo-parsed 2024 TSA AAC. Current reported Crown AAC is ~58-60M m3/yr and the 2028+ path is 43.37M; see the feasibility note.
-AB,19038002.0,22260402.0,0.187097830,0.190380020,30100000.0,31632061.0,30100000.0,false,crown_aac_approx,Documented 2024/2025 AAC.
-SK,3613337.2,4224936.0,0.035510426,0.036133372,8940000.0,8939765.0,8940000.0,false,crown_aac_approx,Documented 2024/2025 AAC.
-MB,944137.0,1103943.0,0.009278599,0.009441370,,7990048.0,7690000.0,false,documented_range_midpoint_proxy,"AAC documented only as a 7.39-7.99M m3/yr range; midpoint used as a planning proxy, not a legal AAC. Non-binding at every ladder level."
-ON,11222165.0,13121645.0,0.110286926,0.112221650,28700000.0,28802910.0,28700000.0,false,crown_aac_approx,Documented 2024/2025 AAC.
-QC,22184137.0,25939056.0,0.218016777,0.221841370,34115200.0,48467117.0,34115200.0,false,legal_crown_aac,Crown AAC; total provincial harvest may include private wood.
-NB,6234700.0,9341187.0,0.078512321,0.062347000,6234700.0,9590407.0,6234700.0,true,legal_crown_aac,Crown AAC; total provincial harvest may include private wood.
-NS,1986222.1,2322413.0,0.019519793,0.019862221,1720000.0,5750000.0,5750000.0,false,crown_plus_documented_private_aac,Crown AAC 1.72M plus documented private AAC 4.03M = 5.75M m3/yr; total harvest includes private wood.
-NL,1209273.6,1413957.0,0.011884255,0.012092736,2012233.0,2012233.0,2012233.0,false,legal_crown_aac,Documented 2024/2025 AAC.
-PE,251338.1,293880.0,0.002470050,0.002513381,,460000.0,460000.0,false,nfd_planning_volume_no_aac,"No statutory AAC; 460,000 m3/yr = 40,000 Crown + 420,000 private planning volume. Not a legal AAC."
-YT,36531.6,42715.0,0.000359018,0.000365316,261000.0,261000.0,261000.0,false,legal_crown_aac,Documented 2024/2025 AAC.
-NT,31333.5,36637.0,0.000307933,0.000313335,36376.0,,36376.0,false,actual_mean_proxy_no_territory_aac,"36,376 m3/yr is the 2020-2024 actual-harvest mean used as a proxy; there is no territory-wide legal AAC."
-NU,0.0,0.0,0.000000000,0.000000000,,,0.0,false,not_assessed_no_data,"No FSD harvest row, no AAC, and no managed-landbase proxy; held at zero, not assumed commercially exhausted."
+province,harvest_m3,observed_2024_m3,observed_share,allocated_share,aac_m3,nfd_m3,operable_proxy_ha,operable_missing,upper_bound,binding,basis,caveat
+BC,33248823.0,38876568.0,0.326756072,0.332488230,45223877.8,63774601.0,49257580.4,false,45223877.8,false,repo_parsed_tsa_aac,Repo-parsed 2024 TSA AAC. Current reported Crown AAC is ~58-60M m3/yr and the 2028+ path is 43.37M; see the feasibility note.
+AB,19038002.0,22260402.0,0.187097830,0.190380020,30100000.0,31632061.0,18401454.5,false,30100000.0,false,crown_aac_approx,Documented 2024/2025 AAC.
+SK,3613337.2,4224936.0,0.035510426,0.036133372,8940000.0,8939765.0,4933086.3,false,8940000.0,false,crown_aac_approx,Documented 2024/2025 AAC.
+MB,944137.0,1103943.0,0.009278599,0.009441370,,7990048.0,5485367.3,false,7690000.0,false,documented_range_midpoint_proxy,"AAC documented only as a 7.39-7.99M m3/yr range; midpoint used as a planning proxy, not a legal AAC. Non-binding at every ladder level."
+ON,11222165.0,13121645.0,0.110286926,0.112221650,28700000.0,28802910.0,30011171.7,false,28700000.0,false,crown_aac_approx,Documented 2024/2025 AAC.
+QC,22184137.0,25939056.0,0.218016777,0.221841370,34115200.0,48467117.0,26158593.7,false,34115200.0,false,legal_crown_aac,Crown AAC; total provincial harvest may include private wood.
+NB,6234700.0,9341187.0,0.078512321,0.062347000,6234700.0,9590407.0,2136294.1,false,6234700.0,true,legal_crown_aac,Crown AAC; total provincial harvest may include private wood.
+NS,1986222.1,2322413.0,0.019519793,0.019862221,1720000.0,5750000.0,1023683.7,false,5750000.0,false,crown_plus_documented_private_aac,Crown AAC 1.72M plus documented private AAC 4.03M = 5.75M m3/yr; total harvest includes private wood.
+NL,1209273.6,1413957.0,0.011884255,0.012092736,2012233.0,2012233.0,883914.8,false,2012233.0,false,legal_crown_aac,Documented 2024/2025 AAC.
+PE,251338.1,293880.0,0.002470050,0.002513381,,460000.0,,true,460000.0,false,nfd_planning_volume_no_aac+operable_missing,"No statutory AAC; 460,000 m3/yr = 40,000 Crown + 420,000 private planning volume. Not a legal AAC. No operable proxy (2016 tenure coverage is missing); the documented cap is retained and flagged operable_missing; the missing area is not substituted with zero."
+YT,36531.6,42715.0,0.000359018,0.000365316,261000.0,261000.0,5759877.6,false,261000.0,false,legal_crown_aac,Documented 2024/2025 AAC.
+NT,31333.5,36637.0,0.000307933,0.000313335,36376.0,,638786.1,false,36376.0,false,actual_mean_proxy_no_territory_aac,"36,376 m3/yr is the 2020-2024 actual-harvest mean used as a proxy; there is no territory-wide legal AAC."
+NU,0.0,0.0,0.000000000,0.000000000,,,,true,0.0,false,not_assessed_no_data+operable_missing,"No FSD harvest row, no AAC, no managed-landbase proxy, and no operable proxy; held at zero, not assumed commercially exhausted. operable_missing is flagged; no area is substituted."
