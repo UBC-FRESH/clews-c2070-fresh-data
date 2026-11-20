@@ -1,0 +1,714 @@
+{
+  "schema_version": "clews.constraint_set.v2",
+  "set_id": "policy_test_v1",
+  "label": "Policy test v1 \u2014 Stage 1 sourced draft: national peak-proxy reserve margin, reviewed capacity credits, build rates, explicit caps",
+  "status": "draft",
+  "value_status": "draft",
+  "source_status": "reviewed",
+  "source_ids": [
+    "policy_data_review"
+  ],
+  "policy_grade": false,
+  "policy_grade_reason": "Draft set built on the narrow desk review, not a signed source register. The national peak factor has no coincident-peak source (1.25 is a dry-run midpoint of the reviewed 1.20-1.30 bound), provincial reserve standards were not extracted, and transmission/asymmetric interties, curtailment/timeslices, unit commitment, oil credits, and storage remain unresolved. policy_grade=false.",
+  "structural_gaps": [
+    "transmission",
+    "curtailment/timeslices",
+    "unit_commitment"
+  ],
+  "structural_gap_ids": [
+    "transmission_network",
+    "timeslices_curtailment",
+    "unit_commitment_ramping"
+  ],
+  "required_blocks": [
+    "reserve_margin",
+    "capacity_credits",
+    "build_rates",
+    "tech_caps",
+    "hydro",
+    "carbon"
+  ],
+  "reserve_margin": {
+    "method": "udc_national_peak_proxy",
+    "enforcement": "udc",
+    "schedule": {
+      "2021": 1.0,
+      "2025": 1.0,
+      "2026": 1.15,
+      "2070": 1.15
+    },
+    "reserve_margin_fraction": 0.15,
+    "peak_factor": {
+      "2021": 1.25,
+      "2070": 1.25
+    },
+    "native_rm3": {
+      "enabled": true,
+      "reserve_margin": 1.0,
+      "tag_fuels": "ELC<z>02",
+      "authoritative": false
+    },
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "RM_NATIONAL UDC (OSeMOSYS UDC1 is <=0), capacity-minus-required form: sum(-C2A*credit*TotalCapacityAnnual) + RM*peak_factor*1.11*sum(PWRTRN activity) <= 0. The 1.11 factor converts delivered PWRTRN activity to gross generation at the ELC<z>01 bus (model InputActivityRatio); without it the requirement is understated by about 10%. The 1.15 schedule is the Canadian national modelling convention from 2026, not a legal standard; provincial standards were not extracted and the single-region model cannot enforce them. peak_factor=1.25 is the dry-run midpoint of the reviewed 1.20-1.30 bound, not a national coincident peak. Annual peak proxy, not a loss-of-load calculation. Native RM3 is populated but non-authoritative."
+  },
+  "capacity_credits": {
+    "basis": "fraction_of_nameplate",
+    "default": 0.0,
+    "by_archetype": {
+      "NGS": 0.95,
+      "COA": 0.9,
+      "URN": 0.9,
+      "HYD": 0.65,
+      "BIO": 0.85,
+      "BSW": 0.85,
+      "BCW": 0.85,
+      "WND": 0.2,
+      "SOL": 0.15,
+      "GEO": 0.8
+    },
+    "by_technology": {},
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "Nameplate de-rating for a national annual peak proxy; not ELCC. Wind 0.20 and solar 0.15 are national drafts anchored by IESO's MRI column (19.66% / 19.16%; the ELCC column is different) and Quebec wind (~15%). Gas 0.95 is anchored by IESO MRI 92.96%. Hydro 0.65, biomass 0.85, nuclear 0.90, coal 0.90, and geothermal 0.80 are drafts with no Canadian ELCC source. Oil is not separately credited; interties are 0 firm; storage/DR are not modelled."
+  },
+  "build_rates": {
+    "parameter": "TotalAnnualMaxCapacityInvestment",
+    "unit": "GW/yr",
+    "scope": "per_technology",
+    "by_technology": {
+      "PWRWND<z>": {
+        "2021": 2.0,
+        "2030": 2.0,
+        "2031": 3.0,
+        "2050": 3.0,
+        "2051": 2.0,
+        "2070": 2.0
+      },
+      "PWRSOL<z>": {
+        "2021": 0.2,
+        "2030": 0.2,
+        "2031": 0.5,
+        "2050": 0.5,
+        "2051": 0.2,
+        "2070": 0.2
+      },
+      "PWRURN<z>": {
+        "2021": 0.0,
+        "2030": 0.0,
+        "2031": 0.3,
+        "2070": 0.3
+      },
+      "PWRBIO<z>": {
+        "2021": 0.15,
+        "2070": 0.15
+      },
+      "PWRBCW<z>": {
+        "2021": 0.1,
+        "2070": 0.1
+      },
+      "PWRBSW<z>": {
+        "2021": 0.15,
+        "2070": 0.15
+      },
+      "PWRHYD<z>": {
+        "2021": 0.25,
+        "2070": 0.25
+      },
+      "PWRGEO<z>": {
+        "2021": 0.1,
+        "2070": 0.1
+      },
+      "PWRNGS<z>": {
+        "2021": 2.0,
+        "2070": 2.0
+      },
+      "PWRCOA<z>": {
+        "2021": 0.0,
+        "2070": 0.0
+      }
+    },
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "One central schedule inside the reviewed envelopes, not the envelope itself: wind 2.0-6.0 GW/yr (central 2.0/3.0/2.0), solar 0.2-1.0 GW/yr (central 0.2/0.5/0.2), gas 2.0 GW/yr from the +2.02 GW 2023-24 observed anchor, and nuclear 0.30 GW/yr from 2031 as a draft scenario (reviewed history is 0 net new build). PWRBIO 0.15 and PWRBCW 0.10 GW/yr are unsourced drafts; PWRBSW 0.15, hydro 0.25, and geothermal 0.10 are drafts. The value is per-zone, not a national envelope. No lead-time data: the model can build at cap in the same year."
+  },
+  "tech_caps": {
+    "by_technology": {
+      "PWRWNDA1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 26.882148,
+          "2070": 26.882148
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDA2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 14.083363,
+          "2070": 14.083363
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDB1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 26.923089,
+          "2070": 26.923089
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDB2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 6.89277,
+          "2070": 6.89277
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDL1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 1.861958,
+          "2070": 1.861958
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDM1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 3.639178,
+          "2070": 3.639178
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDN1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 0.370562,
+          "2070": 0.370562
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDO1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 54.086321,
+          "2070": 54.086321
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDO2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 9.54281,
+          "2070": 9.54281
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDQ1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 28.431405,
+          "2070": 28.431405
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDQ2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 7.125818,
+          "2070": 7.125818
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDS1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 7.989409,
+          "2070": 7.989409
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRWNDT1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 5.767305,
+          "2070": 5.767305
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "20% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOA1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 16.657653,
+          "2070": 16.657653
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOA2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 8.969494,
+          "2070": 8.969494
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOB1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 16.151083,
+          "2070": 16.151083
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOB2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 5.383689,
+          "2070": 5.383689
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOL1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 2.461941,
+          "2070": 2.461941
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOM1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 5.324287,
+          "2070": 5.324287
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBION1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 0.436408,
+          "2070": 0.436408
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOO1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 37.03273,
+          "2070": 37.03273
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOO2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 6.535186,
+          "2070": 6.535186
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOQ1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 40.618657,
+          "2070": 40.618657
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOQ2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 10.154657,
+          "2070": 10.154657
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOS1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 6.307342,
+          "2070": 6.307342
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRBIOT1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 6.575324,
+          "2070": 6.575324
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "5% of zonal 2050 reference generation; scenario assumption, not policy."
+      },
+      "PWRHYDA1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 197.204587,
+          "2070": 197.204587
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDA2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 106.187162,
+          "2070": 106.187162
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDB1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 187.437464,
+          "2070": 187.437464
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDB2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 62.479153,
+          "2070": 62.479153
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDL1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 39.891291,
+          "2070": 39.891291
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDM1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 86.459343,
+          "2070": 86.459343
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDN1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 6.276273,
+          "2070": 6.276273
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDO1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 470.323642,
+          "2070": 470.323642
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDO2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 82.94384,
+          "2070": 82.94384
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDQ1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 649.900247,
+          "2070": 649.900247
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDQ2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 162.020062,
+          "2070": 162.020062
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDS1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 82.314492,
+          "2070": 82.314492
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRHYDT1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 97.10391,
+          "2070": 97.10391
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "cap_2021 upper bound; draft."
+      },
+      "PWRBCWB1": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 43.523816,
+          "2070": 43.523816
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "Woody-residue envelope; 43.523816 PJ/yr is the combined SUPBCWB1+SUPBCWB2 2028 cap, applied here as a slack PWRBCW guard. Supply caps remain authoritative."
+      },
+      "PWRBCWB2": {
+        "metric": "activity_pj",
+        "parameter": "TotalTechnologyAnnualActivityUpperLimit",
+        "schedule": {
+          "2021": 43.523816,
+          "2070": 43.523816
+        },
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "Woody-residue envelope; 43.523816 PJ/yr is the combined SUPBCWB1+SUPBCWB2 2028 cap, applied here as a slack PWRBCW guard. Supply caps remain authoritative."
+      },
+      "PWRSOL<z>": {
+        "metric": "build_rate_only",
+        "parameter": "TotalAnnualMaxCapacityInvestment",
+        "schedule": null,
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "No defensible total GW cap; solar is controlled by build rate only."
+      },
+      "PWRURN<z>": {
+        "metric": "build_rate_only",
+        "parameter": "TotalAnnualMaxCapacityInvestment",
+        "schedule": null,
+        "value_status": "draft",
+        "source_status": "reviewed",
+        "note": "No total activity cap; nuclear is controlled by the new-build rate and the optional total-cap block."
+      }
+    },
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "Activity caps are inherited scenario/supply assumptions (20% wind, 5% PWRBIO, BC zonal BCW caps, cap_2021 hydro), not sourced policy. They are marked draft and are not policy-grade."
+  },
+  "hydro": {
+    "mode": "cap_2021",
+    "activity_caps_pj": {
+      "PWRHYDA1": 197.204587,
+      "PWRHYDA2": 106.187162,
+      "PWRHYDB1": 187.437464,
+      "PWRHYDB2": 62.479153,
+      "PWRHYDL1": 39.891291,
+      "PWRHYDM1": 86.459343,
+      "PWRHYDN1": 6.276273,
+      "PWRHYDO1": 470.323642,
+      "PWRHYDO2": 82.94384,
+      "PWRHYDQ1": 649.900247,
+      "PWRHYDQ2": 162.020062,
+      "PWRHYDS1": 82.314492,
+      "PWRHYDT1": 97.10391
+    },
+    "build_rate_gw_per_year": {
+      "2021": 0.25,
+      "2070": 0.25
+    },
+    "capacity_credit": 0.65,
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "Hydro upper bounds are the canonical 2021 reference output. cap_2021 writes upper bounds only; no new hydro is forced. The 0.65 credit and 0.25 GW/yr build rate are drafts with no Canadian ELCC or lead-time source."
+  },
+  "nuclear": {
+    "mode": "build_rate_only",
+    "new_build_rate_gw_per_year": {
+      "2021": 0.0,
+      "2030": 0.0,
+      "2031": 0.3,
+      "2070": 0.3
+    },
+    "total_capacity_cap_gw": {
+      "2021": 30.0,
+      "2070": 30.0
+    },
+    "capacity_credit": 0.9,
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "Draft 0.30 GW/yr new-build rate after 2030 and a 30 GW total fleet cap. The reviewed history is about 0 net new nuclear in 2023-24; 0.30 is an optional scenario, not a sourced rate. The total cap is floored at ResidualCapacity per zone; it is an explicit draft bound, not a policy claim."
+  },
+  "carbon": {
+    "price_schedule_usd_per_tco2e": [],
+    "national_annual_cap_mt": null,
+    "provincial_annual_caps_mt": {},
+    "intensity_cap_t_per_gwh": [],
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ],
+    "note": "Carbon block is declared but not applied in Stage 1; the scenario EmissionsPenalty schedule remains the run-level carbon price. Null means not applied, not zero. No carbon-price or intensity-cap source was integrated."
+  },
+  "parameter_overrides": {
+    "by_archetype": {},
+    "value_status": "draft",
+    "source_status": "reviewed",
+    "source_ids": [
+      "policy_data_review"
+    ]
+  },
+  "sources": [
+    {
+      "id": "policy_data_review",
+      "publisher": "CLEWS-C2070 policy data review (desk pass)",
+      "title": "Policy data review \u2014 narrow source pass",
+      "path": "planning/policy-data-review.md",
+      "as_of": "2026-11-20",
+      "licence": null,
+      "sha256": null,
+      "status": "reviewed",
+      "note": "Desk review of public sources S1-S29 with URLs and confidence, not an archived or signed source register. Values are reviewed, not policy-grade."
+    }
+  ],
+  "notes": [
+    "Sourced draft policy-test scaffold. policy_grade=false; do not describe results as policy-grade.",
+    "The value_status=draft / source_status=reviewed labels mean the narrow desk review in planning/policy-data-review.md was applied; they do not mean a signed source register exists.",
+    "Reserve margin is a national 15% modelling convention from 2026 (1.00 in 2021-2025). Provincial standards were not extracted and the single-region model cannot enforce them.",
+    "peak_factor=1.25 is the dry-run midpoint of the reviewed 1.20-1.30 bound. The former 1.55 is withdrawn; a national coincident peak is still missing.",
+    "The RM_NATIONAL activity term multiplies PWRTRN delivered activity by 1.11 to recover gross generation at the generation bus.",
+    "Wind 20%, PWRBIO 5%, BC zonal caps, hydro cap_2021, solar build-rate-only and nuclear build-rate mode are scenario/supply assumptions, not policy.",
+    "Structural gaps: transmission (single region, symmetric links, no network), curtailment/timeslices (one annual timeslice), unit commitment (LP only).",
+    "Remaining source gaps: no signed register/archived payloads; no national coincident peak or provincial demand; no Canadian ELCC for hydro/biomass/nuclear/oil; no storage/DR; no build lead times; intertie conflicts and asymmetry; no curtailment or timeslice data.",
+    "A future set may set policy_grade=true only after all required blocks are sourced and every structural gap is closed."
+  ]
+}
