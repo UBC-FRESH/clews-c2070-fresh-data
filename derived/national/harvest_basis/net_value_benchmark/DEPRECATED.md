@@ -34,5 +34,12 @@ Replacement planning note: `planning/procurement-benchmark.md`.
 
 Replacement builder: `workflows/national/harvest/procurement_benchmark_v1.py`.
 
+The corrected cross-jurisdiction evidence layer is
+`data/derived/national/harvest_basis/forest_economics_v2d/`, built by
+`workflows/national/harvest/forest_economics_v2d.py`. It copies and validates
+the procurement benchmark, keeps BMMB as a separate nominal historical revenue
+reference, and labels every summary row `net_value_status=not_estimated` with
+`policy_grade=false` and `net_value_is_combined_national=false`.
+
 Do not delete these old files; they are kept only so earlier reviews and
 commits remain traceable.

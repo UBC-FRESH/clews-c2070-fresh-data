@@ -1,0 +1,346 @@
+{
+  "artifact_version": "1.0.0",
+  "dataset": "forest_economics_v2d",
+  "status": "not_estimated",
+  "generated_utc": "2026-11-21T23:03:40Z",
+  "generator": {
+    "script": "workflows/national/harvest/forest_economics_v2d.py",
+    "command": "python -m workflows.national.harvest.forest_economics_v2d"
+  },
+  "labels": {
+    "evidence_tiers": [
+      "appraisal_allowance",
+      "benchmark_historical",
+      "not_available",
+      "observed_price",
+      "observed_stumpage",
+      "survey_procurement_cost",
+      "survey_regional_procurement_cost"
+    ],
+    "policy_grade": false,
+    "net_value_status": "not_estimated",
+    "net_value_is_combined_national": false,
+    "partial_bc_net_value_computed": false,
+    "qc_cost_presented_as_revenue": false,
+    "no_zero_fill": true,
+    "one_month_three_month_additive": false
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "730c0b51b674a1b600379ba5d38811be55e494ea3816227ec12553e88faa7777",
+      "bytes": 9703,
+      "role": "QC procurement cost benchmark"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_regional_range.csv",
+      "sha256": "331b721c02ea9f0f23cb0d1957e0bbdf26620b223b2e95ae6c0a57ae23598459",
+      "bytes": 7081,
+      "role": "QC regional procurement cost range"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "9b4bef9baf07917709c685eda0cc6ae4469b0f4375492bc8d836bc46dfafc4d1",
+      "bytes": 6274,
+      "role": "BMMB historical benchmark"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/manifest.json",
+      "sha256": "6ebe7c601a712fc92ac7b2a510a4fc67f01b15bc1cc0159f454f23cbdb538306",
+      "bytes": 7566,
+      "role": "QC procurement provenance"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f",
+      "bytes": 7917987,
+      "role": "BC observed price cells"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_coverage.csv",
+      "sha256": "8f2cf50db5ccd663aa9bdf909fa508e4f43da5ea6143a3353c215e871076ad85",
+      "bytes": 207319,
+      "role": "BC price cell coverage"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/manifest.json",
+      "sha256": "5513d6cf805bd3b3faac01fc0328c17bfcf3a641911b25031f6cdcab80ff9e07",
+      "bytes": 282471,
+      "role": "BC price provenance"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_bid_ledger.csv",
+      "sha256": "52e210ab9d7b4466869f272f461d560cf05e439eb086f31a451989aeb325c86d",
+      "bytes": 83878,
+      "role": "BC observed BCTS stumpage ledger"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_bid_results.csv",
+      "sha256": "50b9ce6889981579326760f59dc4b77ef7f45eb12d17a2381a95e65e7f991e46",
+      "bytes": 49294,
+      "role": "BC BCTS auction results"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea",
+      "bytes": 454062,
+      "role": "BC appraisal allowances"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_coverage.csv",
+      "sha256": "7bb9ad92e6370f2e2fe27925dbb8f6837cc9f9cb9849ab67d395d4f726fbed71",
+      "bytes": 2807,
+      "role": "BC appraisal coverage"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/manifest.json",
+      "sha256": "5ad3f2dad0b240eacf81776d7c0f80293e1c1dd7dcd6f69264b7cee521e3559e",
+      "bytes": 9035,
+      "role": "BC appraisal provenance"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/forest_economics_v2d_summary.csv",
+      "sha256": "727b9123a019876da79e8b65ae86b254ac6ec2d717f23e8132c951ab316a5236",
+      "bytes": 8841,
+      "role": "jurisdiction summary with separated evidence tiers",
+      "rows": 14
+    },
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/qc_procurement_reference.csv",
+      "sha256": "c3a6c6aa33b42a3a6de4904c31a265e273c8fa8dc70f4e61e5588a129252b6b4",
+      "bytes": 23048,
+      "role": "validated QC procurement cost references",
+      "rows": 18
+    },
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/bc_revenue_benchmark.csv",
+      "sha256": "da8faae24d4b07b887dd2ce9035b5a27b185e2b1dd29ae955717441c65b6ccd2",
+      "bytes": 1106373,
+      "role": "BC annual and period price ranges",
+      "rows": 1852
+    },
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/bc_cost_coverage.csv",
+      "sha256": "152aa53179e8bd6ad1c99f43332109ab3623c10994d35b4786b56bfe80570483",
+      "bytes": 4339,
+      "role": "BC appraisal allowance coverage and gaps",
+      "rows": 10
+    },
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/bmmb_reference.csv",
+      "sha256": "8d1e472bf6bb05b782eac16dac8380ad1aae89b605a5861cb53dab4c4f311c8f",
+      "bytes": 4538,
+      "role": "BMMB nominal historical delivered-sale reference",
+      "rows": 3
+    },
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/FOREST_ECONOMICS_V2D_REPORT.md",
+      "sha256": "907974a289b4358eb30fac4000947ada7b0cba9f84a4a9d77dc1fd5305a8d4c8",
+      "bytes": 14603,
+      "role": "human-readable evidence report"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/forest_economics_v2d/summary.json",
+      "sha256": "82a030487eaef712118a841d75cffda2639f07659ceb7d4e80df521bdf74d442",
+      "bytes": 25144,
+      "role": "summary payload"
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "check_count": 36,
+    "checks": [
+      {
+        "check": "procurement_manifest_labels",
+        "status": "pass",
+        "detail": "every QC procurement reference is not_estimated, policy_grade=false, and a cost spread"
+      },
+      {
+        "check": "qc_reference_row_count",
+        "status": "pass",
+        "detail": "18 references (9 provincial + 9 regional)"
+      },
+      {
+        "check": "qc_sepm_values_match_procurement_benchmark",
+        "status": "pass",
+        "detail": "SEPM 107.22 / 81.40 / 25.01 / 106.41 / 25.82 / 0.81 match the source"
+      },
+      {
+        "check": "qc_no_withdrawn_wording",
+        "status": "pass",
+        "detail": "QC references carry no withdrawn legacy framing terms"
+      },
+      {
+        "check": "bmmb_reference_row_count",
+        "status": "pass",
+        "detail": "3 all-year BMMB references"
+      },
+      {
+        "check": "bmmb_primary_teaching_secondary",
+        "status": "pass",
+        "detail": "Crown-only 35.7547 primary, teaching 50.6266, all-in 38.2940 secondary"
+      },
+      {
+        "check": "bmmb_nominal_no_net_value",
+        "status": "pass",
+        "detail": "BMMB is nominal historical revenue with no cost stack and no net value"
+      },
+      {
+        "check": "bc_price_cell_count",
+        "status": "pass",
+        "detail": "15705 cells (expected 15705)"
+      },
+      {
+        "check": "bc_price_report_count",
+        "status": "pass",
+        "detail": "505 reports (expected 505)"
+      },
+      {
+        "check": "bc_price_hard_range_and_nonnegative",
+        "status": "pass",
+        "detail": "all prices are within 0-2000 CAD/m3"
+      },
+      {
+        "check": "bc_price_flag_counts",
+        "status": "pass",
+        "detail": "zero=16, below_1=7, above_1000=17"
+      },
+      {
+        "check": "bc_price_is_aggregate_lowercase",
+        "status": "pass",
+        "detail": "source is_aggregate tokens are lowercase true/false with 890 aggregates"
+      },
+      {
+        "check": "bc_price_flagged_cells_excluded_from_ranges",
+        "status": "pass",
+        "detail": "no zero or negative value enters an ok range"
+      },
+      {
+        "check": "bc_price_product_cells_exclude_aggregate",
+        "status": "pass",
+        "detail": "no is_aggregate=true row appears as a product cell"
+      },
+      {
+        "check": "bc_price_no_double_count",
+        "status": "pass",
+        "detail": "1,748 product-cell rows and 104 aggregate-reference rows are separate"
+      },
+      {
+        "check": "bc_price_no_vintage_mixing",
+        "status": "pass",
+        "detail": "each range has one published vintage and is marked non-additive"
+      },
+      {
+        "check": "bc_price_annual_report_limit",
+        "status": "pass",
+        "detail": "at most 12 published reports per series-year; three-month windows still overlap"
+      },
+      {
+        "check": "bc_price_cell_key_unique",
+        "status": "pass",
+        "detail": "15705 unique report/species/grade/end-use keys"
+      },
+      {
+        "check": "bc_interior_aggregate_rows",
+        "status": "pass",
+        "detail": "890 Interior weighted-average cells kept outside product sums"
+      },
+      {
+        "check": "bc_interior_aggregate_within_product_range",
+        "status": "pass",
+        "detail": "890 aggregate cells checked against product siblings"
+      },
+      {
+        "check": "bc_interior_volume_sum_excludes_aggregate",
+        "status": "pass",
+        "detail": "169 Interior reports reconciled; 0 violations"
+      },
+      {
+        "check": "bc_stumpage_sale_count",
+        "status": "pass",
+        "detail": "51 awarded sales (expected 51)"
+      },
+      {
+        "check": "bc_stumpage_full_and_lower_bound_split",
+        "status": "pass",
+        "detail": "full=49, lower_bound=2"
+      },
+      {
+        "check": "bc_stumpage_nonnegative_and_labeled",
+        "status": "pass",
+        "detail": "all observed stumpage totals are nonnegative and carry a basis label"
+      },
+      {
+        "check": "bc_cost_row_count",
+        "status": "pass",
+        "detail": "879 appraisal rows assigned (expected 879)"
+      },
+      {
+        "check": "bc_cost_appraisal_vs_observed",
+        "status": "pass",
+        "detail": "all cost rows are appraisal allowances or explicitly unavailable; none is observed cost"
+      },
+      {
+        "check": "bc_cost_missing_components",
+        "status": "pass",
+        "detail": "logging, general truck haul, and EWB are explicitly missing"
+      },
+      {
+        "check": "bc_cost_no_partial_net_value",
+        "status": "pass",
+        "detail": "full BC net value is explicitly not estimated; no component is net-value usable"
+      },
+      {
+        "check": "summary_all_not_estimated",
+        "status": "pass",
+        "detail": "14 summary rows all not_estimated with a reason"
+      },
+      {
+        "check": "summary_policy_grade_false",
+        "status": "pass",
+        "detail": "policy_grade=false on every summary row"
+      },
+      {
+        "check": "summary_no_combined_national_net_value",
+        "status": "pass",
+        "detail": "no national combined net-value row exists"
+      },
+      {
+        "check": "summary_no_net_value_amounts",
+        "status": "pass",
+        "detail": "summary rows have no monetary net-value field"
+      },
+      {
+        "check": "summary_qc_revenue_not_reported",
+        "status": "pass",
+        "detail": "QC procurement rows do not present buyer-side cost as revenue"
+      },
+      {
+        "check": "summary_bc_revenue_nonnegative",
+        "status": "pass",
+        "detail": "no negative BC revenue or stumpage range"
+      },
+      {
+        "check": "summary_evidence_tiers_separated",
+        "status": "pass",
+        "detail": "QC cost, historical, BC price, stumpage, allowance, and unavailable rows are distinct"
+      },
+      {
+        "check": "no_nonfinite_output_text",
+        "status": "pass",
+        "detail": "no NaN or infinity text in generated rows"
+      }
+    ]
+  },
+  "net_value": {
+    "qc_status": "not_estimated",
+    "qc_reason": "qc_procurement_cost_benchmark_not_net_value",
+    "bc_status": "not_estimated",
+    "bc_reason": "missing_logging_and_haul_cost",
+    "combined_national": false,
+    "combined_national_reason": "no_joint_qc_bc_net_value",
+    "partial_bc_computed": false
+  }
+}
