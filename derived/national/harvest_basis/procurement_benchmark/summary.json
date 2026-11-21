@@ -1,0 +1,422 @@
+{
+  "artifact_version": "1.0.0",
+  "dataset": "qc_procurement_cost_benchmark",
+  "status": "not_estimated",
+  "interpretation": "purchased_vs_bgad_procurement_cost_spread",
+  "generated_utc": "2026-11-21T21:44:55Z",
+  "scope": {
+    "jurisdiction": "QC",
+    "survey_year": 2022,
+    "purchase_price_basis": "delivered_to_mill",
+    "unit": "CAD/m3",
+    "currency": "CAD_nominal"
+  },
+  "definitions": {
+    "purchase_cost": "Survey T2 purchase.wood_purchase_delivered: buyer-side procurement cost including purchase, State transfers, transport/unloading and road costs where applicable. Not observed log-sale revenue.",
+    "bgad_before_transfers": "Survey T20 synthesis_procurement.procurement_total_before_transfers: harvest + road + haul + hosting + other costs.",
+    "transfers_total": "Survey T20 synthesis_procurement.transfers_total: payments to the State.",
+    "bgad_after_transfers": "Survey T20 synthesis_procurement.procurement_total_after_transfers: before-transfer BGAD cost + transfers.",
+    "cost_spread_before_transfers": "purchase_cost - bgad_before_transfers. A procurement-channel cost spread across different respondent samples, not forest net value.",
+    "cost_spread_after_transfers": "purchase_cost - bgad_after_transfers. A procurement-channel cost spread across different respondent samples, not forest net value.",
+    "identity": "bgad_before + transfers = bgad_after; cost_spread_before - cost_spread_after = transfers."
+  },
+  "labels": {
+    "evidence_values": [
+      "survey_procurement_cost",
+      "survey_regional_procurement_cost",
+      "benchmark_historical"
+    ],
+    "policy_grade": false,
+    "net_value_status": "not_estimated",
+    "interpretation": "purchased_vs_bgad_procurement_cost_spread",
+    "warning": "No row is a forest net value, an observed transaction, or a policy result."
+  },
+  "provincial_cost_benchmark": [
+    {
+      "scope_id": "qc_sepm_total",
+      "species_group": "sepm",
+      "product_or_grade": "total",
+      "purchase_cost_cad_m3": 107.22,
+      "bgad_before_transfers_cad_m3": 81.4,
+      "transfers_total_cad_m3": 25.01,
+      "bgad_after_transfers_cad_m3": 106.41,
+      "cost_spread_before_transfers_cad_m3": 25.82,
+      "cost_spread_after_transfers_cad_m3": 0.81,
+      "spread_status": "computed",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_feuillus_durs_sciage",
+      "species_group": "feuillus_durs",
+      "product_or_grade": "sciage",
+      "purchase_cost_cad_m3": 85.42,
+      "bgad_before_transfers_cad_m3": 79.73,
+      "transfers_total_cad_m3": 20.22,
+      "bgad_after_transfers_cad_m3": 99.95,
+      "cost_spread_before_transfers_cad_m3": 5.69,
+      "cost_spread_after_transfers_cad_m3": -14.53,
+      "spread_status": "computed",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_feuillus_durs_trituration",
+      "species_group": "feuillus_durs",
+      "product_or_grade": "trituration",
+      "purchase_cost_cad_m3": 79.45,
+      "bgad_before_transfers_cad_m3": null,
+      "transfers_total_cad_m3": null,
+      "bgad_after_transfers_cad_m3": null,
+      "cost_spread_before_transfers_cad_m3": null,
+      "cost_spread_after_transfers_cad_m3": null,
+      "spread_status": "not_computable_missing_bgad_synthesis",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_feuillus_durs_total",
+      "species_group": "feuillus_durs",
+      "product_or_grade": "total",
+      "purchase_cost_cad_m3": 80.95,
+      "bgad_before_transfers_cad_m3": null,
+      "transfers_total_cad_m3": null,
+      "bgad_after_transfers_cad_m3": null,
+      "cost_spread_before_transfers_cad_m3": null,
+      "cost_spread_after_transfers_cad_m3": null,
+      "spread_status": "not_computable_missing_bgad_synthesis",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_peupliers_sciage",
+      "species_group": "peupliers",
+      "product_or_grade": "sciage",
+      "purchase_cost_cad_m3": 75.44,
+      "bgad_before_transfers_cad_m3": null,
+      "transfers_total_cad_m3": null,
+      "bgad_after_transfers_cad_m3": null,
+      "cost_spread_before_transfers_cad_m3": null,
+      "cost_spread_after_transfers_cad_m3": null,
+      "spread_status": "not_computable_missing_bgad_synthesis",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_peupliers_trituration",
+      "species_group": "peupliers",
+      "product_or_grade": "trituration",
+      "purchase_cost_cad_m3": 65.01,
+      "bgad_before_transfers_cad_m3": 72.28,
+      "transfers_total_cad_m3": 2.18,
+      "bgad_after_transfers_cad_m3": 74.46,
+      "cost_spread_before_transfers_cad_m3": -7.27,
+      "cost_spread_after_transfers_cad_m3": -9.45,
+      "spread_status": "computed",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_peupliers_total",
+      "species_group": "peupliers",
+      "product_or_grade": "total",
+      "purchase_cost_cad_m3": 66.16,
+      "bgad_before_transfers_cad_m3": null,
+      "transfers_total_cad_m3": null,
+      "bgad_after_transfers_cad_m3": null,
+      "cost_spread_before_transfers_cad_m3": null,
+      "cost_spread_after_transfers_cad_m3": null,
+      "spread_status": "not_computable_missing_bgad_synthesis",
+      "confidentiality_flag": "none",
+      "three_respondent_flag": false
+    },
+    {
+      "scope_id": "qc_pins_total",
+      "species_group": "pins",
+      "product_or_grade": "total",
+      "purchase_cost_cad_m3": 101.09,
+      "bgad_before_transfers_cad_m3": null,
+      "transfers_total_cad_m3": null,
+      "bgad_after_transfers_cad_m3": null,
+      "cost_spread_before_transfers_cad_m3": null,
+      "cost_spread_after_transfers_cad_m3": null,
+      "spread_status": "not_computable_missing_bgad_synthesis",
+      "confidentiality_flag": "three_respondents",
+      "three_respondent_flag": true
+    },
+    {
+      "scope_id": "qc_thuyas_total",
+      "species_group": "thuyas",
+      "product_or_grade": "total",
+      "purchase_cost_cad_m3": 80.58,
+      "bgad_before_transfers_cad_m3": null,
+      "transfers_total_cad_m3": null,
+      "bgad_after_transfers_cad_m3": null,
+      "cost_spread_before_transfers_cad_m3": null,
+      "cost_spread_after_transfers_cad_m3": null,
+      "spread_status": "not_computable_missing_bgad_synthesis",
+      "confidentiality_flag": "three_respondents",
+      "three_respondent_flag": true
+    }
+  ],
+  "headline_sepm": {
+    "purchase_cost_cad_m3": 107.22,
+    "bgad_before_transfers_cad_m3": 81.4,
+    "transfers_total_cad_m3": 25.01,
+    "bgad_after_transfers_cad_m3": 106.41,
+    "cost_spread_before_transfers_cad_m3": 25.82,
+    "cost_spread_after_transfers_cad_m3": 0.81,
+    "interpretation": "purchased_vs_bgad_procurement_cost_spread",
+    "net_value_status": "not_estimated"
+  },
+  "regional_range": {
+    "region_count": 7,
+    "reference_purchase_cad_m3": 107.22,
+    "bgad_before_transfers_min_cad_m3": 58.73,
+    "bgad_before_transfers_max_cad_m3": 97.07,
+    "bgad_after_transfers_min_cad_m3": 78.78,
+    "bgad_after_transfers_max_cad_m3": 118.1,
+    "conditional_cost_spread_before_min_cad_m3": 10.15,
+    "conditional_cost_spread_before_max_cad_m3": 48.49,
+    "conditional_cost_spread_after_min_cad_m3": -10.88,
+    "conditional_cost_spread_after_max_cad_m3": 28.44,
+    "negative_after_transfer_regions": [
+      "R02",
+      "R08",
+      "R09",
+      "R10",
+      "R14-R15-R07-R08"
+    ],
+    "three_respondent_regions": [
+      "R09"
+    ],
+    "columns_are_independent_extrema": true,
+    "horizontal_identities_hold": false,
+    "caveat": "Regional purchase prices are not published. Conditional cost spreads hold the provincial SEPM purchase cost constant; bound rows are independent column-wise extrema and horizontal identities do not hold. Not regional net values."
+  },
+  "bmmb_historical_benchmark": {
+    "primary_scope": "crown_public_forest",
+    "sale_count": 18,
+    "awarded_count": 13,
+    "full_rate_sale_count": 11,
+    "partial_award_sale_count": 2,
+    "years": [
+      "2011",
+      "2012",
+      "2014",
+      "2015"
+    ],
+    "volume_m3": 159850.0,
+    "rate_computable_volume_m3": 89900.0,
+    "crown_only": {
+      "sale_count": 16,
+      "full_rate_sale_count": 9,
+      "volume_m3": 74550.0,
+      "weighted_rate_cad_m3": 35.7547,
+      "median_rate_cad_m3": 34.2849
+    },
+    "teaching_research": {
+      "sale_count": 2,
+      "full_rate_sale_count": 2,
+      "volume_m3": 15350.0,
+      "weighted_rate_cad_m3": 50.6266,
+      "median_rate_cad_m3": 50.8627
+    },
+    "all_in": {
+      "weighted_rate_cad_m3": 38.294,
+      "median_rate_cad_m3": 36.6668
+    },
+    "reoffer_sale_count": 2,
+    "reoffer_overlap_m3": 22200.0,
+    "currency_basis": "CAD_nominal",
+    "deflator_applied": false,
+    "grade_split": false,
+    "species_allocation": false,
+    "caveat": "Nominal 2011-2015, 18 delivered sales, no grade split, no deflation. The 2012 re-offer overlap (2 sales / 22,200 m3) is disclosed but not netted because both re-offer sales are excluded from the full-rate numerator and denominator."
+  },
+  "volume_scaled_diagnostic": {
+    "produced": false,
+    "reason": "No QC or M CAD net-value sensitivity is produced. The provincial allocation files are screening totals and monetising them would manufacture a misleading net-value estimate."
+  },
+  "validation": {
+    "status": "pass",
+    "check_count": 20,
+    "checks": [
+      {
+        "check": "survey_row_count",
+        "status": "pass",
+        "detail": "660 rows (expected 660)"
+      },
+      {
+        "check": "t2_t21_purchase_consistency",
+        "status": "pass",
+        "detail": "8 overlapping purchase rows agree"
+      },
+      {
+        "check": "provincial_spread_count",
+        "status": "pass",
+        "detail": "3 computable cost spreads of 9 scopes"
+      },
+      {
+        "check": "provincial_spread_recompute",
+        "status": "pass",
+        "detail": "spread_before = purchase - BGAD before; spread_after = purchase - BGAD after"
+      },
+      {
+        "check": "provincial_transfer_identity",
+        "status": "pass",
+        "detail": "BGAD before + transfers = BGAD after and spread before - spread after = transfers"
+      },
+      {
+        "check": "provincial_no_nonfinite",
+        "status": "pass",
+        "detail": "all provincial values are finite or explicitly blank"
+      },
+      {
+        "check": "regional_group_count",
+        "status": "pass",
+        "detail": "7 regional groups"
+      },
+      {
+        "check": "regional_reference_purchase",
+        "status": "pass",
+        "detail": "provincial SEPM purchase cost held at 107.2200 CAD/m3"
+      },
+      {
+        "check": "regional_spread_recompute",
+        "status": "pass",
+        "detail": "regional conditional spreads use the provincial purchase cost"
+      },
+      {
+        "check": "regional_three_respondent_flags",
+        "status": "pass",
+        "detail": "every regional group with sample_n<=3 is flagged"
+      },
+      {
+        "check": "regional_source_is_reg",
+        "status": "pass",
+        "detail": "regional rows cite REG/regional_2022, not T20"
+      },
+      {
+        "check": "bmmb_sale_count",
+        "status": "pass",
+        "detail": "7 BMMB aggregate/per-year rows"
+      },
+      {
+        "check": "bmmb_counts",
+        "status": "pass",
+        "detail": "18 sales; 13 awarded; 11 full rates; 2 partial awards"
+      },
+      {
+        "check": "bmmb_crown_primary",
+        "status": "pass",
+        "detail": "Crown-only 9 full rates / 74,550 m3 is the primary benchmark"
+      },
+      {
+        "check": "bmmb_teaching_separate",
+        "status": "pass",
+        "detail": "teaching/research forest 2 full rates / 15,350 m3 is separate"
+      },
+      {
+        "check": "bmmb_weighted_rates",
+        "status": "pass",
+        "detail": "Crown 35.7547; teaching 50.6266; all-in 38.2940 CAD/m3"
+      },
+      {
+        "check": "bmmb_reoffer_overlap",
+        "status": "pass",
+        "detail": "2 re-offers / 22,200 m3 overlap disclosed"
+      },
+      {
+        "check": "bmmb_years_dynamic",
+        "status": "pass",
+        "detail": "per-year rows carry per-year price_year_basis and counts"
+      },
+      {
+        "check": "bmmb_2012_no_full_rate",
+        "status": "pass",
+        "detail": "2012 has partial awards only; no full rate is reported"
+      },
+      {
+        "check": "labels_not_net_value",
+        "status": "pass",
+        "detail": "provincial spread statuses are explicit and BMMB rows are historical benchmarks"
+      }
+    ]
+  },
+  "non_claims": [
+    "Not a forest net value; net_value_status=not_estimated.",
+    "Not an observed transaction.",
+    "Not a policy result and not policy-grade.",
+    "Not a mill margin; transformation and lumber revenue are excluded.",
+    "Not a stumpage rate.",
+    "Not a current or representative BMMB price.",
+    "Not an estimate of the QC provincial harvest population.",
+    "Not merged into the forest cost/revenue ledger, Forest LP, or UI.",
+    "Not deflated; BMMB values remain nominal 2011-2015.",
+    "Not species- or grade-allocated.",
+    "No volume-scaled M CAD diagnostic is produced."
+  ],
+  "limitations": [
+    "Survey aggregates only; no mill-level or respondent-level values.",
+    "Provincial survey means are not volume-weighted to the provincial harvest.",
+    "T2 purchase and T20 BGAD are different respondent samples and accounting bases.",
+    "T20 excludes species gain/loss; PRCCM rebates sit inside transfers.",
+    "Regional data cover SEPM only and publish no regional purchase price.",
+    "Three-respondent means are statistically fragile; regional R09 has sample_n=3.",
+    "Pine and cedar purchase costs are three-respondent means.",
+    "No cost spread is computable for pine, cedar, or species totals without matching T20 BGAD rows.",
+    "Hardwood and poplar spreads are product-specific, not a species total.",
+    "BMMB delivered sales end in 2015 and do not publish species, grade, destination, or service-bundle detail.",
+    "The 2012 BMMB re-offer overlap double-counts 22,200 m3 in offered/awarded volumes."
+  ],
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6",
+      "bytes": 207537,
+      "role": "2022 QC survey aggregates"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/manifest.json",
+      "sha256": "e6289e503c43e5dbca7a1199e7c24571a63780c84ee1a25e354809176e61d2f9",
+      "bytes": 42983,
+      "role": "2022 QC survey provenance manifest"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bmmb_delivered/bmmb_delivered_sales.csv",
+      "sha256": "9cd8c0a321240bbe474c1e2196d0f0af4efba6e97711986353c7d33549a9103a",
+      "bytes": 15076,
+      "role": "BMMB delivered auction sales"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bmmb_delivered/manifest.json",
+      "sha256": "47e4edfb07298e4eb3da6fb4ce7e3bff8d67927b63873f1d301b2c49870a2649",
+      "bytes": 19279,
+      "role": "BMMB delivered provenance manifest"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "730c0b51b674a1b600379ba5d38811be55e494ea3816227ec12553e88faa7777",
+      "bytes": 9703,
+      "role": "provincial procurement cost benchmark",
+      "rows": 9
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_regional_range.csv",
+      "sha256": "331b721c02ea9f0f23cb0d1957e0bbdf26620b223b2e95ae6c0a57ae23598459",
+      "bytes": 7081,
+      "role": "regional conditional range",
+      "rows": 9
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "9b4bef9baf07917709c685eda0cc6ae4469b0f4375492bc8d836bc46dfafc4d1",
+      "bytes": 6274,
+      "role": "BMMB historical benchmark",
+      "rows": 7
+    }
+  ]
+}

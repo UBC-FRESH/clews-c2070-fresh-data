@@ -1,0 +1,215 @@
+{
+  "artifact_version": "1.0.0",
+  "dataset": "qc_procurement_cost_benchmark",
+  "generated_utc": "2026-11-21T21:44:55Z",
+  "status": "not_estimated",
+  "interpretation": "purchased_vs_bgad_procurement_cost_spread",
+  "generator": {
+    "script": "workflows/national/harvest/procurement_benchmark_v1.py",
+    "command": "python -m workflows.national.harvest.procurement_benchmark_v1"
+  },
+  "labels": {
+    "evidence_values": [
+      "survey_procurement_cost",
+      "survey_regional_procurement_cost",
+      "benchmark_historical"
+    ],
+    "policy_grade": false,
+    "net_value_status": "not_estimated",
+    "interpretation": "purchased_vs_bgad_procurement_cost_spread"
+  },
+  "parameters": {
+    "survey_year": 2022,
+    "price_year": 2022,
+    "currency_basis": "CAD_nominal_2022",
+    "bmmb_currency_basis": "CAD_nominal",
+    "provincial_spread_before": "purchase_cost - bgad_before_transfers",
+    "provincial_spread_after": "purchase_cost - bgad_after_transfers",
+    "regional_reference_purchase_cad_m3": 107.22,
+    "regional_source_id": "regional_2022",
+    "regional_source_table": "REG",
+    "regional_source_document": "Compilation_donnees_regionalisees_2022.pdf",
+    "bmmb_primary_scope": "crown_public_forest",
+    "volume_scaled_diagnostic": false
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6",
+      "bytes": 207537,
+      "role": "2022 QC survey aggregates"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/manifest.json",
+      "sha256": "e6289e503c43e5dbca7a1199e7c24571a63780c84ee1a25e354809176e61d2f9",
+      "bytes": 42983,
+      "role": "2022 QC survey provenance manifest"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bmmb_delivered/bmmb_delivered_sales.csv",
+      "sha256": "9cd8c0a321240bbe474c1e2196d0f0af4efba6e97711986353c7d33549a9103a",
+      "bytes": 15076,
+      "role": "BMMB delivered auction sales"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bmmb_delivered/manifest.json",
+      "sha256": "47e4edfb07298e4eb3da6fb4ce7e3bff8d67927b63873f1d301b2c49870a2649",
+      "bytes": 19279,
+      "role": "BMMB delivered provenance manifest"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "730c0b51b674a1b600379ba5d38811be55e494ea3816227ec12553e88faa7777",
+      "bytes": 9703,
+      "role": "provincial procurement cost benchmark",
+      "rows": 9
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_regional_range.csv",
+      "sha256": "331b721c02ea9f0f23cb0d1957e0bbdf26620b223b2e95ae6c0a57ae23598459",
+      "bytes": 7081,
+      "role": "regional conditional range",
+      "rows": 9
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "9b4bef9baf07917709c685eda0cc6ae4469b0f4375492bc8d836bc46dfafc4d1",
+      "bytes": 6274,
+      "role": "BMMB historical benchmark",
+      "rows": 7
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/summary.json",
+      "sha256": "88e9042a7ba4540ab6cb34fc611802ce407be2efa67dbed843880d2469e27c90",
+      "bytes": 16232,
+      "role": "machine-readable summary"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/PROCUREMENT_BENCHMARK_REPORT.md",
+      "sha256": "b4f82b335a1ebf34047ffbd8969532d6830d952cc06145351021e8f64ff7e59f",
+      "bytes": 9585,
+      "role": "human-readable report"
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "check_count": 20,
+    "checks": [
+      {
+        "check": "survey_row_count",
+        "status": "pass",
+        "detail": "660 rows (expected 660)"
+      },
+      {
+        "check": "t2_t21_purchase_consistency",
+        "status": "pass",
+        "detail": "8 overlapping purchase rows agree"
+      },
+      {
+        "check": "provincial_spread_count",
+        "status": "pass",
+        "detail": "3 computable cost spreads of 9 scopes"
+      },
+      {
+        "check": "provincial_spread_recompute",
+        "status": "pass",
+        "detail": "spread_before = purchase - BGAD before; spread_after = purchase - BGAD after"
+      },
+      {
+        "check": "provincial_transfer_identity",
+        "status": "pass",
+        "detail": "BGAD before + transfers = BGAD after and spread before - spread after = transfers"
+      },
+      {
+        "check": "provincial_no_nonfinite",
+        "status": "pass",
+        "detail": "all provincial values are finite or explicitly blank"
+      },
+      {
+        "check": "regional_group_count",
+        "status": "pass",
+        "detail": "7 regional groups"
+      },
+      {
+        "check": "regional_reference_purchase",
+        "status": "pass",
+        "detail": "provincial SEPM purchase cost held at 107.2200 CAD/m3"
+      },
+      {
+        "check": "regional_spread_recompute",
+        "status": "pass",
+        "detail": "regional conditional spreads use the provincial purchase cost"
+      },
+      {
+        "check": "regional_three_respondent_flags",
+        "status": "pass",
+        "detail": "every regional group with sample_n<=3 is flagged"
+      },
+      {
+        "check": "regional_source_is_reg",
+        "status": "pass",
+        "detail": "regional rows cite REG/regional_2022, not T20"
+      },
+      {
+        "check": "bmmb_sale_count",
+        "status": "pass",
+        "detail": "7 BMMB aggregate/per-year rows"
+      },
+      {
+        "check": "bmmb_counts",
+        "status": "pass",
+        "detail": "18 sales; 13 awarded; 11 full rates; 2 partial awards"
+      },
+      {
+        "check": "bmmb_crown_primary",
+        "status": "pass",
+        "detail": "Crown-only 9 full rates / 74,550 m3 is the primary benchmark"
+      },
+      {
+        "check": "bmmb_teaching_separate",
+        "status": "pass",
+        "detail": "teaching/research forest 2 full rates / 15,350 m3 is separate"
+      },
+      {
+        "check": "bmmb_weighted_rates",
+        "status": "pass",
+        "detail": "Crown 35.7547; teaching 50.6266; all-in 38.2940 CAD/m3"
+      },
+      {
+        "check": "bmmb_reoffer_overlap",
+        "status": "pass",
+        "detail": "2 re-offers / 22,200 m3 overlap disclosed"
+      },
+      {
+        "check": "bmmb_years_dynamic",
+        "status": "pass",
+        "detail": "per-year rows carry per-year price_year_basis and counts"
+      },
+      {
+        "check": "bmmb_2012_no_full_rate",
+        "status": "pass",
+        "detail": "2012 has partial awards only; no full rate is reported"
+      },
+      {
+        "check": "labels_not_net_value",
+        "status": "pass",
+        "detail": "provincial spread statuses are explicit and BMMB rows are historical benchmarks"
+      }
+    ]
+  },
+  "non_claims": [
+    "Not a forest net value; net_value_status=not_estimated.",
+    "Not an observed transaction.",
+    "Not a policy result and not policy-grade.",
+    "Not a mill margin; transformation and lumber revenue are excluded.",
+    "Not a stumpage rate.",
+    "Not a current or representative BMMB price.",
+    "Not an estimate of the QC provincial harvest population.",
+    "Not merged into the forest cost/revenue ledger, Forest LP, or UI.",
+    "Not deflated; BMMB values remain nominal 2011-2015.",
+    "Not species- or grade-allocated.",
+    "No volume-scaled M CAD diagnostic is produced."
+  ]
+}
