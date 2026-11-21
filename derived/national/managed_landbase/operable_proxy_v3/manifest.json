@@ -1,0 +1,208 @@
+{
+  "schema_version": "operable_proxy_v3_manifest_v1",
+  "product": "national operable merchantable-forest screening proxy v3",
+  "status": "screening proxy combining operable proxy v2 with the national 960 m slope screen; NOT a legal THLB, AAC landbase, operability model, or yield forecast",
+  "generated_at_utc": "2026-11-21T21:06:40+00:00",
+  "runtime_seconds": 0.293,
+  "command": "python scripts/national/build_operable_proxy_v3.py --out-dir data/derived/national/managed_landbase/operable_proxy_v3",
+  "git_commit": "06d3187db34e2051c8ee51b7ca4addb05f541215",
+  "software": {
+    "python": "3.12.3",
+    "numpy": "2.5.0",
+    "pandas": "3.0.3"
+  },
+  "inputs": {
+    "v2_by_province": {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/operable_proxy_v2_by_province.csv",
+      "size_bytes": 78834,
+      "sha256": "d64f4cb02a02210e1b18e671df33f10eddf5b9fba0b4f9760bb7aa26e6583497"
+    },
+    "v2_by_ecoprovince": {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/operable_proxy_v2_by_ecoprovince.csv",
+      "size_bytes": 526804,
+      "sha256": "68dc1f197f34a8c324dc473669f938f40158ae1d0972fe839fe0bd7f30e945ae"
+    },
+    "v2_summary": {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/operable_proxy_v2_summary.json",
+      "size_bytes": 51016,
+      "sha256": "6912ca5bdd6b8165459d69ed0f437742ae717a39ffc2448e54c8a93aa6c74b5c"
+    },
+    "slope_operable_overlay": {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay.csv",
+      "size_bytes": 31819,
+      "sha256": "b95114d6724cfc5cb1fdd5844347c9d4176facb67e30ec2254eefcfcce6e1f2e"
+    },
+    "slope_operable_overlay_by_province": {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay_by_province.csv",
+      "size_bytes": 2805,
+      "sha256": "4a974d584aaf114cf0701f0ab811cb11d0b8c044247287914eab79140d981044"
+    },
+    "slope_screen_summary": {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_screen_summary.json",
+      "size_bytes": 25805,
+      "sha256": "11874128952a889adabbd7e77e2499c8eb6b2c64c19f75b1e4bed0c5285d68fd"
+    }
+  },
+  "method": {
+    "combination": "v2 base/core20/core30 operable area x published forest-weighted ecoprovince share_gt15/share_gt30",
+    "overlay_assumption": "forest-weighted 960 m treed slope share applied to v2 operable area; assumes v2 screens are independent of slope within the province/ecoprovince; not pixel-exact; screening proxy, not legal THLB",
+    "slope_resolution_m": 960,
+    "no_new_raster": true,
+    "published_overlay_cases": [
+      "base",
+      "core20"
+    ],
+    "core30_slope_basis": "same ecoprovince share as base/core20; no independent published core30 overlay"
+  },
+  "outputs": [
+    {
+      "path": "operable_v3_by_province.csv",
+      "size_bytes": 24725,
+      "sha256": "fa37d3ab19302dd5ccda647e29005cae39f9a9e990bdb67aa5233b6e924c0632"
+    },
+    {
+      "path": "operable_v3_by_ecoprovince.csv",
+      "size_bytes": 262037,
+      "sha256": "c4b28ca89a528c59a3a4a22f8d11a00d5aeab50bbd8aa7cdf239330ff77973c2"
+    },
+    {
+      "path": "operable_v3_150m.csv",
+      "size_bytes": 2022,
+      "sha256": "8452f09efd0807cc9f409243f1338f97ffef0331181d774206d8ffe06f4fead4"
+    },
+    {
+      "path": "summary.json",
+      "size_bytes": 16486,
+      "sha256": "f5cc62a9158e91df393f3c622bc76cad1899c5e3aa4ff15fab85a9f5e7c90994"
+    },
+    {
+      "path": "OPERABLE_V3_REPORT.md",
+      "size_bytes": 9753,
+      "sha256": "d31c71a4c1a369e810e3337891e4f7a12eeda8400985538d5ea426193bdd7eb0"
+    }
+  ],
+  "validation": {
+    "v3_none_equals_v2_ecoprovince_max_abs_diff_ha": 0.0,
+    "v3_none_equals_v2_province_max_abs_diff_ha": 3.725290298461914e-09,
+    "v3_none_equals_v2_all_cases": true,
+    "v3_gt15_base_matches_overlay_ecoprovince_max_abs_diff_ha": 2.968590706586838e-07,
+    "v3_gt15_base_matches_overlay_province_max_abs_diff_ha": 8.085044100880623e-07,
+    "v3_gt30_base_matches_overlay_ecoprovince_max_abs_diff_ha": 1.0186340659856796e-07,
+    "v3_gt30_base_matches_overlay_province_max_abs_diff_ha": 1.0756775736808777e-06,
+    "v3_gt15_core20_matches_overlay_ecoprovince_max_abs_diff_ha": 8.395873010158539e-07,
+    "v3_gt15_core20_matches_overlay_province_max_abs_diff_ha": 7.646158337593079e-07,
+    "v3_gt30_core20_matches_overlay_ecoprovince_max_abs_diff_ha": 5.846231942996383e-07,
+    "v3_gt30_core20_matches_overlay_province_max_abs_diff_ha": 6.479676812887192e-07,
+    "v3_gt15_gt30_match_overlay_base_and_core20": true,
+    "province_equals_ecoprovince_sum_lost_max_abs_diff_ha": 9.313225746154785e-10,
+    "province_equals_ecoprovince_sum_remaining_max_abs_diff_ha": 7.450580596923828e-09,
+    "province_sum_equals_ecoprovince_sum_all_cases": true,
+    "national_matches_slope_summary": true,
+    "national_base_none_operable_ha": 144689810.1311988,
+    "no_nan_outside_coverage_gap": true,
+    "no_negative_area_fields": true,
+    "lost_le_v2_operable": true,
+    "remaining_le_v2_operable": true,
+    "threshold_ordering_gt15_le_gt30_le_none": true,
+    "case_ordering_core30_le_core20_le_base": true,
+    "intensity_100m_max_abs_diff_m3_ha_yr": 0.0,
+    "intensity_119m_max_abs_diff_m3_ha_yr": 0.0,
+    "intensity_150m_max_abs_diff_m3_ha_yr": 0.0,
+    "150m_arithmetic_exact": true,
+    "slope_coverage_gap_ha": 13272017.759958506,
+    "slope_coverage_gap_share": 0.031414862065331055,
+    "slope_coverage_gap_matches_13_27_mha": true,
+    "all_checks_pass": true
+  },
+  "gaps": [
+    {
+      "gap_id": "legal_thlb_missing",
+      "status": "open",
+      "detail": "No legal timber harvesting landbase boundary is used. Tenure is a rights footprint, not a harvest-landbase determination.",
+      "effect": "All v3 areas are screening proxies and must not be labelled THLB or AAC."
+    },
+    {
+      "gap_id": "slope_overlay_assumption",
+      "status": "open",
+      "detail": "Forest-weighted treed slope shares from the 960 m screen are applied to v2 operable area inside a province/ecoprovince. The v2 screens are assumed independent of slope; this is not a pixel-exact intersection.",
+      "effect": "Steep-area losses are overlay estimates, not spatially resolved exclusions."
+    },
+    {
+      "gap_id": "coarse_slope_not_operability",
+      "status": "open",
+      "detail": "Slope is computed from 960 m average elevation. Local 30 m slope can be much steeper; this layer cannot classify operability, harvest system, or site degradation.",
+      "effect": ">15% and >30% losses are screening sensitivities, not operational or legal classifications."
+    },
+    {
+      "gap_id": "dem_source_mix",
+      "status": "open",
+      "detail": "MRDEM-30 is a DTM mosaic of HRDEM lidar and Copernicus GLO-30. Non-lidar areas are modelled and may have larger vertical error; the public STAC item has no source legend.",
+      "effect": "Slope accuracy is not uniform across the country."
+    },
+    {
+      "gap_id": "treed_outside_rsyc_ecoprovince",
+      "status": "open",
+      "detail": "13,272,017.76 ha of SCANFI treed area lies outside the RSYC ecoprovince polygons. v2 assigns those blocks to the nearest ecoprovince, but the slope screen has no independent ecoprovince slope statistics for them.",
+      "effect": "v3 inherits the v2 nearest-ecoprovince attribution and applies the receiving ecoprovince's slope share to those blocks; the 13.27 Mha gap is not zero-filled or separately resolved."
+    },
+    {
+      "gap_id": "core30_slope_no_published_overlay",
+      "status": "documented",
+      "detail": "The published slope overlay contains base and core20 only. v3 applies the same ecoprovince share to core30; there is no independent core30 overlay to reconcile against.",
+      "effect": "core30 slope losses are internally consistent estimates."
+    },
+    {
+      "gap_id": "slope_dem_missing",
+      "status": "resolved_in_v3",
+      "detail": "The v2 gap that no national DEM was present is superseded by the national 960 m MRDEM-30 slope screen used here.",
+      "effect": "The residual limitations are captured in coarse_slope_not_operability, dem_source_mix, and slope_overlay_assumption."
+    },
+    {
+      "gap_id": "nbac_2010_2015_missing",
+      "status": "open",
+      "detail": "The NBAC bundle is the 2020 annual vintage only; 2010 and 2015 fire-history screens cannot be computed.",
+      "effect": "Only the 2020 fire screen is represented in v2/v3."
+    },
+    {
+      "gap_id": "nrn_public_roads_only",
+      "status": "documented",
+      "detail": "NRN is the public road network; resource, industrial, winter, and decommissioned roads are absent.",
+      "effect": "Road distance is an optimistic public-road access proxy."
+    },
+    {
+      "gap_id": "age_regeneration_assumption",
+      "status": "documented",
+      "detail": "SCANFI median age is a stand-age prediction; excluding stands below 20 or 30 years is a screening convention.",
+      "effect": "Age screens reduce area beyond merchantability alone."
+    },
+    {
+      "gap_id": "managed_share_uniform",
+      "status": "documented",
+      "detail": "The v1 managed share is uniform inside each province-ecoprovince; tenure is not intersected spatially.",
+      "effect": "Spatial tenure pattern is not represented."
+    },
+    {
+      "gap_id": "nfi_age_uncertainty",
+      "status": "documented",
+      "detail": "SCANFI age is a 30 m prediction surface, not a provincial inventory or disturbance record.",
+      "effect": "Age thresholds are screening conventions."
+    },
+    {
+      "gap_id": "nu_pe_tenure_missing",
+      "status": "documented",
+      "detail": "NU and PE managed and operable values are blank because the 2016 tenure compilation has no coverage.",
+      "effect": "Blank is not zero; national totals cover 11 provinces."
+    }
+  ],
+  "caveats": [
+    "Screening proxy only; not a legal THLB, AAC landbase, or harvest feasibility test.",
+    "Slope losses use a forest-weighted ecoprovince share, not a pixel-exact intersection.",
+    "The 960 m slope layer smooths local terrain and is not a 30 m operability model.",
+    "The 13.27 Mha of SCANFI treed area outside RSYC ecoprovince polygons has no independent slope statistics; v3 inherits v2 nearest-ecoprovince attribution.",
+    "Slope >15% and >30% are screening thresholds, not provincial or legal rules.",
+    "NBAC 2020 is an annual fire vintage; 2010 and 2015 cases are gaps.",
+    "NRN public roads only; resource and industrial roads are absent.",
+    "NU and PE operable values remain blank, not zero.",
+    "The 100M/119M/150M intensities are target-volume / area arithmetic, not growth forecasts or sustainability tests."
+  ]
+}
