@@ -1,7 +1,7 @@
 {
   "dataset": "bmmb_delivered",
   "version": "0.1.0",
-  "generated_utc": "2026-11-21T20:35:18Z",
+  "generated_utc": "2026-11-21T21:35:18Z",
   "generator": "scripts/national/extract_bmmb_delivered.py",
   "source": {
     "id": "qc_bmmb_auction_archive",
@@ -231,33 +231,86 @@
     "delivered_observed_prices": 13,
     "delivered_volume_m3": 159850.0,
     "delivered_awarded_volume_m3": 108750.0,
+    "delivered_volume_excluding_reoffer_overlap_m3": 137650.0,
+    "delivered_awarded_volume_excluding_reoffer_overlap_m3": 100450.0,
+    "reoffer_sales": 2,
+    "reoffer_overlap_m3": 22200.0,
     "delivered_observed_value_cad": 3878958.5,
     "delivered_partial_award_sales": 2,
     "delivered_partial_award_value_cad": 436325.0,
     "delivered_rate_computable_volume_m3": 89900.0,
     "delivered_rate_computable_value_cad": 3442633.5,
+    "delivered_rate_cad_m3": 38.294,
+    "delivered_rate_crown_cad_m3": 35.7547,
+    "delivered_rate_non_crown_cad_m3": 50.6266,
+    "delivered_rate_non_crown_uplift_cad_m3": 2.5393,
     "detail_price_checks": 11,
+    "detail_price_check_expected": 11,
+    "detail_price_check_status": "pass",
     "checks": [
       "source_row_count=3796",
       "delivered_sale_count=18",
       "delivered_only_sale_type",
       "no_duplicate_sale_ids",
       "non_negative_volume_and_price",
+      "partial_award_inferred_from_result_pdf_phrase",
       "partial_award_rate_not_computed",
       "awarded_delivered_rows_have_price",
       "unsold_rows_have_no_price",
       "sale_year_matches_auction_end_year",
       "species_volume_reconciles_to_sale_volume",
       "summary_reconciles_to_export",
+      "currency_basis_recorded",
+      "reoffer_links_verified",
+      "reoffer_overlap_reported",
+      "rate_breakdown_crown_vs_non_crown",
       "detail_prices_match_export"
     ]
   },
+  "rate_breakdown": [
+    {
+      "segment": "crown_public_forest",
+      "tenure": "Forêt publique",
+      "sale_count": 9,
+      "volume_m3": 74550.0,
+      "value_cad": 2665515.5,
+      "weighted_rate_cad_m3": 35.7547,
+      "pulpwood_volume_m3": 42750.0,
+      "pulpwood_share_pct": 57.3,
+      "sawlog_share_pct": 42.7
+    },
+    {
+      "segment": "non_crown_teaching_research",
+      "tenure": "Forêt d'enseignement et recherche",
+      "sale_count": 2,
+      "volume_m3": 15350.0,
+      "value_cad": 777118.0,
+      "weighted_rate_cad_m3": 50.6266,
+      "pulpwood_volume_m3": 3750.0,
+      "pulpwood_share_pct": 24.4,
+      "sawlog_share_pct": 75.6
+    }
+  ],
+  "reoffer_links": [
+    {
+      "sale_id": "CS201207001",
+      "reoffer_of_sale_id": "CS201206004",
+      "overlap_m3": 8300.0,
+      "note": "re-offers the unsold Hackett Ouest volume from CS201206004"
+    },
+    {
+      "sale_id": "SO201207001",
+      "reoffer_of_sale_id": "SO201206009",
+      "overlap_m3": 13900.0,
+      "note": "re-offers the unsold Lac a l'Ours volume from SO201206009"
+    }
+  ],
   "outputs": [
     {
       "file": "bmmb_delivered_sales.csv",
       "rows": 18,
-      "bytes": 14587,
-      "sha256": "7bc662327579ce7da45271d17d1623aa90ec2c470e85a1928bd1f86f1890c3a2",
+      "bytes": 15076,
+      "sha256": "9cd8c0a321240bbe474c1e2196d0f0af4efba6e97711986353c7d33549a9103a",
       "columns": [
         "sale_id",
         "sale_year",
@@ -282,6 +335,7 @@
         "price_cad_m3_lower_bound",
         "price_unit_basis",
         "partial_award",
+        "reoffer_of_sale_id",
         "currency_basis",
         "observed",
         "observation_type",
@@ -323,8 +377,8 @@
     {
       "file": "bmmb_sale_type_summary.csv",
       "rows": 46,
-      "bytes": 10034,
-      "sha256": "66d22172f74c570097e0b9bb8fe37d3f78b83c31213f3217622f839994ca1dea",
+      "bytes": 12741,
+      "sha256": "e048e7753a4d6839e3e8f57296883704ad7c086fb115ef80ad66364a903334a2",
       "columns": [
         "sale_type",
         "sale_type_family",
@@ -347,6 +401,7 @@
         "rate_cad_m3",
         "value_semantics",
         "rate_unit_basis",
+        "currency_basis",
         "is_delivered",
         "notes"
       ]
@@ -428,32 +483,49 @@
     "delivered_observed_prices": 13,
     "delivered_volume_m3": 159850.0,
     "delivered_awarded_volume_m3": 108750.0,
+    "delivered_volume_excluding_reoffer_overlap_m3": 137650.0,
+    "delivered_awarded_volume_excluding_reoffer_overlap_m3": 100450.0,
+    "reoffer_sales": 2,
+    "reoffer_overlap_m3": 22200.0,
     "delivered_observed_value_cad": 3878958.5,
     "delivered_partial_award_sales": 2,
     "delivered_partial_award_value_cad": 436325.0,
     "delivered_rate_computable_volume_m3": 89900.0,
     "delivered_rate_computable_value_cad": 3442633.5,
+    "delivered_rate_cad_m3": 38.294,
+    "delivered_rate_crown_cad_m3": 35.7547,
+    "delivered_rate_non_crown_cad_m3": 50.6266,
+    "delivered_rate_non_crown_uplift_cad_m3": 2.5393,
     "detail_price_checks": 11,
+    "detail_price_check_expected": 11,
+    "detail_price_check_status": "pass",
     "checks": [
       "source_row_count=3796",
       "delivered_sale_count=18",
       "delivered_only_sale_type",
       "no_duplicate_sale_ids",
       "non_negative_volume_and_price",
+      "partial_award_inferred_from_result_pdf_phrase",
       "partial_award_rate_not_computed",
       "awarded_delivered_rows_have_price",
       "unsold_rows_have_no_price",
       "sale_year_matches_auction_end_year",
       "species_volume_reconciles_to_sale_volume",
       "summary_reconciles_to_export",
+      "currency_basis_recorded",
+      "reoffer_links_verified",
+      "reoffer_overlap_reported",
+      "rate_breakdown_crown_vs_non_crown",
       "detail_prices_match_export"
     ]
   },
   "gaps": [
     "Only 18 delivered-to-destination sales exist in the archive; the most recent delivered sale ends in 2015.",
     "The sale price is a total lot value and is not published by species or grade; no allocation is made.",
-    "The detail pages do not name the destination; the price point is delivered-to-destination, not a confirmed mill gate.",
-    "The two 2012 result PDFs note that some offered volume was not awarded; no awarded volume is published, so a full rate is not computed and only a lower bound based on offered volume is reported.",
+    "The detail pages do not publish a delivery destination field; the 'Destination :' input is only a Google Maps directions box. Delivery terms are inside the unparsed tender documents; the price point is delivered-to-destination, not a confirmed mill gate.",
+    "CS201207001 re-offers 8,300 m3 of unsold CS201206004 timber and SO201207001 re-offers 13,900 m3 of unsold SO201206009 timber. The 22,200 m3 overlap is counted once in the unique offered volume and once in the unique awarded volume; do not sum the naive row totals.",
+    "The all-sale 38.2940 CAD/m3 computable rate is not a Crown benchmark: two non-Crown teaching/research lots raise it by 2.54 CAD/m3. The Crown-only rate is 35.7547 CAD/m3.",
+    "The two 2012 result PDFs print '*Certains volumes de bois offerts sont non-adjuges.'; that phrase sets partial_award=1. No awarded volume is published, so only a lower bound based on offered volume is reported.",
     "The sale type implies a delivered wood sale; the archive does not publish whether harvest, haul, or both are included, or the destination.",
     "Prices are nominal CAD for 2011, 2012, 2014, and 2015; no deflator is applied.",
     "BMMB auctioned volume is a sample of Crown volume, not the provincial harvest population."

@@ -99,8 +99,10 @@ PDF text used:
 - `CS201207001`: `Prix de vente : 323 875 $`; winner named in the PDF.
 
 Both PDFs also state: `*Certains volumes de bois offerts sont non-adjugés.`
-(Awarded volume is therefore less than offered volume and is not published.)
-The dataset records a lower bound only for these two sales.
+The extractor parses that printed phrase to set `partial_award=1`; the flag is
+not inferred from the presence of a PDF. Awarded volume is therefore less than
+offered volume and is not published, so the dataset records a lower bound only
+for these two sales.
 
 ## Field mapping
 
@@ -153,15 +155,22 @@ new sale types require a reviewed classification, not a silent fallback.
 3. Parse the species/product columns for every sale and check that mandatory
    and optional species volumes reconcile to the corresponding total columns.
 4. Filter to `sale_type == "Livré à destination"`.
-5. Fill the two blank 2012 prices from the hash-verified result PDFs. Mark
-   both as `partial_award=1`.
-6. Cross-check the other 11 prices against the detail-page result text.
+5. Fill the two blank 2012 prices from the hash-verified result PDFs. Parse
+   the printed `*Certains volumes de bois offerts sont non-adjugés.` phrase
+   and set `partial_award=1` from the text, not from PDF presence.
+6. Cross-check the other 11 prices against the detail-page result text. A
+   missing detail page fails extraction; `detail_prices_match_export` is
+   recorded only when the checks cover all 11 expected sale IDs.
 7. Build the all-sale-type summary from all 3,796 rows, keeping delivered,
-   `Récolté`, and standing types separate.
+   `Récolté`, and standing types separate. Every summary row records
+   `currency_basis=CAD_nominal`; PDF price checks apply only to delivered
+   sales.
 8. Validate: 3,796 source rows; 18 delivered rows; 13 awarded; 13 observed
    prices; no duplicate IDs; no negative or non-finite values; awarded rows
    have prices; unsold rows do not; years match; species volumes reconcile;
-   summary counts/volumes reconcile to the export.
+   summary counts/volumes reconcile to the export; the two 2012 re-offer links
+   reconcile to 22,200 m3; and the Crown/non-Crown rate split reproduces
+   35.7547 and 50.6266 CAD/m3.
 9. Write CSV, recompute SHA-256 of every output, and write `manifest.json`.
 
 Validation result at generation: **pass**. See `manifest.json` for the
@@ -182,10 +191,18 @@ README; the parser fails if the export hash or byte count differs.
 - `Prix de vente` is a total sale value. It must not be read as CAD/m3.
 - Two awarded delivered sales have a blank export price but a public result
   PDF with a price.
-- The detail page `Destination` field is empty for all delivered sales.
+- The detail page does not publish a delivery destination field. The
+  `Destination :` input is only a Google Maps directions box; delivery terms
+  are inside the unparsed tender documents.
+- `CS201207001` re-offers 8,300 m3 of unsold `CS201206004` timber and
+  `SO201207001` re-offers 13,900 m3 of unsold `SO201206009` timber. The
+  22,200 m3 overlap is flagged on both sides with `reoffer_of_sale_id` /
+  `reoffered_by_sale_id` and must not be summed twice.
 - The delivered subset ends in 2015; the recent archive is overwhelmingly
   `Sur pied selon mesurage` (standing) sales.
 - `Récolté` is a distinct sale type and is not documented as delivered. It is
   never included in the delivered table.
 - The 2014 and 2015 delivered sales on `Forêt d'enseignement et recherche`
-  are not Crown public forest; they are flagged in `tenure`.
+  are not Crown public forest; they are flagged in `tenure` and reported as a
+  separate rate segment. The all-sale 38.2940 CAD/m3 rate includes them and is
+  2.54 CAD/m3 above the Crown-only 35.7547 CAD/m3.
