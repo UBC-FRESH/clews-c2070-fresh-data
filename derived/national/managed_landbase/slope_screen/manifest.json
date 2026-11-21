@@ -1,0 +1,104 @@
+{
+  "product": "national 960 m slope/operability screening layer",
+  "generated_at_utc": "2026-11-21T20:58:47+00:00",
+  "runtime_seconds": 83.043,
+  "command": ".venv/bin/python scripts/national/build_slope_screen.py --out-dir data/derived/national/managed_landbase/slope_screen",
+  "git_commit": "613022fbd8739330d4485cf81246999d597dcee5",
+  "licence": "Open Government Licence - Canada 2.0",
+  "software": {
+    "python": "3.12.3",
+    "rasterio": "1.5.0",
+    "gdal": "3.12.1",
+    "numpy": "2.5.0",
+    "pandas": "3.0.3",
+    "geopandas": "1.1.4"
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/inputs/mrdem-30-dtm.vrt",
+      "url": "https://canelevation-dem.s3.ca-central-1.amazonaws.com/mrdem-30/mrdem-30-dtm.vrt",
+      "size_bytes": 1705,
+      "sha256": "b8405a01dcf2b2cb0dac5d18f5a20b2dc571187ec4f694b78b5763747a85d04f"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/inputs/stac_collection_mrdem-30.json",
+      "url": "https://datacube.services.geo.ca/stac/api/collections/mrdem-30",
+      "size_bytes": 1489,
+      "sha256": "0fd4df5cf9916c994a0923a7dbc86620191570b76efacfb1611cd8683ceaf051"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/inputs/stac_search_mrdem-30.json",
+      "url": "https://datacube.services.geo.ca/stac/api/search?collections=mrdem-30",
+      "size_bytes": 10134,
+      "sha256": "9927d8202e4a6e6e136622738bcc8913ba60af22bc01d5920ad0d56a77e10c7b"
+    },
+    {
+      "path": "data/raw/scanfi/v2/SCANFI_att_nfiLandcover_2025_v2_20260119.tif",
+      "url": null,
+      "size_bytes": 1666500786,
+      "sha256": "668438f6388731a1cf6a9e899a3d7aeb8a998e35c97e5199007db9da03ef46b2"
+    },
+    {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "url": null,
+      "size_bytes": 15421440,
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    },
+    {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "url": null,
+      "size_bytes": 26022306,
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/operable_proxy_v2_by_ecoprovince.csv",
+      "url": null,
+      "size_bytes": 526804,
+      "sha256": "68dc1f197f34a8c324dc473669f938f40158ae1d0972fe839fe0bd7f30e945ae"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_960m_epsg3979.tif",
+      "url": null,
+      "size_bytes": 15760878,
+      "sha256": "d3c3b5430652e83821e10067d90f560509b74833ecb2ef4a7a73ab2ac58393e5"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_by_ecoprovince.csv",
+      "url": null,
+      "size_bytes": 10974,
+      "sha256": "fb546c60f2dda941450ca4dce72bddf1df3d62bbaf972e6d7809bb4172d1ee36"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay.csv",
+      "url": null,
+      "size_bytes": 31819,
+      "sha256": "b95114d6724cfc5cb1fdd5844347c9d4176facb67e30ec2254eefcfcce6e1f2e"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay_by_province.csv",
+      "url": null,
+      "size_bytes": 2805,
+      "sha256": "4a974d584aaf114cf0701f0ab811cb11d0b8c044247287914eab79140d981044"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_screen_summary.json",
+      "url": null,
+      "size_bytes": 25805,
+      "sha256": "11874128952a889adabbd7e77e2499c8eb6b2c64c19f75b1e4bed0c5285d68fd"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/SLOPE_SCREEN_REPORT.md",
+      "url": null,
+      "size_bytes": 7963,
+      "sha256": "69b896164cfb9771c1f8d018742a943e7368f152123c02be7271fa3949d66f43"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/PROVENANCE.md",
+      "url": null,
+      "size_bytes": 3974,
+      "sha256": "2a54e2025c1c270a617f95603c6c5079d2623f991a7cd0acb6dd9fcaf3e5e227"
+    }
+  ]
+}
