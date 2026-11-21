@@ -1,0 +1,245 @@
+{
+  "artifact_version": "1.0.0",
+  "dataset": "qc_net_value_benchmark",
+  "generated_utc": "2026-11-21T21:13:14Z",
+  "status": "benchmark_only",
+  "generator": {
+    "script": "workflows/national/harvest/net_value_benchmark_v1.py",
+    "command": "python -m workflows.national.harvest.net_value_benchmark_v1"
+  },
+  "labels": {
+    "evidence_values": [
+      "survey_benchmark",
+      "benchmark_historical"
+    ],
+    "policy_grade": false,
+    "net_value_status": "benchmark_only"
+  },
+  "parameters": {
+    "survey_year": 2022,
+    "price_year": 2022,
+    "currency_basis": "CAD_nominal_2022",
+    "bmmb_currency_basis": "CAD_nominal_2011_2015",
+    "residual_before_transfers": "delivered_purchase - procurement_before_transfers",
+    "residual_after_transfers": "delivered_purchase - procurement_after_transfers",
+    "regional_reference_purchase_cad_m3": 107.22,
+    "qc_allocation_cases": [
+      "100m",
+      "119m",
+      "150m"
+    ]
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "8a0e3dd3f2e688144728b56defb658534a4ddec61c95010fdce41bb5753e488c",
+      "bytes": 202146,
+      "role": "2022 QC survey aggregates"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/manifest.json",
+      "sha256": "6c049fc81fb5e53cc360acdf867c79b9afe61a74a818c8066a05808d3f2a0d37",
+      "bytes": 37630,
+      "role": "2022 QC survey provenance manifest"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bmmb_delivered/bmmb_delivered_sales.csv",
+      "sha256": "7bc662327579ce7da45271d17d1623aa90ec2c470e85a1928bd1f86f1890c3a2",
+      "bytes": 14587,
+      "role": "BMMB delivered auction sales"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bmmb_delivered/manifest.json",
+      "sha256": "96a95b14615ff141f8916482938d9a114b40a7f6eaaf0f6cc9956acbe21bc07e",
+      "bytes": 16236,
+      "role": "BMMB delivered provenance manifest"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/100m.csv",
+      "sha256": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+      "bytes": 2845,
+      "role": "QC screening allocation volume"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+      "bytes": 2845,
+      "role": "QC screening allocation volume"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/150m.csv",
+      "sha256": "3675cdc5e0723b453924b9dc6b8e13f19578f02a01086eb95f88f7bf750ceee1",
+      "bytes": 2841,
+      "role": "QC screening allocation volume"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/qc_net_value_benchmark.csv",
+      "sha256": "810d70d1a2589d975b4cdafff041892edf9667e24ee2a7ab002f35210d497ded",
+      "bytes": 4442,
+      "role": "provincial benchmark",
+      "rows": 9
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/qc_net_value_regional_range.csv",
+      "sha256": "c97aba4f22b40031a03b86de1f583fb808cdbfaa86613cb7c8c6a2028ebcf1a5",
+      "bytes": 4986,
+      "role": "regional range",
+      "rows": 9
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "ec017422002d2f9581253d9131d26962bf7de350ab7ee0d3dc63ea0a95a77297",
+      "bytes": 3390,
+      "role": "BMMB historical benchmark",
+      "rows": 5
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/qc_net_value_sensitivity.csv",
+      "sha256": "8023d410405549ea2f71d748ea726ab207e9e03673dbe3e1ddef7e21ae2db23e",
+      "bytes": 1789,
+      "role": "QC total sensitivity",
+      "rows": 3
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/summary.json",
+      "sha256": "44d3946cee442db17d83642a592d4eadbe00fc99ed818c21516d4d185a0fdf07",
+      "bytes": 17377,
+      "role": "machine-readable summary"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/NET_VALUE_BENCHMARK_REPORT.md",
+      "sha256": "fabe1739bd086c6e604a88d60610c062a68906fe25392e18db4b95e66bf78a4a",
+      "bytes": 8634,
+      "role": "human-readable report"
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "check_count": 22,
+    "checks": [
+      {
+        "check": "survey_row_count",
+        "status": "pass",
+        "detail": "660 rows (expected 660)"
+      },
+      {
+        "check": "t2_t21_purchase_consistency",
+        "status": "pass",
+        "detail": "8 overlapping purchase rows agree"
+      },
+      {
+        "check": "provincial_residual_count",
+        "status": "pass",
+        "detail": "3 computable residuals of 9 scopes"
+      },
+      {
+        "check": "provincial_residual_recompute",
+        "status": "pass",
+        "detail": "residual_before = purchase - procurement_before; residual_after = purchase - procurement_after"
+      },
+      {
+        "check": "provincial_transfer_identity",
+        "status": "pass",
+        "detail": "procurement_before + transfers = procurement_after and residual_before - residual_after = transfers"
+      },
+      {
+        "check": "negative_residuals_documented",
+        "status": "pass",
+        "detail": "negative residuals: ['qc_feuillus_durs_sciage', 'qc_peupliers_trituration']"
+      },
+      {
+        "check": "provincial_no_nonfinite",
+        "status": "pass",
+        "detail": "all provincial values are finite or explicitly blank"
+      },
+      {
+        "check": "regional_group_count",
+        "status": "pass",
+        "detail": "7 regional groups"
+      },
+      {
+        "check": "regional_reference_price",
+        "status": "pass",
+        "detail": "provincial SEPM purchase price held at 107.22 CAD/m3"
+      },
+      {
+        "check": "regional_residual_recompute",
+        "status": "pass",
+        "detail": "regional residual uses the same reference purchase price"
+      },
+      {
+        "check": "regional_three_respondent_flag",
+        "status": "pass",
+        "detail": "sample_n=3 regional rows retain a three-respondent flag"
+      },
+      {
+        "check": "bmmb_sale_count",
+        "status": "pass",
+        "detail": "18 delivered sales"
+      },
+      {
+        "check": "bmmb_full_rate_count",
+        "status": "pass",
+        "detail": "11 full-rate sales"
+      },
+      {
+        "check": "bmmb_partial_award_count",
+        "status": "pass",
+        "detail": "2 partial-award sales excluded from the rate"
+      },
+      {
+        "check": "bmmb_weighted_rate",
+        "status": "pass",
+        "detail": "38.2940 CAD/m3"
+      },
+      {
+        "check": "bmmb_median_rate",
+        "status": "pass",
+        "detail": "36.6668 CAD/m3"
+      },
+      {
+        "check": "bmmb_no_species_or_grade_allocation",
+        "status": "pass",
+        "detail": "all delivered sale prices are lot totals; no species/grade split exists"
+      },
+      {
+        "check": "bmmb_year_rows",
+        "status": "pass",
+        "detail": "4 sale years (2011, 2012, 2014, 2015)"
+      },
+      {
+        "check": "bmmb_2012_no_full_rate",
+        "status": "pass",
+        "detail": "2012 has partial awards only; no full rate is reported"
+      },
+      {
+        "check": "sensitivity_case_count",
+        "status": "pass",
+        "detail": "3 allocation cases"
+      },
+      {
+        "check": "sensitivity_arithmetic",
+        "status": "pass",
+        "detail": "M CAD = QC m3 x CAD/m3 / 1,000,000"
+      },
+      {
+        "check": "labels",
+        "status": "pass",
+        "detail": "provincial residual statuses are explicit"
+      }
+    ]
+  },
+  "non_claims": [
+    "Not an observed transaction net value.",
+    "Not a policy result and not policy-grade.",
+    "Not a mill margin; transformation and lumber revenue are excluded.",
+    "Not a stumpage rate.",
+    "Not a current or representative BMMB price.",
+    "Not an estimate of the QC provincial harvest population.",
+    "Not merged into the forest cost/revenue ledger, Forest LP, or UI.",
+    "Not deflated; BMMB values remain nominal 2011-2015.",
+    "Not species- or grade-allocated."
+  ]
+}
