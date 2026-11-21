@@ -2,9 +2,9 @@
 
 **Status:** `screening_only` · `policy_grade=false` · **observed sample plus model-input deck; not a population**
 
-**Generated:** 2026-11-20T16:42:00+00:00
+**Generated:** 2026-11-21T20:29:27+00:00
 
-**Ledger:** `data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv` (940 rows; SHA-256 `11fc4b091f92…`)
+**Ledger:** `data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv` (2888 rows; SHA-256 `826df6127bce…`)
 
 ## 1. Merge
 
@@ -13,11 +13,11 @@ The two blocks are concatenated, never re-keyed and never summed:
 | Province | Source | Rows | SHA-256 |
 |---|---|---:|---|
 | BC | `data/derived/national/harvest_basis/bcts_bc/bcts_bid_ledger.csv` | 200 | `52e210ab9d7b…` |
-| QC | `data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv` | 740 | `888a18128f04…` |
+| QC | `data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv` | 2688 | `84c6c7bdafc9…` |
 
-Merged rows: **940**. By province: BC 200, QC 740. By perspective: crown 100, forest_sector 840.
+Merged rows: **2888**. By province: BC 200, QC 2688. By perspective: crown 100, forest_sector 2788.
 
-Evidence classes: **200 observed** rows and **740 model-input** rows. BC: observed 200, model input 0; QC: observed 0, model input 740. The classes are counted separately and never summed.
+Evidence classes: **200 observed** rows and **2688 model-input** rows. BC: observed 200, model input 0; QC: observed 0, model input 2688. The classes are counted separately and never summed.
 
 ### Rows by province / source / perspective / component
 
@@ -27,7 +27,7 @@ Evidence classes: **200 observed** rows and **740 model-input** rows. BC: observ
 | BC | `prov_bcts_auction_results` | crown | `stumpage_bid_premium` | observed | 51 | 51 | CAD_per_m3_log | 1,313,211.00 | medium |
 | BC | `prov_bcts_auction_results` | forest_sector | `stumpage_base` | observed | 49 | 49 | CAD_per_m3_log | 1,253,065.00 | medium |
 | BC | `prov_bcts_auction_results` | forest_sector | `stumpage_bid_premium` | observed | 51 | 51 | CAD_per_m3_log | 1,313,211.00 | medium |
-| QC | `prov_qc_meris` | forest_sector | `delivered_log_revenue` | model_input | 127 | 127 | CAD_per_m3_log | 127.00 | low, medium |
+| QC | `prov_qc_meris` | forest_sector | `delivered_log_revenue` | model_input | 2075 | 2075 | CAD_per_m3_log | 2,075.00 | low, medium |
 | QC | `prov_qc_meris` | forest_sector | `harvest` | model_input | 191 | 191 | CAD_per_m3_log | 191.00 | low |
 | QC | `prov_qc_meris` | forest_sector | `road` | model_input | 191 | 191 | CAD_per_m3_log | 191.00 | medium |
 | QC | `prov_qc_meris` | forest_sector | `silviculture` | model_input | 40 | 40 | CAD_per_ha | 40.00 | medium |
@@ -46,7 +46,9 @@ Quantity weight is the sale volume for BCTS and a 1 m³ rate denominator for MER
 | BCTS awarded volume | 1,313,211 m³ | BCTS scheduled sample 1,940,031 m³ | 67.69% |
 | BCTS awarded TSLs | 51 | 99 scheduled TSLs | 51.52% |
 | BCTS awarded blocks | 84 | 162 scheduled blocks | 51.85% |
-| MERIS delivered-log model inputs | 127 model-input rows | 0 observed rows | **model input, not observed** |
+| MERIS delivered-log model inputs | 2075 model-input rows | 0 observed rows | **model input, not observed** |
+| MERIS quality-class price rows | 251 rows | 630 price-deck cells (45 species x 7 products x 2 series) | 39.84% |
+| MERIS species/DBH curve rows | 1824 rows | 1824 curve cells (12 species x 76 DBH x 2 series) | 100.00% |
 | MERIS cost-deck tarification zones | 191 | 191 zones | 100.00% |
 | MERIS usable silviculture treatments | 40 | 94 treatments | 42.55% |
 | MERIS current Crown stumpage rate rows | 0 | 2,674 zone-species rows | **not in full model deck** |
@@ -62,8 +64,11 @@ For context only: BC + QC are 54.48% of the 2024 national harvest denominator (1
 
 ### QC MERIS full model-input deck detail
 
-- 740 rows, all `model_input` and `forest_sector`; 191 cost-deck zones and 40 usable silviculture treatments. Cost components: harvest, overhead, road, silviculture.
-- 127 `delivered_log_revenue` rows are mill-gate model inputs (0 observed). They are not mill settlements and are not monetised.
+- 2688 rows, all `model_input` and `forest_sector`; 191 cost-deck zones and 40 usable silviculture treatments. Cost components: harvest, overhead, road, silviculture.
+- 2075 `delivered_log_revenue` rows are mill-gate model inputs (0 observed): 251 quality-class price-deck rows and 1824 species/DBH curve rows. They are not mill settlements and are not monetised.
+- Quality classes in the price deck: `AUTRE` 2, `DER` 38, `F1` 53, `F2` 53, `F3` 56, `F4` 49. `PATE` is the 0.0100 placeholder and yields no pulpwood row.
+- DBH curves cover 12 SEPM species, 76 DBH classes (10-160 cm), and 2 series; `Profil_2` is used because the three shipped profiles are byte-identical. The curve is a composite sciage/chips/by-product value, so it is booked as `mixed_log` with `quality=NA`.
+- The two price series are alternative scenarios separated by licence suffix `C` (courant) and `T` (tendance); they are not independent observations and are not summed.
 - `harvest` is loading-only (`partial=loading_only`), `road` excludes tertiary road, and `silviculture` is a CAD/ha treatment catalogue. The deck has no Crown perspective and no mirrors.
 - MERIS has no observed permit-volume register: every row uses `volume_m3=1.0` as a rate denominator, so QC harvest-volume coverage is not estimable.
 
@@ -99,10 +104,10 @@ Present/partial components:
 
 ## 4. Validation
 
-- `load_ledger` accepted all 940 rows after the merge.
+- `load_ledger` accepted all 2888 rows after the merge.
 - 100 mirror rows are paired exactly; all are Crown/forest-sector transfers.
 - Duplicate keys, source-exclusivity conflicts, sign violations, currency/volume-basis mixing, and unpaired mirrors fail the merge.
-- 127 `delivered_log_revenue` rows are model inputs; 0 are observed. No observed delivered-log revenue was invented.
+- 2075 `delivered_log_revenue` rows are model inputs; 0 are observed. No observed delivered-log revenue was invented.
 - Model-input rows are counted and reported but excluded from every monetary total.
 
 ## 5. Caveats
@@ -113,6 +118,8 @@ Present/partial components:
 - Crown and forest-sector rows are never summed into a combined total; only the reconciliation identity may relate them.
 - BCTS sells standing timber: its upset and bonus are stumpage, not delivered log revenue.
 - MERIS is a tarification/cost parameter set, not an observed harvest or delivered-price register; its delivered-log values are mill-gate model inputs, not settlements.
+- MERIS courant and tendance prices are alternative model scenarios, not independent observations; the ledger keeps both under distinct licences and never sums them.
+- MERIS species/DBH curves are ingested from the canonical Profil_2 only; Profil_3 and Profil_4 are byte-identical in this release and must not be treated as independent estimates.
 - Missing components are missing, not zero; no value, volume, or component was imputed.
 
 ## 6. Reproduce

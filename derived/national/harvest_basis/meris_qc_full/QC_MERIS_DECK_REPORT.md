@@ -2,12 +2,12 @@
 
 | Field | Value |
 |---|---|
-| Date | 2026-11-20 |
+| Date | 2026-11-21 |
 | Status | `screening_only`; `policy_grade=false`; `observed_transactions=false`; `model_input=true` |
 | Source | Quebec BMMB/MFFP MERIS 3.3.0, `MERIS_BdTbl.accdb`, database release 2025-09-23 |
 | Artifact | `data/derived/national/harvest_basis/meris_qc_full/` |
 | Parent design | `planning/forest-cost-revenue-ledger.md` |
-| Extraction note | `planning/meris-qc-extraction.md` §7 |
+| Extraction note | `planning/meris-qc-extraction.md` §7–§8 |
 | Access | Read-only `mdb-tables` / `mdb-count` / `mdb-export`, mdbtools 1.0.0; no password or Access UI |
 
 **Bottom line.** MERIS exposes a complete **model-input** revenue and cost
@@ -16,9 +16,11 @@ deck, not an observed price or harvest register. The deck is published in full
 shipped profiles; 191 zones × 14 groups for both the economic decomposition
 and the administered rates; 191 zones of supply costs; 94 treatments). The
 `Tot = Rdv + Bnf + Rsl + Aut1 + Aut2` identity holds exactly on all 18,718
-zone × group × product cells. A 740-row ledger block is provided so the deck
-can be joined to the forest-sector ledger without pretending that any value is
-an observed transaction. **No provincial net value is estimated**: MERIS has no
+zone × group × product cells. A **2,688-row** ledger block is provided so the
+deck can be joined to the forest-sector ledger without pretending that any value
+is an observed transaction; it carries the optional `quality` and `dbh_cm`
+dimensions, both price series, and the 12-species species/DBH curves. **No
+provincial net value is estimated**: MERIS has no
 actual volume, no permit/UA crosswalk, no destination mix for haul, no full
 harvest cost per zone, and no join from its royalty group taxonomy to its
 economic-value group taxonomy.
@@ -52,7 +54,7 @@ excluded from the ledger block rather than converted into revenue.
 | `meris_royalties_long.csv` | 18,718 | zone × group × product long form |
 | `meris_costs.csv` | 191 | zone supply-cost parameters plus ledger-ready aggregates |
 | `meris_silviculture.csv` | 94 | treatment catalogue; 40 `DolHa` usable in the ledger |
-| `forest_cost_revenue_qc_model.csv` | 740 | canonical 16-field ledger block (model input only) |
+| `forest_cost_revenue_qc_model.csv` | 2,688 | canonical 18-field ledger block (16 core fields plus `quality` and `dbh_cm`; model input only) |
 | `manifest.json` | — | source counts, output hashes, check results |
 
 The row-count checks in the task map to the **source** tables as follows:
@@ -85,9 +87,13 @@ costs 191. The wide companions preserve the source row counts (`45`, `2,674`,
   values are labelled `placeholder_0.0100` and are **not** used as revenue.
   Only `THO` has a positive `AUTRE` value (75.00).
 - **Coverage.** 251 of 630 cells are positive model inputs; 293 are zero
-  (not applicable), 86 are the `PATE` placeholder. Positive current values
-  cover 28 hardwood species; the 12 SEPM species are zero in this table and
-  are covered by the DBH curves instead.
+  (not applicable), 86 are the `PATE` placeholder. Positive values cover 28
+  hardwood species; the 12 SEPM species are zero in this table and are covered
+  by the DBH curves instead.
+- **Ledger ingest.** Both series are carried into the ledger as alternative
+  model scenarios, with licence suffixes `C` (courant) and `T` (tendance). The
+  rows are not independent observations and are never summed. `PATE` maps to
+  `pulpwood` but has no usable value, so no pulpwood row is emitted.
 
 Current-series positive ranges (CAD/m3): DER 113.00–263.00 (19 species),
 F1 73.2633–319.1016 (27), F2 73.00–258.00 (27), F3 48.00–230.00 (28),
@@ -110,7 +116,13 @@ F4 37.00–120.00 (25), AUTRE 75.00 (1; THO), PATE none usable.
   byte-identical in this release (same SHA-256 for all three exports). The
   profile descriptions are retained (`Scieur Res`, `Scieur FD et Res`,
   `Scieur Res autre 1`) but the values do not differ. Do not treat the three
-  profiles as independent observations.
+  profiles as independent observations. The ledger ingests the canonical
+  `Profil_2` only.
+- **Ledger ingest.** Both `courant` and `tendance` curve rows are carried as
+  `model_input:mill_gate` `delivered_log_revenue` rows with `dbh_cm` and
+  `quality=NA`. The curve is a composite of sawing, chips, and by-products, so
+  it is booked as `mixed_log`, not as a single grade. `SCIAGE=PATE` is asserted
+  at extraction; no `0.01` placeholder exists in the curve tables.
 - **Base table is a placeholder.** `tbl_essences_revenus_EssDhp` (the
   unsuffixed base table) is all `0.0100`; the actual model values are in the
   three `_Profil_*` tables. This is a correction to the earlier sample note.
@@ -175,13 +187,13 @@ F4 37.00–120.00 (25), AUTRE 75.00 (1; THO), PATE none usable.
 
 ## 4. QC ledger block
 
-`forest_cost_revenue_qc_model.csv` is a canonical 16-field ledger block. It
+`forest_cost_revenue_qc_model.csv` is a canonical 18-field ledger block. It
 contains **model input only** and has no Crown perspective, no mirrors, and no
 observed transaction.
 
 | Component | Rows | Unit | Price point | Confidence | Derivation |
 |---|---:|---|---|---|---|
-| `delivered_log_revenue` | 127 | `CAD_per_m3_log` | `mill_gate` | medium (126) / low (1 AUTRE) | `Prix_*_2` (courant), positive values only; 28 hardwood species; DER→peeler, F1–F4→sawlog, AUTRE→mixed_log |
+| `delivered_log_revenue` | 2,075 | `CAD_per_m3_log` | `mill_gate` | medium (2,073) / low (2 AUTRE) | 251 species × product × series price rows plus 1,824 species × DBH × series curve rows; positive values only; DER→peeler, F1–F4→sawlog, PATE→pulpwood, AUTRE→mixed_log |
 | `road` | 191 | `CAD_per_m3_log` | `roadside` | medium | `chemin_entretien + chemin_constr_prim_sec` per zone |
 | `overhead` | 191 | `CAD_per_m3_log` | `roadside` | medium | `admin + mesurage` per zone |
 | `harvest` | 191 | `CAD_per_m3_log` | `roadside` | low | `chargement` only; **partial**, full harvest equation missing |
@@ -200,11 +212,13 @@ Common row properties:
 - `notes` carry `currency_basis`, source table/field, `not_observed=1`,
   `model_input=1`, `not_a_transaction=1`, price point, volume basis, coverage,
   and the release date used for the price/cost year.
-- The quality class (DER/F1/F2/F3/F4/AUTRE) is preserved in `qc_quality` and
-  in the licence suffix (`QC-MERIS-<species>-<quality>-C`) because the ledger
-  has no quality field. F1–F4 therefore do not collide on the 9-field key.
-- All 740 rows pass `workflows.national.harvest.cost_revenue.load_ledger`;
-  the 9-field key is unique; no duplicate or unpaired mirror rows exist.
+- The quality class (DER/F1/F2/F3/F4/AUTRE) is in the dedicated `quality`
+  field and repeated in `qc_quality` and the licence suffix
+  (`QC-MERIS-<species>-<quality>-<C|T>`). F1–F4 therefore do not collide.
+- The DBH curve coordinate is in `dbh_cm` on `mixed_log` rows with `quality=NA`
+  and a `QC-MERIS-CURVE-<species>-<dbh>-<C|T>` licence.
+- All 2,688 rows pass `workflows.national.harvest.cost_revenue.load_ledger`;
+  the normalized key is unique; no duplicate or unpaired mirror rows exist.
 
 The validator’s `Evidence` enum now includes `model_input`. A model-input row
 must carry `not_observed=1` and `model_input=1`, and cannot use `high`
@@ -223,14 +237,14 @@ observed payment or sale.
 | Administered royalties | 191 zones × 14 groups × 7 products; 2025-09-19 |
 | Supply costs | 191 zones; road, overhead, loading aggregates; full route columns retained |
 | Silviculture | 40 `DolHa` rates; 54 treatment rows retained but not ledger-usable |
-| Ledger block | 740 model-input rows; 28 revenue species |
+| Ledger block | 2,688 model-input rows; 251 quality-class price rows; 1,824 species/DBH curve rows; 28 + 12 revenue species |
 
 ### 5.2 Gaps (existing G01–G14 plus new)
 
 | ID | Gap | Consequence |
 |---|---|---|
 | G01 | No observed delivered log price | `delivered_log_revenue` here is a model input, not a transaction |
-| G02 | Ledger has no quality field | quality is encoded in licence/notes; a future schema should add `quality` |
+| G02 | **Resolved 2026-11-21.** Ledger now has a `quality` field | quality classes are keyed in `quality`; product compatibility is validator-enforced |
 | G03 | Harvest is equation-based | ledger `harvest` is loading only and low confidence |
 | G04 | Treatment density missing | 19 per-1,000-plant and 1 per-1,000-microsite rates not converted |
 | G05 | Tertiary road is CAD/ha | excluded from `road`; no yield factor to convert |
@@ -249,7 +263,7 @@ observed payment or sale.
 | **G18** | Royalty and zone-value group taxonomies differ | no direct zone × group royalty join; crosswalk required |
 | **G19** | Haul destination mix missing | zone table has 10 mill-route columns; no zone × species × destination weights; haul omitted from ledger |
 | **G20** | Price deck has no date | 2025 is a release-year assumption; may be model vintage, not a market year |
-| **G21** | Curves have no ledger DBH dimension | 12 SEPM species are not in the ledger revenue block |
+| **G21** | **Resolved 2026-11-21.** Ledger now has a `dbh_cm` field | 12 SEPM species × 76 DBH × 2 series are in the ledger block as `mixed_log` curve rows |
 | **G22** | Price point inferred as mill gate | manual supports a net-of-processing value; confirm with a BMMB/mill settlement |
 | **G23** | `PATE`/`AUTRE` product semantics | ledger product enum cannot represent all QC classes; AUTRE mapped to `mixed_log` with low confidence |
 
@@ -261,7 +275,7 @@ observed payment or sale.
 | Zone road, overhead, loading, silviculture costs | **Can feed** a cost deck as model parameters; loading is partial and harvest is incomplete |
 | Administered royalties | **Can feed** a Crown-rate deck; not joined to the ledger because the group taxonomies differ |
 | Zone economic values | **Can feed** context only; not additive to cash revenue/cost |
-| Species/DBH curves | **Can feed** a separate DBH revenue deck; cannot join the ledger without a DBH field |
+| Species/DBH curves | **Can feed** the ledger as `dbh_cm` model-input revenue rows; still not an observed price |
 | Full harvest cost per zone | **Cannot**; needs m3/tige, cutting mode, stand type, and the equation |
 | Haul to mill per zone/species | **Cannot** from this table alone; destination mix and assignment are missing |
 | Volume-weighted provincial revenue/cost | **Cannot**; no actual volume or UA crosswalk |
@@ -287,10 +301,16 @@ then the correct result is `not_estimated`, not a sum.
 - Royalties: 2,674 rows; 191 zones; 14 groups; `RdvVariable=0`; one
   `DateMaj=2025-09-19`.
 - Costs: 191 rows; all 191 zones; no zero road/overhead/loading.
-- Ledger: 740 rows; unique 9-field key; `load_ledger` passes; 127 revenue +
-  191 road + 191 overhead + 191 harvest + 40 silviculture; 0 `high`
-  confidence; all rows `model_input=1` and `not_observed=1`.
-- `python -m pytest tests/test_forest_cost_revenue.py -q` → **20 passed**.
+- Ledger: 2,688 rows; unique normalized key; `load_ledger` passes; 2,075
+  revenue (251 price + 1,824 DBH) + 191 road + 191 overhead + 191 harvest +
+  40 silviculture; 0 `high` confidence; all rows `model_input=1` and
+  `not_observed=1`.
+- Quality rows: DER 38, F1 53, F2 53, F3 56, F4 49, AUTRE 2; `PATE` 0.
+- DBH rows: 12 SEPM species, 76 DBH classes (10–160 cm), 2 series, canonical
+  `Profil_2`; all `quality=NA` and `product=mixed_log`.
+- `python -m pytest tests/test_forest_cost_revenue.py
+  tests/test_cost_revenue_merge.py tests/test_forest_lp_v1.py -q` → **39
+  passed**.
 - `ruff check` on the changed Python files → clean.
 
 ### 6.2 Commits and status
@@ -317,9 +337,9 @@ then the correct result is `not_estimated`, not a sum.
 3. **Observed validation.** Obtain BMMB auction/delivered sale records or mill
    settlements to test the inferred mill-gate price point and the `PATE`
    placeholder.
-4. **Schema follow-up.** Add a `quality` field (or `sawlog_f1..f4` product
-   variants) and optionally a `dbh_cm` field to the ledger key before a full
-   species/quality/DBH join.
+4. **Schema follow-up (done 2026-11-21).** `quality` and `dbh_cm` are in the
+   ledger key; the QC block now carries them. The remaining work is a
+   volume-weighted join, not another schema change.
 5. **Crosswalk.** Build a versioned MERIS royalty-group ↔ zone-value-group ↔
    species crosswalk, and a tarification-zone ↔ UA/region crosswalk.
 

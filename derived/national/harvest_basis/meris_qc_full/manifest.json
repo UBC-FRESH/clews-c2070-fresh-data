@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-20T16:23:00+00:00",
+  "generated_utc": "2026-11-21T20:16:45+00:00",
   "database": {
     "path": "/tmp/meris/extracted/MERIS_BdTbl.accdb",
     "bytes": 70893568,
@@ -283,9 +283,9 @@
     },
     {
       "file": "forest_cost_revenue_qc_model.csv",
-      "rows": 740,
-      "bytes": 364132,
-      "sha256": "888a18128f04e54f627a43680028b29e86888a39aa275e64e8361d3161f9e01c",
+      "rows": 2688,
+      "bytes": 1735254,
+      "sha256": "84c6c7bdafc99af17da454b58d5fd12404800ed1fec7facec546af066da4c1ac",
       "columns": [
         "jurisdiction",
         "source",
@@ -302,7 +302,9 @@
         "sign",
         "confidence",
         "licence",
-        "notes"
+        "notes",
+        "quality",
+        "dbh_cm"
       ]
     }
   ],
@@ -320,19 +322,37 @@
       "Profil_3",
       "Profil_4"
     ],
+    "curve_ledger_profile": "Profil_2",
     "zone_source_rows": 2674,
     "zone_long_rows": 18718,
     "zone_max_identity_residual": 0.0,
     "royalty_source_rows": 2674,
     "cost_rows": 191,
     "treatment_rows": 94,
-    "ledger_rows": 740,
+    "ledger_rows": 2688,
     "ledger_components": {
-      "delivered_log_revenue": 127,
+      "delivered_log_revenue": 2075,
       "road": 191,
       "overhead": 191,
       "harvest": 191,
       "silviculture": 40
+    },
+    "ledger_quality_counts": {
+      "DER": 38,
+      "F1": 53,
+      "F2": 53,
+      "F3": 56,
+      "F4": 49,
+      "AUTRE": 2
+    },
+    "ledger_quality_rows": 251,
+    "ledger_dbh_rows": 1824,
+    "ledger_dbh_species": 12,
+    "ledger_dbh_min": 10.0,
+    "ledger_dbh_max": 160.0,
+    "ledger_series_counts": {
+      "tendance": 1036,
+      "courant": 1039
     },
     "ledger_volume_weight": "1.0 rate denominator, not an actual harvest volume"
   },

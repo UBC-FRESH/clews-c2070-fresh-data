@@ -7,6 +7,8 @@
     "Crown and forest-sector rows are never summed into a combined total; only the reconciliation identity may relate them.",
     "BCTS sells standing timber: its upset and bonus are stumpage, not delivered log revenue.",
     "MERIS is a tarification/cost parameter set, not an observed harvest or delivered-price register; its delivered-log values are mill-gate model inputs, not settlements.",
+    "MERIS courant and tendance prices are alternative model scenarios, not independent observations; the ledger keeps both under distinct licences and never sums them.",
+    "MERIS species/DBH curves are ingested from the canonical Profil_2 only; Profil_3 and Profil_4 are byte-identical in this release and must not be treated as independent estimates.",
     "Missing components are missing, not zero; no value, volume, or component was imputed."
   ],
   "coverage": {
@@ -76,10 +78,27 @@
         "status": "not_in_full_model_input_deck"
       },
       "delivered_log_revenue": {
-        "model_input_rows": 127,
+        "dbh_rows": 1824,
+        "dbh_rule": "species x DBH curves use Profil_2 only; the three shipped profiles are byte-identical and are not independent estimates",
+        "model_input_rows": 2075,
         "observed_rows": 0,
+        "price_deck_rows": 251,
         "price_point": "mill_gate",
+        "quality_classes": {
+          "AUTRE": 2,
+          "DER": 38,
+          "F1": 53,
+          "F2": 53,
+          "F3": 56,
+          "F4": 49
+        },
+        "quality_rows": 251,
         "reason": "MERIS price-deck values are model inputs net of processing cost; they are not mill settlements",
+        "series_counts": {
+          "courant": 1039,
+          "tendance": 1036
+        },
+        "series_rule": "courant (_2) and tendance (_1) are alternative model scenarios, separated by licence suffix C/T; they are not independent observations and are not summed",
         "status": "model_input_not_observed"
       },
       "harvest_volume_share": {
@@ -97,14 +116,46 @@
           "silviculture"
         ],
         "current_stumpage_rate_rows": 0,
-        "delivered_log_revenue_model_input_rows": 127,
+        "dbh_class_count": 76,
+        "dbh_max_cm": 160.0,
+        "dbh_min_cm": 10.0,
+        "dbh_species": [
+          "EPB",
+          "EPN",
+          "EPO",
+          "EPR",
+          "MEH",
+          "MEJ",
+          "MEL",
+          "MEU",
+          "PID",
+          "PIG",
+          "PIS",
+          "SAB"
+        ],
+        "delivered_log_revenue_dbh_rows": 1824,
+        "delivered_log_revenue_model_input_rows": 2075,
         "delivered_log_revenue_observed_rows": 0,
-        "delivered_log_revenue_rows": 127,
-        "model_input_rows": 740,
+        "delivered_log_revenue_price_deck_rows": 251,
+        "delivered_log_revenue_quality_rows": 251,
+        "delivered_log_revenue_rows": 2075,
+        "delivered_log_revenue_series_counts": {
+          "courant": 1039,
+          "tendance": 1036
+        },
+        "model_input_rows": 2688,
         "observed_rows": 0,
         "observed_transactions": false,
         "observed_volume_m3": 0.0,
-        "rows": 740,
+        "quality_rows_by_class": {
+          "AUTRE": 2,
+          "DER": 38,
+          "F1": 53,
+          "F2": 53,
+          "F3": 56,
+          "F4": 49
+        },
+        "rows": 2688,
         "stumpage_years": [],
         "treatments_covered": 40,
         "zones_covered": 191
@@ -112,6 +163,11 @@
       "model_input_only": true,
       "observed_transactions": false,
       "sample_frame": {
+        "dbh_curve_cells": 1824,
+        "dbh_curve_classes": 76,
+        "dbh_curve_profile": "Profil_2",
+        "dbh_curve_series": 2,
+        "dbh_curve_species": 12,
         "deck": "full_model_input",
         "price_deck_cells": 630,
         "source": "meris_qc_full/manifest.json and QC_MERIS_DECK_REPORT.md (MERIS 3.3.0, database release 2025-09-23)",
@@ -142,17 +198,17 @@
         "other": 0
       },
       "QC": {
-        "model_input": 740,
+        "model_input": 2688,
         "observed": 0,
         "other": 0
       }
     },
-    "model_input_rows": 740,
+    "model_input_rows": 2688,
     "observed_rows": 200,
     "other_rows": 0,
     "rule": "observed = observed_payment/observed_sale/observed_price; model_input = model_input evidence with model_input=1 and not_observed=1; the classes are counted separately and never summed"
   },
-  "generated_utc": "2026-11-20T16:42:00+00:00",
+  "generated_utc": "2026-11-21T20:29:27+00:00",
   "inputs": [
     {
       "jurisdiction": "BC",
@@ -163,18 +219,21 @@
     {
       "jurisdiction": "QC",
       "path": "data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv",
-      "rows": 740,
-      "sha256": "888a18128f04e54f627a43680028b29e86888a39aa275e64e8361d3161f9e01c"
+      "rows": 2688,
+      "sha256": "84c6c7bdafc99af17da454b58d5fd12404800ed1fec7facec546af066da4c1ac"
     }
   ],
   "merge_rules": {
+    "dbh_profiles_deduplicated": true,
     "mirrors_preserved": true,
     "model_input_not_monetised": true,
     "no_imputation": true,
     "no_observed_delivered_log_revenue_injected": true,
     "observed_and_model_input_rows_separated": true,
     "perspectives_not_added": true,
+    "price_series_not_summed": true,
     "province_partitioned": true,
+    "quality_and_dbh_preserved": true,
     "sources_not_added": true
   },
   "mirrors": {
@@ -348,7 +407,7 @@
             "source marks the row not_observed=1",
             "at least one row is low confidence"
           ],
-          "rows": 127,
+          "rows": 2075,
           "status": "partial",
           "units": [
             "CAD_per_m3_log"
@@ -529,14 +588,14 @@
   "net_value_status": "not_estimated",
   "output": {
     "path": "data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv",
-    "rows": 940,
-    "sha256": "11fc4b091f92a755deac77722ba463b1e55bd044a24d4be1241c0e6a6919c114"
+    "rows": 2888,
+    "sha256": "826df6127bcec3120253078b8261ea88b7ba7faff3824eecabe8d8737f8d2572"
   },
   "partial_coverage": true,
   "policy_grade": false,
   "row_counts": {
     "by_component": {
-      "delivered_log_revenue": 127,
+      "delivered_log_revenue": 2075,
       "harvest": 191,
       "overhead": 191,
       "road": 191,
@@ -545,12 +604,12 @@
       "stumpage_bid_premium": 102
     },
     "by_evidence_class": {
-      "model_input": 740,
+      "model_input": 2688,
       "observed": 200
     },
     "by_jurisdiction": {
       "BC": 200,
-      "QC": 740
+      "QC": 2688
     },
     "by_jurisdiction_source_perspective_component": [
       {
@@ -655,12 +714,12 @@
           "model_input"
         ],
         "jurisdiction": "QC",
-        "licences": 127,
+        "licences": 2075,
         "perspective": "forest_sector",
         "quantity_note": "rate denominator, not observed volume",
         "quantity_unit": "m3_log",
-        "quantity_weight": 127.0,
-        "rows": 127,
+        "quantity_weight": 2075.0,
+        "rows": 2075,
         "source": "prov_qc_meris",
         "units": [
           "CAD_per_m3_log"
@@ -764,17 +823,17 @@
     ],
     "by_perspective": {
       "crown": 100,
-      "forest_sector": 840
+      "forest_sector": 2788
     },
     "by_probable_origin": {
       "BC/prov_bcts_auction_results": 200,
-      "QC/prov_qc_meris": 740
+      "QC/prov_qc_meris": 2688
     },
     "by_source": {
       "prov_bcts_auction_results": 200,
-      "prov_qc_meris": 740
+      "prov_qc_meris": 2688
     },
-    "total_rows": 940
+    "total_rows": 2888
   },
   "sample_not_population": true,
   "status": "screening_only",
@@ -842,7 +901,7 @@
       "jurisdiction": "QC",
       "note": "only observed rows are monetised, and only within one source, perspective, component, year, currency basis, and unit; never added across any of them or across provinces",
       "perspective": "forest_sector",
-      "rows": 127,
+      "rows": 2075,
       "source": "prov_qc_meris",
       "status": "not_summed_model_input",
       "unit": "CAD_per_m3_log",
