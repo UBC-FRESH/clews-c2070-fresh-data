@@ -1,0 +1,32 @@
+source_id,source_table,source_page,title_fr,parsed_status,rows_emitted,values_missing,values_suppressed,values_flagged_three_respondents,notes
+main_2022,T2,12,Cout total d'achat de bois en foret publique livre usine,parsed,9,0,0,2,
+main_2022,T3,13,Couts moyens ponderes lies a la recolte ($/m3),parsed,21,0,0,7,
+main_2022,T4,13,Parametres lies a la recolte,parsed,4,0,0,0,
+main_2022,T5,14,Couts moyens ponderes lies aux chemins ($/m3),parsed,45,0,0,16,
+main_2022,T6,15,Couts moyens ponderes lies au transport ($/m3),parsed,12,0,0,0,
+main_2022,T7,15,Donnees techniques liees au transport,parsed,12,0,6,1,
+main_2022,T8,16,Couts moyens ponderes lies a l'hebergement ($/m3),parsed,8,0,2,0,
+main_2022,T9,16,Couts moyens ponderes des autres frais ($/m3),parsed,91,0,0,26,
+main_2022,T10,17,Couts moyens ponderes des transferts a l'Etat ($/m3),parsed,49,0,17,11,
+main_2022,T11,18,Couts moyens ponderes lies a la transformation ($/m3),parsed,51,0,41,24,
+main_2022,T12,18,Rendement de sciage,parsed,7,0,8,2,
+main_2022,T13,19,Couts moyens ponderes du transport vers les marches ($/m3),parsed,9,0,3,0,
+main_2022,T14,19,Frais generaux ($/m3),parsed,36,0,0,10,"Body-table peupliers-sciage components do not sum to the printed total (10.66 vs 13.87). Annex A1 reports 2.06, 16.51, 0.05, 0.12, -4.87 and total 13.87 for the same cells. Body values are retained as printed and the discrepancy is flagged in the manifest."
+main_2022,T15,20,Revenus bruts SEPM moyens par trimestre,parsed,15,0,0,0,
+main_2022,T16,20,Revenus bruts et nets moyens SEPM,parsed,4,0,0,0,
+main_2022,T17,21,Revenus bruts et nets des feuillus durs et des pins,parsed,8,0,0,4,
+main_2022,T18,21,Revenus des sous-produits ($/tonne),parsed,7,1,2,0,
+main_2022,T19,21,Revenus des sous-produits ($/m3),parsed,9,0,3,0,
+main_2022,T20,22,Synthese des couts d'approvisionnement ($/m3),parsed,24,0,0,0,
+main_2022,T21,22,Cout total d'achat de bois en foret publique ($/m3),parsed,20,4,0,6,
+main_2022,T22,23,Synthese des revenus ($/m3),parsed,8,0,0,0,
+main_2022,A2,37,"Comparaison des resultats de 2014, 2019 et 2022 ($/m3)",parsed,123,12,0,0,Historical comparison table. 2014 and 2019 are earlier survey results reproduced by the 2022 report; 2022 cells duplicate the provincial tables and are used as a cross-check.
+regional_2022,REG,1,Resultats regionaux - SEPM ($/m3),parsed,88,0,0,0,Seven regional groups plus the provincial total. Aggregated SEPM only; hardwoods and poplars are not regionalised in the 2022 compilation.
+main_2022,T1,13,Profil des repondants et volumes de GA,not_parsed_context_only,0,0,0,0,"Sampling profile, not a cost/revenue table. Questionnaire counts (SEPM 37, feuillus durs 18, peupliers 9, thuyas 4, pins 3, total 70) are recorded in the manifest."
+main_2022,A1,32,Tableau-synthese (Annexe 1),not_parsed_duplicate,0,0,0,0,"Annexe 1 repeats Tables 2-22 as a single synthesis table. It was used as an independent cross-check for the Table 14 peupliers-sciage discrepancy, but is not emitted separately to avoid duplicate observations."
+main_2022,A3,39,Questionnaire SEPM (Annexe 3),not_parsed_instrument,0,0,0,0,Survey questionnaire. It defines the requested cost lines but contains no observed values.
+main_2022,FIG3,26,Evolution du prix du bois d'oeuvre selon les trimestres,not_parsed_duplicate,0,0,0,0,Figure 3 plots the same quarterly SEPM gross revenue values already parsed from Table 15; no additional observations.
+regional_2019,all,1,Compilation des donnees regionalisees des resultats de l'Enquete 2019 sur les couts d'operation forestiere,downloaded_not_parsed,0,0,0,0,Tables 1-4 on pages 1-3 are raster images with no text layer; pdftotext and pdfplumber return only captions. Not OCRed. 2019 provincial values are available only through Table A2 of the 2022 report.
+survey_2019,all,1,Enquete 2019 sur les couts d'operation forestiere dans les forets du domaine de l'Etat ainsi que sur les couts et revenus de l'industrie du sciage du Quebec,downloaded_not_parsed,0,0,0,0,Kept as provenance and context. Full 2019 extraction is out of scope for this 2022 dataset; the 2022 report's Table A2 supplies 2019 comparison values.
+sylviculture_public_2021_2022,all,1,Enquete sur les couts de la sylviculture en foret publique pour la saison 2020-2021,downloaded_not_parsed,0,0,0,0,"Silviculture cost survey, not part of the 2022 procurement/transformation/revenue survey. Its per-hectare and per-1000-plant treatment costs are a separate dataset; do not merge into $/m3 harvest/road/haul components."
+sylviculture_private_2021_2022,all,1,Enquete sur les couts de la sylviculture en foret privee pour la saison 2021-2022,downloaded_not_parsed,0,0,0,0,"Silviculture cost survey, not part of the 2022 procurement/transformation/revenue survey. Separate treatment-cost dataset; do not merge into $/m3 harvest/road/haul components."

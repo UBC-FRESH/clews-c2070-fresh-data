@@ -1,0 +1,1044 @@
+{
+  "artifact_version": "0.1.0",
+  "dataset": "qc_cost_survey_2022",
+  "generated_utc": "2026-11-21T20:42:21Z",
+  "observation_type": "survey_aggregate",
+  "geography": "Quebec",
+  "survey_year": 2022,
+  "reference_period": "FY2022 (fiscal year ending on or before 2023-03-31)",
+  "price_year": 2022,
+  "currency": "CAD",
+  "parser": {
+    "script": "scripts/national/extract_qc_cost_survey_2022.py",
+    "engine": "pdfplumber table extraction plus pdftotext layout inspection",
+    "command": ".venv/bin/python scripts/national/extract_qc_cost_survey_2022.py --raw-dir tmp/qc_cost_survey/pdf"
+  },
+  "sources": [
+    {
+      "filename": "RA_couts_approvisionnement_transformation_revenus_2022.pdf",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/statistiques/RA_couts_approvisionnement_transformation_revenus_2022.pdf",
+      "sha256": "d9971b8228bf10159f2536d1f7690f7e84b833106c63e5fd9bad1014fb6b6871",
+      "bytes": 1248519,
+      "pages": 61,
+      "retrieved_utc": "2026-11-21T20:33:38Z",
+      "title": "Enquete quinquennale sur les couts d'approvisionnement, de transformation et les revenus de l'industrie forestiere 2022",
+      "source_id": "main_2022",
+      "local_path": "tmp/qc_cost_survey/pdf/RA_couts_approvisionnement_transformation_revenus_2022.pdf",
+      "observed_bytes": 1248519,
+      "observed_pages": 61,
+      "used_in_dataset": true
+    },
+    {
+      "filename": "Compilation_donnees_regionalisees_2022.pdf",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/statistiques/Compilation_donnees_regionalisees_2022.pdf",
+      "sha256": "5263e2c3af94b6cdd656826323ea21baced6d226429d2a9c297ebbe047021139",
+      "bytes": 695116,
+      "pages": 1,
+      "retrieved_utc": "2026-11-21T20:33:38Z",
+      "title": "Compilation des donnees regionalisees du regroupement des essences resineuses sapin, epinettes, pin gris et melezes",
+      "source_id": "regional_2022",
+      "local_path": "tmp/qc_cost_survey/pdf/Compilation_donnees_regionalisees_2022.pdf",
+      "observed_bytes": 695116,
+      "observed_pages": 1,
+      "used_in_dataset": true
+    },
+    {
+      "filename": "RA_enquete_couts_operation_2019.pdf",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/statistiques/RA_enquete_couts_operation_2019.pdf",
+      "sha256": "870090018a51d12b0c78adb67741eb10c524fc5d5aafc4dce96d101612dc6a1f",
+      "bytes": 2853156,
+      "pages": 64,
+      "retrieved_utc": "2026-11-21T20:33:39Z",
+      "title": "Enquete 2019 sur les couts d'operation forestiere dans les forets du domaine de l'Etat ainsi que sur les couts et revenus de l'industrie du sciage du Quebec",
+      "source_id": "survey_2019",
+      "local_path": "tmp/qc_cost_survey/pdf/RA_enquete_couts_operation_2019.pdf",
+      "observed_bytes": 2853156,
+      "observed_pages": 64,
+      "used_in_dataset": false
+    },
+    {
+      "filename": "Compilation_donnees_regionalisees_2019.pdf",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/statistiques/Compilation_donnees_regionalisees_2019.pdf",
+      "sha256": "dc13bfd249046d6accdc80aace0e90e6850a682394c96bd55e38c423acb44118",
+      "bytes": 187301,
+      "pages": 3,
+      "retrieved_utc": "2026-11-21T20:33:39Z",
+      "title": "Compilation des donnees regionalisees des resultats de l'Enquete 2019 sur les couts d'operation forestiere",
+      "source_id": "regional_2019",
+      "local_path": "tmp/qc_cost_survey/pdf/Compilation_donnees_regionalisees_2019.pdf",
+      "observed_bytes": 187301,
+      "observed_pages": 3,
+      "used_in_dataset": false
+    },
+    {
+      "filename": "RA_couts_sylviculture_foret-publique_2021-2022.pdf",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/statistiques/RA_couts_sylviculture_foret-publique_2021-2022.pdf",
+      "sha256": "743b71b52725762040139391d987f99b3c21cc70159a61af5faf560216101a3a",
+      "bytes": 4177901,
+      "pages": 138,
+      "retrieved_utc": "2026-11-21T20:33:40Z",
+      "title": "Enquete sur les couts de la sylviculture en foret publique pour la saison 2020-2021",
+      "source_id": "sylviculture_public_2021_2022",
+      "local_path": "tmp/qc_cost_survey/pdf/RA_couts_sylviculture_foret-publique_2021-2022.pdf",
+      "observed_bytes": 4177901,
+      "observed_pages": 138,
+      "used_in_dataset": false
+    },
+    {
+      "filename": "RA_couts_sylviculture_foret-privee_2021-2022.pdf",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/statistiques/RA_couts_sylviculture_foret-privee_2021-2022.pdf",
+      "sha256": "50c378e3538aeb2408adea1c9504ee7fb83c66b18a54fbaa6ca795ca5ff9d90b",
+      "bytes": 2115377,
+      "pages": 59,
+      "retrieved_utc": "2026-11-21T20:33:41Z",
+      "title": "Enquete sur les couts de la sylviculture en foret privee pour la saison 2021-2022",
+      "source_id": "sylviculture_private_2021_2022",
+      "local_path": "tmp/qc_cost_survey/pdf/RA_couts_sylviculture_foret-privee_2021-2022.pdf",
+      "observed_bytes": 2115377,
+      "observed_pages": 59,
+      "used_in_dataset": false
+    }
+  ],
+  "files": [
+    {
+      "path": "qc_cost_revenue_survey.csv",
+      "bytes": 202146,
+      "sha256": "8a0e3dd3f2e688144728b56defb658534a4ddec61c95010fdce41bb5753e488c"
+    },
+    {
+      "path": "qc_cost_revenue_coverage.csv",
+      "bytes": 4804,
+      "sha256": "4bb4d110ec7a695bfa69381054b3a50bb58e6599093940a19988e732b2c622ea"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8137,
+      "sha256": "3c8b7413fcfea57ff6fe76ac7653bb4feec9128c252da9b277638d40205745c7"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "bytes": 10140,
+      "sha256": "f44c0100b633529d15b9ce5f3de76aa14b896d2cf07894d3fb050b63930b39e4"
+    }
+  ],
+  "coverage": {
+    "tables_parsed": [
+      {
+        "source_id": "main_2022",
+        "source_table": "T2",
+        "source_page": "12",
+        "title_fr": "Cout total d'achat de bois en foret publique livre usine",
+        "parsed_status": "parsed",
+        "rows_emitted": "9",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "2",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T3",
+        "source_page": "13",
+        "title_fr": "Couts moyens ponderes lies a la recolte ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "21",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "7",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T4",
+        "source_page": "13",
+        "title_fr": "Parametres lies a la recolte",
+        "parsed_status": "parsed",
+        "rows_emitted": "4",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T5",
+        "source_page": "14",
+        "title_fr": "Couts moyens ponderes lies aux chemins ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "45",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "16",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T6",
+        "source_page": "15",
+        "title_fr": "Couts moyens ponderes lies au transport ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "12",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T7",
+        "source_page": "15",
+        "title_fr": "Donnees techniques liees au transport",
+        "parsed_status": "parsed",
+        "rows_emitted": "12",
+        "values_missing": "0",
+        "values_suppressed": "6",
+        "values_flagged_three_respondents": "1",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T8",
+        "source_page": "16",
+        "title_fr": "Couts moyens ponderes lies a l'hebergement ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "8",
+        "values_missing": "0",
+        "values_suppressed": "2",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T9",
+        "source_page": "16",
+        "title_fr": "Couts moyens ponderes des autres frais ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "91",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "26",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T10",
+        "source_page": "17",
+        "title_fr": "Couts moyens ponderes des transferts a l'Etat ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "49",
+        "values_missing": "0",
+        "values_suppressed": "17",
+        "values_flagged_three_respondents": "11",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T11",
+        "source_page": "18",
+        "title_fr": "Couts moyens ponderes lies a la transformation ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "51",
+        "values_missing": "0",
+        "values_suppressed": "41",
+        "values_flagged_three_respondents": "24",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T12",
+        "source_page": "18",
+        "title_fr": "Rendement de sciage",
+        "parsed_status": "parsed",
+        "rows_emitted": "7",
+        "values_missing": "0",
+        "values_suppressed": "8",
+        "values_flagged_three_respondents": "2",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T13",
+        "source_page": "19",
+        "title_fr": "Couts moyens ponderes du transport vers les marches ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "9",
+        "values_missing": "0",
+        "values_suppressed": "3",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T14",
+        "source_page": "19",
+        "title_fr": "Frais generaux ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "36",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "10",
+        "notes": "Body-table peupliers-sciage components do not sum to the printed total (10.66 vs 13.87). Annex A1 reports 2.06, 16.51, 0.05, 0.12, -4.87 and total 13.87 for the same cells. Body values are retained as printed and the discrepancy is flagged in the manifest."
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T15",
+        "source_page": "20",
+        "title_fr": "Revenus bruts SEPM moyens par trimestre",
+        "parsed_status": "parsed",
+        "rows_emitted": "15",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T16",
+        "source_page": "20",
+        "title_fr": "Revenus bruts et nets moyens SEPM",
+        "parsed_status": "parsed",
+        "rows_emitted": "4",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T17",
+        "source_page": "21",
+        "title_fr": "Revenus bruts et nets des feuillus durs et des pins",
+        "parsed_status": "parsed",
+        "rows_emitted": "8",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "4",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T18",
+        "source_page": "21",
+        "title_fr": "Revenus des sous-produits ($/tonne)",
+        "parsed_status": "parsed",
+        "rows_emitted": "7",
+        "values_missing": "1",
+        "values_suppressed": "2",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T19",
+        "source_page": "21",
+        "title_fr": "Revenus des sous-produits ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "9",
+        "values_missing": "0",
+        "values_suppressed": "3",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T20",
+        "source_page": "22",
+        "title_fr": "Synthese des couts d'approvisionnement ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "24",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T21",
+        "source_page": "22",
+        "title_fr": "Cout total d'achat de bois en foret publique ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "20",
+        "values_missing": "4",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "6",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "T22",
+        "source_page": "23",
+        "title_fr": "Synthese des revenus ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "8",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": ""
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "A2",
+        "source_page": "37",
+        "title_fr": "Comparaison des resultats de 2014, 2019 et 2022 ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "123",
+        "values_missing": "12",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Historical comparison table. 2014 and 2019 are earlier survey results reproduced by the 2022 report; 2022 cells duplicate the provincial tables and are used as a cross-check."
+      },
+      {
+        "source_id": "regional_2022",
+        "source_table": "REG",
+        "source_page": "1",
+        "title_fr": "Resultats regionaux - SEPM ($/m3)",
+        "parsed_status": "parsed",
+        "rows_emitted": "88",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Seven regional groups plus the provincial total. Aggregated SEPM only; hardwoods and poplars are not regionalised in the 2022 compilation."
+      }
+    ],
+    "tables_not_parsed": [
+      {
+        "source_id": "main_2022",
+        "source_table": "T1",
+        "source_page": "13",
+        "title_fr": "Profil des repondants et volumes de GA",
+        "parsed_status": "not_parsed_context_only",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Sampling profile, not a cost/revenue table. Questionnaire counts (SEPM 37, feuillus durs 18, peupliers 9, thuyas 4, pins 3, total 70) are recorded in the manifest."
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "A1",
+        "source_page": "32",
+        "title_fr": "Tableau-synthese (Annexe 1)",
+        "parsed_status": "not_parsed_duplicate",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Annexe 1 repeats Tables 2-22 as a single synthesis table. It was used as an independent cross-check for the Table 14 peupliers-sciage discrepancy, but is not emitted separately to avoid duplicate observations."
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "A3",
+        "source_page": "39",
+        "title_fr": "Questionnaire SEPM (Annexe 3)",
+        "parsed_status": "not_parsed_instrument",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Survey questionnaire. It defines the requested cost lines but contains no observed values."
+      },
+      {
+        "source_id": "main_2022",
+        "source_table": "FIG3",
+        "source_page": "26",
+        "title_fr": "Evolution du prix du bois d'oeuvre selon les trimestres",
+        "parsed_status": "not_parsed_duplicate",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Figure 3 plots the same quarterly SEPM gross revenue values already parsed from Table 15; no additional observations."
+      },
+      {
+        "source_id": "regional_2019",
+        "source_table": "all",
+        "source_page": "1",
+        "title_fr": "Compilation des donnees regionalisees des resultats de l'Enquete 2019 sur les couts d'operation forestiere",
+        "parsed_status": "downloaded_not_parsed",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Tables 1-4 on pages 1-3 are raster images with no text layer; pdftotext and pdfplumber return only captions. Not OCRed. 2019 provincial values are available only through Table A2 of the 2022 report."
+      },
+      {
+        "source_id": "survey_2019",
+        "source_table": "all",
+        "source_page": "1",
+        "title_fr": "Enquete 2019 sur les couts d'operation forestiere dans les forets du domaine de l'Etat ainsi que sur les couts et revenus de l'industrie du sciage du Quebec",
+        "parsed_status": "downloaded_not_parsed",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Kept as provenance and context. Full 2019 extraction is out of scope for this 2022 dataset; the 2022 report's Table A2 supplies 2019 comparison values."
+      },
+      {
+        "source_id": "sylviculture_public_2021_2022",
+        "source_table": "all",
+        "source_page": "1",
+        "title_fr": "Enquete sur les couts de la sylviculture en foret publique pour la saison 2020-2021",
+        "parsed_status": "downloaded_not_parsed",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Silviculture cost survey, not part of the 2022 procurement/transformation/revenue survey. Its per-hectare and per-1000-plant treatment costs are a separate dataset; do not merge into $/m3 harvest/road/haul components."
+      },
+      {
+        "source_id": "sylviculture_private_2021_2022",
+        "source_table": "all",
+        "source_page": "1",
+        "title_fr": "Enquete sur les couts de la sylviculture en foret privee pour la saison 2021-2022",
+        "parsed_status": "downloaded_not_parsed",
+        "rows_emitted": "0",
+        "values_missing": "0",
+        "values_suppressed": "0",
+        "values_flagged_three_respondents": "0",
+        "notes": "Silviculture cost survey, not part of the 2022 procurement/transformation/revenue survey. Separate treatment-cost dataset; do not merge into $/m3 harvest/road/haul components."
+      }
+    ],
+    "rows_emitted": 660,
+    "source_tables_parsed": 23,
+    "source_tables_not_parsed": 8,
+    "regional_breakdown": "SEPM only, seven regional groups plus provincial total",
+    "species_breakdown": "Provincial by SEPM, feuillus durs (sciage/trituration), peupliers (sciage/trituration), pins, thuyas where reported.",
+    "mill_level_data": false,
+    "grade_level_data": false,
+    "questionnaire_counts": {
+      "sepm": 37,
+      "peupliers": 9,
+      "feuillus_durs": 18,
+      "thuyas": 4,
+      "pins": 3,
+      "total": 70
+    }
+  },
+  "validation": {
+    "row_count": 660,
+    "non_finite_values": 0,
+    "unexpected_negative_values": 0,
+    "unexpected_units": 0,
+    "negative_value_count": 48,
+    "three_respondent_value_count": 109,
+    "reconciliations": [
+      {
+        "check": "T3/QC/sepm/2022/total harvest components -> harvest_total",
+        "computed": 31.42,
+        "reported": 31.42,
+        "difference": -0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T3/QC/feuillus_durs/2022/sciage harvest components -> harvest_total",
+        "computed": 31.95,
+        "reported": 31.95,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T3/QC/peupliers/2022/trituration harvest components -> harvest_total",
+        "computed": 26.3,
+        "reported": 26.3,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T5/QC/sepm/2022/total road components -> after-PRCCM total",
+        "computed": 15.52,
+        "reported": 15.52,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T5/QC/sepm/2022/total after-PRCCM + PRCCM rebates -> before-PRCCM total",
+        "computed": 16.58,
+        "reported": 16.58,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T5/QC/feuillus_durs/2022/sciage road components -> after-PRCCM total",
+        "computed": 6.49,
+        "reported": 6.49,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T5/QC/feuillus_durs/2022/sciage after-PRCCM + PRCCM rebates -> before-PRCCM total",
+        "computed": 7.73,
+        "reported": 7.73,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T5/QC/peupliers/2022/trituration road components -> after-PRCCM total",
+        "computed": 12.78,
+        "reported": 12.78,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T5/QC/peupliers/2022/trituration after-PRCCM + PRCCM rebates -> before-PRCCM total",
+        "computed": 14.87,
+        "reported": 14.87,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T6/QC/sepm/2022/total haul components -> haul_total",
+        "computed": 24.76,
+        "reported": 24.76,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T6/QC/feuillus_durs/2022/sciage haul components -> haul_total",
+        "computed": 29.49,
+        "reported": 29.49,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T6/QC/peupliers/2022/trituration haul components -> haul_total",
+        "computed": 24.85,
+        "reported": 24.85,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/sepm/2022/total other-cost components -> total",
+        "computed": 6.43,
+        "reported": 6.43,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/feuillus_durs/2022/sciage other-cost components -> total",
+        "computed": 9.63,
+        "reported": 9.63,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/feuillus_durs/2022/trituration other-cost components -> total",
+        "computed": 3.97,
+        "reported": 3.97,
+        "difference": -0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/peupliers/2022/sciage other-cost components -> total",
+        "computed": 5.39,
+        "reported": 5.39,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/peupliers/2022/trituration other-cost components -> total",
+        "computed": 5.36,
+        "reported": 5.36,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/pins/2022/total other-cost components -> total",
+        "computed": 5.35,
+        "reported": 5.35,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T9/QC/thuyas/2022/total other-cost components -> total",
+        "computed": 5.81,
+        "reported": 5.81,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T10/QC/sepm/2022/total rent+vmbsp+compensations -> transfers_total",
+        "computed": 25.01,
+        "reported": 25.01,
+        "difference": -0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T10/QC/feuillus_durs/2022/sciage rent+vmbsp+compensations -> transfers_total",
+        "computed": 20.23,
+        "reported": 20.22,
+        "difference": 0.01,
+        "status": "pass"
+      },
+      {
+        "check": "T10/QC/peupliers/2022/trituration rent+vmbsp+compensations -> transfers_total",
+        "computed": 2.18,
+        "reported": 2.18,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T11/QC/sepm/2022/sciage transformation components -> total",
+        "computed": 52.7,
+        "reported": 52.7,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T11/QC/feuillus_durs/2022/sciage transformation components -> total",
+        "computed": 85.14,
+        "reported": 85.14,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T11/QC/peupliers/2022/sciage transformation components -> total",
+        "computed": 64.86,
+        "reported": 64.86,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T11/QC/pins/2022/sciage transformation components -> total",
+        "computed": 76.96,
+        "reported": 76.96,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T14/QC/sepm/2022/total overhead components -> total",
+        "computed": 8.04,
+        "reported": 8.04,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T14/QC/feuillus_durs/2022/sciage overhead components -> total",
+        "computed": 10.16,
+        "reported": 10.16,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T14/QC/feuillus_durs/2022/trituration overhead components -> total",
+        "computed": 10.75,
+        "reported": 10.75,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T14/QC/peupliers/2022/sciage overhead components -> total",
+        "computed": 10.66,
+        "reported": 13.87,
+        "difference": -3.21,
+        "status": "known_source_inconsistency",
+        "note": "Table 14 body reports peupliers-sciage components 3.25, 12.28, 0.00, 0.00, -4.87 (sum 10.66) but a total of 13.87. Annex A1 reports 2.06, 16.51, 0.05, 0.12, -4.87 and total 13.87. The body row appears to repeat pins-column values. Values are kept as printed, not adjusted."
+      },
+      {
+        "check": "T14/QC/pins/2022/total overhead components -> total",
+        "computed": 14.18,
+        "reported": 14.18,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T14/QC/thuyas/2022/total overhead components -> total",
+        "computed": 41.24,
+        "reported": 41.24,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T20/QC/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 81.4,
+        "reported": 81.4,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T20/QC/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 106.41,
+        "reported": 106.41,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T20/QC/feuillus_durs/2022/sciage procurement components -> before-transfer total",
+        "computed": 79.73,
+        "reported": 79.73,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T20/QC/feuillus_durs/2022/sciage before-transfer + transfers -> total",
+        "computed": 99.95,
+        "reported": 99.95,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T20/QC/peupliers/2022/trituration procurement components -> before-transfer total",
+        "computed": 72.28,
+        "reported": 72.28,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T20/QC/peupliers/2022/trituration before-transfer + transfers -> total",
+        "computed": 74.46,
+        "reported": 74.46,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T22/QC/sepm/2022/total revenue components -> total",
+        "computed": 201.22,
+        "reported": 201.22,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "T22/QC/feuillus_durs/2022/total revenue components -> total",
+        "computed": 258.61,
+        "reported": 258.61,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R01-R03-R11-R12/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 58.73,
+        "reported": 58.73,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R01-R03-R11-R12/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 78.78,
+        "reported": 78.78,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R09/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 96.58,
+        "reported": 96.58,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R09/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 118.09,
+        "reported": 118.1,
+        "difference": -0.01,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R02/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 82.1,
+        "reported": 82.09,
+        "difference": 0.01,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R02/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 111.86,
+        "reported": 111.86,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R04/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 73.42,
+        "reported": 73.43,
+        "difference": -0.01,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R04/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 103.42,
+        "reported": 103.42,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R14-R15-R07-R08/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 97.07,
+        "reported": 97.07,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R14-R15-R07-R08/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 114.57,
+        "reported": 114.57,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R08/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 82.03,
+        "reported": 82.04,
+        "difference": -0.01,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R08/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 110.4,
+        "reported": 110.4,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R10/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 89.29,
+        "reported": 89.3,
+        "difference": -0.01,
+        "status": "pass"
+      },
+      {
+        "check": "REG/R10/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 111.75,
+        "reported": 111.75,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/QC/sepm/2022/total procurement components -> before-transfer total",
+        "computed": 81.4,
+        "reported": 81.4,
+        "difference": 0.0,
+        "status": "pass"
+      },
+      {
+        "check": "REG/QC/sepm/2022/total before-transfer + transfers -> total",
+        "computed": 106.41,
+        "reported": 106.41,
+        "difference": 0.0,
+        "status": "pass"
+      }
+    ],
+    "reconciliation_count": 56,
+    "reconciliation_exceptions": [
+      {
+        "check": "T14/QC/peupliers/2022/sciage overhead components -> total",
+        "computed": 10.66,
+        "reported": 13.87,
+        "difference": -3.21,
+        "status": "known_source_inconsistency",
+        "note": "Table 14 body reports peupliers-sciage components 3.25, 12.28, 0.00, 0.00, -4.87 (sum 10.66) but a total of 13.87. Annex A1 reports 2.06, 16.51, 0.05, 0.12, -4.87 and total 13.87. The body row appears to repeat pins-column values. Values are kept as printed, not adjusted."
+      }
+    ],
+    "reconciliation_failures": [],
+    "spot_checks": [
+      {
+        "source_table": "REG",
+        "region_code": "R09",
+        "species_group": "sepm",
+        "component": "procurement_total_after_transfers",
+        "product_or_grade": "total",
+        "unit": "CAD/m3",
+        "pdf_value": 118.1,
+        "parsed_value": 118.1,
+        "status": "pass"
+      },
+      {
+        "source_table": "REG",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "procurement_total_before_transfers",
+        "product_or_grade": "total",
+        "unit": "CAD/m3",
+        "pdf_value": 81.4,
+        "parsed_value": 81.4,
+        "status": "pass"
+      },
+      {
+        "source_table": "T3",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "harvest_total",
+        "product_or_grade": "total",
+        "unit": "CAD/m3",
+        "pdf_value": 31.42,
+        "parsed_value": 31.42,
+        "status": "pass"
+      },
+      {
+        "source_table": "T5",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "road_total_after_prccm",
+        "product_or_grade": "total",
+        "unit": "CAD/m3",
+        "pdf_value": 15.52,
+        "parsed_value": 15.52,
+        "status": "pass"
+      },
+      {
+        "source_table": "T16",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "net_revenue",
+        "product_or_grade": "lumber",
+        "unit": "CAD/m3",
+        "pdf_value": 183.74,
+        "parsed_value": 183.74,
+        "status": "pass"
+      },
+      {
+        "source_table": "T19",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "byproduct_total",
+        "product_or_grade": "byproduct",
+        "unit": "CAD/m3",
+        "pdf_value": 20.23,
+        "parsed_value": 20.23,
+        "status": "pass"
+      },
+      {
+        "source_table": "T22",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "total_revenue",
+        "product_or_grade": "total",
+        "unit": "CAD/m3",
+        "pdf_value": 201.22,
+        "parsed_value": 201.22,
+        "status": "pass"
+      },
+      {
+        "source_table": "A2",
+        "region_code": "QC",
+        "species_group": "sepm",
+        "component": "harvest",
+        "product_or_grade": "total",
+        "unit": "CAD/m3",
+        "pdf_value": 31.42,
+        "parsed_value": 31.42,
+        "status": "pass"
+      }
+    ],
+    "spot_check_count": 8,
+    "status": "pass_with_documented_source_inconsistency"
+  },
+  "limitations": [
+    "Official survey aggregates, not mill-level observations.",
+    "No species- or grade-level value was allocated from a broader aggregate.",
+    "Drying costs by species in Table 11 are non-additive species breakdown values and are labelled observation_kind=species_breakdown_non_additive.",
+    "Regional values cover SEPM only; hardwoods and poplars are not regionalised in the 2022 compilation.",
+    "Values flagged three_respondents are confidential-survey means for exactly three respondents and are not statistically robust.",
+    "Dashes mean suppressed because fewer than three respondents, unless the table semantics say not applicable; missing-value counts are in the coverage CSV.",
+    "Table A2's 2014 and 2019 values are earlier survey results reproduced for comparison, not re-estimated 2022 values.",
+    "The 2019 regional compilation PDF has no text layer in its tables; it was not OCRed and contributes no rows.",
+    "The 2021-22 silviculture surveys are downloaded for provenance only; they are a separate treatment-cost dataset and are not merged here.",
+    "Table 10 compensation sub-lines are not a complete decomposition of the compensations total; do not replace the total with their sum.",
+    "Forest-road component rows include PRCCM rebates. The after-PRCCM total equals their sum; the before-PRCCM total adds the rebates back.",
+    "Annex 1 repeats Tables 2-22 and is not emitted separately; it is used only as a cross-check."
+  ],
+  "merge_policy": {
+    "merged_into_forest_cost_revenue": false,
+    "status": "standalone",
+    "reason": "Observed survey aggregates with explicit regional and species aggregation. The ledger is not modified by this extraction.",
+    "recommended_use": "Benchmark or calibration evidence for Quebec procurement, transformation, delivered revenue, and by-product values; not a direct row-level model input."
+  }
+}
