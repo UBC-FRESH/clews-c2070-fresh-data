@@ -141,7 +141,7 @@ quantities, and treats appraisal allowances as observed costs.
 
 ## 7. Validation
 
-All 36 checks passed:
+All 37 checks passed:
 
 | Check | Status | Detail |
 |---|---|---|
@@ -157,7 +157,8 @@ All 36 checks passed:
 | bc_price_hard_range_and_nonnegative | pass | all prices are within 0-2000 CAD/m3 |
 | bc_price_flag_counts | pass | zero=16, below_1=7, above_1000=17 |
 | bc_price_is_aggregate_lowercase | pass | source is_aggregate tokens are lowercase true/false with 890 aggregates |
-| bc_price_flagged_cells_excluded_from_ranges | pass | no zero or negative value enters an ok range |
+| bc_price_benchmark_id_unique | pass | every annual/period price row has a unique benchmark_id |
+| bc_price_flagged_cells_excluded_from_ranges | pass | every ok range stays within the plausible 1.0-1000.0 CAD/m3 band |
 | bc_price_product_cells_exclude_aggregate | pass | no is_aggregate=true row appears as a product cell |
 | bc_price_no_double_count | pass | 1,748 product-cell rows and 104 aggregate-reference rows are separate |
 | bc_price_no_vintage_mixing | pass | each range has one published vintage and is marked non-additive |

@@ -2,7 +2,7 @@
   "artifact_version": "1.0.0",
   "dataset": "forest_economics_v2d",
   "status": "not_estimated",
-  "generated_utc": "2026-11-21T23:03:40Z",
+  "generated_utc": "2026-11-21T23:25:02Z",
   "generator": {
     "script": "workflows/national/harvest/forest_economics_v2d.py",
     "command": "python -m workflows.national.harvest.forest_economics_v2d"
@@ -28,14 +28,14 @@
   "inputs": [
     {
       "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
-      "sha256": "730c0b51b674a1b600379ba5d38811be55e494ea3816227ec12553e88faa7777",
-      "bytes": 9703,
+      "sha256": "2ac98dc6c4de68f6f44b79c9be9bc66dd73ee4e6a4d578224d860ef5df94667e",
+      "bytes": 9763,
       "role": "QC procurement cost benchmark"
     },
     {
       "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_regional_range.csv",
-      "sha256": "331b721c02ea9f0f23cb0d1957e0bbdf26620b223b2e95ae6c0a57ae23598459",
-      "bytes": 7081,
+      "sha256": "af096a2c33c8e3960da89b8a5a9169af5c7dd31b18083a4c6703e36579f0501d",
+      "bytes": 7094,
       "role": "QC regional procurement cost range"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "path": "data/derived/national/harvest_basis/procurement_benchmark/manifest.json",
-      "sha256": "6ebe7c601a712fc92ac7b2a510a4fc67f01b15bc1cc0159f454f23cbdb538306",
+      "sha256": "2ae2d4b63aeb1dea5a24e9aabaff1f960e2e8091b35623b44a490a3207f71c68",
       "bytes": 7566,
       "role": "QC procurement provenance"
     },
@@ -102,22 +102,22 @@
   "outputs": [
     {
       "path": "data/derived/national/harvest_basis/forest_economics_v2d/forest_economics_v2d_summary.csv",
-      "sha256": "727b9123a019876da79e8b65ae86b254ac6ec2d717f23e8132c951ab316a5236",
+      "sha256": "e6bdf876888506a9e4aa0f0d3b8df3775462a6c5c0673c0f7480b8f23cd0c4a7",
       "bytes": 8841,
       "role": "jurisdiction summary with separated evidence tiers",
       "rows": 14
     },
     {
       "path": "data/derived/national/harvest_basis/forest_economics_v2d/qc_procurement_reference.csv",
-      "sha256": "c3a6c6aa33b42a3a6de4904c31a265e273c8fa8dc70f4e61e5588a129252b6b4",
-      "bytes": 23048,
+      "sha256": "c3d5fdfe219757e8416365b8f967d3d17237d802df22e1d2c586e8a169bc0ea6",
+      "bytes": 23121,
       "role": "validated QC procurement cost references",
       "rows": 18
     },
     {
       "path": "data/derived/national/harvest_basis/forest_economics_v2d/bc_revenue_benchmark.csv",
-      "sha256": "da8faae24d4b07b887dd2ce9035b5a27b185e2b1dd29ae955717441c65b6ccd2",
-      "bytes": 1106373,
+      "sha256": "e19385e785fe8a99630cc9dde6ea16c39c2fc0dd2c1e1df6cb652f61e4ec9ba8",
+      "bytes": 1116888,
       "role": "BC annual and period price ranges",
       "rows": 1852
     },
@@ -137,20 +137,20 @@
     },
     {
       "path": "data/derived/national/harvest_basis/forest_economics_v2d/FOREST_ECONOMICS_V2D_REPORT.md",
-      "sha256": "907974a289b4358eb30fac4000947ada7b0cba9f84a4a9d77dc1fd5305a8d4c8",
-      "bytes": 14603,
+      "sha256": "b9ff5a8f65243c4579593a89eb40e35e534c29dace0b4baa309750e74c5da1f7",
+      "bytes": 14721,
       "role": "human-readable evidence report"
     },
     {
       "path": "data/derived/national/harvest_basis/forest_economics_v2d/summary.json",
-      "sha256": "82a030487eaef712118a841d75cffda2639f07659ceb7d4e80df521bdf74d442",
-      "bytes": 25144,
+      "sha256": "6944d2a70fd6691173458999b9c9c83036bcb93b4d4b675f9d5791f89c5a733d",
+      "bytes": 25332,
       "role": "summary payload"
     }
   ],
   "validation": {
     "status": "pass",
-    "check_count": 36,
+    "check_count": 37,
     "checks": [
       {
         "check": "procurement_manifest_labels",
@@ -213,9 +213,14 @@
         "detail": "source is_aggregate tokens are lowercase true/false with 890 aggregates"
       },
       {
+        "check": "bc_price_benchmark_id_unique",
+        "status": "pass",
+        "detail": "every annual/period price row has a unique benchmark_id"
+      },
+      {
         "check": "bc_price_flagged_cells_excluded_from_ranges",
         "status": "pass",
-        "detail": "no zero or negative value enters an ok range"
+        "detail": "every ok range stays within the plausible 1.0-1000.0 CAD/m3 band"
       },
       {
         "check": "bc_price_product_cells_exclude_aggregate",
