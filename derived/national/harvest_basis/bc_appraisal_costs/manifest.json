@@ -1,0 +1,241 @@
+{
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-21T21:16:48+00:00",
+  "observation_type": "appraisal_allowance",
+  "description": "BC public appraisal cost allowances from IAM 2026 (effective 2026-07-01), CAM 2026 (effective 2026-01-01), and Interior Basic Silviculture quarterly costs (2026-10-01 and 2026-07-01).",
+  "sources": [
+    {
+      "key": "iam",
+      "label": "IAM 2026",
+      "file": "iam_2026_master_b.pdf",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior-appraisal-manual/iam_2026_master_b.pdf",
+      "effective_date": "2026-07-01",
+      "retrieved_utc": "2026-11-21T20:46:29+00:00",
+      "sha256": "45b2bdb8f035f5032297420c6031d0aee1092838f2e257298884c9dab989fc22",
+      "bytes": 3389829,
+      "pages": 172
+    },
+    {
+      "key": "cam",
+      "label": "CAM 2026",
+      "file": "cam_2026_master.pdf",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/coast-timber-pricing/coast-appraisal-manual/cam_2026_master.pdf",
+      "effective_date": "2026-01-01",
+      "retrieved_utc": "2026-11-21T20:46:29+00:00",
+      "sha256": "dc88a581a4cc47e016d36b0eaeda2d714f20507ca8e0d845a4868af166e73824",
+      "bytes": 2455492,
+      "pages": 145
+    },
+    {
+      "key": "silv_oct",
+      "label": "Interior Basic Silviculture 2026-10",
+      "file": "basic_silv_costs_oct_26.pdf",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/basic_silv_costs_oct_26.pdf",
+      "effective_date": "2026-10-01",
+      "retrieved_utc": "2026-11-21T20:46:30+00:00",
+      "sha256": "35402ad60ce4e20f39c2d9e3de5f2c5e00771a957da22c869dbc34922146c882",
+      "bytes": 190228,
+      "pages": 1
+    },
+    {
+      "key": "silv_jul",
+      "label": "Interior Basic Silviculture 2026-07",
+      "file": "basic_silv_costs_jul_26.pdf",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/basic_silv_costs_jul_26.pdf",
+      "effective_date": "2026-07-01",
+      "retrieved_utc": "2026-11-21T20:46:30+00:00",
+      "sha256": "bc8f38e8966296ee90b0fc325dc3473c28270191763859b8fb51de1a179342b9",
+      "bytes": 197650,
+      "pages": 1
+    }
+  ],
+  "discovery_pages": [
+    {
+      "file": "iam.html",
+      "url": "https://www2.gov.bc.ca/gov/content/industry/forestry/competitive-forest-industry/timber-pricing/interior-timber-pricing/interior-appraisal-manual",
+      "sha256": "2b70efd4f2922196deba79843914bd8543693e66e869c8dd9d8f9337e2112f7d",
+      "retrieved_utc": "2026-11-21T20:46:19+00:00",
+      "bytes": 333676
+    },
+    {
+      "file": "cam.html",
+      "url": "https://www2.gov.bc.ca/gov/content/industry/forestry/competitive-forest-industry/timber-pricing/coast-timber-pricing/coast-appraisal-manual-and-amendments",
+      "sha256": "f12b961d2b5746fea6955cce3923231216f703276efd83853551e58c0dd011dc",
+      "retrieved_utc": "2026-11-21T20:46:19+00:00",
+      "bytes": 334999
+    },
+    {
+      "file": "silv.html",
+      "url": "https://www2.gov.bc.ca/gov/content/industry/forestry/competitive-forest-industry/timber-pricing/interior-timber-pricing/interior-basic-silviculture-costs",
+      "sha256": "5d4508ae5f8aa011e573c08086504a221f125fed63d268656d3690ac662cbc9c",
+      "retrieved_utc": "2026-11-21T20:46:20+00:00",
+      "bytes": 319077
+    }
+  ],
+  "row_counts": {
+    "total": 879,
+    "basic_silviculture_oct_2026": 7,
+    "basic_silviculture_jul_2026": 7,
+    "iam_fma_regions": 6,
+    "iam_railway_origins": 5,
+    "iam_specified_operations": 12,
+    "iam_subgrade_rows": 59,
+    "iam_stabilizing_rows": 23,
+    "iam_culvert_cells": 182,
+    "iam_bridge_cells": 55,
+    "iam_road_maintenance_groups": 22,
+    "iam_bec_rows": 218,
+    "iam_toa_rows": 3,
+    "cam_road_rows": 20,
+    "cam_log_bridge_cells": 85,
+    "cam_permanent_bridge_cells": 120,
+    "cam_culvert_cells": 25,
+    "cam_silviculture_rows": 15,
+    "cam_toa_rows": 6,
+    "cam_specified_operations": 9
+  },
+  "stats": {
+    "rows": 879,
+    "components": 71,
+    "records_by_region": {
+      "Coast": 280,
+      "Interior": 599
+    },
+    "records_by_basis": {
+      "CAD/each": 429,
+      "CAD/ha": 235,
+      "CAD/ha/%": 2,
+      "CAD/ha/stem": 2,
+      "CAD/km": 91,
+      "CAD/km/%": 11,
+      "CAD/m": 38,
+      "CAD/m3": 67,
+      "CAD/m3/km": 2,
+      "CAD/tree": 2
+    }
+  },
+  "policy_rules": [
+    "All values are appraisal allowances or tabular cost estimates, not observed contractor costs.",
+    "IAM FMA equation result is clamped to the published regional minimum and maximum.",
+    "IAM Road Group 1 subgrade and ballast are ECE, not tabular; snow/ice roads are $9,814/km.",
+    "IAM/ CAM tabular bridge and culvert costs must not be interpolated; use nearest published unit.",
+    "IAM FEWB floor $0.25/m3; CAM EWB and FEWB floor $0.25/m3.",
+    "IAM high development cost: HDC = DC - 3.27, zero when DC <= 5.93 (BCTS only).",
+    "CAM high development cost: HDC = DC - 8.23, zero when DC <= 13.76 (BCTS only).",
+    "CAM long haul: LHC = (HD - 100) * 0.171, zero when HD <= 100 km.",
+    "IAM surface tow: rate = 0.0389 * D - 0.8744 with a $1.69/m3 floor.",
+    "IAM root disease control is clamped to $1,200-$1,469/ha; CAM to $1,224-$1,560/ha.",
+    "CAM scale-based FPA and road management are multiplied by CTC 0.975; FTOA uses RFM 1.052.",
+    "IAM FTOA uses RFM 1.076 and market logger MLDC $2.66/m3 plus MLSO $0.12/m3.",
+    "Interior quarterly basic silviculture costs are published by forest zone, not BGC zone.",
+    "BEC silviculture tables are $/ha; quarterly Interior basic silviculture is $/m3.",
+    "Restricted ILCR/CCTMCS microdata were not used."
+  ],
+  "spot_checks": [
+    {
+      "source_series": "IAM 2026",
+      "component": "forest_management_administration_constant",
+      "selector": "Skeena",
+      "expected": 16.71,
+      "found": 16.71,
+      "status": "pass"
+    },
+    {
+      "source_series": "IAM 2026",
+      "component": "basic_silviculture",
+      "selector": "ICHmw1",
+      "expected": 2973.0,
+      "found": 2973.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "IAM 2026",
+      "component": "culvert_installed",
+      "selector": "length_m=9|diameter_m=0.3",
+      "expected": 963.0,
+      "found": 963.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "IAM 2026",
+      "component": "subgrade_construction_base",
+      "selector": "12",
+      "expected": 18975.0,
+      "found": 18975.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "CAM 2026",
+      "component": "road_construction",
+      "selector": "OMLB",
+      "expected": 72601.0,
+      "found": 72601.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "CAM 2026",
+      "component": "log_bridge",
+      "selector": "span_m=4|single_log_sill",
+      "expected": 1300.0,
+      "found": 1300.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "CAM 2026",
+      "component": "permanent_portable_bridge",
+      "selector": "span_m=2|abutment_height_m=0",
+      "expected": 52700.0,
+      "found": 52700.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "CAM 2026",
+      "component": "pipe_culvert_installed",
+      "selector": "diameter_m=1.8",
+      "expected": 996.0,
+      "found": 996.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "CAM 2026",
+      "component": "basic_silviculture",
+      "selector": "CWH",
+      "expected": 2178.0,
+      "found": 2178.0,
+      "status": "pass"
+    },
+    {
+      "source_series": "Interior Basic Silviculture 2026-10",
+      "component": "basic_silviculture",
+      "selector": "North Central Zone",
+      "expected": 10.02,
+      "found": 10.02,
+      "status": "pass"
+    },
+    {
+      "source_series": "Interior Basic Silviculture 2026-07",
+      "component": "basic_silviculture",
+      "selector": "North Central Zone",
+      "expected": 9.95,
+      "found": 9.95,
+      "status": "pass"
+    }
+  ],
+  "coverage": {
+    "parsed": 19,
+    "parsed_formula": 1,
+    "partial": 3,
+    "not_published": 2,
+    "policy_parameters": 2,
+    "rules": 1
+  },
+  "caveats": [
+    "Allowances are appraisal inputs, not winning bids, contractor costs, or observed transactions.",
+    "The IAM and CAM do not publish a general tree-to-truck or logging $/m3 allowance table.",
+    "General truck hauling is represented only by cycle-time/EWB policy and by rail/water/barge specified operations.",
+    "ECE project costs are site-specific; only tabular components, trend factors, and policy are captured.",
+    "Bridge and culvert values are per structure or per metre, not per m3 of timber.",
+    "The quarterly Interior table is by forest zone; BGC detail exists only in IAM Table 4-8 ($/ha)."
+  ],
+  "build_command": "python scripts/national/build_bc_appraisal_costs.py --pdf-dir tmp/bc_appraisal_costs_raw/pdfs --out-dir data/derived/national/harvest_basis/bc_appraisal_costs"
+}
