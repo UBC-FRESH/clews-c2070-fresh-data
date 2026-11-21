@@ -1,8 +1,8 @@
 # QC procurement cost benchmark — 2022 survey and BMMB delivered sales
 
-**Status:** procurement-cost benchmark only. Generated 2026-11-21T21:44:55Z. `net_value_status=not_estimated`; `interpretation=purchased_vs_bgad_procurement_cost_spread`; `policy_grade=false` on every row.
+**Status:** procurement-cost benchmark only. Generated 2026-11-21T21:47:27Z. `net_value_status=not_estimated`; `interpretation=purchased_vs_bgad_procurement_cost_spread`; `policy_grade=false` on every row.
 
-This note replaces the earlier framing of the 2022 survey difference as a forest-sector residual or net value. It is a **procurement-channel cost spread across different respondent samples**, not forest net value, not a mill margin, and not a policy result. The old `net_value_benchmark` artifact is retained only for audit and is marked deprecated. No QC or M CAD volume-scaled diagnostic is produced.
+This note replaces the earlier framing of the 2022 survey difference as a forest-sector residual or net value. It is a **procurement-channel cost spread across different respondent samples**, not forest net value, not a mill margin, and not a policy result. The old `net_value_benchmark` artifact is retained only for audit and is marked deprecated. No QC or M CAD volume-scaled diagnostic is produced, and the builder does not read `provincial_allocation/`.
 
 ## Definitions
 
