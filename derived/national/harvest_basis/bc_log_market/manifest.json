@@ -1,13 +1,17 @@
 {
-  "artifact_version": "1.0.0",
+  "artifact_version": "1.1.0",
   "assumptions": [
+    "All price_cad_m3 values are nominal Canadian dollars of the published report period; no inflation or deflation adjustment is applied (currency_basis=CAD_nominal).",
     "Prices are published averages (AMV) for domestic log sales, not transaction-level records.",
     "Coast old-growth reports blend old and mixed growth transactions per ministry policy.",
+    "Coast grade tables end at the first footer row (Volume(m3), Volume, Species %, or Total volume); footer species volumes and footer shares are never parsed as grade cells.",
     "Coast grade-level volume is not published; only a species volume total is published, and only for some species.",
     "Interior volume is reported by product and species group; '-' means no reported volume or price, not zero.",
     "Report period end is the published month end; three-month reports use the published exact date range.",
+    "Six Coast 1-month second-growth PDFs (2023-09, 2023-11, 2023-12, 2024-01, 2024-02, 2024-03) print footer labels one text row above their values; their report totals are deliberately not parsed rather than guessed.",
     "No price or volume is interpolated, imputed, or carried forward."
   ],
+  "currency_basis": "CAD_nominal",
   "discovery": {
     "index_and_archive_pages": [
       {
@@ -113,7 +117,7 @@
       "CCTMCS microdata"
     ]
   },
-  "generated_utc": "2026-11-21T20:43:22+00:00",
+  "generated_utc": "2026-11-21T22:54:04+00:00",
   "inputs": [
     {
       "bytes": 182843,
@@ -6176,23 +6180,36 @@
       "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior-log-market-reports/3mi_september_20_revised.pdf"
     }
   ],
+  "non_additivity_rules": [
+    "Do not sum or average prices across report_basis (1_month vs 3_month); the two vintages are independently published and not additive.",
+    "Do not sum or average overlapping 3_month reports; consecutive three-month windows share two months of transactions.",
+    "Do not reconstruct a 3_month report by summing 1_month reports, or a 1_month report by differencing 3_month reports; late and revised submissions are not reconciled.",
+    "Do not add Interior weighted_average rows to product rows; weighted_average is an aggregate flagged is_aggregate=true.",
+    "Do not sum Coast volume_share_pct across grades or species; each share is relative to its own grade's reported volume."
+  ],
   "observation_type": "reported_market_average",
   "outputs": [
     {
       "path": "bc_log_market_prices.csv",
       "rows": 15705,
-      "sha256": "fcf13b9767b340e3c5f6ca38b42c01e4010ad21384a1b8e203acfdb64c8f3db9"
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f"
     },
     {
       "path": "bc_log_market_coverage.csv",
       "rows": 505,
-      "sha256": "ced16b9c03494f4c0c9a2bb95f127f538471e7da0eceddd935ae388409f9e66a"
+      "sha256": "8f2cf50db5ccd663aa9bdf909fa508e4f43da5ea6143a3353c215e871076ad85"
     }
   ],
   "price_basis": "mill_delivered",
   "price_range_cad_m3": {
     "max": 1071.93,
     "min": 0.0
+  },
+  "report_totals_status_counts": {
+    "consistent": 328,
+    "not_reported": 2,
+    "not_reported_or_unparseable": 6,
+    "reported": 169
   },
   "reports_by_region": {
     "coast": 336,
@@ -6212,6 +6229,13 @@
     "interior": 2577
   },
   "scope": "BC Coast and Interior public log-market average prices, 2019-2026",
+  "structural_breaks": [
+    {
+      "description": "Coast reports published from April 2023 onward carry Note (2): 'April 2023, new and additional participants to the Vancouver Log Market data set.' The participant expansion can shift the published average level; the dataset does not adjust for it.",
+      "effective": "2023-04",
+      "region": "coast"
+    }
+  ],
   "validation": {
     "duplicate_keys": 0,
     "flags": {
@@ -6222,6 +6246,11 @@
       0,
       2000
     ],
+    "hard_volume_share_range_pct": [
+      0,
+      100
+    ],
+    "invalid_volume_shares": 0,
     "negative_or_nan_prices": 0
   }
 }

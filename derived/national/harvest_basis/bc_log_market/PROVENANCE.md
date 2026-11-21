@@ -80,6 +80,10 @@ the layout text is used for dates, titles, and manual cross-checks.
 - Header row contains `Grade` and ten species columns: Alder, Birch, Cedar,
   Cottonwood, Cypress, Fir, Hembal, Maple, Pine, Spruce.
 - Grade rows B–Z each carry an `AMV` price row and a `%` volume-share row.
+- The grade table ends at the first footer row (`Volume(m3)`, `Volume`,
+  `Species %`, or `Total volume`). That row and every row below it are excluded
+  from grade cells, so the footer species volumes and the footer `Species %`
+  shares cannot overwrite the last grade's share cells.
 - Numeric cells are assigned to the species column whose header-left boundary
   interval contains the cell's **right edge**. This is necessary because the
   published table right-aligns values while headers are not consistently
@@ -97,9 +101,24 @@ the layout text is used for dates, titles, and manual cross-checks.
   Peelers, Poles/House, Minor Products, Pulpwood, Other; plus `Total` (volume)
   and `Wtd. Average` (price).
 - `Total/Avg` column is an aggregate and is not emitted as a species.
-- `Total` volume row and `Wtd. Average` price row are used only as report-level
-  checks/totals.
+- `Total` volume row is used only as a report-level check; it is not emitted.
+- `Wtd. Average` rows **are emitted** as species-level `weighted_average` rows
+  with `is_aggregate=true`. They are report-level checks and must not be added
+  to or averaged with the product cells.
 - `-` means not reported, not zero.
+
+### Non-additivity and nominal currency
+
+- Every `price_cad_m3` value is nominal Canadian dollars of its published report
+  period (`currency_basis=CAD_nominal`). No deflator is applied.
+- `1_month` and `3_month` reports are independent vintages. Never sum or average
+  prices across `report_basis`.
+- Consecutive `3_month` windows overlap by two months. Never sum or average
+  overlapping three-month reports.
+- Do not reconstruct a `3_month` report by summing `1_month` reports, or a
+  `1_month` report by differencing `3_month` reports.
+- Never add Interior `weighted_average` rows to product rows, and never sum
+  Coast `volume_share_pct` across grades or species.
 
 ### Dates and classes
 
@@ -111,6 +130,11 @@ the layout text is used for dates, titles, and manual cross-checks.
 - Coast old-growth PDFs carry the published note that the series is a blend of
   old and mixed growth transactions under ministry policy. The dataset labels
   the series `old_growth` but does not claim a pure old-growth sample.
+- Coast reports published from April 2023 onward print Note (2): *"April 2023,
+  new and additional participants to the Vancouver Log Market data set."* This
+  is a participant-expansion structural break. Published levels before and after
+  the break are not directly comparable; the dataset preserves the reports as
+  published and makes no adjustment.
 
 ## 4. Manual spot checks
 
@@ -122,6 +146,7 @@ All checks compare the printed PDF line with the parsed CSV row.
 | 2 | `1m2gc_jan_26.pdf`, grade H, second growth | Cedar 477.59 (15.10%); Fir 172.44 (6.97%); Hembal 141.24 (10.19%); Spruce 70.38 (21.94%) | Same four species, prices and shares | PASS |
 | 3 | `1mi_jan_21.pdf`, Sawlog | SPF 100.23 / 1,284,117 m³; Df-Larch 109.98 / 333,513 m³; Hem-Bal 93.32 / 61,062 m³; Cedar 181.55 / 45,261 m³ | Same prices and volumes | PASS |
 | 4 | `3mi_dec_19.pdf`, Sawlog | SPF 85.60 / 1,826,621 m³; Df-Larch 92.35 / 490,200 m³; Hem-Bal 81.86 / 93,884 m³; Cedar 149.31 / 102,297 m³ | Same prices and volumes | PASS |
+| 5 | `1m2gc_sept_23.pdf`, grade Y, second growth | Fir 51.83 (0.14%); footer `Species %` row prints the Fir species volume 125,344.26 | Fir price 51.83 and share 0.14; footer row excluded from grade cells | PASS |
 
 Additional independent checks over all 169 Interior reports:
 
@@ -143,15 +168,22 @@ zero-filled, interpolated, or carried forward. Coast grade-level volumes are
 not published; only partial species volume totals are printed, so no coast
 grade volume is inferred.
 
+Six Coast 1-month second-growth PDFs (`2023-09`, `2023-11`, `2023-12`, `2024-01`,
+`2024-02`, `2024-03`) print the footer labels one text row above their values.
+The grade table still parses, but the printed report totals cannot be assigned
+unambiguously. These reports are kept with
+`report_totals_status=not_reported_or_unparseable`; the totals are not
+reconstructed from shifted labels.
+
 ## 6. Build and verification
 
 - Builder: `scripts/national/build_bc_log_market.py`
 - Tests: `tests/test_bc_log_market.py` with TSV/text fixtures copied from
-  `1mc_jan_26` and `1mi_sept_26`
+  `1mc_jan_26`, `1m2gc_sept_23`, and `1mi_sept_26`
 - Ruff: `ruff check` and `ruff format --check` pass on the builder and tests
 - Validation in the builder: hard-fails on negative, NaN, or >2,000 CAD/m³
-  prices; duplicate observation keys; missing/unknown report layout; or a
-  filename/document basis mismatch
+  prices; Coast volume shares outside `0–100`; duplicate observation keys;
+  missing/unknown report layout; or a filename/document basis mismatch
 - Build result: **505 reports parsed, 0 failures, 15,705 emitted price rows**
 - No ledger, model, or UI file was modified.
 
