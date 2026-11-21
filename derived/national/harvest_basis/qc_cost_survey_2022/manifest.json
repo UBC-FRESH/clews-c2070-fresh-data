@@ -1,13 +1,15 @@
 {
   "artifact_version": "0.1.0",
   "dataset": "qc_cost_survey_2022",
-  "generated_utc": "2026-11-21T20:42:21Z",
+  "generated_utc": "2026-11-21T21:37:24Z",
   "observation_type": "survey_aggregate",
   "geography": "Quebec",
   "survey_year": 2022,
   "reference_period": "FY2022 (fiscal year ending on or before 2023-03-31)",
-  "price_year": 2022,
+  "price_year": "survey_year",
+  "price_year_detail": "Nominal CAD of the survey year: 2022 for the main and regional tables; 2014, 2019, or 2022 for Table A2 comparison rows.",
   "currency": "CAD",
+  "currency_basis": "CAD_nominal",
   "parser": {
     "script": "scripts/national/extract_qc_cost_survey_2022.py",
     "engine": "pdfplumber table extraction plus pdftotext layout inspection",
@@ -102,23 +104,23 @@
   "files": [
     {
       "path": "qc_cost_revenue_survey.csv",
-      "bytes": 202146,
-      "sha256": "8a0e3dd3f2e688144728b56defb658534a4ddec61c95010fdce41bb5753e488c"
+      "bytes": 207537,
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6"
     },
     {
       "path": "qc_cost_revenue_coverage.csv",
-      "bytes": 4804,
-      "sha256": "4bb4d110ec7a695bfa69381054b3a50bb58e6599093940a19988e732b2c622ea"
+      "bytes": 4805,
+      "sha256": "3ffe8b78e0219521d4fdd8a1deb9edf4792289f1450e98519e55f450bc9d3164"
     },
     {
       "path": "README.md",
-      "bytes": 8137,
-      "sha256": "3c8b7413fcfea57ff6fe76ac7653bb4feec9128c252da9b277638d40205745c7"
+      "bytes": 11680,
+      "sha256": "71ee36bf6ac8fd5e739c6d8bb0de8469ac474bb217001f081e7d20ab5b6fec1f"
     },
     {
       "path": "PROVENANCE.md",
-      "bytes": 10140,
-      "sha256": "f44c0100b633529d15b9ce5f3de76aa14b896d2cf07894d3fb050b63930b39e4"
+      "bytes": 12332,
+      "sha256": "c4070ad91cc16a250aed95f8b80f6ebe0e78313073a618a3545aa1da8ed0c5dc"
     }
   ],
   "coverage": {
@@ -348,7 +350,7 @@
         "rows_emitted": "24",
         "values_missing": "0",
         "values_suppressed": "0",
-        "values_flagged_three_respondents": "0",
+        "values_flagged_three_respondents": "8",
         "notes": ""
       },
       {
@@ -396,7 +398,7 @@
         "rows_emitted": "88",
         "values_missing": "0",
         "values_suppressed": "0",
-        "values_flagged_three_respondents": "0",
+        "values_flagged_three_respondents": "11",
         "notes": "Seven regional groups plus the provincial total. Aggregated SEPM only; hardwoods and poplars are not regionalised in the 2022 compilation."
       }
     ],
@@ -404,14 +406,14 @@
       {
         "source_id": "main_2022",
         "source_table": "T1",
-        "source_page": "13",
+        "source_page": "7",
         "title_fr": "Profil des repondants et volumes de GA",
         "parsed_status": "not_parsed_context_only",
         "rows_emitted": "0",
         "values_missing": "0",
         "values_suppressed": "0",
         "values_flagged_three_respondents": "0",
-        "notes": "Sampling profile, not a cost/revenue table. Questionnaire counts (SEPM 37, feuillus durs 18, peupliers 9, thuyas 4, pins 3, total 70) are recorded in the manifest."
+        "notes": "Sampling profile, not a cost/revenue table. Questionnaire counts (SEPM 37, feuillus durs 18, peupliers 12, thuyas 4, pins 3, total 70) are recorded in the manifest."
       },
       {
         "source_id": "main_2022",
@@ -507,7 +509,7 @@
     "grade_level_data": false,
     "questionnaire_counts": {
       "sepm": 37,
-      "peupliers": 9,
+      "peupliers": 12,
       "feuillus_durs": 18,
       "thuyas": 4,
       "pins": 3,
@@ -519,8 +521,17 @@
     "non_finite_values": 0,
     "unexpected_negative_values": 0,
     "unexpected_units": 0,
+    "unexpected_sign_conventions": 0,
     "negative_value_count": 48,
-    "three_respondent_value_count": 109,
+    "three_respondent_value_count": 128,
+    "sign_convention_counts": {
+      "negative_credit_or_loss": 70,
+      "physical_quantity": 32,
+      "positive_cost": 483,
+      "positive_revenue": 44,
+      "signed_gain_loss": 5,
+      "signed_net": 26
+    },
     "reconciliations": [
       {
         "check": "T3/QC/sepm/2022/total harvest components -> harvest_total",
@@ -748,6 +759,22 @@
         "status": "pass"
       },
       {
+        "check": "T19/QC/sepm/2022/byproduct byproduct components -> total",
+        "computed": null,
+        "reported": 20.23,
+        "difference": null,
+        "status": "skipped_suppressed_component",
+        "note": "Source suppresses wood_residues; the printed total is retained without reconciliation over a partial component set."
+      },
+      {
+        "check": "T19/QC/feuillus_durs/2022/byproduct byproduct components -> total",
+        "computed": null,
+        "reported": 53.89,
+        "difference": null,
+        "status": "skipped_suppressed_component",
+        "note": "Source suppresses shavings, wood_residues; the printed total is retained without reconciliation over a partial component set."
+      },
+      {
         "check": "T20/QC/sepm/2022/total procurement components -> before-transfer total",
         "computed": 81.4,
         "reported": 81.4,
@@ -916,7 +943,7 @@
         "status": "pass"
       }
     ],
-    "reconciliation_count": 56,
+    "reconciliation_count": 58,
     "reconciliation_exceptions": [
       {
         "check": "T14/QC/peupliers/2022/sciage overhead components -> total",
@@ -928,13 +955,33 @@
       }
     ],
     "reconciliation_failures": [],
+    "reconciliation_skipped_suppressed": [
+      {
+        "check": "T19/QC/sepm/2022/byproduct byproduct components -> total",
+        "computed": null,
+        "reported": 20.23,
+        "difference": null,
+        "status": "skipped_suppressed_component",
+        "note": "Source suppresses wood_residues; the printed total is retained without reconciliation over a partial component set."
+      },
+      {
+        "check": "T19/QC/feuillus_durs/2022/byproduct byproduct components -> total",
+        "computed": null,
+        "reported": 53.89,
+        "difference": null,
+        "status": "skipped_suppressed_component",
+        "note": "Source suppresses shavings, wood_residues; the printed total is retained without reconciliation over a partial component set."
+      }
+    ],
     "spot_checks": [
       {
         "source_table": "REG",
         "region_code": "R09",
         "species_group": "sepm",
-        "component": "procurement_total_after_transfers",
+        "survey_year": 2022,
         "product_or_grade": "total",
+        "component": "procurement_total_after_transfers",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 118.1,
         "parsed_value": 118.1,
@@ -944,8 +991,10 @@
         "source_table": "REG",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "procurement_total_before_transfers",
+        "survey_year": 2022,
         "product_or_grade": "total",
+        "component": "procurement_total_before_transfers",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 81.4,
         "parsed_value": 81.4,
@@ -955,8 +1004,10 @@
         "source_table": "T3",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "harvest_total",
+        "survey_year": 2022,
         "product_or_grade": "total",
+        "component": "harvest_total",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 31.42,
         "parsed_value": 31.42,
@@ -966,8 +1017,10 @@
         "source_table": "T5",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "road_total_after_prccm",
+        "survey_year": 2022,
         "product_or_grade": "total",
+        "component": "road_total_after_prccm",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 15.52,
         "parsed_value": 15.52,
@@ -977,8 +1030,10 @@
         "source_table": "T16",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "net_revenue",
+        "survey_year": 2022,
         "product_or_grade": "lumber",
+        "component": "net_revenue",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 183.74,
         "parsed_value": 183.74,
@@ -988,8 +1043,10 @@
         "source_table": "T19",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "byproduct_total",
+        "survey_year": 2022,
         "product_or_grade": "byproduct",
+        "component": "byproduct_total",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 20.23,
         "parsed_value": 20.23,
@@ -999,8 +1056,10 @@
         "source_table": "T22",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "total_revenue",
+        "survey_year": 2022,
         "product_or_grade": "total",
+        "component": "total_revenue",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 201.22,
         "parsed_value": 201.22,
@@ -1010,8 +1069,10 @@
         "source_table": "A2",
         "region_code": "QC",
         "species_group": "sepm",
-        "component": "harvest",
+        "survey_year": 2022,
         "product_or_grade": "total",
+        "component": "harvest",
+        "subcomponent": "",
         "unit": "CAD/m3",
         "pdf_value": 31.42,
         "parsed_value": 31.42,
@@ -1033,6 +1094,11 @@
     "The 2021-22 silviculture surveys are downloaded for provenance only; they are a separate treatment-cost dataset and are not merged here.",
     "Table 10 compensation sub-lines are not a complete decomposition of the compensations total; do not replace the total with their sum.",
     "Forest-road component rows include PRCCM rebates. The after-PRCCM total equals their sum; the before-PRCCM total adds the rebates back.",
+    "PRCCM rebates sit inside T10/T20 transfers_total; do not add T5 road_total_after_prccm to T10 transfers_total (double count). T20/REG road is gross.",
+    "T2/T21 Achats de bois (livre) is purchased-wood procurement cost, not observed log-sale revenue; T2 minus T20 is a procurement-channel cost spread, not forest-sector net value.",
+    "T20 excludes species gain/loss (SEPM -2.75 CAD/m3, hardwood sawlog -1.85, poplar trituration -6.80); compare it with T22 only when this exclusion is flagged.",
+    "Table 19 by-product totals are not reconciled over a partial component set because the source suppresses at least one component; the skipped checks are recorded in validation.reconciliation_skipped_suppressed.",
+    "Three-respondent flags include red PDF cells, all regional R09 rows (sample_n=3), and T20 peupliers-trituration rows whose basis is red-flagged in T3/T5/T10/T21 even though T20 prints them in black.",
     "Annex 1 repeats Tables 2-22 and is not emitted separately; it is used only as a cross-check."
   ],
   "merge_policy": {
@@ -1040,5 +1106,42 @@
     "status": "standalone",
     "reason": "Observed survey aggregates with explicit regional and species aggregation. The ledger is not modified by this extraction.",
     "recommended_use": "Benchmark or calibration evidence for Quebec procurement, transformation, delivered revenue, and by-product values; not a direct row-level model input."
-  }
+  },
+  "accounting_caveats": [
+    {
+      "id": "t2_t21_purchased_wood_procurement_cost",
+      "tables": [
+        "T2",
+        "T21"
+      ],
+      "statement": "T2/T21 Achats de bois (livre) is the buyer-side purchased-wood procurement cost. It includes the wood purchase, transfers to the State, transport/unloading, and road costs where applicable. The 107.22 CAD/m3 SEPM value is therefore not observed log-sale revenue and must not be treated as stumpage or forest-sector revenue."
+    },
+    {
+      "id": "t20_bgad_is_a_parallel_supply_channel",
+      "tables": [
+        "T20",
+        "T21"
+      ],
+      "statement": "T20's 106.41 CAD/m3 SEPM value is the parallel BGAD supply channel (harvest, road, haul, hosting, other costs, plus transfers). The 107.22 - 106.41 = 0.81 CAD/m3 difference is a procurement-channel cost spread between different respondent samples, not forest-sector net value. The same caution applies to hardwood sawlog (-14.53) and poplar trituration (-9.45)."
+    },
+    {
+      "id": "prccm_rebates_are_inside_transfers_total",
+      "tables": [
+        "T5",
+        "T10",
+        "T20",
+        "REG"
+      ],
+      "statement": "PRCCM road rebates are included in T10/T20 transfers_total (SEPM -1.06 = -0.69 - 0.33 - 0.04), not in T20 road. T5 road_total_after_prccm (15.52 SEPM) is already net of PRCCM and must not be combined with T10 transfers_total (25.01), which would double count the rebate. T20/REG road is gross (access_cost_gross, 16.58 SEPM)."
+    },
+    {
+      "id": "t20_excludes_species_gain_loss",
+      "tables": [
+        "T3",
+        "T20",
+        "T22"
+      ],
+      "statement": "T20 excludes species gain/loss by design: SEPM -2.75, hardwood sawlog -1.85, and poplar trituration -6.80 CAD/m3. Those values appear in T3 and in the T22 revenue synthesis. Any comparison of delivered wood value with T20 procurement costs must flag this exclusion; the SEPM item is larger than the entire 0.81 CAD/m3 purchased-vs-BGAD spread."
+    }
+  ]
 }

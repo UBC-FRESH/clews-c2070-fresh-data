@@ -101,7 +101,10 @@ PDF page 1.
    table says otherwise.
 4. Detect red value cells directly from PDF character colour
    `(0.933, 0.0, 0.0)` and mark them `three_respondents`. This is how the
-   report flags means based on exactly three respondents.
+   report flags means based on exactly three respondents. The same flag is
+   applied to every regional R09 row because its published `sample_n` is 3, and
+   to the T20 peupliers-trituration rows because their basis is red-flagged in
+   T3/T5/T10/T21 even though T20 prints the synthesis cells in black.
 5. Map each row label and column to a canonical component, species group, and
    product/use. An unknown numeric row is a hard extraction failure.
 6. Emit only numeric observations in the survey CSV. Suppressed and missing
@@ -115,8 +118,9 @@ Parser: `scripts/national/extract_qc_cost_survey_2022.py`.
 
 ## Transformations and non-transformations
 
-- Currency: all monetary values are nominal CAD as published in the 2022
-  survey. No deflation, indexing, or exchange-rate conversion.
+- Currency: all monetary values are nominal CAD of the survey year (2022 for
+  the main and regional tables; 2014, 2019, or 2022 for Table A2 rows). No
+  deflation, indexing, or exchange-rate conversion.
 - Volume basis: `$/m3` is per cubic metre of merchantable wood as defined by the
   survey. Transformation costs use merchantable solid volume entering the mill.
   By-product `$/m3` uses merchant and non-merchant volume transformed, as stated
@@ -133,6 +137,29 @@ Parser: `scripts/national/extract_qc_cost_survey_2022.py`.
 - Table 11 drying costs by species are non-additive breakdown values. They are
   labelled `observation_kind=species_breakdown_non_additive` and must not be
   summed with the drying total.
+
+## Accounting caveats for net-value comparison
+
+- **Purchased-wood cost, not revenue.** `T2`/`T21` `Achats de bois (livré)`
+  (`107.22 CAD/m3` SEPM) is the buyer-side procurement cost of public-forest
+  wood. It includes the purchase, transfers to the State, transport and
+  unloading, and road costs where applicable. It is not observed log-sale
+  revenue and must not be presented as stumpage or forest-sector gross value.
+  `T21` repeats the `T2` purchase values as a synthesis row; do not add them.
+- **BGAD is a parallel channel.** `T20`'s `106.41 CAD/m3` SEPM is the BGAD
+  supply channel. The `107.22 - 106.41 = 0.81 CAD/m3` difference is a
+  procurement-channel cost spread across different respondent samples, not
+  forest-sector net value. The hardwood sawlog and poplar trituration spreads
+  (`-14.53` and `-9.45`) have the same interpretation.
+- **PRCCM placement.** PRCCM road rebates are inside `T10`/`T20`
+  `transfers_total` (SEPM `-1.06 = -0.69 - 0.33 - 0.04`). `T5`
+  `road_total_after_prccm` (`15.52`) is net of PRCCM; `T20` road (`16.58`) is
+  gross (`access_cost_gross`). Combining the after-PRCCM road total with
+  `T10.transfers_total` (`25.01`) double counts the rebate.
+- **Species gain/loss exclusion.** `T20` excludes species gain/loss by design.
+  SEPM is `-2.75 CAD/m3`, hardwood sawlog `-1.85`, and poplar trituration
+  `-6.80`. The items are carried in `T3` and `T22`; any comparison must state
+  the exclusion.
 
 ## Confidentiality and aggregation
 
@@ -152,6 +179,15 @@ prints 2.06, 16.51, 0.05, 0.12, -4.87 and total 13.87 for the same cells. The
 body row appears to repeat pins-column values. The dataset keeps the body values
 as printed and records the discrepancy as
 `known_source_inconsistency` in the manifest; it does not adjust either table.
+
+## Suppressed Table 19 components
+
+Table 19 suppresses at least one by-product component: `Résidus de bois` for
+SEPM and `Rabotures` plus `Résidus de bois` for feuillus durs. The printed
+totals are retained, but the additive check is recorded as
+`skipped_suppressed_component` rather than reconciled over a partial component
+set. The skipped checks are listed in
+`validation.reconciliation_skipped_suppressed` in `manifest.json`.
 
 ## Citation
 
