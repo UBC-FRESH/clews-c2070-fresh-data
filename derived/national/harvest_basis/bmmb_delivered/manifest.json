@@ -1,0 +1,461 @@
+{
+  "dataset": "bmmb_delivered",
+  "version": "0.1.0",
+  "generated_utc": "2026-11-21T20:35:18Z",
+  "generator": "scripts/national/extract_bmmb_delivered.py",
+  "source": {
+    "id": "qc_bmmb_auction_archive",
+    "name": "Bureau de mise en marché des bois - ventes archivées",
+    "access": "public HTTP GET; no authentication; redirects to encheres.forets.gouv.qc.ca",
+    "index_url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Archive",
+    "export": {
+      "requested_url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Export?IsArchive=True",
+      "final_url": "https://encheres.forets.gouv.qc.ca/Auction/Auctions/Export?IsArchive=True",
+      "http_status": 200,
+      "content_type": "application/vnd.ms-excel",
+      "content_disposition": "attachment; filename=VentesArchivees.xls",
+      "bytes": 9795584,
+      "sha256": "48c11fff0cb0f556be4d81cb454ff1468a51df4493b3a2c13ef3a58b72b2b3ce",
+      "retrieved_utc": "2026-11-21T20:29:05Z",
+      "sheet": "Sheet0",
+      "data_rows": 3796
+    },
+    "archive_page": {
+      "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Archive",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 52875,
+      "sha256": "75ab4d0d49c1266b8b6f185a4f78360d26e7bbd93727b6029cc3abdbf2914413",
+      "retrieved_utc": "2026-11-21T20:29:23Z"
+    },
+    "detail_pages": [
+      {
+        "sale_id": "CS201206004",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/7DGtrOwldG~r0RtqfRu~cA",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 28036,
+        "sha256": "42e750aa7300068e8ee9439e9e1c37dd7844e424b7c2f64b7fe5902bf8c4b80b",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "CS201207001",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/Ceon1Cdh9AJRzlfI5jWTDA",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 27064,
+        "sha256": "e0d1512a8e4c1b4c87379af7a5661722775914eb8190a3188bb49349554b92ee",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "CS201408201",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/hzyVdd3Eucsp3L1e3SNfnQ",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 25334,
+        "sha256": "d4edb2356442fff7a6844b80567c19d5d5e4d71fbae8172e3922c773c2748aa4",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "CS201506201",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/7Vk3aGemOkSSKOUgonsVDQ",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 25812,
+        "sha256": "ae53322ac844f5d4d9b3b4f96c825d89b79e316fb7aa36fc51866986307a3603",
+        "retrieved_utc": "2026-11-21T20:30:10Z"
+      },
+      {
+        "sale_id": "SE201111001",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/KF4zZdpo5SnetfDqO97WtA",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26041,
+        "sha256": "1975f179e72cfd523e0d09b6de63d9271bb6f737e2e26fac37c4fc0b874d5333",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201111002",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/aRxn~xQfZeZ5OZnZ8Q3F1Q",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26053,
+        "sha256": "6e4611f2c2871a1a76d2122b9c57de0654ed9f004aea47c77229baf4fa0a36eb",
+        "retrieved_utc": "2026-11-21T20:30:12Z"
+      },
+      {
+        "sale_id": "SE201111003",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/W0FZ6Ive3rcGVquNgkKomQ",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 24978,
+        "sha256": "2731a7fcd83cfcd9cc133aea36ffee38654069811af853219321993b7b4d1266",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201111004",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/vFzA9lxiwLUiGy4vcj1svw",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 24341,
+        "sha256": "328b637d4f3826940337953a7c837208d3f5f47a0765d84c29ad895a38c8b21e",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201111009",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/mqeX5efQSVOPF~zGkjtt8g",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26042,
+        "sha256": "60dd50788a015123a1ca1818704bffecb53b049c34129c1dfd641531943a26ea",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201503010",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/UDREuZvWNJ3MYY1VKCIgeQ",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 28341,
+        "sha256": "14d9084ddec64e7fd90a8dd3c29451d06b67f156a1e545981cf37f681729bac3",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201503011",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/B13icFKHwFGzMV-1fIdHBg",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26776,
+        "sha256": "9ebc36ddf9c93f7a412b82257cd00c92d8b024e313796d185493b379020e2739",
+        "retrieved_utc": "2026-11-21T20:30:10Z"
+      },
+      {
+        "sale_id": "SE201503020",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/duPAB0O2OuIZ6DaW0~uhSg",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 28091,
+        "sha256": "749022e3599359051a4da547691e41593685cb50b7132aad614dc5a306a9cea3",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201503021",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/omdIe37FTXfgvGSkbmGGhA",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26149,
+        "sha256": "cb4c89a17ca636552b990d45f20f8c3cde38e6bba85b5342f94a20571034eb9c",
+        "retrieved_utc": "2026-11-21T20:30:10Z"
+      },
+      {
+        "sale_id": "SE201503022",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/x7SeB2LXv0GGYQwZmfBG2Q",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26093,
+        "sha256": "b19aeff19074e6b89d65d782d52f0aea5c550d4f3ac81f4f7ea8b7c369a4369f",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SE201503023",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/fRLmdmEUBVZE3eL2HS8lQg",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 28093,
+        "sha256": "2da2dd0c4db3609341aeebca06f81ae6e1f76b4fe45f8df20819f22ab7b04289",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SO201111011",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/dqQo7waUq8Kf14O30EqHWw",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 26627,
+        "sha256": "5a6803fe762d487d63fdd0af5f632f3c317199e7fc3fd1068b8c143d138d2c8a",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      },
+      {
+        "sale_id": "SO201206009",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/rPrUjlMV3lk9Ze41W3qJww",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 29189,
+        "sha256": "548b65e2c6fed9a582c9791999eaa4600a87bf1fea5c2f07fb6814f66e195db6",
+        "retrieved_utc": "2026-11-21T20:30:11Z"
+      },
+      {
+        "sale_id": "SO201207001",
+        "url": "https://bmmb.gouv.qc.ca/Auction/Auctions/Details/bu~3B~oAsb-jKkWDoXmRyA",
+        "http_status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 29004,
+        "sha256": "3e7e85c262dc045ef8e61d35f58acc75f25903fd35f5f676adc6463698e63f55",
+        "retrieved_utc": "2026-11-21T20:30:09Z"
+      }
+    ],
+    "result_pdfs": [
+      {
+        "sale_id": "CS201206004",
+        "url": "https://bmmb.gouv.qc.ca/Auction/File/GetHashable/mBd9BQq1g9MoQnSHIOsUAQ",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 173296,
+        "sha256": "0f5c16ca3c79fef06acc5b31a7411a43fb4b50322d96ee6440b0c2b36f800101",
+        "retrieved_utc": "2026-11-21T20:30:23Z",
+        "used_for_price": true
+      },
+      {
+        "sale_id": "CS201207001",
+        "url": "https://bmmb.gouv.qc.ca/Auction/File/GetHashable/oexkf1webqUU3HnRc1DggA",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": 175176,
+        "sha256": "2038759b3262627704e1ca3f957706b9ff21bd9933f8d6cc4a86e716b4d096b1",
+        "retrieved_utc": "2026-11-21T20:30:28Z",
+        "used_for_price": true
+      }
+    ]
+  },
+  "filter": {
+    "sale_type": "Livré à destination",
+    "excluded_sale_types": [
+      "Récolté",
+      "Sur pied selon mesurage",
+      "Sur pied selon inventaire"
+    ],
+    "observed_price_rule": "awarded sale with Prix de vente, or with a result PDF when the export price is blank"
+  },
+  "counts": {
+    "source_rows": 3796,
+    "delivered_sales": 18,
+    "delivered_awarded": 13,
+    "delivered_observed_prices": 13,
+    "delivered_volume_m3": 159850.0,
+    "delivered_awarded_volume_m3": 108750.0,
+    "delivered_observed_value_cad": 3878958.5,
+    "delivered_partial_award_sales": 2,
+    "delivered_partial_award_value_cad": 436325.0,
+    "delivered_rate_computable_volume_m3": 89900.0,
+    "delivered_rate_computable_value_cad": 3442633.5,
+    "detail_price_checks": 11,
+    "checks": [
+      "source_row_count=3796",
+      "delivered_sale_count=18",
+      "delivered_only_sale_type",
+      "no_duplicate_sale_ids",
+      "non_negative_volume_and_price",
+      "partial_award_rate_not_computed",
+      "awarded_delivered_rows_have_price",
+      "unsold_rows_have_no_price",
+      "sale_year_matches_auction_end_year",
+      "species_volume_reconciles_to_sale_volume",
+      "summary_reconciles_to_export",
+      "detail_prices_match_export"
+    ]
+  },
+  "outputs": [
+    {
+      "file": "bmmb_delivered_sales.csv",
+      "rows": 18,
+      "bytes": 14587,
+      "sha256": "7bc662327579ce7da45271d17d1623aa90ec2c470e85a1928bd1f86f1890c3a2",
+      "columns": [
+        "sale_id",
+        "sale_year",
+        "auction_end_date",
+        "auction_end_year",
+        "year_mismatch",
+        "region_bmmb",
+        "ua",
+        "sector_name",
+        "latitude",
+        "longitude",
+        "tenure",
+        "auction_type",
+        "sale_type",
+        "sale_type_family",
+        "status",
+        "awarded",
+        "volume_m3",
+        "volume_optional_m3",
+        "total_cad",
+        "price_cad_m3",
+        "price_cad_m3_lower_bound",
+        "price_unit_basis",
+        "partial_award",
+        "currency_basis",
+        "observed",
+        "observation_type",
+        "price_source",
+        "price_source_url",
+        "estimated_total_cad",
+        "estimated_cad_m3",
+        "product_scope",
+        "species_scope",
+        "quality",
+        "aggregation_level",
+        "species_volume_line_count",
+        "detail_url",
+        "export_row_number",
+        "notes"
+      ]
+    },
+    {
+      "file": "bmmb_delivered_species_volume.csv",
+      "rows": 156,
+      "bytes": 19591,
+      "sha256": "b20a26a87bd64c30b37c934a839fc9a919f4b4e5b94c149425392f751ca24dde",
+      "columns": [
+        "sale_id",
+        "sale_year",
+        "species",
+        "product",
+        "requirement",
+        "volume_m3",
+        "quality",
+        "price_cad_m3",
+        "total_cad",
+        "observed_volume",
+        "observed_price",
+        "aggregation_level",
+        "source"
+      ]
+    },
+    {
+      "file": "bmmb_sale_type_summary.csv",
+      "rows": 46,
+      "bytes": 10034,
+      "sha256": "66d22172f74c570097e0b9bb8fe37d3f78b83c31213f3217622f839994ca1dea",
+      "columns": [
+        "sale_type",
+        "sale_type_family",
+        "sale_year",
+        "sale_count",
+        "awarded_count",
+        "unsold_count",
+        "cancelled_count",
+        "other_status_count",
+        "observed_price_count",
+        "partial_award_count",
+        "volume_m3",
+        "volume_optional_m3",
+        "volume_awarded_m3",
+        "volume_awarded_priced_m3",
+        "rate_computable_volume_m3",
+        "reported_sale_value_cad",
+        "rate_computable_value_cad",
+        "partial_award_value_cad",
+        "rate_cad_m3",
+        "value_semantics",
+        "rate_unit_basis",
+        "is_delivered",
+        "notes"
+      ]
+    }
+  ],
+  "detail_price_cross_checks": [
+    {
+      "sale_id": "SE201111009",
+      "export_total_cad": 200737.0,
+      "detail_total_cad": 200737.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201111001",
+      "export_total_cad": 72250.0,
+      "detail_total_cad": 72250.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201111002",
+      "export_total_cad": 67400.0,
+      "detail_total_cad": 67400.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "CS201408201",
+      "export_total_cad": 221018.0,
+      "detail_total_cad": 221018.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201503010",
+      "export_total_cad": 368501.5,
+      "detail_total_cad": 368501.5,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201503011",
+      "export_total_cad": 369652.5,
+      "detail_total_cad": 369652.5,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201503020",
+      "export_total_cad": 915405.5,
+      "detail_total_cad": 915405.5,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201503021",
+      "export_total_cad": 197272.0,
+      "detail_total_cad": 197272.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201503022",
+      "export_total_cad": 103142.0,
+      "detail_total_cad": 103142.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "SE201503023",
+      "export_total_cad": 371155.0,
+      "detail_total_cad": 371155.0,
+      "status": "pass"
+    },
+    {
+      "sale_id": "CS201506201",
+      "export_total_cad": 556100.0,
+      "detail_total_cad": 556100.0,
+      "status": "pass"
+    }
+  ],
+  "validation": {
+    "status": "pass",
+    "source_rows": 3796,
+    "delivered_sales": 18,
+    "delivered_awarded": 13,
+    "delivered_observed_prices": 13,
+    "delivered_volume_m3": 159850.0,
+    "delivered_awarded_volume_m3": 108750.0,
+    "delivered_observed_value_cad": 3878958.5,
+    "delivered_partial_award_sales": 2,
+    "delivered_partial_award_value_cad": 436325.0,
+    "delivered_rate_computable_volume_m3": 89900.0,
+    "delivered_rate_computable_value_cad": 3442633.5,
+    "detail_price_checks": 11,
+    "checks": [
+      "source_row_count=3796",
+      "delivered_sale_count=18",
+      "delivered_only_sale_type",
+      "no_duplicate_sale_ids",
+      "non_negative_volume_and_price",
+      "partial_award_rate_not_computed",
+      "awarded_delivered_rows_have_price",
+      "unsold_rows_have_no_price",
+      "sale_year_matches_auction_end_year",
+      "species_volume_reconciles_to_sale_volume",
+      "summary_reconciles_to_export",
+      "detail_prices_match_export"
+    ]
+  },
+  "gaps": [
+    "Only 18 delivered-to-destination sales exist in the archive; the most recent delivered sale ends in 2015.",
+    "The sale price is a total lot value and is not published by species or grade; no allocation is made.",
+    "The detail pages do not name the destination; the price point is delivered-to-destination, not a confirmed mill gate.",
+    "The two 2012 result PDFs note that some offered volume was not awarded; no awarded volume is published, so a full rate is not computed and only a lower bound based on offered volume is reported.",
+    "The sale type implies a delivered wood sale; the archive does not publish whether harvest, haul, or both are included, or the destination.",
+    "Prices are nominal CAD for 2011, 2012, 2014, and 2015; no deflator is applied.",
+    "BMMB auctioned volume is a sample of Crown volume, not the provincial harvest population."
+  ]
+}
