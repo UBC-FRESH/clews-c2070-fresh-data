@@ -1,0 +1,1372 @@
+{
+  "product": "national operable merchantable-forest screening proxy v2",
+  "status": "screening proxy; NOT a legal THLB, AAC landbase, or operability model; no slope screen because no national DEM is available",
+  "generated_at_utc": "2026-11-21T20:32:35+00:00",
+  "runtime_seconds": 281.621,
+  "command": "scripts/national/build_operable_proxy_v2.py --workers 24 --out-dir data/derived/national/managed_landbase/operable_proxy_v2",
+  "resolution_m": 30.0,
+  "aggregation_block_m": 990.0,
+  "screens": {
+    "age": {
+      "source": "SCANFI_age_median_2025_v2_20260119.tif",
+      "ages_excluded_below_years": [
+        20,
+        30
+      ],
+      "assumption": "Stands below 20 or 30 years are treated as non-merchantable for the screen; this is stricter than the v1 height/biomass/closure thresholds and is a screening convention, not a legal rule."
+    },
+    "disturbance": {
+      "source": "NBAC_2020_20260513.zip",
+      "years_available": [
+        2020
+      ],
+      "screens": [
+        "baseline",
+        "exclude_2020_burn"
+      ],
+      "assumption": "A 30 m pixel is burned when its centre falls inside a 2020 NBAC fire polygon. NBAC 2020 is an annual fire layer, not a cumulative severity stack."
+    },
+    "road": {
+      "source": "NRN province bundles in data/raw/nrn",
+      "distance_classes_km": [
+        5,
+        10,
+        20
+      ],
+      "access_screen_km": 20,
+      "method": "Road segments rasterised at 990 m with all-touched; Euclidean distance transform gives nearest-public-road distance at block centres.",
+      "caveat": "Public NRN roads only; resource, industrial, winter, and decommissioned roads are absent.",
+      "available": true
+    },
+    "slope": {
+      "status": "gap",
+      "detail": "No national DEM in the workspace; no slope filter applied."
+    }
+  },
+  "national": {
+    "base": {
+      "label": "base merchantable, no v2 screen",
+      "age_min_years": null,
+      "disturbance_screen": "none",
+      "road_max_km": null,
+      "screened_merchantable_ha": 332599169.8799782,
+      "excluded_ha": 0.0,
+      "operable_proxy_ha": 144689810.13119876,
+      "share_of_base_merchantable": 1.0,
+      "share_of_treed": 0.7872621355545709
+    },
+    "age_ge_20": {
+      "label": "base and SCANFI median age >= 20 years",
+      "age_min_years": 20,
+      "disturbance_screen": "none",
+      "road_max_km": null,
+      "screened_merchantable_ha": 311515086.7799795,
+      "excluded_ha": 21084083.099998757,
+      "operable_proxy_ha": 134557672.561597,
+      "share_of_base_merchantable": 0.9366081307190062,
+      "share_of_treed": 0.7373561171676195
+    },
+    "age_ge_30": {
+      "label": "base and SCANFI median age >= 30 years",
+      "age_min_years": 30,
+      "disturbance_screen": "none",
+      "road_max_km": null,
+      "screened_merchantable_ha": 294665554.25997806,
+      "excluded_ha": 37933615.62000019,
+      "operable_proxy_ha": 127368077.36014973,
+      "share_of_base_merchantable": 0.8859479546094813,
+      "share_of_treed": 0.6974732787360642
+    },
+    "disturb_2020_excluded": {
+      "label": "base excluding NBAC 2020 burned pixels",
+      "age_min_years": null,
+      "disturbance_screen": "nbac_2020_excluded",
+      "road_max_km": null,
+      "screened_merchantable_ha": 332543498.7599782,
+      "excluded_ha": 55671.12000006228,
+      "operable_proxy_ha": 144666964.8787528,
+      "share_of_base_merchantable": 0.9998326179827205,
+      "share_of_treed": 0.787130362030194
+    },
+    "road_le_5km": {
+      "label": "base within 5 km of an NRN road",
+      "age_min_years": null,
+      "disturbance_screen": "none",
+      "road_max_km": 5,
+      "screened_merchantable_ha": 121584355.82998967,
+      "excluded_ha": 211014814.0499886,
+      "operable_proxy_ha": 69598439.97878088,
+      "share_of_base_merchantable": 0.36555820591453864,
+      "share_of_treed": 0.28779013385777724
+    },
+    "road_le_10km": {
+      "label": "base within 10 km of an NRN road",
+      "age_min_years": null,
+      "disturbance_screen": "none",
+      "road_max_km": 10,
+      "screened_merchantable_ha": 156499928.9099877,
+      "excluded_ha": 176099240.96999058,
+      "operable_proxy_ha": 87973536.74217592,
+      "share_of_base_merchantable": 0.47053613803805433,
+      "share_of_treed": 0.370435284887439
+    },
+    "road_le_20km": {
+      "label": "base within 20 km of an NRN road",
+      "age_min_years": null,
+      "disturbance_screen": "none",
+      "road_max_km": 20,
+      "screened_merchantable_ha": 197613285.2099848,
+      "excluded_ha": 134985884.66999346,
+      "operable_proxy_ha": 107198111.63508548,
+      "share_of_base_merchantable": 0.5941484618897143,
+      "share_of_treed": 0.46775058694376004
+    },
+    "screen_age20_disturb": {
+      "label": "age >= 20 and not NBAC 2020 burned",
+      "age_min_years": 20,
+      "disturbance_screen": "nbac_2020_excluded",
+      "road_max_km": null,
+      "screened_merchantable_ha": 311486072.48997957,
+      "excluded_ha": 21113097.3899987,
+      "operable_proxy_ha": 134545009.14888334,
+      "share_of_base_merchantable": 0.9365208957147503,
+      "share_of_treed": 0.7372874403518739
+    },
+    "screen_age30_disturb": {
+      "label": "age >= 30 and not NBAC 2020 burned",
+      "age_min_years": 30,
+      "disturbance_screen": "nbac_2020_excluded",
+      "road_max_km": null,
+      "screened_merchantable_ha": 294637739.3099781,
+      "excluded_ha": 37961430.570000134,
+      "operable_proxy_ha": 127355950.54757716,
+      "share_of_base_merchantable": 0.8858643255673223,
+      "share_of_treed": 0.6974074407577399
+    },
+    "screen_core20": {
+      "label": "age >= 20, not NBAC 2020 burned, within 20 km of road",
+      "age_min_years": 20,
+      "disturbance_screen": "nbac_2020_excluded",
+      "road_max_km": 20,
+      "screened_merchantable_ha": 184326773.3099854,
+      "excluded_ha": 148272396.56999293,
+      "operable_proxy_ha": 99870185.02766079,
+      "share_of_base_merchantable": 0.5542009421626085,
+      "share_of_treed": 0.4363014172532904
+    },
+    "screen_core30": {
+      "label": "age >= 30, not NBAC 2020 burned, within 10 km of road",
+      "age_min_years": 30,
+      "disturbance_screen": "nbac_2020_excluded",
+      "road_max_km": 10,
+      "screened_merchantable_ha": 137632781.51999027,
+      "excluded_ha": 194966388.359988,
+      "operable_proxy_ha": 77050071.63941938,
+      "share_of_base_merchantable": 0.41380975655969454,
+      "share_of_treed": 0.3257767526625022
+    }
+  },
+  "by_province": {
+    "AB": {
+      "scanfi_forest_ha": 38345566.40999271,
+      "base_merchantable_ha": 32029496.459993772,
+      "managed_proxy_ha": 21787055.86715675,
+      "base_operable_proxy_ha": 18401454.479620453,
+      "managed_share": 0.5681766604829477,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 32029496.459993772,
+          "operable_proxy_ha": 18401454.479620453
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 28741985.099996347,
+          "operable_proxy_ha": 16578524.175612455
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 27029340.17999603,
+          "operable_proxy_ha": 15563121.876289716
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 32027855.939993784,
+          "operable_proxy_ha": 18400684.923080243
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 17568800.369997162,
+          "operable_proxy_ha": 10703680.978070203
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 21433227.119997013,
+          "operable_proxy_ha": 12846534.716089819
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 25602953.579996515,
+          "operable_proxy_ha": 15127608.33416845
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 28741583.15999634,
+          "operable_proxy_ha": 16578362.79496906
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 27029033.549996026,
+          "operable_proxy_ha": 15563001.10083419
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 23321611.439996578,
+          "operable_proxy_ha": 13755394.559151463
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 18431783.819997095,
+          "operable_proxy_ha": 10958803.417776827
+        }
+      }
+    },
+    "BC": {
+      "scanfi_forest_ha": 66607736.939987905,
+      "base_merchantable_ha": 60432015.23999472,
+      "managed_proxy_ha": 54367229.95432232,
+      "base_operable_proxy_ha": 49257580.36439983,
+      "managed_share": 0.8162299524348949,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 60432015.23999472,
+          "operable_proxy_ha": 49257580.36439983
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 54933688.5299954,
+          "operable_proxy_ha": 44617387.42146775
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 52540783.91999626,
+          "operable_proxy_ha": 42685167.47710971
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 60422745.77999472,
+          "operable_proxy_ha": 49250260.62311058
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 22832622.359999567,
+          "operable_proxy_ha": 18838130.76400071
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 32072339.33999876,
+          "operable_proxy_ha": 26409196.559104055
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 42156664.01999749,
+          "operable_proxy_ha": 34610302.058121584
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 54931260.239995405,
+          "operable_proxy_ha": 44615459.50634907
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 52538455.25999627,
+          "operable_proxy_ha": 42683321.11512711
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 38220978.95999783,
+          "operable_proxy_ha": 31316682.027491137
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 27260563.949999105,
+          "operable_proxy_ha": 22422124.225333244
+        }
+      }
+    },
+    "MB": {
+      "scanfi_forest_ha": 33753909.959998615,
+      "base_merchantable_ha": 23872338.90000002,
+      "managed_proxy_ha": 6904691.915503044,
+      "base_operable_proxy_ha": 5485367.3400049945,
+      "managed_share": 0.204559765777823,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 23872338.90000002,
+          "operable_proxy_ha": 5485367.3400049945
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 21785225.310000103,
+          "operable_proxy_ha": 5020415.204967033
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 21062419.110000037,
+          "operable_proxy_ha": 4861400.754811607
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 23856561.450000014,
+          "operable_proxy_ha": 5480284.851386169
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 6540211.800000094,
+          "operable_proxy_ha": 1843876.6050380892
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 9441138.330000073,
+          "operable_proxy_ha": 2590126.4673652593
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 13500429.20999998,
+          "operable_proxy_ha": 3632795.7417749534
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 21772710.45000011,
+          "operable_proxy_ha": 5015806.795532046
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 21050376.570000038,
+          "operable_proxy_ha": 4856969.581371724
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 12266200.080000013,
+          "operable_proxy_ha": 3341988.333737408
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 8377122.960000087,
+          "operable_proxy_ha": 2325583.7882084763
+        }
+      }
+    },
+    "NB": {
+      "scanfi_forest_ha": 6692497.649999632,
+      "base_merchantable_ha": 5616901.799999997,
+      "managed_proxy_ha": 2559456.057681037,
+      "base_operable_proxy_ha": 2136294.081110904,
+      "managed_share": 0.38243660162976345,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 5616901.799999997,
+          "operable_proxy_ha": 2136294.081110904
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 5177716.919999987,
+          "operable_proxy_ha": 1964621.8106037532
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 4703126.04,
+          "operable_proxy_ha": 1778833.6620679738
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 5616681.569999997,
+          "operable_proxy_ha": 2136209.873508503
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 5416439.580000001,
+          "operable_proxy_ha": 2046715.628373064
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 5594652.179999999,
+          "operable_proxy_ha": 2125668.9697749782
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 5616901.799999997,
+          "operable_proxy_ha": 2136294.081110904
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 5177653.739999987,
+          "operable_proxy_ha": 1964597.6529671021
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 4703067.18,
+          "operable_proxy_ha": 1778811.1562355382
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 5177653.739999987,
+          "operable_proxy_ha": 1964597.6529671021
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 4686343.0200000005,
+          "operable_proxy_ha": 1770827.874138233
+        }
+      }
+    },
+    "NL": {
+      "scanfi_forest_ha": 23531836.319998927,
+      "base_merchantable_ha": 21430183.31999933,
+      "managed_proxy_ha": 1106477.3136317094,
+      "base_operable_proxy_ha": 883914.7797446247,
+      "managed_share": 0.04702044067386917,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 21430183.31999933,
+          "operable_proxy_ha": 883914.7797446247
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 21225137.75999933,
+          "operable_proxy_ha": 871522.9196729555
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 20571849.629999205,
+          "operable_proxy_ha": 837687.4091531745
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 21428821.97999934,
+          "operable_proxy_ha": 883914.7797446247
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 4914996.749999991,
+          "operable_proxy_ha": 571462.5355158262
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 6875775.359999993,
+          "operable_proxy_ha": 718658.55823107
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 9483521.579999942,
+          "operable_proxy_ha": 828565.4408325312
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 21224895.929999325,
+          "operable_proxy_ha": 871522.9196729555
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 20571614.9999992,
+          "operable_proxy_ha": 837687.4091531745
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 9380600.099999964,
+          "operable_proxy_ha": 816207.6473104737
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 6564495.330000069,
+          "operable_proxy_ha": 678294.3120523783
+        }
+      }
+    },
+    "NS": {
+      "scanfi_forest_ha": 4727696.939999726,
+      "base_merchantable_ha": 4414288.229999907,
+      "managed_proxy_ha": 1096400.95820068,
+      "base_operable_proxy_ha": 1023683.680972077,
+      "managed_share": 0.23191016093361172,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 4414288.229999907,
+          "operable_proxy_ha": 1023683.680972077
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 4134249.269999935,
+          "operable_proxy_ha": 960047.3970571109
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 3706248.689999907,
+          "operable_proxy_ha": 863341.4633224646
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 4414054.139999907,
+          "operable_proxy_ha": 1023627.5502459112
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 4316175.989999935,
+          "operable_proxy_ha": 1000071.4853818328
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 4399040.4299999075,
+          "operable_proxy_ha": 1020014.0671102282
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 4413751.0199999055,
+          "operable_proxy_ha": 1023554.3932543255
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 4134068.099999936,
+          "operable_proxy_ha": 960003.9851153183
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 3706088.0399999097,
+          "operable_proxy_ha": 863302.8693268675
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 4133531.069999935,
+          "operable_proxy_ha": 959874.7407172916
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 3690931.769999915,
+          "operable_proxy_ha": 859655.283544925
+        }
+      }
+    },
+    "NT": {
+      "scanfi_forest_ha": 43460564.12999662,
+      "base_merchantable_ha": 24529382.279998627,
+      "managed_proxy_ha": 821271.9214355645,
+      "base_operable_proxy_ha": 638786.103891078,
+      "managed_share": 0.01889694572254114,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 24529382.279998627,
+          "operable_proxy_ha": 638786.103891078
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 22886587.3499983,
+          "operable_proxy_ha": 568362.7008503596
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 21575994.209998764,
+          "operable_proxy_ha": 559349.1651702847
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 24527454.209998626,
+          "operable_proxy_ha": 638774.6157473908
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 1989033.4799999949,
+          "operable_proxy_ha": 123367.95032779778
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 3500289.0900000087,
+          "operable_proxy_ha": 206123.4117360512
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 6006789.540000022,
+          "operable_proxy_ha": 331391.2883368409
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 22886220.50999829,
+          "operable_proxy_ha": 568358.1184369614
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 21575638.349998776,
+          "operable_proxy_ha": 559344.8826332822
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 5370079.050000053,
+          "operable_proxy_ha": 298720.2983753199
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 3029985.2700000126,
+          "operable_proxy_ha": 184020.42400573066
+        }
+      }
+    },
+    "NU": {
+      "scanfi_forest_ha": 2834208.4500042857,
+      "base_merchantable_ha": 2114678.880004076,
+      "managed_proxy_ha": null,
+      "base_operable_proxy_ha": null,
+      "managed_share": null,
+      "coverage": "missing",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 2114678.880004076,
+          "operable_proxy_ha": null
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 2113605.630004076,
+          "operable_proxy_ha": null
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 1460098.5299997036,
+          "operable_proxy_ha": null
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 2114678.880004076,
+          "operable_proxy_ha": null
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 3110.219999999987,
+          "operable_proxy_ha": null
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 7794.2700000004,
+          "operable_proxy_ha": null
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 23474.790000003104,
+          "operable_proxy_ha": null
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 2113605.630004076,
+          "operable_proxy_ha": null
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 1460098.5299997036,
+          "operable_proxy_ha": null
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 23469.3000000031,
+          "operable_proxy_ha": null
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 4540.59000000006,
+          "operable_proxy_ha": null
+        }
+      }
+    },
+    "ON": {
+      "scanfi_forest_ha": 68517060.12000237,
+      "base_merchantable_ha": 53481550.49999781,
+      "managed_proxy_ha": 33808020.878311545,
+      "base_operable_proxy_ha": 30011171.696027674,
+      "managed_share": 0.4934248611820091,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 53481550.49999781,
+          "operable_proxy_ha": 30011171.696027674
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 51974484.119997725,
+          "operable_proxy_ha": 29072169.057951022
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 49445491.76999823,
+          "operable_proxy_ha": 27430028.334764168
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 53476730.99999781,
+          "operable_proxy_ha": 30010587.414727017
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 30750738.209999584,
+          "operable_proxy_ha": 21680598.596982535
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 36746952.83999977,
+          "operable_proxy_ha": 25166536.280843385
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 42136259.30999889,
+          "operable_proxy_ha": 27522188.24220654
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 51973570.43999772,
+          "operable_proxy_ha": 29071989.93586299
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 49444599.059998214,
+          "operable_proxy_ha": 27429857.58704224
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 40930876.88999877,
+          "operable_proxy_ha": 26720274.622504275
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 33542234.639998958,
+          "operable_proxy_ha": 22909242.44607267
+        }
+      }
+    },
+    "PE": {
+      "scanfi_forest_ha": 274471.8299999991,
+      "base_merchantable_ha": 250918.10999999856,
+      "managed_proxy_ha": null,
+      "base_operable_proxy_ha": null,
+      "managed_share": null,
+      "coverage": "missing",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 250918.10999999856,
+          "operable_proxy_ha": null
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 238058.45999999973,
+          "operable_proxy_ha": null
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 207455.3100000003,
+          "operable_proxy_ha": null
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 250918.10999999856,
+          "operable_proxy_ha": null
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 250885.97999999856,
+          "operable_proxy_ha": null
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 250918.10999999856,
+          "operable_proxy_ha": null
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 250918.10999999856,
+          "operable_proxy_ha": null
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 238058.45999999973,
+          "operable_proxy_ha": null
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 207455.3100000003,
+          "operable_proxy_ha": null
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 238058.45999999973,
+          "operable_proxy_ha": null
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 207455.3100000003,
+          "operable_proxy_ha": null
+        }
+      }
+    },
+    "QC": {
+      "scanfi_forest_ha": 81663538.49999607,
+      "base_merchantable_ha": 72180959.03999725,
+      "managed_proxy_ha": 28266254.399225753,
+      "base_operable_proxy_ha": 26158593.662059054,
+      "managed_share": 0.34613065902388146,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 72180959.03999725,
+          "operable_proxy_ha": 26158593.662059054
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 68790017.06999539,
+          "operable_proxy_ha": 24997722.066492837
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 64640580.479995325,
+          "operable_proxy_ha": 23446761.319988932
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 72173405.33999717,
+          "operable_proxy_ha": 26155632.771431908
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 18236789.369999677,
+          "operable_proxy_ha": 8946804.707802659
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 24020326.34999917,
+          "operable_proxy_ha": 11761820.961474141
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 31600001.4299991,
+          "operable_proxy_ha": 15258762.421467587
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 68788241.81999545,
+          "operable_proxy_ha": 24996979.232926436
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 64638860.12999537,
+          "operable_proxy_ha": 23446040.708402075
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 29972635.19999919,
+          "operable_proxy_ha": 14537275.672081133
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 21417574.679999415,
+          "operable_proxy_ha": 10531569.756606942
+        }
+      }
+    },
+    "SK": {
+      "scanfi_forest_ha": 26160931.25998441,
+      "base_merchantable_ha": 14514359.939992972,
+      "managed_proxy_ha": 7485358.539775295,
+      "base_operable_proxy_ha": 4933086.317863078,
+      "managed_share": 0.2861273731193526,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 14514359.939992972,
+          "operable_proxy_ha": 4933086.317863078
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 12252056.039993145,
+          "operable_proxy_ha": 4306703.730089391
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 11309020.019994874,
+          "operable_proxy_ha": 4009767.078549945
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 14503026.419992967,
+          "operable_proxy_ha": 4927368.263381248
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 6105194.9999936735,
+          "operable_proxy_ha": 2874112.7655862565
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 7822228.949993021,
+          "operable_proxy_ha": 3564858.13898873
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 9763411.13999299,
+          "operable_proxy_ha": 4210388.245920757
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 12242367.719993139,
+          "operable_proxy_ha": 4301805.212577961
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 11299717.709994882,
+          "operable_proxy_ha": 4005064.9191508843
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 8393937.389993094,
+          "operable_proxy_ha": 3702836.0153916
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 6330758.759995601,
+          "operable_proxy_ha": 2936431.8337357603
+        }
+      }
+    },
+    "YT": {
+      "scanfi_forest_ha": 25905742.559997227,
+      "base_merchantable_ha": 17732097.179999795,
+      "managed_proxy_ha": 8073716.968179609,
+      "base_operable_proxy_ha": 5759877.625505024,
+      "managed_share": 0.3116574230397383,
+      "coverage": "tenure_2016",
+      "screens": {
+        "base": {
+          "screened_merchantable_ha": 17732097.179999795,
+          "operable_proxy_ha": 5759877.625505024
+        },
+        "age_ge_20": {
+          "screened_merchantable_ha": 17262275.219999786,
+          "operable_proxy_ha": 5600196.076832333
+        },
+        "age_ge_30": {
+          "screened_merchantable_ha": 16413146.369999744,
+          "operable_proxy_ha": 5332618.818921741
+        },
+        "disturb_2020_excluded": {
+          "screened_merchantable_ha": 17730563.939999793,
+          "operable_proxy_ha": 5759619.212389215
+        },
+        "road_le_5km": {
+          "screened_merchantable_ha": 2659356.719999987,
+          "operable_proxy_ha": 969617.9617019071
+        },
+        "road_le_10km": {
+          "screened_merchantable_ha": 4335246.53999997,
+          "operable_proxy_ha": 1563998.6114582003
+        },
+        "road_le_20km": {
+          "screened_merchantable_ha": 7058209.67999997,
+          "operable_proxy_ha": 2516261.3878910076
+        },
+        "screen_age20_disturb": {
+          "screened_merchantable_ha": 17261836.289999787,
+          "operable_proxy_ha": 5600122.994473441
+        },
+        "screen_age30_disturb": {
+          "screened_merchantable_ha": 16412734.619999744,
+          "operable_proxy_ha": 5332549.2183000725
+        },
+        "screen_core20": {
+          "screened_merchantable_ha": 6897141.629999951,
+          "operable_proxy_ha": 2456333.457933577
+        },
+        "screen_core30": {
+          "screened_merchantable_ha": 4088991.419999994,
+          "operable_proxy_ha": 1473518.2779441788
+        }
+      }
+    }
+  },
+  "age_flags": {
+    "age_lt_20_ha": 21084083.100000776,
+    "age_lt_30_ha": 37933615.62000782,
+    "age_missing_ha": 0.0,
+    "base_merchantable_ha": 332599169.87997824,
+    "age_lt_20_share_of_base": 0.06339186928100025,
+    "age_lt_30_share_of_base": 0.11405204539054185
+  },
+  "disturbance": {
+    "product": "NBAC 2020 annual fire polygons",
+    "nbac_metadata": {
+      "path": "data/raw/nrcan/nbac/NBAC_2020_20260513.zip",
+      "shapefile_member": "NBAC_2020_20260513.shp",
+      "features": 710,
+      "years": [
+        2020
+      ],
+      "polygon_ha": 217398.79083261272,
+      "source_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]"
+    },
+    "burn_base_ha": 55671.12000000001,
+    "burn_age20_ha": 29014.290000000005,
+    "burn_age30_ha": 27814.949999999997,
+    "burn_share_of_base": 0.00016738201727950643,
+    "years_available": [
+      2020
+    ],
+    "years_unavailable": [
+      2010,
+      2015
+    ],
+    "note": "Only the 2020 annual NBAC vintage is present. The 2010 and 2015 disturbance sensitivity cases are gaps, not zero-disturbance cases."
+  },
+  "road_distance_classes": {
+    "road_0_5km": 121584355.8299897,
+    "road_5_10km": 34915573.08000006,
+    "road_10_20km": 41113356.30000001,
+    "road_gt_20km": 134985884.67000154
+  },
+  "nrn_layers": [
+    {
+      "province": "AB",
+      "zip": "data/raw/nrn/nrn_ab_gpkg.zip",
+      "gpkg_member": "NRN_RRN_AB_GPKG/NRN_AB_17_0_GPKG_en.gpkg",
+      "road_layer": "NRN_AB_17_0_ROADSEG",
+      "features": 443593,
+      "touched_blocks": 202308
+    },
+    {
+      "province": "BC",
+      "zip": "data/raw/nrn/nrn_bc_gpkg.zip",
+      "gpkg_member": "NRN_BC_14_0_GPKG_en.gpkg",
+      "road_layer": "NRN_BC_14_0_ROADSEG",
+      "features": 263584,
+      "touched_blocks": 66997
+    },
+    {
+      "province": "MB",
+      "zip": "data/raw/nrn/nrn_mb_gpkg.zip",
+      "gpkg_member": "NRN_MB_6_0_GPKG_en.gpkg",
+      "road_layer": "NRN_MB_6_0_ROADSEG",
+      "features": 110604,
+      "touched_blocks": 70856
+    },
+    {
+      "province": "NB",
+      "zip": "data/raw/nrn/nrn_nb_gpkg.zip",
+      "gpkg_member": "NRN_RRN_NB_GPKG/NRN_NB_15_0_GPKG_en.gpkg",
+      "road_layer": "NRN_NB_15_0_ROADSEG",
+      "features": 69714,
+      "touched_blocks": 29978
+    },
+    {
+      "province": "NL",
+      "zip": "data/raw/nrn/nrn_nl_gpkg.zip",
+      "gpkg_member": "NRN_NL_7_0_GPKG_en.gpkg",
+      "road_layer": "NRN_NL_7_0_ROADSEG",
+      "features": 44484,
+      "touched_blocks": 18259
+    },
+    {
+      "province": "NS",
+      "zip": "data/raw/nrn/nrn_ns_gpkg.zip",
+      "gpkg_member": "NRN_RRN_NS_GPKG/NRN_NS_18_0_GPKG_en.gpkg",
+      "road_layer": "NRN_NS_18_0_ROADSEG",
+      "features": 119846,
+      "touched_blocks": 38546
+    },
+    {
+      "province": "NT",
+      "zip": "data/raw/nrn/nrn_nt_gpkg.zip",
+      "gpkg_member": "NRN_RRN_NT_GPKG/NRN_NT_16_0_GPKG_en.gpkg",
+      "road_layer": "NRN_NT_16_0_ROADSEG",
+      "features": 8540,
+      "touched_blocks": 7927
+    },
+    {
+      "province": "NU",
+      "zip": "data/raw/nrn/nrn_nu_gpkg.zip",
+      "gpkg_member": "NRN_RRN_NU_GPKG/NRN_NU_13_0_GPKG_en.gpkg",
+      "road_layer": "NRN_NU_13_0_ROADSEG",
+      "features": 5137,
+      "touched_blocks": 700
+    },
+    {
+      "province": "ON",
+      "zip": "data/raw/nrn/nrn_on_gpkg.zip",
+      "gpkg_member": "NRN_RRN_ON_GPKG/NRN_ON_18_0_GPKG_en.gpkg",
+      "road_layer": "NRN_ON_18_0_ROADSEG",
+      "features": 651662,
+      "touched_blocks": 185480
+    },
+    {
+      "province": "PE",
+      "zip": "data/raw/nrn/nrn_pe_gpkg.zip",
+      "gpkg_member": "NRN_RRN_PE_GPKG/NRN_PE_23_0_GPKG_en.gpkg",
+      "road_layer": "NRN_PE_23_0_ROADSEG",
+      "features": 19705,
+      "touched_blocks": 5258
+    },
+    {
+      "province": "QC",
+      "zip": "data/raw/nrn/nrn_qc_gpkg.zip",
+      "gpkg_member": "NRN_RRN_QC_GPKG/NRN_QC_10_0_GPKG_en.gpkg",
+      "road_layer": "NRN_QC_10_0_ROADSEG",
+      "features": 504826,
+      "touched_blocks": 97629
+    },
+    {
+      "province": "SK",
+      "zip": "data/raw/nrn/nrn_sk_gpkg.zip",
+      "gpkg_member": "NRN_SK_15_0_GPKG_en.gpkg",
+      "road_layer": "NRN_SK_15_0_ROADSEG",
+      "features": 299124,
+      "touched_blocks": 212598
+    },
+    {
+      "province": "YT",
+      "zip": "data/raw/nrn/nrn_yt_gpkg.zip",
+      "gpkg_member": "NRN_RRN_YT_GPKG/NRN_YT_20_0_GPKG_en.gpkg",
+      "road_layer": "NRN_YT_20_0_ROADSEG",
+      "features": 7384,
+      "touched_blocks": 6916
+    }
+  ],
+  "intensity_150m": {
+    "target_volume_m3_yr": 150000000.0,
+    "reference_base_path_m3_yr": 118977339.0,
+    "odt_per_m3": 0.08831776452936206,
+    "by_case": {
+      "base": {
+        "operable_proxy_ha": 144689810.13119876,
+        "intensity_m3_ha_yr": 1.0367005103122755,
+        "intensity_relative_to_base": 1.0,
+        "implied_odt_per_ha_yr": 0.09155907155722903
+      },
+      "age_ge_20": {
+        "operable_proxy_ha": 134557672.561597,
+        "intensity_m3_ha_yr": 1.1147636336481215,
+        "intensity_relative_to_base": 1.0752995899580793,
+        "implied_odt_per_ha_yr": 0.09845343210243082
+      },
+      "age_ge_30": {
+        "operable_proxy_ha": 127368077.36014973,
+        "intensity_m3_ha_yr": 1.1776891283037554,
+        "intensity_relative_to_base": 1.1359974424523156,
+        "implied_odt_per_ha_yr": 0.10401087112232073
+      },
+      "disturb_2020_excluded": {
+        "operable_proxy_ha": 144666964.8787528,
+        "intensity_m3_ha_yr": 1.0368642220821933,
+        "intensity_relative_to_base": 1.0001579161660377,
+        "implied_odt_per_ha_yr": 0.09157353021477532
+      },
+      "road_le_5km": {
+        "operable_proxy_ha": 69598439.97878088,
+        "intensity_m3_ha_yr": 2.1552207211215064,
+        "intensity_relative_to_base": 2.0789231795326404,
+        "implied_odt_per_ha_yr": 0.1903442761568111
+      },
+      "road_le_10km": {
+        "operable_proxy_ha": 87973536.74217592,
+        "intensity_m3_ha_yr": 1.7050581976669308,
+        "intensity_relative_to_base": 1.644696979220481,
+        "implied_odt_per_ha_yr": 0.15058692841040647
+      },
+      "road_le_20km": {
+        "operable_proxy_ha": 107198111.63508548,
+        "intensity_m3_ha_yr": 1.3992783801137934,
+        "intensity_relative_to_base": 1.3497421542623742,
+        "implied_odt_per_ha_yr": 0.12358113848591719
+      },
+      "screen_age20_disturb": {
+        "operable_proxy_ha": 134545009.14888334,
+        "intensity_m3_ha_yr": 1.1148685555033457,
+        "intensity_relative_to_base": 1.0754007974468194,
+        "implied_odt_per_ha_yr": 0.0984626985661345
+      },
+      "screen_age30_disturb": {
+        "operable_proxy_ha": 127355950.54757716,
+        "intensity_m3_ha_yr": 1.1778012676680039,
+        "intensity_relative_to_base": 1.1361056119411246,
+        "implied_odt_per_ha_yr": 0.1040207750202869
+      },
+      "screen_core20": {
+        "operable_proxy_ha": 99870185.02766079,
+        "intensity_m3_ha_yr": 1.5019497556598587,
+        "intensity_relative_to_base": 1.448778833153502,
+        "implied_odt_per_ha_yr": 0.1326488448553003
+      },
+      "screen_core30": {
+        "operable_proxy_ha": 77050071.63941938,
+        "intensity_m3_ha_yr": 1.9467859900503832,
+        "intensity_relative_to_base": 1.8778673017764516,
+        "implied_odt_per_ha_yr": 0.17193578665833073
+      }
+    },
+    "interpretation": "150,000,000 m3/yr is an upper scenario bound, not a forecast or an AAC. Intensity is target volume divided by the screened operable area. It is not a growth/yield estimate and does not demonstrate sustainability."
+  },
+  "validation": {
+    "strip_pixel_conservation_max_residual": 0,
+    "national_treed_ha": 422475761.06995845,
+    "area_weights_forest_ha": 422475761.06999743,
+    "treed_vs_area_weights_abs_diff_ha": 3.898143768310547e-05,
+    "treed_matches_area_weights": true,
+    "no_nan_in_area_fields": true,
+    "no_negative_area_fields": true,
+    "base_le_treed": true,
+    "age20_le_base": true,
+    "age30_le_age20": true,
+    "age_partition_max_abs_diff_ha": 2.8908252716064453e-06,
+    "age_partition_conserves_base": true,
+    "burn_le_base": true,
+    "burn_age20_le_age20": true,
+    "screen_age20_disturb_le_age20": true,
+    "screen_age30_disturb_le_age30": true,
+    "road_5km_le_10km_le_20km_le_base": true,
+    "road_classes_conserve_base": true,
+    "road_class_conservation_max_abs_diff_ha": 2.730637788772583e-06,
+    "core20_le_age20_disturb": true,
+    "core30_le_age30_disturb": true,
+    "core30_le_core20": true,
+    "managed_share_le_one": true,
+    "operable_defined_where_coverage_available": true,
+    "operable_blank_where_coverage_missing": true,
+    "operable_le_screened": true,
+    "no_negative_operable": true,
+    "province_sum_equals_ecoprovince_sum_all_cases": true,
+    "v1_operable_proxy_ha": 144689810.13119876,
+    "v2_base_operable_proxy_ha": 144689810.13119876,
+    "v2_base_equals_v1_base": true,
+    "v2_screens_le_v1_base": true,
+    "all_checks_pass": true,
+    "national_treed_ha_from_pixels": 422475761.07,
+    "blocks_filled_by_nearest_province": 10213587,
+    "blocks_filled_by_nearest_ecodistrict": 12459201
+  },
+  "inputs": {
+    "scanfi_landcover": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_nfiLandcover_2025_v2_20260119.tif",
+      "sha256": "668438f6388731a1cf6a9e899a3d7aeb8a998e35c97e5199007db9da03ef46b2",
+      "bytes": 1666500786
+    },
+    "scanfi_height": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_height_2025_v2_20260119.tif",
+      "sha256": "d69ac3d77ce4cbfc885542a86ffc1622360c870d2d6c80c46c096a7cc1e0d845",
+      "bytes": 3152239611
+    },
+    "scanfi_biomass": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_biomass_2025_v2_20260119.tif",
+      "sha256": "7e1c54f8b82f7c8e39d5f05377ecb6d003f084d731cee7a6f156edc9d89aaab4",
+      "bytes": 6871947673
+    },
+    "scanfi_closure": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_closure_2025_v2_20260119.tif",
+      "sha256": "84e7490d97cf72d22949843ffb7935f4fa4a453da44901f4ce88b67d021d1a94",
+      "bytes": 4265150822
+    },
+    "scanfi_age": {
+      "path": "data/raw/scanfi/v2/SCANFI_age_median_2025_v2_20260119.tif",
+      "sha256": "809c4bb098dd9bb75c8021dddb2d5908a09e3d928e47c9a09d0138e533b2420b",
+      "bytes": 5325488829
+    },
+    "v1_operable_summary": {
+      "path": "data/derived/national/managed_landbase/operable_proxy/operable_proxy_summary.json",
+      "sha256": "9f0ccec1eab4670629793bbfe77fa8dc908c9a83394287ac0ad1ae19954a476b"
+    },
+    "v1_managed_ecoprovince": {
+      "path": "data/derived/national/managed_landbase/managed_landbase_by_ecoprovince.csv",
+      "sha256": "012d382fe0e81db0621f5d043a4f4bc5ff0a271618e1af2686af5a2196981956"
+    },
+    "nbac_2020": {
+      "path": "data/raw/nrcan/nbac/NBAC_2020_20260513.zip",
+      "sha256": "417f24f3ddcf80bcf73405f405c7518785a2d542cef66e996e1e107fbe1b2d73",
+      "bytes": 7529860,
+      "shapefile_member": "NBAC_2020_20260513.shp",
+      "features": 710,
+      "years": [
+        2020
+      ]
+    },
+    "nrn": {
+      "available": true,
+      "bundles": [
+        {
+          "province": "AB",
+          "zip": "data/raw/nrn/nrn_ab_gpkg.zip",
+          "sha256": "0dfd3afc922f12b870a231bddd359d3430a5b66e04e283131c614f0b38aacf9a",
+          "bytes": 254938403,
+          "gpkg_member": "NRN_RRN_AB_GPKG/NRN_AB_17_0_GPKG_en.gpkg",
+          "road_layer": "NRN_AB_17_0_ROADSEG",
+          "features": 443593
+        },
+        {
+          "province": "BC",
+          "zip": "data/raw/nrn/nrn_bc_gpkg.zip",
+          "sha256": "9ae6fb8069a46c4a745571871bf068bdd9d978da745001fd0f8462bfb3b82842",
+          "bytes": 129429057,
+          "gpkg_member": "NRN_BC_14_0_GPKG_en.gpkg",
+          "road_layer": "NRN_BC_14_0_ROADSEG",
+          "features": 263584
+        },
+        {
+          "province": "MB",
+          "zip": "data/raw/nrn/nrn_mb_gpkg.zip",
+          "sha256": "d7dcda5a93202f26defd78207bf2a730b6968c5cb0e18d5cf4860a495948185c",
+          "bytes": 44372783,
+          "gpkg_member": "NRN_MB_6_0_GPKG_en.gpkg",
+          "road_layer": "NRN_MB_6_0_ROADSEG",
+          "features": 110604
+        },
+        {
+          "province": "NB",
+          "zip": "data/raw/nrn/nrn_nb_gpkg.zip",
+          "sha256": "af185c70ec70b8744090d49cd2db96f7e2d4234026535d0ac01435780afe8ace",
+          "bytes": 66437628,
+          "gpkg_member": "NRN_RRN_NB_GPKG/NRN_NB_15_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NB_15_0_ROADSEG",
+          "features": 69714
+        },
+        {
+          "province": "NL",
+          "zip": "data/raw/nrn/nrn_nl_gpkg.zip",
+          "sha256": "5250ddf9e017ea0f3caa6e2eff11c382cad4ff021875ae1a4ecad169ef946270",
+          "bytes": 23858147,
+          "gpkg_member": "NRN_NL_7_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NL_7_0_ROADSEG",
+          "features": 44484
+        },
+        {
+          "province": "NS",
+          "zip": "data/raw/nrn/nrn_ns_gpkg.zip",
+          "sha256": "5139dd2000922582c27ef7ef9c93edeac463346e874f6541d3e01e3ff77ffb98",
+          "bytes": 129980403,
+          "gpkg_member": "NRN_RRN_NS_GPKG/NRN_NS_18_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NS_18_0_ROADSEG",
+          "features": 119846
+        },
+        {
+          "province": "NT",
+          "zip": "data/raw/nrn/nrn_nt_gpkg.zip",
+          "sha256": "bbef9d3970a1dae37b53bcf3b02f48535882a902d85df3922e7f404d375c8d1b",
+          "bytes": 10413272,
+          "gpkg_member": "NRN_RRN_NT_GPKG/NRN_NT_16_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NT_16_0_ROADSEG",
+          "features": 8540
+        },
+        {
+          "province": "NU",
+          "zip": "data/raw/nrn/nrn_nu_gpkg.zip",
+          "sha256": "5d0e8c03fa5b73bf11e2be9dd04fadcc8be66fb3437ae13b03003a0c4bedc3a6",
+          "bytes": 4063764,
+          "gpkg_member": "NRN_RRN_NU_GPKG/NRN_NU_13_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NU_13_0_ROADSEG",
+          "features": 5137
+        },
+        {
+          "province": "ON",
+          "zip": "data/raw/nrn/nrn_on_gpkg.zip",
+          "sha256": "a9f4e1f418d31c3a682d5d9224c8994cefd4c33e9c7b5e453af9d86bb77760d7",
+          "bytes": 507430394,
+          "gpkg_member": "NRN_RRN_ON_GPKG/NRN_ON_18_0_GPKG_en.gpkg",
+          "road_layer": "NRN_ON_18_0_ROADSEG",
+          "features": 651662
+        },
+        {
+          "province": "PE",
+          "zip": "data/raw/nrn/nrn_pe_gpkg.zip",
+          "sha256": "58280c57970735050884a2baa13c20f048c10351ad6c154b4611c2d180e6694a",
+          "bytes": 14227278,
+          "gpkg_member": "NRN_RRN_PE_GPKG/NRN_PE_23_0_GPKG_en.gpkg",
+          "road_layer": "NRN_PE_23_0_ROADSEG",
+          "features": 19705
+        },
+        {
+          "province": "QC",
+          "zip": "data/raw/nrn/nrn_qc_gpkg.zip",
+          "sha256": "7175fa54a9846ec6d365f7e1674c1a78ec0bde8e44f0d786f7a5974b18c81552",
+          "bytes": 402694935,
+          "gpkg_member": "NRN_RRN_QC_GPKG/NRN_QC_10_0_GPKG_en.gpkg",
+          "road_layer": "NRN_QC_10_0_ROADSEG",
+          "features": 504826
+        },
+        {
+          "province": "SK",
+          "zip": "data/raw/nrn/nrn_sk_gpkg.zip",
+          "sha256": "f0a2bc98341db02ed55af6a79b4a437bc68c6243a7963824fdccd1c66857018a",
+          "bytes": 153989918,
+          "gpkg_member": "NRN_SK_15_0_GPKG_en.gpkg",
+          "road_layer": "NRN_SK_15_0_ROADSEG",
+          "features": 299124
+        },
+        {
+          "province": "YT",
+          "zip": "data/raw/nrn/nrn_yt_gpkg.zip",
+          "sha256": "2b428a089059b686ba1c453b6b38dee3ca45053f9b54d236071f3b4f053f0b29",
+          "bytes": 6367064,
+          "gpkg_member": "NRN_RRN_YT_GPKG/NRN_YT_20_0_GPKG_en.gpkg",
+          "road_layer": "NRN_YT_20_0_ROADSEG",
+          "features": 7384
+        }
+      ]
+    },
+    "provinces": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "ecodistricts": {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    }
+  },
+  "gaps": [
+    {
+      "gap_id": "legal_thlb_missing",
+      "scope": "all",
+      "status": "open",
+      "detail": "No legal timber harvesting landbase boundary is used. Tenure is a rights footprint, not a harvest-landbase determination.",
+      "effect": "All areas are screening proxies and must not be labelled THLB or AAC."
+    },
+    {
+      "gap_id": "slope_dem_missing",
+      "scope": "all",
+      "status": "open",
+      "detail": "No national DEM is present in the workspace, so no slope, elevation, operability, or site-degradation filter is applied.",
+      "effect": "Steep and inoperable terrain remains in every v2 area."
+    },
+    {
+      "gap_id": "nbac_2010_2015_missing",
+      "scope": "all",
+      "status": "open",
+      "detail": "The NBAC bundle is the 2020 annual vintage (YEAR=2020 for all 710 polygons). It contains no 2010 or 2015 fire history, so those sensitivity screens cannot be computed from this input.",
+      "effect": "Only a 2020 fire screen is reported; the 2010 and 2015 cases are explicit gaps, not zero-disturbance assumptions."
+    },
+    {
+      "gap_id": "nbac_annual_not_cumulative",
+      "scope": "all",
+      "status": "documented",
+      "detail": "NBAC polygons are annual fire perimeters with YEAR/NFIREID and polygon attributes. They are not a cumulative severity or burn-class stack, so no cumulative class is interpreted.",
+      "effect": "The disturbance screen is an annual 2020 burned/not-burned mask."
+    },
+    {
+      "gap_id": "nrn_public_roads_only",
+      "scope": "all",
+      "status": "documented",
+      "detail": "All 13 NRN province bundles were materialised and used. NRN is the public road network; resource, industrial, winter, and decommissioned roads are not represented, and road condition/seasonality is absent.",
+      "effect": "Road distance is an optimistic public-road access proxy."
+    },
+    {
+      "gap_id": "age_regeneration_assumption",
+      "scope": "all",
+      "status": "documented",
+      "detail": "SCANFI median age is a stand-age prediction. Excluding stands below 20 or 30 years assumes they are not merchantable at the screen date, which is stricter than the v1 height/biomass/closure thresholds and ignores partial harvest, thinning, and regeneration delay.",
+      "effect": "Age screens reduce area beyond merchantability alone."
+    },
+    {
+      "gap_id": "managed_share_uniform",
+      "scope": "all",
+      "status": "documented",
+      "detail": "The v1 managed share is uniform inside each province-ecoprovince. Tenure was not re-intersected with the age, burn, or road rasters.",
+      "effect": "Spatial tenure pattern is not represented."
+    },
+    {
+      "gap_id": "nfi_age_uncertainty",
+      "scope": "all",
+      "status": "documented",
+      "detail": "SCANFI age is a 30 m prediction surface, not a provincial inventory or a time-since-disturbance record.",
+      "effect": "Age thresholds are screening conventions, not statutory rules."
+    }
+  ],
+  "caveats": [
+    "Screening proxy only; not a legal THLB, AAC landbase, or harvest feasibility test.",
+    "No slope, elevation, or operability screen: no national DEM is available.",
+    "NBAC 2020 is an annual fire vintage; 2010 and 2015 disturbance cases are gaps.",
+    "NRN is the public road network; resource and industrial roads are absent.",
+    "Managed share is uniform inside each province-ecoprovince; tenure is not intersected spatially.",
+    "SCANFI age is a prediction surface, not a census or disturbance record.",
+    "NU and PE managed and operable values remain blank because the 2016 tenure compilation has no coverage."
+  ]
+}

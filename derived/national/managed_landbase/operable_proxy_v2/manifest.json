@@ -1,0 +1,366 @@
+{
+  "schema_version": "operable_proxy_v2_manifest_v1",
+  "product": "national operable merchantable-forest screening proxy v2",
+  "status": "screening proxy; NOT a legal THLB, AAC landbase, or operability model; no slope screen because no national DEM is available",
+  "generated_at_utc": "2026-11-21T20:32:35+00:00",
+  "runtime_seconds": 281.621,
+  "command": "scripts/national/build_operable_proxy_v2.py --workers 24 --out-dir data/derived/national/managed_landbase/operable_proxy_v2",
+  "software": {
+    "python": "3.12.3",
+    "rasterio": "1.5.0",
+    "numpy": "2.5.0",
+    "pandas": "3.0.3",
+    "geopandas": "1.1.4",
+    "pyogrio": "0.13.0",
+    "scipy": "1.18.0"
+  },
+  "inputs": {
+    "scanfi_landcover": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_nfiLandcover_2025_v2_20260119.tif",
+      "sha256": "668438f6388731a1cf6a9e899a3d7aeb8a998e35c97e5199007db9da03ef46b2",
+      "bytes": 1666500786
+    },
+    "scanfi_height": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_height_2025_v2_20260119.tif",
+      "sha256": "d69ac3d77ce4cbfc885542a86ffc1622360c870d2d6c80c46c096a7cc1e0d845",
+      "bytes": 3152239611
+    },
+    "scanfi_biomass": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_biomass_2025_v2_20260119.tif",
+      "sha256": "7e1c54f8b82f7c8e39d5f05377ecb6d003f084d731cee7a6f156edc9d89aaab4",
+      "bytes": 6871947673
+    },
+    "scanfi_closure": {
+      "path": "data/raw/scanfi/v2/SCANFI_att_closure_2025_v2_20260119.tif",
+      "sha256": "84e7490d97cf72d22949843ffb7935f4fa4a453da44901f4ce88b67d021d1a94",
+      "bytes": 4265150822
+    },
+    "scanfi_age": {
+      "path": "data/raw/scanfi/v2/SCANFI_age_median_2025_v2_20260119.tif",
+      "sha256": "809c4bb098dd9bb75c8021dddb2d5908a09e3d928e47c9a09d0138e533b2420b",
+      "bytes": 5325488829
+    },
+    "v1_operable_summary": {
+      "path": "data/derived/national/managed_landbase/operable_proxy/operable_proxy_summary.json",
+      "sha256": "9f0ccec1eab4670629793bbfe77fa8dc908c9a83394287ac0ad1ae19954a476b"
+    },
+    "v1_managed_ecoprovince": {
+      "path": "data/derived/national/managed_landbase/managed_landbase_by_ecoprovince.csv",
+      "sha256": "012d382fe0e81db0621f5d043a4f4bc5ff0a271618e1af2686af5a2196981956"
+    },
+    "nbac_2020": {
+      "path": "data/raw/nrcan/nbac/NBAC_2020_20260513.zip",
+      "sha256": "417f24f3ddcf80bcf73405f405c7518785a2d542cef66e996e1e107fbe1b2d73",
+      "bytes": 7529860,
+      "shapefile_member": "NBAC_2020_20260513.shp",
+      "features": 710,
+      "years": [
+        2020
+      ]
+    },
+    "nrn": {
+      "available": true,
+      "bundles": [
+        {
+          "province": "AB",
+          "zip": "data/raw/nrn/nrn_ab_gpkg.zip",
+          "sha256": "0dfd3afc922f12b870a231bddd359d3430a5b66e04e283131c614f0b38aacf9a",
+          "bytes": 254938403,
+          "gpkg_member": "NRN_RRN_AB_GPKG/NRN_AB_17_0_GPKG_en.gpkg",
+          "road_layer": "NRN_AB_17_0_ROADSEG",
+          "features": 443593
+        },
+        {
+          "province": "BC",
+          "zip": "data/raw/nrn/nrn_bc_gpkg.zip",
+          "sha256": "9ae6fb8069a46c4a745571871bf068bdd9d978da745001fd0f8462bfb3b82842",
+          "bytes": 129429057,
+          "gpkg_member": "NRN_BC_14_0_GPKG_en.gpkg",
+          "road_layer": "NRN_BC_14_0_ROADSEG",
+          "features": 263584
+        },
+        {
+          "province": "MB",
+          "zip": "data/raw/nrn/nrn_mb_gpkg.zip",
+          "sha256": "d7dcda5a93202f26defd78207bf2a730b6968c5cb0e18d5cf4860a495948185c",
+          "bytes": 44372783,
+          "gpkg_member": "NRN_MB_6_0_GPKG_en.gpkg",
+          "road_layer": "NRN_MB_6_0_ROADSEG",
+          "features": 110604
+        },
+        {
+          "province": "NB",
+          "zip": "data/raw/nrn/nrn_nb_gpkg.zip",
+          "sha256": "af185c70ec70b8744090d49cd2db96f7e2d4234026535d0ac01435780afe8ace",
+          "bytes": 66437628,
+          "gpkg_member": "NRN_RRN_NB_GPKG/NRN_NB_15_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NB_15_0_ROADSEG",
+          "features": 69714
+        },
+        {
+          "province": "NL",
+          "zip": "data/raw/nrn/nrn_nl_gpkg.zip",
+          "sha256": "5250ddf9e017ea0f3caa6e2eff11c382cad4ff021875ae1a4ecad169ef946270",
+          "bytes": 23858147,
+          "gpkg_member": "NRN_NL_7_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NL_7_0_ROADSEG",
+          "features": 44484
+        },
+        {
+          "province": "NS",
+          "zip": "data/raw/nrn/nrn_ns_gpkg.zip",
+          "sha256": "5139dd2000922582c27ef7ef9c93edeac463346e874f6541d3e01e3ff77ffb98",
+          "bytes": 129980403,
+          "gpkg_member": "NRN_RRN_NS_GPKG/NRN_NS_18_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NS_18_0_ROADSEG",
+          "features": 119846
+        },
+        {
+          "province": "NT",
+          "zip": "data/raw/nrn/nrn_nt_gpkg.zip",
+          "sha256": "bbef9d3970a1dae37b53bcf3b02f48535882a902d85df3922e7f404d375c8d1b",
+          "bytes": 10413272,
+          "gpkg_member": "NRN_RRN_NT_GPKG/NRN_NT_16_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NT_16_0_ROADSEG",
+          "features": 8540
+        },
+        {
+          "province": "NU",
+          "zip": "data/raw/nrn/nrn_nu_gpkg.zip",
+          "sha256": "5d0e8c03fa5b73bf11e2be9dd04fadcc8be66fb3437ae13b03003a0c4bedc3a6",
+          "bytes": 4063764,
+          "gpkg_member": "NRN_RRN_NU_GPKG/NRN_NU_13_0_GPKG_en.gpkg",
+          "road_layer": "NRN_NU_13_0_ROADSEG",
+          "features": 5137
+        },
+        {
+          "province": "ON",
+          "zip": "data/raw/nrn/nrn_on_gpkg.zip",
+          "sha256": "a9f4e1f418d31c3a682d5d9224c8994cefd4c33e9c7b5e453af9d86bb77760d7",
+          "bytes": 507430394,
+          "gpkg_member": "NRN_RRN_ON_GPKG/NRN_ON_18_0_GPKG_en.gpkg",
+          "road_layer": "NRN_ON_18_0_ROADSEG",
+          "features": 651662
+        },
+        {
+          "province": "PE",
+          "zip": "data/raw/nrn/nrn_pe_gpkg.zip",
+          "sha256": "58280c57970735050884a2baa13c20f048c10351ad6c154b4611c2d180e6694a",
+          "bytes": 14227278,
+          "gpkg_member": "NRN_RRN_PE_GPKG/NRN_PE_23_0_GPKG_en.gpkg",
+          "road_layer": "NRN_PE_23_0_ROADSEG",
+          "features": 19705
+        },
+        {
+          "province": "QC",
+          "zip": "data/raw/nrn/nrn_qc_gpkg.zip",
+          "sha256": "7175fa54a9846ec6d365f7e1674c1a78ec0bde8e44f0d786f7a5974b18c81552",
+          "bytes": 402694935,
+          "gpkg_member": "NRN_RRN_QC_GPKG/NRN_QC_10_0_GPKG_en.gpkg",
+          "road_layer": "NRN_QC_10_0_ROADSEG",
+          "features": 504826
+        },
+        {
+          "province": "SK",
+          "zip": "data/raw/nrn/nrn_sk_gpkg.zip",
+          "sha256": "f0a2bc98341db02ed55af6a79b4a437bc68c6243a7963824fdccd1c66857018a",
+          "bytes": 153989918,
+          "gpkg_member": "NRN_SK_15_0_GPKG_en.gpkg",
+          "road_layer": "NRN_SK_15_0_ROADSEG",
+          "features": 299124
+        },
+        {
+          "province": "YT",
+          "zip": "data/raw/nrn/nrn_yt_gpkg.zip",
+          "sha256": "2b428a089059b686ba1c453b6b38dee3ca45053f9b54d236071f3b4f053f0b29",
+          "bytes": 6367064,
+          "gpkg_member": "NRN_RRN_YT_GPKG/NRN_YT_20_0_GPKG_en.gpkg",
+          "road_layer": "NRN_YT_20_0_ROADSEG",
+          "features": 7384
+        }
+      ]
+    },
+    "provinces": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "ecodistricts": {
+      "path": "data/raw/national/rsyc/RSYC_ecostrat.gpkg",
+      "sha256": "e425818f3c1db682f21a6eec6bebf4397761db46b08b13b8c4d3c780dc0d87a4"
+    }
+  },
+  "screens": {
+    "age": {
+      "source": "SCANFI_age_median_2025_v2_20260119.tif",
+      "ages_excluded_below_years": [
+        20,
+        30
+      ],
+      "assumption": "Stands below 20 or 30 years are treated as non-merchantable for the screen; this is stricter than the v1 height/biomass/closure thresholds and is a screening convention, not a legal rule."
+    },
+    "disturbance": {
+      "source": "NBAC_2020_20260513.zip",
+      "years_available": [
+        2020
+      ],
+      "screens": [
+        "baseline",
+        "exclude_2020_burn"
+      ],
+      "assumption": "A 30 m pixel is burned when its centre falls inside a 2020 NBAC fire polygon. NBAC 2020 is an annual fire layer, not a cumulative severity stack."
+    },
+    "road": {
+      "source": "NRN province bundles in data/raw/nrn",
+      "distance_classes_km": [
+        5,
+        10,
+        20
+      ],
+      "access_screen_km": 20,
+      "method": "Road segments rasterised at 990 m with all-touched; Euclidean distance transform gives nearest-public-road distance at block centres.",
+      "caveat": "Public NRN roads only; resource, industrial, winter, and decommissioned roads are absent.",
+      "available": true
+    },
+    "slope": {
+      "status": "gap",
+      "detail": "No national DEM in the workspace; no slope filter applied."
+    }
+  },
+  "outputs": [
+    {
+      "path": "operable_proxy_v2_by_province.csv",
+      "size_bytes": 78834,
+      "sha256": "d64f4cb02a02210e1b18e671df33f10eddf5b9fba0b4f9760bb7aa26e6583497"
+    },
+    {
+      "path": "operable_proxy_v2_by_ecoprovince.csv",
+      "size_bytes": 526804,
+      "sha256": "68dc1f197f34a8c324dc473669f938f40158ae1d0972fe839fe0bd7f30e945ae"
+    },
+    {
+      "path": "operable_proxy_v2_summary.json",
+      "size_bytes": 51016,
+      "sha256": "6912ca5bdd6b8165459d69ed0f437742ae717a39ffc2448e54c8a93aa6c74b5c"
+    },
+    {
+      "path": "OPERABLE_PROXY_V2_REPORT.md",
+      "size_bytes": 8834,
+      "sha256": "c27f930adea70f2dbd2bcf381def56340e6863b71df2f5781773f37733da8a52"
+    },
+    {
+      "path": "road_distance_classes.csv",
+      "size_bytes": 1273,
+      "sha256": "dae17478f2aae2ddf33d37c12ac0952ea4668f199022ae58d637c610629e75b1"
+    },
+    {
+      "path": "gaps.csv",
+      "size_bytes": 2168,
+      "sha256": "cfc28ee5a8abdc36e54a5a11f3a5313322ef0634eef12ea96f840a6dfef8362f"
+    }
+  ],
+  "validation": {
+    "strip_pixel_conservation_max_residual": 0,
+    "national_treed_ha": 422475761.06995845,
+    "area_weights_forest_ha": 422475761.06999743,
+    "treed_vs_area_weights_abs_diff_ha": 3.898143768310547e-05,
+    "treed_matches_area_weights": true,
+    "no_nan_in_area_fields": true,
+    "no_negative_area_fields": true,
+    "base_le_treed": true,
+    "age20_le_base": true,
+    "age30_le_age20": true,
+    "age_partition_max_abs_diff_ha": 2.8908252716064453e-06,
+    "age_partition_conserves_base": true,
+    "burn_le_base": true,
+    "burn_age20_le_age20": true,
+    "screen_age20_disturb_le_age20": true,
+    "screen_age30_disturb_le_age30": true,
+    "road_5km_le_10km_le_20km_le_base": true,
+    "road_classes_conserve_base": true,
+    "road_class_conservation_max_abs_diff_ha": 2.730637788772583e-06,
+    "core20_le_age20_disturb": true,
+    "core30_le_age30_disturb": true,
+    "core30_le_core20": true,
+    "managed_share_le_one": true,
+    "operable_defined_where_coverage_available": true,
+    "operable_blank_where_coverage_missing": true,
+    "operable_le_screened": true,
+    "no_negative_operable": true,
+    "province_sum_equals_ecoprovince_sum_all_cases": true,
+    "v1_operable_proxy_ha": 144689810.13119876,
+    "v2_base_operable_proxy_ha": 144689810.13119876,
+    "v2_base_equals_v1_base": true,
+    "v2_screens_le_v1_base": true,
+    "all_checks_pass": true,
+    "national_treed_ha_from_pixels": 422475761.07,
+    "blocks_filled_by_nearest_province": 10213587,
+    "blocks_filled_by_nearest_ecodistrict": 12459201
+  },
+  "gaps": [
+    {
+      "gap_id": "legal_thlb_missing",
+      "scope": "all",
+      "status": "open",
+      "detail": "No legal timber harvesting landbase boundary is used. Tenure is a rights footprint, not a harvest-landbase determination.",
+      "effect": "All areas are screening proxies and must not be labelled THLB or AAC."
+    },
+    {
+      "gap_id": "slope_dem_missing",
+      "scope": "all",
+      "status": "open",
+      "detail": "No national DEM is present in the workspace, so no slope, elevation, operability, or site-degradation filter is applied.",
+      "effect": "Steep and inoperable terrain remains in every v2 area."
+    },
+    {
+      "gap_id": "nbac_2010_2015_missing",
+      "scope": "all",
+      "status": "open",
+      "detail": "The NBAC bundle is the 2020 annual vintage (YEAR=2020 for all 710 polygons). It contains no 2010 or 2015 fire history, so those sensitivity screens cannot be computed from this input.",
+      "effect": "Only a 2020 fire screen is reported; the 2010 and 2015 cases are explicit gaps, not zero-disturbance assumptions."
+    },
+    {
+      "gap_id": "nbac_annual_not_cumulative",
+      "scope": "all",
+      "status": "documented",
+      "detail": "NBAC polygons are annual fire perimeters with YEAR/NFIREID and polygon attributes. They are not a cumulative severity or burn-class stack, so no cumulative class is interpreted.",
+      "effect": "The disturbance screen is an annual 2020 burned/not-burned mask."
+    },
+    {
+      "gap_id": "nrn_public_roads_only",
+      "scope": "all",
+      "status": "documented",
+      "detail": "All 13 NRN province bundles were materialised and used. NRN is the public road network; resource, industrial, winter, and decommissioned roads are not represented, and road condition/seasonality is absent.",
+      "effect": "Road distance is an optimistic public-road access proxy."
+    },
+    {
+      "gap_id": "age_regeneration_assumption",
+      "scope": "all",
+      "status": "documented",
+      "detail": "SCANFI median age is a stand-age prediction. Excluding stands below 20 or 30 years assumes they are not merchantable at the screen date, which is stricter than the v1 height/biomass/closure thresholds and ignores partial harvest, thinning, and regeneration delay.",
+      "effect": "Age screens reduce area beyond merchantability alone."
+    },
+    {
+      "gap_id": "managed_share_uniform",
+      "scope": "all",
+      "status": "documented",
+      "detail": "The v1 managed share is uniform inside each province-ecoprovince. Tenure was not re-intersected with the age, burn, or road rasters.",
+      "effect": "Spatial tenure pattern is not represented."
+    },
+    {
+      "gap_id": "nfi_age_uncertainty",
+      "scope": "all",
+      "status": "documented",
+      "detail": "SCANFI age is a 30 m prediction surface, not a provincial inventory or a time-since-disturbance record.",
+      "effect": "Age thresholds are screening conventions, not statutory rules."
+    }
+  ],
+  "caveats": [
+    "Screening proxy only; not a legal THLB, AAC landbase, or harvest feasibility test.",
+    "No slope, elevation, or operability screen: no national DEM is available.",
+    "NBAC 2020 is an annual fire vintage; 2010 and 2015 disturbance cases are gaps.",
+    "NRN is the public road network; resource and industrial roads are absent.",
+    "Managed share is uniform inside each province-ecoprovince; tenure is not intersected spatially.",
+    "SCANFI age is a prediction surface, not a census or disturbance record.",
+    "NU and PE managed and operable values remain blank because the 2016 tenure compilation has no coverage."
+  ]
+}
