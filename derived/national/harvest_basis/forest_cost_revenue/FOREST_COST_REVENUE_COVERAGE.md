@@ -2,9 +2,9 @@
 
 **Status:** `screening_only` · `policy_grade=false` · **observed sample plus model-input deck; not a population**
 
-**Generated:** 2026-11-21T20:29:27+00:00
+**Generated:** 2026-11-21T20:51:46+00:00
 
-**Ledger:** `data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv` (2888 rows; SHA-256 `826df6127bce…`)
+**Ledger:** `data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv` (2888 rows; SHA-256 `9f95835278e0…`)
 
 ## 1. Merge
 
@@ -13,7 +13,7 @@ The two blocks are concatenated, never re-keyed and never summed:
 | Province | Source | Rows | SHA-256 |
 |---|---|---:|---|
 | BC | `data/derived/national/harvest_basis/bcts_bc/bcts_bid_ledger.csv` | 200 | `52e210ab9d7b…` |
-| QC | `data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv` | 2688 | `84c6c7bdafc9…` |
+| QC | `data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv` | 2688 | `0deba62a5f38…` |
 
 Merged rows: **2888**. By province: BC 200, QC 2688. By perspective: crown 100, forest_sector 2788.
 

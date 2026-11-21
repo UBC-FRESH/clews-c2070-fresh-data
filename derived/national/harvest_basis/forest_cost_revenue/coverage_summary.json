@@ -77,6 +77,11 @@
         "share": 0.0,
         "status": "not_in_full_model_input_deck"
       },
+      "dbh_curve_share": {
+        "denominator": 1824,
+        "numerator": 1824,
+        "share": 1.0
+      },
       "delivered_log_revenue": {
         "dbh_rows": 1824,
         "dbh_rule": "species x DBH curves use Profil_2 only; the three shipped profiles are byte-identical and are not independent estimates",
@@ -98,7 +103,7 @@
           "courant": 1039,
           "tendance": 1036
         },
-        "series_rule": "courant (_2) and tendance (_1) are alternative model scenarios, separated by licence suffix C/T; they are not independent observations and are not summed",
+        "series_rule": "courant (_2) and tendance (_1) are alternative model scenarios, separated by licence suffix C/T and marked series_non_additive=1; they are not independent observations and are not summed",
         "status": "model_input_not_observed"
       },
       "harvest_volume_share": {
@@ -162,6 +167,11 @@
       },
       "model_input_only": true,
       "observed_transactions": false,
+      "price_deck_share": {
+        "denominator": 630,
+        "numerator": 251,
+        "share": 0.398413
+      },
       "sample_frame": {
         "dbh_curve_cells": 1824,
         "dbh_curve_classes": 76,
@@ -208,7 +218,7 @@
     "other_rows": 0,
     "rule": "observed = observed_payment/observed_sale/observed_price; model_input = model_input evidence with model_input=1 and not_observed=1; the classes are counted separately and never summed"
   },
-  "generated_utc": "2026-11-21T20:29:27+00:00",
+  "generated_utc": "2026-11-21T20:51:46+00:00",
   "inputs": [
     {
       "jurisdiction": "BC",
@@ -220,7 +230,7 @@
       "jurisdiction": "QC",
       "path": "data/derived/national/harvest_basis/meris_qc_full/forest_cost_revenue_qc_model.csv",
       "rows": 2688,
-      "sha256": "84c6c7bdafc99af17da454b58d5fd12404800ed1fec7facec546af066da4c1ac"
+      "sha256": "0deba62a5f386806af7817d6d58a9dce5c6b819323992c0539d4b73f2c1e6aad"
     }
   ],
   "merge_rules": {
@@ -234,6 +244,7 @@
     "price_series_not_summed": true,
     "province_partitioned": true,
     "quality_and_dbh_preserved": true,
+    "series_non_additive_token": true,
     "sources_not_added": true
   },
   "mirrors": {
@@ -589,7 +600,7 @@
   "output": {
     "path": "data/derived/national/harvest_basis/forest_cost_revenue/forest_cost_revenue.csv",
     "rows": 2888,
-    "sha256": "826df6127bcec3120253078b8261ea88b7ba7faff3824eecabe8d8737f8d2572"
+    "sha256": "9f95835278e0918c73a8dbbd4f06c837615b352a2a6903cf9aa44a516feacca4"
   },
   "partial_coverage": true,
   "policy_grade": false,

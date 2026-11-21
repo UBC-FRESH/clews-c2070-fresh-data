@@ -87,9 +87,10 @@ costs 191. The wide companions preserve the source row counts (`45`, `2,674`,
   values are labelled `placeholder_0.0100` and are **not** used as revenue.
   Only `THO` has a positive `AUTRE` value (75.00).
 - **Coverage.** 251 of 630 cells are positive model inputs; 293 are zero
-  (not applicable), 86 are the `PATE` placeholder. Positive values cover 28
-  hardwood species; the 12 SEPM species are zero in this table and are covered
-  by the DBH curves instead.
+  (not applicable), and 86 are `0.0100` placeholders (66 `PATE`, 10 poplar
+  `DER`, 10 poplar `F3`). Positive values cover 28 non-SEPM species (24
+  hardwoods plus `PIB`, `PIR`, `PRU`, `THO`); the 12 SEPM species are zero in
+  this table and are covered by the DBH curves instead.
 - **Ledger ingest.** Both series are carried into the ledger as alternative
   model scenarios, with licence suffixes `C` (courant) and `T` (tendance). The
   rows are not independent observations and are never summed. `PATE` maps to
@@ -271,7 +272,7 @@ observed payment or sale.
 
 | Use | Status |
 |---|---|
-| Model-input delivered log revenue for 28 hardwood species, mill gate | **Can feed** a sensitivity/labelled model-input revenue term; not a transaction or policy price |
+| Model-input delivered log revenue for 28 non-SEPM species (24 hardwoods plus `PIB`, `PIR`, `PRU`, `THO`), mill gate | **Can feed** a sensitivity/labelled model-input revenue term; not a transaction or policy price |
 | Zone road, overhead, loading, silviculture costs | **Can feed** a cost deck as model parameters; loading is partial and harvest is incomplete |
 | Administered royalties | **Can feed** a Crown-rate deck; not joined to the ledger because the group taxonomies differ |
 | Zone economic values | **Can feed** context only; not additive to cash revenue/cost |
