@@ -1,0 +1,656 @@
+{
+  "artifact_version": "1.0.0",
+  "dataset": "net_value_v2d",
+  "status": "evidence_layer",
+  "generated_utc": "2026-11-21T21:30:01Z",
+  "scope": {
+    "jurisdictions": [
+      "QC",
+      "BC"
+    ],
+    "qc": "2022 MRNF survey benchmark, referenced",
+    "bc": "2019-2026 log-market averages, 2026 BCTS stumpage, 2026 appraisal allowances",
+    "combined_national_net_value": false
+  },
+  "definitions": {
+    "observed_price": "BC published mill-delivered log-market average, CAD/m3; a reported average, not a transaction.",
+    "observed_stumpage": "BC BCTS winning bid for standing timber, CAD/m3 log; not delivered-log revenue.",
+    "appraisal_allowance": "BC IAM/CAM tabular cost allowance; not an observed contractor cost, winning bid, or payment.",
+    "survey_benchmark": "QC 2022 MRNF survey aggregate used as a benchmark; not an observed transaction.",
+    "net_value": "Revenue minus a complete production cost stack at a consistent basis. No BC full stack exists.",
+    "bc_net_value_status": "not_estimated",
+    "bc_net_value_reason": "missing_logging_and_haul_cost",
+    "prohibited": "Do not subtract road/bridge/culvert/silviculture/specified-operation/TOA allowances from a log price and call it BC net value."
+  },
+  "labels": {
+    "evidence_tiers": [
+      "appraisal_allowance",
+      "benchmark_historical",
+      "not_available",
+      "observed_price",
+      "observed_stumpage",
+      "survey_benchmark"
+    ],
+    "policy_grade": false,
+    "qc_net_value_status": "benchmark_only",
+    "bc_net_value_status": "not_estimated",
+    "bc_net_value_reason": "missing_logging_and_haul_cost",
+    "combined_national_net_value": false,
+    "partial_bc_net_value_computed": false,
+    "no_zero_fill": true,
+    "one_month_three_month_additive": false
+  },
+  "qc_reference": {
+    "source_artifact": "data/derived/national/harvest_basis/net_value_benchmark",
+    "manifest_validation": "pass",
+    "verified_outputs": 6,
+    "provincial_rows": 3,
+    "regional_rows": 7,
+    "sensitivity_rows": 3,
+    "historical_rows": 1,
+    "reference_purchase_cad_m3": 107.22,
+    "regional_residual_before_range_cad_m3": [
+      10.15,
+      48.49
+    ],
+    "regional_residual_after_range_cad_m3": [
+      -10.88,
+      28.44
+    ],
+    "validation_details": [
+      "provincial residual identities rechecked",
+      "regional conditional residuals rechecked",
+      "sensitivity arithmetic rechecked",
+      "BMMB historical revenue benchmark rechecked"
+    ]
+  },
+  "bc_revenue": {
+    "cell_count": 15705,
+    "report_count": 505,
+    "region_counts": {
+      "coast": 13128,
+      "interior": 2577
+    },
+    "vintage_counts": {
+      "1_month": 7277,
+      "3_month": 8428
+    },
+    "flagged_counts": {
+      "zero_cad_m3": 16,
+      "below_1_cad_m3": 7,
+      "below_1_including_zero": 23,
+      "above_1000_cad_m3": 17
+    },
+    "price_range_cad_m3": {
+      "min_ok": 1.07,
+      "max_ok": 999.56,
+      "min_reported": 0.0,
+      "max_reported": 1071.93
+    },
+    "series": [
+      {
+        "region": "coast",
+        "report_basis": "1_month",
+        "log_class": "old_growth",
+        "cell_count": 4164,
+        "report_count": 85,
+        "ok_cell_count": 4149,
+        "flagged_cell_count": 15,
+        "price_min_cad_m3": 2.44,
+        "price_p25_cad_m3": 53.6,
+        "price_median_cad_m3": 92.83,
+        "price_p75_cad_m3": 241.77,
+        "price_max_cad_m3": 999.56
+      },
+      {
+        "region": "coast",
+        "report_basis": "1_month",
+        "log_class": "second_growth",
+        "cell_count": 1889,
+        "report_count": 84,
+        "ok_cell_count": 1884,
+        "flagged_cell_count": 5,
+        "price_min_cad_m3": 1.49,
+        "price_p25_cad_m3": 62.7375,
+        "price_median_cad_m3": 100.975,
+        "price_p75_cad_m3": 192.3,
+        "price_max_cad_m3": 805.02
+      },
+      {
+        "region": "coast",
+        "report_basis": "3_month",
+        "log_class": "old_growth",
+        "cell_count": 4700,
+        "report_count": 84,
+        "ok_cell_count": 4682,
+        "flagged_cell_count": 18,
+        "price_min_cad_m3": 2.76,
+        "price_p25_cad_m3": 52.74,
+        "price_median_cad_m3": 94.305,
+        "price_p75_cad_m3": 261.74,
+        "price_max_cad_m3": 987.21
+      },
+      {
+        "region": "coast",
+        "report_basis": "3_month",
+        "log_class": "second_growth",
+        "cell_count": 2375,
+        "report_count": 83,
+        "ok_cell_count": 2373,
+        "flagged_cell_count": 2,
+        "price_min_cad_m3": 1.07,
+        "price_p25_cad_m3": 59.29,
+        "price_median_cad_m3": 101.0,
+        "price_p75_cad_m3": 212.74,
+        "price_max_cad_m3": 900.81
+      },
+      {
+        "region": "interior",
+        "report_basis": "1_month",
+        "log_class": "not_reported",
+        "cell_count": 791,
+        "report_count": 85,
+        "ok_cell_count": 791,
+        "flagged_cell_count": 0,
+        "price_min_cad_m3": 37.95,
+        "price_p25_cad_m3": 62.65,
+        "price_median_cad_m3": 109.34,
+        "price_p75_cad_m3": 144.81,
+        "price_max_cad_m3": 624.38
+      },
+      {
+        "region": "interior",
+        "report_basis": "3_month",
+        "log_class": "not_reported",
+        "cell_count": 896,
+        "report_count": 84,
+        "ok_cell_count": 896,
+        "flagged_cell_count": 0,
+        "price_min_cad_m3": 35.48,
+        "price_p25_cad_m3": 60.5975,
+        "price_median_cad_m3": 103.085,
+        "price_p75_cad_m3": 143.4975,
+        "price_max_cad_m3": 350.95
+      }
+    ],
+    "interior_aggregate_cell_count": 890,
+    "interior_volume_reconciled_reports": 169,
+    "annualization_applied": false,
+    "vintages_separate": true,
+    "blank_cells_are_zero": false
+  },
+  "bc_observed_stumpage": {
+    "sale_count": 51,
+    "full_bid_count": 49,
+    "lower_bound_count": 2,
+    "volume_m3": 1313211.0,
+    "full_bid_volume_m3": 1253065.0,
+    "volume_weighted_stumpage_cad_m3": 42.7913,
+    "median_full_bid_cad_m3": 45.28,
+    "min_full_bid_cad_m3": 0.2513,
+    "max_full_bid_cad_m3": 257.3077,
+    "min_observed_cad_m3": 0.2513,
+    "max_observed_cad_m3": 257.3077,
+    "currency_basis": "CAD_nominal_2026",
+    "price_basis": "standing_timber",
+    "bid_is_not_delivered_revenue": true,
+    "coverage": "selected_auction_sample",
+    "ledger_row_count": 200
+  },
+  "bc_cost_coverage": {
+    "appraisal_row_count": 879,
+    "covered_component_count": 6,
+    "missing_components": [
+      "logging",
+      "truck_haul",
+      "estimated_winning_bid"
+    ],
+    "components": [
+      {
+        "component": "road",
+        "coverage_status": "published_appraisal_allowance",
+        "covered": true,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 124,
+        "cost_bases": "CAD/km;CAD/km/%;CAD/m3",
+        "direct_cad_m3_row_count": 22,
+        "net_value_usable": "requires_site_conversion",
+        "missing_reason": ""
+      },
+      {
+        "component": "bridge",
+        "coverage_status": "published_appraisal_allowance",
+        "covered": true,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 260,
+        "cost_bases": "CAD/each",
+        "direct_cad_m3_row_count": 0,
+        "net_value_usable": "requires_site_conversion",
+        "missing_reason": ""
+      },
+      {
+        "component": "culvert",
+        "coverage_status": "published_appraisal_allowance",
+        "covered": true,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 207,
+        "cost_bases": "CAD/each;CAD/m",
+        "direct_cad_m3_row_count": 0,
+        "net_value_usable": "requires_site_conversion",
+        "missing_reason": ""
+      },
+      {
+        "component": "silviculture",
+        "coverage_status": "published_appraisal_allowance",
+        "covered": true,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 247,
+        "cost_bases": "CAD/ha;CAD/m3",
+        "direct_cad_m3_row_count": 14,
+        "net_value_usable": "partially_direct",
+        "missing_reason": ""
+      },
+      {
+        "component": "specified_operations",
+        "coverage_status": "published_appraisal_allowance",
+        "covered": true,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 19,
+        "cost_bases": "CAD/m3;CAD/m3/km;CAD/tree",
+        "direct_cad_m3_row_count": 15,
+        "net_value_usable": "conditional_route_specific",
+        "missing_reason": ""
+      },
+      {
+        "component": "tenure_obligation",
+        "coverage_status": "published_appraisal_allowance",
+        "covered": true,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 17,
+        "cost_bases": "CAD/ha;CAD/ha/%;CAD/ha/stem;CAD/m3",
+        "direct_cad_m3_row_count": 11,
+        "net_value_usable": "partially_direct",
+        "missing_reason": ""
+      },
+      {
+        "component": "logging",
+        "coverage_status": "not_published",
+        "covered": false,
+        "evidence_tier": "not_available",
+        "appraisal_allowance": false,
+        "observed_cost": false,
+        "row_count": 0,
+        "cost_bases": "",
+        "direct_cad_m3_row_count": 0,
+        "net_value_usable": "no",
+        "missing_reason": "logging_not_published_embedded_in_ewb"
+      },
+      {
+        "component": "truck_haul",
+        "coverage_status": "partial_appraisal_allowance",
+        "covered": false,
+        "evidence_tier": "appraisal_allowance",
+        "appraisal_allowance": true,
+        "observed_cost": false,
+        "row_count": 5,
+        "cost_bases": "CAD/m3",
+        "direct_cad_m3_row_count": 5,
+        "net_value_usable": "no",
+        "missing_reason": "general_truck_haul_not_published_embedded_in_ewb"
+      },
+      {
+        "component": "estimated_winning_bid",
+        "coverage_status": "not_published_as_cost",
+        "covered": false,
+        "evidence_tier": "not_available",
+        "appraisal_allowance": false,
+        "observed_cost": false,
+        "row_count": 0,
+        "cost_bases": "",
+        "direct_cad_m3_row_count": 0,
+        "net_value_usable": "no",
+        "missing_reason": "ewb_is_stumpage_formula_embedding_logging_and_haul"
+      },
+      {
+        "component": "full_bc_net_value",
+        "coverage_status": "not_estimated",
+        "covered": false,
+        "evidence_tier": "not_available",
+        "appraisal_allowance": false,
+        "observed_cost": false,
+        "row_count": 0,
+        "cost_bases": "",
+        "direct_cad_m3_row_count": 0,
+        "net_value_usable": "no",
+        "missing_reason": "missing_logging_and_haul_cost"
+      }
+    ],
+    "full_net_value_possible": false,
+    "total_cost_cad_m3_computed": false
+  },
+  "net_value": {
+    "qc_status": "benchmark_only",
+    "bc_status": "not_estimated",
+    "bc_reason": "missing_logging_and_haul_cost",
+    "combined_national": false,
+    "partial_bc_computed": false
+  },
+  "qc_bc_comparison": {
+    "comparable": false,
+    "reason": "Different jurisdiction, year, evidence tier, price point, aggregation, and cost coverage.",
+    "qc": "full 2022 survey procurement benchmark, benchmark_only",
+    "bc": "partial appraisal coverage and revenue-only observations, not_estimated",
+    "combined_national_net_value": false
+  },
+  "non_claims": [
+    "Not an observed transaction net value.",
+    "Not policy-grade; policy_grade=false on every row.",
+    "Not a BC full net value and not a BC partial net value.",
+    "Not a combined national net value.",
+    "Not a mill margin; transformation and by-product revenue are excluded.",
+    "Not a stumpage rate for QC and not a delivered-log price for BCTS.",
+    "Not an observed contractor cost; appraisal allowances are policy inputs.",
+    "Not merged into the forest cost/revenue ledger, Forest LP, UI, or OSeCAN.",
+    "Not deflated; years and currency bases remain separate.",
+    "Not a legal AAC, sustainable-supply estimate, or forecast."
+  ],
+  "limitations": [
+    "BC log prices are published averages, not transactions; Coast grade volumes are unavailable.",
+    "Coast old-growth is a published old/mixed-growth blend.",
+    "One-month and three-month vintages are not reconciled; three-month windows overlap.",
+    "Interior weighted-average rows are reported aggregates and are excluded from product-cell aggregation.",
+    "Blank price and volume cells are missing, not zero.",
+    "BCTS is a selected 2026 auction sample; two sales provide premium-only lower bounds.",
+    "Appraisal allowances differ by effective date, zone, and unit; they are not observed costs.",
+    "IAM/CAM publish no general logging or truck-haul $/m3; both are embedded in the EWB.",
+    "No site quantities are available to convert CAD/km, CAD/each, or CAD/ha allowances to $/m3.",
+    "QC and BC evidence are not comparable and are not combined."
+  ],
+  "validation": {
+    "status": "pass",
+    "check_count": 29,
+    "checks": [
+      {
+        "check": "bc_price_cell_count",
+        "status": "pass",
+        "detail": "15705 cells (expected 15705)"
+      },
+      {
+        "check": "bc_price_report_count",
+        "status": "pass",
+        "detail": "505 reports (expected 505)"
+      },
+      {
+        "check": "bc_price_observation_labels",
+        "status": "pass",
+        "detail": "regions and vintages are in the allowed set"
+      },
+      {
+        "check": "bc_price_hard_range_and_nonnegative",
+        "status": "pass",
+        "detail": "all prices are within 0-2000 CAD/m3"
+      },
+      {
+        "check": "bc_price_flag_counts",
+        "status": "pass",
+        "detail": "zero=16, below_1=7, above_1000=17"
+      },
+      {
+        "check": "bc_price_flagged_cells_excluded_from_ranges",
+        "status": "pass",
+        "detail": "no zero or negative value enters an ok range"
+      },
+      {
+        "check": "bc_price_aggregation_role_separation",
+        "status": "pass",
+        "detail": "weighted-average rows are separate from product cells"
+      },
+      {
+        "check": "bc_price_product_cells_exclude_aggregate",
+        "status": "pass",
+        "detail": "no is_aggregate=true row appears as a product cell"
+      },
+      {
+        "check": "bc_price_no_vintage_mixing",
+        "status": "pass",
+        "detail": "each range has one published vintage and is marked non-additive"
+      },
+      {
+        "check": "bc_price_annual_report_limit",
+        "status": "pass",
+        "detail": "at most 12 published reports per series-year; three-month windows still overlap"
+      },
+      {
+        "check": "bc_price_cell_key_unique",
+        "status": "pass",
+        "detail": "15705 unique report/species/grade/end-use keys"
+      },
+      {
+        "check": "bc_interior_aggregate_rows",
+        "status": "pass",
+        "detail": "890 Interior weighted-average cells kept outside product sums"
+      },
+      {
+        "check": "bc_interior_aggregate_within_product_range",
+        "status": "pass",
+        "detail": "890 aggregate cells checked against product siblings"
+      },
+      {
+        "check": "bc_interior_volume_sum_excludes_aggregate",
+        "status": "pass",
+        "detail": "169 Interior reports reconciled; 0 violations"
+      },
+      {
+        "check": "bc_stumpage_sale_count",
+        "status": "pass",
+        "detail": "51 awarded sales (expected 51)"
+      },
+      {
+        "check": "bc_stumpage_full_and_lower_bound_split",
+        "status": "pass",
+        "detail": "full=49, lower_bound=2"
+      },
+      {
+        "check": "bc_stumpage_nonnegative_and_labeled",
+        "status": "pass",
+        "detail": "all observed stumpage totals are nonnegative and carry a basis label"
+      },
+      {
+        "check": "bc_cost_row_count",
+        "status": "pass",
+        "detail": "879 appraisal rows assigned (expected 879)"
+      },
+      {
+        "check": "bc_cost_appraisal_vs_observed",
+        "status": "pass",
+        "detail": "all cost rows are appraisal allowances or explicitly unavailable; none is observed cost"
+      },
+      {
+        "check": "bc_cost_missing_components",
+        "status": "pass",
+        "detail": "logging, general truck haul, and EWB are explicitly missing"
+      },
+      {
+        "check": "bc_cost_no_full_net_value",
+        "status": "pass",
+        "detail": "full BC net value row is explicitly not estimated"
+      },
+      {
+        "check": "qc_reference_row_count",
+        "status": "pass",
+        "detail": "14 QC references (3 provincial + 7 regional + 3 sensitivity + 1 historical)"
+      },
+      {
+        "check": "qc_reference_labels",
+        "status": "pass",
+        "detail": "all QC references are validated copies with policy_grade=false"
+      },
+      {
+        "check": "qc_sepm_values_match_source",
+        "status": "pass",
+        "detail": "SEPM 107.22 purchase and 25.82/0.81 residuals match the QC source"
+      },
+      {
+        "check": "bc_net_value_reason_present",
+        "status": "pass",
+        "detail": "8 BC summary rows all not_estimated/missing_logging_and_haul_cost"
+      },
+      {
+        "check": "no_combined_national_net_value",
+        "status": "pass",
+        "detail": "no national combined net-value row exists"
+      },
+      {
+        "check": "evidence_tiers_separated",
+        "status": "pass",
+        "detail": "BC observed price, observed stumpage, and appraisal allowance rows are distinct"
+      },
+      {
+        "check": "policy_grade_false",
+        "status": "pass",
+        "detail": "policy_grade=false on every summary and QC reference row"
+      },
+      {
+        "check": "no_undocumented_negative_values",
+        "status": "pass",
+        "detail": "QC negative residuals are documented; no negative BC price, stumpage, or cost"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/qc_net_value_benchmark.csv",
+      "sha256": "810d70d1a2589d975b4cdafff041892edf9667e24ee2a7ab002f35210d497ded",
+      "bytes": 4442,
+      "role": "QC reference source"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/qc_net_value_regional_range.csv",
+      "sha256": "c97aba4f22b40031a03b86de1f583fb808cdbfaa86613cb7c8c6a2028ebcf1a5",
+      "bytes": 4986,
+      "role": "QC reference source"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/qc_net_value_sensitivity.csv",
+      "sha256": "8023d410405549ea2f71d748ea726ab207e9e03673dbe3e1ddef7e21ae2db23e",
+      "bytes": 1789,
+      "role": "QC reference source"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "ec017422002d2f9581253d9131d26962bf7de350ab7ee0d3dc63ea0a95a77297",
+      "bytes": 3390,
+      "role": "QC reference source"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_benchmark/manifest.json",
+      "sha256": "f767a2356339a1eb33fe2b1170e0b331e0c12bf06c3852ebc94f8dd8004857e7",
+      "bytes": 8275,
+      "role": "QC reference source"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "fcf13b9767b340e3c5f6ca38b42c01e4010ad21384a1b8e203acfdb64c8f3db9",
+      "bytes": 7731363,
+      "role": "BC observed price cells"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_coverage.csv",
+      "sha256": "ced16b9c03494f4c0c9a2bb95f127f538471e7da0eceddd935ae388409f9e66a",
+      "bytes": 207825,
+      "role": "BC price cell coverage"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/manifest.json",
+      "sha256": "c851038a0192f68cd1ea210c5932c900cea542f001dfe8d93015fceef73d9db1",
+      "bytes": 280538,
+      "role": "BC price provenance"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_bid_ledger.csv",
+      "sha256": "52e210ab9d7b4466869f272f461d560cf05e439eb086f31a451989aeb325c86d",
+      "bytes": 83878,
+      "role": "BC observed BCTS stumpage ledger"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bcts_bc/bcts_bid_results.csv",
+      "sha256": "50b9ce6889981579326760f59dc4b77ef7f45eb12d17a2381a95e65e7f991e46",
+      "bytes": 49294,
+      "role": "BC BCTS auction results"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea",
+      "bytes": 454062,
+      "role": "BC appraisal allowances"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_coverage.csv",
+      "sha256": "7bb9ad92e6370f2e2fe27925dbb8f6837cc9f9cb9849ab67d395d4f726fbed71",
+      "bytes": 2807,
+      "role": "BC appraisal coverage"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/manifest.json",
+      "sha256": "5ad3f2dad0b240eacf81776d7c0f80293e1c1dd7dcd6f69264b7cee521e3559e",
+      "bytes": 9035,
+      "role": "BC appraisal provenance"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/net_value_v2d/v2d_net_value_summary.csv",
+      "sha256": "1d2494b96075b7efe888b16c6088285828de4337c154ebb5c1479366ed332fbe",
+      "bytes": 8023,
+      "role": "jurisdiction summary with separated evidence tiers",
+      "rows": 13
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_v2d/bc_revenue_benchmark.csv",
+      "sha256": "da8faae24d4b07b887dd2ce9035b5a27b185e2b1dd29ae955717441c65b6ccd2",
+      "bytes": 1106373,
+      "role": "annual and period BC price ranges",
+      "rows": 1852
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_v2d/bc_observed_stumpage.csv",
+      "sha256": "7a03c49b4a298b782a9b4b3d8022b1088706e67a52af8d536e5ea953429b660a",
+      "bytes": 23214,
+      "role": "observed BCTS standing-timber stumpage",
+      "rows": 51
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_v2d/bc_cost_coverage.csv",
+      "sha256": "152aa53179e8bd6ad1c99f43332109ab3623c10994d35b4786b56bfe80570483",
+      "bytes": 4339,
+      "role": "BC appraisal allowance coverage and gaps",
+      "rows": 10
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_v2d/qc_reference.csv",
+      "sha256": "c69e9817ce382ff735f5c05085c0647d76e15b88743727ca651235c065e22b19",
+      "bytes": 9074,
+      "role": "validated QC benchmark references",
+      "rows": 14
+    },
+    {
+      "path": "data/derived/national/harvest_basis/net_value_v2d/NET_VALUE_V2D_REPORT.md",
+      "sha256": "e42e16a2a98802ed825a5425929e87dc4ba68944d8ba7e172a3f6398640feaac",
+      "bytes": 12026,
+      "role": "human-readable evidence report"
+    }
+  ],
+  "manifest_path": "data/derived/national/harvest_basis/net_value_v2d/manifest.json"
+}
