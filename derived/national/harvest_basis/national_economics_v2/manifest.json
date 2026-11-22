@@ -1,0 +1,169 @@
+{
+  "model_id": "national_economics_v2",
+  "artifact_version": "2.0.0",
+  "generated_utc": "2026-11-22T06:15:58+00:00",
+  "observation_type": "model_estimate",
+  "restricted_inputs_used": [],
+  "labels": {
+    "observed": false,
+    "policy_grade": false,
+    "combined_national_net_value": false,
+    "national_diagnostic_label": "model_estimate_not_policy"
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/summary.json",
+      "sha256": "7808d943b633fccfe8d4f74fdf3057e245ad93a6b35689229c58a703445eabef"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_margin_estimates.csv",
+      "sha256": "f2b19a4d9196d134e056a67b0950fe5cc4e991306cba0ea0f33b29c3aefc6fb1"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+      "sha256": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "2ac98dc6c4de68f6f44b79c9be9bc66dd73ee4e6a4d578224d860ef5df94667e"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "9b4bef9baf07917709c685eda0cc6ae4469b0f4375492bc8d836bc46dfafc4d1"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay_by_province.csv",
+      "sha256": "4a974d584aaf114cf0701f0ab811cb11d0b8c044247287914eab79140d981044"
+    },
+    {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/road_distance_classes.csv",
+      "sha256": "dae17478f2aae2ddf33d37c12ac0952ea4668f199022ae58d637c610629e75b1"
+    }
+  ],
+  "external_sources": [
+    {
+      "source_key": "ab_timber_dues_2026_11",
+      "url": "https://www.alberta.ca/timber-dues-rates-coniferous-pulpwood-and-roundwood",
+      "sha256": "ab1a72a7aaa78da47099fcb20ebb538499fe9825bdf157b669c3f27280b0a135",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "sk_dues_q3_2026_27",
+      "url": "https://publications.saskatchewan.ca/api/v1/products/129953/formats/157443/download",
+      "sha256": "7ae0f271bb1f59a50f2b06aa82a6f28c4641cc88144761d71cf7aff362c4952f",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "mb_crown_timber_dues_2026_11",
+      "url": "https://www.gov.mb.ca/nrnd/forest/forestry/crown_timber/history/index.html",
+      "sha256": "e6bc049e0e56e6d5fa987c932078084301f2c61b5581315e7e6b0a6ef2b36d46",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "on_stumpage_matrix_2026_27",
+      "url": "https://data.ontario.ca/dataset/crown-timber-charges-for-forestry-companies/resource/159952fe-22ad-4fb7-9067-8aec29964d74",
+      "sha256": "e2742b33c7928e2d29d229267373c8c5e5c510e892afea320292ff20dd012c7b",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "qc_tarification_2026_27",
+      "url": "https://cdn-contenu.quebec.ca/cdn-contenu/forets/documents/entreprises/recolte/tarification/2026-2027/GR_taux_bois_2026-2027.xlsx",
+      "sha256": "db1c7a8bf275a6f3c04026758421d05126040c34debff18c757aa3616c9a7c52",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "nb_timber_royalty_2026_27",
+      "url": "https://gnb.ca/en/topic/environment-resources/forestry-conservation/forest-products/timber-royalty-rates-26-27.html",
+      "sha256": "0e2d7b2d37091986e2b63e56beaa1dd8a2709dc6d55cb84c7d2e914c759128a7",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "ns_standing_timber_2024",
+      "url": "https://novascotia.ca/natr/forestry/registry/pdf/prices-standing-timber-2022.pdf",
+      "sha256": "5f1e6e24d7b0f4b40ec4140137c95657d7c94df3a2d027d8b192620f5664bdbb",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "bcts_annual_2024_25",
+      "url": "https://gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/bc-timber-sales/business-plans-performance-reports/fy2024_bcts_annual_public_performance_report.pdf",
+      "sha256": "a98c37050786d886fa217ba22dc756d9d76fe5b96fe1baa4c4479479a6bbf4e1",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "bc_log_market_2025_12",
+      "url": "https://www2.gov.bc.ca/gov/content/industry/forestry/competitive-forest-industry/timber-pricing",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    },
+    {
+      "source_key": "bc_economic_state_2025",
+      "url": "https://gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/forest-industry-economics/economic-state/2025_economic_state_of_the_bc_forest_sector.pdf",
+      "sha256": "f0623975c71a23bd40c319a873b12c925fa6f6cc3903259689784773e8602043",
+      "retrieved_utc": "2026-11-22T06:12:59Z",
+      "redistributed": false
+    }
+  ],
+  "outputs": [
+    {
+      "path": "provincial_stumpage_references.csv",
+      "sha256": "187e8d6addbd979259ec2159fe77284f70b3784a30332e9e460d5ac21b7ed168"
+    },
+    {
+      "path": "national_price_proxies.csv",
+      "sha256": "291bd81ca46cdcae717cd1d3291eac7d69b62287a2739220a44f0194ef33c75b"
+    },
+    {
+      "path": "national_margin_estimates.csv",
+      "sha256": "c13e647ba8474c0c5f4a2afad1982a5558e8f9a5423a32b025ce8c3fb2415e31"
+    },
+    {
+      "path": "national_margin_summary.csv",
+      "sha256": "9f9bad7bd9a5113070adcc9d022d729979e9ec9d8e42e0ebf7f9593668688185"
+    },
+    {
+      "path": "v1_v2_comparison.csv",
+      "sha256": "478007624aedf759296b4dffd5582bea4711eb2e9a2db9d305f7f01f05ffb3ba"
+    },
+    {
+      "path": "assumptions_donor_register.csv",
+      "sha256": "03cb7201d55f72131fa7db6ccf93af5fa6d3866347e43211beeefc4d586ff271"
+    },
+    {
+      "path": "sources.csv",
+      "sha256": "669efb818ab753960488b43b37b99453ede89631c99948a3355ea85bfa8d7edc"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "b563e57bf055c9876a8dd33cfa979a1acbd1a8c378003c5be3b276d70086f744"
+    },
+    {
+      "path": "NATIONAL_ECONOMICS_V2_REPORT.md",
+      "sha256": "a6ac7fdf85c2a2d350eb776cf5485c811251b4bc51202e09d4597af7004997e1"
+    }
+  ]
+}

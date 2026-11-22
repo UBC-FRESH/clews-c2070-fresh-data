@@ -1,0 +1,13 @@
+assumption_id,category,applies_to,rule,value,unit,source,tier,notes
+stumpage_rate_semantics,price,all,"Extracted provincial values are stumpage/dues/standing-value rates, not delivered prices and not observed revenue.",semantic_label,text,provincial rate sources,documented_constraint,No row labels stumpage as a delivered price.
+bc_scaled_ratio,price,non_BC_with_rate,Multiply provincial stumpage by the BC blended delivered price divided by the BCTS average stumpage rate.,2.1842/3.3745/3.8205,ratio_low_base_high,bcts_annual_2024_25 + bc_log_market_2025_12,model_estimate,137.3M CAD / 4.0M m3 = 34.325 CAD/m3. The ratio transfers BC's cost-plus-margin structure; it is not a provincial cost survey.
+stumpage_scaled_price_proxy,price,"BC,AB,SK,MB,ON,QC,NB,NS",preferred base scenario price proxy,stumpage_scaled,scenario,this model,model_estimate,Labelled stumpage_scaled_proxy; not observed and not policy grade.
+donor_flat_sensitivity,price,"AB,SK,MB,ON,QC,NB,NS,NL,PE,YT,NT,NU",flat BC donor price as sensitivity and fallback,donor_flat,scenario,national_economics_v1,donor_proxy,Used for PE/NL/YT/NT/NU because no current rate is materialised.
+fallback_jurisdictions,price,"PE,NL,YT,NT,NU",BC flat donor only,5,jurisdictions,research source map,donor_proxy,NU open.canada record is an Ontario mirror and is not treated as a Nunavut rate.
+qc_reference_only,price,QC,QC purchase cost and BMMB historical rate are reference-only,reference_only,text,national_economics_v1,reference,Neither is used as a delivered price or observed revenue.
+cost_donors_unchanged,cost,all,"v1 logging/haul, road and silviculture donors are retained",v1,model_version,national_economics_v1,proxy_model,No new provincial cost survey is introduced in v2.
+margin_formula,margin,all,price proxy - logging - haul - road - silviculture,price - logging_haul - road - silviculture,CAD/m3,this model,model_estimate,Low uses high cost; high uses low cost.
+negative_margins_unclipped,margin,all,negative margins are retained and labelled,unclipped,boolean,this model,documented_constraint,No floor at zero; low case is deliberately conservative.
+national_weighting,aggregation,national,volume-weight provincial margins by the 119 Mt allocation,119000000,m3_case,provincial_allocation_119m,model_estimate,Diagnostic only; model_estimate_not_policy.
+no_observed_or_open_claim,label,all,"all rows model_estimate, observed=false, policy_grade=false",false,boolean,this model,documented_constraint,No strict-open licence claim is made.
+price_year_mismatch,price,all,no deflator applied between 2025 BC price and 2026 rates,1.0000,index,this model,assumption,Nominal mismatch is explicit and not corrected.
