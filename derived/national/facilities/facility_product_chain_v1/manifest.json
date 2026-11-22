@@ -1,0 +1,139 @@
+{
+  "artifact": "facility_product_chain_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T20:43:28+00:00",
+  "inputs": {
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/facilities/national_facility_assignment_v2/facility_assignment.csv": "5df24decf7f146884a16dc2a0ea26f6650fef77be0156e02d1b3b137e469d2a2",
+    "data/derived/national/facilities/national_facility_assignment_v2/facility_utilization.csv": "ec3b95edf47c0dcddcda59a63495bd4cb9ebbe9a6387c5e1a2dfdb3e787808ca",
+    "data/derived/national/facilities/national_facility_assignment_v2/summary.json": "acda096566d42516e68d01cb81b8d76eeec21e4291f446ac5e2d2990cc1f0ec2",
+    "data/derived/national/facilities/national_product_chain_v1/coefficients.csv": "50667847509dcb6fcf5dbb94e6ad2c77197368d4193af8089d114074e466621a",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04",
+    "data/derived/national/facilities/national_product_chain_v1/summary.json": "bf708e142c7245796d87dade855b9475ad1243c1b30da7a36e751d8873ef2441"
+  },
+  "labels": {
+    "facility_assignment": true,
+    "model_estimate": true,
+    "observed": false,
+    "policy_grade": false,
+    "ui_or_public_osecan_changed": false
+  },
+  "outputs": {
+    "FACILITY_PRODUCT_CHAIN_V1.md": {
+      "bytes": 8834,
+      "sha256": "7df79a1d203667bcc27ffbfc26fdaa6bff6c6a0c80de8ed0725028258ae4455e"
+    },
+    "facility_product_chain.csv": {
+      "bytes": 510566,
+      "sha256": "d52b9a33fc04274a7d145e62eb91b7ebcd41544f0caa04078d18711cde65839b"
+    },
+    "national_summary.csv": {
+      "bytes": 2715,
+      "sha256": "3ed9c017bf4d249e07abf9c8b60e48db33f72f1e2d5295e8ceefbcb45cf4b277"
+    },
+    "province_class_product_chain.csv": {
+      "bytes": 16189,
+      "sha256": "25477dbece9db87d7ad9031cd11ae1628cc6354cbc626a55ec451d18d5d5b790"
+    },
+    "province_product_chain.csv": {
+      "bytes": 11324,
+      "sha256": "4b6d2c87f2c4d45e688faa457bffc92ee96866e1408d48c3a31a7708a11185bf"
+    },
+    "summary.json": {
+      "bytes": 123299,
+      "sha256": "50b2394ee0b02894a1ce66e3df0ce60ae94686003075cdbfa079c94eaa16bfc1"
+    }
+  },
+  "record_counts": {
+    "facilities_used": 262,
+    "facility_rows": 900,
+    "national_summary_rows": 38,
+    "province_class_rows": 65,
+    "province_rows": 13
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_product_chain",
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "basis": "RSYC recoverable_odt_per_m3_base x provincial harvest; model gross harvest residue x 0.60",
+    "facility_process_residue_odt": 28432733.35725237,
+    "model_recoverable_odt": 5441465.306767704,
+    "note": "The RSYC comparison applies to recoverable harvest residue, not to facility process residue; both are reported separately.",
+    "ratio": 0.768561806470979,
+    "rsyc_base_recoverable_odt": 7080062.08603234,
+    "status": "model_below_rsyc",
+    "upstream_ratio": 0.768561806470307,
+    "upstream_status": "model_below_rsyc"
+  },
+  "scenario": "published_plus_proxy",
+  "validation": {
+    "checks": [
+      {
+        "allocation_rows": 900,
+        "check_id": "class_matching",
+        "detail": "0 class-mismatched allocation rows",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_feedstock_conservation",
+        "detail": "0 province/class feedstock gaps exceed tolerance",
+        "max_abs_gap_m3": 9.313225746154785e-10,
+        "status": "PASS",
+        "tolerance_relative": 1e-08
+      },
+      {
+        "check_id": "national_product_residue_conservation",
+        "detail": "all five class products and process residues match product-chain totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "product_chain_summary_crosscheck",
+        "detail": "facility totals reproduce product-chain summary national totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "finite_nonnegative",
+        "detail": "0 non-finite or negative values",
+        "status": "PASS"
+      },
+      {
+        "check_id": "allocation_normalization",
+        "detail": "failed pools: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "fallback_scope",
+        "detail": "failed: []",
+        "fallback_feedstock_m3": 8806809.161117941,
+        "status": "PASS"
+      },
+      {
+        "check_id": "harvest_residue_separate",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rsyc_reproduction",
+        "detail": "failed: []",
+        "national_rsyc_ratio": 0.768561806470979,
+        "status": "PASS"
+      },
+      {
+        "check_id": "used_facility_capacity",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "assignment_scenario",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "repository_hygiene",
+        "detail": "no unexpected D in parent or data git status",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}
