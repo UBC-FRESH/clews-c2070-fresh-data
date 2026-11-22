@@ -1,0 +1,349 @@
+{
+  "model_id": "national_economics_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T06:02:42+00:00",
+  "observation_type": "model_estimate",
+  "status": "model_estimate_scaffold",
+  "restricted_inputs_used": [],
+  "labels": {
+    "evidence": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "net_value_status": "model_estimate",
+    "combined_national_net_value": false,
+    "national_diagnostic_label": "model_estimate_not_policy"
+  },
+  "coverage": {
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "province_count": 13,
+    "missing": [],
+    "not_estimated_count": 0,
+    "margin_rows": 39,
+    "scenarios": [
+      "low",
+      "base",
+      "high"
+    ],
+    "nu_zero_allocation_volume": true
+  },
+  "validation": {
+    "all_provinces_present": true,
+    "no_not_estimated": true,
+    "price_ranges_ordered": true,
+    "cost_ranges_ordered": true,
+    "margin_ranges_ordered": true,
+    "no_nan_or_infinite": true,
+    "labels_complete": true,
+    "negative_margins_documented": true,
+    "qc_crosscheck_within_2pct": true,
+    "no_restricted_inputs": true,
+    "strict_open_claim": false,
+    "no_cad_per_km_conversion": true,
+    "combined_national_net_value": false
+  },
+  "sources": [
+    {
+      "source_key": "bc_log_market_2025_12",
+      "title": "BC Coast and Interior log-market reports, 2025-12 3-month",
+      "publisher": "BC Timber Pricing Branch, Ministry of Forests",
+      "year": "2025",
+      "url": "https://www2.gov.bc.ca/gov/content/industry/forestry/competitive-forest-industry/timber-pricing",
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f",
+      "licence": "Public-reference BC Crown copyright; not strict-open.",
+      "evidence_tier": "reported_market_average",
+      "strict_open": "false",
+      "used_for": "BC reported mill-delivered price panel."
+    },
+    {
+      "source_key": "bc_open_cost_model",
+      "title": "Open-data BC logging and truck-haul cost model",
+      "publisher": "Derived from TLA/ILA/NWLA/MNP rate guide and FPInnovations case studies",
+      "year": "2026",
+      "url": "https://www.tla.ca/wp-content/uploads/2026/08/Timber-Harvest-Cost-Model-Rate-Sheet_Aug-10-2026.pdf",
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+      "sha256": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745",
+      "licence": "Public-reference copyrighted inputs; derived model; not strict-open.",
+      "evidence_tier": "proxy_model",
+      "strict_open": "false",
+      "used_for": "BC logging+haul cost distribution and donor distribution."
+    },
+    {
+      "source_key": "bc_appraisal_silviculture_2026_10",
+      "title": "BC Interior basic silviculture CAD/m3, 2026-10",
+      "publisher": "BC Timber Pricing Branch, Ministry of Forests",
+      "year": "2026",
+      "url": "https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/forestry/timber-pricing/interior-timber-pricing/interior-appraisal-manual/iam_2026_master_b.pdf",
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea",
+      "licence": "Public-reference BC Crown copyright; not strict-open.",
+      "evidence_tier": "appraisal_allowance",
+      "strict_open": "false",
+      "used_for": "BC Interior basic-silviculture CAD/m3 range; national silviculture donor."
+    },
+    {
+      "source_key": "qc_cost_survey_2022",
+      "title": "Quebec MRNF 2022 forest cost and revenue survey aggregates",
+      "publisher": "Gouvernement du Quebec, MRNF/BMMB",
+      "year": "2022",
+      "url": "https://www.quebec.ca/",
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6",
+      "licence": "Public-reference QC government report; not strict-open.",
+      "evidence_tier": "survey_aggregate",
+      "strict_open": "false",
+      "used_for": "QC harvest, road and haul cost cross-check and road allowance."
+    },
+    {
+      "source_key": "qc_procurement_benchmark_2022",
+      "title": "QC 2022 procurement cost benchmark and BMMB historical benchmark",
+      "publisher": "Gouvernement du Quebec, MRNF/BMMB",
+      "year": "2022",
+      "url": "https://www.quebec.ca/",
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "2ac98dc6c4de68f6f44b79c9be9bc66dd73ee4e6a4d578224d860ef5df94667e",
+      "licence": "Public-reference QC government report; not strict-open.",
+      "evidence_tier": "survey_procurement_cost",
+      "strict_open": "false",
+      "used_for": "QC purchase-cost reference and after-transfer cost spread; not used as price."
+    },
+    {
+      "source_key": "bmmb_delivered_2011_2015",
+      "title": "BMMB delivered-sale historical benchmark, 2011-2015",
+      "publisher": "Gouvernement du Quebec, BMMB",
+      "year": "2015",
+      "url": "https://www.quebec.ca/",
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "9b4bef9baf07917709c685eda0cc6ae4469b0f4375492bc8d836bc46dfafc4d1",
+      "licence": "Public-reference QC government report; not strict-open.",
+      "evidence_tier": "benchmark_historical",
+      "strict_open": "false",
+      "used_for": "QC Crown-only historical reference; not used as a current price."
+    },
+    {
+      "source_key": "provincial_allocation_119m",
+      "title": "Provincial harvest allocation, 119 Mt case",
+      "publisher": "This repository, derived from documented AAC/planning values",
+      "year": "2026",
+      "url": "",
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+      "licence": "Derived public-reference data; not strict-open.",
+      "evidence_tier": "screening_allocation",
+      "strict_open": "false",
+      "used_for": "National volume weights only."
+    },
+    {
+      "source_key": "slope_screen_960m",
+      "title": "National 960 m slope screen and operable overlay by province",
+      "publisher": "Natural Resources Canada MRDEM-30, derived",
+      "year": "2026",
+      "url": "",
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay_by_province.csv",
+      "sha256": "4a974d584aaf114cf0701f0ab811cb11d0b8c044247287914eab79140d981044",
+      "licence": "Open Government Licence - Canada 2.0 for source raster; derived aggregate.",
+      "evidence_tier": "open_derived_aggregate",
+      "strict_open": "true",
+      "used_for": "Provincial steep-slope share for the terrain factor."
+    },
+    {
+      "source_key": "operable_proxy_v2_road_distance",
+      "title": "National Road Network derived road-distance classes",
+      "publisher": "Natural Resources Canada NRN, derived",
+      "year": "2026",
+      "url": "",
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/road_distance_classes.csv",
+      "sha256": "dae17478f2aae2ddf33d37c12ac0952ea4668f199022ae58d637c610629e75b1",
+      "licence": "Open Government Licence - Canada 2.0 for source NRN; derived aggregate.",
+      "evidence_tier": "open_derived_aggregate",
+      "strict_open": "true",
+      "used_for": "Provincial >20 km road-distance share for the road factor."
+    },
+    {
+      "source_key": "national_economics_v1_assumptions",
+      "title": "Explicit donor, factor and coverage assumptions of national_economics_v1",
+      "publisher": "This repository",
+      "year": "2026",
+      "url": "",
+      "path": "workflows/national/harvest/national_economics_v1.py",
+      "sha256": "d70066b233464e57ec50fe71e13299a7345ec5cb9dbbd7d98756993d51ab1e24",
+      "licence": "CC0 1.0 Universal public-domain dedication for this model's assumptions.",
+      "evidence_tier": "model_assumption",
+      "strict_open": "true",
+      "used_for": "Wage/diesel index, terrain/road elasticities, donor rules and labels."
+    }
+  ],
+  "assumptions": [
+    "BC price is a reported-average blend of Coast and Interior 2025-12 3-month reports.",
+    "All non-BC prices are BC donor proxies with price index 1.00 because no provincial index is materialised.",
+    "All costs start from the BC 945-row logging+haul distribution.",
+    "Provincial wage and diesel factors are 1.00 assumptions.",
+    "Terrain and road factors are explicit elasticities, not estimated cost functions.",
+    "QC road and BC Interior silviculture are published CAD/m3 allowances used nationally as donors.",
+    "No CAD/km or CAD/each road/bridge/culvert value is converted to CAD/m3.",
+    "QC direct 2022 harvest+haul+road is a cross-check only.",
+    "National diagnostic uses all 13 jurisdictions and the 119 Mt allocation, not a BC+QC-only total."
+  ],
+  "limitations": [
+    "No provincial delivered-log price series exists outside BC in the materialised evidence.",
+    "No provincial wage or diesel index is materialised; both factors are 1.00 assumptions.",
+    "Terrain and road factors are explicit engineering elasticities, not estimated cost functions.",
+    "BC logging+haul is a proxy model, not an observed contractor cost survey.",
+    "QC road and BC silviculture are 2022/2026 nominal values; no deflator is applied.",
+    "No grade, species, tenure or mill matching is performed.",
+    "No CAD/km road, bridge or culvert conversion is attempted.",
+    "The national diagnostic is a volume-weighted model estimate, not a policy result.",
+    "NU has zero allocation volume and no commercial harvest is asserted."
+  ],
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f",
+      "bytes": 7917987
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/manifest.json",
+      "sha256": "5513d6cf805bd3b3faac01fc0328c17bfcf3a641911b25031f6cdcab80ff9e07",
+      "bytes": 282471
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+      "sha256": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745",
+      "bytes": 558939
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/manifest.json",
+      "sha256": "9819c629be05dc94314ce4cf039aa93ff4fc607a48320b29426b971ad4829d04",
+      "bytes": 46146
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea",
+      "bytes": 454062
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/manifest.json",
+      "sha256": "5ad3f2dad0b240eacf81776d7c0f80293e1c1dd7dcd6f69264b7cee521e3559e",
+      "bytes": 9035
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6",
+      "bytes": 207537
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/manifest.json",
+      "sha256": "e6289e503c43e5dbca7a1199e7c24571a63780c84ee1a25e354809176e61d2f9",
+      "bytes": 42983
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "2ac98dc6c4de68f6f44b79c9be9bc66dd73ee4e6a4d578224d860ef5df94667e",
+      "bytes": 9763
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/manifest.json",
+      "sha256": "2ae2d4b63aeb1dea5a24e9aabaff1f960e2e8091b35623b44a490a3207f71c68",
+      "bytes": 7566
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/bmmb_historical_benchmark.csv",
+      "sha256": "9b4bef9baf07917709c685eda0cc6ae4469b0f4375492bc8d836bc46dfafc4d1",
+      "bytes": 6274
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+      "bytes": 2845
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/provincial_allocation_summary.json",
+      "sha256": "4189974aaae4c42f095b5ffb1615591a35963f3382c54d75d66917925614d8a7",
+      "bytes": 86218
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/slope_operable_overlay_by_province.csv",
+      "sha256": "4a974d584aaf114cf0701f0ab811cb11d0b8c044247287914eab79140d981044",
+      "bytes": 2805
+    },
+    {
+      "path": "data/derived/national/managed_landbase/slope_screen/manifest.json",
+      "sha256": "ecc9638941fa3d83689d79ad8a587e8bf38d5eb46e700b3b7c5cbd9e82e8ee09",
+      "bytes": 4092
+    },
+    {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/road_distance_classes.csv",
+      "sha256": "dae17478f2aae2ddf33d37c12ac0952ea4668f199022ae58d637c610629e75b1",
+      "bytes": 1273
+    },
+    {
+      "path": "data/derived/national/managed_landbase/operable_proxy_v2/manifest.json",
+      "sha256": "a26e3b4f2ef25bd1fc5a49dc4e2d4a4c6ead2c813d2d273e5f2b8c62480e7cb5",
+      "bytes": 15092
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_price_proxies.csv",
+      "sha256": "f3d3137a8bdbd1a8b021206456f972548b33035d93bc5f23b39e589dacf4d835",
+      "bytes": 7127,
+      "rows": 13
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_cost_proxies.csv",
+      "sha256": "418a7f2202dbcc1d32b14d4d3f7343eab3116eecc6c61322aec92c20135b5ff3",
+      "bytes": 7182,
+      "rows": 13
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_margin_estimates.csv",
+      "sha256": "f2b19a4d9196d134e056a67b0950fe5cc4e991306cba0ea0f33b29c3aefc6fb1",
+      "bytes": 13135,
+      "rows": 39
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_margin_summary.csv",
+      "sha256": "55fa95f8d7f3b52de2f1ed85eabeb7581d646846a45e18aac945cf3810b1e299",
+      "bytes": 3530,
+      "rows": 14
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/assumptions_donor_register.csv",
+      "sha256": "cd48b1afd0366d512ceedd3811ce66c7ee818bf2ab67a0ff687ab53addaf03bd",
+      "bytes": 4171,
+      "rows": 16
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/sources.csv",
+      "sha256": "2fa0cbab16010758be19494b4a48e3819d34e1802af8109746496b857527598d",
+      "bytes": 4759,
+      "rows": 10
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/summary.json",
+      "sha256": "7808d943b633fccfe8d4f74fdf3057e245ad93a6b35689229c58a703445eabef",
+      "bytes": 8878,
+      "rows": null
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v1/NATIONAL_ECONOMICS_REPORT.md",
+      "sha256": "9e36ec74ce35e21271389d3247b41e78b23714b86ba0583bdba0a814a9e9c9fe",
+      "bytes": 8878,
+      "rows": null
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "model_id": "national_economics_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T06:02:42+00:00",
+  "status": "model_estimate_scaffold",
+  "description": "National provincial price, cost and margin scaffold covering all 13 provinces and territories with explicit donor/proxy tiers.",
+  "coverage": {
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "province_count": 13,
+    "missing": [],
+    "not_estimated_count": 0,
+    "margin_rows": 39,
+    "scenarios": [
+      "low",
+      "base",
+      "high"
+    ],
+    "nu_zero_allocation_volume": true
+  },
+  "price_panel": {
+    "report_basis": "3_month",
+    "period_end": "2025-12-31",
+    "price_basis": "mill_delivered",
+    "currency_basis": "CAD_nominal_2025",
+    "bc_coast": {
+      "low_cad_m3": 118.49,
+      "base_cad_m3": 122.59034513268472,
+      "high_cad_m3": 134.06,
+      "volume_m3": 882722.25,
+      "report_ids": [
+        "coast_3_month_old_growth_2025-12",
+        "coast_3_month_second_growth_2025-12"
+      ]
+    },
+    "bc_interior": {
+      "low_cad_m3": 59.19,
+      "base_cad_m3": 113.3753883631771,
+      "high_cad_m3": 130.08,
+      "volume_m3": 2433841.0,
+      "report_ids": [
+        "interior_3_month_not_reported_2025-12"
+      ]
+    },
+    "bc_blend": {
+      "low_cad_m3": 74.97303366444164,
+      "base_cad_m3": 115.82800173433246,
+      "high_cad_m3": 131.13929972992375,
+      "coast_weight": 0.26615571103611546,
+      "interior_weight": 0.7338442889638845,
+      "method": "published_report_volume_weighted"
+    },
+    "non_bc_rule": "BC donor price, index 1.00, no provincial index materialised"
+  },
+  "cost_panel": {
+    "bc_distribution": {
+      "low_cad_m3": 29.589999999999996,
+      "base_cad_m3": 57.7,
+      "high_cad_m3": 144.04,
+      "low_method": "p10(total_low)",
+      "base_method": "median(total_base)",
+      "high_method": "p90(total_high)",
+      "p10_base_cad_m3": 41.1,
+      "p90_base_cad_m3": 114.51,
+      "by_system_base_median": {
+        "cable": 59.1,
+        "ground": 47.72,
+        "heli": 114.51
+      },
+      "by_zone_base_median": {
+        "North Central Zone": 56.46,
+        "North East Zone": 56.46,
+        "North Fort Nelson Zone": 56.46,
+        "North West Zone": 60.17,
+        "South Central Zone": 56.46,
+        "South East Zone": 56.46,
+        "South West Zone": 69.22
+      }
+    },
+    "wage_index": 1.0,
+    "diesel_index": 1.0,
+    "terrain_elasticity": 0.25,
+    "road_elasticity": 0.15,
+    "road_allowance": {
+      "low_cad_m3": 15.52,
+      "base_cad_m3": 16.58,
+      "high_cad_m3": 19.895999999999997,
+      "source": "qc_cost_survey_2022 T5 road_total",
+      "tier": "reported_average",
+      "high_uncertainty": 0.2
+    },
+    "silviculture_allowance": {
+      "low_cad_m3": 5.84,
+      "base_cad_m3": 10.61,
+      "high_cad_m3": 11.23,
+      "source": "BC appraisal costs Interior Basic Silviculture 2026-10",
+      "tier": "reported_average"
+    },
+    "no_cad_per_km_conversion": true
+  },
+  "qc_evidence": {
+    "purchase_cost_cad_m3": 107.22,
+    "cost_spread_after_transfers_cad_m3": 0.81,
+    "bmmb_crown_rate_cad_m3": 35.7547,
+    "harvest_total_cad_m3": 31.42,
+    "haul_total_cad_m3": 24.76,
+    "road_before_prccm_cad_m3": 16.58,
+    "road_after_prccm_cad_m3": 15.52,
+    "direct_cost_total_cad_m3": 72.76,
+    "model_crosscheck_ratio": 1.001557477261451,
+    "model_crosscheck_status": "within_2pct",
+    "price_status": "no_current_delivered_log_price",
+    "purchase_cost_used_as_price": false,
+    "bmmb_used_as_price": false
+  },
+  "national_diagnostic": {
+    "allocation_volume_m3": 118977339.1,
+    "margin_low_cad_m3": -94.7046,
+    "margin_base_cad_m3": 33.1365,
+    "margin_high_cad_m3": 81.3168,
+    "label": "model_estimate_not_policy",
+    "combined_national_net_value": false
+  },
+  "margins": {
+    "base_min_cad_m3": 28.8899,
+    "base_max_cad_m3": 36.9252,
+    "base_median_cad_m3": 33.3948,
+    "negative_count": 13,
+    "negative_documented": true,
+    "negative_rows": [
+      {
+        "province": "BC",
+        "scenario_id": "low",
+        "margin_cad_m3": "-100.1930"
+      },
+      {
+        "province": "AB",
+        "scenario_id": "low",
+        "margin_cad_m3": "-89.9629"
+      },
+      {
+        "province": "SK",
+        "scenario_id": "low",
+        "margin_cad_m3": "-91.8864"
+      },
+      {
+        "province": "MB",
+        "scenario_id": "low",
+        "margin_cad_m3": "-94.0598"
+      },
+      {
+        "province": "ON",
+        "scenario_id": "low",
+        "margin_cad_m3": "-89.5498"
+      },
+      {
+        "province": "QC",
+        "scenario_id": "low",
+        "margin_cad_m3": "-96.6814"
+      },
+      {
+        "province": "NB",
+        "scenario_id": "low",
+        "margin_cad_m3": "-85.2473"
+      },
+      {
+        "province": "NS",
+        "scenario_id": "low",
+        "margin_cad_m3": "-85.2563"
+      },
+      {
+        "province": "NL",
+        "scenario_id": "low",
+        "margin_cad_m3": "-96.6443"
+      },
+      {
+        "province": "PE",
+        "scenario_id": "low",
+        "margin_cad_m3": "-85.2468"
+      },
+      {
+        "province": "YT",
+        "scenario_id": "low",
+        "margin_cad_m3": "-100.6176"
+      },
+      {
+        "province": "NT",
+        "scenario_id": "low",
+        "margin_cad_m3": "-101.3310"
+      },
+      {
+        "province": "NU",
+        "scenario_id": "low",
+        "margin_cad_m3": "-105.3059"
+      }
+    ]
+  },
+  "tiers": {
+    "price": {
+      "reported_average": 1,
+      "donor_proxy": 12
+    },
+    "cost": {
+      "proxy_model": 1,
+      "donor_proxy": 11,
+      "donor_proxy_with_reported_road": 1
+    },
+    "road": {
+      "donor_proxy": 12,
+      "reported_average": 1
+    },
+    "silviculture": {
+      "reported_average": 1,
+      "donor_proxy": 12
+    }
+  },
+  "labels": {
+    "evidence": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "net_value_status": "model_estimate",
+    "combined_national_net_value": false,
+    "national_diagnostic_label": "model_estimate_not_policy"
+  },
+  "licensing": {
+    "classification": "public_reference_copyrighted",
+    "strict_open_licence": false,
+    "strict_open_licence_sources": [],
+    "source_pdfs_redistributed": false,
+    "statement": "No strict-open claim is made. Inputs are public-reference copyrighted sources or this model's own explicit assumptions. Source PDFs are not redistributed. Commercial reuse requires permission from the rights holder."
+  },
+  "assumptions": [
+    "BC price is a reported-average blend of Coast and Interior 2025-12 3-month reports.",
+    "All non-BC prices are BC donor proxies with price index 1.00 because no provincial index is materialised.",
+    "All costs start from the BC 945-row logging+haul distribution.",
+    "Provincial wage and diesel factors are 1.00 assumptions.",
+    "Terrain and road factors are explicit elasticities, not estimated cost functions.",
+    "QC road and BC Interior silviculture are published CAD/m3 allowances used nationally as donors.",
+    "No CAD/km or CAD/each road/bridge/culvert value is converted to CAD/m3.",
+    "QC direct 2022 harvest+haul+road is a cross-check only.",
+    "National diagnostic uses all 13 jurisdictions and the 119 Mt allocation, not a BC+QC-only total."
+  ],
+  "validation": {
+    "all_provinces_present": true,
+    "no_not_estimated": true,
+    "price_ranges_ordered": true,
+    "cost_ranges_ordered": true,
+    "margin_ranges_ordered": true,
+    "no_nan_or_infinite": true,
+    "labels_complete": true,
+    "negative_margins_documented": true,
+    "qc_crosscheck_within_2pct": true,
+    "no_restricted_inputs": true,
+    "strict_open_claim": false,
+    "no_cad_per_km_conversion": true,
+    "combined_national_net_value": false
+  },
+  "limitations": [
+    "No provincial delivered-log price series exists outside BC in the materialised evidence.",
+    "No provincial wage or diesel index is materialised; both factors are 1.00 assumptions.",
+    "Terrain and road factors are explicit engineering elasticities, not estimated cost functions.",
+    "BC logging+haul is a proxy model, not an observed contractor cost survey.",
+    "QC road and BC silviculture are 2022/2026 nominal values; no deflator is applied.",
+    "No grade, species, tenure or mill matching is performed.",
+    "No CAD/km road, bridge or culvert conversion is attempted.",
+    "The national diagnostic is a volume-weighted model estimate, not a policy result.",
+    "NU has zero allocation volume and no commercial harvest is asserted."
+  ],
+  "non_claims": [
+    "Not observed profit.",
+    "Not a mill margin.",
+    "Not an official net value.",
+    "Not a stumpage rate.",
+    "Not policy grade.",
+    "Not a combined BC+QC-only national total.",
+    "Not a strict-open dataset."
+  ]
+}
