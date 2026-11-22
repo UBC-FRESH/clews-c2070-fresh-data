@@ -1,0 +1,122 @@
+{
+  "code": [
+    "workflows/national/bucking/schneider2013.py",
+    "workflows/national/bucking/pilot_schema.py",
+    "workflows/national/bucking/national_bucking_pilot.py",
+    "workflows/national/bucking/rules/qc_schneider2013_taper.csv",
+    "workflows/national/bucking/rules/qc_pilot_sorts.csv"
+  ],
+  "command": ".venv/bin/python -m workflows.national.bucking.national_bucking_pilot --out-dir data/derived/national/bucking/national_bucking_pilot_v0",
+  "config": {
+    "basic_density_odt_m3": {
+      "BOP": 0.5,
+      "EPB": 0.37,
+      "EPN": 0.42,
+      "EPR": 0.38,
+      "PEG": 0.35,
+      "PET": 0.35,
+      "SAB": 0.34,
+      "THO": 0.29
+    },
+    "bucker": "value-maximising dynamic program over registry target lengths",
+    "chip_yield_fraction": 0.85,
+    "grade_rules": "workflows/national/bucking/rules/qc_pilot_sorts.csv",
+    "hog_yield_fraction": 0.1,
+    "moisture_wet_basis": 0.45,
+    "stump_height_m": 0.3,
+    "taper_registry": "workflows/national/bucking/rules/qc_schneider2013_taper.csv"
+  },
+  "counts": {
+    "logs": 81,
+    "reconciliation_rows": 24,
+    "residue_rows": 24,
+    "trees": 24
+  },
+  "evidence_tiers": [
+    "measured_taper",
+    "published_table",
+    "assumption"
+  ],
+  "generated_at_utc": "2026-11-22T22:48:27.287072+00:00",
+  "inputs": {
+    "taper": "Schneider (2013) fixed-effect tree model, CFSForestTools parameter tables (LGPL-3.0)",
+    "tree_list": "synthetic in national_bucking_pilot.build_synthetic_tree_list"
+  },
+  "jurisdiction": "QC",
+  "limitations": [
+    "Tree list is synthetic and unweighted; not Quebec inventory.",
+    "Pilot dimension sorts are not official Quebec log grades.",
+    "Prices, density, moisture, chip and hog yields are assumptions.",
+    "No national or operational supply claim is made."
+  ],
+  "national_claim": false,
+  "outputs": [
+    {
+      "bytes": 2383,
+      "path": "README.md",
+      "sha256": "1caab769120500c9069716117ad7e53abe12e87d363a5e30987dde86ee7fed86"
+    },
+    {
+      "bytes": 5451,
+      "path": "schema.md",
+      "sha256": "57350063451f70c44edab25b4d99d05689db6dfbd31db67de99d738ada50f472"
+    },
+    {
+      "bytes": 5727,
+      "path": "tree_list.csv",
+      "sha256": "f98b0b533ee6af6aadf3aaa2386dc3fcccee32da5e5b5ee1d6f95e3da4be8eb4"
+    },
+    {
+      "bytes": 44133,
+      "path": "bucked_logs.csv",
+      "sha256": "91f1a80b6fab0285bea0ff801a468e1353416d7adef5b742807abb45a48fdb90"
+    },
+    {
+      "bytes": 17440,
+      "path": "residue_ledger.csv",
+      "sha256": "28293fae5a7b27b03af7abc423a38a502e58bdd75b5d3855d9151e73be087b47"
+    },
+    {
+      "bytes": 5598,
+      "path": "reconciliation.csv",
+      "sha256": "e1fe79d34503c922cc1304edcbdc562cc94d9aa0ed03c3a304f3fc5d2df79c49"
+    },
+    {
+      "bytes": 1825,
+      "path": "reconciliation_summary.json",
+      "sha256": "3094e366b8df76af0aee92504c854ec1568f929814cd13a7880add85de0e44fb"
+    },
+    {
+      "bytes": 3202,
+      "path": "taper_registry.csv",
+      "sha256": "b3a116ab650f8255b95903758ce3444fffc1768f5c38ae2af8fef895aa5a7e98"
+    },
+    {
+      "bytes": 3274,
+      "path": "grade_rules.csv",
+      "sha256": "970607789c1d3424b57d3e6912c0859a31a7fec8bbb002d59babac6449f8b204"
+    }
+  ],
+  "phase": "Phase 0/2 pilot",
+  "schema_version": "national_bucking_pilot_v0",
+  "scope": "pilot",
+  "totals": {
+    "balance_error_m3": 0.0,
+    "chip_green_tonnes": 0.3396365979768939,
+    "defect_m3": 0.8448945473260789,
+    "hog_green_tonnes": 0.039957246820811046,
+    "max_balance_error_m3": 0.0,
+    "n_logs": 81,
+    "n_trees": 24,
+    "net_plus_defect_error_m3": 0.0,
+    "other_m3": 0.0,
+    "pulpwood_m3": 1.6618281408871103,
+    "recovered_gross_m3": 10.93265286501264,
+    "recovered_net_m3": 10.08775831768656,
+    "residue_m3": 0.5901084942540658,
+    "residue_odt": 0.21976485751446076,
+    "sawlog_m3": 9.27082472412553,
+    "taper_total_m3": 11.522761359266706,
+    "value_cad": 874.7386172181459
+  }
+}
