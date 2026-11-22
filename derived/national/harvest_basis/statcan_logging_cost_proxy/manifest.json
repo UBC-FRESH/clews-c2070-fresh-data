@@ -1,0 +1,81 @@
+{
+  "artifact_id": "statcan_logging_cost_proxy",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T15:24:51Z",
+  "status": "industry_aggregate_proxy_not_policy_grade",
+  "labels": {
+    "evidence": "industry_aggregate_proxy",
+    "observation_type": "industry_aggregate_proxy",
+    "not_logging_haul_breakdown": true,
+    "observed": false,
+    "policy_grade": false,
+    "price_basis": "nominal_2024_CAD",
+    "geography": "13_individual_provinces_and_territories",
+    "naics_requested": "1133",
+    "statcan_naics_published": "11331",
+    "statcan_contract_naics": "113312"
+  },
+  "reference_year": 2024,
+  "inputs": {
+    "statcan_16100114_archive": {
+      "url": "https://www150.statcan.gc.ca/n1/tbl/csv/16100114-eng.zip",
+      "publication_date": "2025-12-18",
+      "sha256": "632b258b0fc60b5641dcc8cfc4ddb4068c56fdf38fed1b4288e5b4783e35156c",
+      "bytes": 108325
+    },
+    "statcan_16100114_csv": {
+      "sha256": "4956bbb21f062d1114d6296cc2c69689424078a7ddd9b9801b79fb5684589f60",
+      "bytes": 1388109
+    },
+    "provincial_allocation_119m": {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+      "bytes": 2845
+    }
+  },
+  "outputs": {
+    "provincial_logging_cost_proxy.csv": {
+      "sha256": "20e63ca71e644bddc197908aeacfadf765dbae36fbb75eb23de8a6610e9b4e03",
+      "bytes": 10854
+    },
+    "sources.csv": {
+      "sha256": "1b2c332a49819c4cd5c9d5ea53b26c3b3f4a2aba8faaf02a1b412451a908f1d9",
+      "bytes": 1838
+    },
+    "summary.json": {
+      "sha256": "134fc6b329c60b926387459a951a9d56962b8232bc1e21ff0595e4e51159e40f",
+      "bytes": 27905
+    },
+    "README.md": {
+      "sha256": "1ba589ffbdec457302a813f6a89f2f277cbef0bb29f625677d5a6ff9905e5ca1",
+      "bytes": 6417
+    }
+  },
+  "coverage": {
+    "jurisdictions_expected": 13,
+    "jurisdictions_present": 13,
+    "proxy_available": 12,
+    "missing": [
+      "NU"
+    ],
+    "contract_logging_unavailable": {
+      "YT": "suppressed",
+      "NT": "suppressed",
+      "NU": "undefined_zero_harvest_denominator"
+    }
+  },
+  "caveats": [
+    "industry_aggregate_not_logging_or_haul_cost",
+    "double_counting_with_contract_and_haul_models",
+    "survey_coverage_bias",
+    "year_and_price_basis",
+    "component_detail",
+    "quality_symbols",
+    "jurisdiction_aggregation"
+  ],
+  "reproduce_command": ".venv/bin/python -m workflows.national.harvest.statcan_logging_cost_proxy",
+  "not_editing": [
+    "ui/public OSeCAN artifacts",
+    "national economics v2.2 artifacts"
+  ]
+}

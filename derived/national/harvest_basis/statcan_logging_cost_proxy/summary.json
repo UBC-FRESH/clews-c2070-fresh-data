@@ -1,0 +1,734 @@
+{
+  "artifact_id": "statcan_logging_cost_proxy",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T15:24:51Z",
+  "status": "industry_aggregate_proxy_not_policy_grade",
+  "description": "Provincial NAICS 11331 logging-industry total expenses divided by 2024 provincial harvest. Industry aggregate proxy with no logging/haul separation.",
+  "labels": {
+    "evidence": "industry_aggregate_proxy",
+    "observation_type": "industry_aggregate_proxy",
+    "not_logging_haul_breakdown": true,
+    "observed": false,
+    "policy_grade": false,
+    "price_basis": "nominal_2024_CAD",
+    "geography": "13_individual_provinces_and_territories",
+    "naics_requested": "1133",
+    "statcan_naics_published": "11331",
+    "statcan_contract_naics": "113312"
+  },
+  "reference_year": 2024,
+  "source": {
+    "table": "16-10-0114-01",
+    "title": "Logging industries, principal statistics by North American Industry Classification System (NAICS)",
+    "publisher": "Statistics Canada",
+    "url": "https://www150.statcan.gc.ca/n1/tbl/csv/16100114-eng.zip",
+    "licence": "Statistics Canada Open Licence",
+    "archive_last_modified": "2025-12-18",
+    "archive_sha256": "632b258b0fc60b5641dcc8cfc4ddb4068c56fdf38fed1b4288e5b4783e35156c",
+    "csv_sha256": "4956bbb21f062d1114d6296cc2c69689424078a7ddd9b9801b79fb5684589f60",
+    "harvest_csv": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+    "harvest_csv_sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42"
+  },
+  "coverage": {
+    "jurisdictions_expected": 13,
+    "jurisdictions_present": 13,
+    "proxy_available": 12,
+    "missing": [
+      "NU"
+    ],
+    "missing_reasons": {
+      "NU": "undefined_zero_harvest_denominator"
+    },
+    "available": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT"
+    ],
+    "contract_logging_available": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE"
+    ],
+    "contract_logging_unavailable": {
+      "YT": "suppressed",
+      "NT": "suppressed",
+      "NU": "undefined_zero_harvest_denominator"
+    },
+    "harvest_complete": true,
+    "harvest_bases": [
+      "provincial_allocation/119m.csv:observed_2024_m3"
+    ],
+    "reference_year": 2024,
+    "source_latest_year": 2024,
+    "latest_available_year_by_province": {
+      "BC": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "AB": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "SK": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "MB": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "ON": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "QC": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "NB": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "NS": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "NL": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "PE": {
+        "11331": 2024,
+        "113312": 2024
+      },
+      "YT": {
+        "11331": 2024,
+        "113312": 2019
+      },
+      "NT": {
+        "11331": 2024,
+        "113312": null
+      },
+      "NU": {
+        "11331": 2024,
+        "113312": 2024
+      }
+    },
+    "statcan_status_counts": {
+      "A": 1,
+      "B": 21,
+      "C": 20,
+      "D": 12,
+      "E": 41,
+      "F": 1,
+      "x": 8
+    },
+    "worst_industry_status_by_province": {
+      "BC": "E",
+      "AB": "D",
+      "SK": "E",
+      "MB": "D",
+      "ON": "D",
+      "QC": "E",
+      "NB": "E",
+      "NS": "E",
+      "NL": "C",
+      "PE": "E",
+      "YT": "E",
+      "NT": "E",
+      "NU": "E"
+    },
+    "worst_contract_status_by_province": {
+      "BC": "E",
+      "AB": "D",
+      "SK": "C",
+      "MB": "E",
+      "ON": "E",
+      "QC": "E",
+      "NB": "E",
+      "NS": "F",
+      "NL": "C",
+      "PE": "C",
+      "YT": "x",
+      "NT": "x",
+      "NU": "E"
+    }
+  },
+  "national": {
+    "reference_year": 2024,
+    "total_expenses_cad": 11695849000.0,
+    "total_expenses_status": "B",
+    "salaries_wages_cad": 1781082000.0,
+    "materials_supplies_cad": 5971598000.0,
+    "energy_fuel_cad": 991345000.0,
+    "component_shares": {
+      "salaries_wages": 0.15228325878694227,
+      "materials_supplies": 0.5105741361742957,
+      "energy_fuel": 0.08476041371601155,
+      "other": 0.2523821913227505
+    },
+    "harvest_m3": 118977339.0,
+    "harvest_complete": true,
+    "industry_expense_cad_m3": 98.30316510944996,
+    "sum_provincial_total_expenses_cad": 11695849000.0,
+    "canada_minus_sum_provincial_expenses_cad": 0.0,
+    "national_ratio_basis": "Canada NAICS 11331 total expenses divided by the sum of the 13 provincial 2024 observed harvest denominators"
+  },
+  "provinces": [
+    {
+      "province": "BC",
+      "province_name": "British Columbia",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 38876568.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 39978577.0,
+      "total_expenses_cad": 5455115000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 140.31884193069718,
+      "scenario_119m_industry_expense_cad_m3": 136.4509547200742,
+      "component_shares": {
+        "salaries_wages": 0.1401310513160584,
+        "materials_supplies": 0.5349430763604434,
+        "energy_fuel": 0.07065130615944852,
+        "other": 0.25427456616404975
+      },
+      "contract_logging_total_expenses_cad": 2467271000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 63.46421834355337,
+      "contract_logging_shares": {
+        "salaries_wages": 0.21749090391772935,
+        "materials_supplies": 0.37224731292184765,
+        "energy_fuel": 0.1260157477634196,
+        "other": 0.28424603539700344
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "E",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_E_use_with_caution"
+      ]
+    },
+    {
+      "province": "AB",
+      "province_name": "Alberta",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 22260402.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 22891404.0,
+      "total_expenses_cad": 1224021000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 54.986473290105,
+      "scenario_119m_industry_expense_cad_m3": 53.470770075963884,
+      "component_shares": {
+        "salaries_wages": 0.20399976797783698,
+        "materials_supplies": 0.4953256520925703,
+        "energy_fuel": 0.1096688700602359,
+        "other": 0.19100570986935683
+      },
+      "contract_logging_total_expenses_cad": 895541000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 40.2302258512672,
+      "contract_logging_shares": {
+        "salaries_wages": 0.2341009512685628,
+        "materials_supplies": 0.3962632643284897,
+        "energy_fuel": 0.13491286272766964,
+        "other": 0.23472292167527786
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "D",
+      "contract_worst_quality_status": "D",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_D_acceptable_quality",
+        "contract_statcan_status_D_acceptable_quality"
+      ]
+    },
+    {
+      "province": "SK",
+      "province_name": "Saskatchewan",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 4224936.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 4344697.6,
+      "total_expenses_cad": 153876000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 36.420906730894856,
+      "scenario_119m_industry_expense_cad_m3": 35.4169643475302,
+      "component_shares": {
+        "salaries_wages": 0.16094127739218592,
+        "materials_supplies": 0.5272167199563285,
+        "energy_fuel": 0.1252891938963841,
+        "other": 0.1865528087551015
+      },
+      "contract_logging_total_expenses_cad": 78121000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 18.4904576069318,
+      "contract_logging_shares": {
+        "salaries_wages": 0.19883258022810768,
+        "materials_supplies": 0.431100472344184,
+        "energy_fuel": 0.15505433878214564,
+        "other": 0.2150126086455626
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "C",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution"
+      ]
+    },
+    {
+      "province": "MB",
+      "province_name": "Manitoba",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 1103943.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 1135235.8,
+      "total_expenses_cad": 58366000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 52.870483349230895,
+      "scenario_119m_industry_expense_cad_m3": 51.41310730334614,
+      "component_shares": {
+        "salaries_wages": 0.2356508926429771,
+        "materials_supplies": 0.3679882123153891,
+        "energy_fuel": 0.17438234588630366,
+        "other": 0.2219785491553301
+      },
+      "contract_logging_total_expenses_cad": 40680000.0,
+      "contract_logging_total_expenses_status": "C",
+      "contract_logging_industry_expense_cad_m3": 36.84972865446857,
+      "contract_logging_shares": {
+        "salaries_wages": 0.25051622418879055,
+        "materials_supplies": 0.38144051130776796,
+        "energy_fuel": 0.17104228121927237,
+        "other": 0.19700098328416915
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "D",
+      "contract_worst_quality_status": "E",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_D_acceptable_quality",
+        "contract_statcan_status_E_use_with_caution"
+      ]
+    },
+    {
+      "province": "ON",
+      "province_name": "Ontario",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 13121645.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 13493596.0,
+      "total_expenses_cad": 1098666000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 83.72928851527381,
+      "scenario_119m_industry_expense_cad_m3": 81.42129051440402,
+      "component_shares": {
+        "salaries_wages": 0.15378103991567957,
+        "materials_supplies": 0.5384120378713823,
+        "energy_fuel": 0.10338082729419132,
+        "other": 0.20442609491874686
+      },
+      "contract_logging_total_expenses_cad": 525190000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 40.024707268029275,
+      "contract_logging_shares": {
+        "salaries_wages": 0.20568936956149203,
+        "materials_supplies": 0.438226165768579,
+        "energy_fuel": 0.1360688512728727,
+        "other": 0.22001561339705633
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "D",
+      "contract_worst_quality_status": "E",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_D_acceptable_quality",
+        "contract_statcan_status_E_use_with_caution",
+        "contract_statcan_status_D_acceptable_quality"
+      ]
+    },
+    {
+      "province": "QC",
+      "province_name": "Quebec",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 25939056.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 26674334.0,
+      "total_expenses_cad": 2626809000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 101.26848872218018,
+      "scenario_119m_industry_expense_cad_m3": 98.4770228939924,
+      "component_shares": {
+        "salaries_wages": 0.15200572253254804,
+        "materials_supplies": 0.5280220221569212,
+        "energy_fuel": 0.07946257226924379,
+        "other": 0.24050968304128695
+      },
+      "contract_logging_total_expenses_cad": 1373224000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 52.94039998988398,
+      "contract_logging_shares": {
+        "salaries_wages": 0.18568055903479694,
+        "materials_supplies": 0.44037607848391813,
+        "energy_fuel": 0.09928970073345646,
+        "other": 0.27465366174782846
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "E",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_D_acceptable_quality",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_D_acceptable_quality",
+        "contract_statcan_status_E_use_with_caution"
+      ]
+    },
+    {
+      "province": "NB",
+      "province_name": "New Brunswick",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 9341187.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 6234700.0,
+      "total_expenses_cad": 921662000.0,
+      "total_expenses_status": "E",
+      "industry_expense_cad_m3": 98.66647568451418,
+      "scenario_119m_industry_expense_cad_m3": 147.82780246042313,
+      "component_shares": {
+        "salaries_wages": 0.12764874758859537,
+        "materials_supplies": 0.35474826997315717,
+        "energy_fuel": 0.1006041260245079,
+        "other": 0.41699885641373957
+      },
+      "contract_logging_total_expenses_cad": 226455000.0,
+      "contract_logging_total_expenses_status": "C",
+      "contract_logging_industry_expense_cad_m3": 24.242636401562244,
+      "contract_logging_shares": {
+        "salaries_wages": 0.23930140646044468,
+        "materials_supplies": 0.2419156123733192,
+        "energy_fuel": 0.16647899141109712,
+        "other": 0.352303989755139
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "E",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_D_acceptable_quality",
+        "contract_statcan_status_E_use_with_caution"
+      ]
+    },
+    {
+      "province": "NS",
+      "province_name": "Nova Scotia",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 2322413.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 2388245.0,
+      "total_expenses_cad": 91789000.0,
+      "total_expenses_status": "E",
+      "industry_expense_cad_m3": 39.523116689408816,
+      "scenario_119m_industry_expense_cad_m3": 38.43366153807503,
+      "component_shares": {
+        "salaries_wages": 0.2466962272167689,
+        "materials_supplies": 0.2787588926777718,
+        "energy_fuel": 0.18921657279194676,
+        "other": 0.28532830731351255
+      },
+      "contract_logging_total_expenses_cad": 51251000.0,
+      "contract_logging_total_expenses_status": "E",
+      "contract_logging_industry_expense_cad_m3": 22.067995657964367,
+      "contract_logging_shares": {
+        "salaries_wages": 0.28126280462820236,
+        "materials_supplies": null,
+        "energy_fuel": 0.19781077442391368,
+        "other": null
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "F",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_E_use_with_caution",
+        "contract_statcan_status_F_too_unreliable"
+      ]
+    },
+    {
+      "province": "NL",
+      "province_name": "Newfoundland and Labrador",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 1413957.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 1454037.5,
+      "total_expenses_cad": 51069000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 36.117788589044785,
+      "scenario_119m_industry_expense_cad_m3": 35.12220283177016,
+      "component_shares": {
+        "salaries_wages": 0.338757367483209,
+        "materials_supplies": 0.1736865809003505,
+        "energy_fuel": 0.15604378390021342,
+        "other": 0.3315122677162271
+      },
+      "contract_logging_total_expenses_cad": 46524000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 32.90340512476688,
+      "contract_logging_shares": {
+        "salaries_wages": 0.3417375977989855,
+        "materials_supplies": 0.157768033703035,
+        "energy_fuel": 0.1535551543289485,
+        "other": 0.34693921416903106
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "C",
+      "contract_worst_quality_status": "C",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022"
+      ]
+    },
+    {
+      "province": "PE",
+      "province_name": "Prince Edward Island",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 293880.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 302210.4,
+      "total_expenses_cad": 13275000.0,
+      "total_expenses_status": "B",
+      "industry_expense_cad_m3": 45.171498570845245,
+      "scenario_119m_industry_expense_cad_m3": 43.92635064842242,
+      "component_shares": {
+        "salaries_wages": 0.1801129943502825,
+        "materials_supplies": 0.3061393596986817,
+        "energy_fuel": 0.13265536723163843,
+        "other": 0.3810922787193973
+      },
+      "contract_logging_total_expenses_cad": 5191000.0,
+      "contract_logging_total_expenses_status": "B",
+      "contract_logging_industry_expense_cad_m3": 17.663672247175718,
+      "contract_logging_shares": {
+        "salaries_wages": 0.19572336736659604,
+        "materials_supplies": 0.32440762858794064,
+        "energy_fuel": 0.18146792525524946,
+        "other": 0.2984010787902138
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "available",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "C",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution"
+      ]
+    },
+    {
+      "province": "YT",
+      "province_name": "Yukon",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 42715.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 43925.8,
+      "total_expenses_cad": 1033000.0,
+      "total_expenses_status": "E",
+      "industry_expense_cad_m3": 24.1835420812361,
+      "scenario_119m_industry_expense_cad_m3": 23.516930824253627,
+      "component_shares": {
+        "salaries_wages": 0.16844143272023232,
+        "materials_supplies": 0.41626331074540174,
+        "energy_fuel": 0.08712487899322362,
+        "other": 0.3281703775411423
+      },
+      "contract_logging_total_expenses_cad": null,
+      "contract_logging_total_expenses_status": "x",
+      "contract_logging_industry_expense_cad_m3": null,
+      "contract_logging_shares": {
+        "salaries_wages": null,
+        "materials_supplies": null,
+        "energy_fuel": null,
+        "other": null
+      },
+      "contract_logging_latest_available_year": 2019,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "suppressed",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "x",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_x_suppressed",
+        "contract_logging_not_available"
+      ]
+    },
+    {
+      "province": "NT",
+      "province_name": "Northwest Territories",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 36637.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 36376.0,
+      "total_expenses_cad": 168000.0,
+      "total_expenses_status": "E",
+      "industry_expense_cad_m3": 4.585528291071867,
+      "scenario_119m_industry_expense_cad_m3": 4.618429733890477,
+      "component_shares": {
+        "salaries_wages": 0.16666666666666666,
+        "materials_supplies": 0.43452380952380953,
+        "energy_fuel": 0.08928571428571429,
+        "other": 0.30952380952380953
+      },
+      "contract_logging_total_expenses_cad": null,
+      "contract_logging_total_expenses_status": "x",
+      "contract_logging_industry_expense_cad_m3": null,
+      "contract_logging_shares": {
+        "salaries_wages": null,
+        "materials_supplies": null,
+        "energy_fuel": null,
+        "other": null
+      },
+      "contract_logging_latest_available_year": null,
+      "proxy_status": "available",
+      "contract_logging_proxy_status": "suppressed",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "x",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_x_suppressed",
+        "contract_logging_not_available",
+        "ratio_below_10pct_national_context"
+      ]
+    },
+    {
+      "province": "NU",
+      "province_name": "Nunavut",
+      "harvest_basis": "provincial_allocation/119m.csv:observed_2024_m3",
+      "harvest_m3": 0.0,
+      "harvest_is_observed_2024": true,
+      "scenario_119m_harvest_m3": 0.0,
+      "total_expenses_cad": 0.0,
+      "total_expenses_status": "E",
+      "industry_expense_cad_m3": null,
+      "scenario_119m_industry_expense_cad_m3": null,
+      "component_shares": {
+        "salaries_wages": null,
+        "materials_supplies": null,
+        "energy_fuel": null,
+        "other": null
+      },
+      "contract_logging_total_expenses_cad": 0.0,
+      "contract_logging_total_expenses_status": "E",
+      "contract_logging_industry_expense_cad_m3": null,
+      "contract_logging_shares": {
+        "salaries_wages": null,
+        "materials_supplies": null,
+        "energy_fuel": null,
+        "other": null
+      },
+      "contract_logging_latest_available_year": 2024,
+      "proxy_status": "undefined_zero_harvest_denominator",
+      "contract_logging_proxy_status": "undefined_zero_harvest_denominator",
+      "industry_worst_quality_status": "E",
+      "contract_worst_quality_status": "E",
+      "data_quality_flags": [
+        "preliminary_reference_year",
+        "energy_water_fuel_detail_not_published_since_2022",
+        "industry_statcan_status_E_use_with_caution",
+        "contract_statcan_status_E_use_with_caution",
+        "harvest_denominator_zero",
+        "reported_zero_total_expenses"
+      ]
+    }
+  ],
+  "caveats": [
+    {
+      "id": "industry_aggregate_not_logging_or_haul_cost",
+      "text": "Total expenses are a NAICS 11331 establishment aggregate. They include administration, depreciation, overhead, non-logging activity and any in-forest log hauling performed by logging establishments; the table does not publish a logging-only or haul-only cost."
+    },
+    {
+      "id": "double_counting_with_contract_and_haul_models",
+      "text": "Do not add this aggregate to a separate truck-haul or silviculture cost without checking overlap. NAICS 11331 is the parent of 113311 and 113312; summing both child industries would double count. Payments from 113311 establishments to 113312 contractors may also appear in materials/supplies, creating intra-industry subcontract double counting at the parent level."
+    },
+    {
+      "id": "survey_coverage_bias",
+      "text": "The Annual Survey of Manufacturing and Logging Industries covers employer establishments. Non-employer contractors, owner-operators and community or informal harvest are not fully represented, while the harvest denominator includes all provincial harvest. This can bias CAD/m3 downward, especially in the territories."
+    },
+    {
+      "id": "year_and_price_basis",
+      "text": "Expenses are reference year 2024, the latest year in the 2025-12-18 table release, and are preliminary and subject to revision. Values are nominal 2024 CAD; no deflator or escalation is applied. The primary harvest denominator is the 2024 observed provincial harvest in provincial_allocation/119m.csv; the 119 Mm3 allocation column is a sensitivity, not the primary basis."
+    },
+    {
+      "id": "component_detail",
+      "text": "Only four expense components are published: total salaries and wages, materials and supplies, total energy/water utility/vehicle fuel, and an unpriced residual. Since reference year 2022 the energy, water and vehicle-fuel detail is no longer published. Shares use total expenses as the denominator."
+    },
+    {
+      "id": "quality_symbols",
+      "text": "Statistics Canada quality symbols are preserved: A/B/C/D/E are published estimates (D means acceptable, E use with caution), F is too unreliable, and x is suppressed. D is a data-quality flag, not a deletion. Suppressed or unavailable cells are blank, never zero-filled. Nunavut has a reported zero expense and zero harvest denominator, so its CAD/m3 is undefined and left blank."
+    },
+    {
+      "id": "jurisdiction_aggregation",
+      "text": "Only the 13 individual provinces and territories are used. Statistics Canada Atlantic Region and Prairie Region rows are aggregates and are excluded to avoid double counting. Canada is used only as national context."
+    }
+  ],
+  "not_for": [
+    "observed logging contractor cost",
+    "logging cost curve by terrain, piece size, or system",
+    "truck-haul cost",
+    "delivered log cost",
+    "marginal cost",
+    "policy-grade benchmark",
+    "net value or profit"
+  ]
+}
