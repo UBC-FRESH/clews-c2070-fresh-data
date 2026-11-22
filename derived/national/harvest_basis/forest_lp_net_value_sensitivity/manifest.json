@@ -1,0 +1,232 @@
+{
+  "model_id": "forest_lp_net_value_sensitivity_v1",
+  "artifact_version": "1.0.0",
+  "schema_version": "national/forest-lp-net-value-sensitivity/1",
+  "generated_utc": "2026-11-22T16:42:39+00:00",
+  "source_publication_context": "national-economics-v2.4",
+  "parent_commit": "16726bbe02fb4f708312564861022f64c1897e55",
+  "data_commit": "0484ad6e12efe27309c0790063a81f91291fafa8",
+  "observation_type": "model_estimate",
+  "labels": {
+    "net_value_label": "model_estimate",
+    "evidence_tier": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "net_value_status": "model_estimate_not_policy",
+    "lp_objective": "not_used",
+    "forest_lp_objective_changed": false,
+    "v1_outputs_changed": false,
+    "combined_national_net_value": false,
+    "ranking_performed": false,
+    "public_osecan_input": false,
+    "restricted_data_used": false
+  },
+  "status": "model_estimate_not_policy",
+  "objective_used": false,
+  "forest_lp_objective_changed": false,
+  "v1_outputs_changed": false,
+  "public_osecan_input": false,
+  "restricted_data_used": false,
+  "inputs": [
+    {
+      "path": "out/forest_lp_v1/forest_lp_allocation.csv",
+      "role": "forest_lp_v1_allocation",
+      "sha256": "bd61b3370a1ec688fe5b12044c9b3a4e5eb20ae323a6530de7b5d5662fc196ec",
+      "bytes": 74486,
+      "rows": 117
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_margin_totals/province_margin_totals.csv",
+      "role": "province_margin_totals",
+      "sha256": "919567ae7e7d85f9103571e72f5bdec32869332c87ec6d2314313fc4efa87d90",
+      "bytes": 7620,
+      "rows": 26
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_margin_totals/national_margin_totals.json",
+      "role": "national_margin_totals_metadata",
+      "sha256": "dad15e44fb4d520d6a7773ed0eaba1848d9e09ae9eca722338aae308924e0467",
+      "bytes": 33791
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/summary.json",
+      "role": "national_economics_v2_3_summary",
+      "sha256": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc",
+      "bytes": 96824
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/tier_coverage.csv",
+      "role": "national_economics_v2_3_tier_labels",
+      "sha256": "d7c8fdc3314993c5fe3f8f91c4f81117d257f032c4c39393e62973a584f4d404",
+      "bytes": 15103,
+      "rows": 42
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/national_margin_summary.csv",
+      "role": "national_economics_v2_3_margin_summary",
+      "sha256": "ce1fc9969b592d9d7295c838dbaa6bb079945c7577a2e21f42a9b2fcdcf00fc4",
+      "bytes": 14163,
+      "rows": 30
+    }
+  ],
+  "outputs": [
+    {
+      "path": "allocation_net_value.csv",
+      "sha256": "5f47eb66e6df5a2454a17ca084778c78bbcbb8bcd9d658f4bfeff6414852eda0",
+      "bytes": 43893
+    },
+    {
+      "path": "allocation_net_value_summary.csv",
+      "sha256": "ce1cb62a1194d6b8908c28326d9dd872190d2ae3e107159a577322ce7c5c592c",
+      "bytes": 4949
+    },
+    {
+      "path": "national_net_value_summary.csv",
+      "sha256": "894166d03b7576d0b130fc833dff0a0ed1a8481b3f01c7fdec38c1f45d714417",
+      "bytes": 7344
+    },
+    {
+      "path": "summary.json",
+      "sha256": "4d174adefd2b4ebdb90476605743955861783d3c0f6b21034cd64ce4ba2b763f",
+      "bytes": 72219
+    },
+    {
+      "path": "FOREST_LP_NET_VALUE_REPORT.md",
+      "sha256": "8773b0c1a1429f62bd398f7f6df671602f3ccde788e42c4b20404e7d03bfb158",
+      "bytes": 8441
+    }
+  ],
+  "validation": {
+    "checks": [
+      {
+        "id": "allocation-rows",
+        "name": "Forest LP v1 allocation rows preserved",
+        "status": "pass",
+        "detail": "117 rows (expected 117)"
+      },
+      {
+        "id": "net-value-arithmetic",
+        "name": "Net value equals allocation x margin / 1e6",
+        "status": "pass",
+        "detail": "0 arithmetic mismatches"
+      },
+      {
+        "id": "infeasible-blanks",
+        "name": "Infeasible rows keep blank net values",
+        "status": "pass",
+        "detail": "0 non-blank values on infeasible rows"
+      },
+      {
+        "id": "feasible-complete",
+        "name": "Feasible rows carry all six net values",
+        "status": "pass",
+        "detail": "0 blank values on feasible rows"
+      },
+      {
+        "id": "negative-unclipped",
+        "name": "Negative values are retained without clipping",
+        "status": "pass",
+        "detail": "133 negative net-value cells; 0 sign/clipping mismatches"
+      },
+      {
+        "id": "infeasible-count",
+        "name": "Infeasible allocation rows are blank",
+        "status": "pass",
+        "detail": "26 infeasible rows"
+      },
+      {
+        "id": "group-summaries",
+        "name": "Allocation-level summaries cover cap x level x scenario",
+        "status": "pass",
+        "detail": "18 groups"
+      },
+      {
+        "id": "national-rows",
+        "name": "National totals cover every group and case",
+        "status": "pass",
+        "detail": "54 rows"
+      },
+      {
+        "id": "national-equals-province-sum",
+        "name": "National totals equal the province sum",
+        "status": "pass",
+        "detail": "0 total mismatches"
+      },
+      {
+        "id": "tier-labels",
+        "name": "Price and cost tiers match national_economics_v2_3",
+        "status": "pass",
+        "detail": "0 tier mismatches"
+      },
+      {
+        "id": "margin-total-crosscheck",
+        "name": "Canonical 119m totals match the margin-total diagnostic",
+        "status": "pass",
+        "detail": "max abs delta vs national_margin_totals.json: 0.000000959 M CAD"
+      },
+      {
+        "id": "labels",
+        "name": "Model-estimate labels are carried on every row",
+        "status": "pass",
+        "detail": "observed=false, policy_grade=false, lp_objective=not_used"
+      },
+      {
+        "id": "objective-unchanged",
+        "name": "Forest LP objective and v1 outputs are unchanged",
+        "status": "pass",
+        "detail": "5 v1 output files hashed before and after; forest_lp_v1.py hash unchanged"
+      },
+      {
+        "id": "no-restricted-data",
+        "name": "No restricted or raw data is used",
+        "status": "pass",
+        "detail": "all inputs are under data/derived or out/; restricted_data_used=false"
+      },
+      {
+        "id": "no-public-ui",
+        "name": "No UI or public OSeCAN publication is written",
+        "status": "pass",
+        "detail": "output is a derived data artifact; public_osecan_input=false"
+      }
+    ],
+    "allocation_rows": 117,
+    "expected_allocation_rows": 117,
+    "group_summaries": 18,
+    "national_rows": 54,
+    "feasible_rows": 91,
+    "infeasible_rows": 26,
+    "negative_net_value_cells": 133,
+    "national_equals_province_sum": true,
+    "net_value_arithmetic": true,
+    "infeasible_blanks": true,
+    "feasible_complete": true,
+    "negative_unclipped": true,
+    "tier_labels_match_v2_3": true,
+    "margin_total_max_abs_delta_m_cad": 9.588602551957592e-07,
+    "margin_total_deltas_m_cad": {
+      "donor_flat_low": 9.588602551957592e-07,
+      "donor_flat_base": 4.793600965058431e-07,
+      "donor_flat_high": 8.811184670776129e-09,
+      "stumpage_scaled_low": 5.379597496357746e-07,
+      "stumpage_scaled_base": 6.885400125611341e-07,
+      "stumpage_scaled_high": 3.373043000465259e-08
+    },
+    "labels_model_estimate": true,
+    "observed_claim": false,
+    "policy_grade_claim": false,
+    "lp_objective": "not_used",
+    "forest_lp_objective_changed": false,
+    "forest_lp_source_sha256": "ce28e6231fc416b2ac84f64925f14b1e6bb3aee651e4bfafe514c72ea0361dfe",
+    "v1_outputs_unchanged": true,
+    "v1_output_files_hashed": 5,
+    "public_osecan_input": false,
+    "restricted_data_used": false,
+    "unexpected_d_cells": 0,
+    "statcan_d": {
+      "observed_d_cell_count": 0,
+      "unexpected_cells": [],
+      "policy": "D is a data-quality flag, not a deletion; no direct input may carry an unlisted D."
+    },
+    "all_values_model_estimate": true
+  }
+}
