@@ -1,0 +1,198 @@
+{
+  "bundle_version": "1.0.0",
+  "dataset": "open_data_net_value_model_inputs",
+  "model_version": "1.1.0",
+  "model_module": "workflows/national/harvest/open_data_net_value.py",
+  "labels": {
+    "input_publication": "derived_model_inputs",
+    "raw_source_redistribution": false,
+    "evidence": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "net_value_status": "model_estimate",
+    "qc_net_value_status": "separate_reference_not_net_value",
+    "combined_bc_qc_national_total": false,
+    "model_ui_oscan_read_or_written": false
+  },
+  "scope": {
+    "jurisdictions": [
+      "BC",
+      "QC"
+    ],
+    "bc": "modeled mill-delivered margin with open proxy logging/haul costs",
+    "qc": "separate purchased-wood channel reference; not a net value",
+    "price_primary": "3_month ending 2025-12-31",
+    "price_sensitivity": "1_month ending 2025-12-31",
+    "silviculture": "Interior basic silviculture CAD/m3 only; Coast excluded"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "dbde220cc833b794b4e3a2f8ef1fd674853fe5946ca90c9e5a617b56ea2ae5ac",
+      "bytes": 3003,
+      "rows": null
+    },
+    {
+      "path": "RUN.md",
+      "sha256": "2c345b3a1132a94745d3fbc7e07beabbd8615afd8b92501e705a9e59dd15f728",
+      "bytes": 1184,
+      "rows": null
+    },
+    {
+      "path": "bc_cost_inputs_used.csv",
+      "sha256": "86b53a837935d8c45660fbc9b7f5f43bda5a535c57ae9376df0748ebb884b0d1",
+      "bytes": 1219305,
+      "rows": 945
+    },
+    {
+      "path": "bc_cost_parameters_used.csv",
+      "sha256": "2cfada94ce3f546083c9f7c15491a3a5ae824f77a6e41e3c43c4af91ee39f152",
+      "bytes": 22885,
+      "rows": 36
+    },
+    {
+      "path": "bc_price_panel_used.csv",
+      "sha256": "cfd5b66720628296499e000c9167b69d3b26e9b127f1bdeac58478aa7833fd24",
+      "bytes": 113340,
+      "rows": 190
+    },
+    {
+      "path": "qc_reference_used.csv",
+      "sha256": "24d3811a8491b8f0af2ec34c5519db5093ebcaa6e323b183c3b23e5fc722de5c",
+      "bytes": 2204,
+      "rows": 1
+    },
+    {
+      "path": "silviculture_inputs_used.csv",
+      "sha256": "debf394a33d04453d29a96adb607a36d2b45e53673d8d95e5b1a43f63507e27c",
+      "bytes": 13383,
+      "rows": 22
+    },
+    {
+      "path": "sources.csv",
+      "sha256": "e2da1375d645862d0331727aad0384521f428b4f72e2adb0792541a4c6997b4b",
+      "bytes": 15605,
+      "rows": 18
+    },
+    {
+      "path": "zone_region_mapping.csv",
+      "sha256": "14f39767bf9659ea591425aa14cfd2e4c157fc201ac63d4583f3b3e75af2c617",
+      "bytes": 1893,
+      "rows": 7
+    }
+  ],
+  "row_counts": {
+    "bc_cost_inputs_used.csv": 945,
+    "bc_cost_parameters_used.csv": 36,
+    "bc_price_panel_used.csv": 190,
+    "qc_reference_used.csv": 1,
+    "silviculture_inputs_used.csv": 22,
+    "sources.csv": 18,
+    "zone_region_mapping.csv": 7
+  },
+  "headline": {
+    "median_base_net_model_cad_m3": 48.84,
+    "min_base_net_model_cad_m3": -23.38,
+    "max_base_net_model_cad_m3": 86.85,
+    "negative_net_base_rows": 168,
+    "south_west_ground_net_model_base_median_cad_m3": 64.4,
+    "north_west_ground_net_model_base_median_cad_m3": 57.76,
+    "qc_cost_spread_after_transfers_cad_m3": 0.81
+  },
+  "reproduction": {
+    "command": ".venv/bin/python scripts/national/reproduce_open_data_net_value.py",
+    "core_output_sha256": {
+      "bc_open_net_value.csv": "1e1da49aa36be34218c942bffb66af4b2f3ce8d37e30bc9dc475d49744999dc7",
+      "bc_open_net_value_summary.csv": "ef1ca0866928ecc3fe157bda7bea9e95362c9e3cae63261efa8de0f763f5ba4b",
+      "bc_open_net_value_sensitivity.csv": "f9495a759bda1f90f4188786385a83bc6a9541a2d4364ff453194bf9250ec860",
+      "qc_open_reference.csv": "1620f39e1742fb9782b5c6b6f3a42486cf19f65557bb591b341af74867668e7e"
+    },
+    "core_outputs": [
+      "bc_open_net_value.csv",
+      "bc_open_net_value_summary.csv",
+      "bc_open_net_value_sensitivity.csv",
+      "qc_open_reference.csv"
+    ],
+    "verified": true
+  },
+  "provenance": {
+    "parent_head": "a5c91039d4377a0a4f555789308be5c037387ddf",
+    "data_head": "c75b04d9aafeb027173bfb7c83655c69912b441f",
+    "parent_inputs": [
+      {
+        "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+        "sha256": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745",
+        "bytes": 558939,
+        "commit": "e2b4b307b44edf937699bb5ff39e7decec4d68dd"
+      },
+      {
+        "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_parameters.csv",
+        "sha256": "b0ea3343f4b6242bb504d7d6c9fd25a5138b3c001b01ef6b180ccc74631f47b6",
+        "bytes": 24173,
+        "commit": "913703d3ea1890b169be3541bb128a9943a7bb7f"
+      },
+      {
+        "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+        "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f",
+        "bytes": 7917987,
+        "commit": "1fc516528dd92cd84c9d71ee885d4829e5431526"
+      },
+      {
+        "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+        "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea",
+        "bytes": 454062,
+        "commit": "1a8bd41b01cdf58cd2048ce50edfe7ece46a83a7"
+      },
+      {
+        "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+        "sha256": "2ac98dc6c4de68f6f44b79c9be9bc66dd73ee4e6a4d578224d860ef5df94667e",
+        "bytes": 9763,
+        "commit": "567ed974d71851c55dc69941aa08de82a15fe1a3"
+      },
+      {
+        "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/manifest.json",
+        "sha256": "e6289e503c43e5dbca7a1199e7c24571a63780c84ee1a25e354809176e61d2f9",
+        "bytes": 42983,
+        "commit": "e5fb044c1baf28ccdda6e621653eac191d8613ae"
+      },
+      {
+        "path": "workflows/national/harvest/open_data_net_value.py",
+        "sha256": "37d669ed2805fdd1243e12d69e74f87ee4a30effd3d4107e995abc569b69bf4e",
+        "bytes": 77169,
+        "commit": "ec4b4fd48b873549b781a7b5665722c94901e28d"
+      },
+      {
+        "path": "workflows/national/harvest/bc_open_cost_model.py",
+        "sha256": "d84eb05abed553758cdee4f0e2c5d0ad8d6dd3f934ccd94936b83a730a962699",
+        "bytes": 60898,
+        "commit": "ec4b4fd48b873549b781a7b5665722c94901e28d"
+      }
+    ],
+    "bundle_commit": "not_applicable_pre_commit; the bundle is committed in the data submodule immediately after this manifest is generated"
+  },
+  "source_register": {
+    "rows": 18,
+    "raw_redistributed": false,
+    "source_ids": [
+      "bc_bcts_results",
+      "bc_cam_2026",
+      "bc_cvse_logging_truck_configurations",
+      "bc_iam_2026",
+      "bc_silv_oct_2026",
+      "coast_1_month_old_growth_2025-12",
+      "coast_1_month_second_growth_2025-12",
+      "coast_3_month_old_growth_2025-12",
+      "coast_3_month_second_growth_2025-12",
+      "fpinnovations_9axle_2021",
+      "fpinnovations_adv11n27",
+      "fpinnovations_adv2n54",
+      "fpinnovations_adv3n19",
+      "fpinnovations_adv5n19",
+      "interior_1_month_not_reported_2025-12",
+      "interior_3_month_not_reported_2025-12",
+      "qc_mrnf_2022_main",
+      "tla_rate_guide_2026_08"
+    ]
+  },
+  "manifest_self_hash": "not_applicable_self_reference"
+}
