@@ -1,0 +1,193 @@
+{
+  "artifact": "national_tier_coverage",
+  "artifact_version": "1.0.0",
+  "code": {
+    "data_commit": "7bd94cc7b4466304b5aa483517e0706f8e6a99ef",
+    "module": "workflows/national/harvest/national_tier_coverage.py",
+    "parent_commit": "8c69e2b8a3fc142205b043606b902d533a54d882"
+  },
+  "coverage": {
+    "component_count": 5,
+    "components": [
+      "price",
+      "logging",
+      "haul",
+      "road",
+      "silviculture"
+    ],
+    "covered_cells": 65,
+    "expected_cells": 65,
+    "gap_status": "none",
+    "missing_cells": [],
+    "no_gap_count": 65,
+    "province_count": 13,
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "silent_gap_count": 0,
+    "unexpected_cells": []
+  },
+  "donor_provinces": [
+    "BC",
+    "QC"
+  ],
+  "generated_utc": "2026-11-22T06:10:05+00:00",
+  "inputs": [
+    {
+      "bytes": 7127,
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_price_proxies.csv",
+      "sha256": "f3d3137a8bdbd1a8b021206456f972548b33035d93bc5f23b39e589dacf4d835"
+    },
+    {
+      "bytes": 7182,
+      "path": "data/derived/national/harvest_basis/national_economics_v1/national_cost_proxies.csv",
+      "sha256": "418a7f2202dbcc1d32b14d4d3f7343eab3116eecc6c61322aec92c20135b5ff3"
+    },
+    {
+      "bytes": 4759,
+      "path": "data/derived/national/harvest_basis/national_economics_v1/sources.csv",
+      "sha256": "2fa0cbab16010758be19494b4a48e3819d34e1802af8109746496b857527598d"
+    },
+    {
+      "bytes": 4171,
+      "path": "data/derived/national/harvest_basis/national_economics_v1/assumptions_donor_register.csv",
+      "sha256": "cd48b1afd0366d512ceedd3811ce66c7ee818bf2ab67a0ff687ab53addaf03bd"
+    },
+    {
+      "bytes": 8878,
+      "path": "data/derived/national/harvest_basis/national_economics_v1/summary.json",
+      "sha256": "7808d943b633fccfe8d4f74fdf3057e245ad93a6b35689229c58a703445eabef"
+    },
+    {
+      "bytes": 2845,
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42"
+    },
+    {
+      "bytes": 5124,
+      "path": "planning/open-data-policy.md",
+      "sha256": "4f39096caf62bc5f01ac19af300d5191b64af8e9f99f200428e56dd431f5bf68"
+    },
+    {
+      "bytes": 6128,
+      "path": "planning/national-evidence-tiers.md",
+      "sha256": "7cbb677e24dc898cebd2a5eb06b6314e1c140ca3ce0d39120dd325904825939f"
+    }
+  ],
+  "labels": {
+    "combined_national_net_value": false,
+    "evidence": "model_estimate",
+    "national_diagnostic_label": "model_estimate_not_policy",
+    "net_value_status": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "strict_open": false
+  },
+  "national_diagnostic_label": "model_estimate_not_policy",
+  "observation_type": "model_estimate",
+  "outputs": [
+    {
+      "bytes": 32427,
+      "path": "data/derived/national/harvest_basis/national_tier_coverage/national_tier_coverage.csv",
+      "rows": 65,
+      "sha256": "d497b3db3c35640df78d7264db404a0aa4bf0015ab3d8283fd1730631135cb49"
+    },
+    {
+      "bytes": 15223,
+      "path": "data/derived/national/harvest_basis/national_tier_coverage/source_replacement_queue.csv",
+      "rows": 60,
+      "sha256": "7ffe824a2c971ac8dac4fdb12178d449f1984b4372eb2264167e78182b18acb6"
+    },
+    {
+      "bytes": 6543,
+      "path": "data/derived/national/harvest_basis/national_tier_coverage/national_tier_summary.json",
+      "sha256": "0708c44a2c65b97bf998d928d895f85a60d993465e1445407c4885481659be75"
+    },
+    {
+      "bytes": 4559,
+      "path": "data/derived/national/harvest_basis/national_tier_coverage/TIER_COVERAGE_REPORT.md",
+      "sha256": "8229d12ae46abcb727d18a24282a0c0c8406604e79ca60ef3514aa100f044b99"
+    }
+  ],
+  "replacement_queue": {
+    "component_counts": {
+      "haul": 12,
+      "logging": 12,
+      "price": 12,
+      "road": 12,
+      "silviculture": 12
+    },
+    "priority_counts": {
+      "P1": 15,
+      "P2": 15,
+      "P3": 25,
+      "P4": 5
+    },
+    "queue_status": "open_required_source_not_invented",
+    "ranked_by": "provincial harvest volume descending",
+    "required_source_category_counts": {
+      "cost study": 24,
+      "price series": 12,
+      "road/silviculture rate": 24
+    },
+    "row_count": 60,
+    "second_wave_components": [
+      "BC:logging",
+      "BC:haul"
+    ],
+    "second_wave_proxy_model_cells": 2
+  },
+  "status": "coverage_audit",
+  "tier_counts": {
+    "assumption": 0,
+    "donor_proxy": 60,
+    "proxy_model": 2,
+    "reported_average": 3
+  },
+  "validation": {
+    "all_components_present": true,
+    "all_provinces_present": true,
+    "all_tiers_supported": true,
+    "direct_evidence_only_reported": true,
+    "donor_rows_remain_labelled": true,
+    "expected_cell_count": true,
+    "national_label_preserved": true,
+    "no_duplicate_cells": true,
+    "no_margin_recalculation": true,
+    "no_silent_gaps": true,
+    "queue_is_ranked": true,
+    "queue_only_donor_or_assumption": true,
+    "strict_open_claim": false
+  },
+  "volume_weighted": {
+    "cell_volume_denominator_m3": 594886695.5,
+    "component_count": 5,
+    "national_volume_m3": 118977339.1,
+    "tier_share": {
+      "assumption": 0.0,
+      "donor_proxy": 0.686345915262,
+      "proxy_model": 0.134407366318,
+      "reported_average": 0.17924671842
+    },
+    "volume_weighted_direct_or_reported_share": 0.17924671842,
+    "volume_weighted_direct_share": 0.17924671842,
+    "volume_weighted_donor_or_assumption_share": 0.686345915262,
+    "volume_weighted_evidence_ratio": 0.62322520079,
+    "volume_weighted_proxy_model_share": 0.134407366318,
+    "volume_weighted_reported_share": 0.17924671842,
+    "volume_weighted_tier_score": 2.492900803158,
+    "weighting": "allocation harvest volume from provincial_allocation/119m.csv; each province has five equally weighted components"
+  }
+}

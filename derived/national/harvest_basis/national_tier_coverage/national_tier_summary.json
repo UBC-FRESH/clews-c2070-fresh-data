@@ -1,0 +1,268 @@
+{
+  "artifact": "national_tier_coverage",
+  "artifact_version": "1.0.0",
+  "component_tier_counts": {
+    "haul": {
+      "assumption": 0,
+      "donor_proxy": 12,
+      "proxy_model": 1,
+      "reported_average": 0
+    },
+    "logging": {
+      "assumption": 0,
+      "donor_proxy": 12,
+      "proxy_model": 1,
+      "reported_average": 0
+    },
+    "price": {
+      "assumption": 0,
+      "donor_proxy": 12,
+      "proxy_model": 0,
+      "reported_average": 1
+    },
+    "road": {
+      "assumption": 0,
+      "donor_proxy": 12,
+      "proxy_model": 0,
+      "reported_average": 1
+    },
+    "silviculture": {
+      "assumption": 0,
+      "donor_proxy": 12,
+      "proxy_model": 0,
+      "reported_average": 1
+    }
+  },
+  "coverage": {
+    "component_count": 5,
+    "components": [
+      "price",
+      "logging",
+      "haul",
+      "road",
+      "silviculture"
+    ],
+    "covered_cells": 65,
+    "expected_cells": 65,
+    "gap_status": "none",
+    "missing_cells": [],
+    "no_gap_count": 65,
+    "province_count": 13,
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "silent_gap_count": 0,
+    "unexpected_cells": []
+  },
+  "donor_provinces": {
+    "by_component": {
+      "haul": {
+        "BC": 12
+      },
+      "logging": {
+        "BC": 12
+      },
+      "price": {
+        "BC": 12
+      },
+      "road": {
+        "QC": 12
+      },
+      "silviculture": {
+        "BC": 12
+      }
+    },
+    "by_donor_province": {
+      "BC": {
+        "cell_count": 48,
+        "components": {
+          "haul": 12,
+          "logging": 12,
+          "price": 12,
+          "road": 0,
+          "silviculture": 12
+        },
+        "province_name": "British Columbia",
+        "recipient_count": 12,
+        "recipient_provinces": [
+          "AB",
+          "MB",
+          "NB",
+          "NL",
+          "NS",
+          "NT",
+          "NU",
+          "ON",
+          "PE",
+          "QC",
+          "SK",
+          "YT"
+        ]
+      },
+      "QC": {
+        "cell_count": 12,
+        "components": {
+          "haul": 0,
+          "logging": 0,
+          "price": 0,
+          "road": 12,
+          "silviculture": 0
+        },
+        "province_name": "Quebec",
+        "recipient_count": 12,
+        "recipient_provinces": [
+          "AB",
+          "BC",
+          "MB",
+          "NB",
+          "NL",
+          "NS",
+          "NT",
+          "NU",
+          "ON",
+          "PE",
+          "SK",
+          "YT"
+        ]
+      }
+    },
+    "donor_province_count": 2,
+    "donor_provinces": [
+      "BC",
+      "QC"
+    ]
+  },
+  "generated_utc": "2026-11-22T06:10:05+00:00",
+  "labels": {
+    "combined_national_net_value": false,
+    "evidence": "model_estimate",
+    "national_diagnostic_label": "model_estimate_not_policy",
+    "net_value_status": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "strict_open": false
+  },
+  "limitations": [
+    "Coverage is an audit of existing tiers; no price, cost or margin is re-estimated.",
+    "Only reported_average is counted as direct/reported provincial evidence; proxy_model is not upgraded.",
+    "Donor values stay donor values even when the donor source is a published report.",
+    "Logging and haul are separate coverage cells but share the single combined logging_haul distribution; this audit does not invent a cost split.",
+    "NU has zero allocation volume; its evidence cells remain explicit and its queue rows rank last at P4.",
+    "The national total remains model_estimate_not_policy; this is not an observed or policy-grade result."
+  ],
+  "national_diagnostic_label": "model_estimate_not_policy",
+  "observation_type": "model_estimate",
+  "replacement_queue": {
+    "component_counts": {
+      "haul": 12,
+      "logging": 12,
+      "price": 12,
+      "road": 12,
+      "silviculture": 12
+    },
+    "priority_counts": {
+      "P1": 15,
+      "P2": 15,
+      "P3": 25,
+      "P4": 5
+    },
+    "queue_status": "open_required_source_not_invented",
+    "ranked_by": "provincial harvest volume descending",
+    "required_source_category_counts": {
+      "cost study": 24,
+      "price series": 12,
+      "road/silviculture rate": 24
+    },
+    "row_count": 60,
+    "second_wave_components": [
+      "BC:logging",
+      "BC:haul"
+    ],
+    "second_wave_proxy_model_cells": 2
+  },
+  "scope": {
+    "component_definition": "logging and haul are separate coverage cells from the single combined logging_haul distribution; no new cost split is invented",
+    "components": [
+      "price",
+      "logging",
+      "haul",
+      "road",
+      "silviculture"
+    ],
+    "parent_artifact": "national_economics_v1",
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT",
+      "NU"
+    ]
+  },
+  "status": "coverage_audit",
+  "tier_counts": {
+    "assumption": 0,
+    "donor_proxy": 60,
+    "proxy_model": 2,
+    "reported_average": 3
+  },
+  "tier_shares": {
+    "assumption": 0.0,
+    "donor_proxy": 0.923076923077,
+    "proxy_model": 0.030769230769,
+    "reported_average": 0.046153846154
+  },
+  "validation": {
+    "all_components_present": true,
+    "all_provinces_present": true,
+    "all_tiers_supported": true,
+    "direct_evidence_only_reported": true,
+    "donor_rows_remain_labelled": true,
+    "expected_cell_count": true,
+    "national_label_preserved": true,
+    "no_duplicate_cells": true,
+    "no_margin_recalculation": true,
+    "no_silent_gaps": true,
+    "queue_is_ranked": true,
+    "queue_only_donor_or_assumption": true,
+    "strict_open_claim": false
+  },
+  "volume_weighted": {
+    "cell_volume_denominator_m3": 594886695.5,
+    "component_count": 5,
+    "national_volume_m3": 118977339.1,
+    "tier_share": {
+      "assumption": 0.0,
+      "donor_proxy": 0.686345915262,
+      "proxy_model": 0.134407366318,
+      "reported_average": 0.17924671842
+    },
+    "volume_weighted_direct_or_reported_share": 0.17924671842,
+    "volume_weighted_direct_share": 0.17924671842,
+    "volume_weighted_donor_or_assumption_share": 0.686345915262,
+    "volume_weighted_evidence_ratio": 0.62322520079,
+    "volume_weighted_proxy_model_share": 0.134407366318,
+    "volume_weighted_reported_share": 0.17924671842,
+    "volume_weighted_tier_score": 2.492900803158,
+    "weighting": "allocation harvest volume from provincial_allocation/119m.csv; each province has five equally weighted components"
+  }
+}
