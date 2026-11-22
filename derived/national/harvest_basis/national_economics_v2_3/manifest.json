@@ -1,0 +1,292 @@
+{
+  "model_id": "national_economics_v2_3",
+  "artifact_version": "2.3.0",
+  "generated_utc": "2026-11-22T15:36:32+00:00",
+  "observation_type": "model_estimate",
+  "base_scenario": "donor_flat",
+  "sensitivity_scenario": "stumpage_scaled",
+  "stumpage_scaled_observed": false,
+  "combined_national_net_value": false,
+  "restricted_inputs_used": [],
+  "labels": {
+    "evidence": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "net_value_status": "model_estimate",
+    "combined_national_net_value": false,
+    "national_diagnostic_label": "model_estimate_not_policy",
+    "strict_open": false
+  },
+  "cost_mapping": {
+    "method": "StatCan NAICS 11331 total expenses / observed_2024_m3 used as a total-cost proxy outside BC and QC",
+    "aggregate_proxy_provinces": [
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "NB",
+      "NS",
+      "NL",
+      "PE",
+      "YT",
+      "NT"
+    ],
+    "component_provinces": [
+      "BC",
+      "QC"
+    ],
+    "fallback_provinces": [
+      "NU"
+    ],
+    "denominator_basis": "observed_2024_m3",
+    "scenario_119m_usage": "sensitivity_only",
+    "includes_overhead_not_logging_haul_breakdown": true,
+    "separate_road_silviculture_haul_added": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "cost_proxy_coverage": {
+    "before": {
+      "observed_2024_m3": {
+        "aggregate_proxy_cells": 0,
+        "donor_proxy_cells": 11,
+        "donor_fallback_cells": 0,
+        "component_cells": 2,
+        "aggregate_proxy_volume_share": 0.0,
+        "donor_proxy_volume_share": 0.45522715,
+        "donor_fallback_volume_share": 0.0,
+        "component_volume_share": 0.54477285
+      },
+      "119m_allocation_sensitivity": {
+        "aggregate_proxy_cells": 0,
+        "donor_proxy_cells": 11,
+        "donor_fallback_cells": 0,
+        "component_cells": 2,
+        "aggregate_proxy_volume_share": 0.0,
+        "donor_proxy_volume_share": 0.43978482,
+        "donor_fallback_volume_share": 0.0,
+        "component_volume_share": 0.56021518
+      }
+    },
+    "after": {
+      "observed_2024_m3": {
+        "aggregate_proxy_cells": 10,
+        "donor_proxy_cells": 0,
+        "donor_fallback_cells": 1,
+        "component_cells": 2,
+        "aggregate_proxy_volume_share": 0.45522715,
+        "donor_proxy_volume_share": 0.0,
+        "donor_fallback_volume_share": 0.0,
+        "component_volume_share": 0.54477285
+      },
+      "119m_allocation_sensitivity": {
+        "aggregate_proxy_cells": 10,
+        "donor_proxy_cells": 0,
+        "donor_fallback_cells": 1,
+        "component_cells": 2,
+        "aggregate_proxy_volume_share": 0.43978482,
+        "donor_proxy_volume_share": 0.0,
+        "donor_fallback_volume_share": 0.0,
+        "component_volume_share": 0.56021518
+      }
+    },
+    "upgrade_count": 10,
+    "upgrades": [
+      {
+        "province": "AB",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 22260402.0,
+        "allocation_volume_m3": 22891404.0,
+        "volume_share_observed": 0.18709783,
+        "volume_share_119m": 0.19240138
+      },
+      {
+        "province": "SK",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 4224936.0,
+        "allocation_volume_m3": 4344697.6,
+        "volume_share_observed": 0.03551043,
+        "volume_share_119m": 0.03651702
+      },
+      {
+        "province": "MB",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 1103943.0,
+        "allocation_volume_m3": 1135235.8,
+        "volume_share_observed": 0.0092786,
+        "volume_share_119m": 0.00954161
+      },
+      {
+        "province": "ON",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 13121645.0,
+        "allocation_volume_m3": 13493596.0,
+        "volume_share_observed": 0.11028693,
+        "volume_share_119m": 0.11341316
+      },
+      {
+        "province": "NB",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 9341187.0,
+        "allocation_volume_m3": 6234700.0,
+        "volume_share_observed": 0.07851232,
+        "volume_share_119m": 0.05240242
+      },
+      {
+        "province": "NS",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 2322413.0,
+        "allocation_volume_m3": 2388245.0,
+        "volume_share_observed": 0.01951979,
+        "volume_share_119m": 0.02007311
+      },
+      {
+        "province": "NL",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 1413957.0,
+        "allocation_volume_m3": 1454037.5,
+        "volume_share_observed": 0.01188425,
+        "volume_share_119m": 0.01222113
+      },
+      {
+        "province": "PE",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 293880.0,
+        "allocation_volume_m3": 302210.4,
+        "volume_share_observed": 0.00247005,
+        "volume_share_119m": 0.00254007
+      },
+      {
+        "province": "YT",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 42715.0,
+        "allocation_volume_m3": 43925.8,
+        "volume_share_observed": 0.00035902,
+        "volume_share_119m": 0.00036919
+      },
+      {
+        "province": "NT",
+        "tier_before": "donor_proxy",
+        "tier_after": "industry_aggregate_proxy",
+        "observed_2024_volume_m3": 36637.0,
+        "allocation_volume_m3": 36376.0,
+        "volume_share_observed": 0.00030793,
+        "volume_share_119m": 0.00030574
+      }
+    ],
+    "full_direct_coverage_claimed": false
+  },
+  "national_diagnostic": {
+    "allocation_volume_m3": 118977339.1,
+    "observed_2024_volume_m3": 118977339.0,
+    "primary_volume_basis": "observed_2024_m3",
+    "sensitivity_volume_basis": "119m_allocation_sensitivity",
+    "donor_flat": {
+      "observed_2024_m3": {
+        "margin_low_cad_m3": -32.1594,
+        "margin_base_cad_m3": 43.0187,
+        "margin_high_cad_m3": 75.5834
+      },
+      "119m_allocation_sensitivity": {
+        "margin_low_cad_m3": -32.4004,
+        "margin_base_cad_m3": 43.7506,
+        "margin_high_cad_m3": 76.8044
+      }
+    },
+    "stumpage_scaled_sensitivity": {
+      "observed_2024_m3": {
+        "margin_low_cad_m3": -67.1392,
+        "margin_base_cad_m3": -5.7444,
+        "margin_high_cad_m3": 33.0932
+      },
+      "119m_allocation_sensitivity": {
+        "margin_low_cad_m3": -67.7346,
+        "margin_base_cad_m3": -5.5079,
+        "margin_high_cad_m3": 33.8962
+      }
+    },
+    "label": "model_estimate_not_policy",
+    "combined_national_net_value": false
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/statcan_logging_cost_proxy/provincial_logging_cost_proxy.csv",
+      "sha256": "20e63ca71e644bddc197908aeacfadf765dbae36fbb75eb23de8a6610e9b4e03"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/statcan_logging_cost_proxy/summary.json",
+      "sha256": "644f177d74fbd3637e598d18097350dcb6d2e0da15ebc5e6804f1694c3b63756"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/statcan_logging_cost_proxy/sources.csv",
+      "sha256": "19203c8bf6f0f74a30fb186708b16e56f1740a0d8dae6a009d32e7afcce7bd71"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_2/national_margin_estimates.csv",
+      "sha256": "aa42281e6d1d6de6c70c43f80ac08f8a80cafe32be6da0c8e1e95ad13b53b7dc"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_2/summary.json",
+      "sha256": "54d961842a997c33991c5c0ea02f046b7e7927991654d3a5d50a5fd49378695c"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+      "sha256": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/qc_cost_survey_2022/qc_cost_revenue_survey.csv",
+      "sha256": "c67041289bdd7d963d64ba8c73105d7a81592259a784046d83578a44f5f709a6"
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "national_cost_inputs.csv",
+      "sha256": "a9f252046f4d970cbb7a53ad76146f22b58214cdffaa979f6f05f1217ed84733"
+    },
+    {
+      "path": "national_margin_estimates.csv",
+      "sha256": "376982d9abd17fd5adb2ea455b78cd4bdf7bb74fe5cc7a6ba9cd2eb846e2c3bf"
+    },
+    {
+      "path": "national_margin_summary.csv",
+      "sha256": "ce1fc9969b592d9d7295c838dbaa6bb079945c7577a2e21f42a9b2fcdcf00fc4"
+    },
+    {
+      "path": "v2_2_v2_3_comparison.csv",
+      "sha256": "2f7a2e77649208289ef49ab8e1ca3a6b33d8f97918af410d53daa510acdb1488"
+    },
+    {
+      "path": "tier_coverage.csv",
+      "sha256": "d7c8fdc3314993c5fe3f8f91c4f81117d257f032c4c39393e62973a584f4d404"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc"
+    },
+    {
+      "path": "NATIONAL_ECONOMICS_V2_3_REPORT.md",
+      "sha256": "650e3cc21b629eb9176978e13a4243a5bf60497244a6ba3812681897a2c28317"
+    }
+  ]
+}
