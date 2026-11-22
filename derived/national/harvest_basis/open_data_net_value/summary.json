@@ -1,8 +1,8 @@
 {
-  "artifact_version": "1.0.0",
+  "artifact_version": "1.1.0",
   "dataset": "open_data_net_value",
   "status": "open_data_model_estimate",
-  "generated_utc": "2026-11-22T03:52:17+00:00",
+  "generated_utc": "2026-11-22T04:18:53+00:00",
   "scope": {
     "jurisdictions": [
       "BC",
@@ -30,6 +30,22 @@
     "qc_net_value_status": "separate_reference_not_net_value",
     "combined_bc_qc_national_total": false
   },
+  "licensing": {
+    "classification": "public_reference_copyrighted",
+    "strict_open_licence": false,
+    "strict_open_licence_sources": [],
+    "public_reference_source_families": [
+      "BC Government appraisal manuals and silviculture tables (BC Crown copyright)",
+      "BC log-market reports (BC Crown copyright; private study/research use)",
+      "TLA/ILA/NWLA/MNP 2026 rate guide (industry publisher copyright)",
+      "FPInnovations/FERIC case studies (publisher copyright)",
+      "BC CVSE / Commercial Transport Regulations (BC Crown copyright)",
+      "Gouvernement du Qu\u00e9bec MRNF 2022 procurement survey (public-reference report)"
+    ],
+    "source_pdfs_redistributed": false,
+    "commercial_reuse": "requires_permission_from_rights_holder",
+    "statement": "All inputs are public-reference copyrighted sources. None is released under a strict Open Government Licence, CC-BY, or Statistics Canada open licence. Source PDFs are not redistributed in this repository. Commercial reuse or redistribution requires permission from the rights holder."
+  },
   "price_panel": {
     "primary_report_basis": "3_month",
     "primary_period_end": "2025-12-31",
@@ -54,6 +70,9 @@
           "second_growth"
         ],
         "cells_used": 79,
+        "report_classes_used": 2,
+        "average_basis": "pdf_report_footer_average_and_volume",
+        "report_totals_status": "consistent",
         "aggregates_excluded": 0,
         "outliers_excluded": 0
       },
@@ -71,6 +90,9 @@
           "not_reported"
         ],
         "cells_used": 10,
+        "report_classes_used": 1,
+        "average_basis": "product_cell_volume_weighted_mean",
+        "report_totals_status": "not_applicable",
         "aggregates_excluded": 5,
         "outliers_excluded": 0
       }
@@ -96,6 +118,19 @@
     "basis": "open_proxy_model",
     "rows": 945,
     "zones": 7,
+    "appraisal_regions": {
+      "Coast": [
+        "South West Zone"
+      ],
+      "Interior": [
+        "North Central Zone",
+        "North East Zone",
+        "North Fort Nelson Zone",
+        "North West Zone",
+        "South Central Zone",
+        "South East Zone"
+      ]
+    },
     "systems": [
       "ground",
       "cable",
@@ -111,7 +146,7 @@
     }
   },
   "road_silviculture_panel": {
-    "included": true,
+    "included": "Interior_priced_rows_only",
     "component": "Interior basic silviculture",
     "cost_basis": "CAD/m3",
     "source_series": "Interior Basic Silviculture 2026-10",
@@ -125,6 +160,19 @@
       "South East Zone": 10.65,
       "South West Zone": 11.23
     },
+    "applies_to_price_region": {
+      "North Central Zone": "Interior",
+      "North East Zone": "Interior",
+      "North Fort Nelson Zone": "Interior",
+      "North West Zone": "Interior",
+      "South Central Zone": "Interior",
+      "South East Zone": "Interior",
+      "South West Zone": "Coast"
+    },
+    "coast_included": false,
+    "coast_component": "not_published_cad_m3_for_coast",
+    "coast_basis": "cam_table_5_6_cad_per_ha_only_not_converted",
+    "coast_note": "CAM Table 5-6 publishes Coast basic silviculture in CAD/ha by BEC unit only; no CAD/m3 conversion is invented.",
     "excluded_components": [
       "road_development_CAD_per_km",
       "bridge_CAD_per_each",
@@ -136,16 +184,26 @@
   "results": {
     "rows": 945,
     "zone_system_groups": 21,
-    "median_base_net_model_cad_m3": 45.81,
-    "min_base_net_model_cad_m3": -32.28,
-    "max_base_net_model_cad_m3": 77.51,
-    "negative_net_base_rows": 182,
+    "median_base_net_model_cad_m3": 48.84,
+    "min_base_net_model_cad_m3": -23.38,
+    "max_base_net_model_cad_m3": 86.85,
+    "negative_net_base_rows": 168,
     "negative_net_values_documented": true,
     "best_zone_systems": [
+      {
+        "zone": "South West Zone",
+        "system": "ground",
+        "net_model_base_median_cad_m3": 64.4
+      },
       {
         "zone": "South Central Zone",
         "system": "ground",
         "net_model_base_median_cad_m3": 58.55
+      },
+      {
+        "zone": "North West Zone",
+        "system": "ground",
+        "net_model_base_median_cad_m3": 57.76
       },
       {
         "zone": "North Central Zone",
@@ -156,29 +214,9 @@
         "zone": "North East Zone",
         "system": "ground",
         "net_model_base_median_cad_m3": 56.34
-      },
-      {
-        "zone": "North Fort Nelson Zone",
-        "system": "ground",
-        "net_model_base_median_cad_m3": 56.34
-      },
-      {
-        "zone": "South East Zone",
-        "system": "ground",
-        "net_model_base_median_cad_m3": 56.3
       }
     ],
     "worst_zone_systems": [
-      {
-        "zone": "North West Zone",
-        "system": "heli",
-        "net_model_base_median_cad_m3": -16.83
-      },
-      {
-        "zone": "South West Zone",
-        "system": "heli",
-        "net_model_base_median_cad_m3": -13.01
-      },
       {
         "zone": "South East Zone",
         "system": "heli",
@@ -193,6 +231,16 @@
         "zone": "North Fort Nelson Zone",
         "system": "heli",
         "net_model_base_median_cad_m3": -11.19
+      },
+      {
+        "zone": "North Central Zone",
+        "system": "heli",
+        "net_model_base_median_cad_m3": -10.6
+      },
+      {
+        "zone": "South Central Zone",
+        "system": "heli",
+        "net_model_base_median_cad_m3": -8.98
       }
     ]
   },
@@ -208,8 +256,8 @@
     "transfers_total_cad_m3": "25.0100",
     "bgad_after_transfers_cad_m3": "106.4100",
     "cost_spread_before_transfers_cad_m3": "25.8200",
-    "qc_channel_margin_after_transfers_cad_m3": "0.8100",
-    "evidence": "survey_benchmark",
+    "cost_spread_after_transfers_cad_m3": "0.8100",
+    "evidence": "survey_procurement_cost",
     "observed": "false",
     "policy_grade": "false",
     "net_value_status": "separate_reference_not_net_value",
@@ -220,21 +268,21 @@
     {
       "case_id": "base",
       "case_group": "base",
-      "description": "3-month 2025-12 price, base logging and haul, silviculture included",
+      "description": "3-month 2025-12 price, base logging and haul, published Interior silviculture where applicable",
       "n_rows": "945",
-      "median_cad_m3": "45.81",
-      "min_cad_m3": "-32.28",
-      "max_cad_m3": "77.51",
-      "notes": "Primary model case."
+      "median_cad_m3": "48.84",
+      "min_cad_m3": "-23.38",
+      "max_cad_m3": "86.85",
+      "notes": "Primary model case; Coast rows exclude silviculture because CAM publishes CAD/ha only."
     },
     {
       "case_id": "price_low",
       "case_group": "price",
       "description": "primary price low with base logging and haul",
       "n_rows": "945",
-      "median_cad_m3": "-5.49",
-      "min_cad_m3": "-86.47",
-      "max_cad_m3": "71.52",
+      "median_cad_m3": "-3.61",
+      "min_cad_m3": "-77.57",
+      "max_cad_m3": "82.75",
       "notes": "Coast low is the lower published log-class average; Interior low is the volume-weighted P10 product price."
     },
     {
@@ -242,9 +290,9 @@
       "case_group": "price",
       "description": "primary price high with base logging and haul",
       "n_rows": "945",
-      "median_cad_m3": "61.87",
-      "min_cad_m3": "-16.99",
-      "max_cad_m3": "94.21",
+      "median_cad_m3": "64.57",
+      "min_cad_m3": "-6.68",
+      "max_cad_m3": "98.32",
       "notes": "Coast high is the higher published log-class average; Interior high is the volume-weighted P90 product price."
     },
     {
@@ -252,9 +300,9 @@
       "case_group": "cost",
       "description": "base price with low logging and low haul",
       "n_rows": "945",
-      "median_cad_m3": "58.75",
-      "min_cad_m3": "-12.40",
-      "max_cad_m3": "86.42",
+      "median_cad_m3": "62.03",
+      "min_cad_m3": "-3.67",
+      "max_cad_m3": "96.68",
       "notes": "Low end of the published-cost proxy range."
     },
     {
@@ -262,9 +310,9 @@
       "case_group": "cost",
       "description": "base price with high logging and high haul",
       "n_rows": "945",
-      "median_cad_m3": "11.00",
-      "min_cad_m3": "-68.63",
-      "max_cad_m3": "59.80",
+      "median_cad_m3": "19.41",
+      "min_cad_m3": "-57.61",
+      "max_cad_m3": "70.59",
       "notes": "High end of the published-cost proxy range."
     },
     {
@@ -272,19 +320,19 @@
       "case_group": "road_silviculture",
       "description": "base price minus base logging and haul, no silviculture allowance",
       "n_rows": "945",
-      "median_cad_m3": "55.52",
-      "min_cad_m3": "-26.44",
+      "median_cad_m3": "56.56",
+      "min_cad_m3": "-17.23",
       "max_cad_m3": "86.85",
       "notes": "Gross modeled margin only."
     },
     {
       "case_id": "net_model_road_silviculture_included",
       "case_group": "road_silviculture",
-      "description": "base case with published Interior basic silviculture allowance",
+      "description": "base case with published Interior basic silviculture allowance where applicable",
       "n_rows": "945",
-      "median_cad_m3": "45.81",
-      "min_cad_m3": "-32.28",
-      "max_cad_m3": "77.51",
+      "median_cad_m3": "48.84",
+      "min_cad_m3": "-23.38",
+      "max_cad_m3": "86.85",
       "notes": "Same arithmetic as the primary base case; shown separately for the included/excluded comparison."
     },
     {
@@ -292,9 +340,9 @@
       "case_group": "combined",
       "description": "low price minus high logging and high haul minus allowance",
       "n_rows": "945",
-      "median_cad_m3": "-39.94",
-      "min_cad_m3": "-122.82",
-      "max_cad_m3": "55.70",
+      "median_cad_m3": "-32.31",
+      "min_cad_m3": "-111.80",
+      "max_cad_m3": "66.49",
       "notes": "Conservative end of the primary modeled range."
     },
     {
@@ -302,9 +350,9 @@
       "case_group": "combined",
       "description": "high price minus low logging and low haul minus allowance",
       "n_rows": "945",
-      "median_cad_m3": "74.74",
-      "min_cad_m3": "2.89",
-      "max_cad_m3": "103.12",
+      "median_cad_m3": "77.94",
+      "min_cad_m3": "13.03",
+      "max_cad_m3": "108.15",
       "notes": "Optimistic end of the primary modeled range."
     },
     {
@@ -312,9 +360,9 @@
       "case_group": "price_vintage",
       "description": "1-month 2025-12 price with base logging and haul",
       "n_rows": "945",
-      "median_cad_m3": "42.77",
-      "min_cad_m3": "-35.25",
-      "max_cad_m3": "74.54",
+      "median_cad_m3": "45.55",
+      "min_cad_m3": "-26.35",
+      "max_cad_m3": "82.28",
       "notes": "Separate vintage; not pooled with the 3-month primary panel."
     },
     {
@@ -322,9 +370,9 @@
       "case_group": "price_vintage",
       "description": "1-month 2025-12 low price with base logging and haul",
       "n_rows": "945",
-      "median_cad_m3": "-5.61",
-      "min_cad_m3": "-86.41",
-      "max_cad_m3": "68.92",
+      "median_cad_m3": "-3.71",
+      "min_cad_m3": "-77.51",
+      "max_cad_m3": "80.15",
       "notes": "Separate vintage; not pooled with the 3-month primary panel."
     },
     {
@@ -332,8 +380,8 @@
       "case_group": "price_vintage",
       "description": "1-month 2025-12 high price with base logging and haul",
       "n_rows": "945",
-      "median_cad_m3": "60.07",
-      "min_cad_m3": "-27.26",
+      "median_cad_m3": "61.93",
+      "min_cad_m3": "-16.03",
       "max_cad_m3": "93.00",
       "notes": "Separate vintage; not pooled with the 3-month primary panel."
     }
@@ -345,11 +393,14 @@
     "ranges_ordered": true,
     "finite_outputs": true,
     "single_price_vintage": true,
+    "coast_price_contract": true,
     "interior_aggregates_excluded": true,
     "labels_complete": true,
-    "negative_net_base_rows": 182,
+    "negative_net_base_rows": 168,
     "negative_net_values_documented": true,
-    "road_silviculture_included_on_all_rows": true,
+    "silviculture_interior_only": true,
+    "silviculture_interior_rows": 810,
+    "silviculture_coast_rows_excluded": 135,
     "no_restricted_inputs": true,
     "combined_bc_qc_national_total": false,
     "price_outlier_register_rows": 40,
@@ -358,14 +409,16 @@
   "caveats": [
     "Published averages, not observed transactions.",
     "Proxy productivity from public case studies, not a BC-wide survey.",
-    "Proxy system assignment; seven forest zones map to two rate groups.",
-    "North West Zone price crosswalk is a documented boundary case (priced Interior).",
+    "Proxy system assignment; seven forest zones map to two rate groups plus explicit appraisal regions.",
+    "North West Zone is appraisal-Interior: Interior price, haul method and grapple skidder, with coastal/northwest hourly rates.",
+    "South West Zone is Coast-priced; Coast silviculture is excluded because CAM publishes CAD/ha only.",
     "Slope, piece-size and sale-volume IAM coefficients are cost proxies.",
     "Helicopter logging is a specified-operation allowance proxy.",
     "The silviculture allowance is an appraisal/policy value, not an invoice.",
     "Nominal CAD; no deflator is applied across report periods.",
     "No grade/species/end-use matching to specific mills or tenures.",
     "Road/bridge/culvert CAD/km or CAD/each allowances are not converted to CAD/m3.",
+    "Public-reference copyrighted sources, not strict OGL/CC-BY/StatCan open licences; PDFs not redistributed and commercial reuse requires permission.",
     "No observed transactions, mill profit, legal, AAC, tenure, or policy claim."
   ],
   "non_claims": [

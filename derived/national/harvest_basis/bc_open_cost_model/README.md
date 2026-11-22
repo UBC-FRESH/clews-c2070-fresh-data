@@ -7,8 +7,12 @@ contractor cost, a mill settlement, or a net-value estimate.
 
 - **Tree-to-truck logging:** all-found 2026 BC machine rates divided by public
   FPInnovations/FERIC scheduled-hour productivity, by rate group and system.
-- **Truck haul:** IAM 2026 cycle-time/haul equation for the Interior and an
-  all-found truck-cycle model for both regions, with a 45-60 m3 payload band.
+  Ground extraction uses a coastal loader-forwarder for Coast appraisal rows and
+  a grapple skidder for Interior appraisal rows.
+- **Truck haul:** IAM 2026 cycle-time/haul equation combined with an all-found
+  truck-cycle model for Interior appraisal rows; the all-found truck-cycle model
+  alone for Coast appraisal rows (the CAM publishes no general truck-haul
+  equation). The appraisal region, not the rate group, selects the method.
 - **Sensitivity:** slope, piece size, sale volume and haul distance.
 
 The model deliberately does **not** use ILCR/CCTMCS microdata, FPInterface,
@@ -55,11 +59,15 @@ haul_CAD_m3 = (truck_tractor_CAD_SMH + trailer_CAD_SMH) * CYCLE_hours / payload_
 
 For the Interior the base is the geometric mean of the published equation and
 the engineering model; for the Coast the engineering model is used because the
-CAM publishes no general truck-haul equation.
+CAM publishes no general truck-haul equation. North West Zone is appraisal-
+Interior and therefore uses the Interior method, while its machine rates come
+from the coastal/northwest rate group. The low/high bounds use the published
+low/high truck and trailer rates and the IAM CPIF range of 0.95-1.05.
 
 ## Coverage
 
-- 7 BC forest zones mapped to the rate guide's two region groups.
+- 7 BC forest zones with explicit appraisal regions: 1 Coast and 6 Interior.
+- Two TLA hourly-rate groups: coastal/northwest and southern/northern Interior.
 - 5 slope scenarios (10, 28, 42, 55, 70%) mapped to ground, cable and
   helicopter systems.
 - 3 piece sizes (0.30, 0.60, 1.00 m3/tree).
@@ -78,7 +86,7 @@ CAM publishes no general truck-haul equation.
 | Helicopter allowance | Published IAM specified-operation allowance, used as total proxy |
 | Payload 45-60 m3 | Published weight limits + density conversion, proxy |
 | Road speeds 55/65 km/h | Proxy; district schedules are not public |
-| Regional zone mapping | Proxy; rate guide publishes only two groups |
+| Regional zone mapping | Proxy; rate guide publishes two groups, with an explicit appraisal-region crosswalk |
 
 ## Worked example
 
@@ -154,6 +162,7 @@ The model supplies the two missing BC cost components that previously forced
 `net_value_status=not_estimated`: tree-to-truck logging and general truck haul.
 A net-value calculation can now subtract a **range** from a public
 mill-delivered log price or a standing-timber stumpage benchmark, while keeping
-the result labelled `proxy_cost_net_value`. It must still add road, bridge,
+the result labelled `net_value_status=model_estimate` and
+`cost_basis=open_proxy_model`. It must still add road, bridge,
 culvert, silviculture and tenure allowances separately, and it must not label
 the residual as an observed profit or an official net value.

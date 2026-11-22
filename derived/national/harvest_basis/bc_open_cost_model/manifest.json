@@ -1,6 +1,6 @@
 {
-  "artifact_version": "1.0.0",
-  "generated_utc": "2026-11-22T03:42:01+00:00",
+  "artifact_version": "1.1.0",
+  "generated_utc": "2026-11-22T04:18:52+00:00",
   "observation_type": "proxy_modeled_cost",
   "description": "Open-data BC tree-to-truck logging and truck-haul cost model parameterized by forest zone, slope, piece size, sale volume and haul distance.",
   "restricted_inputs_used": [],
@@ -137,48 +137,6 @@
       "source_key": "bc_cam_2026",
       "file": "cam_2026_master.pdf",
       "sha256": "dc88a581a4cc47e016d36b0eaeda2d714f20507ca8e0d845a4868af166e73824",
-      "status": "match"
-    },
-    {
-      "source_key": "tla_rate_guide_2026_08",
-      "file": "tla_rate_guide_2026_08.pdf",
-      "sha256": "7785444c6b6bca8b677eec4ba1cc5e3669a6c981bff0a261c3ff9cbb050f93bb",
-      "status": "match"
-    },
-    {
-      "source_key": "fpinnovations_adv2n54",
-      "file": "adv2n54.pdf",
-      "sha256": "e1ace64d994f7509d38f923c821e81497e1623005ca6a47a4937f2e75b966351",
-      "status": "match"
-    },
-    {
-      "source_key": "fpinnovations_adv5n19",
-      "file": "adv5n19.pdf",
-      "sha256": "3ef4ecd15ff766f46385e519b0c213955b5c07aad71619cc9a1ed0ca185ace34",
-      "status": "match"
-    },
-    {
-      "source_key": "fpinnovations_adv3n19",
-      "file": "adv3n19.pdf",
-      "sha256": "71f003b845bdb8d58e51412429f96f96bcbd5aad23bef9194e325e1206aaba51",
-      "status": "match"
-    },
-    {
-      "source_key": "fpinnovations_adv11n27",
-      "file": "adv11n27.pdf",
-      "sha256": "7910a15a9733416f91881050f28486fbe8f70d6df961441ec68958c970773583",
-      "status": "match"
-    },
-    {
-      "source_key": "bc_cvse_logging_truck_configurations",
-      "file": "cvse_logging_truck_configurations.pdf",
-      "sha256": "9d8310d1f7fdd91df2b1088856a94b1c79656ddb4be1576c79817273fd3312ef",
-      "status": "match"
-    },
-    {
-      "source_key": "fpinnovations_9axle_2021",
-      "file": "fpinnovations_9axle_2021.pdf",
-      "sha256": "db70e39e399aff8579ba943ae1e552315af5aa0bdcfae38a54c2a49cedaa81da",
       "status": "match"
     }
   ],
@@ -756,6 +714,23 @@
   ],
   "scenario_grid": {
     "zones": 7,
+    "appraisal_regions": {
+      "Coast": [
+        "South West Zone"
+      ],
+      "Interior": [
+        "North Central Zone",
+        "North East Zone",
+        "North Fort Nelson Zone",
+        "North West Zone",
+        "South Central Zone",
+        "South East Zone"
+      ]
+    },
+    "rate_groups": [
+      "coastal_northwest_interior",
+      "southern_northern_interior"
+    ],
     "slope_scenarios": 5,
     "piece_scenarios": 3,
     "volume_scenarios": 3,
@@ -785,13 +760,16 @@
     "total_low_base_high_ordered": true,
     "all_zones_present": true,
     "all_systems_present": true,
+    "appraisal_region_matches_zone": true,
+    "coast_ground_uses_forwarder": true,
+    "interior_ground_uses_grapple_skidder": true,
     "no_restricted_inputs": true,
     "outputs_sha256": {
-      "bc_open_cost_estimates.csv": "6f5a67056978ce2c2cd4acb2ba62669cb20fff92d8731e0b14730ace1d668a95",
+      "bc_open_cost_estimates.csv": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745",
       "bc_open_cost_parameters.csv": "b0ea3343f4b6242bb504d7d6c9fd25a5138b3c001b01ef6b180ccc74631f47b6",
       "bc_open_cost_sources.csv": "5cff086e521be4bfb5b36ea1eeec42d4d949878cf70caa22041707d3a148776f",
       "bc_open_cost_sensitivity.csv": "318eae70de2a99e0a405d1ff0aadc0d8e9fcb5a1bf2b3255aedeaf92a6ad72aa",
-      "README.md": "9aa34a9967b4805ef8e81c1a028980c8ac32855198a709c2fe784ee8f0d9c739"
+      "README.md": "04a34f574cf6b813cde5442929f8fa5382a33d637792a599d38c4f073f614281"
     }
   },
   "outputs": {
@@ -804,6 +782,7 @@
     "All-found equipment rates are contractor revenue requirements, not observed costs.",
     "Productivity is transferred from public case studies and is not a BC-wide survey.",
     "The rate guide publishes two region groups, not seven forest zones.",
+    "North West Zone is appraisal-Interior but uses the coastal/northwest machine-rate group.",
     "Slope, piece-size and sale-volume coefficients are IAM bid-response proxies, not cost elasticities.",
     "Coastal barge/tow, rail, sorting and road/silviculture costs are outside this model.",
     "The helicopter allowance is a specified-operation proxy, not an observed heli contract rate.",

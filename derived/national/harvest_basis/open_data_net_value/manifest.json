@@ -1,19 +1,35 @@
 {
-  "artifact_version": "1.0.0",
-  "generated_utc": "2026-11-22T03:52:17+00:00",
+  "artifact_version": "1.1.0",
+  "generated_utc": "2026-11-22T04:18:53+00:00",
   "dataset": "open_data_net_value",
   "description": "Open-data BC modeled mill-delivered margin combining public log-market averages, open proxy logging/haul costs, and a published silviculture CAD/m3 allowance.",
   "restricted_inputs_used": [],
+  "licensing": {
+    "classification": "public_reference_copyrighted",
+    "strict_open_licence": false,
+    "strict_open_licence_sources": [],
+    "public_reference_source_families": [
+      "BC Government appraisal manuals and silviculture tables (BC Crown copyright)",
+      "BC log-market reports (BC Crown copyright; private study/research use)",
+      "TLA/ILA/NWLA/MNP 2026 rate guide (industry publisher copyright)",
+      "FPInnovations/FERIC case studies (publisher copyright)",
+      "BC CVSE / Commercial Transport Regulations (BC Crown copyright)",
+      "Gouvernement du Qu\u00e9bec MRNF 2022 procurement survey (public-reference report)"
+    ],
+    "source_pdfs_redistributed": false,
+    "commercial_reuse": "requires_permission_from_rights_holder",
+    "statement": "All inputs are public-reference copyrighted sources. None is released under a strict Open Government Licence, CC-BY, or Statistics Canada open licence. Source PDFs are not redistributed in this repository. Commercial reuse or redistribution requires permission from the rights holder."
+  },
   "inputs": [
     {
       "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
-      "sha256": "6f5a67056978ce2c2cd4acb2ba62669cb20fff92d8731e0b14730ace1d668a95",
-      "bytes": 559625
+      "sha256": "2f8c33fe3a85a7b8d711c341e6d0e052ce60da922fdcaabcc58831aa206a0745",
+      "bytes": 558939
     },
     {
       "path": "data/derived/national/harvest_basis/bc_open_cost_model/manifest.json",
-      "sha256": "87cf0c3816e72126e4574f8648b3191c17a76e7fce7daad864d99da3e56da97d",
-      "bytes": 46973
+      "sha256": "9819c629be05dc94314ce4cf039aa93ff4fc607a48320b29426b971ad4829d04",
+      "bytes": 46146
     },
     {
       "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
@@ -48,32 +64,32 @@
   ],
   "outputs": {
     "bc_open_net_value.csv": {
-      "sha256": "e1b6e6e43f7815ebe811623c418c2e4107c2818757be7572eb8f3b5ac5e80eb7",
-      "bytes": 815157
+      "sha256": "1e1da49aa36be34218c942bffb66af4b2f3ce8d37e30bc9dc475d49744999dc7",
+      "bytes": 816632
     },
     "bc_open_net_value_summary.csv": {
-      "sha256": "3b7601a5fbc36938ba703395eed9d425c9f8a262f4cdfe43e75ab92b4f0aa10b",
-      "bytes": 4431
+      "sha256": "ef1ca0866928ecc3fe157bda7bea9e95362c9e3cae63261efa8de0f763f5ba4b",
+      "bytes": 6567
     },
     "bc_open_net_value_sensitivity.csv": {
-      "sha256": "75c9f88bc399989c207a945c841443f38772bbe753e0a3a55b4d7ee09614aee3",
-      "bytes": 2067
+      "sha256": "f9495a759bda1f90f4188786385a83bc6a9541a2d4364ff453194bf9250ec860",
+      "bytes": 2177
     },
     "qc_open_reference.csv": {
-      "sha256": "7273856fa425bb2c8965032734dc92d76aa7dcf93d9cba4b00eb8b6779eab721",
-      "bytes": 689
+      "sha256": "1620f39e1742fb9782b5c6b6f3a42486cf19f65557bb591b341af74867668e7e",
+      "bytes": 690
     },
     "bc_open_price_outliers.csv": {
       "sha256": "d9a6201307af07932c53fb054dc7257ff3c992b3ed0c7ab3de35501a5d50d63f",
       "bytes": 7330
     },
     "OPEN_DATA_NET_VALUE_REPORT.md": {
-      "sha256": "b191ce4e2097e9feeb17154e6ff58c7bafb4de5787cb3f6a3db6cbc512b95a1f",
-      "bytes": 10053
+      "sha256": "0ef160de2ae1c2e3e6ae66661ffae53d1b2e082cc1004dad94597b55ee24a2a5",
+      "bytes": 12534
     },
     "summary.json": {
-      "sha256": "ed6db2e4b132be53ea1e80569c9c18506782250afb8a28dd44a3b538a9d66bf3",
-      "bytes": 12494
+      "sha256": "6a5a3dbeb1d16b33f6e5aebdef7dd85bb3630a0c5de5f3cf86cd421c26f602b0",
+      "bytes": 15313
     }
   },
   "selection": {
@@ -90,8 +106,23 @@
       "South Central Zone": "Interior",
       "South East Zone": "Interior"
     },
+    "appraisal_regions": {
+      "Coast": [
+        "South West Zone"
+      ],
+      "Interior": [
+        "North Central Zone",
+        "North East Zone",
+        "North Fort Nelson Zone",
+        "North West Zone",
+        "South Central Zone",
+        "South East Zone"
+      ]
+    },
     "silviculture_series": "Interior Basic Silviculture 2026-10",
-    "silviculture_effective_date": "2026-10-01"
+    "silviculture_effective_date": "2026-10-01",
+    "silviculture_applies_to_price_region": "Interior",
+    "coast_silviculture_basis": "cam_table_5_6_cad_per_ha_only_not_converted"
   },
   "validation": {
     "cost_rows": 945,
@@ -100,11 +131,14 @@
     "ranges_ordered": true,
     "finite_outputs": true,
     "single_price_vintage": true,
+    "coast_price_contract": true,
     "interior_aggregates_excluded": true,
     "labels_complete": true,
-    "negative_net_base_rows": 182,
+    "negative_net_base_rows": 168,
     "negative_net_values_documented": true,
-    "road_silviculture_included_on_all_rows": true,
+    "silviculture_interior_only": true,
+    "silviculture_interior_rows": 810,
+    "silviculture_coast_rows_excluded": 135,
     "no_restricted_inputs": true,
     "combined_bc_qc_national_total": false,
     "price_outlier_register_rows": 40,
@@ -113,14 +147,16 @@
   "caveats": [
     "Published averages, not observed transactions.",
     "Proxy productivity from public case studies, not a BC-wide survey.",
-    "Proxy system assignment; seven forest zones map to two rate groups.",
-    "North West Zone price crosswalk is a documented boundary case (priced Interior).",
+    "Proxy system assignment; seven forest zones map to two rate groups plus explicit appraisal regions.",
+    "North West Zone is appraisal-Interior: Interior price, haul method and grapple skidder, with coastal/northwest hourly rates.",
+    "South West Zone is Coast-priced; Coast silviculture is excluded because CAM publishes CAD/ha only.",
     "Slope, piece-size and sale-volume IAM coefficients are cost proxies.",
     "Helicopter logging is a specified-operation allowance proxy.",
     "The silviculture allowance is an appraisal/policy value, not an invoice.",
     "Nominal CAD; no deflator is applied across report periods.",
     "No grade/species/end-use matching to specific mills or tenures.",
     "Road/bridge/culvert CAD/km or CAD/each allowances are not converted to CAD/m3.",
+    "Public-reference copyrighted sources, not strict OGL/CC-BY/StatCan open licences; PDFs not redistributed and commercial reuse requires permission.",
     "No observed transactions, mill profit, legal, AAC, tenure, or policy claim."
   ],
   "non_claims": [
