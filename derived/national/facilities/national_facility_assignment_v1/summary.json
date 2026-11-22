@@ -1,0 +1,355 @@
+{
+  "artifact": "national_facility_assignment_v1",
+  "artifact_version": "1.0.0",
+  "capacity": {
+    "excluded_other_records": 15,
+    "inventory_records": 486,
+    "known_capacity_by_province": {
+      "BC": {
+        "capacity_m3_y": 95838409.22564995,
+        "records": 179
+      }
+    },
+    "known_capacity_m3_y": 95838409.22565,
+    "known_located_capacity_m3_y": 68536597.539914,
+    "known_located_records": 98,
+    "known_records": 179,
+    "known_unlocated_capacity_m3_y": 27301811.685736,
+    "known_unlocated_records": 81,
+    "non_operating_records": 1,
+    "non_operating_statuses": [
+      "disused"
+    ],
+    "relevant_records": 471,
+    "unknown_capacity_m3_y": null,
+    "unknown_capacity_proxy": "capacity_unbounded_proxy",
+    "unknown_records": 292
+  },
+  "caveats": [
+    "All volumes are model estimates (`model_estimate`); `observed=false` and `policy_grade=false`.",
+    "The 119 Mm3 case is a planning allocation, not a legal AAC, a sustainable-supply determination, or an observed harvest outcome. No legal/AAC claim is made.",
+    "Known capacity is the 2015 Mills DB/FFCM processing-line infeed proxy carried by national_facility_inventory_v0, not licensed, current, or verified operating capacity.",
+    "All known-capacity records are in BC. In `known_only`, every non-BC province must either cross a provincial border or overflow. That is a property of the inventory, not an interprovincial trade forecast.",
+    "81 known-capacity records (27.30 Mm3/yr) have no coordinate and are excluded from the spatial screen. `known_only` is therefore a lower bound on placement in published capacity, not a full use of it.",
+    "292 relevant facilities have no published capacity. `unbounded_unknown` treats them as non-binding absorbers (`capacity_unbounded_proxy`) and does not assign them an invented capacity. Volume placed on them is not evidence of available, permitted, or operating capacity.",
+    "The 119 Mm3 provincial volume is one ungraded offer per province. No sawlog/pulp/panel/pellet/biomass split is inferred, and class totals are recipient facility classes, not feedstock grades.",
+    "Harvest volume is treated one-to-one as facility infeed volume. Moisture, bark, oversize, grade, and recovery conversions are not modelled.",
+    "Distances are haversine from an unweighted ADM1 polygon centroid to the facility coordinate, multiplied by a 1.3 road factor for ranking. No routing, road network, travel time, or cost model is used.",
+    "Cross-border assignments carry a 500 km screening penalty and are considered only after local capacity is exhausted. The penalty is an assumption, not a transport-cost estimate.",
+    "OSM presence does not establish operating status. 1 non-operating record(s) are excluded; all other inventory statuses are unknown.",
+    "No facility data are introduced. Coordinates, classes, statuses, and published capacities come from national_facility_inventory_v0.",
+    "No UI or public OSeCAN surface is changed by this artifact."
+  ],
+  "generated_utc": "2026-11-22T20:21:33+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_inventory_v0/national_facilities.csv": "08dd90bc398cbff3015d1bcff37a815ef9e5a3aacb5942be3a49e6253912e27c",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "method": {
+    "centroid_methods": {
+      "AB": "polygon_centroid",
+      "BC": "polygon_centroid",
+      "MB": "polygon_centroid",
+      "NB": "polygon_centroid",
+      "NL": "polygon_centroid",
+      "NS": "polygon_centroid",
+      "NT": "polygon_centroid",
+      "NU": "polygon_centroid",
+      "ON": "polygon_centroid",
+      "PE": "polygon_centroid",
+      "QC": "polygon_centroid",
+      "SK": "polygon_centroid",
+      "YT": "polygon_centroid"
+    },
+    "centroid_source": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+    "contract_alignment": "offer/contract vocabulary follows workflows.national.assortments.facility; FacilityContract is not reused because a finite maximum cannot represent unknown capacity without inventing a number",
+    "cross_border_competition": "province residuals processed in descending volume, then province code, matching the assign_feedstock ordering convention",
+    "cross_border_penalty_km": 500.0,
+    "cross_border_rule": "cross-border only after local capacity is exhausted; candidates ranked by road distance plus the cross-border penalty",
+    "distance_basis": "haversine from ADM1 polygon centroid to facility coordinate; road distance = haversine * road_factor",
+    "eligible_classes": [
+      "SAW",
+      "PULP",
+      "PANEL",
+      "PELLET",
+      "BIO"
+    ],
+    "excluded_classes": [
+      "OTHER"
+    ],
+    "harvest_case": "119m",
+    "harvest_file": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+    "known_capacity_rule": "assigned_m3 <= capacity_m3_y for every located known-capacity facility",
+    "local_first": true,
+    "local_priority": "local known capacity before local unknown proxies; unknown proxies absorb local residual only",
+    "non_operating_statuses_excluded": [
+      "abandoned",
+      "construction",
+      "disused",
+      "proposed"
+    ],
+    "province_order": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "PE",
+      "NL",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "quantity_basis": "province harvest_m3 treated one-to-one as facility infeed m3; no moisture, bark, grade, or recovery conversion",
+    "road_factor": 1.3,
+    "scenarios": {
+      "known_only": "only published-capacity facilities are eligible; published capacity is a hard maximum",
+      "unbounded_unknown": "published-capacity plus unknown-capacity facilities; unknown capacity is a non-binding proxy sink"
+    },
+    "supply_offers": "one ungraded provincial offer per province; no class split inferred",
+    "unknown_capacity_rule": "capacity_unbounded_proxy: unknown capacity is non-binding and is never given a numeric capacity",
+    "unlocated_known_capacity": "excluded from the spatial screen and reported separately"
+  },
+  "outputs": {
+    "facility_assignment_csv": "facility_assignment.csv",
+    "facility_utilization_csv": "facility_utilization.csv",
+    "province_summary_csv": "province_summary.csv",
+    "report_md": "NATIONAL_FACILITY_ASSIGNMENT_V1.md",
+    "unassigned_csv": "unassigned.csv"
+  },
+  "province_class_totals": [
+    {
+      "assigned_m3": 651742.5,
+      "facility_class": "PULP",
+      "province": "AB",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 1231944.0399139998,
+      "facility_class": "SAW",
+      "province": "AB",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 5583911.446597001,
+      "facility_class": "BIO",
+      "province": "BC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 2254922.549179,
+      "facility_class": "PANEL",
+      "province": "BC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 4841690.0,
+      "facility_class": "PELLET",
+      "province": "BC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 3651936.813317,
+      "facility_class": "PULP",
+      "province": "BC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 23646116.190907005,
+      "facility_class": "SAW",
+      "province": "BC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 1853366.308885,
+      "facility_class": "BIO",
+      "province": "QC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 1088669.3539820001,
+      "facility_class": "PANEL",
+      "province": "QC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 553910.0,
+      "facility_class": "PELLET",
+      "province": "QC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 12635602.936683,
+      "facility_class": "PULP",
+      "province": "QC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 10542785.400449997,
+      "facility_class": "SAW",
+      "province": "QC",
+      "scenario": "known_only"
+    },
+    {
+      "assigned_m3": 22891404.0,
+      "facility_class": "BIO",
+      "province": "AB",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 5583911.446597001,
+      "facility_class": "BIO",
+      "province": "BC",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 2254922.549179,
+      "facility_class": "PANEL",
+      "province": "BC",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 4841690.0,
+      "facility_class": "PELLET",
+      "province": "BC",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 3651936.813317,
+      "facility_class": "PULP",
+      "province": "BC",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 23646116.190907005,
+      "facility_class": "SAW",
+      "province": "BC",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 1135235.8,
+      "facility_class": "SAW",
+      "province": "MB",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 6234700.0,
+      "facility_class": "SAW",
+      "province": "NB",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 1454037.5,
+      "facility_class": "PULP",
+      "province": "NL",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 2388245.0,
+      "facility_class": "SAW",
+      "province": "NS",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 36376.0,
+      "facility_class": "PANEL",
+      "province": "NT",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 13493596.0,
+      "facility_class": "BIO",
+      "province": "ON",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 302210.4,
+      "facility_class": "SAW",
+      "province": "PE",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 26674334.0,
+      "facility_class": "SAW",
+      "province": "QC",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 4344697.6,
+      "facility_class": "SAW",
+      "province": "SK",
+      "scenario": "unbounded_unknown"
+    },
+    {
+      "assigned_m3": 43925.8,
+      "facility_class": "SAW",
+      "province": "YT",
+      "scenario": "unbounded_unknown"
+    }
+  ],
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment",
+  "totals": {
+    "offer_m3": 118977339.1,
+    "scenario_totals": {
+      "known_only": {
+        "assigned_m3": 68536597.539914,
+        "assigned_share": 0.5760474898695562,
+        "assignment_rows": 100,
+        "cross_border_assigned_m3": 28558020.539914,
+        "cross_border_share": 0.4166827879554792,
+        "facilities_used": 98,
+        "known_assigned_m3": 68536597.539914,
+        "known_facilities_used": 98,
+        "offer_m3": 118977339.1,
+        "unassigned_m3": 50440741.560086,
+        "unassigned_provinces": 10,
+        "unknown_assigned_m3": 0.0,
+        "unknown_facilities_used": 0,
+        "unknown_share_of_assigned": 0.0
+      },
+      "unbounded_unknown": {
+        "assigned_m3": 118977339.1,
+        "assigned_share": 1.0,
+        "assignment_rows": 63,
+        "cross_border_assigned_m3": 36376.0,
+        "cross_border_share": 0.0003057388934326907,
+        "facilities_used": 63,
+        "known_assigned_m3": 39978577.0,
+        "known_facilities_used": 52,
+        "offer_m3": 118977339.1,
+        "unassigned_m3": 0.0,
+        "unassigned_provinces": 0,
+        "unknown_assigned_m3": 78998762.1,
+        "unknown_facilities_used": 11,
+        "unknown_share_of_assigned": 0.6639815842040461
+      }
+    }
+  },
+  "validation": {
+    "conservation_gap_m3": {
+      "known_only": 0.0,
+      "unbounded_unknown": 0.0
+    },
+    "known_capacity_violations": 0,
+    "max_known_utilization": {
+      "known_only": 1.0,
+      "unbounded_unknown": 1.0
+    },
+    "province_assigned_gap_m3": {
+      "known_only": 0.0,
+      "unbounded_unknown": 0.0
+    },
+    "unknown_assignments_in_known_only": 0,
+    "unlocated_known_capacity_m3": 27301811.685736,
+    "unlocated_known_records": 81
+  }
+}

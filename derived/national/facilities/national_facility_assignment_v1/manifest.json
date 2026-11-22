@@ -1,0 +1,121 @@
+{
+  "artifact": "national_facility_assignment_v1",
+  "artifact_version": "1.0.0",
+  "capacity": {
+    "excluded_other_records": 15,
+    "inventory_records": 486,
+    "known_capacity_by_province": {
+      "BC": {
+        "capacity_m3_y": 95838409.22564995,
+        "records": 179
+      }
+    },
+    "known_capacity_m3_y": 95838409.22565,
+    "known_located_capacity_m3_y": 68536597.539914,
+    "known_located_records": 98,
+    "known_records": 179,
+    "known_unlocated_capacity_m3_y": 27301811.685736,
+    "known_unlocated_records": 81,
+    "non_operating_records": 1,
+    "non_operating_statuses": [
+      "disused"
+    ],
+    "relevant_records": 471,
+    "unknown_capacity_m3_y": null,
+    "unknown_capacity_proxy": "capacity_unbounded_proxy",
+    "unknown_records": 292
+  },
+  "generated_utc": "2026-11-22T20:21:33+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_inventory_v0/national_facilities.csv": "08dd90bc398cbff3015d1bcff37a815ef9e5a3aacb5942be3a49e6253912e27c",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_ASSIGNMENT_V1.md": {
+      "bytes": 8852,
+      "sha256": "17ef1d8b569fb9c8ee56c89a2bbdd6b061c4789c079b81b1878844168bd049a7"
+    },
+    "facility_assignment.csv": {
+      "bytes": 35313,
+      "sha256": "c452c9419c5f805cfb544aefbb1b2f20d0bdf13b57e1a8d2dd637348395b5e9d"
+    },
+    "facility_utilization.csv": {
+      "bytes": 214022,
+      "sha256": "b1fffe3d6d3547c2b6d323878324585b929a27b2e47a2f4f4590f73ab385d046"
+    },
+    "province_summary.csv": {
+      "bytes": 3566,
+      "sha256": "6d9c219d50c718edf06f86e1e89e53107d946dab7aa721c60215da0bfc0d2f45"
+    },
+    "summary.json": {
+      "bytes": 12461,
+      "sha256": "f3e2f393be5217c28569f7b0e478985e2fc62a7c852ecd385af330fcdc2231e5"
+    },
+    "unassigned.csv": {
+      "bytes": 1702,
+      "sha256": "2bd1bb29b25c9c0d54cb690f3959932369a83e1330bbf7c86bf2105216cc344d"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment",
+  "totals": {
+    "offer_m3": 118977339.1,
+    "scenario_totals": {
+      "known_only": {
+        "assigned_m3": 68536597.539914,
+        "assigned_share": 0.5760474898695562,
+        "assignment_rows": 100,
+        "cross_border_assigned_m3": 28558020.539914,
+        "cross_border_share": 0.4166827879554792,
+        "facilities_used": 98,
+        "known_assigned_m3": 68536597.539914,
+        "known_facilities_used": 98,
+        "offer_m3": 118977339.1,
+        "unassigned_m3": 50440741.560086,
+        "unassigned_provinces": 10,
+        "unknown_assigned_m3": 0.0,
+        "unknown_facilities_used": 0,
+        "unknown_share_of_assigned": 0.0
+      },
+      "unbounded_unknown": {
+        "assigned_m3": 118977339.1,
+        "assigned_share": 1.0,
+        "assignment_rows": 63,
+        "cross_border_assigned_m3": 36376.0,
+        "cross_border_share": 0.0003057388934326907,
+        "facilities_used": 63,
+        "known_assigned_m3": 39978577.0,
+        "known_facilities_used": 52,
+        "offer_m3": 118977339.1,
+        "unassigned_m3": 0.0,
+        "unassigned_provinces": 0,
+        "unknown_assigned_m3": 78998762.1,
+        "unknown_facilities_used": 11,
+        "unknown_share_of_assigned": 0.6639815842040461
+      }
+    }
+  },
+  "validation": {
+    "conservation_gap_m3": {
+      "known_only": 0.0,
+      "unbounded_unknown": 0.0
+    },
+    "known_capacity_violations": 0,
+    "max_known_utilization": {
+      "known_only": 1.0,
+      "unbounded_unknown": 1.0
+    },
+    "province_assigned_gap_m3": {
+      "known_only": 0.0,
+      "unbounded_unknown": 0.0
+    },
+    "unknown_assignments_in_known_only": 0,
+    "unlocated_known_capacity_m3": 27301811.685736,
+    "unlocated_known_records": 81
+  }
+}
