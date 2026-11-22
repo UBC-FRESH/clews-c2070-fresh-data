@@ -1,7 +1,7 @@
 {
   "artifact": "facility_residue_supply_v1",
   "artifact_version": "1.0.0",
-  "generated_utc": "2026-11-22T21:00:23+00:00",
+  "generated_utc": "2026-11-22T21:01:27+00:00",
   "inputs": {
     "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
     "data/derived/national/facilities/national_facility_assignment_v3/facility_assignment.csv": "d67558efa2c714432e8939939a26f937bbfaed767b3c56cd0f1d592b6456dc63",
@@ -20,31 +20,31 @@
   },
   "outputs": {
     "FACILITY_RESIDUE_SUPPLY_V1.md": {
-      "bytes": 9298,
-      "sha256": "b2e5fdece1f5ae614748cd7d684ac1929aa024c890887e71bb4e4f578bdc4b9e"
+      "bytes": 9602,
+      "sha256": "f1c929c1938f36ba43401fc030116f3471282470bc1f8ac096ddabf7fd86c3f3"
     },
     "facility_residue_supply.csv": {
       "bytes": 578620,
       "sha256": "e38adb7ad95c55675481e3a0a218bfa585c407ff6cca623c78cc6cfc5b841aba"
     },
     "national_residue_summary.csv": {
-      "bytes": 3945,
-      "sha256": "0092680ddc37154c0743678aa0f6743769474f61c06432da064a286d8bd54585"
+      "bytes": 4523,
+      "sha256": "083dfd0d7e90e458f71b0fbe86ab182d53e6452708f93ff34b6e04de3f7baf49"
     },
     "province_residue_supply.csv": {
       "bytes": 18383,
       "sha256": "5f6c7bd924fb172156138e91f52824bdadb64b5efeb61b9f7f2a661532aea318"
     },
     "summary.json": {
-      "bytes": 21792,
-      "sha256": "ecddfaefc9d1ebf199120c1ab5fd4f22d125d53581e0aa03d6a759603a38a510"
+      "bytes": 21996,
+      "sha256": "193e31f6dc1df8cf9e31cca71736a21c8d843be6ad813a7d013fdc2390b45562"
     }
   },
   "record_counts": {
     "facilities_used": 201,
     "facilities_with_positive_residue": 188,
     "facility_rows": 834,
-    "national_summary_rows": 30,
+    "national_summary_rows": 34,
     "province_rows": 52
   },
   "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_residue_supply",

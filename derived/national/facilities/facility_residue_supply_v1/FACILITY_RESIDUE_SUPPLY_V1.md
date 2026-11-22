@@ -66,6 +66,8 @@ Process residue is not added to the RSYC comparison. A combined process plus rec
 - Top 1 share: 5.54%; top 5 share: 17.98%.
 - Published-capacity share of process residue: 36.00%.
 - Proxy-capacity share of process residue: 64.00% (scaled proxy: 33.30%).
+- National class fallback share of process residue: 4.81% (1,367,449 odt).
+- Cross-border process residue (facility province differs from origin): 4.81% (1,368,011 odt). Assignment v3 cross-border volume is 0.03%, but the class fallback routes some origin class streams to facilities in other provinces.
 
 ### Top facilities by process residue
 
