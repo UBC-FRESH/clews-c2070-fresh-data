@@ -1,0 +1,134 @@
+{
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T03:52:17+00:00",
+  "dataset": "open_data_net_value",
+  "description": "Open-data BC modeled mill-delivered margin combining public log-market averages, open proxy logging/haul costs, and a published silviculture CAD/m3 allowance.",
+  "restricted_inputs_used": [],
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+      "sha256": "6f5a67056978ce2c2cd4acb2ba62669cb20fff92d8731e0b14730ace1d668a95",
+      "bytes": 559625
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model/manifest.json",
+      "sha256": "87cf0c3816e72126e4574f8648b3191c17a76e7fce7daad864d99da3e56da97d",
+      "bytes": 46973
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f",
+      "bytes": 7917987
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_log_market/manifest.json",
+      "sha256": "5513d6cf805bd3b3faac01fc0328c17bfcf3a641911b25031f6cdcab80ff9e07",
+      "bytes": 282471
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/bc_appraisal_costs.csv",
+      "sha256": "cef22e1ca3f9a1f55a40a34148b231aa4998162996889be4a28fd04b83229aea",
+      "bytes": 454062
+    },
+    {
+      "path": "data/derived/national/harvest_basis/bc_appraisal_costs/manifest.json",
+      "sha256": "5ad3f2dad0b240eacf81776d7c0f80293e1c1dd7dcd6f69264b7cee521e3559e",
+      "bytes": 9035
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/qc_procurement_cost_benchmark.csv",
+      "sha256": "2ac98dc6c4de68f6f44b79c9be9bc66dd73ee4e6a4d578224d860ef5df94667e",
+      "bytes": 9763
+    },
+    {
+      "path": "data/derived/national/harvest_basis/procurement_benchmark/manifest.json",
+      "sha256": "2ae2d4b63aeb1dea5a24e9aabaff1f960e2e8091b35623b44a490a3207f71c68",
+      "bytes": 7566
+    }
+  ],
+  "outputs": {
+    "bc_open_net_value.csv": {
+      "sha256": "e1b6e6e43f7815ebe811623c418c2e4107c2818757be7572eb8f3b5ac5e80eb7",
+      "bytes": 815157
+    },
+    "bc_open_net_value_summary.csv": {
+      "sha256": "3b7601a5fbc36938ba703395eed9d425c9f8a262f4cdfe43e75ab92b4f0aa10b",
+      "bytes": 4431
+    },
+    "bc_open_net_value_sensitivity.csv": {
+      "sha256": "75c9f88bc399989c207a945c841443f38772bbe753e0a3a55b4d7ee09614aee3",
+      "bytes": 2067
+    },
+    "qc_open_reference.csv": {
+      "sha256": "7273856fa425bb2c8965032734dc92d76aa7dcf93d9cba4b00eb8b6779eab721",
+      "bytes": 689
+    },
+    "bc_open_price_outliers.csv": {
+      "sha256": "d9a6201307af07932c53fb054dc7257ff3c992b3ed0c7ab3de35501a5d50d63f",
+      "bytes": 7330
+    },
+    "OPEN_DATA_NET_VALUE_REPORT.md": {
+      "sha256": "b191ce4e2097e9feeb17154e6ff58c7bafb4de5787cb3f6a3db6cbc512b95a1f",
+      "bytes": 10053
+    },
+    "summary.json": {
+      "sha256": "ed6db2e4b132be53ea1e80569c9c18506782250afb8a28dd44a3b538a9d66bf3",
+      "bytes": 12494
+    }
+  },
+  "selection": {
+    "price_basis": "3_month",
+    "price_period_end": "2025-12-31",
+    "sensitivity_price_basis": "1_month",
+    "sensitivity_price_period_end": "2025-12-31",
+    "price_regions": {
+      "South West Zone": "Coast",
+      "North West Zone": "Interior",
+      "North Central Zone": "Interior",
+      "North East Zone": "Interior",
+      "North Fort Nelson Zone": "Interior",
+      "South Central Zone": "Interior",
+      "South East Zone": "Interior"
+    },
+    "silviculture_series": "Interior Basic Silviculture 2026-10",
+    "silviculture_effective_date": "2026-10-01"
+  },
+  "validation": {
+    "cost_rows": 945,
+    "net_value_rows": 945,
+    "zone_system_groups": 21,
+    "ranges_ordered": true,
+    "finite_outputs": true,
+    "single_price_vintage": true,
+    "interior_aggregates_excluded": true,
+    "labels_complete": true,
+    "negative_net_base_rows": 182,
+    "negative_net_values_documented": true,
+    "road_silviculture_included_on_all_rows": true,
+    "no_restricted_inputs": true,
+    "combined_bc_qc_national_total": false,
+    "price_outlier_register_rows": 40,
+    "price_outliers_used_in_model": 0
+  },
+  "caveats": [
+    "Published averages, not observed transactions.",
+    "Proxy productivity from public case studies, not a BC-wide survey.",
+    "Proxy system assignment; seven forest zones map to two rate groups.",
+    "North West Zone price crosswalk is a documented boundary case (priced Interior).",
+    "Slope, piece-size and sale-volume IAM coefficients are cost proxies.",
+    "Helicopter logging is a specified-operation allowance proxy.",
+    "The silviculture allowance is an appraisal/policy value, not an invoice.",
+    "Nominal CAD; no deflator is applied across report periods.",
+    "No grade/species/end-use matching to specific mills or tenures.",
+    "Road/bridge/culvert CAD/km or CAD/each allowances are not converted to CAD/m3.",
+    "No observed transactions, mill profit, legal, AAC, tenure, or policy claim."
+  ],
+  "non_claims": [
+    "Not observed profit.",
+    "Not a mill margin.",
+    "Not an official net value.",
+    "Not a stumpage rate.",
+    "Not policy grade.",
+    "Not a combined BC+QC national total."
+  ]
+}
