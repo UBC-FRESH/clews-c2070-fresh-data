@@ -1,6 +1,6 @@
 # National Economics v2.1 - donor-flat base with stumpage-scaled sensitivity
 
-Generated: 2026-11-22T06:24:42+00:00
+Generated: 2026-11-22T06:26:14+00:00
 
 ## Decision
 
