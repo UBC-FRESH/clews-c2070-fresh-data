@@ -1,0 +1,326 @@
+{
+  "artifact": "qc_grade_pilot_v1",
+  "checks": [
+    {
+      "check_id": "ten_qc_trees",
+      "detail": "10 QC trees loaded from the v1 tree list",
+      "status": "PASS"
+    },
+    {
+      "check_id": "same_geometry",
+      "detail": "both scenarios use the same taper total for every tree",
+      "status": "PASS"
+    },
+    {
+      "check_id": "volume_balance",
+      "detail": "dimension_only=0; grade_rules=0",
+      "status": "PASS"
+    },
+    {
+      "check_id": "grade_mapping",
+      "detail": "44 grade rules map quality to product",
+      "status": "PASS"
+    },
+    {
+      "check_id": "dimension_not_assigned",
+      "detail": "dimension-only logs have no grade or quality class",
+      "status": "PASS"
+    },
+    {
+      "check_id": "grade_rows_labelled",
+      "detail": "all grade-rule logs carry a pilot grade and quality class",
+      "status": "PASS"
+    },
+    {
+      "check_id": "pilot_labels",
+      "detail": "model_estimate/synthetic/observed=false/policy_grade=false/national_claim=false",
+      "status": "PASS"
+    },
+    {
+      "check_id": "no_nan",
+      "detail": "numeric columns contain no NaN",
+      "status": "PASS"
+    },
+    {
+      "check_id": "no_negative",
+      "detail": "volumes, residues and values are non-negative",
+      "status": "PASS"
+    },
+    {
+      "check_id": "evidence_tiers",
+      "detail": "taper published_table; dimensions published_table; mapping/prices assumption",
+      "status": "PASS"
+    },
+    {
+      "check_id": "repository_hygiene",
+      "detail": "no unexpected D in parent or data git status before run",
+      "status": "PASS"
+    }
+  ],
+  "comparison": [
+    {
+      "delta": 7.0,
+      "dimension_only": 11.0,
+      "grade_rules": 18.0,
+      "metric": "n_logs",
+      "relative_change": 0.6363636363636364,
+      "unit": "count"
+    },
+    {
+      "delta": 2.0,
+      "dimension_only": 5.0,
+      "grade_rules": 7.0,
+      "metric": "n_trees_with_logs",
+      "relative_change": 0.4,
+      "unit": "count"
+    },
+    {
+      "delta": 0.0,
+      "dimension_only": 1.149357063000382,
+      "grade_rules": 1.149357063000382,
+      "metric": "taper_total_m3",
+      "relative_change": 0.0,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.12903006940222794,
+      "dimension_only": 0.8727925640275636,
+      "grade_rules": 1.0018226334297915,
+      "metric": "recovered_gross_m3",
+      "relative_change": 0.14783589448426265,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.12114844701204686,
+      "dimension_only": 0.8237615551705769,
+      "grade_rules": 0.9449100021826238,
+      "metric": "recovered_net_m3",
+      "relative_change": 0.14706737192531466,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.007881622390181156,
+      "dimension_only": 0.049031008856986594,
+      "grade_rules": 0.05691263124716775,
+      "metric": "defect_m3",
+      "relative_change": 0.1607477099476014,
+      "unit": "m3"
+    },
+    {
+      "delta": -0.12903006940222803,
+      "dimension_only": 0.2765644989728185,
+      "grade_rules": 0.14753442957059046,
+      "metric": "residue_m3",
+      "relative_change": -0.466546031328878,
+      "unit": "m3"
+    },
+    {
+      "delta": -0.050474218143551346,
+      "dimension_only": 0.11019865122064443,
+      "grade_rules": 0.05972443307709308,
+      "metric": "residue_odt",
+      "relative_change": -0.458029364102558,
+      "unit": "ODT"
+    },
+    {
+      "delta": 78.3375996122686,
+      "dimension_only": 55.90431653473147,
+      "grade_rules": 134.24191614700007,
+      "metric": "value_cad",
+      "relative_change": 1.4012799810118435,
+      "unit": "CAD"
+    },
+    {
+      "delta": 0.3028214221511658,
+      "dimension_only": 0.5938379142608712,
+      "grade_rules": 0.896659336412037,
+      "metric": "sawlog_m3",
+      "relative_change": 0.50993952201263,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.0,
+      "dimension_only": 0.0,
+      "grade_rules": 0.0,
+      "metric": "peeler_m3",
+      "relative_change": 0.0,
+      "unit": "m3"
+    },
+    {
+      "delta": -0.18760630595835598,
+      "dimension_only": 0.2789546497666924,
+      "grade_rules": 0.0913483438083364,
+      "metric": "pulpwood_m3",
+      "relative_change": -0.6725333530567178,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.013814953209418179,
+      "dimension_only": 0.0,
+      "grade_rules": 0.013814953209418179,
+      "metric": "other_m3",
+      "relative_change": 0.0,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.3028214221511658,
+      "dimension_only": 0.5938379142608712,
+      "grade_rules": 0.896659336412037,
+      "metric": "sawlog_plus_peeler_m3",
+      "relative_change": 0.50993952201263,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.214639653509895,
+      "dimension_only": 0.6803883748969672,
+      "grade_rules": 0.8950280284068622,
+      "metric": "sawlog_plus_peeler_share",
+      "relative_change": 0.31546637395502,
+      "unit": "fraction"
+    },
+    {
+      "delta": 0.214639653509895,
+      "dimension_only": 0.6803883748969672,
+      "grade_rules": 0.8950280284068622,
+      "metric": "sawlog_share",
+      "relative_change": 0.31546637395502,
+      "unit": "fraction"
+    },
+    {
+      "delta": -0.228429472933441,
+      "dimension_only": 0.31961162510303276,
+      "grade_rules": 0.09118215216959176,
+      "metric": "pulpwood_share",
+      "relative_change": -0.7147095255368215,
+      "unit": "fraction"
+    },
+    {
+      "delta": 0.013789819423546035,
+      "dimension_only": 0.0,
+      "grade_rules": 0.013789819423546035,
+      "metric": "other_share",
+      "relative_change": 0.0,
+      "unit": "fraction"
+    },
+    {
+      "delta": -0.16960709792386064,
+      "dimension_only": 0.3168731155276941,
+      "grade_rules": 0.14726601760383345,
+      "metric": "residue_m3_per_recovered_m3",
+      "relative_change": -0.5352524073915551,
+      "unit": "m3/m3"
+    },
+    {
+      "delta": -0.06664406661400667,
+      "dimension_only": 0.12625984198596388,
+      "grade_rules": 0.05961577537195721,
+      "metric": "residue_odt_per_recovered_m3",
+      "relative_change": -0.5278326470693302,
+      "unit": "ODT/m3"
+    },
+    {
+      "delta": 0.0,
+      "dimension_only": 0.0,
+      "grade_rules": 0.0,
+      "metric": "balance_error_m3",
+      "relative_change": 0.0,
+      "unit": "m3"
+    },
+    {
+      "delta": 0.0,
+      "dimension_only": 0.0,
+      "grade_rules": 0.0,
+      "metric": "net_defect_error_m3",
+      "relative_change": 0.0,
+      "unit": "m3"
+    }
+  ],
+  "counts": {
+    "dimension_rules": 11,
+    "grade_rules": 44,
+    "logs": 29,
+    "reconciliation_rows": 20,
+    "residue_rows": 20,
+    "scenarios": 2,
+    "trees": 10
+  },
+  "grade_status": "pilot_assumption",
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false,
+    "synthetic": true,
+    "ui_or_public_osecan_changed": false
+  },
+  "limitations": [
+    "Ten deterministic representative trees, not a Quebec inventory or PSP sample.",
+    "The dimension-only comparator is qc_pilot_sorts.csv, not the v1 national sort set used by the earlier 13-jurisdiction run.",
+    "The quality/grade mapping is a pilot rule set, not an official Quebec grade, MERIS classification, or Petro prediction.",
+    "Prices are MERIS current-deck proxies, not observed transactions.",
+    "AUTRE is carried as product 'other' in this bucking contract, not as MERIS 'mixed_log'.",
+    "Defect percentage is used as a quality proxy; it is not a measured grade defect.",
+    "Density, moisture, chip and hog yields remain pilot assumptions.",
+    "No UI or public OSeCAN surface was changed."
+  ],
+  "national_claim": false,
+  "official_grade_claim": false,
+  "scenario_totals": {
+    "dimension_only": {
+      "balance_error_m3": 0.0,
+      "defect_m3": 0.049031008856986594,
+      "max_tree_balance_error_m3": 0.0,
+      "n_logs": 11,
+      "n_trees": 10,
+      "n_trees_with_logs": 5,
+      "net_defect_error_m3": 0.0,
+      "other_m3": 0.0,
+      "other_share": 0.0,
+      "peeler_m3": 0.0,
+      "pulpwood_m3": 0.2789546497666924,
+      "pulpwood_share": 0.31961162510303276,
+      "recovered_gross_m3": 0.8727925640275636,
+      "recovered_net_m3": 0.8237615551705769,
+      "residue_m3": 0.2765644989728185,
+      "residue_m3_per_recovered_m3": 0.3168731155276941,
+      "residue_odt": 0.11019865122064443,
+      "residue_odt_per_recovered_m3": 0.12625984198596388,
+      "sawlog_m3": 0.5938379142608712,
+      "sawlog_plus_peeler_m3": 0.5938379142608712,
+      "sawlog_plus_peeler_share": 0.6803883748969672,
+      "sawlog_share": 0.6803883748969672,
+      "scenario": "dimension_only",
+      "taper_total_m3": 1.149357063000382,
+      "value_cad": 55.90431653473147
+    },
+    "grade_rules": {
+      "balance_error_m3": 0.0,
+      "defect_m3": 0.05691263124716775,
+      "max_tree_balance_error_m3": 0.0,
+      "n_logs": 18,
+      "n_trees": 10,
+      "n_trees_with_logs": 7,
+      "net_defect_error_m3": 0.0,
+      "other_m3": 0.013814953209418179,
+      "other_share": 0.013789819423546035,
+      "peeler_m3": 0.0,
+      "pulpwood_m3": 0.0913483438083364,
+      "pulpwood_share": 0.09118215216959176,
+      "recovered_gross_m3": 1.0018226334297915,
+      "recovered_net_m3": 0.9449100021826238,
+      "residue_m3": 0.14753442957059046,
+      "residue_m3_per_recovered_m3": 0.14726601760383345,
+      "residue_odt": 0.05972443307709308,
+      "residue_odt_per_recovered_m3": 0.05961577537195721,
+      "sawlog_m3": 0.896659336412037,
+      "sawlog_plus_peeler_m3": 0.896659336412037,
+      "sawlog_plus_peeler_share": 0.8950280284068622,
+      "sawlog_share": 0.8950280284068622,
+      "scenario": "grade_rules",
+      "taper_total_m3": 1.149357063000382,
+      "value_cad": 134.24191614700007
+    }
+  },
+  "schema_version": "qc_grade_pilot_v1",
+  "scope": "quebec_representative_synthetic_grade_pilot"
+}
