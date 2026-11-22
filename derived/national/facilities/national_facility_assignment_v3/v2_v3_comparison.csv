@@ -1,0 +1,19 @@
+metric,unit,v2_value,v3_value,delta_v3_minus_v2,v2_scenario,v3_scenario,note
+assigned_m3,m3/yr,118977339.1,118977339.1,0,published_plus_proxy,province_capacity_floor,volume assigned to facilities
+unassigned_m3,m3/yr,0,0,0,published_plus_proxy,province_capacity_floor,provincial offer left unassigned
+assigned_share,share,1,1,0,published_plus_proxy,province_capacity_floor,assigned / offer
+published_m3,m3/yr,46122055.896727,39978577,-6143478.896727,published_plus_proxy,province_capacity_floor,assigned volume on published capacity
+proxy_m3,m3/yr,72855283.203273,78998762.1,6143478.896727,published_plus_proxy,province_capacity_floor,assigned volume on proxy capacity
+proxy_share_of_assigned,share,0.612346,0.663982,0.051636,published_plus_proxy,province_capacity_floor,proxy volume / assigned volume
+cross_border_m3,m3/yr,25318437.4,36376,-25282061.4,published_plus_proxy,province_capacity_floor,assigned to an out-of-province facility
+cross_border_share,share,0.212801,0.000306,-0.212495,published_plus_proxy,province_capacity_floor,cross-border / assigned
+facilities_used,count,262,201,-61,published_plus_proxy,province_capacity_floor,distinct facilities receiving volume
+max_facility_m3,m3/yr,2162922.563248,8461661.431339,6298738.868091,published_plus_proxy,province_capacity_floor,largest single-facility assignment
+max_facility_share,share,0.018179,0.07112,0.052941,published_plus_proxy,province_capacity_floor,largest / assigned
+top5_share,share,0.078919,0.164827,0.085908,published_plus_proxy,province_capacity_floor,top five facilities / assigned
+hhi,index_0_1,0.007571,0.013508,0.005937,published_plus_proxy,province_capacity_floor,sum of squared facility shares
+province_capacity_shortfall_before_m3_y,m3/yr,33698699.28,33698699.28,0,published_plus_proxy,province_capacity_floor,shortfall against the 1.2x harvest floor before scaling
+province_capacity_shortfall_after_m3_y,m3/yr,33698699.28,43651.2,-33655048.08,published_plus_proxy,province_capacity_floor,"v2 has no scaling, so its shortfall remains; v3 reports the residual"
+provinces_below_floor_before,count,5,5,0,published_plus_proxy,province_capacity_floor,provinces below the 1.2x floor before scaling
+provinces_below_floor_after,count,5,1,-4,published_plus_proxy,province_capacity_floor,v2 has no scaling; v3 reports the residual
+scaled_proxy_records,count,0,49,49,published_plus_proxy,province_capacity_floor,proxy records carrying the scaled label
