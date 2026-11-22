@@ -1,0 +1,153 @@
+{
+  "artifact": "national_facility_capacity_v3",
+  "artifact_version": "3.0.0",
+  "counts": {
+    "not_published_records": 15,
+    "proxy_records": 241,
+    "published_records": 433,
+    "records_by_class": {
+      "BIO": 47,
+      "OTHER": 15,
+      "PANEL": 39,
+      "PELLET": 59,
+      "PULP": 62,
+      "SAW": 467
+    },
+    "records_by_province": {
+      "AB": 20,
+      "BC": 276,
+      "MB": 5,
+      "NB": 24,
+      "NL": 12,
+      "NS": 20,
+      "NT": 0,
+      "NU": 0,
+      "ON": 38,
+      "PE": 2,
+      "QC": 288,
+      "SK": 3,
+      "YT": 1
+    },
+    "records_total": 689
+  },
+  "coverage": {
+    "after": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 104733008.0,
+      "proxy_records": 241,
+      "proxy_share_of_capacity": 0.3859818436002548,
+      "proxy_share_of_records": 0.3497822931785196,
+      "published_capacity_m3_y": 166608791.456421,
+      "published_records": 433,
+      "published_share_of_capacity": 0.6140181563997451,
+      "published_share_of_records": 0.6284470246734397,
+      "records_by_class": {
+        "BIO": 47,
+        "OTHER": 15,
+        "PANEL": 39,
+        "PELLET": 59,
+        "PULP": 62,
+        "SAW": 467
+      },
+      "records_by_province": {
+        "AB": 20,
+        "BC": 276,
+        "MB": 5,
+        "NB": 24,
+        "NL": 12,
+        "NS": 20,
+        "NT": 0,
+        "NU": 0,
+        "ON": 38,
+        "PE": 2,
+        "QC": 288,
+        "SK": 3,
+        "YT": 1
+      },
+      "records_total": 689,
+      "total_capacity_m3_y": 271341799.456421
+    },
+    "before": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 120240586.0,
+      "proxy_records": 292,
+      "proxy_share_of_capacity": 0.5452450705539271,
+      "proxy_share_of_records": 0.5626204238921002,
+      "published_capacity_m3_y": 100285178.456421,
+      "published_records": 212,
+      "published_share_of_capacity": 0.45475492944607276,
+      "published_share_of_records": 0.40847784200385356,
+      "records_by_class": {
+        "BIO": 27,
+        "OTHER": 15,
+        "PANEL": 22,
+        "PELLET": 47,
+        "PULP": 45,
+        "SAW": 363
+      },
+      "records_total": 519,
+      "total_capacity_m3_y": 220525764.45642102
+    }
+  },
+  "generated_utc": "2026-11-22T22:12:43+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_capacity_v2/national_facility_capacity_v2.csv": "cad262d409855193bf31394f5e03d1daba0e02a93114b36b411ae47f3b8db067",
+    "data/derived/national/facilities/national_facility_capacity_v2/summary.json": "6247fd2573bf71291e7d09e49498901573ad240d81804b95a72a973765f3c235",
+    "data/derived/national/facilities/national_facility_inventory_v1/national_facilities.csv": "87c9aec8197d7fa4562a61f907ef0387bdb8dbb7197713dd3e5c54fdfda10c1b",
+    "data/derived/national/facilities/public_mill_capacity_2026/company_mill_capacity_2025.csv": "ade8c9ab0569ed66a0b17e08d2513946347e6ab7e89b3caf33a67c61a2ca3ac8",
+    "data/derived/national/facilities/public_mill_capacity_2026/on_mnrf_mills_2026.csv": "226f16b45147a15f5914acc652ed60bce760234091eb9d59157b9cd11e0fd427",
+    "data/derived/national/facilities/public_mill_capacity_2026/qc_mrnf_usines_2026.csv": "be6161ae1f1140312a36d872673f4f094d0b714b7213c922f2c77a6085fb982e",
+    "data/derived/national/facilities/public_mill_capacity_2026/sources.json": "8349d05faf508505e70aa98ae63b5cf9e9c21f827ee4f07214c76448ccd01fec"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "match": {
+    "company_matched_existing": 2,
+    "company_new_records": 3,
+    "company_source_rows": 5,
+    "matched_total": 51,
+    "new_total": 170,
+    "qc_excluded_no_volume": 19,
+    "qc_matched_existing": 49,
+    "qc_new_records": 167,
+    "qc_source_rows": 223
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_CAPACITY_V3.md": {
+      "bytes": 2890,
+      "sha256": "49ca6ae71deb5f43a71f3ba250040fe489b8af07e564eb91e46b04780c48e20d"
+    },
+    "class_medians.csv": {
+      "bytes": 1366,
+      "sha256": "7df25d2b87be2fd6bb7087f8aaccad3346d6068537724c3c68346ddf9d4ef5aa"
+    },
+    "national_facility_capacity_v3.csv": {
+      "bytes": 433270,
+      "sha256": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f"
+    },
+    "province_class_capacity.csv": {
+      "bytes": 2570,
+      "sha256": "19ecc7c13b5343b3d25a16fb4fd1ad8a81c1ba5c342bd26c93c4afa0ed60977d"
+    },
+    "sources.csv": {
+      "bytes": 3112,
+      "sha256": "89575882cbea12a63c74287513b9007af6d1421d6c0db8b0bef425ed0d7f7ff2"
+    },
+    "summary.json": {
+      "bytes": 19276,
+      "sha256": "69bae448b119393f3167e64364ac14da4b20584ca716b84cd30df63308c83c80"
+    }
+  },
+  "validation": {
+    "all_capacities_non_negative": true,
+    "all_new_rows_are_published": true,
+    "all_proxy_rows_have_class_median_evidence": true,
+    "all_published_rows_have_accepted_evidence": true,
+    "no_restricted_sources": true,
+    "record_conservation": true,
+    "unique_facility_ids": true
+  }
+}
