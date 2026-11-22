@@ -1,0 +1,77 @@
+{
+  "model_id": "province_breakeven_v1",
+  "artifact_version": "1.0.0",
+  "source_model_id": "national_economics_v2_3",
+  "source_artifact_version": "2.3.0",
+  "generated_utc": "2026-11-22T18:26:59+00:00",
+  "parent_commit": "49d95c17ab03feabb12b6d0ddd555ae712180e45",
+  "data_commit": "a8fa59a77ffbdf16b695b3c1cfb543afb507c574",
+  "observation_type": "model_estimate",
+  "observed": false,
+  "policy_grade": false,
+  "combined_national_net_value": false,
+  "national_diagnostic_label": "model_estimate_not_policy",
+  "not_policy_result": true,
+  "ranking_performed": false,
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/national_cost_inputs.csv",
+      "sha256": "a9f252046f4d970cbb7a53ad76146f22b58214cdffaa979f6f05f1217ed84733",
+      "bytes": 16274
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/national_margin_estimates.csv",
+      "sha256": "376982d9abd17fd5adb2ea455b78cd4bdf7bb74fe5cc7a6ba9cd2eb846e2c3bf",
+      "bytes": 67623
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/national_margin_summary.csv",
+      "sha256": "ce1fc9969b592d9d7295c838dbaa6bb079945c7577a2e21f42a9b2fcdcf00fc4",
+      "bytes": 14163
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/summary.json",
+      "sha256": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc",
+      "bytes": 96824
+    },
+    {
+      "path": "data/derived/national/harvest_basis/statcan_logging_cost_proxy/provincial_logging_cost_proxy.csv",
+      "sha256": "20e63ca71e644bddc197908aeacfadf765dbae36fbb75eb23de8a6610e9b4e03",
+      "bytes": 10854
+    }
+  ],
+  "outputs": [
+    {
+      "path": "province_breakeven.csv",
+      "sha256": "ed6b4c7321e28ad0d668fcced2e21185c650683bf02471c3e2eb71110168496b",
+      "bytes": 13779
+    },
+    {
+      "path": "province_breakeven_summary.json",
+      "sha256": "a986f471587267d5b55157a93c97602850533c713eb961d7b8818a82531ba14e",
+      "bytes": 45158
+    },
+    {
+      "path": "PROVINCE_BREAKEVEN_REPORT.md",
+      "sha256": "961339ae9ab4f7e31fcc38c64205a7b801f38c0813d247e0d79dadca5ed36457",
+      "bytes": 9140
+    }
+  ],
+  "validation": {
+    "province_count": 13,
+    "scenario_count": 2,
+    "all_rows_model_estimate": true,
+    "observed_claim": false,
+    "policy_grade_claim": false,
+    "combined_national_net_value": false,
+    "ranking_performed": false,
+    "negative_scaled_margin_count": 5,
+    "negative_margins_retained": true,
+    "cost_basis_matches_v2_3": true,
+    "double_count_checked": true,
+    "all_13_present": true,
+    "all_values_model_estimate": true,
+    "negative_margins_unclipped": true,
+    "statcan_unexpected_d_cells": 0
+  }
+}
