@@ -1,0 +1,89 @@
+{
+  "model_id": "national_margin_totals_v1",
+  "artifact_version": "1.0.0",
+  "source_model_id": "national_economics_v2_3",
+  "source_artifact_version": "2.3.0",
+  "generated_utc": "2026-11-22T16:24:47+00:00",
+  "parent_commit": "f86d73a48f10f1d78001e485f00408e1e95eba26",
+  "data_commit": "797098d3fe9bd129cca785a79dece44cbfb8529f",
+  "observation_type": "model_estimate",
+  "observed": false,
+  "policy_grade": false,
+  "combined_national_net_value": false,
+  "national_diagnostic_label": "model_estimate_not_policy",
+  "not_policy_result": true,
+  "ranking_performed": false,
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/national_margin_summary.csv",
+      "sha256": "ce1fc9969b592d9d7295c838dbaa6bb079945c7577a2e21f42a9b2fcdcf00fc4",
+      "bytes": 14163
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/summary.json",
+      "sha256": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc",
+      "bytes": 96824
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+      "bytes": 2845
+    },
+    {
+      "path": "data/derived/national/harvest_basis/statcan_logging_cost_proxy/provincial_logging_cost_proxy.csv",
+      "sha256": "20e63ca71e644bddc197908aeacfadf765dbae36fbb75eb23de8a6610e9b4e03",
+      "bytes": 10854
+    }
+  ],
+  "outputs": [
+    {
+      "path": "province_margin_totals.csv",
+      "sha256": "919567ae7e7d85f9103571e72f5bdec32869332c87ec6d2314313fc4efa87d90",
+      "bytes": 7620
+    },
+    {
+      "path": "national_margin_totals.json",
+      "sha256": "dad15e44fb4d520d6a7773ed0eaba1848d9e09ae9eca722338aae308924e0467",
+      "bytes": 33791
+    },
+    {
+      "path": "NATIONAL_MARGIN_TOTALS_REPORT.md",
+      "sha256": "cd69e3f9d71fb801ab186165957b488a9a989f758ea623cab79532aa69335c94",
+      "bytes": 5462
+    }
+  ],
+  "validation": {
+    "province_count": 13,
+    "scenario_count": 2,
+    "allocation_total_m3": 118977339.1,
+    "national_equals_province_sum": true,
+    "shares_sum_to_one": true,
+    "negative_totals_retained": true,
+    "nu_zero_volume": true,
+    "observed_claim": false,
+    "policy_grade_claim": false,
+    "combined_national_net_value": false,
+    "ranking_performed": false,
+    "statcan_d": {
+      "allowed_cell_count": 16,
+      "observed_d_cell_count": 16,
+      "unexpected_cells": [],
+      "policy": "D is an acceptable-quality flag, not a deletion; unexpected D cells fail closed."
+    },
+    "cross_check_v2_3": {
+      "source_volume_basis": "119m_allocation_sensitivity",
+      "max_abs_delta_cad_m3": 0.0,
+      "deltas_cad_m3": {
+        "donor_flat_low": 0.0,
+        "donor_flat_base": 0.0,
+        "donor_flat_high": 0.0,
+        "stumpage_scaled_low": 0.0,
+        "stumpage_scaled_base": 0.0,
+        "stumpage_scaled_high": 0.0
+      },
+      "checked": true
+    },
+    "all_values_model_estimate": true,
+    "statcan_unexpected_d_cells": 0
+  }
+}
