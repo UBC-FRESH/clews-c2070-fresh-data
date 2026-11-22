@@ -1,0 +1,368 @@
+{
+  "artifact": "national_bucking_pilot_v1",
+  "checks": [
+    {
+      "check_id": "thirteen_jurisdictions",
+      "detail": "13 jurisdictions present",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ten_trees_per_province",
+      "detail": "BC=10; AB=10; SK=10; MB=10; ON=10; QC=10; NB=10; NS=10; PE=10; NL=10; YT=10; NT=10; NU=10",
+      "status": "PASS"
+    },
+    {
+      "check_id": "volume_balance",
+      "detail": "national balance error 0 m3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "net_defect_balance",
+      "detail": "national net+defect error 3.55e-15 m3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "no_nan",
+      "detail": "numeric columns contain no NaN",
+      "status": "PASS"
+    },
+    {
+      "check_id": "no_negative",
+      "detail": "numeric columns are non-negative",
+      "status": "PASS"
+    },
+    {
+      "check_id": "grade_not_assigned",
+      "detail": "211 log rows grade=not_assigned",
+      "status": "PASS"
+    },
+    {
+      "check_id": "taper_evidence",
+      "detail": "all taper rows are published_table",
+      "status": "PASS"
+    },
+    {
+      "check_id": "taper_dispatch",
+      "detail": "local=['BC', 'QC']; donor=['AB', 'MB', 'NB', 'NL', 'NS', 'NT', 'NU', 'ON', 'PE', 'SK', 'YT']",
+      "status": "PASS"
+    },
+    {
+      "check_id": "provenance",
+      "detail": "every tree carries representative_synthetic_v1 provenance and a basis label",
+      "status": "PASS"
+    },
+    {
+      "check_id": "coefficient_comparison",
+      "detail": "13 province comparison rows",
+      "status": "PASS"
+    },
+    {
+      "check_id": "labels",
+      "detail": "model_estimate/synthetic/observed=false/policy_grade=false/national_claim=false",
+      "status": "PASS"
+    },
+    {
+      "check_id": "repository_hygiene",
+      "detail": "no unexpected D in parent or data git status before run",
+      "status": "PASS"
+    }
+  ],
+  "code": [
+    "workflows/national/bucking/national_bucking_pilot_v1.py",
+    "workflows/national/bucking/pilot_schema.py",
+    "workflows/national/bucking/schneider2013.py",
+    "workflows/national/bucking/taper.py",
+    "workflows/national/bucking/rules/national_pilot_sorts.csv",
+    "workflows/national/bucking/rules/qc_schneider2013_taper.csv"
+  ],
+  "command": ".venv/bin/python -m workflows.national.bucking.national_bucking_pilot_v1 --out-dir data/derived/national/bucking/national_bucking_pilot_v1",
+  "config": {
+    "basic_density_odt_m3": {
+      "AC": 0.49,
+      "AT": 0.35,
+      "B": 0.34,
+      "BA": 0.32,
+      "BL": 0.32,
+      "BOP": 0.5,
+      "C": 0.33,
+      "EP": 0.5,
+      "EPB": 0.37,
+      "EPN": 0.42,
+      "EPR": 0.38,
+      "FD": 0.45,
+      "HW": 0.42,
+      "L": 0.49,
+      "MB": 0.45,
+      "PA": 0.35,
+      "PEG": 0.35,
+      "PET": 0.35,
+      "PL": 0.43,
+      "PW": 0.35,
+      "S": 0.37,
+      "SAB": 0.34,
+      "SE": 0.36,
+      "SW": 0.37,
+      "THO": 0.29
+    },
+    "bec_anchor": {
+      "AC": "SBS",
+      "AT": "BWBS",
+      "B": "BWBS",
+      "BA": "SBS",
+      "BL": "ESSF",
+      "C": "CWH",
+      "EP": "BWBS",
+      "FD": "IDF",
+      "HW": "CWH",
+      "L": "BWBS",
+      "PL": "SBS",
+      "PW": "SBS",
+      "S": "SBS",
+      "SE": "ESSF",
+      "SW": "SBS"
+    },
+    "bucker": "value-maximising dynamic program over national pilot target lengths",
+    "chip_yield_fraction": 0.85,
+    "donor_policy": {
+      "AB": "BC",
+      "MB": "BC",
+      "NB": "QC",
+      "NL": "QC",
+      "NS": "QC",
+      "NT": "BC",
+      "NU": "BC",
+      "ON": "QC",
+      "PE": "QC",
+      "SK": "BC",
+      "YT": "BC"
+    },
+    "hog_yield_fraction": 0.1,
+    "max_species_per_province": 7,
+    "moisture_wet_basis": 0.45,
+    "price_deck_id": "NAT-PILOT-2026",
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "PE",
+      "NL",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "stump_height_m": 0.3,
+    "target_species_coverage": 0.95,
+    "trees_per_province": 10
+  },
+  "counts": {
+    "coefficient_comparison_rows": 13,
+    "jurisdictions": 13,
+    "logs": 211,
+    "province_summary_rows": 13,
+    "reconciliation_rows": 130,
+    "residue_rows": 130,
+    "trees": 130,
+    "trees_per_province": 10
+  },
+  "evidence_tiers": [
+    "measured_taper",
+    "published_table",
+    "assumption"
+  ],
+  "generated_at_utc": "2026-11-22T23:04:24.846961+00:00",
+  "inputs": {
+    "facility_product_chain": {
+      "path": "data/derived/national/facilities/facility_product_chain_v1/province_product_chain.csv",
+      "sha256": "4b6d2c87f2c4d45e688faa457bffc92ee96866e1408d48c3a31a7708a11185bf"
+    },
+    "kozak_parameters": {
+      "path": "nemora/config/kozak/kozak_parameters_v94.csv",
+      "sha256": "36a916991b00ddc3ea0bbd35bf7a305e8cb13f7056af10283ffb8668f9fc00a5"
+    },
+    "nfi_coverage": {
+      "path": "data/derived/national/assortments/national_coverage/coverage.csv",
+      "sha256": "12f85f85a8c803d1c841d5e817881c7277628ee69a170c45100076633b08fd5d"
+    },
+    "nfi_height_models": {
+      "path": "data/derived/national/assortments/national_fit/national_height_models.csv",
+      "sha256": "f9bb0dffc256833f089684808f2674116ffbb7a0267fc10ffb6739aa5dbfd77f"
+    },
+    "qc_taper_registry": {
+      "path": "workflows/national/bucking/rules/qc_schneider2013_taper.csv",
+      "sha256": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc"
+    }
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false,
+    "synthetic": true,
+    "ui_or_public_osecan_changed": false
+  },
+  "limitations": [
+    "Tree lists are representative synthetic draws, not inventory, PSP data, or an NFI expansion.",
+    "AB/ON/NS/NU species composition is a documented assumption because the open NFI coverage table has no provincial rows for them.",
+    "Non-QC/BC trees use a cross-jurisdiction donor taper; donor BEC anchors are BC anchors, not local BEC zones.",
+    "Dimension-only pilot sorts are not official federal or provincial log grades; grade=not_assigned.",
+    "Prices, density, moisture, chip and hog yields are pilot assumptions.",
+    "Facility coefficient comparison is screening only; harvest residue and facility process residue are different streams.",
+    "No national, operational, policy-grade, AAC, or investment claim is made.",
+    "No UI or public OSeCAN surface was changed."
+  ],
+  "national_claim": false,
+  "outputs": [
+    {
+      "bytes": 2437,
+      "path": "README.md",
+      "sha256": "3b667f2ed3f9b8af1d23f0113ac2e1177643cdf237b825a42eeb404daca259a8"
+    },
+    {
+      "bytes": 1632,
+      "path": "schema.md",
+      "sha256": "75f3a05d4fcf51d1447a3aebcb50c45b8f90d5a7964be19ec1069bbed1ffab1b"
+    },
+    {
+      "bytes": 90037,
+      "path": "tree_list.csv",
+      "sha256": "1abd600dc3afbd88486210ca596054e44a030d6d73563b7708464f9316bbd027"
+    },
+    {
+      "bytes": 184692,
+      "path": "bucked_logs.csv",
+      "sha256": "02d67d5bfe58da7ed48dcbd2e3b0a2b512ce8131c14c9d2b61e54ea5d7c4e201"
+    },
+    {
+      "bytes": 135217,
+      "path": "residue_ledger.csv",
+      "sha256": "711c5935ba186300b6f1c892b78bf2fb9c6ab5585b12b55b9e49c046cffa0132"
+    },
+    {
+      "bytes": 40069,
+      "path": "reconciliation.csv",
+      "sha256": "25a7c9a8f5fff459a2f493b002352b16c70b0f3d89c25dffc0ba3003237c326e"
+    },
+    {
+      "bytes": 6789,
+      "path": "province_summary.csv",
+      "sha256": "6d3c08d9e190a02a93d4b1ee3e96bb112ce325181c465f6f32adf28fc44d2725"
+    },
+    {
+      "bytes": 10854,
+      "path": "coefficient_comparison.csv",
+      "sha256": "09d7069d88bf3c9df330789d8a729e55d83a6ed7fd9ebb1971dd1c398a5caf2a"
+    },
+    {
+      "bytes": 25325,
+      "path": "summary.json",
+      "sha256": "a7a489c4939c14f2d2aa80943406f49db573859e5b6252a6afeaf17533257bba"
+    },
+    {
+      "bytes": 6579,
+      "path": "report.md",
+      "sha256": "24dfdcf589147563b457058361cd2936cb553286918a6d67ae5af0b1b4798917"
+    },
+    {
+      "bytes": 37012,
+      "path": "taper_dispatch.csv",
+      "sha256": "8fbb37b2a1e40d51386dc0f003636a4dc3e2e0d4671d43acaecd1fd8c88e3233"
+    },
+    {
+      "bytes": 4090,
+      "path": "sort_rules.csv",
+      "sha256": "f7864e26614b027d5271dbb37d03c704073dfeb004b982e268797f14bafbf5d9"
+    },
+    {
+      "bytes": 7216,
+      "path": "tree_lists/BC.csv",
+      "sha256": "fc8ed646a5a114b71df806e32b0e0ab3c9957fb2088cf57afd4f7a9192f29033"
+    },
+    {
+      "bytes": 6874,
+      "path": "tree_lists/AB.csv",
+      "sha256": "28f3f53b35c95aa2dfb3babdeeb88b470684a3f390ea968a205e5d9d2ab03305"
+    },
+    {
+      "bytes": 7240,
+      "path": "tree_lists/SK.csv",
+      "sha256": "876c3c5e6a0f9e439f0f49ae2371eb518d73b2879cdefd8fc6d87dfb24cd891f"
+    },
+    {
+      "bytes": 7238,
+      "path": "tree_lists/MB.csv",
+      "sha256": "ac66ca2f460727ecd6bb711eef501eb22a635c62f39f855c99983343674df9b2"
+    },
+    {
+      "bytes": 7437,
+      "path": "tree_lists/ON.csv",
+      "sha256": "3723bf470bc4b29bac73b7f4311947244ddce8703b1c71c0f66acc5ae36151be"
+    },
+    {
+      "bytes": 7204,
+      "path": "tree_lists/QC.csv",
+      "sha256": "80d6609973d0d6770417c89af0ba8db9d75b3228227a2931d49c7988bd481117"
+    },
+    {
+      "bytes": 7243,
+      "path": "tree_lists/NB.csv",
+      "sha256": "3b9d2029b907ec7f22c9b7d6464f7a173ed4d64c9a86d6921d8f78c691f31277"
+    },
+    {
+      "bytes": 7326,
+      "path": "tree_lists/NS.csv",
+      "sha256": "0b92dabef1a8c5740435d506431280fdc376b51262a6494d4bd77ef29b7c2c2c"
+    },
+    {
+      "bytes": 7253,
+      "path": "tree_lists/PE.csv",
+      "sha256": "d9dc62adbdae3ea8b37bbf4a7a02b4c86e96e57fa032e8c30e9e256ae5d23ad8"
+    },
+    {
+      "bytes": 7251,
+      "path": "tree_lists/NL.csv",
+      "sha256": "021664804c153cdbf0faa1e90ebc01aebf61c5d6f759763fd1c2d0b298bdb924"
+    },
+    {
+      "bytes": 7261,
+      "path": "tree_lists/YT.csv",
+      "sha256": "a7da697a239ae2b2bcdab37408d97ff49650ec5ffcc42b275a6764174595d107"
+    },
+    {
+      "bytes": 7235,
+      "path": "tree_lists/NT.csv",
+      "sha256": "aabc4980d8cc09543e931e055d21c7683dca67b22ba4178687681594cbc660c8"
+    },
+    {
+      "bytes": 7111,
+      "path": "tree_lists/NU.csv",
+      "sha256": "5d736a25d2d2860915188fc7431ea2e65e0cfe0cda46928347b82f05f0385c34"
+    }
+  ],
+  "schema_version": "national_bucking_pilot_v1",
+  "scope": "representative_synthetic_pilot",
+  "totals": {
+    "balance_error_m3": 0.0,
+    "chip_green_tonnes": 1.8182524999148117,
+    "defect_m3": 1.0258874718091509,
+    "green_tonnes": 2.1391205881350728,
+    "hog_green_tonnes": 0.21391205881350728,
+    "max_balance_error_m3": 0.0,
+    "n_logs": 211,
+    "n_trees": 130,
+    "net_plus_defect_error_m3": 3.552713678800501e-15,
+    "other_m3": 0.3520016852084631,
+    "pulpwood_m3": 7.350715330492538,
+    "recovered_gross_m3": 19.033111577451532,
+    "recovered_net_m3": 18.007224105642383,
+    "residue_m3": 3.052564800416402,
+    "residue_odt": 1.1765163234742901,
+    "sawlog_m3": 11.33039456175053,
+    "taper_total_m3": 22.085676377867934,
+    "value_cad": 1289.0494754441474
+  }
+}
