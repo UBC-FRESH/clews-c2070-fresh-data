@@ -1,0 +1,246 @@
+{
+  "model_id": "bc_open_cost_model_strict",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T04:31:56+00:00",
+  "observation_type": "model_estimate",
+  "cost_basis": "strict_open_proxy",
+  "licence_tier": "strict_open",
+  "policy_grade": false,
+  "observed": false,
+  "calibration_claim": "none_bc_empirical",
+  "bc_empirical_calibration": false,
+  "strict_open_only": true,
+  "restricted_inputs_used": [],
+  "excluded_source_families": [
+    "BC Interior Appraisal Manual (IAM) and Coast Appraisal Manual (CAM) - BC Crown copyright",
+    "TLA/ILA/NWLA/MNP Timber Harvest Cost Model Rate Guide - industry publisher copyright",
+    "FPInnovations/FERIC reports and case studies - publisher copyright",
+    "BC Wildfire Service (BCWS) rates - BC Crown copyright",
+    "Any other Crown-copyright PDF, proprietary dataset, or restricted microdata"
+  ],
+  "scenario_grid": {
+    "zones": 7,
+    "regions": [
+      "Coast",
+      "Interior"
+    ],
+    "slope_scenarios": 4,
+    "piece_scenarios": 3,
+    "volume_scenarios": 3,
+    "distance_scenarios": 3,
+    "systems": [
+      "ground",
+      "cable"
+    ],
+    "estimates": 756
+  },
+  "statistics": {
+    "total_base_median_cad_m3": 64.94,
+    "total_base_min_cad_m3": 40.22,
+    "total_base_max_cad_m3": 105.2,
+    "by_region": {
+      "Coast": {
+        "median_total_base_cad_m3": 69.16,
+        "min_total_base_cad_m3": 43.19,
+        "max_total_base_cad_m3": 105.2
+      },
+      "Interior": {
+        "median_total_base_cad_m3": 64.52,
+        "min_total_base_cad_m3": 40.22,
+        "max_total_base_cad_m3": 98.0
+      }
+    },
+    "by_system": {
+      "ground": {
+        "median_total_base_cad_m3": 59.0,
+        "min_total_base_cad_m3": 40.22,
+        "max_total_base_cad_m3": 86.07
+      },
+      "cable": {
+        "median_total_base_cad_m3": 72.51,
+        "min_total_base_cad_m3": 49.79,
+        "max_total_base_cad_m3": 105.2
+      }
+    }
+  },
+  "region_slope_context": {
+    "Coast": {
+      "forest_area_ha": 10203818.8,
+      "mean_slope_pct": 15.61697,
+      "share_gt15": 0.448516,
+      "share_gt30": 0.12299,
+      "gentle": 0.551484,
+      "moderate": 0.325526,
+      "steep": 0.110691,
+      "very_steep": 0.012299
+    },
+    "Interior": {
+      "forest_area_ha": 46221990.2,
+      "mean_slope_pct": 8.979923,
+      "share_gt15": 0.202231,
+      "share_gt30": 0.027584,
+      "gentle": 0.797769,
+      "moderate": 0.174647,
+      "steep": 0.024826,
+      "very_steep": 0.002758
+    },
+    "BC_road_access": {
+      "road_0_5km": 0.377823,
+      "road_5_10km": 0.152894,
+      "road_10_20km": 0.166871,
+      "road_gt_20km": 0.302412
+    }
+  },
+  "comparison_to_public_reference": {
+    "reference_source_key": "bc_open_cost_model_public_reference",
+    "reference_path": "data/derived/national/harvest_basis/bc_open_cost_model/bc_open_cost_estimates.csv",
+    "reference_licence_tier": "public_reference_copyrighted",
+    "reference_used_as_model_input": false,
+    "comparison_role": "cross_check_only_not_input",
+    "matched_rows": 756,
+    "unmatched_rows": 0,
+    "mean_delta_total_cad_m3": 11.26,
+    "median_delta_total_cad_m3": 11.21,
+    "median_ratio_strict_to_reference": 1.208,
+    "statement": "756 overlapping scenarios were matched; the median strict/reference ratio is 1.208 and the median delta is +11.21 CAD/m3. This is a cross-check, not calibration and not an input."
+  },
+  "worked_examples": [
+    {
+      "check_id": "sessions_2021_100pct",
+      "description": "Sessions et al. (2021) Table 3, U=100%, modified/traditional coincide",
+      "expected_cad_per_pmh": "140.60",
+      "computed_cad_per_pmh": "140.60",
+      "absolute_error": "0.0000",
+      "source_key": "sessions_berry_han_2021",
+      "status": "pass",
+      "evidence": "model_estimate",
+      "cost_basis": "strict_open_proxy",
+      "licence_tier": "strict_open",
+      "policy_grade": "false",
+      "observed": "false",
+      "calibration_claim": "none_bc_empirical"
+    },
+    {
+      "check_id": "sessions_2021_50pct_traditional",
+      "description": "Sessions et al. (2021) Table 3, U=50%, Miyata-Brinker-Ackerman",
+      "expected_cad_per_pmh": "269.20",
+      "computed_cad_per_pmh": "269.20",
+      "absolute_error": "0.0000",
+      "source_key": "sessions_berry_han_2021",
+      "status": "pass",
+      "evidence": "model_estimate",
+      "cost_basis": "strict_open_proxy",
+      "licence_tier": "strict_open",
+      "policy_grade": "false",
+      "observed": "false",
+      "calibration_claim": "none_bc_empirical"
+    },
+    {
+      "check_id": "sessions_2021_50pct_modified",
+      "description": "Sessions et al. (2021) Table 3, U=50%, utilization-adjusted life",
+      "expected_cad_per_pmh": "192.60",
+      "computed_cad_per_pmh": "192.60",
+      "absolute_error": "0.0000",
+      "source_key": "sessions_berry_han_2021",
+      "status": "pass",
+      "evidence": "model_estimate",
+      "cost_basis": "strict_open_proxy",
+      "licence_tier": "strict_open",
+      "policy_grade": "false",
+      "observed": "false",
+      "calibration_claim": "none_bc_empirical"
+    },
+    {
+      "check_id": "miyata_1980_example_11",
+      "description": "Miyata (1980) Example 11, rubber-tired skidder, fixed+operating+labour",
+      "expected_cad_per_pmh": "35.61",
+      "computed_cad_per_pmh": "35.61",
+      "absolute_error": "0.0048",
+      "source_key": "miyata_1980",
+      "status": "pass",
+      "evidence": "model_estimate",
+      "cost_basis": "strict_open_proxy",
+      "licence_tier": "strict_open",
+      "policy_grade": "false",
+      "observed": "false",
+      "calibration_claim": "none_bc_empirical"
+    }
+  ],
+  "derived_constants": {
+    "cpi_2021_annual_average": 136.133333,
+    "cpi_2025_annual_average": 158.458333,
+    "cpi_2026_ytd_average": 162.41,
+    "diesel_base_cad_per_litre": 2.250583,
+    "diesel_low_cad_per_litre": 1.612,
+    "diesel_high_cad_per_litre": 2.859,
+    "logging_production_hourly_2021_cad": 28.995523,
+    "logging_production_hourly_2026_cad": 34.592284,
+    "bc_wage_premium": 0.944466,
+    "logging_wage_central_cad_per_hour": 32.671237,
+    "wage_low_cad_per_hour": 29.077497,
+    "wage_base_cad_per_hour": 41.262116,
+    "wage_high_cad_per_hour": 49.852994,
+    "haul_wage_low_cad_per_hour": 37.80997,
+    "haul_wage_base_cad_per_hour": 43.262116,
+    "haul_wage_high_cad_per_hour": 49.852994,
+    "mepi_logging_2026_07_index": 139.3,
+    "mepi_forestry_2026_07_index": 134.2,
+    "mepi_escalation_2026": 1.393,
+    "mepi_industry_escalation_2026": 1.342,
+    "trucking_ppi_yoy": 0.090984,
+    "paid_hours_per_year": 2000.0,
+    "mepi_base_year_index": 100.0
+  },
+  "strict_open_price_series_needed": true,
+  "strict_open_price_series_status": "gap",
+  "strict_open_price_series_statement": "Costs are strict-open, but a strict-open BC delivered-log price series does not exist in the sources used here. The existing BC log-market reports are public-reference Crown copyright. A strict-open net value therefore still requires an OGL-BC or CC-BY price series.",
+  "validation": {
+    "estimate_rows": 756,
+    "expected_rows": 756,
+    "no_nan_or_infinite": true,
+    "non_negative": true,
+    "total_low_base_high_ordered": true,
+    "all_zones_present": true,
+    "all_regions_present": true,
+    "all_slopes_present": true,
+    "all_pieces_present": true,
+    "all_volumes_present": true,
+    "all_distances_present": true,
+    "labels_strict_open": true,
+    "policy_grade_false": true,
+    "observed_false": true,
+    "bc_empirical_calibration_false": true
+  },
+  "outputs": {
+    "estimates": 756,
+    "region_slope": 8,
+    "zone_summary": 7,
+    "sensitivity": 22,
+    "parameters": 56,
+    "sources": 14,
+    "observations": 56,
+    "worked_examples": 4,
+    "comparison": 756,
+    "comparison_summary": 14
+  },
+  "limitations": [
+    "Engineering proxy, not an observed contractor cost.",
+    "No BC empirical calibration of productivity, utilization or capital price.",
+    "2017 capital prices are assumptions escalated with StatCan MEPI.",
+    "Wage base is a midpoint of two broad StatCan wage anchors, not a BC logging wage survey.",
+    "Diesel is a retail pump price including taxes.",
+    "Zone labels are administrative; the six Interior zones share regional parameters because no strict-open BCTS-zone crosswalk was identified.",
+    "Helicopter logging is outside the model boundary.",
+    "Road, bridge, silviculture, sorting, barge/rail and tenure costs are excluded.",
+    "Low/high columns stack favourable or unfavourable parameter draws; they are a stress envelope, not a confidence interval.",
+    "The comparison model is public-reference copyrighted and is used only as a cross-check."
+  ],
+  "non_claims": [
+    "Not observed cost.",
+    "Not a mill settlement or profit.",
+    "Not a BC empirical calibration.",
+    "Not policy grade.",
+    "Not a stumpage rate, AAC, tenure, or legal determination.",
+    "Not a strict-open net value."
+  ]
+}
