@@ -1,6 +1,6 @@
 # Forestry residue scenarios to OSeCAN zones v1
 
-Status: **pass**. Artifact version `1.0.0`; generated 2026-11-22T22:01:40+00:00.
+Status: **pass**. Artifact version `1.0.0`; generated 2026-11-22T22:02:53+00:00.
 
 This is a read-only, model-estimate screening handoff. Every row is `model_estimate=true`, `observed=false`, `policy_grade=false`, and `official_osecan_changed=false`. No official OSeCAN input is written or modified.
 
@@ -38,7 +38,7 @@ This is a read-only, model-estimate screening handoff. Every row is `model_estim
 | 150m | harvest | harvest_recovery_060 | 126.92 | 6,860,296 |
 | 150m | harvest | harvest_recovery_075 | 158.64 | 8,575,370 |
 
-Process and harvest streams are separate and are never summed. The 119m column set reproduces `national_residue_curve_v1` exactly at the national level.
+Process and harvest streams are separate and are never summed. The 119m rows reproduce `national_residue_curve_v1` exactly at the national level.
 
 ## Zone summary at the primary 119m scenario
 
@@ -124,6 +124,8 @@ Ratios above 1.0 mean the scenario/case PJ exceeds the reference; negative headr
 - All values are model estimates; observed=false and policy_grade=false.
 - The 100/119/150 Mm3 cases are planning allocations, not legal AACs, sustainable-supply determinations, or observed harvest outcomes.
 - Zone splits are explicit handoff-v2 proxy weights; no observed sub-provincial residue split exists.
+- BC zone weights are proportional to the 2050 SUPBCWB1/SUPBCWB2 zonal supply limits, so B1 and B2 candidate ratios to their own limits are identical by construction.
+- The national supply-curve tier caps are rest-of-Canada RSYC-only; national comparisons that include BC are a context screen, not a like-for-like capacity test.
 - Process residue is facility-assigned by receiving facility province; its provincial distribution differs from the province-basis national residue curve even though the national 119m totals reconcile.
 - Harvest residue is province-only gross residue multiplied by a recovery fraction; it is never facility-assigned.
 - Process and harvest residue are separate streams and are never summed.

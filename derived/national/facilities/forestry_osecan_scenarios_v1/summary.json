@@ -33,6 +33,8 @@
     "All values are model estimates; observed=false and policy_grade=false.",
     "The 100/119/150 Mm3 cases are planning allocations, not legal AACs, sustainable-supply determinations, or observed harvest outcomes.",
     "Zone splits are explicit handoff-v2 proxy weights; no observed sub-provincial residue split exists.",
+    "BC zone weights are proportional to the 2050 SUPBCWB1/SUPBCWB2 zonal supply limits, so B1 and B2 candidate ratios to their own limits are identical by construction.",
+    "The national supply-curve tier caps are rest-of-Canada RSYC-only; national comparisons that include BC are a context screen, not a like-for-like capacity test.",
     "Process residue is facility-assigned by receiving facility province; its provincial distribution differs from the province-basis national residue curve even though the national 119m totals reconcile.",
     "Harvest residue is province-only gross residue multiplied by a recovery fraction; it is never facility-assigned.",
     "Process and harvest residue are separate streams and are never summed.",
@@ -2569,7 +2571,7 @@
       }
     }
   },
-  "generated_utc": "2026-11-22T22:01:40+00:00",
+  "generated_utc": "2026-11-22T22:02:53+00:00",
   "inputs": {
     "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
     "data/derived/national/clews/osecan/national_base_119m/manifest.json": "90eb5c8a4f1ae9e9f21401dfcd55e8faacc80e143b3f07e58e4559699a96966c",
