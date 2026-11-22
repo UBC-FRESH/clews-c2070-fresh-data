@@ -1,12 +1,12 @@
 # National Economics v2.1 - donor-flat base with stumpage-scaled sensitivity
 
-Generated: 2026-11-22T06:26:14+00:00
+Generated: 2026-11-22T06:53:23+00:00
 
 ## Decision
 
 **Base scenario: `donor_flat`.** All 13 jurisdictions use the v1 BC 2025-12 blended mill-delivered donor price. The national base diagnostic is **33.1365 CAD/m3** (low -94.7046, high 81.3168).
 **Sensitivity: `stumpage_scaled`.** The v2 provincial stumpage/dues rate proxies are retained only as a sensitivity and fallback exercise. The national sensitivity diagnostic is **-16.1220 CAD/m3** (low -130.0389, high 38.4085).
-The stumpage-scaled scenario is **not preferred, not observed and not policy grade**. It is a synthetic method sensitivity, not a delivered price series and not a mill margin.
+The stumpage-scaled scenario is the **sensitivity, not the base**. It is not observed and not policy grade. It is a synthetic method sensitivity, not a delivered price series and not a mill margin.
 
 ## Coverage and evidence tiers
 
@@ -52,7 +52,7 @@ The national numbers are volume-weighted diagnostics across all 13 jurisdictions
 
 Stumpage, dues, royalty and standing-value rates are charges on standing timber. They are not delivered log prices: a delivered price embeds harvest, haul, road and silviculture cost plus a margin. Subtracting the same cost stack from a scaled dues rate double counts those costs if the result is read as a mill margin. Rates also differ in unit, species/grade, tenure, scaling and vintage. Deltas are therefore method changes, not observed market changes.
 
-The `scaled_minus_donor_flat_cad_m3` column is therefore a method delta. It must not be read as an observed market change, a provincial stumpage effect, or a preferred estimate.
+The `scaled_minus_donor_flat_cad_m3` column is therefore a method delta. It must not be read as an observed market change, a provincial stumpage effect, or a base-scenario estimate.
 
 ## Negative margins and labels
 
@@ -66,7 +66,7 @@ Every row carries `evidence=model_estimate`, `observed=false`, `policy_grade=fal
 
 - Not observed profit, not a mill margin and not official net value.
 - Not a stumpage rate and not policy grade.
-- The stumpage-scaled sensitivity is not preferred and not observed.
+- The stumpage-scaled sensitivity is not the base scenario and is not observed.
 - No combined national net value is computed.
 - No strict-open licence claim is made; source documents are not redistributed.
 - No restricted, confidential or microdata input is used.

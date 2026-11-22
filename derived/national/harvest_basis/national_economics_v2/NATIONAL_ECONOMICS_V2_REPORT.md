@@ -1,6 +1,6 @@
 # National Economics v2 - provincial stumpage-scaled price proxies
 
-Generated: 2026-11-22T06:15:58+00:00
+Generated: 2026-11-22T06:53:21+00:00
 
 ## What this is
 
@@ -28,7 +28,7 @@ A 13-jurisdiction **model estimate** of log-price proxies and margins. Provincia
 
 BC BCTS stumpage = 137.3M CAD / 4.0M m3 = 34.33 CAD/m3.
 BC blended delivered price = 115.83 CAD/m3, so the base ratio is 3.3745. Low/high ratios are 2.1842/3.8205.
-The preferred scenario produces **7 stumpage-scaled price proxies**; BC itself keeps its reported average and five jurisdictions use the flat donor.
+The base scenario produces **7 stumpage-scaled price proxies**; BC itself keeps its reported average and five jurisdictions use the flat donor.
 The ratio transfers BC's cost-plus-margin structure. It is not a provincial cost survey and can overshoot where a province's stumpage is high relative to BC.
 Scope: BC blended Coast+Interior. BCTS does not publish a regional stumpage revenue/volume split in the materialised source, so separate Coast and Interior ratios are not computed.
 
