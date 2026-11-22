@@ -1,0 +1,388 @@
+{
+  "artifact": "national_product_chain_v1",
+  "artifact_version": "1.0.0",
+  "caveats": [
+    "No facility assignment, capacity, transport, cost, or revenue is modelled.",
+    "FFCM class ratios are 2018 engineering proxies, not current measured yields.",
+    "BC aggregate donor does not reproduce provincial species mixes.",
+    "BC species-group rows fall back to the BC aggregate ratio where no group-specific BC line exists (PANEL/PELLET/BIO and hardwood PULP).",
+    "Harvest residue recovery uses the BC Stage A share, not a provincial measurement.",
+    "The RSYC comparison is a screening check, not a calibration.",
+    "No UI or public OSeCAN surface is changed."
+  ],
+  "coefficient_counts": {
+    "bc_anchor_species_group": 32,
+    "donor_coefficient": 35,
+    "rows": 67
+  },
+  "coefficient_tiers": {
+    "BC": "bc_anchor_species_group",
+    "non_BC": "donor_coefficient"
+  },
+  "facility_assignment": false,
+  "generated_utc": "2026-11-22T20:21:46+00:00",
+  "harvest_input": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+  "harvest_total_m3": 118977339.1,
+  "inputs": {
+    "data/derived/national/bc_chain/bc_stage_a_assignment.csv": "c73e303c2e70e035cf8c3c5babef30263ea128e0a4d02b423c258b13208dfc6b",
+    "data/derived/national/bc_chain/bc_stage_b_residue.csv": "58bc4e3e1d45014213fa563342f6b811a1b83c0be2af6e3f43c0ef88ea3b7b66",
+    "data/derived/national/bc_chain/bc_supply_by_zone.csv": "247c43109443e06401b9873bc1f91283e6d1a621a222b975fc91ddfa2a3e20df",
+    "data/derived/national/bc_chain/facilities_bc.csv": "5101aa31ffe3043dcfcd6de349e55abcc88558f75aab757bcc32adaf6fdf4d74",
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "metadata/ffcm-archive/parsed/processing_line_flows.csv": "df6498046f88a70f3e90fee8d3b686e7031a5be583d5c818e39c8530d73953d3",
+    "metadata/ffcm-archive/parsed/processing_lines.csv": "7f98d21bdbbcea5be3c9a9e13b0c4c3e21af04f9b2cc119ef5e1dfec5ed69d3e"
+  },
+  "model_estimate": true,
+  "national_totals": {
+    "bc_anchor_province_count": 1.0,
+    "bio_feedstock_m3": 2535764.6557847466,
+    "bio_product_mwh": 845182.0633022358,
+    "bio_residue_m3": 0.0,
+    "bio_residue_odt": 0.0,
+    "harvest_m3": 118977339.1,
+    "harvest_residue_gross_m3": 20153575.210233133,
+    "harvest_residue_gross_odt": 9069108.84460491,
+    "harvest_residue_gross_odt_per_m3_harvest": 0.07622551414586906,
+    "harvest_residue_recoverable_m3": 14342002.176707456,
+    "harvest_residue_recoverable_odt": 6453900.979518355,
+    "harvest_residue_unrecovered_m3": 5811573.033525679,
+    "harvest_residue_unrecovered_odt": 2615207.865086555,
+    "model_recoverable_odt_base": 5441465.306762946,
+    "non_bc_donor_province_count": 12.0,
+    "other_log_m3": 9529537.95140805,
+    "panel_feedstock_m3": 11534442.70081369,
+    "panel_product_m3": 5304752.545780428,
+    "panel_residue_m3": 4090711.7867021365,
+    "panel_residue_odt": 1840820.3040159615,
+    "pellet_feedstock_m3": 12112415.881685827,
+    "pellet_product_odt": 4747898.2114622155,
+    "pellet_residue_m3": 1561530.9673253507,
+    "pellet_residue_odt": 702688.9352964078,
+    "primary_feedstock_m3": 118977339.1,
+    "process_residue_m3": 63183851.90502748,
+    "process_residue_odt": 28432733.357262366,
+    "process_residue_odt_per_m3_feedstock": 0.21326788060143168,
+    "province_count": 13.0,
+    "pulp_feedstock_m3": 36672817.24657121,
+    "pulp_product_odt": 7590251.823906248,
+    "pulp_residue_m3": 16889173.394751325,
+    "pulp_residue_odt": 7600128.027638097,
+    "pulpwood_m3": 38597.17718282916,
+    "residue_feedstock_m3": 14342002.176707456,
+    "rsyc_base_recoverable_odt": 7080062.08603234,
+    "rsyc_ratio": 0.768561806470307,
+    "sawlog_feedstock_m3": 70463900.79185198,
+    "sawlog_m3": 109409203.97140913,
+    "sawlog_product_m3": 48466775.661500774,
+    "sawlog_residue_m3": 40642435.75624867,
+    "sawlog_residue_odt": 18289096.0903119,
+    "total_feedstock_m3": 133319341.27670746,
+    "total_residue_gross_m3": 83337427.11526062,
+    "total_residue_gross_odt": 37501842.201867275,
+    "total_residue_gross_odt_per_m3_harvest": 0.31520155422493623,
+    "total_residue_recoverable_m3": 77525854.08173493,
+    "total_residue_recoverable_odt": 34886634.33678072
+  },
+  "observed": false,
+  "panel_anchor": {
+    "basis": "BC panel nameplate divided by BC sawlog plus panel nameplate",
+    "panel_nameplate_m3_y": 4700160.594452585,
+    "panel_share_of_sawlog": 0.10542479318127455
+  },
+  "policy_grade": false,
+  "province_count": 13,
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_product_chain",
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "basis": "RSYC recoverable_odt_per_m3_base x provincial harvest; model gross harvest residue x 0.60",
+    "model_recoverable_odt": 5441465.306762946,
+    "province_factors_available": 13,
+    "ratio": 0.768561806470307,
+    "rsyc_base_recoverable_odt": 7080062.08603234,
+    "status": "model_below_rsyc"
+  },
+  "scope": "Provincial feedstock, product, and residue totals from the 119 Mm3 provincial allocation; no facility assignment.",
+  "status": "pass",
+  "totals_table": [
+    {
+      "metric": "harvest_m3",
+      "notes": "Provincial allocation 119m harvest",
+      "unit": "m3",
+      "value": 118977339.1
+    },
+    {
+      "metric": "sawlog_m3",
+      "notes": "Sawlog-grade harvest volume",
+      "unit": "m3",
+      "value": 109409203.97140913
+    },
+    {
+      "metric": "pulpwood_m3",
+      "notes": "Pulpwood-grade harvest volume",
+      "unit": "m3",
+      "value": 38597.17718282916
+    },
+    {
+      "metric": "other_log_m3",
+      "notes": "Other-log grade harvest volume",
+      "unit": "m3",
+      "value": 9529537.95140805
+    },
+    {
+      "metric": "primary_feedstock_m3",
+      "notes": "Log-grade feedstock to facilities",
+      "unit": "m3",
+      "value": 118977339.1
+    },
+    {
+      "metric": "residue_feedstock_m3",
+      "notes": "Recoverable harvest residue routed to PELLET/BIO",
+      "unit": "m3",
+      "value": 14342002.176707456
+    },
+    {
+      "metric": "total_feedstock_m3",
+      "notes": "Primary plus recoverable residue feedstock",
+      "unit": "m3",
+      "value": 133319341.27670746
+    },
+    {
+      "metric": "sawlog_feedstock_m3",
+      "notes": "Feedstock to SAW",
+      "unit": "m3",
+      "value": 70463900.79185198
+    },
+    {
+      "metric": "pulp_feedstock_m3",
+      "notes": "Feedstock to PULP",
+      "unit": "m3",
+      "value": 36672817.24657121
+    },
+    {
+      "metric": "panel_feedstock_m3",
+      "notes": "Feedstock to PANEL",
+      "unit": "m3",
+      "value": 11534442.70081369
+    },
+    {
+      "metric": "pellet_feedstock_m3",
+      "notes": "Feedstock to PELLET",
+      "unit": "m3",
+      "value": 12112415.881685827
+    },
+    {
+      "metric": "bio_feedstock_m3",
+      "notes": "Feedstock to BIO",
+      "unit": "m3",
+      "value": 2535764.6557847466
+    },
+    {
+      "metric": "sawlog_product_m3",
+      "notes": "Lumber product",
+      "unit": "m3",
+      "value": 48466775.661500774
+    },
+    {
+      "metric": "pulp_product_odt",
+      "notes": "Pulp product",
+      "unit": "odt",
+      "value": 7590251.823906248
+    },
+    {
+      "metric": "panel_product_m3",
+      "notes": "Panel product",
+      "unit": "m3",
+      "value": 5304752.545780428
+    },
+    {
+      "metric": "pellet_product_odt",
+      "notes": "Pellet product",
+      "unit": "odt",
+      "value": 4747898.2114622155
+    },
+    {
+      "metric": "bio_product_mwh",
+      "notes": "Electricity product",
+      "unit": "MWh",
+      "value": 845182.0633022358
+    },
+    {
+      "metric": "sawlog_residue_odt",
+      "notes": "Sawmill residue",
+      "unit": "odt",
+      "value": 18289096.0903119
+    },
+    {
+      "metric": "pulp_residue_odt",
+      "notes": "Pulping residue",
+      "unit": "odt",
+      "value": 7600128.027638097
+    },
+    {
+      "metric": "panel_residue_odt",
+      "notes": "Panel residue",
+      "unit": "odt",
+      "value": 1840820.3040159615
+    },
+    {
+      "metric": "pellet_residue_odt",
+      "notes": "Pellet residue",
+      "unit": "odt",
+      "value": 702688.9352964078
+    },
+    {
+      "metric": "bio_residue_odt",
+      "notes": "Bio residue",
+      "unit": "odt",
+      "value": 0.0
+    },
+    {
+      "metric": "process_residue_odt",
+      "notes": "Process residue across all classes",
+      "unit": "odt",
+      "value": 28432733.357262366
+    },
+    {
+      "metric": "harvest_residue_gross_odt",
+      "notes": "Gross harvest residue",
+      "unit": "odt",
+      "value": 9069108.84460491
+    },
+    {
+      "metric": "harvest_residue_recoverable_odt",
+      "notes": "Recoverable harvest residue",
+      "unit": "odt",
+      "value": 6453900.979518355
+    },
+    {
+      "metric": "harvest_residue_unrecovered_odt",
+      "notes": "Unrecovered harvest residue",
+      "unit": "odt",
+      "value": 2615207.865086555
+    },
+    {
+      "metric": "total_residue_gross_odt",
+      "notes": "Process plus gross harvest residue",
+      "unit": "odt",
+      "value": 37501842.201867275
+    },
+    {
+      "metric": "total_residue_recoverable_odt",
+      "notes": "Process plus recoverable harvest residue",
+      "unit": "odt",
+      "value": 34886634.33678072
+    },
+    {
+      "metric": "process_residue_odt_per_m3_feedstock",
+      "notes": "Process residue ratio",
+      "unit": "odt/m3",
+      "value": 0.21326788060143168
+    },
+    {
+      "metric": "harvest_residue_gross_odt_per_m3_harvest",
+      "notes": "Harvest residue ratio",
+      "unit": "odt/m3",
+      "value": 0.07622551414586906
+    },
+    {
+      "metric": "total_residue_gross_odt_per_m3_harvest",
+      "notes": "Total residue ratio",
+      "unit": "odt/m3",
+      "value": 0.31520155422493623
+    },
+    {
+      "metric": "rsyc_base_recoverable_odt",
+      "notes": "RSYC base recoverable residue at 119m harvest",
+      "unit": "odt",
+      "value": 7080062.08603234
+    },
+    {
+      "metric": "model_recoverable_odt_base",
+      "notes": "Model gross harvest residue x 0.60",
+      "unit": "odt",
+      "value": 5441465.306762946
+    },
+    {
+      "metric": "rsyc_ratio",
+      "notes": "Model recoverable / RSYC base",
+      "unit": "ratio",
+      "value": 0.768561806470307
+    },
+    {
+      "metric": "province_count",
+      "notes": "Provinces and territories",
+      "unit": "count",
+      "value": 13.0
+    },
+    {
+      "metric": "bc_anchor_province_count",
+      "notes": "BC anchor provinces",
+      "unit": "count",
+      "value": 1.0
+    },
+    {
+      "metric": "non_bc_donor_province_count",
+      "notes": "Donor-coefficient provinces",
+      "unit": "count",
+      "value": 12.0
+    }
+  ],
+  "ui_or_public_osecan_changed": false,
+  "validation": {
+    "checks": [
+      {
+        "check_id": "finite_values",
+        "detail": "0 non-finite fields",
+        "status": "PASS"
+      },
+      {
+        "check_id": "nonnegative_values",
+        "detail": "0 negative fields",
+        "status": "PASS"
+      },
+      {
+        "check_id": "grade_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_total_consistency",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "donor_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "bc_anchor_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "evidence_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "bc_sawmill_residue_crosscheck",
+        "detail": "FFCM 0.259552705496 vs Stage B 0.259552705496",
+        "status": "PASS"
+      },
+      {
+        "check_id": "coefficient_tiers_present",
+        "detail": "tiers=['bc_anchor_species_group', 'donor_coefficient']",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

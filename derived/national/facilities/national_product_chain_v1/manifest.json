@@ -1,0 +1,108 @@
+{
+  "artifact": "national_product_chain_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T20:21:46+00:00",
+  "inputs": {
+    "data/derived/national/bc_chain/bc_stage_a_assignment.csv": "c73e303c2e70e035cf8c3c5babef30263ea128e0a4d02b423c258b13208dfc6b",
+    "data/derived/national/bc_chain/bc_stage_b_residue.csv": "58bc4e3e1d45014213fa563342f6b811a1b83c0be2af6e3f43c0ef88ea3b7b66",
+    "data/derived/national/bc_chain/bc_supply_by_zone.csv": "247c43109443e06401b9873bc1f91283e6d1a621a222b975fc91ddfa2a3e20df",
+    "data/derived/national/bc_chain/facilities_bc.csv": "5101aa31ffe3043dcfcd6de349e55abcc88558f75aab757bcc32adaf6fdf4d74",
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "metadata/ffcm-archive/parsed/processing_line_flows.csv": "df6498046f88a70f3e90fee8d3b686e7031a5be583d5c818e39c8530d73953d3",
+    "metadata/ffcm-archive/parsed/processing_lines.csv": "7f98d21bdbbcea5be3c9a9e13b0c4c3e21af04f9b2cc119ef5e1dfec5ed69d3e"
+  },
+  "outputs": {
+    "NATIONAL_PRODUCT_CHAIN_V1.md": {
+      "bytes": 6316,
+      "sha256": "588c3a8250ef91388a3b77c3e7481fa06d245cef21ab95234dda6d6a5c0f7c66"
+    },
+    "coefficients.csv": {
+      "bytes": 11552,
+      "sha256": "50667847509dcb6fcf5dbb94e6ad2c77197368d4193af8089d114074e466621a"
+    },
+    "product_chain_by_province.csv": {
+      "bytes": 11615,
+      "sha256": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04"
+    },
+    "product_chain_totals.csv": {
+      "bytes": 2403,
+      "sha256": "a4a3e838ab2828c1275de38f7b8168357abeff38dc871a4141cdfe94d96de011"
+    },
+    "summary.json": {
+      "bytes": 12275,
+      "sha256": "bf708e142c7245796d87dade855b9475ad1243c1b30da7a36e751d8873ef2441"
+    }
+  },
+  "record_counts": {
+    "coefficient_rows": 67,
+    "province_rows": 13,
+    "total_rows": 37
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_product_chain",
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "basis": "RSYC recoverable_odt_per_m3_base x provincial harvest; model gross harvest residue x 0.60",
+    "model_recoverable_odt": 5441465.306762946,
+    "province_factors_available": 13,
+    "ratio": 0.768561806470307,
+    "rsyc_base_recoverable_odt": 7080062.08603234,
+    "status": "model_below_rsyc"
+  },
+  "validation": {
+    "checks": [
+      {
+        "check_id": "finite_values",
+        "detail": "0 non-finite fields",
+        "status": "PASS"
+      },
+      {
+        "check_id": "nonnegative_values",
+        "detail": "0 negative fields",
+        "status": "PASS"
+      },
+      {
+        "check_id": "grade_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_total_consistency",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "donor_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "bc_anchor_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "evidence_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "bc_sawmill_residue_crosscheck",
+        "detail": "FFCM 0.259552705496 vs Stage B 0.259552705496",
+        "status": "PASS"
+      },
+      {
+        "check_id": "coefficient_tiers_present",
+        "detail": "tiers=['bc_anchor_species_group', 'donor_coefficient']",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}
