@@ -1,0 +1,201 @@
+{
+  "artifact": "national_facility_inventory_v1",
+  "artifact_version": "1.0.0",
+  "capacity": {
+    "converted_publication_capacity_m3_y": 4446769.2307710005,
+    "converted_publication_records": 33,
+    "new_published_capacity_m3_y": 4292923.076925,
+    "new_published_capacity_tonnes_y": 2790400.0,
+    "new_published_records": 32,
+    "published_capacity_m3_y": 100285178.456421,
+    "total_converted_pellet_capacity_m3_y": 7179076.923079,
+    "total_reported_pellet_capacity_tonnes_y": 4666400.0
+  },
+  "counts": {
+    "base_records": 486,
+    "matched_existing_records": 10,
+    "matched_proxy_upgraded": 1,
+    "matched_published_preserved": 9,
+    "new_records": 33,
+    "not_published_records": 307,
+    "published_records": 212,
+    "records_by_class": {
+      "BIO": 27,
+      "OTHER": 15,
+      "PANEL": 22,
+      "PELLET": 47,
+      "PULP": 45,
+      "SAW": 363
+    },
+    "records_by_province": {
+      "AB": 20,
+      "BC": 276,
+      "MB": 5,
+      "NB": 24,
+      "NL": 12,
+      "NS": 20,
+      "ON": 35,
+      "PE": 2,
+      "QC": 121,
+      "SK": 3,
+      "YT": 1
+    },
+    "records_total": 519
+  },
+  "dedupe": {
+    "crosswalk_rows": 43,
+    "duplicate_normalised_pellet_names": {},
+    "matched_existing_pellet": 10,
+    "new_pellet": 33,
+    "preserved_existing_published": 9,
+    "upgraded_existing_proxy": 1
+  },
+  "generated_utc": "2026-11-22T21:42:29+00:00",
+  "inputs": {
+    "data/derived/national/facilities/canadian_biomass_pellet_map_2025/pellet_plants_2025.csv": "a2086669c970d5f30da4ac6dfd17ee65db7eb6e0e0f6d6d361097adffd3f7f12",
+    "data/derived/national/facilities/national_facility_inventory_v0/national_facilities.csv": "08dd90bc398cbff3015d1bcff37a815ef9e5a3aacb5942be3a49e6253912e27c"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_INVENTORY_V1.md": {
+      "bytes": 2990,
+      "sha256": "88a12053714e354a83e9f2ed88522cb89b116c5d637abb5d1445b6438cb4a375"
+    },
+    "dedup_crosswalk.csv": {
+      "bytes": 10804,
+      "sha256": "864926a8a84baf0791cc8c59e69e85f92ce0b3dac7120546ae9d9a0c57d10ff0"
+    },
+    "national_facilities.csv": {
+      "bytes": 299839,
+      "sha256": "87c9aec8197d7fa4562a61f907ef0387bdb8dbb7197713dd3e5c54fdfda10c1b"
+    },
+    "province_coverage.csv": {
+      "bytes": 664,
+      "sha256": "aa78ec4a6834faa7c3d9be215c746bd44ccc349224a040472b5c277c4e666b94"
+    },
+    "sources.csv": {
+      "bytes": 3781,
+      "sha256": "e259a14d74e4669c5221f10cfef3387cd5241ad601e7e5f5d118bd9bbb69beee"
+    },
+    "summary.json": {
+      "bytes": 14852,
+      "sha256": "458cb8ff836b7532dd3e6296058381f65043c399f8e3280f3101f0cb26632cc3"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_inventory_v1",
+  "sources": [
+    {
+      "access_method": "Existing derived CSV in the project data repository: national_facility_inventory_v0/national_facilities.csv",
+      "access_status": "available",
+      "coverage": "British Columbia, 179 published records",
+      "licence": "Project-derived BC chain layer; upstream ISED Mills DB 2015 / FFCM proxies. Upstream source is not relicensed here.",
+      "licence_url": "",
+      "notes": "Published capacities are 2015 Mills DB/FFCM processing-line infeed proxies, not licensed or current capacity.",
+      "publisher": "UBC FRESH, derived from ISED Mills DB 2015 and FFCM",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "bc_mills_db_2015",
+      "source_url": "https://github.com/UBC-FRESH/clews-c2070-fresh-data",
+      "title": "BC facility layer (FFCM / ISED Mills DB 2015 proxies)",
+      "used_for_inventory": "yes_published_capacity_and_presence"
+    },
+    {
+      "access_method": "Carried from national_facility_inventory_v0; original Overpass extraction documented there",
+      "access_status": "available",
+      "coverage": "Non-BC facility presence",
+      "licence": "ODbL-1.0",
+      "licence_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "notes": "OSM presence does not establish operating status or capacity.",
+      "publisher": "OpenStreetMap contributors",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "osm_overpass_canada",
+      "source_url": "https://www.openstreetmap.org/",
+      "title": "OpenStreetMap facility presence, Canada",
+      "used_for_inventory": "yes_presence"
+    },
+    {
+      "access_method": "Public HTTP PDF, accessed 2026-11-22",
+      "access_status": "available",
+      "coverage": "43 current Canadian pellet producers; 4 proposed excluded",
+      "licence": "Public PDF; factual capacity figures extracted with attribution. The PDF itself is not redistributed.",
+      "licence_url": "",
+      "notes": "Current-producer table only. Capacities are finished pellet tonnes/yr; converted to m3 at 650 kg/m3 and labelled published_capacity_converted. Proposed plants are excluded.",
+      "publisher": "Annex Business Media / Canadian Biomass",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "canadian_biomass_pellet_map_2025",
+      "source_url": "https://www.canadianbiomassmagazine.ca/wp-content/uploads/2025/05/CB_PelletMap25_CWM_Digital.pdf",
+      "title": "Canadian Biomass 2025 Pellet Mill Map",
+      "used_for_inventory": "yes_published_capacity_converted"
+    },
+    {
+      "access_method": "Public HTTP PDF, accessed 2026-11-22",
+      "access_status": "available",
+      "coverage": "Bulk density 600-750 kg/m3 for graded wood pellets",
+      "licence": "Government of Canada publication; factual bulk-density range cited, not reproduced.",
+      "licence_url": "",
+      "notes": "CAN/CSA-ISO 17225-2 bulk-density range 600-750 kg/m3. The planning conversion uses 650 kg/m3, inside that range.",
+      "publisher": "Natural Resources Canada",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "nrcan_graded_wood_pellets_bulk_density",
+      "source_url": "https://natural-resources.canada.ca/sites/nrcan/files/files/NRCAN_BB_no4_e.pdf",
+      "title": "Solid Biofuels Bulletin No. 4: Graded Wood Pellets",
+      "used_for_inventory": "yes_conversion_basis"
+    },
+    {
+      "access_method": "Public HTTP API, one query per city, 2026-11-22",
+      "access_status": "available",
+      "coverage": "Pellet-map plant cities",
+      "licence": "ODbL-1.0",
+      "licence_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "notes": "City centroids are not plant-gate coordinates and carry location uncertainty; co-located records use the existing facility coordinate instead.",
+      "publisher": "OpenStreetMap contributors",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "osm_nominatim_city_centroid",
+      "source_url": "https://nominatim.openstreetmap.org/",
+      "title": "OpenStreetMap Nominatim city-centroid geocoding",
+      "used_for_inventory": "yes_city_centroid_location"
+    },
+    {
+      "access_method": "Public HTTP HTML, accessed 2026-11-22",
+      "access_status": "available_no_capacity",
+      "coverage": "Alberta member companies and mill towns",
+      "licence": "Public website; factual member listing, all rights reserved",
+      "licence_url": "",
+      "notes": "The public member page lists companies and towns but no facility-level annual capacity, so it cannot support a published-capacity row. It was used only to cross-check names.",
+      "publisher": "Alberta Forest Products Association",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "alberta_forest_products_members",
+      "source_url": "https://albertaforestproducts.ca/about/association-members/",
+      "title": "Alberta Forest Products Association association members",
+      "used_for_inventory": "no"
+    },
+    {
+      "access_method": "Public HTTP HTML, accessed 2026-11-22",
+      "access_status": "available_no_capacity",
+      "coverage": "Ontario member mills",
+      "licence": "Public website; all rights reserved",
+      "licence_url": "",
+      "notes": "The public member page did not expose facility-level annual capacity in its server-rendered content. No capacity data were retrieved.",
+      "publisher": "Ontario Forest Industries Association",
+      "retrieved_utc": "2026-11-22T21:42:29+00:00",
+      "source_id": "ofia_members",
+      "source_url": "https://ofia.com/our-members/",
+      "title": "OFIA member directory",
+      "used_for_inventory": "no"
+    }
+  ],
+  "validation": {
+    "all_capacities_positive": true,
+    "all_converted_values_labelled": true,
+    "base_records_preserved": true,
+    "no_duplicate_normalised_pellet_names": true,
+    "no_restricted_sources": true,
+    "pellet_map_rows_accounted": true,
+    "published_rows_have_capacity": true,
+    "unique_facility_ids": true,
+    "unpublished_rows_blank": true
+  }
+}

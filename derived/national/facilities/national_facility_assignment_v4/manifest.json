@@ -1,0 +1,218 @@
+{
+  "artifact": "national_facility_assignment_v4",
+  "artifact_version": "4.0.0",
+  "comparison": {
+    "assigned_m3_delta": 1.4901161193847656e-08,
+    "cross_border_delta_m3": -1629230.7692329958,
+    "cross_border_share_delta": -0.013693622512969766,
+    "hhi_delta": -0.00019774024629217596,
+    "max_facility_share_delta": -3.469446951953614e-18,
+    "primary_scenario": "published_plus_proxy",
+    "proxy_m3_delta": -3306017.153846994,
+    "proxy_share_delta": -0.027786948160508973,
+    "published_m3_delta": 3306017.153847009
+  },
+  "coverage": {
+    "after": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 120240586.0,
+      "proxy_records": 292,
+      "proxy_share_capacity": 0.5452450705539271,
+      "proxy_share_records": 0.5626204238921002,
+      "published_capacity_m3_y": 100285178.456421,
+      "published_records": 212,
+      "published_share_capacity": 0.45475492944607276,
+      "published_share_records": 0.40847784200385356,
+      "records_total": 519,
+      "total_capacity_m3_y": 220525764.45642102
+    },
+    "before": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 120240586.0,
+      "proxy_records": 292,
+      "proxy_share_capacity": 0.55646586969008,
+      "proxy_share_records": 0.6008230452674898,
+      "published_capacity_m3_y": 95838409.22565,
+      "published_records": 179,
+      "published_share_capacity": 0.44353413030991984,
+      "published_share_records": 0.3683127572016461,
+      "records_total": 486,
+      "total_capacity_m3_y": 216078995.22565
+    }
+  },
+  "generated_utc": "2026-11-22T21:42:30+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_assignment_v3/summary.json": "3c91d403e6e3dca0e8902a4e3014e7aac83911d8c592018e0e36067460bcc3d4",
+    "data/derived/national/facilities/national_facility_capacity_v2/national_facility_capacity_v2.csv": "cad262d409855193bf31394f5e03d1daba0e02a93114b36b411ae47f3b8db067",
+    "data/derived/national/facilities/national_facility_capacity_v2/summary.json": "6247fd2573bf71291e7d09e49498901573ad240d81804b95a72a973765f3c235",
+    "data/derived/national/facilities/national_facility_inventory_v1/national_facilities.csv": "87c9aec8197d7fa4562a61f907ef0387bdb8dbb7197713dd3e5c54fdfda10c1b",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_ASSIGNMENT_V4.md": {
+      "bytes": 4641,
+      "sha256": "319e6d2983a947a3126de7633bfec98d8fa2d9d871306a56d3715c4f01d52ef8"
+    },
+    "capacity_floor.csv": {
+      "bytes": 2202,
+      "sha256": "239dbdaba8a558c91d1f38ab694fc44940ccfa51f50523f11407c5bf7675afd7"
+    },
+    "capacity_floor_facilities.csv": {
+      "bytes": 153906,
+      "sha256": "407800e0c356999994ba6dacb4d2a9c918ef6b1b66afecc7bc72f7211f3fcab9"
+    },
+    "concentration.csv": {
+      "bytes": 97654,
+      "sha256": "b915fe491776da943cd3335c2bd4c878e2b502254da0759105b70d86aded1991"
+    },
+    "facility_assignment.csv": {
+      "bytes": 275051,
+      "sha256": "6e6ae0a11d1b66805c590961cb3e8d63c65cad69678a89f1099bafe895cad1f0"
+    },
+    "facility_utilization.csv": {
+      "bytes": 568392,
+      "sha256": "5a348188c60748586e23bbf2f34d0d0488aaee106c4a831ef9d7a5a8e956382e"
+    },
+    "province_capacity_comparison.csv": {
+      "bytes": 2461,
+      "sha256": "32086dfd40ceb0620de1630f84478b027079ac2ced7913b8c1a2cc059e18387c"
+    },
+    "province_class_totals.csv": {
+      "bytes": 6096,
+      "sha256": "ccc180f96c46463cd65766e3e8d5bf81e2c2b38850fff157bda13bcffdf2166a"
+    },
+    "province_summary.csv": {
+      "bytes": 6391,
+      "sha256": "041403ad5512238871564157348cd8fecebf595213b2fc4080e8e487f27b830f"
+    },
+    "scenario_comparison.csv": {
+      "bytes": 1011,
+      "sha256": "51619923aa85d16dd486be9b60dd769d8b87e0f572767b068a14194b6e9c110c"
+    },
+    "summary.json": {
+      "bytes": 416240,
+      "sha256": "62730ba6da9954f3c04d63464230f89301dbec6df4fe95dd525d38f6a9177232"
+    },
+    "unassigned.csv": {
+      "bytes": 2156,
+      "sha256": "0c398a368826d43540a8162276f0898804ed8d361263c96e4626ec3174f94d28"
+    },
+    "v3_v4_comparison.csv": {
+      "bytes": 3709,
+      "sha256": "484627e526d3b22cbed907c7e2ca708a6d27e9cc189808e54aa29a19257c9f3f"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment_v4",
+  "scenarios": {
+    "province_capacity_floor": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 231,
+      "cross_border_m3": 36376.0,
+      "cross_border_share": 0.00030573889343269063,
+      "facilities_used": 231,
+      "hhi": 0.012727549996014113,
+      "max_facility_m3": 8103865.36368889,
+      "max_facility_share": 0.0681126794815744,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 74767377.48461401,
+      "proxy_share_of_assigned": 0.6284169578021266,
+      "published_m3": 44209961.615386,
+      "scenario": "province_capacity_floor",
+      "top5_share": 0.15901217762260492,
+      "unassigned_m3": -1.4901161193847656e-08,
+      "unassigned_provinces": 0
+    },
+    "published_only": {
+      "assigned_m3": 72983366.770685,
+      "assigned_share": 0.6134224157538333,
+      "assignment_rows": 133,
+      "cross_border_m3": 28773405.155299,
+      "cross_border_share": 0.39424606493840625,
+      "facilities_used": 131,
+      "hhi": 0.01706761547363976,
+      "max_facility_m3": 3498279.5,
+      "max_facility_share": 0.04793255853750423,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 0.0,
+      "proxy_share_of_assigned": 0.0,
+      "published_m3": 72983366.770685,
+      "scenario": "published_only",
+      "top5_share": 0.19506807089319453,
+      "unassigned_m3": 45993972.32931499,
+      "unassigned_provinces": 10
+    },
+    "published_plus_proxy": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 292,
+      "cross_border_m3": 23689206.630767003,
+      "cross_border_share": 0.1991068787549225,
+      "facilities_used": 289,
+      "hhi": 0.007372945913456337,
+      "max_facility_m3": 2162922.563248,
+      "max_facility_share": 0.018179281698593643,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 69549266.049426,
+      "proxy_share_of_assigned": 0.5845589300914699,
+      "published_m3": 49428073.050574005,
+      "scenario": "published_plus_proxy",
+      "top5_share": 0.07891878049063714,
+      "unassigned_m3": -1.4901161193847656e-08,
+      "unassigned_provinces": 0
+    }
+  },
+  "validation": {
+    "all_facilities_finite_capacity": true,
+    "capacity_evidence": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 120240586.0,
+      "proxy_records": 292,
+      "published_converted_capacity_m3_y": 4446769.2307710005,
+      "published_converted_records": 33,
+      "published_infeed_proxy_capacity_m3_y": 95838409.22565,
+      "published_infeed_proxy_records": 179
+    },
+    "comparison_rows": 36,
+    "conservation_gap_m3": {
+      "province_capacity_floor": 0.0,
+      "published_only": 0.0,
+      "published_plus_proxy": 0.0
+    },
+    "known_capacity_violations": 0,
+    "max_single_facility_share": {
+      "province_capacity_floor": 0.0681126794815744,
+      "published_only": 0.04793255853750423,
+      "published_plus_proxy": 0.018179281698593643
+    },
+    "max_utilization": {
+      "province_capacity_floor": 1.0,
+      "published_only": 1.0,
+      "published_plus_proxy": 1.0
+    },
+    "no_restricted_sources": true,
+    "no_ui_or_public_osecan_change": true,
+    "no_unbounded_facility": true,
+    "non_operating_assignments": 0,
+    "proxy_evidence": "class_median_proxy",
+    "published_evidence_accepted": [
+      "published_capacity_converted",
+      "published_mills_db_2015_infeed_proxy"
+    ],
+    "unbounded_assignments": 0,
+    "v3_baseline_scenarios": [
+      "province_capacity_floor",
+      "published_only",
+      "published_plus_proxy"
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "artifact": "canadian_biomass_pellet_map_2025_extract",
+  "artifact_version": "1.0.0",
+  "capacity": {
+    "by_province": {
+      "AB": {
+        "capacity_m3_y_finished_pellet": 1161538.4615384615,
+        "capacity_tonnes_y": 755000.0,
+        "plants": 5,
+        "plants_with_capacity": 5
+      },
+      "BC": {
+        "capacity_m3_y_finished_pellet": 2947692.3076923075,
+        "capacity_tonnes_y": 1916000.0,
+        "plants": 11,
+        "plants_with_capacity": 10
+      },
+      "MB": {
+        "capacity_m3_y_finished_pellet": 21538.46153846154,
+        "capacity_tonnes_y": 14000.0,
+        "plants": 2,
+        "plants_with_capacity": 2
+      },
+      "NB": {
+        "capacity_m3_y_finished_pellet": 745230.7692307692,
+        "capacity_tonnes_y": 484400.0,
+        "plants": 5,
+        "plants_with_capacity": 5
+      },
+      "NL": {
+        "capacity_m3_y_finished_pellet": 18461.53846153846,
+        "capacity_tonnes_y": 12000.0,
+        "plants": 1,
+        "plants_with_capacity": 1
+      },
+      "NS": {
+        "capacity_m3_y_finished_pellet": 230769.23076923075,
+        "capacity_tonnes_y": 150000.0,
+        "plants": 2,
+        "plants_with_capacity": 2
+      },
+      "ON": {
+        "capacity_m3_y_finished_pellet": 446153.8461538461,
+        "capacity_tonnes_y": 290000.0,
+        "plants": 6,
+        "plants_with_capacity": 6
+      },
+      "QC": {
+        "capacity_m3_y_finished_pellet": 1607692.3076923075,
+        "capacity_tonnes_y": 1045000.0,
+        "plants": 11,
+        "plants_with_capacity": 11
+      }
+    },
+    "converted_m3_y_finished_pellet": 7179076.923076923,
+    "reported_tonnes_y": 4666400.0
+  },
+  "counts": {
+    "by_province": {
+      "AB": 5,
+      "BC": 11,
+      "MB": 2,
+      "NB": 5,
+      "NL": 1,
+      "NS": 2,
+      "ON": 6,
+      "QC": 11
+    },
+    "plants": 43,
+    "plants_with_capacity": 42,
+    "plants_without_capacity": 1,
+    "temporarily_closed": 1
+  },
+  "generated_utc": "2026-11-22T21:41:00+00:00",
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "method": {
+    "capacity_unit_reported": "finished pellet tonnes/yr",
+    "conversion": "capacity_m3_y = capacity_tonnes_y / density_t_per_m3",
+    "conversion_basis": "finished-pellet bulk volume; no pellet yield or infeed conversion is applied",
+    "density_range_t_per_m3": [
+      0.6,
+      0.75
+    ],
+    "density_source_id": "nrcan_graded_wood_pellets_bulk_density",
+    "density_source_url": "https://natural-resources.canada.ca/sites/nrcan/files/files/NRCAN_BB_no4_e.pdf",
+    "density_t_per_m3": 0.65,
+    "evidence_label_for_converted_values": "published_capacity_converted",
+    "proposed_plants_excluded": true,
+    "rows": 43,
+    "table": "CURRENT PRODUCERS"
+  },
+  "outputs": {
+    "pellet_plants_2025.csv": {
+      "bytes": 12466,
+      "sha256": "a2086669c970d5f30da4ac6dfd17ee65db7eb6e0e0f6d6d361097adffd3f7f12"
+    },
+    "summary.json": {
+      "bytes": 4128,
+      "sha256": "fc81e018819204844a36c5747dc9f356fa57f119fe2499983ea8e407b0701167"
+    }
+  },
+  "source": {
+    "licence": "Public PDF; factual capacity figures extracted with attribution. The PDF itself is not redistributed.",
+    "publisher": "Annex Business Media / Canadian Biomass",
+    "source_id": "canadian_biomass_pellet_map_2025",
+    "source_url": "https://www.canadianbiomassmagazine.ca/wp-content/uploads/2025/05/CB_PelletMap25_CWM_Digital.pdf",
+    "title": "Canadian Biomass 2025 Pellet Mill Map"
+  },
+  "validation": {
+    "densities_within_documented_range": true,
+    "expected_rows": 43,
+    "map_rows_unique": true,
+    "no_restricted_data": true,
+    "rows_match": true
+  }
+}

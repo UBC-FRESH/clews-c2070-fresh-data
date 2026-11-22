@@ -1,0 +1,116 @@
+{
+  "artifact": "canadian_biomass_pellet_map_2025_extract",
+  "artifact_version": "1.0.0",
+  "capacity": {
+    "by_province": {
+      "AB": {
+        "capacity_m3_y_finished_pellet": 1161538.4615384615,
+        "capacity_tonnes_y": 755000.0,
+        "plants": 5,
+        "plants_with_capacity": 5
+      },
+      "BC": {
+        "capacity_m3_y_finished_pellet": 2947692.3076923075,
+        "capacity_tonnes_y": 1916000.0,
+        "plants": 11,
+        "plants_with_capacity": 10
+      },
+      "MB": {
+        "capacity_m3_y_finished_pellet": 21538.46153846154,
+        "capacity_tonnes_y": 14000.0,
+        "plants": 2,
+        "plants_with_capacity": 2
+      },
+      "NB": {
+        "capacity_m3_y_finished_pellet": 745230.7692307692,
+        "capacity_tonnes_y": 484400.0,
+        "plants": 5,
+        "plants_with_capacity": 5
+      },
+      "NL": {
+        "capacity_m3_y_finished_pellet": 18461.53846153846,
+        "capacity_tonnes_y": 12000.0,
+        "plants": 1,
+        "plants_with_capacity": 1
+      },
+      "NS": {
+        "capacity_m3_y_finished_pellet": 230769.23076923075,
+        "capacity_tonnes_y": 150000.0,
+        "plants": 2,
+        "plants_with_capacity": 2
+      },
+      "ON": {
+        "capacity_m3_y_finished_pellet": 446153.8461538461,
+        "capacity_tonnes_y": 290000.0,
+        "plants": 6,
+        "plants_with_capacity": 6
+      },
+      "QC": {
+        "capacity_m3_y_finished_pellet": 1607692.3076923075,
+        "capacity_tonnes_y": 1045000.0,
+        "plants": 11,
+        "plants_with_capacity": 11
+      }
+    },
+    "converted_m3_y_finished_pellet": 7179076.923076923,
+    "reported_tonnes_y": 4666400.0
+  },
+  "caveats": [
+    "Values are published finished-pellet capacities, converted to m3 with a documented bulk density; they are not observed facility throughput or infeed.",
+    "The 650 kg/m3 density is a planning value inside the NRCan/CAN-CSA-ISO 17225-2 range of 600-750 kg/m3; the true plant-level density is unknown.",
+    "No pellet yield is applied, so the converted volume is not an infeed-equivalent capacity.",
+    "Skeena Bioenergy is marked temporarily closed and has no reported capacity.",
+    "The four proposed plants on the map are excluded; only the 43 current producers are extracted.",
+    "All values are model estimates with observed=false and policy_grade=false. No legal or AAC claim is made.",
+    "No restricted or proprietary data are used and no UI or public OSeCAN surface is changed."
+  ],
+  "counts": {
+    "by_province": {
+      "AB": 5,
+      "BC": 11,
+      "MB": 2,
+      "NB": 5,
+      "NL": 1,
+      "NS": 2,
+      "ON": 6,
+      "QC": 11
+    },
+    "plants": 43,
+    "plants_with_capacity": 42,
+    "plants_without_capacity": 1,
+    "temporarily_closed": 1
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "policy_grade": false
+  },
+  "licence": "Public PDF; factual capacity figures extracted with attribution. The PDF itself is not redistributed.",
+  "method": {
+    "capacity_unit_reported": "finished pellet tonnes/yr",
+    "conversion": "capacity_m3_y = capacity_tonnes_y / density_t_per_m3",
+    "conversion_basis": "finished-pellet bulk volume; no pellet yield or infeed conversion is applied",
+    "density_range_t_per_m3": [
+      0.6,
+      0.75
+    ],
+    "density_source_id": "nrcan_graded_wood_pellets_bulk_density",
+    "density_source_url": "https://natural-resources.canada.ca/sites/nrcan/files/files/NRCAN_BB_no4_e.pdf",
+    "density_t_per_m3": 0.65,
+    "evidence_label_for_converted_values": "published_capacity_converted",
+    "proposed_plants_excluded": true,
+    "rows": 43,
+    "table": "CURRENT PRODUCERS"
+  },
+  "publisher": "Annex Business Media / Canadian Biomass",
+  "source_id": "canadian_biomass_pellet_map_2025",
+  "source_title": "Canadian Biomass 2025 Pellet Mill Map",
+  "source_url": "https://www.canadianbiomassmagazine.ca/wp-content/uploads/2025/05/CB_PelletMap25_CWM_Digital.pdf",
+  "validation": {
+    "densities_within_documented_range": true,
+    "expected_rows": 43,
+    "map_rows_unique": true,
+    "no_restricted_data": true,
+    "rows_match": true
+  }
+}
