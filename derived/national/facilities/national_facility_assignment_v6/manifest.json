@@ -1,0 +1,306 @@
+{
+  "artifact": "national_facility_assignment_v6",
+  "artifact_version": "6.0.0",
+  "comparison": {
+    "assigned_m3": "0",
+    "capacity_shortfall_m3_y": "-30238548.310767",
+    "cross_border_m3": "-21865561.630767",
+    "cross_border_share": "-0.183779",
+    "facilities_used": "-55",
+    "hhi": "0.005324",
+    "local_m3": "21865561.630767",
+    "local_share": "0.183779",
+    "max_facility_m3": "5930182.122188",
+    "max_facility_share": "0.049843",
+    "provinces_below_floor": "-4",
+    "proxy_m3": "7144464.589033",
+    "proxy_share_of_assigned": "0.060049",
+    "published_m3": "-7144464.589033",
+    "published_share": "-0.060049",
+    "scaled_proxy_m3": "38034798.630767",
+    "top5_share": "0.077675",
+    "v5_scenario": "published_plus_proxy",
+    "v6_scenario": "province_capacity_floor"
+  },
+  "coverage": {
+    "after": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 104733008.0,
+      "proxy_records": 241,
+      "proxy_share_of_capacity": 0.3859818436002548,
+      "proxy_share_of_records": 0.3497822931785196,
+      "published_capacity_m3_y": 166608791.456421,
+      "published_records": 433,
+      "published_share_of_capacity": 0.6140181563997451,
+      "published_share_of_records": 0.6284470246734397,
+      "records_by_class": {
+        "BIO": 47,
+        "OTHER": 15,
+        "PANEL": 39,
+        "PELLET": 59,
+        "PULP": 62,
+        "SAW": 467
+      },
+      "records_by_province": {
+        "AB": 20,
+        "BC": 276,
+        "MB": 5,
+        "NB": 24,
+        "NL": 12,
+        "NS": 20,
+        "NT": 0,
+        "NU": 0,
+        "ON": 38,
+        "PE": 2,
+        "QC": 288,
+        "SK": 3,
+        "YT": 1
+      },
+      "records_total": 689,
+      "total_capacity_m3_y": 271341799.456421
+    },
+    "before": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 120240586.0,
+      "proxy_records": 292,
+      "proxy_share_of_capacity": 0.5452450705539271,
+      "proxy_share_of_records": 0.5626204238921002,
+      "published_capacity_m3_y": 100285178.456421,
+      "published_records": 212,
+      "published_share_of_capacity": 0.45475492944607276,
+      "published_share_of_records": 0.40847784200385356,
+      "records_by_class": {
+        "BIO": 27,
+        "OTHER": 15,
+        "PANEL": 22,
+        "PELLET": 47,
+        "PULP": 45,
+        "SAW": 363
+      },
+      "records_total": 519,
+      "total_capacity_m3_y": 220525764.45642102
+    }
+  },
+  "generated_utc": "2026-11-22T22:34:24+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_assignment_v5/summary.json": "3c914ec96d717cf065ef60860719360e303fdb97585042863c28dcb3ed20b154",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/national_facility_capacity_v3/summary.json": "69bae448b119393f3167e64364ac14da4b20584ca716b84cd30df63308c83c80",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_ASSIGNMENT_V6.md": {
+      "bytes": 5126,
+      "sha256": "ab200441fcaf970b3922209c7966b1e004fc9968eceddbf53b9a4a2aff835815"
+    },
+    "capacity_floor.csv": {
+      "bytes": 2206,
+      "sha256": "30dbf5e6e4a7c03a62b652c757b99f86088b0ffce343c9a0188a5857b7e772e5"
+    },
+    "capacity_floor_facilities.csv": {
+      "bytes": 170722,
+      "sha256": "6318b705225f3dd8f1fd4d08bdabe6c44e52e0f90bec4188b5668e1bc0e001f1"
+    },
+    "concentration.csv": {
+      "bytes": 115240,
+      "sha256": "224a2bbdd9c400458f8611c2a18d17d0c522613d0ff815f8045a0c6aa5bb30cb"
+    },
+    "facility_assignment.csv": {
+      "bytes": 290920,
+      "sha256": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06"
+    },
+    "facility_utilization.csv": {
+      "bytes": 709703,
+      "sha256": "6486bef178e2f617348f211a553b18322b498e748796305466256fde38eecfba"
+    },
+    "province_capacity_comparison.csv": {
+      "bytes": 2031,
+      "sha256": "8c89308d0e09dd194411757c7c414a62ba896080408cbdd706a135f1858a2bde"
+    },
+    "province_class_totals.csv": {
+      "bytes": 7332,
+      "sha256": "3c19a5529babfaf83e363fb685ae9e1b18ca19640433737492922ee871976dd8"
+    },
+    "province_summary.csv": {
+      "bytes": 6482,
+      "sha256": "45f2f4d5142559583a1d5bc755f6d5aa083a7d2b44c6cbac62e7b7be7c7002d6"
+    },
+    "scenario_comparison.csv": {
+      "bytes": 963,
+      "sha256": "45f4e2a76f1d1181c1c397015aed13e67e76012a936466a4a15696877a7982f2"
+    },
+    "summary.json": {
+      "bytes": 464984,
+      "sha256": "db4de65fe9d85365dffbc17503098520ff48d89a341ac58e2e9ae40dcd3062d4"
+    },
+    "unassigned.csv": {
+      "bytes": 198,
+      "sha256": "a9769295b8219509ef6bfcb8e011ba2810419debe1b203aafde6f8fa44f13f9a"
+    },
+    "v5_v6_comparison.csv": {
+      "bytes": 1544,
+      "sha256": "e17fcdb9b05c6bad4ffec13c919123d2a6340968819c426f9a7787b21185947f"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment_v6",
+  "scenarios": {
+    "province_capacity_floor": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 208,
+      "cross_border_m3": 36376.0,
+      "cross_border_share": 0.00030573889343269063,
+      "facilities_used": 208,
+      "hhi": 0.01287037617184876,
+      "local_m3": 118940963.10000001,
+      "local_share": 0.9996942611065673,
+      "max_facility_m3": 8093104.685436377,
+      "max_facility_share": 0.0680222363910337,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 47463455.79230501,
+      "proxy_share_of_assigned": 0.39892853673935463,
+      "published_m3": 71513883.307695,
+      "published_share": 0.6010714632606453,
+      "scaled_proxy_m3": 38034798.630767,
+      "scenario": "province_capacity_floor",
+      "top5_share": 0.15746389255989904,
+      "unassigned_m3": 0.0,
+      "unassigned_provinces": 0
+    },
+    "published_only": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 269,
+      "cross_border_m3": 47463455.792305,
+      "cross_border_share": 0.3989285367393546,
+      "facilities_used": 264,
+      "hhi": 0.008551916055515058,
+      "local_m3": 71513883.307695,
+      "local_share": 0.6010714632606454,
+      "max_facility_m3": 3498279.5,
+      "max_facility_share": 0.02940290585133787,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 0.0,
+      "proxy_share_of_assigned": 0.0,
+      "published_m3": 118977339.10000001,
+      "published_share": 1.0,
+      "scaled_proxy_m3": 0.0,
+      "scenario": "published_only",
+      "top5_share": 0.11543785915151634,
+      "unassigned_m3": 0.0,
+      "unassigned_provinces": 0
+    },
+    "published_plus_proxy": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 265,
+      "cross_border_m3": 21901937.630767003,
+      "cross_border_share": 0.18408495093640065,
+      "facilities_used": 263,
+      "hhi": 0.007546365634659652,
+      "local_m3": 97075401.469233,
+      "local_share": 0.8159150490635994,
+      "max_facility_m3": 2162922.563248,
+      "max_facility_share": 0.018179281698593643,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 40318991.203272,
+      "proxy_share_of_assigned": 0.3388795841986686,
+      "published_m3": 78658347.89672801,
+      "published_share": 0.6611204158013314,
+      "scaled_proxy_m3": 0.0,
+      "scenario": "published_plus_proxy",
+      "top5_share": 0.07978889576454648,
+      "unassigned_m3": 0.0,
+      "unassigned_provinces": 0
+    }
+  },
+  "validation": {
+    "all_facilities_finite_capacity": true,
+    "capacity_shortfall_after_m3_y": 43651.20000000372,
+    "capacity_shortfall_before_m3_y": 30282199.510767,
+    "capacity_v3_record_count": 689,
+    "comparison_rows": 17,
+    "conservation_gap_m3": {
+      "province_capacity_floor": 0.0,
+      "published_only": 0.0,
+      "published_plus_proxy": 0.0
+    },
+    "cross_border_rule": "post_local_residual_only",
+    "known_capacity_violations": 0,
+    "local_first": true,
+    "max_single_facility_share": {
+      "province_capacity_floor": 0.0680222363910337,
+      "published_only": 0.02940290585133787,
+      "published_plus_proxy": 0.018179281698593643
+    },
+    "max_utilization": {
+      "province_capacity_floor": 1.0,
+      "published_only": 1.0,
+      "published_plus_proxy": 1.0
+    },
+    "no_restricted_sources": true,
+    "no_ui_or_public_osecan_change": true,
+    "no_unbounded_facility": true,
+    "non_operating_assignments": 0,
+    "provinces_below_floor_after": 1,
+    "provinces_below_floor_before": 5,
+    "published_capacity_unchanged": true,
+    "scaled_provinces": [
+      "AB",
+      "SK",
+      "MB",
+      "ON"
+    ],
+    "scaled_proxy_records": 47,
+    "scaled_records_are_proxy_only": true,
+    "unbounded_assignments": 0,
+    "v5_floor_reproduced": true,
+    "v5_floor_reproduction": {
+      "assigned_m3": {
+        "abs_delta": 0.0,
+        "v5": 118977339.10000001,
+        "v6": 118977339.10000001
+      },
+      "cross_border_m3": {
+        "abs_delta": 0.0,
+        "v5": 36376.0,
+        "v6": 36376.0
+      },
+      "facilities_used": {
+        "abs_delta": 0.0,
+        "v5": 208.0,
+        "v6": 208.0
+      },
+      "hhi": {
+        "abs_delta": 0.0,
+        "v5": 0.01287037617184876,
+        "v6": 0.01287037617184876
+      },
+      "max_facility_share": {
+        "abs_delta": 0.0,
+        "v5": 0.0680222363910337,
+        "v6": 0.0680222363910337
+      },
+      "proxy_m3": {
+        "abs_delta": 0.0,
+        "v5": 47463455.79230501,
+        "v6": 47463455.79230501
+      },
+      "published_m3": {
+        "abs_delta": 0.0,
+        "v5": 71513883.307695,
+        "v6": 71513883.307695
+      }
+    }
+  }
+}

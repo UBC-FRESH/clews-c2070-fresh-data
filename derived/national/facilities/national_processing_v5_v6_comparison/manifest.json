@@ -1,0 +1,57 @@
+{
+  "artifact": "national_processing_v5_v6_comparison",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-22T22:34:37+00:00",
+  "inputs": {
+    "data/derived/national/facilities/facility_residue_supply_v2/province_residue_supply.csv": "0c82aaec66e35cbfeb3894278950bda5494cb38e3e0a7a4e39f9e2e818466df4",
+    "data/derived/national/facilities/facility_residue_supply_v3/province_residue_supply.csv": "5a1d60fa4cc973a2b66abfb0127e16019f01fe9320941c1e868b72402276f45b",
+    "data/derived/national/facilities/forestry_osecan_handoff_v3/zone_summary.csv": "c8d9ac016cbb12c0365c5806979c4eb629eacca111bcbf6e2cd1d520cc495242",
+    "data/derived/national/facilities/forestry_osecan_handoff_v4/zone_summary.csv": "103956963bd40050876b67f5f28a33d566f89758fea5a0a5d7bd80445682aebc",
+    "data/derived/national/facilities/forestry_osecan_scenarios_v3/summary.json": "edd56b439aba1648f5d81bbc7401341c297dfa5dfa07b44babdb3e572a0b86c1",
+    "data/derived/national/facilities/national_facility_assignment_v5/summary.json": "3c914ec96d717cf065ef60860719360e303fdb97585042863c28dcb3ed20b154",
+    "data/derived/national/facilities/national_facility_assignment_v6/province_capacity_comparison.csv": "8c89308d0e09dd194411757c7c414a62ba896080408cbdd706a135f1858a2bde",
+    "data/derived/national/facilities/national_facility_assignment_v6/summary.json": "db4de65fe9d85365dffbc17503098520ff48d89a341ac58e2e9ae40dcd3062d4"
+  },
+  "labels": {
+    "model_estimate": true,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_PROCESSING_V5_V6_COMPARISON.md": {
+      "bytes": 5379,
+      "sha256": "8d42806ca40ab3b1275552005f538dd8d9d6cdcb4d09ece2cc17b14f6756593d"
+    },
+    "assignment_metrics_comparison.csv": {
+      "bytes": 1685,
+      "sha256": "02141c3d1fab699a18a627c5b1d2d2ce431f19d41265a10d1a168e49b9d97794"
+    },
+    "capacity_shortfall_comparison.csv": {
+      "bytes": 1167,
+      "sha256": "583932cd7d3e64ad6d4e1d50a0cfb8e3f232a8eafa1e0a598e993552c26ddb41"
+    },
+    "province_process_residue_comparison.csv": {
+      "bytes": 1433,
+      "sha256": "228a254d277fa0a16102a88e2d883b06b124ef3799eeb7da41e37b027c708a18"
+    },
+    "summary.json": {
+      "bytes": 28072,
+      "sha256": "454be58ac7d80f438bf216eac3bd4e89342a16e6d1f508ceee8ab0bf8c83d214"
+    },
+    "zone_119m_case_comparison.csv": {
+      "bytes": 3137,
+      "sha256": "a12ff9ff441fe281e5d61017b7217fb1242b5059b91a572839ebe934b74d2aaf"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_processing_v5_v6_comparison",
+  "validation": {
+    "assigned_total_equal_v5_v6": true,
+    "handoff_v4_matches_scenarios_v3_national_totals": true,
+    "labels": true,
+    "no_unexpected_deletions": true,
+    "province_process_v5_conserves": true,
+    "province_process_v6_conserves": true,
+    "zone_119m_reproduces_handoff_v4": true
+  }
+}

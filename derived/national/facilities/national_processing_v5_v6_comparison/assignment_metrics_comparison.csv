@@ -1,0 +1,18 @@
+metric,unit,v5_value,v6_value,delta_v6_minus_v5,note
+assigned_m3,m3/yr,118977339.100000009,118977339.100000009,0,volume assigned to facilities
+local_m3,m3/yr,97075401.469233006,118940963.100000009,21865561.630767003,volume assigned inside the origin province
+local_share,share,0.815915049,0.999694261,0.183779212,local volume / assigned volume
+cross_border_m3,m3/yr,21901937.630767003,36376,-21865561.630767003,assigned to an out-of-province facility
+cross_border_share,share,0.184084951,0.000305739,-0.183779212,cross-border / assigned
+published_m3,m3/yr,78658347.896728009,71513883.307695001,-7144464.589033008,assigned volume on published capacity
+published_share,share,0.661120416,0.601071463,-0.060048953,published volume / assigned
+proxy_m3,m3/yr,40318991.203272,47463455.792305008,7144464.589033008,assigned volume on proxy capacity
+proxy_share_of_assigned,share,0.338879584,0.398928537,0.060048953,proxy volume / assigned
+scaled_proxy_m3,m3/yr,0,38034798.630767003,38034798.630767003,assigned on floor-scaled proxy capacity
+facilities_used,count,263,208,-55,distinct facilities receiving volume
+max_facility_m3,m3/yr,2162922.563248,8093104.685436377,5930182.122188377,largest single-facility assignment
+max_facility_share,share,0.018179282,0.068022236,0.049842955,largest facility / assigned
+top5_share,share,0.079788896,0.157463893,0.077674997,top five facilities / assigned
+hhi,index_0_1,0.007546366,0.012870376,0.005324011,sum of squared facility shares
+capacity_shortfall_m3_y,m3/yr,30282199.510767002,43651.200000004,-30238548.310766999,"capacity below harvest x 1.2 (v5 unscaled, v6 after floor)"
+provinces_below_floor,count,5,1,-4,provinces below the 1.2x harvest floor
