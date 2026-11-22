@@ -1,0 +1,209 @@
+{
+  "artifact": "national_residue_curve_v2",
+  "artifact_version": "2.0.0",
+  "generated_utc": "2026-11-22T22:17:53+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
+    "data/derived/national/clews/osecan/national_base_119m/manifest.json": "90eb5c8a4f1ae9e9f21401dfcd55e8faacc80e143b3f07e58e4559699a96966c",
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/facilities/facility_residue_supply_v2/facility_residue_supply.csv": "de40ff738d82eaec025dc52a25ea8c857eb24cfdaa122ea5a54949117491562e",
+    "data/derived/national/facilities/facility_residue_supply_v2/province_residue_supply.csv": "0c82aaec66e35cbfeb3894278950bda5494cb38e3e0a7a4e39f9e2e818466df4",
+    "data/derived/national/facilities/facility_residue_supply_v2/summary.json": "3b2b93dfaa29148db84ada293ec42171468f8d7260be85576e6a3e68e0d31484",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04"
+  },
+  "labels": {
+    "model_estimate": true,
+    "not_policy": true,
+    "observed": false,
+    "policy_grade": false,
+    "rsyc_comparable": "harvest_recoverable_only",
+    "ui_or_public_osecan_changed": false
+  },
+  "osecan_context": {
+    "run": "stress_119m",
+    "source": "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv",
+    "source_sha256": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
+    "y2050": {
+      "bc_power_dispatch_pj": 11.699938000000001,
+      "bc_supply_pj": 43.52377,
+      "national_power_dispatch_pj": 41.108271,
+      "national_supply_pj": 152.92277
+    }
+  },
+  "outputs": {
+    "NATIONAL_RESIDUE_CURVE_V2.md": {
+      "bytes": 6990,
+      "sha256": "ff44911eaa93222d9a9dc78989ffc0f4a5f888e5fafa8e982c7f8b0311481287"
+    },
+    "national_residue_curve.csv": {
+      "bytes": 18896,
+      "sha256": "c40d48dd12f921055cd6d2a97958657f8a66934bf30b85bddb311a81db741b86"
+    },
+    "osecan_demand_context.csv": {
+      "bytes": 2867,
+      "sha256": "35fe3efe12984cb50c96930f42b4a502a3cfe906373a539de06751e05d1ec9c4"
+    },
+    "province_residue_curve.csv": {
+      "bytes": 172002,
+      "sha256": "eeec9205ea0fc1231aeabb8253528c17328fdf738719f8ebdd5c24cb8ea08dca"
+    },
+    "summary.json": {
+      "bytes": 31940,
+      "sha256": "23e7f6f3d0bcab4847fb00afa847a4e9ee98425f3ccb002e7ce6362c1a5da411"
+    }
+  },
+  "record_counts": {
+    "classes_per_process_case": 6,
+    "harvest_scenarios": 3,
+    "national_rows": 27,
+    "process_scenarios": 4,
+    "province_rows": 351,
+    "provinces": 13
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_residue_curve_v2",
+  "rsyc_comparison": {
+    "base_100m_recoverable_odt": 7009238.195978076,
+    "base_100m_recoverable_pj": 129.6709066255944,
+    "base_119m_recoverable_odt": 7080062.08603234,
+    "base_119m_recoverable_pj": 130.9811485915983,
+    "base_recovery_fraction": 0.6,
+    "harvest_cases": {
+      "harvest_recovery_035": {
+        "availability_fraction": 0.35,
+        "recoverable_odt": 3174188.095614494,
+        "recoverable_pj": 58.72247976886813,
+        "rsyc_ratio_to_119m_base": 0.44832772044140445
+      },
+      "harvest_recovery_060": {
+        "availability_fraction": 0.6,
+        "recoverable_odt": 5441465.306767704,
+        "recoverable_pj": 100.66710817520251,
+        "rsyc_ratio_to_119m_base": 0.768561806470979
+      },
+      "harvest_recovery_075": {
+        "availability_fraction": 0.75,
+        "recoverable_odt": 6801831.63345963,
+        "recoverable_pj": 125.83388521900315,
+        "rsyc_ratio_to_119m_base": 0.9607022580887239
+      }
+    },
+    "lhv_gj_per_odt": 18.5,
+    "lhv_source": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "note": "Only harvest recoverable rows are RSYC-comparable. The 129.6709 PJ figure is the documented RSYC 100 Mm3 base, not the 119 Mm3 value. Process residue is never added to the RSYC stream.",
+    "rsyc_comparable_stream": "harvest_residue_recoverable"
+  },
+  "scenario_definitions": {
+    "harvest_recovery": {
+      "harvest_recovery_035": 0.35,
+      "harvest_recovery_060": 0.6,
+      "harvest_recovery_075": 0.75
+    },
+    "process_availability": {
+      "process_availability_000": 0.0,
+      "process_availability_025": 0.25,
+      "process_availability_050": 0.5,
+      "process_availability_075": 0.75
+    }
+  },
+  "status": "pass",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "row_counts",
+        "detail": "province and national curve row counts match the scenario design",
+        "expected_national_rows": 27,
+        "expected_province_rows": 351,
+        "national_rows": 27,
+        "province_rows": 351,
+        "status": "PASS"
+      },
+      {
+        "check_id": "unique_row_keys",
+        "detail": "curve row keys are unique",
+        "rows": 378,
+        "status": "PASS",
+        "unique": 378
+      },
+      {
+        "check_id": "process_harvest_separate",
+        "detail": "only process and harvest recoverable streams appear; no combined rows",
+        "residue_types": [
+          "harvest_residue_recoverable",
+          "process_residue"
+        ],
+        "status": "PASS"
+      },
+      {
+        "check_id": "no_gross_harvest_rows",
+        "detail": "gross harvest residue is a reference base, not a curve row",
+        "status": "PASS"
+      },
+      {
+        "check_id": "scenario_arithmetic",
+        "detail": "0 rows do not equal base x fraction",
+        "status": "PASS"
+      },
+      {
+        "check_id": "zero_availability_case",
+        "detail": "0 zero-case rows are non-zero",
+        "status": "PASS"
+      },
+      {
+        "check_id": "pj_conversion",
+        "detail": "0 rows fail the 18.5 GJ/odt conversion",
+        "lhv_gj_per_odt": 18.5,
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_national_conservation",
+        "detail": "0 conservation failures",
+        "failures": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "base_reproduction",
+        "detail": "0 base residue values do not reproduce source",
+        "failures": [],
+        "status": "PASS"
+      },
+      {
+        "base_100m_recoverable_odt": 7009238.195978076,
+        "base_100m_recoverable_pj": 129.6709066255944,
+        "base_119m_recoverable_odt": 7080062.08603234,
+        "base_119m_recoverable_pj": 130.9811485915983,
+        "check_id": "rsyc_comparison",
+        "detail": "RSYC 119 Mm3 base and harvest recovery cases reproduce",
+        "harvest_0p60_ratio": 0.768561806470979,
+        "status": "PASS"
+      },
+      {
+        "check_id": "evidence_labels",
+        "detail": "0 label violations",
+        "failures": [],
+        "status": "PASS"
+      },
+      {
+        "bc_power_dispatch_2050_pj": 11.699938000000001,
+        "bc_supply_2050_pj": 43.52377,
+        "check_id": "osecan_context",
+        "detail": "OSeCAN 2050 supply and power-dispatch context values reproduce",
+        "national_power_dispatch_2050_pj": 41.108271,
+        "national_supply_2050_pj": 152.92277,
+        "status": "PASS"
+      },
+      {
+        "check_id": "osecan_input_unchanged",
+        "detail": "OSeCAN dispatch and manifest hashes are unchanged",
+        "source": "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv",
+        "status": "PASS"
+      },
+      {
+        "check_id": "repository_hygiene",
+        "detail": "no unexpected D in parent or data git status",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}
