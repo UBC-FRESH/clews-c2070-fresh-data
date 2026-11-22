@@ -1,0 +1,196 @@
+{
+  "model_id": "provincial_allocation_net_value_lp_v1",
+  "artifact_version": "1.0.0",
+  "schema_version": "national/provincial-allocation-net-value-lp/1",
+  "generated_utc": "2026-11-22T17:55:13+00:00",
+  "parent_commit": "28708e7213903225ce9e1fe1ff12eea83d9c2fbd",
+  "data_commit": "a08f97e6abb7601e474500bd702496843f8de374",
+  "observation_type": "model_estimate",
+  "labels": {
+    "evidence": "model_estimate",
+    "observed": false,
+    "policy_grade": false,
+    "lp_objective": "net_value_sensitivity",
+    "canonical_changed": false,
+    "baseline_objective": "least_deviation_from_observed_2024_shares",
+    "combined_national_net_value": false,
+    "public_osecan_input": false,
+    "restricted_data_used": false
+  },
+  "status": "model_estimate screening sensitivity; not observed, not policy grade, and not a canonical allocation change",
+  "objective": {
+    "optimized": "maximize sum_p harvest_p * margin_base_p over provincial harvest within documented or intensity caps",
+    "constraints": [
+      "sum_p harvest_p = national_total",
+      "0 <= harvest_p <= upper_bound_p",
+      "upper_bound_p = documented cap or min(documented cap, I * operable_proxy_ha)"
+    ],
+    "tie_break": "none required: base-margin unit values are distinct across provinces in each scenario, so the optimum is unique",
+    "margin_case_optimized": "base",
+    "low_high_reporting": "the central-margin allocation is re-priced at the v2.3 low and high margins; low/high are uncertainty bounds, not separate optima",
+    "solver": {
+      "name": "PuLP",
+      "version": "2.9.0",
+      "backend": "CBC (bundled)",
+      "threads": 1
+    }
+  },
+  "inputs": [
+    {
+      "path": "data/derived/national/harvest_basis/harvest_basis_template.csv",
+      "role": "harvest_basis_template",
+      "sha256": "223b4e54a118317b7aed70dfbfcf652391204e8cc41b45c61aa99eb49152d4b6",
+      "bytes": 292894
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provinces.csv",
+      "role": "province_metadata",
+      "sha256": "9a2b1ba07e31e61c42052e63111381163272f23fb27f54c7e098bd5f3b43ed02",
+      "bytes": 3086
+    },
+    {
+      "path": "data/derived/national/managed_landbase/managed_landbase_province_summary.csv",
+      "role": "managed_landbase_proxy",
+      "sha256": "88b67624d8343703a83c05d177a2b52fabc2928f11670dcc6b03263b077c7868",
+      "bytes": 1516
+    },
+    {
+      "path": "data/derived/national/managed_landbase/operable_proxy/operable_proxy_by_province.csv",
+      "role": "operable_proxy",
+      "sha256": "b8859ac15303dc24dc9894477cea57c4f98d8642248106f2a081ba61e407f7d1",
+      "bytes": 11049
+    },
+    {
+      "path": "data/derived/national/managed_landbase/operable_proxy/operable_proxy_summary.json",
+      "role": "operable_proxy_summary",
+      "sha256": "9f0ccec1eab4670629793bbfe77fa8dc908c9a83394287ac0ad1ae19954a476b",
+      "bytes": 9788
+    },
+    {
+      "path": "planning/harvest-aac-feasibility.md",
+      "role": "aac_feasibility_note",
+      "sha256": "642eecf1a753b2893b40aaeb3a48336cf564e88d3d5e3af2e2daa39b18242309",
+      "bytes": 38575
+    },
+    {
+      "path": "workflows/national/harvest/provincial_allocation.py",
+      "role": "canonical_allocation_lp_source",
+      "sha256": "0f1d31185d90d78ff862b21f99c1230186cd480262798e50ba83dc0f209b3a53",
+      "bytes": 59550
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/national_margin_summary.csv",
+      "role": "national_economics_v2_3_margin_summary",
+      "sha256": "ce1fc9969b592d9d7295c838dbaa6bb079945c7577a2e21f42a9b2fcdcf00fc4",
+      "bytes": 14163
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/summary.json",
+      "role": "national_economics_v2_3_summary",
+      "sha256": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc",
+      "bytes": 96824
+    },
+    {
+      "path": "data/derived/national/harvest_basis/national_economics_v2_3/manifest.json",
+      "role": "national_economics_v2_3_manifest",
+      "sha256": "257befc0203b3f5ef9b26b681033d00ed26a3ba3cd197f0000ee97cb79605517",
+      "bytes": 9866
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/100m.csv",
+      "role": "canonical_baseline_documented_ceiling_100m",
+      "sha256": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+      "bytes": 2845
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "role": "canonical_baseline_documented_ceiling_119m",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+      "bytes": 2845
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/150m.csv",
+      "role": "canonical_baseline_documented_ceiling_150m",
+      "sha256": "3675cdc5e0723b453924b9dc6b8e13f19578f02a01086eb95f88f7bf750ceee1",
+      "bytes": 2841
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/intensity_1.0/100m.csv",
+      "role": "canonical_baseline_intensity_1.0_100m",
+      "sha256": "995110aa5e6d5597080b0a28760f20c21011e8713d959eec40eb90bcad2cbe0d",
+      "bytes": 4453
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/intensity_1.0/119m.csv",
+      "role": "canonical_baseline_intensity_1.0_119m",
+      "sha256": "62cb85dedf0955affb938573afa426b0ea8c122b99ea657aa07777cafdcf3d08",
+      "bytes": 4449
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/intensity_1.2/100m.csv",
+      "role": "canonical_baseline_intensity_1.2_100m",
+      "sha256": "15e28ed29e603ddccf61988c45025ee8ac58c0ff1492bcaada110bdff27d7036",
+      "bytes": 4503
+    },
+    {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/intensity_1.2/119m.csv",
+      "role": "canonical_baseline_intensity_1.2_119m",
+      "sha256": "56a4d4fae774de3859abb839fe9cd77ab91ed5f6ff3c036d384f449f37fda967",
+      "bytes": 4502
+    }
+  ],
+  "outputs": [
+    {
+      "path": "allocation_net_value_lp.csv",
+      "sha256": "61058cfbd674d7c62cb87708f67734fbcbffe540b7687bdaff353f0f17100e33",
+      "bytes": 118111
+    },
+    {
+      "path": "allocation_delta.csv",
+      "sha256": "217a925916b6e2ab044bf647b98e04dbf6fc09b7775b732bdc3f8a85e1f706e7",
+      "bytes": 75879
+    },
+    {
+      "path": "summary.json",
+      "sha256": "3ac2a78aafd0eff0159e72facadbe1db9a20653c18f964239bca5a131e9c60f8",
+      "bytes": 68264
+    },
+    {
+      "path": "ALLOCATION_NET_VALUE_LP_REPORT.md",
+      "sha256": "368f48eb066158d62be657d9456cca4f56f63690b5d221176d7bf5b121c010a3",
+      "bytes": 15445
+    }
+  ],
+  "validation": {
+    "case_count": 18,
+    "feasible_case_count": 14,
+    "infeasible_case_count": 4,
+    "negative_base_margin_rows": 35,
+    "negative_base_margin_rows_with_positive_allocation": 30,
+    "negative_margins_clipped": false,
+    "baseline_preserved": true,
+    "canonical_changed": false,
+    "canonical_snapshot_unchanged": true,
+    "unexpected_d_cells": 0,
+    "all_values_model_estimate": true,
+    "donor_price_caveat_present": true,
+    "public_osecan_input": false
+  },
+  "caveats": [
+    "donor_flat is a donor/flat price proxy, not an observed provincial price; stumpage_scaled is a method sensitivity. Both are model_estimate, observed=false, policy_grade=false, and not policy-grade net value.",
+    "Negative margins are retained unclipped. When total harvest exceeds the capacity of positive-margin provinces, the LP necessarily allocates to negative-margin provinces; it chooses the least-negative available margin.",
+    "The operable-proxy landbase is a SCANFI merchantability screen intersected with a share-based 2016 tenure proxy. It is not a legal THLB: it carries no slope, road access, age/disturbance, growth, yield, or economic constraint. Intensity caps are screening sensitivities only.",
+    "The objective is a static unit-margin times harvest sum. It has no demand, mill capacity, tenure, haul-distance, species, employment, silviculture, or discounting content.",
+    "The net-value allocation is a sensitivity, not a policy allocation, not a forecast, and not a legal AAC. The canonical least-deviation allocation is unchanged and remains the model of record.",
+    "The documented-cap sum is a mixed-basis ceiling set, not a national AAC. PE and NU have no operable proxy and are flagged operable_missing, not assigned zero area.",
+    "Net value low/base/high re-prices the central-margin allocation at the v2.3 low/base/high margins; low and high are uncertainty bounds, not separately optimized allocations."
+  ],
+  "non_claims": [
+    "Not observed; observed=false.",
+    "Not policy grade; policy_grade=false.",
+    "Not a canonical provincial-allocation change; canonical_changed=false.",
+    "Not a UI or public OSeCAN input; no public OSeCAN.",
+    "Not observed profit, net income, mill margin, or official net value.",
+    "Not a ranking or investment recommendation."
+  ]
+}
