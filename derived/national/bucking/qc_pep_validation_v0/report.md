@@ -13,7 +13,7 @@ inventory, an official Quebec grade, or a national supply estimate.
 | Publisher | Ministere des Ressources naturelles et des Forets du Quebec (MRNF), Direction des inventaires forestiers |
 | Catalogue | https://www.donneesquebec.ca/recherche/dataset/placettes-echantillons-permanentes-1970-a-aujourd-hui |
 | Direct URL | https://diffusion.mffp.gouv.qc.ca/Diffusion/DonneeGratuite/Foret/DONNEES_FOR_ECO_SUD/Placettes_permanentes/02-Donnees/PROV/PEP_GPKG.zip |
-| Retrieval UTC | 2026-11-23T00:20:39Z |
+| Retrieval UTC | 2026-11-23T00:24:03Z |
 | Licence | CC BY 4.0 |
 | ZIP bytes / SHA-256 | 128,568,617 / `a5deb82b8e05c3226f83eb8daa4842900b6564e31b30915d9215f8a031faa5e5` |
 | GPKG member / bytes / SHA-256 | `PEP.gpkg` / 739,045,376 / `6d53e90a23799d681d050e13a433bc6e7ede6549b0733c8cc9c01fc8f94348c9` |
@@ -180,10 +180,10 @@ All internal checks passed before artifacts were written:
 | unique_tree_ids | True | trees=7767, unique=7767 |
 | residue_covers_every_tree | True | residue=7767, trees=7767 |
 | logs_are_subset_of_trees | True | log_trees=5873 |
-| expansion_identity | True | max |expansion * inclusion_area - 1| = 0.000e+00 |
+| expansion_identity | True | max \|expansion * inclusion_area - 1\| = 0.000e+00 |
 | tree_volume_residue_balance | True | max tree balance error = 2.220e-16 m3 |
 | residue_ledger_balance | True | max ledger balance error = 6.939e-18 m3 |
-| log_sum_matches_tree_recovered | True | max |sum logs - recovered| = 0.000e+00 m3 |
+| log_sum_matches_tree_recovered | True | max \|sum logs - recovered\| = 0.000e+00 m3 |
 | plot_summary_reconciles | True | max errors={'n_trees': 0.0, 'taper_total_m3': 8.881784197001252e-16, 'recovered_gross_m3': 8.881784197001252e-16, 'residue_m3': 1.1102230246251565e-16, 'taper_total_m3_per_ha': 2.842170943040401e-14} |
 | species_summary_reconciles | True | max errors={'n_trees': 0.0, 'taper_total_m3': 1.1368683772161603e-13, 'recovered_gross_m3': 5.684341886080802e-14, 'residue_m3': 0.0} |
 | comparison_all_row | True | all_rows=1 |
