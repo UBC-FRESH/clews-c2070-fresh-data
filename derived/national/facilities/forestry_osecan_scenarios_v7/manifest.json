@@ -1,0 +1,923 @@
+{
+  "artifact": "forestry_osecan_scenarios_v7",
+  "artifact_version": "7.0.0",
+  "candidate_activity_limits": {
+    "applied_to_osecan": false,
+    "columns": {
+      "candidate_activity_limit_pj": "model-estimate zone PJ",
+      "candidate_headroom_pj": "official limit - candidate PJ",
+      "candidate_ratio_to_official_limit": "candidate PJ / official limit",
+      "official_limit_reference": "official 2050 limit reference or none",
+      "technology_suggestion": "candidate SUPBCW string, not an assignment"
+    },
+    "grain": [
+      "scenario",
+      "stream",
+      "availability_case",
+      "zone_id"
+    ],
+    "official_zone_limits": {
+      "B1": {
+        "limit_pj": 3.605474907,
+        "technology": "SUPBCWB1"
+      },
+      "B2": {
+        "limit_pj": 39.918341125,
+        "technology": "SUPBCWB2"
+      }
+    },
+    "row_count": 273,
+    "status": "read_only_candidate_not_applied"
+  },
+  "generated_utc": "2026-11-23T05:38:50+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
+    "data/derived/national/clews/osecan/national_base_119m/manifest.json": "90eb5c8a4f1ae9e9f21401dfcd55e8faacc80e143b3f07e58e4559699a96966c",
+    "data/derived/national/clews/osecan/national_supply_curve/bc_zonal_activity_limits.csv": "c6ffe5f99461b5731cd16095b36f4850403864c31bf3a00ad2871f3e0f17abf3",
+    "data/derived/national/clews/osecan/national_supply_curve/supply_curve_definition.json": "01aab658fe29ac97d736c0bb06d2702782f07d6fd45a050143acaad039c11f6e",
+    "data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374",
+    "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f",
+    "data/derived/national/clews/osecan/zone_crosswalk.csv": "a0d75077f8c00f7dc5692c87685b27885159c95ac0e7fc8954a1e9123189538b",
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/manifest.json": "c3820a6a8e7566183e0cd8a175cca9c30858d4946f4d3779d7e743eeaa8af111",
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/summary.json": "e9afff3f0b693dbe43026ed2098a107241a602aca29c82de5999f8d823b0d96d",
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/zone_allocation_weights.csv": "d889858f9dbf1a68a36d7acac86b88a6957c7578b720d8d896594b55dd41c117",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/manifest.json": "f483a6eab52f54ed120c6d25baada13d59bc0e28c85ec2be8e9f7b3e8608571a",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/scenario_product_residue.csv": "d86440414e184de5ab6b7ecc7678b762008eec066a2265d56c3bd7928778fbeb",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/scenario_summary.csv": "0c95c1a3fce9c30f3c8b716f5e0ce875a5ac100971504b130f2085d6edfaf74d",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/summary.json": "d1847d9fa4ec0614bcb2d408b84eb66b97eeead5d7bcc62e45e588ff05384a13",
+    "data/derived/national/facilities/national_residue_curve_v7/national_residue_curve.csv": "a155bc2f4bdc19d6daa1c6a48c310ac71f64594fe473afff5fce667653f77cd8",
+    "data/derived/national/facilities/national_residue_curve_v7/province_residue_curve.csv": "f8915d370356d0e33fa9b5f6ad29d3c277a51487fc61322794ef627c2e60072a",
+    "data/derived/national/facilities/national_residue_curve_v7/summary.json": "9989166cf6087c251e82a48570e0258763929ce2f3b0ed50fd9b1a4b30fe86b2"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "national_case_totals": {
+    "100m": {
+      "harvest": {
+        "harvest_recovery_035": {
+          "availability_fraction": 0.35,
+          "odt": 7061371.521912361,
+          "pj": 130.63537315534998
+        },
+        "harvest_recovery_060": {
+          "availability_fraction": 0.6,
+          "odt": 12105208.323278332,
+          "pj": 223.9463539806
+        },
+        "harvest_recovery_075": {
+          "availability_fraction": 0.75,
+          "odt": 15131510.404097917,
+          "pj": 279.93294247575
+        }
+      },
+      "process": {
+        "process_availability_000": {
+          "availability_fraction": 0.0,
+          "odt": 0.0,
+          "pj": 0.0
+        },
+        "process_availability_025": {
+          "availability_fraction": 0.25,
+          "odt": 5665378.625168053,
+          "pj": 104.809504566
+        },
+        "process_availability_050": {
+          "availability_fraction": 0.5,
+          "odt": 11330757.250336107,
+          "pj": 209.619009132
+        },
+        "process_availability_075": {
+          "availability_fraction": 0.75,
+          "odt": 16996135.87550416,
+          "pj": 314.428513698
+        }
+      }
+    },
+    "119m": {
+      "harvest": {
+        "harvest_recovery_035": {
+          "availability_fraction": 0.35,
+          "odt": 8407771.250093166,
+          "pj": 155.54376812695
+        },
+        "harvest_recovery_060": {
+          "availability_fraction": 0.6,
+          "odt": 14413322.143016856,
+          "pj": 266.6464596462
+        },
+        "harvest_recovery_075": {
+          "availability_fraction": 0.75,
+          "odt": 18016652.67877107,
+          "pj": 333.30807455775
+        }
+      },
+      "process": {
+        "process_availability_000": {
+          "availability_fraction": 0.0,
+          "odt": 0.0,
+          "pj": 0.0
+        },
+        "process_availability_025": {
+          "availability_fraction": 0.25,
+          "odt": 6739877.255681732,
+          "pj": 124.68772922975
+        },
+        "process_availability_050": {
+          "availability_fraction": 0.5,
+          "odt": 13479754.511363463,
+          "pj": 249.3754584595
+        },
+        "process_availability_075": {
+          "availability_fraction": 0.75,
+          "odt": 20219631.767045196,
+          "pj": 374.06318768925
+        }
+      }
+    },
+    "150m": {
+      "harvest": {
+        "harvest_recovery_035": {
+          "availability_fraction": 0.35,
+          "odt": 10842913.219006576,
+          "pj": 200.59389455245
+        },
+        "harvest_recovery_060": {
+          "availability_fraction": 0.6,
+          "odt": 18587851.232582703,
+          "pj": 343.8752478042
+        },
+        "harvest_recovery_075": {
+          "availability_fraction": 0.75,
+          "odt": 23234814.04072838,
+          "pj": 429.84405975525
+        }
+      },
+      "process": {
+        "process_availability_000": {
+          "availability_fraction": 0.0,
+          "odt": 0.0,
+          "pj": 0.0
+        },
+        "process_availability_025": {
+          "availability_fraction": 0.25,
+          "odt": 8471151.614077747,
+          "pj": 156.7163048595
+        },
+        "process_availability_050": {
+          "availability_fraction": 0.5,
+          "odt": 16942303.228155494,
+          "pj": 313.432609719
+        },
+        "process_availability_075": {
+          "availability_fraction": 0.75,
+          "odt": 25413454.842233237,
+          "pj": 470.1489145785
+        }
+      }
+    }
+  },
+  "osecan_context": {
+    "bc_supply_pj": 43.52377,
+    "bc_zonal_upper_pj": 43.523816032,
+    "context_is_policy_target": false,
+    "dispatch_sha256": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
+    "dispatch_source": "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv",
+    "manifest_status": "fresh_side_provisional_not_c2070_official",
+    "national_supply_pj": 152.92277,
+    "run": "stress_119m",
+    "year": 2050,
+    "zone_dispatch_context_pj": {
+      "A1": 7.160096,
+      "A2": 3.961619,
+      "B1": 0.969212,
+      "B2": 10.730726,
+      "L1": 0.501156,
+      "M1": 1.385403,
+      "N1": 0.0,
+      "O1": 1.091346,
+      "O2": 0.218439,
+      "Q1": 3.381588,
+      "Q2": 2.155621,
+      "S1": 5.859086,
+      "T1": 3.693979
+    }
+  },
+  "osecan_integrity": {
+    "changed_files": [],
+    "file_count_after": 146,
+    "file_count_before": 146,
+    "root": "data/derived/national/clews/osecan",
+    "tree_sha256_after": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a",
+    "tree_sha256_before": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a",
+    "unchanged": true
+  },
+  "outputs": {
+    "FORESTRY_OSECAN_SCENARIOS_V7.md": {
+      "bytes": 13399,
+      "sha256": "5a76b61ec49a954152f510c6ad800e17b66b2673b46cdc3eb2faea3feb4abf9b"
+    },
+    "candidate_activity_limits.csv": {
+      "bytes": 179639,
+      "sha256": "d112a6a9450d8e73b9ae8fcbdbbff4fe1120604336d408cf2d92f3cb9b2e0330"
+    },
+    "forestry_residue_scenarios.csv": {
+      "bytes": 314879,
+      "sha256": "8749b30da6ba0ce66096ed457afcdcb507489c78eef8482919381c080bffdaf6"
+    },
+    "scenario_zone_summary.csv": {
+      "bytes": 130774,
+      "sha256": "7d4094d7f20d870628f25b9aabc55aa58ab514a02accad333ff5ead75941d6f7"
+    },
+    "summary.json": {
+      "bytes": 135186,
+      "sha256": "3e1fb15e1859ee1a777bed33bf8a4c27f5696f2e8a101c87a80e64e67a64deb8"
+    },
+    "supply_curve_comparison.csv": {
+      "bytes": 141481,
+      "sha256": "8ea90c82b434626f4a06aec0038e3d5598804d9c5c0ef16f1cf415c37d35adf6"
+    },
+    "tier_positions_v3_2_vs_v4.csv": {
+      "bytes": 2698,
+      "sha256": "3d51462c949cca2eba20bc63e52244377cb2f2c20877436ee53c95fe4b41b9f1"
+    }
+  },
+  "record_counts": {
+    "candidate_activity_limit_rows": 273,
+    "comparison_rows": 462,
+    "harvest_cases": 3,
+    "process_cases": 4,
+    "province_zone_allocation_rows": 17,
+    "provinces": 13,
+    "residue_rows": 357,
+    "scenarios": 3,
+    "zone_summary_rows": 273,
+    "zones": 13
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.forestry_osecan_scenarios_v7",
+  "scenarios": {
+    "100m": {
+      "evidence_label": "model_estimate",
+      "harvest_gross_odt": 20175347.20546389,
+      "harvest_gross_pj": 373.243923301,
+      "harvest_m3": 100000000.0,
+      "harvest_recoverable_odt": 12105208.323286818,
+      "harvest_recoverable_pj": 223.946353981,
+      "process_base_odt": 22661514.500672214,
+      "process_base_pj": 419.238018262
+    },
+    "119m": {
+      "evidence_label": "model_estimate",
+      "harvest_gross_odt": 24022203.57169476,
+      "harvest_gross_pj": 444.410766076,
+      "harvest_m3": 118977339.1,
+      "harvest_recoverable_odt": 14413322.14302726,
+      "harvest_recoverable_pj": 266.646459646,
+      "process_base_odt": 26959509.02272693,
+      "process_base_pj": 498.75091692
+    },
+    "150m": {
+      "evidence_label": "model_estimate",
+      "harvest_gross_odt": 30979752.054304503,
+      "harvest_gross_pj": 573.125413005,
+      "harvest_m3": 150000000.0,
+      "harvest_recoverable_odt": 18587851.23259632,
+      "harvest_recoverable_pj": 343.875247803,
+      "process_base_odt": 33884606.45631098,
+      "process_base_pj": 626.865219442
+    }
+  },
+  "status": "pass",
+  "supply_curve": {
+    "bc_zonal_limits_pj": {
+      "SUPBCWB1": 3.605474907,
+      "SUPBCWB2": 39.918341125
+    },
+    "bc_zonal_upper_pj": 43.523816032,
+    "tiers": {
+      "T1": {
+        "incremental_cap_pj": 85.007113,
+        "lower_pj": 0.0,
+        "technology": "SUPBCWT1",
+        "upper_pj": 85.007113
+      },
+      "T2": {
+        "incremental_cap_pj": 24.39175,
+        "lower_pj": 85.007113,
+        "technology": "SUPBCWT2",
+        "upper_pj": 109.398863
+      },
+      "T3": {
+        "incremental_cap_pj": 39.873714,
+        "lower_pj": 109.398863,
+        "technology": "SUPBCWT3",
+        "upper_pj": 149.272577
+      },
+      "T4": {
+        "incremental_cap_pj": 64.265464,
+        "lower_pj": 149.272577,
+        "technology": "SUPBCWT4",
+        "upper_pj": 213.538041
+      }
+    },
+    "upper_pj": 213.538041
+  },
+  "tier_positions_v3_2_vs_v4": [
+    {
+      "case": "process_availability_000",
+      "delta_pj": 0.0,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 0.0,
+      "v3_2_v7_tier": "T1",
+      "v4_e2c_pj": 0.0,
+      "v4_e2c_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": -1.368514089499996,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 106.1780186555,
+      "v3_2_v7_tier": "T2",
+      "v4_e2c_pj": 104.809504566,
+      "v4_e2c_tier": "T2"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": -2.737028178999992,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 212.356037311,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 209.619009132,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": -4.10554226849996,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 318.5340559665,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 314.428513698,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": 15.716471482949984,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 114.9189016724,
+      "v3_2_v7_tier": "T3",
+      "v4_e2c_pj": 130.63537315534998,
+      "v4_e2c_tier": "T3"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": 26.94252254220001,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": true,
+      "v3_2_v7_pj": 197.0038314384,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 223.9463539806,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": 33.67815317774998,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 246.25478929800002,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 279.93294247575,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_000",
+      "delta_pj": 0.0,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 0.0,
+      "v3_2_v7_tier": "T1",
+      "v4_e2c_pj": 0.0,
+      "v4_e2c_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": -1.6455102577500043,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 126.33323948750001,
+      "v3_2_v7_tier": "T3",
+      "v4_e2c_pj": 124.68772922975,
+      "v4_e2c_tier": "T3"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": -3.2910205155000085,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 252.66647897500002,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 249.3754584595,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": -4.936530773250013,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 378.9997184625,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 374.06318768925,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": 18.897550028350025,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": true,
+      "v3_2_v7_pj": 136.64621809859997,
+      "v3_2_v7_tier": "T3",
+      "v4_e2c_pj": 155.54376812695,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": 32.39580004860002,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 234.2506595976,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 266.6464596462,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": 40.49475006074999,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 292.813324497,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 333.30807455775,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_000",
+      "delta_pj": 0.0,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 0.0,
+      "v3_2_v7_tier": "T1",
+      "v4_e2c_pj": 0.0,
+      "v4_e2c_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": -2.3183709029999875,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 159.0346757625,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 156.7163048595,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": -4.636741805999975,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 318.069351525,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 313.432609719,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": -6.955112708999991,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 477.1040272875,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 470.1489145785,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": 27.403379902500006,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 173.19051464995,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 200.59389455245,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": 46.97722269000002,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 296.8980251142,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 343.8752478042,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": 58.72152836250001,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 371.12253139275,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 429.84405975525,
+      "v4_e2c_tier": "above_T4"
+    }
+  ],
+  "validation": {
+    "checks": [
+      {
+        "check": "scenario_order",
+        "detail": "scenario definitions are ordered 100m/119m/150m with positive harvest",
+        "passed": true
+      },
+      {
+        "check": "scenario_national_ordering",
+        "detail": "national process and harvest gross PJ increase across scenarios",
+        "passed": true
+      },
+      {
+        "check": "scenario_province_nondecreasing",
+        "detail": "province process and harvest gross PJ are non-decreasing across scenarios",
+        "passed": true
+      },
+      {
+        "check": "zone_coverage",
+        "detail": "all 13 OSeCAN zones receive at least one province allocation",
+        "passed": true
+      },
+      {
+        "check": "province_zone_weight_sum",
+        "detail": "every province zone weight sums to 1",
+        "passed": true
+      },
+      {
+        "check": "weight_row_count",
+        "detail": "17 province/zone weight rows",
+        "passed": true
+      },
+      {
+        "check": "no_unmapped",
+        "detail": "no empty or UNMAPPED zone id",
+        "passed": true
+      },
+      {
+        "check": "residue_row_count",
+        "detail": "357 residue rows (expected 357)",
+        "passed": true
+      },
+      {
+        "check": "residue_row_uniqueness",
+        "detail": "scenario/stream/case/province/zone rows are unique",
+        "passed": true
+      },
+      {
+        "check": "residue_labels",
+        "detail": "every residue row carries the four required labels",
+        "passed": true
+      },
+      {
+        "check": "pj_conversion",
+        "detail": "every row satisfies pj = odt * 18.5 / 1e6 within 1e-6",
+        "passed": true
+      },
+      {
+        "check": "zero_process_case",
+        "detail": "process_availability_000 rows are exactly zero",
+        "passed": true
+      },
+      {
+        "check": "scenario_conservation",
+        "detail": "scenario/stream/case totals conserved",
+        "passed": true
+      },
+      {
+        "check": "zone_summary_conservation",
+        "detail": "zone summary sums match scenario/case totals",
+        "passed": true
+      },
+      {
+        "check": "zone_summary_row_count",
+        "detail": "273 zone summary rows",
+        "passed": true
+      },
+      {
+        "check": "candidate_row_count",
+        "detail": "273 candidate rows",
+        "passed": true
+      },
+      {
+        "check": "candidate_conservation",
+        "detail": "candidate activity limits sum to scenario/case totals",
+        "passed": true
+      },
+      {
+        "check": "candidate_labels",
+        "detail": "candidate rows are labelled read-only and not applied",
+        "passed": true
+      },
+      {
+        "check": "curve_119_reconciliation",
+        "detail": "119m reproduces the national residue curve at all cases",
+        "passed": true
+      },
+      {
+        "check": "comparison_row_count",
+        "detail": "462 comparison rows",
+        "passed": true
+      },
+      {
+        "check": "comparison_arithmetic",
+        "detail": "ratio and headroom arithmetic is consistent and not policy",
+        "passed": true
+      },
+      {
+        "check": "comparison_labels",
+        "detail": "every comparison row carries the four required labels",
+        "passed": true
+      },
+      {
+        "check": "tier_references",
+        "detail": "adopted tier and 2050 context references match the official curve",
+        "passed": true
+      },
+      {
+        "check": "bc_zonal_limits",
+        "detail": "SUPBCWB1/SUPBCWB2 2050 activity limits are read exactly",
+        "passed": true
+      },
+      {
+        "check": "zone_dispatch_context",
+        "detail": "2050 zone dispatch context covers all 13 zones",
+        "passed": true
+      },
+      {
+        "check": "labels_summary_contract",
+        "detail": "all output families carry model_estimate/observed/policy_grade/official_osecan_changed labels",
+        "passed": true
+      },
+      {
+        "check": "official_osecan_unchanged",
+        "detail": "official OSeCAN tree hash is unchanged",
+        "passed": true
+      },
+      {
+        "check": "output_outside_osecan",
+        "detail": "artifact output directory is outside the official OSeCAN tree",
+        "passed": true
+      },
+      {
+        "check": "nonnegative_values",
+        "detail": "residue, zone, and candidate values are non-negative",
+        "passed": true
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  },
+  "zone_mapping": {
+    "multi_zone_provinces": [
+      "BC",
+      "AB",
+      "ON",
+      "QC"
+    ],
+    "province_count": 13,
+    "province_zone_allocation_rows": 17,
+    "proxy_share_provinces": [
+      "AB",
+      "BC",
+      "ON",
+      "QC"
+    ],
+    "unmapped_province_count": 0,
+    "unmapped_zone_present": false,
+    "weight_evidence_tiers": [
+      "tier_0_crosswalk_membership",
+      "tier_1_osecan_zonal_supply_model",
+      "tier_2_osecan_zonal_dispatch_model"
+    ],
+    "weight_methods": [
+      "osecan_zonal_dispatch_proxy",
+      "osecan_zonal_supply_dispatch",
+      "single_zone_crosswalk"
+    ],
+    "zone_count": 13,
+    "zones": [
+      {
+        "provinces": [
+          "BC"
+        ],
+        "zone_id": "B1",
+        "zone_name": "South Coast / Lower Mainland"
+      },
+      {
+        "provinces": [
+          "BC"
+        ],
+        "zone_id": "B2",
+        "zone_name": "Interior & North"
+      },
+      {
+        "provinces": [
+          "AB"
+        ],
+        "zone_id": "A1",
+        "zone_name": "Calgary\u2013Edmonton corridor"
+      },
+      {
+        "provinces": [
+          "AB"
+        ],
+        "zone_id": "A2",
+        "zone_name": "North (oil sands)"
+      },
+      {
+        "provinces": [
+          "SK"
+        ],
+        "zone_id": "S1",
+        "zone_name": "Saskatchewan"
+      },
+      {
+        "provinces": [
+          "MB"
+        ],
+        "zone_id": "M1",
+        "zone_name": "Manitoba"
+      },
+      {
+        "provinces": [
+          "ON"
+        ],
+        "zone_id": "O1",
+        "zone_name": "Southern Ontario"
+      },
+      {
+        "provinces": [
+          "ON"
+        ],
+        "zone_id": "O2",
+        "zone_name": "Northern Ontario"
+      },
+      {
+        "provinces": [
+          "QC"
+        ],
+        "zone_id": "Q1",
+        "zone_name": "Southern Quebec"
+      },
+      {
+        "provinces": [
+          "QC"
+        ],
+        "zone_id": "Q2",
+        "zone_name": "Northern Quebec (hydro)"
+      },
+      {
+        "provinces": [
+          "NB",
+          "NS",
+          "PE"
+        ],
+        "zone_id": "T1",
+        "zone_name": "Atlantic"
+      },
+      {
+        "provinces": [
+          "NL"
+        ],
+        "zone_id": "L1",
+        "zone_name": "Newfoundland & Labrador"
+      },
+      {
+        "provinces": [
+          "NT",
+          "NU",
+          "YT"
+        ],
+        "zone_id": "N1",
+        "zone_name": "North (territories)"
+      }
+    ]
+  }
+}

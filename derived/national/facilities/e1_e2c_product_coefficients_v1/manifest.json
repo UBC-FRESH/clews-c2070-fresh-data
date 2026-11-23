@@ -1,0 +1,70 @@
+{
+  "artifact": "e1_e2c_product_coefficients_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-23T05:38:38+00:00",
+  "inputs": {
+    "data/derived/national/bucking/open_data_imputation_v1/product_coefficients.csv": "c63cce025d2fb5be657ccf1d002ccf7f86a9f9cee03dcc07eab61acf1800ab95",
+    "data/derived/national/bucking/open_data_imputation_v3/comparison_v2_v3.csv": "89fa32f8475d2d6088e2ae8cd13808117313c53f44ac0b2d7d3a08c419a96ce1",
+    "data/derived/national/bucking/open_data_imputation_v3/density_calibration.csv": "ef0754e5c491bdb21a53df3ba03b77db869cd192d61c46eb2e9e61a08ef75adb",
+    "data/derived/national/bucking/open_data_imputation_v3/product_coefficients.csv": "a56e7ac76031ea6c0c8db11e05abd88761831e36cade05f8f72d6960bbc0cc3d"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "open_volume_comparison.csv": {
+      "bytes": 877,
+      "sha256": "57421f58b8d8eceea306e45bb964d053adbdd15cd100a7e6d68cb42350e96f3e"
+    },
+    "product_coefficients.csv": {
+      "bytes": 7604,
+      "sha256": "d06e4a683e91933b3b698e73e99137e62c44bab5dd882d490bca633a7b2d4d8c"
+    },
+    "report.md": {
+      "bytes": 2625,
+      "sha256": "4338acd4b51b703fe688c5f1b399071f986b29e0723085cdefa0bbef5376c028"
+    },
+    "summary.json": {
+      "bytes": 27480,
+      "sha256": "e64def303bf0aa4dfef472595d60bd448088c26d54c6cb16b7d873cd6efb726a"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.e1_e2c_coefficients",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "thirteen_jurisdictions",
+        "detail": "13 rows; 4 E1 measured + 9 E2c",
+        "status": "PASS"
+      },
+      {
+        "check_id": "coefficient_source",
+        "detail": "E1 or E2c on every row; 0 donor product shares",
+        "status": "PASS"
+      },
+      {
+        "check_id": "product_share_conservation",
+        "detail": "solid + pulp + other = 1",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_conservation",
+        "detail": "stem + branch/foliage = total; scenarios = gross * factor",
+        "status": "PASS"
+      },
+      {
+        "check_id": "open_volume",
+        "detail": "SK/NS/PE within +/-50% of open inventory volume",
+        "status": "PASS"
+      },
+      {
+        "check_id": "no_negative_or_nan",
+        "detail": "numeric fields finite and nonnegative",
+        "status": "PASS"
+      }
+    ]
+  }
+}

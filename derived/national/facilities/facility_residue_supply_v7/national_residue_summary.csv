@@ -1,0 +1,35 @@
+metric,residue_type,unit,value,rsyc_comparable,notes
+lhv_gj_per_odt,energy,GJ/odt,18.5,false,Dry LHV from data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json.
+total_feedstock_m3,process_residue,m3,131883804.547,false,Class-matched feedstock allocated to facilities.
+process_residue_odt,process_residue,odt,26959509.0227,false,Process residue generated at facilities; not RSYC harvest residue.
+process_residue_pj,process_residue,PJ,498.75091692,false,Process residue energy at the documented LHV.
+harvest_residue_gross_odt,harvest_residue_gross,odt,24022203.5717,false,Gross provincial harvest residue; not facility-assigned.
+harvest_residue_gross_pj,harvest_residue_gross,PJ,444.410766076,false,Gross harvest residue energy at the documented LHV.
+harvest_residue_recoverable_odt,harvest_residue_recoverable,odt,14413322.143,true,Recoverable provincial harvest residue; the RSYC-comparable stream.
+harvest_residue_recoverable_pj,harvest_residue_recoverable,PJ,266.646459646,true,Recoverable harvest residue energy at the documented LHV.
+harvest_residue_unrecovered_odt,harvest_residue_unrecovered,odt,9608881.42867,false,Unrecovered share of gross harvest residue.
+harvest_residue_unrecovered_pj,harvest_residue_unrecovered,PJ,177.76430643,false,Unrecovered harvest residue energy at the documented LHV.
+rsyc_base_119m_recoverable_odt,rsyc_base,odt,7080062.08603,true,RSYC province-factor base applied to the 119 Mm3 harvest case.
+rsyc_base_119m_recoverable_pj,rsyc_base,PJ,130.981148591,true,RSYC 119 Mm3 base at the documented LHV; derived value.
+rsyc_base_100m_recoverable_odt,rsyc_base_reference,odt,7009238.19598,false,Documented RSYC base at 100 Mm3; reference only.
+rsyc_base_100m_recoverable_pj,rsyc_base_reference,PJ,129.670906626,false,"Documented RSYC 100 Mm3 base; 129.6709 PJ is this reference, not the 119 Mm3 value."
+model_recoverable_odt,harvest_residue_recoverable,odt,14413322.143,true,Product-chain gross harvest residue x 0.60 recovery.
+model_recoverable_pj,harvest_residue_recoverable,PJ,266.646459646,true,Model recoverable harvest residue energy.
+rsyc_ratio,harvest_residue_recoverable,ratio,2.03576211167,true,Model recoverable harvest residue divided by the RSYC 119 Mm3 base.
+combined_process_plus_harvest_recoverable_odt,combined,odt,41372831.1658,false,Combined process plus recoverable harvest residue; explicitly not the RSYC comparison.
+combined_process_plus_harvest_recoverable_pj,combined,PJ,765.397376566,false,Combined process plus recoverable harvest energy; explicitly not the RSYC comparison.
+combined_process_plus_harvest_gross_odt,combined,odt,50981712.5944,false,Combined process plus gross harvest residue; explicitly not the RSYC comparison.
+combined_process_plus_harvest_gross_pj,combined,PJ,943.161682997,false,Combined process plus gross harvest energy; explicitly not the RSYC comparison.
+fallback_residue_odt,process_residue,odt,1401511.57873,false,Process residue from origin class streams routed to the national class fallback.
+fallback_residue_share,process_residue,fraction,0.0519857975734,false,National class fallback share of process residue.
+cross_border_residue_odt,process_residue,odt,1406575.62547,false,Process residue generated in a province different from the origin province.
+cross_border_residue_share,process_residue,fraction,0.0521736365558,false,Cross-border share of process residue; class fallback can exceed assignment cross-border volume.
+facilities_used,process_residue,count,208,false,Facilities receiving class-matched feedstock.
+facilities_with_positive_residue,process_residue,count,186,false,Facilities with positive process residue.
+hhi_process_residue,process_residue,index_0_1,0.0288726201832,false,Herfindahl-Hirschman index of facility process residue.
+top1_process_residue_share,process_residue,fraction,0.112650466303,false,Largest facility share of process residue.
+top5_process_residue_share,process_residue,fraction,0.295108663306,false,Five largest facility shares of process residue.
+published_residue_share,process_residue,fraction,0.622201502912,false,Process residue at published-capacity facilities.
+proxy_residue_share,process_residue,fraction,0.377798497088,false,Process residue at proxy and scaled-proxy facilities.
+scaled_proxy_residue_share,process_residue,fraction,0.298732920076,false,Process residue at proxy_harvest_scaled facilities.
+process_residue_odt_per_m3_feedstock,process_residue,odt/m3,0.204418648031,false,National process residue ratio.

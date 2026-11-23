@@ -1,0 +1,98 @@
+{
+  "artifact": "national_product_chain_v5",
+  "artifact_version": "5.0.0",
+  "coefficient_tiers": {
+    "E2c_open_inventory_density_calibrated": 9,
+    "donor_product_coefficients": 0,
+    "measured_bucking_pilot": 4
+  },
+  "generated_utc": "2026-11-23T05:38:39+00:00",
+  "inputs": {
+    "data/derived/national/facilities/e1_e2c_product_coefficients_v1/product_coefficients.csv": "d06e4a683e91933b3b698e73e99137e62c44bab5dd882d490bca633a7b2d4d8c",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04",
+    "data/derived/national/facilities/national_product_chain_v3/product_chain_by_province.csv": "1f950c290156dc206d5783cd29d25f60ef94256d39ae5754618d4058d8ddb430"
+  },
+  "labels": {
+    "facility_assignment": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_PRODUCT_CHAIN_V5.md": {
+      "bytes": 6762,
+      "sha256": "c666e8f5bfe4995e700dac60292fc3e01dd4753374baebf339a70ec1c8b40499"
+    },
+    "coefficients.csv": {
+      "bytes": 9686,
+      "sha256": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33"
+    },
+    "donor_vs_e2_coefficients.csv": {
+      "bytes": 7375,
+      "sha256": "4fbe0352b68358bc05fa39220a92e0b4b9033c0e7aa95d6ce035f554ad97502b"
+    },
+    "e1_coefficient_replacement.csv": {
+      "bytes": 3092,
+      "sha256": "8d20f3479b7b72336080eed2345be495855659713e57895428fb98954620cee6"
+    },
+    "e1_e2_coefficient_replacement.csv": {
+      "bytes": 10371,
+      "sha256": "fc9c5e34227f1827b181a0f84d909428f3629d5b26f960bec3e3f4ce012f5f20"
+    },
+    "e2_v2_vs_e2c_coefficients.csv": {
+      "bytes": 5518,
+      "sha256": "bd9679fd96d9b6577bfec558598fe2e818347c35f67ac87ae288c6c07b654dc9"
+    },
+    "e2c_density_evidence.csv": {
+      "bytes": 1728,
+      "sha256": "f7695ccd1ac2c86ccbe12abacfb2a42536bc188da2e1d7080e0ee16c188d3d61"
+    },
+    "product_chain_by_province.csv": {
+      "bytes": 21113,
+      "sha256": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184"
+    },
+    "residue_scenario_coefficients.csv": {
+      "bytes": 2381,
+      "sha256": "f72a046d153e66a54331e0ce30de509a149c0de6098b959865ed45aa20d6bd28"
+    },
+    "summary.json": {
+      "bytes": 61451,
+      "sha256": "a5d4876997bac9af0cbc7f11f34073a8a635391ee8c6b51cf4d03df837bbb7c5"
+    },
+    "v3_2_vs_v4_comparison.csv": {
+      "bytes": 11082,
+      "sha256": "b3b94311aa8082c87384878583b9db968f596268e5a59ab233d5c7c09c4e9210"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_product_chain_v5",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "thirteen_provinces",
+        "detail": "13 province rows with E1/E2 tiers",
+        "status": "PASS"
+      },
+      {
+        "check_id": "e1_e2_coefficient_source",
+        "detail": "4 measured + 9 E2 imputed; 0 donor product shares",
+        "status": "PASS"
+      },
+      {
+        "check_id": "grade_conservation",
+        "detail": "sawlog + pulp + other = harvest",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_conservation",
+        "detail": "stem + branch/foliage = total; scenarios = gross * factor",
+        "status": "PASS"
+      },
+      {
+        "check_id": "no_negative_or_nan",
+        "detail": "all numeric fields finite and nonnegative",
+        "status": "PASS"
+      }
+    ]
+  }
+}
