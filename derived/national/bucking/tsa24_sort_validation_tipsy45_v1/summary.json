@@ -1,0 +1,292 @@
+{
+  "artifact_version": "tipsy45_v1",
+  "caveats": [
+    "Industrial sort recovery is not official BC log grade. The bucker is dimension-only; defect, sweep, knot, rot, and product quality are absent.",
+    "TIPSY industrial-log curves are model output, not field measurements.",
+    "Multiple PSP plots can share one managed AU curve; per-plot RMSE is therefore not an independent model-error estimate.",
+    "Bucked volume is expanded with FAIB PHF_TREE to m3/ha and compared with the TIPSY industrial total at the same AU/age. Plot sums are m3/ha sums, not absolute volume.",
+    "The canonical managed_au_industrial_sorts.csv in tsa24_grade_curves is empty because the refreshed BTC run did not request the industrial-logs indicator bank; this validation records the separately compiled table it used and fails closed when no table is available."
+  ],
+  "diagnostics": {
+    "conifer_only": {
+      "diameter_tvd": 0.1465603458612365,
+      "length_tvd": 0.36895143649640766,
+      "pilot_share_of_total": 0.9252382801907887,
+      "pooled_overlap": 0.5833476753018964,
+      "pooled_tvd": 0.41665232469810365,
+      "tipsy_share_of_total": 0.9999999999999999
+    },
+    "diameter_marginal": {
+      "pilot": {
+        "D125": 0.6153110270524352,
+        "D152": 0.03767436938337055,
+        "D178": 0.006043403431993453,
+        "D20": 0.1489886421925788,
+        "D203": 0.012078410387533808,
+        "D254": 0.009293780369056225,
+        "D30": 0.09557178490130652,
+        "D305": 0.009671756237257308,
+        "D38": 0.06536682604446814
+      },
+      "tipsy": {
+        "D125": 0.6424728877805013,
+        "D20": 0.30758766756030903,
+        "D30": 0.0425144958287945,
+        "D38": 0.007424948830395267
+      },
+      "tvd": 0.18576088609579625
+    },
+    "evidence": "derived",
+    "grade_status": "not_assigned",
+    "length_marginal": {
+      "pilot": {
+        "L11": 0.17895793910817664,
+        "L13": 0.2194987474995897,
+        "L5": 0.0012364211191390837,
+        "L51": 0.1746913574200533,
+        "L63": 0.13101475720017008,
+        "L8": 0.21983905784365987,
+        "none": 0.07476171980921134
+      },
+      "tipsy": {
+        "L11": 0.06678446776833596,
+        "L13": 0.04745992396298274,
+        "L5": 0.05496154408356661,
+        "L51": 0.3784941179666715,
+        "L63": 0.08905831985913924,
+        "L8": 0.363241626359304
+      },
+      "tvd": 0.40093045202668987
+    },
+    "log_lengths": {
+      "by_sort": {
+        "D125L11": {
+          "11.000": 1684
+        },
+        "D125L13": {
+          "13.000": 1850
+        },
+        "D125L5": {
+          "5.000": 79
+        },
+        "D125L51": {
+          "5.100": 5805
+        },
+        "D125L63": {
+          "6.300": 3812
+        },
+        "D125L8": {
+          "8.000": 3342
+        },
+        "D152": {
+          "11.000": 190,
+          "13.000": 4,
+          "2.500": 529,
+          "5.000": 79,
+          "5.100": 319,
+          "6.300": 189,
+          "8.000": 288
+        },
+        "D178": {
+          "11.000": 2,
+          "2.500": 155,
+          "5.000": 29,
+          "5.100": 92,
+          "6.300": 2,
+          "8.000": 15
+        },
+        "D203": {
+          "11.000": 3,
+          "2.500": 372,
+          "5.000": 59,
+          "5.100": 92,
+          "6.300": 4,
+          "8.000": 7
+        },
+        "D20L11": {
+          "11.000": 431
+        },
+        "D20L13": {
+          "13.000": 118
+        },
+        "D20L8": {
+          "8.000": 1413
+        },
+        "D254": {
+          "11.000": 5,
+          "2.500": 226,
+          "5.000": 40,
+          "5.100": 39,
+          "6.300": 3,
+          "8.000": 2
+        },
+        "D305": {
+          "11.000": 1,
+          "2.500": 162,
+          "5.000": 28,
+          "5.100": 32,
+          "6.300": 1,
+          "8.000": 1
+        },
+        "D30L11": {
+          "11.000": 194
+        },
+        "D30L13": {
+          "13.000": 283
+        },
+        "D30L8": {
+          "8.000": 133
+        },
+        "D38L11": {
+          "11.000": 93
+        },
+        "D38L13": {
+          "13.000": 88
+        },
+        "D38L8": {
+          "8.000": 70
+        }
+      },
+      "counts": {
+        "11.000": 2603,
+        "13.000": 2343,
+        "2.500": 1444,
+        "5.000": 314,
+        "5.100": 6379,
+        "6.300": 4011,
+        "8.000": 5271
+      },
+      "non_tipsy_nominal_lengths": {
+        "10.000": 0,
+        "12.500": 0,
+        "15.000": 0,
+        "2.400": 0,
+        "7.500": 0
+      },
+      "volume_m3": {
+        "11.000": 1547.6276363318527,
+        "13.000": 1791.803928433244,
+        "2.500": 168.85154949301634,
+        "5.000": 66.13555534238594,
+        "5.100": 1510.1683214934083,
+        "6.300": 1040.5840162674954,
+        "8.000": 1751.3118022875487
+      }
+    },
+    "n_logs": 22365,
+    "n_plots": 341,
+    "note": "Diameter marginal isolates top-diameter definition error. Length marginal and non-TIPSY nominal lengths isolate bucking/DP segmentation. Deciduous codes have no published length group.",
+    "pooled_overlap": 0.5596205336088572,
+    "pooled_tvd": 0.4403794663911428
+  },
+  "evidence_tiers": {
+    "comparison": "derived",
+    "pilot_sorts": "dimension_only",
+    "tipsy_industrial_sorts": "model_output"
+  },
+  "extended_with_species_fallback": {
+    "n_plots": 356,
+    "plot_tvd": {
+      "max_tvd": 1.0,
+      "mean_overlap": 0.46152243235961776,
+      "mean_tvd": 0.5384775676403823,
+      "median_tvd": 0.5232575422948518,
+      "min_tvd": 0.1927676537585421,
+      "n": 356,
+      "volume_weighted_overlap": 0.47059590964498554,
+      "volume_weighted_tvd": 0.5294040903550146
+    },
+    "pooled_overlap": 0.5572142204357621,
+    "pooled_tvd": 0.44278577956423804
+  },
+  "generated_utc": "2026-11-23T00:58:07+00:00",
+  "grade_status": "not_assigned",
+  "join": {
+    "basis": "FAIB plot -> BEC + supported leading species -> managed FEMIC AU stratum (including combined-species strata) -> FEMIC site-index class -> managed AU -> TIPSY industrial-log curve interpolated at the FAIB stand age. This is the pilot benchmark join, not an operational AU assignment.",
+    "fail_closed_on_unexpected_codes": true,
+    "fallbacks": [
+      "pilot grade_benchmark.csv AU/stratum/SI/age when the primary join does not resolve a plot",
+      "species-mean TIPSY industrial curve when no AU is available but the leading species has a TIPSY curve; reported separately"
+    ],
+    "no_age_imputation": true,
+    "no_threshold_tuning": true,
+    "sort_alias": {
+      "D125L50": "D125L5"
+    }
+  },
+  "label": "industrial_sort_validation",
+  "labels": [
+    "industrial_sort_validation"
+  ],
+  "official_grade_validation": false,
+  "pass_fail": "not_assessed_no_pre_registered_tolerance",
+  "primary_au_match": {
+    "n_au": 14,
+    "n_plots": 341,
+    "plot_tvd": {
+      "max_tvd": 1.0,
+      "mean_overlap": 0.4646337374491882,
+      "mean_tvd": 0.5353662625508119,
+      "median_tvd": 0.5176190861010443,
+      "min_tvd": 0.1927676537585421,
+      "n": 341,
+      "volume_weighted_overlap": 0.473375754218513,
+      "volume_weighted_tvd": 0.5266242457814871
+    },
+    "pooled_overlap": 0.5596205336088572,
+    "pooled_tvd": 0.4403794663911428,
+    "volume": {
+      "bias_sum_m3ha": 2632.985548795815,
+      "mae_m3ha": 105.20274907925669,
+      "mean_bias_m3ha": 7.7213652457355275,
+      "mean_ratio": 3.132357046736324,
+      "median_ratio": 1.0752338848773748,
+      "n": 341,
+      "observed_sum_m3ha": 90786.68445120417,
+      "predicted_sum_m3ha": 93419.67,
+      "ratio_predicted_observed": 1.0290018912433243,
+      "relative_bias": 0.029001891243324193,
+      "rmse_m3ha": 137.44825452157704
+    }
+  },
+  "sample": {
+    "bucked_log_m3_comparable_au": 7876.482809648952,
+    "bucked_log_m3_comparable_total": 8138.262381272753,
+    "bucked_log_m3_excluded": 3588.854806769318,
+    "bucked_log_m3_total": 11727.117188042072,
+    "bucked_log_m3ha_comparable_au": 90786.68445120417,
+    "n_au_comparable": 14,
+    "n_au_tipsy_curves": 16,
+    "n_au_total": 14,
+    "n_logs_comparable_au": 22365,
+    "n_logs_comparable_total": 23054,
+    "n_logs_excluded": 12535,
+    "n_logs_total": 35589,
+    "n_plots_comparable_au": 341,
+    "n_plots_comparable_species": 15,
+    "n_plots_comparable_total": 356,
+    "n_plots_status": {
+      "comparable_au": 341,
+      "comparable_species": 15,
+      "no_age": 71,
+      "no_au_match": 22,
+      "no_logs": 44,
+      "zero_pilot_volume": 0,
+      "zero_tipsy_volume": 65
+    },
+    "n_plots_total": 558,
+    "n_plots_with_logs": 514,
+    "n_trees_comparable_au": 12950,
+    "n_trees_comparable_total": 13412,
+    "n_trees_excluded": 6641,
+    "n_trees_total": 20053,
+    "tipsy_industrial_total_m3ha_comparable_au": 93419.67
+  },
+  "status": "reported",
+  "tipsy_source": {
+    "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/bucking/tsa24_sort_validation_v0/tipsy_industrial_sorts.csv",
+    "role": "regenerated_btc_industrial_logs"
+  },
+  "tolerance": null,
+  "validation": "industrial_sort_validation"
+}

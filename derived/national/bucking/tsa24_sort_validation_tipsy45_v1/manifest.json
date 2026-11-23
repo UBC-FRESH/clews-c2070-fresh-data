@@ -1,0 +1,152 @@
+{
+  "artifact_version": "tipsy45_v1",
+  "coverage": {
+    "age_max": 350.0,
+    "age_min": 0.0,
+    "n_au_curve": 16,
+    "n_logs_total": 35589,
+    "n_plots_comparable_au": 341,
+    "n_plots_comparable_species": 15,
+    "n_plots_total": 558,
+    "n_species_curve": 5,
+    "n_trees_total": 20053,
+    "sort_aliases": {
+      "D125L50": "D125L5"
+    },
+    "sort_codes": [
+      "D38L13",
+      "D38L11",
+      "D38L8",
+      "D30L13",
+      "D30L11",
+      "D30L8",
+      "D20L13",
+      "D20L11",
+      "D20L8",
+      "D125L13",
+      "D125L11",
+      "D125L8",
+      "D125L63",
+      "D125L51",
+      "D125L5",
+      "D305",
+      "D254",
+      "D203",
+      "D178",
+      "D152"
+    ]
+  },
+  "created_utc": "2026-11-23T00:58:07+00:00",
+  "evidence": {
+    "comparison": "derived",
+    "grade_status": "not_assigned",
+    "pilot_sorts": "dimension_only",
+    "tipsy_industrial_sorts": "model_output"
+  },
+  "git": {
+    "branch": "feature/osecan-zonal-bc-supply",
+    "head": "1f04ada3cf0ec6977ab68db27201ca4eb1102b28",
+    "status_porcelain": "M data\n M workflows/national/bucking/bc_psp_validation.py\n M workflows/national/bucking/national_bucking_pilot_v2.py\n?? docs/UngGuoFortin2013.pdf\n?? docs/agent-integrity-protocol.md\n?? extract_provenance.py\n?? tests/test_bucking_profiles.py\n?? workflows/national/bucking/bc_biomass_allometry.py\n?? workflows/national/bucking/profiles.py\n?? workflows/national/bucking/rules/bc_biomass_allometry_map.csv\n?? workflows/national/bucking/rules/cfs_biomass/\n?? workflows/national/bucking/rules/tipsy45_profile.yaml"
+  },
+  "grade_status": "not_assigned",
+  "inputs": [
+    {
+      "bytes": 10468596,
+      "label": "bucked_logs",
+      "path": "data/derived/national/bucking/bc_psp_validation_tipsy45_v1/bucked_logs.csv",
+      "sha256": "50125099d996e395fb941feb662850174af0989c9f5440dc73ef8a094b3f5e9c"
+    },
+    {
+      "bytes": 19284864,
+      "label": "selected_trees",
+      "path": "data/derived/national/bucking/bc_psp_validation_tipsy45_v1/selected_trees.csv",
+      "sha256": "a56f0b3949528edb4209817fd6ea66e966a390cfd1f13fed5e8dd37b564ced03"
+    },
+    {
+      "bytes": 3409,
+      "label": "au_grade_coverage",
+      "path": "data/derived/national/bucking/tsa24_grade_curves/au_grade_coverage.csv",
+      "sha256": "74ca9a5a95c1960889deb2538bdde7dcbc36595b8a8b1dd8929e1353b54a3a04"
+    },
+    {
+      "bytes": 126847,
+      "label": "tipsy_industrial_sorts",
+      "path": "data/derived/national/bucking/tsa24_sort_validation_v0/tipsy_industrial_sorts.csv",
+      "sha256": "4b6b7f5952278ab139293839fa4bb44ca7d2f09a7000218cc371c1e37d908656"
+    },
+    {
+      "bytes": 14713,
+      "label": "pilot_grade_benchmark",
+      "path": "data/derived/national/bucking/tsa24_pilot/grade_benchmark.csv",
+      "sha256": "c6671e4066bfe4402dc359d76f6d0f502f76d30e0ad6c4622e5e5f2aab7c8eec"
+    }
+  ],
+  "label": "industrial_sort_validation",
+  "official_grade_validation": false,
+  "output_check": {
+    "n_au_rows": 14,
+    "n_plot_rows": 558,
+    "n_sort_rows": 320,
+    "nan_or_negative_failures": 0,
+    "status": "pass"
+  },
+  "outputs": [
+    {
+      "bytes": 456365,
+      "label": "plot_sort_comparison",
+      "path": "plot_sort_comparison.csv",
+      "rows": 558,
+      "sha256": "00023376468c01330f93204c5ceb762b59660adb433ea7523c67c20047de0dca"
+    },
+    {
+      "bytes": 2287,
+      "label": "au_sort_summary",
+      "path": "au_sort_summary.csv",
+      "rows": 14,
+      "sha256": "27a099f6e2e442891fcd5e3756e0cffd918ef1c463dbe244de8db2e3d1b98360"
+    },
+    {
+      "bytes": 52916,
+      "label": "sort_comparison",
+      "path": "sort_comparison.csv",
+      "rows": 320,
+      "sha256": "f010eabb6069fcab03df5d2f2d7e0dd514c2c09a85f95e5287bf8859d52b5c32"
+    },
+    {
+      "bytes": 21018,
+      "label": "metrics",
+      "path": "metrics.json",
+      "rows": null,
+      "sha256": "d71d3efcc66917bbd007469ed4b738f2a3db24b3a3efe377ccc9b322971b4179"
+    },
+    {
+      "bytes": 9006,
+      "label": "summary",
+      "path": "summary.json",
+      "rows": null,
+      "sha256": "5fd48168cecb5f9a78269ecf3cec8dfef9f72c5601ff08e180ef1d09c3aa5bc1"
+    },
+    {
+      "bytes": 3868,
+      "label": "diagnostics",
+      "path": "diagnostics.json",
+      "rows": null,
+      "sha256": "b05dec4b8fdfa5a571b66e5e4cabb8acbedcfbefe885205a6a8a9d2b77bafd88"
+    },
+    {
+      "bytes": 7872,
+      "label": "VALIDATION_REPORT",
+      "path": "VALIDATION_REPORT.md",
+      "rows": null,
+      "sha256": "264ee9f658e12f1d01b187df0c04c404f7e4e7249073536cc5ccc59e8d8dd80f"
+    }
+  ],
+  "status": "complete",
+  "tipsy_sorts_source": {
+    "canonical_expected_path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/bucking/tsa24_grade_curves/managed_au_industrial_sorts.csv",
+    "canonical_note": "The canonical managed_au_industrial_sorts.csv has no data rows in this checkout because the refreshed BTC compile requested only log-grades and residual-fibre. The regenerated table was produced from the same TSA24 BTC model with the industrial-logs bank.",
+    "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/bucking/tsa24_sort_validation_v0/tipsy_industrial_sorts.csv",
+    "role": "regenerated_btc_industrial_logs"
+  },
+  "validation": "industrial_sort_validation"
+}
