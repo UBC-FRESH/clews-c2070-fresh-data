@@ -1,0 +1,510 @@
+{
+  "artifact": "national_facility_assignment_v9",
+  "artifact_version": "9.0.0",
+  "caveats": [
+    "Road distances are the v8 province-factor screening distances, not observed routes for every origin-facility pair.",
+    "The 52.5 m3 base payload and empty return are the transport v1 base assumptions; low/high cost columns bound cost parameters only, not route or payload choice.",
+    "The transport cost covers trucking only. It excludes feedstock, processing, conversion, handling, and storage costs.",
+    "Tier comparison uses face-value adopted supply-curve tiers with no currency or price-year conversion; see the tier caveat.",
+    "V9 is a screening LP with finite facility capacities and a soft local preference. It is not a market equilibrium, procurement plan, or policy recommendation.",
+    "V9 uses more proxy-capacity facilities than v8; the proxy share is reported so the evidence trade-off is explicit.",
+    "Products and residue are unchanged in model definitions; no product/residue artifact is written by this run."
+  ],
+  "comparison": [
+    {
+      "delta_pct": "0.000000000",
+      "delta_v9_minus_v8": "0.000000015",
+      "metric": "assigned_m3",
+      "note": "assigned volume",
+      "unit": "m3/yr",
+      "v8_value": "118977339.099999994",
+      "v9_value": "118977339.100000009"
+    },
+    {
+      "delta_pct": "0.000000000",
+      "delta_v9_minus_v8": "0.000000015",
+      "metric": "local_m3",
+      "note": "volume served inside the origin province",
+      "unit": "m3/yr",
+      "v8_value": "118940963.099999994",
+      "v9_value": "118940963.100000009"
+    },
+    {
+      "delta_pct": "0.000000000",
+      "delta_v9_minus_v8": "0.000000000",
+      "metric": "local_share",
+      "note": "local / assigned",
+      "unit": "share",
+      "v8_value": "0.999694261",
+      "v9_value": "0.999694261"
+    },
+    {
+      "delta_pct": "0.000000000",
+      "delta_v9_minus_v8": "0.000000000",
+      "metric": "cross_border_m3",
+      "note": "volume served out of province",
+      "unit": "m3/yr",
+      "v8_value": "36376.000000000",
+      "v9_value": "36376.000000000"
+    },
+    {
+      "delta_pct": "-0.000000000",
+      "delta_v9_minus_v8": "-0.000000000",
+      "metric": "cross_border_share",
+      "note": "cross-border / assigned",
+      "unit": "share",
+      "v8_value": "0.000305739",
+      "v9_value": "0.000305739"
+    },
+    {
+      "delta_pct": "-21.594770850",
+      "delta_v9_minus_v8": "-15443259.226286054",
+      "metric": "published_m3",
+      "note": "volume on published capacity",
+      "unit": "m3/yr",
+      "v8_value": "71513883.307695001",
+      "v9_value": "56070624.081408948"
+    },
+    {
+      "delta_pct": "32.537157205",
+      "delta_v9_minus_v8": "15443259.226286069",
+      "metric": "proxy_m3",
+      "note": "volume on proxy capacity",
+      "unit": "m3/yr",
+      "v8_value": "47463455.792304993",
+      "v9_value": "62906715.018591061"
+    },
+    {
+      "delta_pct": "32.537157205",
+      "delta_v9_minus_v8": "0.129800005",
+      "metric": "proxy_share_of_assigned",
+      "note": "proxy / assigned",
+      "unit": "share",
+      "v8_value": "0.398928537",
+      "v9_value": "0.528728542"
+    },
+    {
+      "delta_pct": "-2.403846154",
+      "delta_v9_minus_v8": "-5.000000000",
+      "metric": "facilities_used",
+      "note": "distinct facilities receiving volume",
+      "unit": "count",
+      "v8_value": "208.000000000",
+      "v9_value": "203.000000000"
+    },
+    {
+      "delta_pct": "-2.403846154",
+      "delta_v9_minus_v8": "-5.000000000",
+      "metric": "assignments",
+      "note": "assignment rows",
+      "unit": "count",
+      "v8_value": "208.000000000",
+      "v9_value": "203.000000000"
+    },
+    {
+      "delta_pct": "-6.546471012",
+      "delta_v9_minus_v8": "-36.564407527",
+      "metric": "mean_road_distance_km",
+      "note": "assigned-volume-weighted mean road distance",
+      "unit": "km",
+      "v8_value": "558.536155769",
+      "v9_value": "521.971748242"
+    },
+    {
+      "delta_pct": "-4.228292177",
+      "delta_v9_minus_v8": "-64.567085255",
+      "metric": "max_road_distance_km",
+      "note": "maximum assignment-row road distance",
+      "unit": "km",
+      "v8_value": "1527.025157061",
+      "v9_value": "1462.458071806"
+    },
+    {
+      "delta_pct": "-17.905509445",
+      "delta_v9_minus_v8": "-97.096646332",
+      "metric": "median_road_distance_km",
+      "note": "unweighted median row distance",
+      "unit": "km",
+      "v8_value": "542.272458829",
+      "v9_value": "445.175812497"
+    },
+    {
+      "delta_pct": "-6.546471012",
+      "delta_v9_minus_v8": "-4350335913.352378845",
+      "metric": "total_volume_distance_m3_km",
+      "note": "volume times road distance",
+      "unit": "m3*km/yr",
+      "v8_value": "66453145604.571670532",
+      "v9_value": "62102809691.219291687"
+    },
+    {
+      "delta_pct": "-6.372998863",
+      "delta_v9_minus_v8": "-434442926.796370506",
+      "metric": "transport_cost_cad",
+      "note": "modelled transport cost",
+      "unit": "CAD/yr",
+      "v8_value": "6816930869.200556755",
+      "v9_value": "6382487942.404186249"
+    },
+    {
+      "delta_pct": "-6.372998863",
+      "delta_v9_minus_v8": "-3.651476240",
+      "metric": "transport_cost_cad_m3",
+      "note": "transport cost per assigned m3",
+      "unit": "CAD/m3",
+      "v8_value": "57.296044110",
+      "v9_value": "53.644567871"
+    },
+    {
+      "delta_pct": "-6.372998863",
+      "delta_v9_minus_v8": "-0.897168609",
+      "metric": "transport_cost_cad_gj",
+      "note": "transport cost per delivered GJ",
+      "unit": "CAD/GJ",
+      "v8_value": "14.077652116",
+      "v9_value": "13.180483506"
+    },
+    {
+      "delta_pct": "-2.551020408",
+      "delta_v9_minus_v8": "-5.000000000",
+      "metric": "binding_facilities",
+      "note": "facilities at capacity",
+      "unit": "count",
+      "v8_value": "196.000000000",
+      "v9_value": "191.000000000"
+    },
+    {
+      "delta_pct": "0.993294568",
+      "delta_v9_minus_v8": "1104850.967300981",
+      "metric": "binding_volume_m3",
+      "note": "volume at binding facilities",
+      "unit": "m3/yr",
+      "v8_value": "111230948.337221250",
+      "v9_value": "112335799.304522231"
+    },
+    {
+      "delta_pct": "1.559360414",
+      "delta_v9_minus_v8": "0.014768996",
+      "metric": "used_facility_utilization",
+      "note": "assigned / capacity of used facilities",
+      "unit": "share",
+      "v8_value": "0.947118830",
+      "v9_value": "0.961887826"
+    },
+    {
+      "delta_pct": "2.097192396",
+      "delta_v9_minus_v8": "0.000269917",
+      "metric": "hhi",
+      "note": "sum of squared facility shares",
+      "unit": "index_0_1",
+      "v8_value": "0.012870376",
+      "v9_value": "0.013140293"
+    },
+    {
+      "delta_pct": "-1.403403718",
+      "delta_v9_minus_v8": "-0.002209854",
+      "metric": "top5_share",
+      "note": "top five facilities / assigned",
+      "unit": "share",
+      "v8_value": "0.157463893",
+      "v9_value": "0.155254038"
+    }
+  ],
+  "generated_utc": "2026-11-23T14:22:55+00:00",
+  "labels": {
+    "assignment_change_vs_v6": true,
+    "assignment_change_vs_v8": true,
+    "capacity_change": false,
+    "evidence_label": "model_estimate",
+    "floor_change": false,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "product_change": false,
+    "residue_change": false,
+    "ui_changed": false
+  },
+  "method": {
+    "capacity_source": "national_facility_capacity_v3",
+    "empty_return": true,
+    "engine": "transport-aware bipartite linear program (HiGHS)",
+    "floor_multiplier": 1.2,
+    "harvest_source": "119 Mm3 provincial allocation",
+    "local_penalty_cad_m3": 51.45037624871347,
+    "local_penalty_km": 500.0,
+    "local_penalty_note": "v8 documented 500 km cross-border rule converted to 2026 CAD/m3 with the same transport cost curve; local preference is therefore a cost penalty, not a hard flow prohibition.",
+    "local_preference": "cross-border transport penalty",
+    "primary_scenario": "province_capacity_floor",
+    "products_residue": "unchanged; no product or residue output is written or recalculated",
+    "tie_break_cad_m3": 1e-12,
+    "transport_cost_scenario": "base",
+    "transport_energy_gj_per_m3": 4.07,
+    "transport_model": "transport_cost_v1 trip_cost",
+    "transport_payload_m3": 52.5,
+    "v8_reference": "national_facility_assignment_v8 province_capacity_floor"
+  },
+  "report": "# Transport-Aware National Facility Assignment V9\n\nStatus: **model estimate screening** \u2014 `evidence_label=model_estimate`, `observed=false`, `policy_grade=false`. No national claim and no official OSeCAN change.\n\n## 1. Transport cost v8\n\nTransport cost is the committed transport cost v1 truck model (52.5 m3 base payload, empty return, 2026 CAD). Row cost = assigned m3 x cost/m3 at the row road distance. Energy is held at the base 4.07 GJ/m3 (0.22 ODT/m3 x 18.5 GJ/ODT) so low/high columns express cost-parameter uncertainty only.\n\n- Assigned: **118,977,339 m3/yr**; transport cost: **6.817 billion CAD/yr**; **57.30 CAD/m3**; **14.078 CAD/GJ**.\n- Assigned-volume-weighted mean road distance: **558.5 km**; maximum row distance: **1,527.0 km**.\n- Facility count with positive assignment: **208**; proxy share of assigned volume: **0.3989**.\n\n### Tier face-value comparison (v8 primary)\n\n| Tier | Tier CAD/GJ | Volume above | Share above | Facilities above | Delivered CAD/GJ |\n|---|---|---|---|---|---|\n| T1 | 2.457 | 112,240,750 | 0.9434 | 188 | 16.535 |\n| T2 | 2.457 | 112,240,750 | 0.9434 | 188 | 16.535 |\n| T3 | 3.194 | 109,950,490 | 0.9241 | 183 | 17.272 |\n| T4 | 3.500 | 109,950,490 | 0.9241 | 183 | 17.578 |\n\n> Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.\n\n## 2. V9 assignment\n\nV9 is a bipartite transportation linear program. It minimises modelled transport cost plus a local-preference penalty, subject to every provincial offer equality and every finite facility capacity. The penalty is the v8 documented 500 km cross-border rule expressed in 2026 CAD/m3 through the same transport curve (**51.45 CAD/m3**). Capacity v3 and the 1.2x provincial floor are unchanged. Products and residue are not recalculated or written.\n\n- Assigned: **118,977,339 m3/yr**; transport cost: **6.382 billion CAD/yr**; **53.64 CAD/m3**; **13.180 CAD/GJ**.\n- Mean road distance **522.0 km**; maximum row distance **1,462.5 km**; facilities used **203**.\n- Local volume **118,940,963 m3/yr**; cross-border **36,376 m3/yr** (0.000306 share); proxy share **0.5287**.\n\n### V9 province summary\n\n| Province | Offer | Local | Cross | Mean km | Cost CAD | CAD/GJ | Facilities |\n|---|---|---|---|---|---|---|---|\n| AB | 22,891,404 | 22,891,404 | 0 | 228.5 | 557,224,009 | 5.981 | 15 |\n| BC | 39,978,577 | 39,978,577 | 0 | 220.2 | 939,786,060 | 5.776 | 49 |\n| MB | 1,135,236 | 1,135,236 | 0 | 787.6 | 91,011,928 | 19.698 | 4 |\n| NB | 6,234,700 | 6,234,700 | 0 | 159.0 | 108,452,345 | 4.274 | 22 |\n| NL | 1,454,038 | 1,454,038 | 0 | 947.7 | 139,824,901 | 23.627 | 1 |\n| NS | 2,388,245 | 2,388,245 | 0 | 56.6 | 17,126,518 | 1.762 | 8 |\n| NT | 36,376 | 0 | 36,376 | 1,147.0 | 4,221,979 | 28.517 | 1 |\n| ON | 13,493,596 | 13,493,596 | 0 | 700.8 | 964,776,640 | 17.567 | 30 |\n| PE | 302,210 | 302,210 | 0 | 66.1 | 2,453,763 | 1.995 | 2 |\n| QC | 26,674,334 | 26,674,334 | 0 | 1,267.7 | 3,417,452,910 | 31.479 | 67 |\n| SK | 4,344,698 | 4,344,698 | 0 | 302.1 | 137,678,937 | 7.786 | 3 |\n| YT | 43,926 | 43,926 | 0 | 549.7 | 2,477,955 | 13.861 | 1 |\n\n## 3. V8 versus V9\n\n| Metric | Unit | V8 | V9 | Delta | Delta % |\n|---|---|---|---|---|---|\n| assigned_m3 | m3/yr | 118,977,339.1000 | 118,977,339.1000 | 0.0000 | 0.00 |\n| local_m3 | m3/yr | 118,940,963.1000 | 118,940,963.1000 | 0.0000 | 0.00 |\n| local_share | share | 0.9997 | 0.9997 | 0.0000 | 0.00 |\n| cross_border_m3 | m3/yr | 36,376.0000 | 36,376.0000 | 0.0000 | 0.00 |\n| cross_border_share | share | 0.0003 | 0.0003 | -0.0000 | -0.00 |\n| published_m3 | m3/yr | 71,513,883.3077 | 56,070,624.0814 | -15,443,259.2263 | -21.59 |\n| proxy_m3 | m3/yr | 47,463,455.7923 | 62,906,715.0186 | 15,443,259.2263 | 32.54 |\n| proxy_share_of_assigned | share | 0.3989 | 0.5287 | 0.1298 | 32.54 |\n| facilities_used | count | 208.0000 | 203.0000 | -5.0000 | -2.40 |\n| assignments | count | 208.0000 | 203.0000 | -5.0000 | -2.40 |\n| mean_road_distance_km | km | 558.5362 | 521.9717 | -36.5644 | -6.55 |\n| max_road_distance_km | km | 1,527.0252 | 1,462.4581 | -64.5671 | -4.23 |\n| median_road_distance_km | km | 542.2725 | 445.1758 | -97.0966 | -17.91 |\n| total_volume_distance_m3_km | m3*km/yr | 66,453,145,604.5717 | 62,102,809,691.2193 | -4,350,335,913.3524 | -6.55 |\n| transport_cost_cad | CAD/yr | 6,816,930,869.2006 | 6,382,487,942.4042 | -434,442,926.7964 | -6.37 |\n| transport_cost_cad_m3 | CAD/m3 | 57.2960 | 53.6446 | -3.6515 | -6.37 |\n| transport_cost_cad_gj | CAD/GJ | 14.0777 | 13.1805 | -0.8972 | -6.37 |\n| binding_facilities | count | 196.0000 | 191.0000 | -5.0000 | -2.55 |\n| binding_volume_m3 | m3/yr | 111,230,948.3372 | 112,335,799.3045 | 1,104,850.9673 | 0.99 |\n| used_facility_utilization | share | 0.9471 | 0.9619 | 0.0148 | 1.56 |\n| hhi | index_0_1 | 0.0129 | 0.0131 | 0.0003 | 2.10 |\n| top5_share | share | 0.1575 | 0.1553 | -0.0022 | -1.40 |\n\n### Local-preference sensitivity\n\n| Penalty km | Penalty CAD/m3 | Cross share | Mean km | Cost CAD | CAD/GJ | Proxy share |\n|---|---|---|---|---|---|---|\n| 0 | 0.00 | 0.0790 | 506.3 | 6,196,584,308 | 12.797 | 0.5897 |\n| 250 | 26.48 | 0.0264 | 512.3 | 6,268,033,610 | 12.944 | 0.5528 |\n| 500 | 51.45 | 0.0003 | 522.0 | 6,382,487,942 | 13.180 | 0.5287 |\n| 1,000 | 101.38 | 0.0003 | 522.0 | 6,382,487,942 | 13.180 | 0.5287 |\n\n## 4. Uneconomic facilities and distance\n\nThe table below is a **transport-only** face-value screen. It is not a policy, investment, or official OSeCAN statement. A positive flag means modelled transport cost alone exceeds the tier face value before any feedstock, processing, or conversion cost is added.\n\n- **T1**: 188 facilities, 112,240,750 m3/yr (0.9434 of assigned volume) have facility-weighted mean transport-only cost above the tier.\n- **T2**: 188 facilities, 112,240,750 m3/yr (0.9434 of assigned volume) have facility-weighted mean transport-only cost above the tier.\n- **T3**: 183 facilities, 109,950,490 m3/yr (0.9241 of assigned volume) have facility-weighted mean transport-only cost above the tier.\n- **T4**: 183 facilities, 109,950,490 m3/yr (0.9241 of assigned volume) have facility-weighted mean transport-only cost above the tier.\n\n### Highest transport-only cost facilities (v8 primary)\n\n| Facility | Province | Class | m3/yr | Mean km | CAD/GJ | Above T4 |\n|---|---|---|---|---|---|---|\n| G.D.S. \u00c9nergie inc. | QC | PELLET | 325,998 | 1,527.0 | 37.841 | true |\n| GDS \u00c9nergie | QC | PELLET | 153,846 | 1,526.8 | 37.837 | true |\n| Groupe Lebel - Cacouna | QC | PELLET | 153,846 | 1,522.2 | 37.723 | true |\n| Groupe Lebel inc. (Lebel \u00c9nergie) | QC | PELLET | 307,050 | 1,520.2 | 37.673 | true |\n| Scierie de la Vall\u00e9e | QC | SAW | 42,900 | 1,503.2 | 37.256 | true |\n| Scierie SerDam | QC | SAW | 53,000 | 1,485.0 | 36.811 | true |\n| Bois Marsoui G.D.S. inc. (Marsoui) | QC | SAW | 242,000 | 1,479.9 | 36.686 | true |\n| Charbon de Bois Franc Basques inc. | QC | BIO | 22,000 | 1,476.1 | 36.591 | true |\n| Uniboard Canada Inc | QC | PANEL | 950,000 | 1,476.0 | 36.590 | true |\n| Kraft Nordic S.E.C. (p\u00e2tes et papiers) | QC | PULP | 1,575,000 | 1,462.5 | 36.257 | true |\n\n- Facilities with transport-only cost below the lowest face-value tier (T1): **20**. This short-haul tail is the only part of the v8 assignment that is not above T1 on transport alone.\n- The v9 facility set is included in `v9_facility_transport_cost.csv`; its tier flags are computed with the same threshold and should be read with the same caveat.\n\n## 5. Validation\n\n- `v8_cost_arithmetic`: true\n- `v8_conservation`: true\n- `v9_conservation`: true\n- `v9_local_plus_cross_equals_assigned`: true\n- `v9_capacity_bounds`: true\n- `v9_local_first_shortfall_only`: true\n- `province_reconciliation`: true\n- `comparison_arithmetic`: true\n- `v9_transport_cost_below_v8`: true\n- `v9_mean_distance_below_v8`: true\n- `products_residue_unchanged`: true\n- `tier_flags_well_formed`: true\n- `sensitivity_cost_order`: true\n- `no_nan_or_negative`: true\n- `utilization_complete`: true\n- `labels`: true\n\n## 6. Caveats\n\n- Road distances are the v8 province-factor screening distances, not observed routes for every origin-facility pair.\n- The 52.5 m3 base payload and empty return are the transport v1 base assumptions; low/high cost columns bound cost parameters only, not route or payload choice.\n- The transport cost covers trucking only. It excludes feedstock, processing, conversion, handling, and storage costs.\n- Tier comparison uses face-value adopted supply-curve tiers with no currency or price-year conversion; see the tier caveat.\n- V9 is a screening LP with finite facility capacities and a soft local preference. It is not a market equilibrium, procurement plan, or policy recommendation.\n- V9 uses more proxy-capacity facilities than v8; the proxy share is reported so the evidence trade-off is explicit.\n- Products and residue are unchanged in model definitions; no product/residue artifact is written by this run.\n\n## 7. Reproduce\n\n`.venv/bin/python -m workflows.national.facilities.national_facility_assignment_v9`\n",
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment_v9",
+  "sensitivity": [
+    {
+      "binding_facilities": 177,
+      "binding_volume_m3": "115765211.106322870",
+      "cross_border_m3": "9402589.255133312",
+      "cross_border_share": "0.079028404",
+      "facilities_used": 186,
+      "local_m3": "109574749.844866678",
+      "local_penalty_cad_m3": "0.000000000",
+      "local_penalty_km": "0.000",
+      "proxy_share_of_assigned": "0.589667704",
+      "road_distance_km_max": "1337.572661560",
+      "road_distance_km_mean": "506.325374828",
+      "status": "screening_sensitivity",
+      "transport_cost_cad": "6196584307.708174",
+      "transport_cost_cad_gj": "12.796573687",
+      "transport_cost_cad_m3": "52.082054907"
+    },
+    {
+      "binding_facilities": 183,
+      "binding_volume_m3": "113929001.304522231",
+      "cross_border_m3": "3136864.061539000",
+      "cross_border_share": "0.026365223",
+      "facilities_used": 194,
+      "local_m3": "115840475.038461015",
+      "local_penalty_cad_m3": "26.484319865",
+      "local_penalty_km": "250.000",
+      "proxy_share_of_assigned": "0.552803018",
+      "road_distance_km_max": "1430.734016349",
+      "road_distance_km_mean": "512.338826213",
+      "status": "screening_sensitivity",
+      "transport_cost_cad": "6268033610.365953",
+      "transport_cost_cad_gj": "12.944123728",
+      "transport_cost_cad_m3": "52.682583572"
+    },
+    {
+      "binding_facilities": 191,
+      "binding_volume_m3": "112335799.304522231",
+      "cross_border_m3": "36376.000000000",
+      "cross_border_share": "0.000305739",
+      "facilities_used": 203,
+      "local_m3": "118940963.100000009",
+      "local_penalty_cad_m3": "51.450376249",
+      "local_penalty_km": "500.000",
+      "proxy_share_of_assigned": "0.528728542",
+      "road_distance_km_max": "1462.458071806",
+      "road_distance_km_mean": "521.971748242",
+      "status": "screening_sensitivity",
+      "transport_cost_cad": "6382487942.404186",
+      "transport_cost_cad_gj": "13.180483506",
+      "transport_cost_cad_m3": "53.644567871"
+    },
+    {
+      "binding_facilities": 191,
+      "binding_volume_m3": "112335799.304522231",
+      "cross_border_m3": "36376.000000000",
+      "cross_border_share": "0.000305739",
+      "facilities_used": 203,
+      "local_m3": "118940963.100000009",
+      "local_penalty_cad_m3": "101.382489015",
+      "local_penalty_km": "1000.000",
+      "proxy_share_of_assigned": "0.528728542",
+      "road_distance_km_max": "1462.458071806",
+      "road_distance_km_mean": "521.971748242",
+      "status": "screening_sensitivity",
+      "transport_cost_cad": "6382487942.404186",
+      "transport_cost_cad_gj": "13.180483506",
+      "transport_cost_cad_m3": "53.644567871"
+    }
+  ],
+  "status": "complete",
+  "v8_primary": {
+    "assigned_m3": 118977339.1,
+    "binding_facilities": 196,
+    "binding_volume_m3": 111230948.33722125,
+    "cross_border_m3": 36376.0,
+    "cross_border_share": 0.000305739,
+    "facilities_used": 208,
+    "local_m3": 118940963.1,
+    "proxy_share_of_assigned": 0.398928537,
+    "transport_cost_cad": 6816930869.200557,
+    "transport_cost_cad_gj": 14.077652116
+  },
+  "v8_scenarios": {
+    "province_capacity_floor": {
+      "assigned_m3": 118977339.1,
+      "facilities_used": 208,
+      "transport_cost_cad": 6816930869.200557,
+      "transport_cost_cad_gj": 14.077652115554725
+    },
+    "published_only": {
+      "assigned_m3": 118977339.10000001,
+      "facilities_used": 259,
+      "transport_cost_cad": 11333658540.892029,
+      "transport_cost_cad_gj": 23.405151848616836
+    },
+    "published_plus_proxy": {
+      "assigned_m3": 118977339.1,
+      "facilities_used": 264,
+      "transport_cost_cad": 8415948138.500832,
+      "transport_cost_cad_gj": 17.379784596562626
+    }
+  },
+  "v8_tiers": [
+    {
+      "assignments_above": 188,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "16.534630116",
+      "facilities_above": 188,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.943379223",
+      "technology": "SUPBCWT1",
+      "tier": "T1",
+      "tier_cost_per_gj": "2.456978000",
+      "transport_cost_above_cad": "6763443271.016398",
+      "transport_cost_cad_gj": "14.922580205",
+      "volume_above_m3": "112240749.689721003",
+      "volume_assigned_m3": "118977339.099999994"
+    },
+    {
+      "assignments_above": 188,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "16.534630116",
+      "facilities_above": 188,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.943379223",
+      "technology": "SUPBCWT2",
+      "tier": "T2",
+      "tier_cost_per_gj": "2.456978000",
+      "transport_cost_above_cad": "6763443271.016398",
+      "transport_cost_cad_gj": "14.922580205",
+      "volume_above_m3": "112240749.689721003",
+      "volume_assigned_m3": "118977339.099999994"
+    },
+    {
+      "assignments_above": 183,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "17.271723116",
+      "facilities_above": 183,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.924129681",
+      "technology": "SUPBCWT3",
+      "tier": "T3",
+      "tier_cost_per_gj": "3.194071000",
+      "transport_cost_above_cad": "6734472678.233532",
+      "transport_cost_cad_gj": "15.233416271",
+      "volume_above_m3": "109950490.399811998",
+      "volume_assigned_m3": "118977339.099999994"
+    },
+    {
+      "assignments_above": 183,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "17.577652116",
+      "facilities_above": 183,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.924129681",
+      "technology": "SUPBCWT4",
+      "tier": "T4",
+      "tier_cost_per_gj": "3.500000000",
+      "transport_cost_above_cad": "6734472678.233532",
+      "transport_cost_cad_gj": "15.233416271",
+      "volume_above_m3": "109950490.399811998",
+      "volume_assigned_m3": "118977339.099999994"
+    }
+  ],
+  "v9_primary": {
+    "assigned_m3": 118977339.10000001,
+    "binding_facilities": 191,
+    "binding_volume_m3": 112335799.30452223,
+    "cross_border_m3": 36376.0,
+    "cross_border_share": 0.000305739,
+    "facilities_used": 203,
+    "local_m3": 118940963.10000001,
+    "proxy_share_of_assigned": 0.528728542,
+    "transport_cost_cad": 6382487942.404186,
+    "transport_cost_cad_gj": 13.180483506
+  },
+  "v9_tiers": [
+    {
+      "assignments_above": 181,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "15.637461506",
+      "facilities_above": 181,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.939409206",
+      "technology": "SUPBCWT1",
+      "tier": "T1",
+      "tier_cost_per_gj": "2.456978000",
+      "transport_cost_above_cad": "6324933556.813792",
+      "transport_cost_cad_gj": "14.030609258",
+      "volume_above_m3": "111768407.689721003",
+      "volume_assigned_m3": "118977339.100000009"
+    },
+    {
+      "assignments_above": 181,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "15.637461506",
+      "facilities_above": 181,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.939409206",
+      "technology": "SUPBCWT2",
+      "tier": "T2",
+      "tier_cost_per_gj": "2.456978000",
+      "transport_cost_above_cad": "6324933556.813792",
+      "transport_cost_cad_gj": "14.030609258",
+      "volume_above_m3": "111768407.689721003",
+      "volume_assigned_m3": "118977339.100000009"
+    },
+    {
+      "assignments_above": 176,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "16.374554506",
+      "facilities_above": 176,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.920159664",
+      "technology": "SUPBCWT3",
+      "tier": "T3",
+      "tier_cost_per_gj": "3.194071000",
+      "transport_cost_above_cad": "6295962964.030876",
+      "transport_cost_cad_gj": "14.324126582",
+      "volume_above_m3": "109478148.399811998",
+      "volume_assigned_m3": "118977339.100000009"
+    },
+    {
+      "assignments_above": 176,
+      "caveat": "Face-value comparison only: the supply-curve field is named variable_cost_usd_per_gj, but no currency or price-year conversion is documented; transport is 2026 CAD/GJ. Tier costs are adopted scenario values, not fitted marginal costs. T4 is a documented scenario high-cost tier. This is a screening arithmetic comparison, not a policy claim.",
+      "delivered_cost_cad_gj": "16.680483506",
+      "facilities_above": 176,
+      "scenario": "province_capacity_floor",
+      "share_above": "0.920159664",
+      "technology": "SUPBCWT4",
+      "tier": "T4",
+      "tier_cost_per_gj": "3.500000000",
+      "transport_cost_above_cad": "6295962964.030876",
+      "transport_cost_cad_gj": "14.324126582",
+      "volume_above_m3": "109478148.399811998",
+      "volume_assigned_m3": "118977339.100000009"
+    }
+  ],
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "comparison_arithmetic": true,
+      "labels": true,
+      "no_nan_or_negative": true,
+      "products_residue_unchanged": true,
+      "province_reconciliation": true,
+      "sensitivity_cost_order": true,
+      "tier_flags_well_formed": true,
+      "utilization_complete": true,
+      "v8_conservation": true,
+      "v8_cost_arithmetic": true,
+      "v9_capacity_bounds": true,
+      "v9_conservation": true,
+      "v9_local_first_shortfall_only": true,
+      "v9_local_plus_cross_equals_assigned": true,
+      "v9_mean_distance_below_v8": true,
+      "v9_transport_cost_below_v8": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+metric,unit,v8_value,v9_value,delta_v9_minus_v8,delta_pct,note
+assigned_m3,m3/yr,118977339.099999994,118977339.100000009,0.000000015,0.000000000,assigned volume
+local_m3,m3/yr,118940963.099999994,118940963.100000009,0.000000015,0.000000000,volume served inside the origin province
+local_share,share,0.999694261,0.999694261,0.000000000,0.000000000,local / assigned
+cross_border_m3,m3/yr,36376.000000000,36376.000000000,0.000000000,0.000000000,volume served out of province
+cross_border_share,share,0.000305739,0.000305739,-0.000000000,-0.000000000,cross-border / assigned
+published_m3,m3/yr,71513883.307695001,56070624.081408948,-15443259.226286054,-21.594770850,volume on published capacity
+proxy_m3,m3/yr,47463455.792304993,62906715.018591061,15443259.226286069,32.537157205,volume on proxy capacity
+proxy_share_of_assigned,share,0.398928537,0.528728542,0.129800005,32.537157205,proxy / assigned
+facilities_used,count,208.000000000,203.000000000,-5.000000000,-2.403846154,distinct facilities receiving volume
+assignments,count,208.000000000,203.000000000,-5.000000000,-2.403846154,assignment rows
+mean_road_distance_km,km,558.536155769,521.971748242,-36.564407527,-6.546471012,assigned-volume-weighted mean road distance
+max_road_distance_km,km,1527.025157061,1462.458071806,-64.567085255,-4.228292177,maximum assignment-row road distance
+median_road_distance_km,km,542.272458829,445.175812497,-97.096646332,-17.905509445,unweighted median row distance
+total_volume_distance_m3_km,m3*km/yr,66453145604.571670532,62102809691.219291687,-4350335913.352378845,-6.546471012,volume times road distance
+transport_cost_cad,CAD/yr,6816930869.200556755,6382487942.404186249,-434442926.796370506,-6.372998863,modelled transport cost
+transport_cost_cad_m3,CAD/m3,57.296044110,53.644567871,-3.651476240,-6.372998863,transport cost per assigned m3
+transport_cost_cad_gj,CAD/GJ,14.077652116,13.180483506,-0.897168609,-6.372998863,transport cost per delivered GJ
+binding_facilities,count,196.000000000,191.000000000,-5.000000000,-2.551020408,facilities at capacity
+binding_volume_m3,m3/yr,111230948.337221250,112335799.304522231,1104850.967300981,0.993294568,volume at binding facilities
+used_facility_utilization,share,0.947118830,0.961887826,0.014768996,1.559360414,assigned / capacity of used facilities
+hhi,index_0_1,0.012870376,0.013140293,0.000269917,2.097192396,sum of squared facility shares
+top5_share,share,0.157463893,0.155254038,-0.002209854,-1.403403718,top five facilities / assigned

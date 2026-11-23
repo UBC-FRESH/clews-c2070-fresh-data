@@ -1,0 +1,93 @@
+{
+  "artifact": "national_facility_assignment_v9",
+  "artifact_version": "9.0.0",
+  "generated_utc": "2026-11-23T14:22:55+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_supply_curve/supply_curve_definition.json": "01aab658fe29ac97d736c0bb06d2702782f07d6fd45a050143acaad039c11f6e",
+    "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332",
+    "data/derived/national/facilities/facility_road_distance_audit_v2/summary.json": "bd1854056dce2db3bf67e9f93309dd94ca17b167aa85328bf02b5e175ba29814",
+    "data/derived/national/facilities/national_facility_assignment_v8/facility_assignment.csv": "2f3584d84d08784a48eab51aa255455682aa46d938f3e98339f208d6dec344c5",
+    "data/derived/national/facilities/national_facility_assignment_v8/summary.json": "48306b915bfa9cd66fe666e75b7849abce1eae4dd6536ff58dcd67c7bfc548e1",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/national_facility_capacity_v3/summary.json": "69bae448b119393f3167e64364ac14da4b20584ca716b84cd30df63308c83c80",
+    "data/derived/national/facilities/transport_cost_v1/curves.csv": "22036a52bbe16420385bcbcf18661db862ba606ed6b7d7fb299cca743bd7e13d",
+    "data/derived/national/facilities/transport_cost_v1/parameters.csv": "285ae8854da089175a5929f38db704512a539098a260a9fac391356b34ef7867",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "assignment_change_vs_v6": true,
+    "assignment_change_vs_v8": true,
+    "capacity_change": false,
+    "evidence_label": "model_estimate",
+    "floor_change": false,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "product_change": false,
+    "residue_change": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "TRANSPORT_ASSIGNMENT_V9.md": {
+      "bytes": 9204,
+      "sha256": "015a0da025c45c3faa0a0ed8734dce7030ee31103fd1ffef16c5ea9b3de46d50"
+    },
+    "local_preference_sensitivity.csv": {
+      "bytes": 1091,
+      "sha256": "96a182bbf5af2f0c445bb2e06fc1b9f602ac07f56d0a7d0b38f48c7c3cdb3621"
+    },
+    "summary.json": {
+      "bytes": 29639,
+      "sha256": "a8d08cda638ae15699ccf3a21ec266244d8442fd3775e1bbdbac7add755991e8"
+    },
+    "v8_facility_transport_cost.csv": {
+      "bytes": 73317,
+      "sha256": "258c591e6575d027f3d9a552b81085f436dc0df1cad16db48c3699eab64a6504"
+    },
+    "v8_province_transport_cost.csv": {
+      "bytes": 3959,
+      "sha256": "fea8b14d15c990fdda89bac55af018948c6b49f29aebdd849cfde1b61a2fa293"
+    },
+    "v8_tier_comparison.csv": {
+      "bytes": 2184,
+      "sha256": "4b9accdf6155b99b62a9ab4a41aca9f003fef59ff86e77e99f2162c27a16d71f"
+    },
+    "v8_transport_cost_rows.csv": {
+      "bytes": 288821,
+      "sha256": "7e76fe41c1290be1ed69e4829fabdab7d0073427db0f4b31145fa24351e3cd54"
+    },
+    "v8_v9_comparison.csv": {
+      "bytes": 2483,
+      "sha256": "7f85c9b4982999842d87bb9b89926de07815b6c9fd0e9312880bb38409b00643"
+    },
+    "v8_v9_facility_changes.csv": {
+      "bytes": 39893,
+      "sha256": "d019b0e3dd692e61d3907066d46c7e7c43226a63dee497fbdecec3ae4121e7de"
+    },
+    "v8_v9_province_comparison.csv": {
+      "bytes": 3352,
+      "sha256": "996718a9032f188a4b7b9601eacb4755cf9601056af977a013db240d0776464d"
+    },
+    "v9_facility_assignment.csv": {
+      "bytes": 147650,
+      "sha256": "fa2f6a215904c1c5bbf79264e0c2c6387dca17789be23065037b3011d98a7a5a"
+    },
+    "v9_facility_transport_cost.csv": {
+      "bytes": 71000,
+      "sha256": "f836f86f3ef0740fb5e3a3f6c821f84073b363e18f1259e0b094b47bc0cda1be"
+    },
+    "v9_facility_utilization.csv": {
+      "bytes": 184728,
+      "sha256": "d91be09d0746fa37852fbba733d22a82367dddd449965d9310b888baeeea1e5a"
+    },
+    "v9_province_transport_cost.csv": {
+      "bytes": 3962,
+      "sha256": "e5220e769601b2a06fbcc7dffd4793e50337971cde7f88794a8c700528bd5a52"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment_v9",
+  "status": "complete"
+}
