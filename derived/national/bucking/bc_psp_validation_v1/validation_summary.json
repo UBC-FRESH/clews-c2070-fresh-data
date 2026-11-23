@@ -1,0 +1,520 @@
+{
+  "assumptions": {
+    "grade_status": "not_assigned",
+    "merchantable_bank": "VHA_MER_LIV, gross, 10 cm top",
+    "net_bank": "VHA_DWB_LIV, BEC decay/waste",
+    "population": "latest live visit per SITE_IDENTIFIER",
+    "residue": "stem only; branches/foliage not estimated",
+    "sort_basis": "dimension_only",
+    "utilization_cm": [
+      7.5,
+      12.5
+    ]
+  },
+  "comparison": {
+    "12.5": {
+      "log_vs_gross_merch": {
+        "bias_sum": -20620.87145226111,
+        "mae": 36.954966760324574,
+        "mean_bias": -36.954966760324574,
+        "mean_ratio": 0.7708593587488619,
+        "median_ratio": 0.8825680904772303,
+        "n": 558,
+        "observed_sum": 167985.596,
+        "predicted_sum": 147364.72454773888,
+        "ratio_n": 543,
+        "relative_bias": -0.12275380713154188,
+        "rmse": 45.254007787143436
+      },
+      "log_vs_net_merch": {
+        "bias_sum": -1215.4844522611138,
+        "mae": 26.839799464102875,
+        "mean_bias": -2.178287548855043,
+        "mean_ratio": 0.87733775104662,
+        "median_ratio": 0.9773302253973865,
+        "n": 558,
+        "observed_sum": 148580.209,
+        "predicted_sum": 147364.72454773888,
+        "ratio_n": 543,
+        "relative_bias": -0.008180661882506261,
+        "rmse": 38.375361485401854
+      },
+      "n_bucked_trees": 28136,
+      "n_logs": 38992,
+      "n_plots": 558,
+      "n_trees": 28416,
+      "observed_all_wsv_m3ha_sum": 183718.221,
+      "observed_matched_wsv_m3ha_sum": 183226.847,
+      "plot_bias_quantiles_m3ha": {
+        "p05": -25.80425322635091,
+        "p25": -17.117621042605215,
+        "p50": -12.565948597369172,
+        "p75": -8.494670450849945,
+        "p95": -0.2695733005995785
+      },
+      "predicted_chip_green_tonnes_ha_sum": 17488.37130500334,
+      "predicted_green_tonnes_ha_sum": 19431.523672225936,
+      "predicted_log_m3ha_sum": 147364.72454773888,
+      "predicted_residue_m3ha_sum": 28654.072203933283,
+      "predicted_residue_odt_ha_sum": 10687.338019724266,
+      "predicted_taper_m3ha_sum": 176018.79675167217,
+      "residue_share": 0.16278984252095832,
+      "taper_vs_whole_stem": {
+        "bias_sum": -7208.0502483278315,
+        "mae": 13.008944406352306,
+        "mean_bias": -12.91765277478106,
+        "mean_ratio": 0.9447119202375054,
+        "median_ratio": 0.9559898553168118,
+        "n": 558,
+        "observed_sum": 183226.847,
+        "predicted_sum": 176018.79675167217,
+        "ratio_n": 543,
+        "relative_bias": -0.039339487451464095,
+        "rmse": 14.947948020050845
+      }
+    },
+    "7.5": {
+      "log_vs_gross_merch": {
+        "bias_sum": -22203.669452261114,
+        "mae": 39.79152231588013,
+        "mean_bias": -39.79152231588013,
+        "mean_ratio": 0.7540374153433441,
+        "median_ratio": 0.8731948274881765,
+        "n": 558,
+        "observed_sum": 169568.394,
+        "predicted_sum": 147364.72454773888,
+        "ratio_n": 549,
+        "relative_bias": -0.13094226423033242,
+        "rmse": 48.52547070238289
+      },
+      "log_vs_net_merch": {
+        "bias_sum": -2634.266452261113,
+        "mae": 28.491392806323958,
+        "mean_bias": -4.720907620539629,
+        "mean_ratio": 0.8582335887166956,
+        "median_ratio": 0.9732227905684911,
+        "n": 558,
+        "observed_sum": 149998.991,
+        "predicted_sum": 147364.72454773888,
+        "ratio_n": 549,
+        "relative_bias": -0.01756189448141763,
+        "rmse": 40.30800988998059
+      },
+      "n_bucked_trees": 42153,
+      "n_logs": 38992,
+      "n_plots": 558,
+      "n_trees": 42825,
+      "observed_all_wsv_m3ha_sum": 192635.81900000002,
+      "observed_matched_wsv_m3ha_sum": 191915.724,
+      "plot_bias_quantiles_m3ha": {
+        "p05": -26.532044921696162,
+        "p25": -18.48023057193788,
+        "p50": -13.937599258367442,
+        "p75": -10.077038149334307,
+        "p95": -2.497280960759237
+      },
+      "predicted_chip_green_tonnes_ha_sum": 22241.303206560206,
+      "predicted_green_tonnes_ha_sum": 24712.559118400226,
+      "predicted_log_m3ha_sum": 147364.72454773888,
+      "predicted_residue_m3ha_sum": 36555.44226471263,
+      "predicted_residue_odt_ha_sum": 13591.907515120125,
+      "predicted_taper_m3ha_sum": 183920.1668124515,
+      "residue_share": 0.19875711782052277,
+      "taper_vs_whole_stem": {
+        "bias_sum": -7995.557187548486,
+        "mae": 14.423996538687199,
+        "mean_bias": -14.328955533241015,
+        "mean_ratio": 0.9363144422950219,
+        "median_ratio": 0.9538554680609106,
+        "n": 558,
+        "observed_sum": 191915.724,
+        "predicted_sum": 183920.1668124515,
+        "ratio_n": 554,
+        "relative_bias": -0.04166181395094279,
+        "rmse": 16.117155631562156
+      }
+    }
+  },
+  "compiled_arithmetic": {
+    "max_abs_stand_species_difference": 1.1368683772161603e-13,
+    "n_plot_util_keys": 1116,
+    "n_species_rows": 4078,
+    "n_stand_rows": 1116,
+    "pass": true,
+    "tolerance": 0.01
+  },
+  "conservation": {
+    "bucker_internal_max_abs_balance_m3": 2.6690993098155147e-05,
+    "bucker_internal_pass": true,
+    "bucker_internal_tolerance_absolute_m3": 1e-06,
+    "bucker_internal_tolerance_relative": 0.0001,
+    "max_abs_ledger_balance_m3": 3.552713678800501e-15,
+    "n_trees": 59397,
+    "n_trees_with_logs": 20054,
+    "n_trees_without_logs": 39343,
+    "pass": true,
+    "recovered_log_m3": 11735.586435662184,
+    "recovered_plus_residue_m3": 14175.147478619967,
+    "stem_residue_m3": 2439.5610429577823,
+    "taper_total_m3": 14175.147478619967,
+    "tolerance_absolute_m3": 1e-08,
+    "tolerance_relative": 1e-07
+  },
+  "coverage": {
+    "bucked_volume_share_of_selected_observed_wsv": 0.9954657546204672,
+    "compiled_wsv_at_12_5_m3ha_sum": 183718.221,
+    "n_bucked_trees": 59397,
+    "n_selected_trees": 60960,
+    "n_skipped_trees": 1563,
+    "population_stats": {
+      "dbh": {
+        "max": 133.6,
+        "median": 11.6,
+        "min": 2.0,
+        "n_ge_12_5": 28416,
+        "n_ge_7_5": 42825
+      },
+      "dropped": {
+        "below_min_dbh": 0,
+        "dead": 28704,
+        "invalid_dbh": 0,
+        "invalid_expansion": 0,
+        "missing_bec": 0,
+        "missing_species": 0,
+        "not_latest_live_visit": 94943,
+        "short_height": 1
+      },
+      "input_sites": 7341,
+      "latest_live_visit_fallback_sites": 0,
+      "one_plot_per_site": true,
+      "plots_with_live_trees": 558,
+      "samp_types": [
+        "F"
+      ],
+      "sample_purposes": [
+        "PSP"
+      ],
+      "selected_live_trees": 60960,
+      "selected_plots": 558,
+      "selected_sites": 558,
+      "selected_tree_rows": 60960,
+      "selected_visits": 558,
+      "species": {
+        "AC": 132,
+        "AT": 4474,
+        "BL": 16548,
+        "CW": 154,
+        "DG": 378,
+        "DM": 114,
+        "EP": 3343,
+        "EW": 1,
+        "FD": 3743,
+        "HM": 1,
+        "HW": 769,
+        "M": 1,
+        "MR": 74,
+        "PL": 6178,
+        "SB": 257,
+        "SE": 533,
+        "SW": 23280,
+        "W": 979,
+        "XC": 1
+      },
+      "species_crosswalk": "bc_psp_to_group.csv",
+      "tsa_name": "Prince George",
+      "tsa_tree_rows": 184907,
+      "valid_live_rows_all_visits": 155903
+    },
+    "skip_reason_groups": {
+      "bucker_volume_balance_failure": 15,
+      "other": 0,
+      "unsupported_taper_species": 1548
+    },
+    "skip_reasons": {
+      "BuckingError: tree 4039990:4039990-PSP1:1:1:28: bucker volume balance failed: recovered 0.192823842 + residue 0.051463971 = 0.244287813, taper total 0.244315225, error 2.74120195e-05 > 2.44315225e-05": 1,
+      "BuckingError: tree 4039990:4039990-PSP1:1:1:62: bucker volume balance failed: recovered 0.099599888 + residue 0.070644041 = 0.170243929, taper total 0.170267586, error 2.36568163e-05 > 1.70267586e-05": 1,
+      "BuckingError: tree 4039990:4039990-PSP1:1:1:69: bucker volume balance failed: recovered 0.092057100 + residue 0.062799267 = 0.154856367, taper total 0.154838635, error 1.77324873e-05 > 1.54838635e-05": 1,
+      "BuckingError: tree 4040936:4040936-PSP1:1:1:152: bucker volume balance failed: recovered 0.094086145 + residue 0.067364201 = 0.161450346, taper total 0.161474116, error 2.37705435e-05 > 1.61474116e-05": 1,
+      "BuckingError: tree 4040936:4040936-PSP1:1:1:23: bucker volume balance failed: recovered 0.091694691 + residue 0.065100238 = 0.156794929, taper total 0.156811241, error 1.63123695e-05 > 1.56811241e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:18: bucker volume balance failed: recovered 0.099701231 + residue 0.056404683 = 0.156105913, taper total 0.156122359, error 1.64455872e-05 > 1.56122359e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:340: bucker volume balance failed: recovered 0.073974891 + residue 0.063984137 = 0.137959028, taper total 0.137943948, error 1.50797097e-05 > 1.37943948e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:342: bucker volume balance failed: recovered 0.110830205 + residue 0.057734806 = 0.168565011, taper total 0.168589452, error 2.44414022e-05 > 1.68589452e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:60: bucker volume balance failed: recovered 0.109200569 + residue 0.058947457 = 0.168148026, taper total 0.168115622, error 3.2404485e-05 > 1.68115622e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:71: bucker volume balance failed: recovered 0.073974891 + residue 0.063984137 = 0.137959028, taper total 0.137943948, error 1.50797097e-05 > 1.37943948e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:76: bucker volume balance failed: recovered 0.095916174 + residue 0.056345296 = 0.152261470, taper total 0.152243825, error 1.76445009e-05 > 1.52243825e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:81: bucker volume balance failed: recovered 0.097282406 + residue 0.057877748 = 0.155160154, taper total 0.155127551, error 3.26023114e-05 > 1.55127551e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:85: bucker volume balance failed: recovered 0.075047477 + residue 0.065616989 = 0.140664466, taper total 0.140695575, error 3.11086313e-05 > 1.40695575e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:87: bucker volume balance failed: recovered 0.094838132 + residue 0.055819045 = 0.150657177, taper total 0.150639475, error 1.77014583e-05 > 1.50639475e-05": 1,
+      "BuckingError: tree 4040975:4040975-PSP1:1:1:96: bucker volume balance failed: recovered 0.075047477 + residue 0.065616989 = 0.140664466, taper total 0.140695575, error 3.11086313e-05 > 1.40695575e-05": 1,
+      "unsupported_taper_species": 1548
+    },
+    "skipped_observed_wsv_at_12_5_m3ha": 547.4008903136806,
+    "skipped_observed_wsv_share_of_compiled": 0.0029795677714170806,
+    "skipped_species": [
+      {
+        "n_trees": 979,
+        "observed_wsv_m3ha": 751.6602888168162,
+        "species": "W"
+      },
+      {
+        "n_trees": 15,
+        "observed_wsv_m3ha": 56.02733203925918,
+        "species": "PL"
+      },
+      {
+        "n_trees": 378,
+        "observed_wsv_m3ha": 55.88279915290044,
+        "species": "DG"
+      },
+      {
+        "n_trees": 114,
+        "observed_wsv_m3ha": 14.743790252103633,
+        "species": "DM"
+      },
+      {
+        "n_trees": 74,
+        "observed_wsv_m3ha": 5.171613441556713,
+        "species": "MR"
+      },
+      {
+        "n_trees": 1,
+        "observed_wsv_m3ha": 0.1558841092254991,
+        "species": "XC"
+      },
+      {
+        "n_trees": 1,
+        "observed_wsv_m3ha": 0.13374923768386812,
+        "species": "M"
+      },
+      {
+        "n_trees": 1,
+        "observed_wsv_m3ha": 0.07744217364557845,
+        "species": "EW"
+      }
+    ],
+    "species_status": {
+      "AC": {
+        "bucked": 132
+      },
+      "AT": {
+        "bucked": 4474
+      },
+      "BL": {
+        "bucked": 16548
+      },
+      "CW": {
+        "bucked": 154
+      },
+      "DG": {
+        "skipped": 378
+      },
+      "DM": {
+        "skipped": 114
+      },
+      "EP": {
+        "bucked": 3343
+      },
+      "EW": {
+        "skipped": 1
+      },
+      "FD": {
+        "bucked": 3743
+      },
+      "HM": {
+        "bucked": 1
+      },
+      "HW": {
+        "bucked": 769
+      },
+      "M": {
+        "skipped": 1
+      },
+      "MR": {
+        "skipped": 74
+      },
+      "PL": {
+        "bucked": 6163,
+        "skipped": 15
+      },
+      "SB": {
+        "bucked": 257
+      },
+      "SE": {
+        "bucked": 533
+      },
+      "SW": {
+        "bucked": 23280
+      },
+      "W": {
+        "skipped": 979
+      },
+      "XC": {
+        "skipped": 1
+      }
+    }
+  },
+  "created_utc": "2026-11-23T00:36:16+00:00",
+  "elapsed_seconds": 265.07947796490043,
+  "population": {
+    "dbh": {
+      "max": 133.6,
+      "median": 11.6,
+      "min": 2.0,
+      "n_ge_12_5": 28416,
+      "n_ge_7_5": 42825
+    },
+    "dropped": {
+      "below_min_dbh": 0,
+      "dead": 28704,
+      "invalid_dbh": 0,
+      "invalid_expansion": 0,
+      "missing_bec": 0,
+      "missing_species": 0,
+      "not_latest_live_visit": 94943,
+      "short_height": 1
+    },
+    "input_sites": 7341,
+    "latest_live_visit_fallback_sites": 0,
+    "one_plot_per_site": true,
+    "plots_with_live_trees": 558,
+    "samp_types": [
+      "F"
+    ],
+    "sample_purposes": [
+      "PSP"
+    ],
+    "selected_live_trees": 60960,
+    "selected_plots": 558,
+    "selected_sites": 558,
+    "selected_tree_rows": 60960,
+    "selected_visits": 558,
+    "species": {
+      "AC": 132,
+      "AT": 4474,
+      "BL": 16548,
+      "CW": 154,
+      "DG": 378,
+      "DM": 114,
+      "EP": 3343,
+      "EW": 1,
+      "FD": 3743,
+      "HM": 1,
+      "HW": 769,
+      "M": 1,
+      "MR": 74,
+      "PL": 6178,
+      "SB": 257,
+      "SE": 533,
+      "SW": 23280,
+      "W": 979,
+      "XC": 1
+    },
+    "species_crosswalk": "bc_psp_to_group.csv",
+    "tsa_name": "Prince George",
+    "tsa_tree_rows": 184907,
+    "valid_live_rows_all_visits": 155903
+  },
+  "residue": {
+    "branch_foliage_included": false,
+    "chip_green_tonnes_45": 1466.810887227486,
+    "green_tonnes_45": 1629.789874697207,
+    "n_bucked_trees": 59397,
+    "note": "Stem residue only. Branches and foliage are outside the FAIB whole-stem volume and are reported as not estimated.",
+    "recovered_log_m3": 11735.586435662184,
+    "residue_odt": 896.3844310834638,
+    "residue_share": 0.1721012812485594,
+    "stem_residue_m3": 2439.5610429577823,
+    "taper_total_m3": 14175.147478619967
+  },
+  "rsyc": {
+    "bucked_plot_comparison": {
+      "mae": 174.11771625018937,
+      "mean_bias": 64.58348398933519,
+      "mean_ratio": 4.568189291482226,
+      "n": 293,
+      "n_valid": 293,
+      "observed_sum": 61684.02739141989,
+      "predicted_sum": 80606.9882002951,
+      "relative_bias": 0.30677245972929695,
+      "rmse": 202.04853027258523
+    },
+    "caveat": "RSYC is a stand-level remote-sensing yield product. Its volume response is total volume, not merchantable volume, and it has no tree lists, diameter distribution, grade, or residue. This is a coarse sanity check, not a bucking calibration.",
+    "curve_join": "TSA24 centroid -> RSYC tile and ecodistrict; volume curves at ages 20-140",
+    "n_curve_rows": 143,
+    "n_plot_matches": 293,
+    "next_step": "If the plot-level ecodistrict join is sparse, join all TSA24 VRI polygons to RSYC tiles/ecodistricts and compare area-weighted curves rather than using a centroid-only check.",
+    "plot_comparison": {
+      "mae": 166.4263122129774,
+      "mean_bias": 23.123700342304087,
+      "mean_ratio": 24.407544776395177,
+      "n": 293,
+      "n_valid": 293,
+      "observed_sum": 73831.744,
+      "predicted_sum": 80606.9882002951,
+      "relative_bias": 0.09176600515213479,
+      "rmse": 196.93386434912304
+    },
+    "plot_join": "sample plot coordinates -> RSYC ecodistrict; plot-level volume at stand age",
+    "plot_join_error": null,
+    "species_curves": [
+      "PICE.ENG",
+      "PICE.ENG",
+      "PICE.GLA",
+      "PICE.GLA",
+      "PINU.CON",
+      "PINU.CON",
+      "POPU.TRE",
+      "POPU.TRE",
+      "PSEU.MEN",
+      "THUJ.PLI",
+      "TSUG.HET"
+    ],
+    "status": "reported_with_join_assumptions",
+    "tsa_boundary": "tsa24",
+    "tsa_centroid_ecodistrict": "Montane Cordillera/Northern Montane Cordillera/Fraser Basin/Nechako Lowland",
+    "tsa_centroid_tile": "J4"
+  },
+  "status": "dimension_validation_complete_grade_not_assigned",
+  "taper_warnings": [
+    "RuntimeWarning: invalid value encountered in power"
+  ],
+  "tree_expansion_arithmetic": {
+    "checks": {
+      "12.5_cm_VHA_MER_LIV": {
+        "max_abs_difference_m3ha": 0.0018236986466035887,
+        "pass": true,
+        "tolerance": 0.01
+      },
+      "12.5_cm_VHA_WSV_LIV": {
+        "max_abs_difference_m3ha": 0.0019424855148599818,
+        "pass": true,
+        "tolerance": 0.01
+      },
+      "7.5_cm_VHA_MER_LIV": {
+        "max_abs_difference_m3ha": 0.002032594403033272,
+        "pass": true,
+        "tolerance": 0.01
+      },
+      "7.5_cm_VHA_WSV_LIV": {
+        "max_abs_difference_m3ha": 0.0017801156936343432,
+        "pass": true,
+        "tolerance": 0.01
+      }
+    },
+    "pass": true
+  },
+  "tsa_name": "Prince George",
+  "tsa_number": 24,
+  "validation": "bc_psp_tsa24_bucking_validation_v0",
+  "validation_checks": {
+    "evidence_tiers": [
+      "assumption",
+      "published_table"
+    ],
+    "ledger_rows": 60960,
+    "log_rows": 38992,
+    "no_nan_or_negative_key_columns": true,
+    "residue_rows": 59397,
+    "selected_rows": 60960
+  }
+}
