@@ -1,0 +1,39 @@
+{
+  "artifact": "greenfield_breakeven_capital_threshold_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-23T18:06:55+00:00",
+  "inputs": {
+    "data/derived/national/facilities/greenfield_siting_sensitivity_v1/k_tradeoff.csv": "804dc54977c6a2f4b9abeea5885b8d3d3b6fe35333ddc77d2a8fda95948ee434",
+    "data/derived/national/facilities/greenfield_siting_sensitivity_v1/manifest.json": "ad5f535030bbcd95674b872fb30ed95e834a58c937e6fd491b0f68e0ced6dd26"
+  },
+  "labels": {
+    "capital_cost_claim": false,
+    "evidence_label": "model_estimate",
+    "investment_advice": false,
+    "investment_advice_label": "not_investment_advice",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "sensitivity_label": "transport_only",
+    "transport_only": true,
+    "ui_changed": false
+  },
+  "outputs": {
+    "GREENFIELD_BREAKEVEN_CAPITAL_THRESHOLD_V1.md": {
+      "bytes": 5102,
+      "sha256": "84b326980e7eac46014356dea88e05251cfedab7968f873b81a2c05101f9dd5e"
+    },
+    "breakeven_thresholds.csv": {
+      "bytes": 6041,
+      "sha256": "8b59014750575595bb8cccac7940fb352376daa6955ffbfdc09c537d96004efe"
+    },
+    "summary.json": {
+      "bytes": 33897,
+      "sha256": "3ac1e81d30ed514c4c0d767bcc9c03365ffdab0fad0cbfa0d918ed3c960a926f"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.greenfield_breakeven_capital_threshold_v1",
+  "status": "complete"
+}
