@@ -1,0 +1,108 @@
+{
+  "artifact": "national_facility_chain_v5_trade_comparison",
+  "artifact_version": "1.0.0",
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "local_case": {
+    "assignment_artifact": "national_facility_assignment_v6",
+    "chain_artifact": "national_facility_chain_scenarios_v5",
+    "curve_artifact": "national_residue_curve_v5",
+    "facility_artifact": "facility_residue_supply_v5",
+    "handoff_artifact": "forestry_osecan_handoff_v6",
+    "label": "local_v6_province_capacity_floor"
+  },
+  "outputs": {
+    "LOCAL_V6_VS_TRADE_V5_COMPARISON.md": {
+      "bytes": 11714,
+      "sha256": "b308da1433623c0e02e1c9f41d519bd77af6b5fac65935d73b1262bb322e12c4"
+    },
+    "assignment_comparison.csv": {
+      "bytes": 1865,
+      "sha256": "1292727c37740f9922a56635d7e7cfc2d41bd5f77e7d1a43b427d0f6f0bd8723"
+    },
+    "chain_comparison.csv": {
+      "bytes": 3814,
+      "sha256": "599a61e36a4727d310016fcf868dcca7b433da23995762922af13651de9f68c7"
+    },
+    "curve_case_comparison.csv": {
+      "bytes": 7558,
+      "sha256": "26ae96b08fb5049edd3376163ee6d5d386334142310d1f6f49abbca9544653d0"
+    },
+    "facility_province_comparison.csv": {
+      "bytes": 9170,
+      "sha256": "d991cc16be2d1a82d81e18acd52a30fd6c235cb8564942b8414b215fd90897af"
+    },
+    "manifest.json": {
+      "bytes": 3629,
+      "sha256": "f3c41fa290992b25648190ecc6c78e9a66a0d9fb97016115f2451a12f632c076"
+    },
+    "osecan_handoff_comparison.csv": {
+      "bytes": 6387,
+      "sha256": "88bea44ff591c93ea32080114daf5981743365b91aaf539cd89cb4be7ff2cf65"
+    },
+    "summary.json": {
+      "bytes": 8380,
+      "sha256": "f2fb1e163a79714f82cfca3b85d0c626c75b236b4635af0d788245d57d2512bb"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_chain_v5_trade_comparison",
+  "trade_case": {
+    "assignment_artifact": "national_facility_assignment_v5",
+    "chain_artifact": "national_facility_chain_scenarios_v5_trade",
+    "curve_artifact": "national_residue_curve_v5_trade",
+    "facility_artifact": "facility_residue_supply_v5_trade",
+    "handoff_artifact": "forestry_osecan_handoff_v6_trade",
+    "label": "trade_v5_published_plus_proxy"
+  },
+  "validation": {
+    "checks": [
+      {
+        "detail": "local and trade assignment totals match",
+        "name": "assigned_volume_equal",
+        "status": "PASS"
+      },
+      {
+        "detail": "trade 21,901,938 m3 > local 36,376 m3",
+        "name": "cross_border_trade_higher",
+        "status": "PASS"
+      },
+      {
+        "detail": "all three harvest cases share national products and residue totals",
+        "name": "national_products_residue_equal",
+        "status": "PASS"
+      },
+      {
+        "detail": "sum of province process deltas = 2.17603712827e-14 PJ",
+        "name": "province_process_conserves",
+        "status": "PASS"
+      },
+      {
+        "detail": "harvest-residue handoff is origin-province only and unchanged",
+        "name": "harvest_handoff_identical",
+        "status": "PASS"
+      },
+      {
+        "detail": "sum of process zone deltas = 3.92832572027e-11 PJ",
+        "name": "process_handoff_conserves",
+        "status": "PASS"
+      },
+      {
+        "detail": "official OSeCAN tree hash unchanged before and after both builds",
+        "name": "osecan_tree_unchanged",
+        "status": "PASS"
+      },
+      {
+        "detail": "no official OSeCAN change is claimed",
+        "name": "labels",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

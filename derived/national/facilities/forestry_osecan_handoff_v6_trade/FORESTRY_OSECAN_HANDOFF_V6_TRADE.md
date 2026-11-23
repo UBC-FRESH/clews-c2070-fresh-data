@@ -1,0 +1,155 @@
+# Forestry Residue Handoff to OSeCAN v6 Trade (Total Residue)
+
+This is a read-only forestry-side screening handoff from `national_residue_curve_v5_trade` province/case totals to every OSeCAN zone. Version 6 trade trade preserves the all-zone v2 proxy weights and uses the assignment-v5 trade total-residue curve v5. It is not an official OSeCAN result, an operating plan, or a policy target.
+
+All values are model estimates: `model_estimate=true`, `observed=false`, `policy_grade=false`, and `official_osecan_changed=false`. Process and harvest residue remain separate streams and are never summed into a combined row.
+
+## Zone weight method
+
+The allocation hierarchy is: OSeCAN zonal supply dispatch; OSeCAN zonal dispatch activity; operable-area weights where a defensible ecoprovince-to-zone mapping exists; otherwise an explicit equal split. No observed sub-provincial residue split is available, so every multi-zone allocation is labelled `proxy_share=true`.
+
+| Province | Zone | Weight | Method | Evidence tier | Source value | Unit |
+|---|---|---:|---|---|---:|---|
+| BC | B1 | 0.082839 | osecan_zonal_supply_dispatch | tier_1_osecan_zonal_supply_model | 3.605470 | PJ_2050_supply |
+| BC | B2 | 0.917161 | osecan_zonal_supply_dispatch | tier_1_osecan_zonal_supply_model | 39.918300 | PJ_2050_supply |
+| AB | A1 | 0.643794 | osecan_zonal_dispatch_proxy | tier_2_osecan_zonal_dispatch_model | 7.160096 | PJ_2050_dispatch |
+| AB | A2 | 0.356206 | osecan_zonal_dispatch_proxy | tier_2_osecan_zonal_dispatch_model | 3.961619 | PJ_2050_dispatch |
+| SK | S1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| MB | M1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| ON | O1 | 0.833225 | osecan_zonal_dispatch_proxy | tier_2_osecan_zonal_dispatch_model | 1.091346 | PJ_2050_dispatch |
+| ON | O2 | 0.166775 | osecan_zonal_dispatch_proxy | tier_2_osecan_zonal_dispatch_model | 0.218439 | PJ_2050_dispatch |
+| QC | Q1 | 0.610703 | osecan_zonal_dispatch_proxy | tier_2_osecan_zonal_dispatch_model | 3.381588 | PJ_2050_dispatch |
+| QC | Q2 | 0.389297 | osecan_zonal_dispatch_proxy | tier_2_osecan_zonal_dispatch_model | 2.155621 | PJ_2050_dispatch |
+| NB | T1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| NS | T1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| PE | T1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| NL | L1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| YT | N1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| NT | N1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+| NU | N1 | 1.000000 | single_zone_crosswalk | tier_0_crosswalk_membership | 1.000000 | unit_weight |
+
+Single-zone jurisdictions use their code-defined crosswalk membership with weight 1.0. BC uses OSeCAN `SUPBCWB1`/`SUPBCWB2` 2050 supply. AB, ON, and QC use OSeCAN `PWRBCW<zone>` 2050 dispatch because OSeCAN has no zone-specific supply row for those provinces. Those dispatch shares are zonal activity proxies, not harvest observations.
+
+## Handoff by zone
+
+| Zone | Process 0% | Process 25% | Process 50% | Process 75% | Harvest 35% | Harvest 60% | Harvest 75% |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| B1 | 0.000 | 5.280 | 10.560 | 15.840 | 3.466 | 5.941 | 7.427 |
+| B2 | 0.000 | 58.459 | 116.919 | 175.378 | 38.372 | 65.780 | 82.225 |
+| A1 | 0.000 | 6.632 | 13.265 | 19.897 | 7.274 | 12.469 | 15.587 |
+| A2 | 0.000 | 3.670 | 7.339 | 11.009 | 4.025 | 6.899 | 8.624 |
+| S1 | 0.000 | 0.515 | 1.031 | 1.546 | 2.144 | 3.676 | 4.595 |
+| M1 | 0.000 | 0.556 | 1.113 | 1.669 | 0.560 | 0.961 | 1.201 |
+| O1 | 0.000 | 10.115 | 20.230 | 30.346 | 5.549 | 9.513 | 11.891 |
+| O2 | 0.000 | 2.025 | 4.049 | 6.074 | 1.111 | 1.904 | 2.380 |
+| Q1 | 0.000 | 19.303 | 38.606 | 57.909 | 22.942 | 39.330 | 49.162 |
+| Q2 | 0.000 | 12.305 | 24.610 | 36.914 | 14.625 | 25.071 | 31.339 |
+| T1 | 0.000 | 9.183 | 18.366 | 27.549 | 8.894 | 15.247 | 19.059 |
+| L1 | 0.000 | 0.563 | 1.127 | 1.690 | 0.718 | 1.230 | 1.538 |
+| N1 | 0.000 | 0.046 | 0.093 | 0.139 | 0.095 | 0.162 | 0.203 |
+
+National totals (PJ):
+
+| Stream | Case | PJ |
+|---|---|---:|
+| process | `process_availability_000` | 0.000000 |
+| process | `process_availability_025` | 128.653504 |
+| process | `process_availability_050` | 257.307008 |
+| process | `process_availability_075` | 385.960511 |
+| harvest | `harvest_recovery_035` | 109.774098 |
+| harvest | `harvest_recovery_060` | 188.184168 |
+| harvest | `harvest_recovery_075` | 235.230210 |
+
+## Supply-curve comparison
+
+Ratios are case PJ divided by the reference. Headroom is reference minus case; a negative headroom means the case exceeds the reference. The 2050 values are context, not policy targets. Zone 2050 context uses OSeCAN zone dispatch activity and is undefined where that activity is zero.
+
+### National
+
+| Case | PJ | Tier | T1 headroom | T2 headroom | T3 headroom | T4 headroom | 2050 context ratio | 2050 context headroom |
+|---|---:|---|---:|---:|---:|---:|---:|---:|
+| `process_availability_000` | 0.000 | T1 | 85.007 | 109.399 | 149.273 | 213.538 | 0.000 | 152.923 |
+| `process_availability_025` | 128.654 | T3 | -43.646 | -19.255 | 20.619 | 84.885 | 0.841 | 24.269 |
+| `process_availability_050` | 257.307 | above_T4 | -172.300 | -147.908 | -108.034 | -43.769 | 1.683 | -104.384 |
+| `process_availability_075` | 385.961 | above_T4 | -300.953 | -276.562 | -236.688 | -172.422 | 2.524 | -233.038 |
+| `harvest_recovery_035` | 109.774 | T3 | -24.767 | -0.375 | 39.498 | 103.764 | 0.718 | 43.149 |
+| `harvest_recovery_060` | 188.184 | T4 | -103.177 | -78.785 | -38.912 | 25.354 | 1.231 | -35.261 |
+| `harvest_recovery_075` | 235.230 | above_T4 | -150.223 | -125.831 | -85.958 | -21.692 | 1.538 | -82.307 |
+
+### BC
+
+| Case | PJ | BC zonal cap ratio | BC zonal headroom | 2050 BC context ratio | 2050 BC context headroom |
+|---|---:|---:|---:|---:|---:|
+| `process_availability_000` | 0.000 | 0.000 | 43.524 | 0.000 | 43.524 |
+| `process_availability_025` | 63.739 | 1.464 | -20.216 | 1.464 | -20.216 |
+| `process_availability_050` | 127.479 | 2.929 | -83.955 | 2.929 | -83.955 |
+| `process_availability_075` | 191.218 | 4.393 | -147.694 | 4.393 | -147.694 |
+| `harvest_recovery_035` | 41.838 | 0.961 | 1.686 | 0.961 | 1.686 |
+| `harvest_recovery_060` | 71.722 | 1.648 | -28.198 | 1.648 | -28.198 |
+| `harvest_recovery_075` | 89.652 | 2.060 | -46.128 | 2.060 | -46.128 |
+
+### Zone 2050 context
+
+This table is context only. The reference is 2050 OSeCAN zone dispatch activity, not a zone supply cap and not a policy target. A blank ratio means the reference is zero.
+
+| Zone | Reference PJ | Process 50% ratio | Harvest 60% ratio |
+|---|---:|---:|---:|
+| B1 | 0.969 | 10.896 | 6.130 |
+| B2 | 10.731 | 10.896 | 6.130 |
+| A1 | 7.160 | 1.853 | 1.742 |
+| A2 | 3.962 | 1.853 | 1.742 |
+| S1 | 5.859 | 0.176 | 0.627 |
+| M1 | 1.385 | 0.803 | 0.693 |
+| O1 | 1.091 | 18.537 | 8.717 |
+| O2 | 0.218 | 18.537 | 8.717 |
+| Q1 | 3.382 | 11.416 | 11.631 |
+| Q2 | 2.156 | 11.416 | 11.631 |
+| T1 | 3.694 | 4.972 | 4.128 |
+| L1 | 0.501 | 2.249 | 2.455 |
+| N1 | 0.000 | — | — |
+
+## Proxy and uncertainty
+
+4 provinces are allocated across two zones each and 9 provinces use a single zone. Every multi-zone weight is a proxy, not an observed share. The same province-level shares are applied to process and harvest residue; no stream-specific sub-provincial evidence is available.
+
+- BC shares use 2050 OSeCAN zonal supply dispatch (`SUPBCWB1`/`SUPBCWB2`).
+- AB, ON, and QC shares use 2050 OSeCAN zonal dispatch (`PWRBCW<zone>`); this is zonal energy activity, not harvest volume.
+- Operable-area weights were considered for BC using the crosswalk B1 ecoprovince definition; they were not activated because zonal supply dispatch is available.
+- No defensible ecoprovince-to-zone mapping exists for A1/A2, O1/O2, or Q1/Q2 in the published crosswalk, so operable-area weights were not applied there.
+- Equal split was implemented as the final fallback but was not activated because dispatch weights are positive.
+- Zone shares are stable across all process and harvest cases; only the province total changes by case.
+
+## Caveats
+
+- Zone allocation is screening-only; no published sub-provincial residue polygon or observed split is used.
+- Process residue is facility-province based; harvest residue is origin-province based. They are separate and not summed.
+- Process rows use the `TOTAL` class row only; harvest rows use the `ALL` row only.
+- SUPBCW technology strings are candidate mappings, not operating assignments or official OSeCAN technology choices.
+- The 2050 OSeCAN national (152.923 PJ) and BC (43.524 PJ) values are model context, not policy targets.
+- The 213.54 PJ national supply-curve top is an adopted model bound, not a policy target.
+- No transport, cost, revenue, capacity-expansion, tenure, AAC, or policy claim is made.
+- No UI or public OSeCAN surface is changed.
+
+## Validation and status
+
+Build status: `pass`. Validation checks: 20, failed: 0.
+
+Run `.venv/bin/python -m workflows.national.facilities.forestry_osecan_handoff_v6_trade` to reproduce the artifact and `.venv/bin/python -m pytest tests/test_forestry_osecan_handoff_v6_trade.py -q` to run the regression tests.
+
+No policy/AAC claim is made.
+
+## Stem-only versus total residue tier positions
+
+| Stream | Case | Stem-only v5 | Total residue v6 | Changed |
+|---|---|---|---|---|
+| harvest | harvest_recovery_035 | T1 | T3 | True |
+| harvest | harvest_recovery_060 | T1 | T4 | True |
+| harvest | harvest_recovery_075 | T2 | above_T4 | True |
+| process | process_availability_000 | T1 | T1 | False |
+| process | process_availability_025 | T3 | T3 | False |
+| process | process_availability_050 | above_T4 | above_T4 | False |
+| process | process_availability_075 | above_T4 | above_T4 | False |
+
+## Trade sensitivity
+
+Province/case totals come from `national_residue_curve_v5_trade` (assignment-v5 `published_plus_proxy`). National totals match the local handoff v6; the process-residue zone distribution differs. This is a screening counterfactual, not an interprovincial trade forecast.
