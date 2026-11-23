@@ -1,0 +1,1071 @@
+{
+  "artifact": "facility_residue_supply_v8",
+  "artifact_version": "8.0.0",
+  "assignment_v10": {
+    "assigned_m3": 118977339.10000001,
+    "assigned_share": 1.0,
+    "cross_border_share": 0.019544476141482647,
+    "facilities_used": 296,
+    "hhi": 0.008868045996237322,
+    "max_facility_share": 0.0430701556178253,
+    "proxy_m3": 64339745.32913723,
+    "proxy_share_of_assigned": 0.5407731070120833,
+    "published_m3": 54637593.77086278,
+    "scaled_provinces": [
+      "AB",
+      "MB",
+      "ON",
+      "SK"
+    ],
+    "scaled_proxy_records": 40,
+    "scenario": "node_transport_aware",
+    "top5_share": 0.1294318423906697,
+    "unassigned_m3": 0.0
+  },
+  "calibrated_recovery_factor": false,
+  "caveats": [
+    "All values are model estimates; observed=false and policy_grade=false.",
+    "Proxy facility capacity is a BC class-median fill, not an observed capacity; proxy and scaled-proxy shares are reported explicitly.",
+    "Class matching prohibits class feedstock mixing and forces province class streams to assigned facilities of the same class.",
+    "Provinces without a local assigned facility of a class use the national class fallback; this is not a transport or market model.",
+    "Facility feedstock is product-chain class feedstock allocated by assignment v10 weight, not a re-measured facility infeed.",
+    "Process residue is facility-assigned and separate from provincial harvest residue; harvest residue is never facility-assigned.",
+    "The RSYC comparison is a screening check on recoverable harvest residue, not a calibration; process residue is not added to it without the combined label.",
+    "The 129.6709 PJ figure is the documented RSYC 100 Mm3 base, not the 119 Mm3 value.",
+    "Conversion uses the documented dry LHV; no moisture, bark, or heat-rate adjustment is applied.",
+    "No transport, cost, revenue, capacity-expansion, tenure, AAC, or policy claim is made.",
+    "No UI or public OSeCAN surface is changed.",
+    "E2c density calibration is extensive and does not change per-m3 product or residue coefficients; facility residues reflect the E2 v1 to E2c coefficient change at fixed harvest.",
+    "Assignment v10 is a node-to-facility transport-aware LP at the 119 Mm3 reference; it is not a market equilibrium or a route model for every node-facility pair.",
+    "Transport cost is trucking only (52.5 m3 base payload, empty return, 2026 CAD) and is not part of the official OSeCAN supply-curve tiers."
+  ],
+  "concentration": {
+    "by_class": {
+      "BIO": {
+        "facilities": 23,
+        "proxy_residue_share": 0.0,
+        "residue_odt": 0.0,
+        "share_of_process_residue": 0.0
+      },
+      "PANEL": {
+        "facilities": 21,
+        "proxy_residue_share": 0.15069882671387602,
+        "residue_odt": 1289723.0073222378,
+        "share_of_process_residue": 0.04783926169556717
+      },
+      "PELLET": {
+        "facilities": 27,
+        "proxy_residue_share": 0.0,
+        "residue_odt": 773993.5526929119,
+        "share_of_process_residue": 0.02870948250728281
+      },
+      "PULP": {
+        "facilities": 24,
+        "proxy_residue_share": 0.7101510920195573,
+        "residue_odt": 12082011.58506657,
+        "share_of_process_residue": 0.44815399178380455
+      },
+      "SAW": {
+        "facilities": 199,
+        "proxy_residue_share": 0.5060732989722168,
+        "residue_odt": 12813780.87764521,
+        "share_of_process_residue": 0.4752972640133454
+      }
+    },
+    "effective_facility_count": 43.08368853756542,
+    "facilities_used": 294,
+    "facilities_with_positive_residue": 271,
+    "hhi": 0.023210640359357406,
+    "process_residue_odt": 26959509.02272693,
+    "proxy_residue_share": 0.566001621658275,
+    "published_residue_share": 0.433998378341725,
+    "scaled_proxy_residue_share": 0.29360482946007854,
+    "top1_share": 0.1093311848672485,
+    "top5_share": 0.24667993114189846
+  },
+  "density_calibration": {
+    "applies_to": "E2c product coefficients",
+    "changes": "stems/ha expansion and expanded reference volume only",
+    "per_m3_coefficients_unchanged_from_e2_v2": true
+  },
+  "facility_assignment": true,
+  "generated_utc": "2026-11-23T16:02:44+00:00",
+  "inputs": {
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/facilities/facility_residue_supply_v7/facility_residue_supply.csv": "397ed4d05c9a3b95cb1f655b719ad5a589246bc6795afb0ec7a8272ee7b86eaf",
+    "data/derived/national/facilities/facility_residue_supply_v7/summary.json": "f49a6409216c85853c812f94eefaf0ff7de7fa50425c130b9d0a23eafe51975a",
+    "data/derived/national/facilities/national_facility_assignment_v10/summary.json": "0148b284ebf32b18c13bcd9f6de2477f92a94103de59e1903c53e59adcf60144",
+    "data/derived/national/facilities/national_facility_assignment_v10/v10_facility_utilization.csv": "3e0d06425e5b58f6a8b187538aced2385aeb225f1916567839647c418b8e9f1c",
+    "data/derived/national/facilities/national_facility_assignment_v10/v10_node_assignment.csv": "54ed079b13e94ac20aa93509b914c64f4dcdece8b67eb92cc54a7a987a26acf2",
+    "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06",
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/facilities/national_product_chain_v5/summary.json": "a5d4876997bac9af0cbc7f11f34073a8a635391ee8c6b51cf4d03df837bbb7c5"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "lhv": {
+    "source": "national RSYC residue factor summary",
+    "source_path": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "value_gj_per_odt": 18.5
+  },
+  "method": {
+    "allocation": "per origin province and class, proportional to assignment v10 node_transport_aware assigned volume among same-class facilities; node-to-facility flows aggregate to origin/facility links",
+    "assignment": "assignment v10 node_transport_aware",
+    "class_mixing": "prohibited",
+    "conversion": "national_product_chain_v5 E1 measured + E2c density-calibrated coefficients effective province/class product and process-residue ratios applied to facility feedstock",
+    "fallback": "national same-class assigned facilities when no province-local assigned facility of that class exists",
+    "harvest_residue": "province-level gross/recoverable/unrecovered; not facility-assigned",
+    "lhv_gj_per_odt": 18.5,
+    "lhv_source": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "local_first": false,
+    "process_residue": "facility-level; odt and PJ",
+    "residue_density_odt_m3": 0.45,
+    "rsyc_base_recovery": 0.6,
+    "transport_aware": true
+  },
+  "model_estimate": true,
+  "national_totals": {
+    "combined_process_plus_harvest_gross_odt": 50981712.59442169,
+    "combined_process_plus_harvest_gross_pj": 943.1616829968012,
+    "combined_process_plus_harvest_recoverable_odt": 41372831.16575419,
+    "combined_process_plus_harvest_recoverable_pj": 765.3973765664525,
+    "cross_border_residue_odt": 2291443.370073597,
+    "cross_border_residue_share": 0.08499573816948612,
+    "facilities_used": 294.0,
+    "facilities_with_positive_residue": 271.0,
+    "fallback_residue_odt": 1259642.5480567978,
+    "fallback_residue_share": 0.04672349733798624,
+    "harvest_residue_gross_odt": 24022203.57169476,
+    "harvest_residue_gross_pj": 444.41076607635307,
+    "harvest_residue_recoverable_odt": 14413322.14302726,
+    "harvest_residue_recoverable_pj": 266.6464596460043,
+    "harvest_residue_unrecovered_odt": 9608881.42866604,
+    "harvest_residue_unrecovered_pj": 177.76430643032177,
+    "hhi_process_residue": 0.023210640359357406,
+    "model_recoverable_odt": 14413322.14302726,
+    "model_recoverable_pj": 266.6464596460043,
+    "process_residue_odt": 26959509.02272693,
+    "process_residue_odt_per_m3_feedstock": 0.2044186480311361,
+    "process_residue_pj": 498.7509169204482,
+    "proxy_residue_share": 0.566001621658275,
+    "published_residue_share": 0.433998378341725,
+    "rsyc_base_100m_recoverable_odt": 7009238.195978076,
+    "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+    "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+    "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+    "rsyc_ratio": 2.0357621116733324,
+    "rsyc_status": "model_above_rsyc",
+    "scaled_proxy_residue_share": 0.29360482946007854,
+    "top1_process_residue_share": 0.1093311848672485,
+    "top5_process_residue_share": 0.24667993114189846,
+    "total_feedstock_m3": 131883804.54713008
+  },
+  "observed": false,
+  "outputs": {
+    "FACILITY_RESIDUE_SUPPLY_V8.md": {
+      "bytes": 9800,
+      "sha256": "29b8aa31d6ec5c1493d653870eb32689f6295ccd287e7558130e56d4bcb843f0"
+    },
+    "facility_residue_supply.csv": {
+      "bytes": 610100,
+      "sha256": "e2121a6a5a93a5a224b8a3539094e34a29476c1ad77d2ad6d8d0b650eba39a81"
+    },
+    "facility_transport.csv": {
+      "bytes": 166309,
+      "sha256": "301de25874ee2d794a6af9789a3cfa389c34c089974ff17afd1274fb1a101779"
+    },
+    "national_residue_summary.csv": {
+      "bytes": 4517,
+      "sha256": "4cd9284248c81e3fb60d6d23cba397099ac4361b31cd6758bc81642b7ce8562f"
+    },
+    "province_residue_supply.csv": {
+      "bytes": 19441,
+      "sha256": "7584597d126fa78478aef57ec758b71f12a73cc376d8d8c8305ed4ee78dce583"
+    },
+    "summary.json": {
+      "bytes": 22375,
+      "sha256": "8f6386da84c7b6f4ede62e29fa3af1079bef4372e6903e70a5d87e45020e5af1"
+    },
+    "transport_cost_summary.csv": {
+      "bytes": 36825,
+      "sha256": "cca01d9b60856dd1ac264ea89b3917864bf10e461b8c4b88167af322a6125034"
+    },
+    "v4_v5_facility_comparison.csv": {
+      "bytes": 1741,
+      "sha256": "4a6c942cfccaacc88f12d5c9329df0670a1bb6089c4d6fca5ea16a5f08619c18"
+    },
+    "v4_v5_facility_distribution.csv": {
+      "bytes": 92883,
+      "sha256": "e0865fae7600eb575cb8785ef8e2309d055bece9e2ed01b8f7def6ba4f44fe9c"
+    },
+    "v4_v5_province_comparison.csv": {
+      "bytes": 3099,
+      "sha256": "1ebdf2d57b002265c94779df85a00e680eedf649a8c6a98cb8fdc3f305696724"
+    },
+    "v4_v5_transport_comparison.csv": {
+      "bytes": 2686,
+      "sha256": "0b0e39c4f5aca850c92534b6e22c2974d7bfbdd7cd0db8ba1c84f6569c1fcfba"
+    }
+  },
+  "policy_grade": false,
+  "product_chain": {
+    "artifact": "national_product_chain_v5",
+    "density_calibrated_provinces": [
+      "AB",
+      "MB",
+      "NL",
+      "NS",
+      "NT",
+      "NU",
+      "ON",
+      "PE",
+      "SK"
+    ],
+    "donor_product_provinces": [],
+    "label": "national_product_chain_v5 E1 measured + E2c density-calibrated coefficients",
+    "measured_provinces": [
+      "BC",
+      "NB",
+      "QC",
+      "YT"
+    ]
+  },
+  "province_totals": [
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 94,
+      "facility_count_positive_residue": 85,
+      "harvest_residue_gross_odt": 6461416.62033,
+      "harvest_residue_gross_pj": 119.536207476105,
+      "harvest_residue_recoverable_odt": 3876849.9722,
+      "harvest_residue_recoverable_pj": 71.7217244857,
+      "origin_process_residue_odt": 9429742.669418,
+      "origin_process_residue_pj": 174.450239384233,
+      "process_residue_odt": 9838408.042718522,
+      "process_residue_pj": 182.01054879029266,
+      "province": "BC",
+      "province_name": "British Columbia",
+      "proxy_residue_share": 0.32532197831924164,
+      "rsyc_base_recoverable_odt": 2397037.88419,
+      "rsyc_ratio": 1.61735031297,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 20,
+      "facility_count_positive_residue": 18,
+      "harvest_residue_gross_odt": 3657250.87728,
+      "harvest_residue_gross_pj": 67.65914122968,
+      "harvest_residue_recoverable_odt": 2194350.52638,
+      "harvest_residue_recoverable_pj": 40.59548473803,
+      "origin_process_residue_odt": 5102524.5809399,
+      "origin_process_residue_pj": 94.39670474738816,
+      "process_residue_odt": 5398777.333135071,
+      "process_residue_pj": 99.87738066299882,
+      "province": "AB",
+      "province_name": "Alberta",
+      "proxy_residue_share": 0.9576749512097422,
+      "rsyc_base_recoverable_odt": 1352343.08639,
+      "rsyc_ratio": 1.62262856849,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.9576749512097422
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 1,
+      "facility_count_positive_residue": 1,
+      "harvest_residue_gross_odt": 2758445.82812,
+      "harvest_residue_gross_pj": 51.03124782022,
+      "harvest_residue_recoverable_odt": 1655067.49687,
+      "harvest_residue_recoverable_pj": 30.618748692094996,
+      "origin_process_residue_odt": 792440.248724,
+      "origin_process_residue_pj": 14.660144601393998,
+      "process_residue_odt": 51627.79556395468,
+      "process_residue_pj": 0.9551142179331615,
+      "province": "SK",
+      "province_name": "Saskatchewan",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 456305.029453,
+      "rsyc_ratio": 3.6271077241,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 1.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 5,
+      "facility_count_positive_residue": 5,
+      "harvest_residue_gross_odt": 220191.13462,
+      "harvest_residue_gross_pj": 4.07353599047,
+      "harvest_residue_recoverable_odt": 132114.680772,
+      "harvest_residue_recoverable_pj": 2.444121594282,
+      "origin_process_residue_odt": 255475.01760664,
+      "origin_process_residue_pj": 4.7262878257228405,
+      "process_residue_odt": 164244.93542500804,
+      "process_residue_pj": 3.0385313053626484,
+      "province": "MB",
+      "province_name": "Manitoba",
+      "proxy_residue_share": 0.9332267029314573,
+      "rsyc_base_recoverable_odt": 129637.740193,
+      "rsyc_ratio": 1.01910663187,
+      "rsyc_status": "within_rsyc_range",
+      "scaled_proxy_residue_share": 0.9332267029314573
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 29,
+      "facility_count_positive_residue": 26,
+      "harvest_residue_gross_odt": 2836136.67893,
+      "harvest_residue_gross_pj": 52.468528560204994,
+      "harvest_residue_recoverable_odt": 1701682.00736,
+      "harvest_residue_recoverable_pj": 31.481117136159998,
+      "origin_process_residue_odt": 3048963.4317849996,
+      "origin_process_residue_pj": 56.40582348802249,
+      "process_residue_odt": 2919952.0178012145,
+      "process_residue_pj": 54.01911232932247,
+      "province": "ON",
+      "province_name": "Ontario",
+      "proxy_residue_share": 0.8699672663223567,
+      "rsyc_base_recoverable_odt": 747713.365355,
+      "rsyc_ratio": 2.27584805383,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.8699672663223567
+    },
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 98,
+      "facility_count_positive_residue": 91,
+      "harvest_residue_gross_odt": 5801854.85892,
+      "harvest_residue_gross_pj": 107.33431489002,
+      "harvest_residue_recoverable_odt": 3481112.91535,
+      "harvest_residue_recoverable_pj": 64.400588933975,
+      "origin_process_residue_odt": 5947725.38594,
+      "origin_process_residue_pj": 110.03291963989,
+      "process_residue_odt": 5319177.691865274,
+      "process_residue_pj": 98.40478729950756,
+      "province": "QC",
+      "province_name": "Quebec",
+      "proxy_residue_share": 0.17539935777578816,
+      "rsyc_base_recoverable_odt": 1326608.52215,
+      "rsyc_ratio": 2.62406946528,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 24,
+      "facility_count_positive_residue": 24,
+      "harvest_residue_gross_odt": 1168545.93225,
+      "harvest_residue_gross_pj": 21.618099746625003,
+      "harvest_residue_recoverable_odt": 701127.559349,
+      "harvest_residue_recoverable_pj": 12.970859847956499,
+      "origin_process_residue_odt": 1425462.3453066999,
+      "origin_process_residue_pj": 26.371053388173948,
+      "process_residue_odt": 1651898.4340681355,
+      "process_residue_pj": 30.560121030260508,
+      "province": "NB",
+      "province_name": "New Brunswick",
+      "proxy_residue_share": 0.9707352113986975,
+      "rsyc_base_recoverable_odt": 239252.442333,
+      "rsyc_ratio": 2.93049279879,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 13,
+      "facility_count_positive_residue": 11,
+      "harvest_residue_gross_odt": 708021.307939,
+      "harvest_residue_gross_pj": 13.0983941968715,
+      "harvest_residue_recoverable_odt": 424812.784763,
+      "harvest_residue_recoverable_pj": 7.8590365181155,
+      "origin_process_residue_odt": 534896.0816833001,
+      "origin_process_residue_pj": 9.895577511141052,
+      "process_residue_odt": 598227.0987067568,
+      "process_residue_pj": 11.067201326075,
+      "province": "NS",
+      "province_name": "Nova Scotia",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 97869.2803086,
+      "rsyc_ratio": 4.34061416845,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 2,
+      "facility_count_positive_residue": 2,
+      "harvest_residue_gross_odt": 71917.4277187,
+      "harvest_residue_gross_pj": 1.33047241279595,
+      "harvest_residue_recoverable_odt": 43150.4566312,
+      "harvest_residue_recoverable_pj": 0.7982834476772,
+      "origin_process_residue_odt": 66329.0818089,
+      "origin_process_residue_pj": 1.2270880134646498,
+      "process_residue_odt": 36351.54052852721,
+      "process_residue_pj": 0.6725034997777535,
+      "province": "PE",
+      "province_name": "Prince Edward Island",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 24868.682945,
+      "rsyc_ratio": 1.73513236413,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 7,
+      "facility_count_positive_residue": 7,
+      "harvest_residue_gross_odt": 320137.285337,
+      "harvest_residue_gross_pj": 5.9225397787344995,
+      "harvest_residue_recoverable_odt": 192082.371202,
+      "harvest_residue_recoverable_pj": 3.553523867237,
+      "origin_process_residue_odt": 337209.01939406,
+      "origin_process_residue_pj": 6.238366858790111,
+      "process_residue_odt": 927373.2425801287,
+      "process_residue_pj": 17.15640498773238,
+      "province": "NL",
+      "province_name": "Newfoundland and Labrador",
+      "proxy_residue_share": 0.9903752994666164,
+      "rsyc_base_recoverable_odt": 299162.602212,
+      "rsyc_ratio": 0.642066788367,
+      "rsyc_status": "model_below_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 1,
+      "facility_count_positive_residue": 1,
+      "harvest_residue_gross_odt": 11846.2932353,
+      "harvest_residue_gross_pj": 0.21915642485305,
+      "harvest_residue_recoverable_odt": 7107.7759412,
+      "harvest_residue_recoverable_pj": 0.13149385491219998,
+      "origin_process_residue_odt": 10199.887509318,
+      "origin_process_residue_pj": 0.18869791892238297,
+      "process_residue_odt": 53470.89033433795,
+      "process_residue_pj": 0.9892114711852521,
+      "province": "YT",
+      "province_name": "Yukon",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 3744.89591911,
+      "rsyc_ratio": 1.89799024986,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 0,
+      "facility_count_positive_residue": 0,
+      "harvest_residue_gross_odt": 6439.32701476,
+      "harvest_residue_gross_pj": 0.11912754977305999,
+      "harvest_residue_recoverable_odt": 3863.59620886,
+      "harvest_residue_recoverable_pj": 0.07147652986391,
+      "origin_process_residue_odt": 8541.272611112001,
+      "origin_process_residue_pj": 0.15801354330557202,
+      "process_residue_odt": 0.0,
+      "process_residue_pj": 0.0,
+      "province": "NT",
+      "province_name": "Northwest Territories",
+      "proxy_residue_share": 0.0,
+      "rsyc_base_recoverable_odt": 5518.55457762,
+      "rsyc_ratio": 0.700110174596,
+      "rsyc_status": "model_below_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 0,
+      "facility_count_positive_residue": 0,
+      "harvest_residue_gross_odt": 0.0,
+      "harvest_residue_gross_pj": 0.0,
+      "harvest_residue_recoverable_odt": 0.0,
+      "harvest_residue_recoverable_pj": 0.0,
+      "origin_process_residue_odt": 0.0,
+      "origin_process_residue_pj": 0.0,
+      "process_residue_odt": 0.0,
+      "process_residue_pj": 0.0,
+      "province": "NU",
+      "province_name": "Nunavut",
+      "proxy_residue_share": 0.0,
+      "rsyc_base_recoverable_odt": 0.0,
+      "rsyc_ratio": 0.0,
+      "rsyc_status": "zero_harvest",
+      "scaled_proxy_residue_share": 0.0
+    }
+  ],
+  "recovery_scenarios": [
+    0.35,
+    0.6,
+    0.75
+  ],
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_residue_supply_v8",
+  "residue_components": "E1_measured_plus_E2c_density_calibrated",
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "basis": "RSYC province recoverable_odt_per_m3_base x provincial harvest; model gross harvest residue x 0.60",
+    "combined_process_plus_harvest_recoverable_odt": 41372831.16575419,
+    "combined_process_plus_harvest_recoverable_pj": 765.3973765664525,
+    "lhv_gj_per_odt": 18.5,
+    "lhv_source": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "model_recoverable_odt": 14413322.14302726,
+    "model_recoverable_pj": 266.6464596460043,
+    "note": "The RSYC comparison applies to recoverable harvest residue only. Process residue is shown separately and is never added to the RSYC stream without the combined label. The 129.6709 PJ figure is the documented RSYC 100 Mm3 base; the 119 Mm3 base is derived with the same factors and the documented LHV.",
+    "process_residue_odt": 26959509.02272693,
+    "process_residue_pj": 498.7509169204482,
+    "ratio": 2.0357621116733324,
+    "rsyc_base_100m_recoverable_odt": 7009238.195978076,
+    "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+    "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+    "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+    "status": "model_above_rsyc"
+  },
+  "scenario": "node_transport_aware",
+  "scope": "Facility-level process residue on assignment v10 node_transport_aware, plus the v4 centroid/local-first versus v5 node transport-aware transport and facility-distribution comparison.",
+  "status": "pass",
+  "transport": {
+    "comparison": {
+      "assigned_m3": {
+        "delta": 1.04e-07,
+        "delta_pct": 0.0,
+        "unit": "m3/yr",
+        "v4_value": 118977339.09999998,
+        "v5_value": 118977339.10000008
+      },
+      "cross_border_m3": {
+        "delta": 2288973.765417041,
+        "delta_pct": 6292.538391844,
+        "unit": "m3/yr",
+        "v4_value": 36376.0,
+        "v5_value": 2325349.765417041
+      },
+      "cross_border_share": {
+        "delta": 0.019238737,
+        "delta_pct": 6292.538391844,
+        "unit": "share",
+        "v4_value": 0.000305739,
+        "v5_value": 0.019544476
+      },
+      "facilities_used": {
+        "delta": 88.0,
+        "delta_pct": 42.307692308,
+        "unit": "count",
+        "v4_value": 208.0,
+        "v5_value": 296.0
+      },
+      "hhi": {
+        "delta": -0.00400233,
+        "delta_pct": -31.097227635,
+        "unit": "index_0_1",
+        "v4_value": 0.012870376,
+        "v5_value": 0.008868046
+      },
+      "mean_road_distance_km": {
+        "delta": -131.833442052,
+        "delta_pct": -32.784369675,
+        "unit": "km",
+        "v4_value": 402.122851104,
+        "v5_value": 270.289409051
+      },
+      "p90_road_distance_km": {
+        "delta": -126.77958415,
+        "delta_pct": -16.626459191,
+        "unit": "km",
+        "v4_value": 762.517038002,
+        "v5_value": 635.737453852
+      },
+      "proxy_m3": {
+        "delta": 16876289.536832325,
+        "delta_pct": 35.556385971,
+        "unit": "m3/yr",
+        "v4_value": 47463455.79230498,
+        "v5_value": 64339745.3291373
+      },
+      "published_m3": {
+        "delta": -16876289.53683222,
+        "delta_pct": -23.598619955,
+        "unit": "m3/yr",
+        "v4_value": 71513883.307695,
+        "v5_value": 54637593.77086278
+      },
+      "share_ge_150_km": {
+        "delta": -0.352103535,
+        "delta_pct": -42.002483697,
+        "unit": "share",
+        "v4_value": 0.838292177,
+        "v5_value": 0.486188642
+      },
+      "share_ge_300_km": {
+        "delta": -0.224879243,
+        "delta_pct": -42.711296025,
+        "unit": "share",
+        "v4_value": 0.526509996,
+        "v5_value": 0.301630753
+      },
+      "top5_share": {
+        "delta": -0.02803205,
+        "delta_pct": -17.802208312,
+        "unit": "share",
+        "v4_value": 0.157463893,
+        "v5_value": 0.129431842
+      },
+      "transport_cost_cad": {
+        "delta": -1566389565.381174,
+        "delta_pct": -31.59002832,
+        "unit": "CAD/yr",
+        "v4_value": 4958493704.090264,
+        "v5_value": 3392104138.70909
+      },
+      "transport_cost_cad_gj": {
+        "delta": -3.234752971,
+        "delta_pct": -31.59002832,
+        "unit": "CAD/GJ",
+        "v4_value": 10.239791297,
+        "v5_value": 7.005038326
+      },
+      "transport_cost_cad_m3": {
+        "delta": -13.16544459,
+        "delta_pct": -31.59002832,
+        "unit": "CAD/m3",
+        "v4_value": 41.675950577,
+        "v5_value": 28.510505987
+      },
+      "weighted_median_road_distance_km": {
+        "delta": -198.458183685,
+        "delta_pct": -57.411745266,
+        "unit": "km",
+        "v4_value": 345.675232075,
+        "v5_value": 147.21704839
+      }
+    },
+    "note": "Transport is a separate truck-cost summary. It is not added to OSeCAN supply-curve tiers and is not an OSeCAN official input.",
+    "v4": {
+      "assigned_m3": 118977339.09999998,
+      "cross_border_m3": 36376.0,
+      "cross_border_share": 0.00030573889343269074,
+      "distance_bands": {
+        "gt_100_le_150_km": 0.09913202054556021,
+        "gt_150_le_300_km": 0.3117821819048068,
+        "gt_300_km": 0.5265099955809792,
+        "gt_50_le_100_km": 0.05390532798696622,
+        "le_50_km": 0.008670473981687828
+      },
+      "facilities_used": 208,
+      "hhi": 0.01287037617184876,
+      "max_facility_share": 0.0680222363910337,
+      "mean_road_distance_km": 402.1228511038554,
+      "p90_road_distance_km": 762.517038002,
+      "province": {
+        "AB": {
+          "assigned_m3": 22891404.000000004,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 232.17794019956665,
+          "transport_cost_cad": 565521460.7804396,
+          "transport_cost_cad_gj": 6.069909991650833,
+          "transport_cost_cad_m3": 24.704533666018893,
+          "transport_energy_gj": 93168014.28000003,
+          "volume_distance_m3_km": 5314879028.996121
+        },
+        "BC": {
+          "assigned_m3": 39978576.99999999,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 273.9127707203027,
+          "transport_cost_cad": 1154275475.3911726,
+          "transport_cost_cad_gj": 7.093943536544059,
+          "transport_cost_cad_m3": 28.87235019373433,
+          "transport_energy_gj": 162712808.39000002,
+          "volume_distance_m3_km": 10950642795.524965
+        },
+        "MB": {
+          "assigned_m3": 1135235.8,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 703.9683631315563,
+          "transport_cost_cad": 81532088.9556113,
+          "transport_cost_cad_gj": 17.64607343148268,
+          "transport_cost_cad_m3": 71.8195188661345,
+          "transport_energy_gj": 4620409.706,
+          "volume_distance_m3_km": 799170087.8943429
+        },
+        "NB": {
+          "assigned_m3": 6234700.0,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 138.88929151400214,
+          "transport_cost_cad": 95941652.31172326,
+          "transport_cost_cad_gj": 3.7809176938550286,
+          "transport_cost_cad_m3": 15.38833501398997,
+          "transport_energy_gj": 25375229.000000004,
+          "volume_distance_m3_km": 865933065.8023491
+        },
+        "NL": {
+          "assigned_m3": 1454037.5,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 616.0067127447155,
+          "transport_cost_cad": 91655685.33247927,
+          "transport_cost_cad_gj": 15.487787905067481,
+          "transport_cost_cad_m3": 63.03529677362466,
+          "transport_energy_gj": 5917932.625000001,
+          "volume_distance_m3_km": 895696860.5825442
+        },
+        "NS": {
+          "assigned_m3": 2388245.0,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 61.11727504274625,
+          "transport_cost_cad": 18202469.771116044,
+          "transport_cost_cad_gj": 1.8726517987536904,
+          "transport_cost_cad_m3": 7.62169282092752,
+          "transport_energy_gj": 9720157.15,
+          "volume_distance_m3_km": 145963026.53446352
+        },
+        "NT": {
+          "assigned_m3": 36376.0,
+          "cross_border_m3": 36376.0,
+          "cross_border_share": 1.0,
+          "mean_road_distance_km": 1201.811124768,
+          "transport_cost_cad": 4421000.836455885,
+          "transport_cost_cad_gj": 29.861474372064073,
+          "transport_cost_cad_m3": 121.53620069430079,
+          "transport_energy_gj": 148050.32,
+          "volume_distance_m3_km": 43717081.47456077
+        },
+        "ON": {
+          "assigned_m3": 13493595.999999998,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 670.3458630172761,
+          "transport_cost_cad": 923796328.4938525,
+          "transport_cost_cad_gj": 16.821089418115424,
+          "transport_cost_cad_m3": 68.46183393172973,
+          "transport_energy_gj": 54918935.71999996,
+          "volume_distance_m3_km": 9045376255.826464
+        },
+        "PE": {
+          "assigned_m3": 302210.4,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 77.40359210700898,
+          "transport_cost_cad": 2794876.0079546683,
+          "transport_cost_cad_gj": 2.2722637005747774,
+          "transport_cost_cad_m3": 9.248113261339345,
+          "transport_energy_gj": 1229996.3280000002,
+          "volume_distance_m3_km": 23392170.53209603
+        },
+        "QC": {
+          "assigned_m3": 26674333.999999996,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 694.2494096324502,
+          "transport_cost_cad": 1889848371.8484752,
+          "transport_cost_cad_gj": 17.40760272775244,
+          "transport_cost_cad_m3": 70.84894310195244,
+          "transport_energy_gj": 108564539.38,
+          "volume_distance_m3_km": 18518640631.83879
+        },
+        "SK": {
+          "assigned_m3": 4344697.6,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 281.2396493302,
+          "transport_cost_cad": 128620615.66590503,
+          "transport_cost_cad_gj": 7.2737207006604425,
+          "transport_cost_cad_m3": 29.604043251687997,
+          "transport_energy_gj": 17682919.231999997,
+          "volume_distance_m3_km": 1221901229.4697614
+        },
+        "YT": {
+          "assigned_m3": 43925.8,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 414.211719894,
+          "transport_cost_cad": 1883678.6950779296,
+          "transport_cost_cad_gj": 10.536411817222804,
+          "transport_cost_cad_m3": 42.88319609609682,
+          "transport_energy_gj": 178778.00600000002,
+          "volume_distance_m3_km": 18194581.165719867
+        }
+      },
+      "proxy_m3": 47463455.79230498,
+      "published_m3": 71513883.307695,
+      "share_ge_150_km": 0.838292177485786,
+      "share_ge_300_km": 0.5265099955809792,
+      "top5_share": 0.15746389255989904,
+      "transport_cost_cad": 4958493704.090264,
+      "transport_cost_cad_gj": 10.239791296509992,
+      "transport_cost_cad_high": 8179794857.723784,
+      "transport_cost_cad_low": 3015445228.7191954,
+      "transport_cost_cad_m3": 41.67595057679572,
+      "transport_energy_gj": 484237770.13700056,
+      "volume_distance_m3_km": 47843506815.642204,
+      "weighted_median_road_distance_km": 345.675232075
+    },
+    "v5": {
+      "assigned_m3": 118977339.10000008,
+      "cross_border_m3": 2325349.765417041,
+      "cross_border_share": 0.019544476141482636,
+      "distance_bands": {
+        "gt_100_le_150_km": 0.14749154780941975,
+        "gt_150_le_300_km": 0.18455788953418803,
+        "gt_300_km": 0.3016307527660268,
+        "gt_50_le_100_km": 0.2425078248437757,
+        "le_50_km": 0.12381198504658988
+      },
+      "facilities_used": 296,
+      "hhi": 0.008868045996237322,
+      "max_facility_share": 0.0430701556178253,
+      "mean_road_distance_km": 270.2894090513835,
+      "p90_road_distance_km": 635.737453852,
+      "province": {
+        "AB": {
+          "assigned_m3": 22891404.000000015,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 220.04873674226377,
+          "transport_cost_cad": 537793709.5177941,
+          "transport_cost_cad_gj": 5.772299792732807,
+          "transport_cost_cad_m3": 23.49326015642351,
+          "transport_energy_gj": 93168014.28000398,
+          "volume_distance_m3_km": 5037224532.456807
+        },
+        "BC": {
+          "assigned_m3": 39978577.00000001,
+          "cross_border_m3": 182193.06737861302,
+          "cross_border_share": 0.004557267442976096,
+          "mean_road_distance_km": 203.07051725838616,
+          "transport_cost_cad": 871442763.6120409,
+          "transport_cost_cad_gj": 5.355710913201633,
+          "transport_cost_cad_m3": 21.797743416731432,
+          "transport_energy_gj": 162712808.39000592,
+          "volume_distance_m3_km": 8118470310.644221
+        },
+        "MB": {
+          "assigned_m3": 1135235.800000003,
+          "cross_border_m3": 111891.751372363,
+          "cross_border_share": 0.09856256415835608,
+          "mean_road_distance_km": 693.9865141631486,
+          "transport_cost_cad": 80400452.28833002,
+          "transport_cost_cad_gj": 17.401152149755397,
+          "transport_cost_cad_m3": 70.82268924951961,
+          "transport_energy_gj": 4620409.7060010005,
+          "volume_distance_m3_km": 787838335.5952154
+        },
+        "NB": {
+          "assigned_m3": 6234700.000000001,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 89.7357695786916,
+          "transport_cost_cad": 65337515.089315996,
+          "transport_cost_cad_gj": 2.5748542048355905,
+          "transport_cost_cad_m3": 10.479656613680849,
+          "transport_energy_gj": 25375228.999999993,
+          "volume_distance_m3_km": 559475602.5922686
+        },
+        "NL": {
+          "assigned_m3": 1454037.5,
+          "cross_border_m3": 59324.80184219401,
+          "cross_border_share": 0.04080004940876285,
+          "mean_road_distance_km": 805.2335386016913,
+          "transport_cost_cad": 119132618.03206398,
+          "transport_cost_cad_gj": 20.13078309286496,
+          "transport_cost_cad_m3": 81.9322871879604,
+          "transport_energy_gj": 5917932.625000001,
+          "volume_distance_m3_km": 1170839761.3845568
+        },
+        "NS": {
+          "assigned_m3": 2388244.9999999995,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 47.85586757628332,
+          "transport_cost_cad": 15039620.943390997,
+          "transport_cost_cad_gj": 1.5472610896408656,
+          "transport_cost_cad_m3": 6.297352634838972,
+          "transport_energy_gj": 9720157.150000999,
+          "volume_distance_m3_km": 114291536.45972075
+        },
+        "NT": {
+          "assigned_m3": 36376.000000004,
+          "cross_border_m3": 36376.000000004,
+          "cross_border_share": 1.0,
+          "mean_road_distance_km": 973.871292734525,
+          "transport_cost_cad": 3592972.6827860004,
+          "transport_cost_cad_gj": 24.268591129288936,
+          "transport_cost_cad_m3": 98.77316590019808,
+          "transport_energy_gj": 148050.32000600002,
+          "volume_distance_m3_km": 35425542.14451498
+        },
+        "ON": {
+          "assigned_m3": 13493595.999999989,
+          "cross_border_m3": 558818.3809182879,
+          "cross_border_share": 0.04141359952664126,
+          "mean_road_distance_km": 337.88004641304093,
+          "transport_cost_cad": 475789493.0890021,
+          "transport_cost_cad_gj": 8.663487135198448,
+          "transport_cost_cad_m3": 35.26039264025709,
+          "transport_energy_gj": 54918935.71999902,
+          "volume_distance_m3_km": 4559216842.75882
+        },
+        "PE": {
+          "assigned_m3": 302210.40000000095,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 71.84563594756924,
+          "transport_cost_cad": 2627136.849132,
+          "transport_cost_cad_gj": 2.135889993595278,
+          "transport_cost_cad_m3": 8.693072273925688,
+          "transport_energy_gj": 1229996.327999,
+          "volume_distance_m3_km": 21712498.377969347
+        },
+        "QC": {
+          "assigned_m3": 26674334.00000001,
+          "cross_border_m3": 1376745.763905579,
+          "cross_border_share": 0.05161312608238235,
+          "mean_road_distance_km": 375.2485120494971,
+          "transport_cost_cad": 1040090046.4748242,
+          "transport_cost_cad_gj": 9.580384648750439,
+          "transport_cost_cad_m3": 38.99216552041463,
+          "transport_energy_gj": 108564539.38000101,
+          "volume_distance_m3_km": 10009504143.411314
+        },
+        "SK": {
+          "assigned_m3": 4344697.599999998,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 395.0716166256883,
+          "transport_cost_cad": 178010013.81340995,
+          "transport_cost_cad_gj": 10.066777520042232,
+          "transport_cost_cad_m3": 40.971784506569584,
+          "transport_energy_gj": 17682919.231999,
+          "volume_distance_m3_km": 1716466704.5817473
+        },
+        "YT": {
+          "assigned_m3": 43925.800000003015,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 633.9979109755998,
+          "transport_cost_cad": 2847796.3169980003,
+          "transport_cost_cad_gj": 15.929231904588582,
+          "transport_cost_cad_m3": 64.83197385130845,
+          "transport_energy_gj": 178778.00599900004,
+          "volume_distance_m3_km": 27848865.437933914
+        }
+      },
+      "proxy_m3": 64339745.3291373,
+      "published_m3": 54637593.77086278,
+      "share_ge_150_km": 0.48618864230021486,
+      "share_ge_300_km": 0.3016307527660268,
+      "top5_share": 0.1294318423906697,
+      "transport_cost_cad": 3392104138.70909,
+      "transport_cost_cad_gj": 7.005038326005199,
+      "transport_cost_cad_high": 5612177966.15524,
+      "transport_cost_cad_low": 2054957526.0094287,
+      "transport_cost_cad_m3": 28.51050598684206,
+      "transport_energy_gj": 484237770.13701564,
+      "volume_distance_m3_km": 32158314675.845085,
+      "weighted_median_road_distance_km": 147.21704839
+    }
+  },
+  "ui_or_public_osecan_changed": false,
+  "v4_v5_comparison": {
+    "facility_comparison_csv": "v4_v5_facility_comparison.csv",
+    "facility_distribution_csv": "v4_v5_facility_distribution.csv",
+    "national_products_residue_invariant": true,
+    "province_csv": "v4_v5_province_comparison.csv",
+    "transport_csv": "v4_v5_transport_comparison.csv",
+    "transport_summary_csv": "transport_cost_summary.csv",
+    "v4_assignment": "assignment v6 province_capacity_floor local-first",
+    "v5_assignment": "assignment v10 node_transport_aware"
+  },
+  "validation": {
+    "checks": [
+      {
+        "allocation_rows": 844,
+        "check_id": "class_matching",
+        "detail": "0 class-mismatched allocation rows",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_product_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_process_residue_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "product_chain_summary_crosscheck",
+        "detail": "facility totals reproduce product-chain summary national totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "finite_nonnegative",
+        "detail": "0 non-finite or negative values",
+        "status": "PASS"
+      },
+      {
+        "check_id": "odt_pj_conversion",
+        "detail": "failed: []",
+        "lhv_gj_per_odt": 18.5,
+        "status": "PASS"
+      },
+      {
+        "check_id": "harvest_residue_separate",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rsyc_comparison",
+        "detail": "RSYC 119m base and model recoverable harvest residue reproduce",
+        "model_recoverable_odt": 14413322.14302726,
+        "ratio": 2.0357621116733324,
+        "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+        "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+        "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+        "status": "PASS"
+      },
+      {
+        "check_id": "assignment_v10_scenario",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "proxy_share",
+        "detail": "proxy share 0.566002",
+        "proxy_residue_share": 0.566001621658275,
+        "scaled_proxy_residue_share": 0.29360482946007854,
+        "status": "PASS"
+      },
+      {
+        "check_id": "national_summary",
+        "detail": "national summary rows match computed totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "evidence_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "repository_hygiene",
+        "detail": "no unexpected D in parent or data git status",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}
