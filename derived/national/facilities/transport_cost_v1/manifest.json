@@ -1,0 +1,140 @@
+{
+  "artifact": "transport_cost_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-23T14:08:17+00:00",
+  "inputs": {
+    "bc_open_cost_model_strict": {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model_strict/strict_parameters.csv",
+      "role": "input",
+      "sha256": "9f600b57977670c3415e17ab3d02713169c345c225c7e8f15950c9cbdee9e84c"
+    },
+    "facility_residue_supply_v7": {
+      "path": "data/derived/national/facilities/facility_residue_supply_v7/summary.json",
+      "role": "input",
+      "sha256": "f49a6409216c85853c812f94eefaf0ff7de7fa50425c130b9d0a23eafe51975a"
+    },
+    "facility_road_distance_audit_v1": {
+      "path": "data/derived/national/facilities/facility_road_distance_audit_v1/province_road_distance_summary.csv",
+      "role": "context",
+      "sha256": "818f4e830459c371571d88db9adcb8759f12c54e55e7413c4b451f84f6a3c78b"
+    },
+    "national_facility_assignment_v6": {
+      "path": "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv",
+      "role": "context",
+      "sha256": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06"
+    },
+    "statcan_14100064_wages_industry": {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model_strict/strict_statcan_observations.csv",
+      "role": "input",
+      "sha256": "9efff9fedffd062aa2c2398133a681158edb62f99cf1addbd482fb6f90061011"
+    },
+    "statcan_14100417_wages_occupation": {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model_strict/strict_statcan_observations.csv",
+      "role": "input",
+      "sha256": "9efff9fedffd062aa2c2398133a681158edb62f99cf1addbd482fb6f90061011"
+    },
+    "statcan_18100001_diesel": {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model_strict/strict_statcan_observations.csv",
+      "role": "input",
+      "sha256": "9efff9fedffd062aa2c2398133a681158edb62f99cf1addbd482fb6f90061011"
+    },
+    "statcan_18100004_cpi": {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model_strict/strict_statcan_observations.csv",
+      "role": "input",
+      "sha256": "9efff9fedffd062aa2c2398133a681158edb62f99cf1addbd482fb6f90061011"
+    },
+    "statcan_18100283_mepi_commodity": {
+      "path": "data/derived/national/harvest_basis/bc_open_cost_model_strict/strict_parameters.csv",
+      "role": "input",
+      "sha256": "9f600b57977670c3415e17ab3d02713169c345c225c7e8f15950c9cbdee9e84c"
+    }
+  },
+  "labels": {
+    "assignment_change": false,
+    "evidence_label": "model_estimate",
+    "model_scope": "national_scope_component_not_national_observed_average",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "TRANSPORT_COST_V1.md": {
+      "bytes": 14462,
+      "sha256": "0fb8ea18a7aca1faa6c21f5dee655a045bc6a64609d6a731c7facbc4c577767c"
+    },
+    "curves.csv": {
+      "bytes": 22560,
+      "sha256": "22036a52bbe16420385bcbcf18661db862ba606ed6b7d7fb299cca743bd7e13d"
+    },
+    "parameters.csv": {
+      "bytes": 10456,
+      "sha256": "285ae8854da089175a5929f38db704512a539098a260a9fac391356b34ef7867"
+    },
+    "provenance.csv": {
+      "bytes": 7710,
+      "sha256": "793b001e8102b07e6fdc7dad497736d92cb1de059afe3cde3af5d9d472565b02"
+    },
+    "summary.json": {
+      "bytes": 54693,
+      "sha256": "c34c4ee9f52b7b7eb4d4a43ec25dc9d5fb2266712d5c942743fdc5ec520aa186"
+    },
+    "supply_curve_comparison.csv": {
+      "bytes": 49386,
+      "sha256": "5eed34f7fc2d011ca1dbf741f5483d6563b3a3284d65a87fa59a85b6958e66b3"
+    },
+    "supply_curve_crossings.csv": {
+      "bytes": 4403,
+      "sha256": "bbab6441c4bb03fbe52e281230ea5a0330f860570c613f27274fe86909575110"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.transport_cost_v1",
+  "scope": {
+    "bulk_density_odt_per_m3": {
+      "base": 0.22,
+      "high": 0.3,
+      "low": 0.15
+    },
+    "cost_scenarios": [
+      "low",
+      "base",
+      "high"
+    ],
+    "currency": "CAD",
+    "distances_km_one_way": [
+      50.0,
+      100.0,
+      150.0,
+      300.0,
+      500.0
+    ],
+    "lhv_gj_per_odt": 18.5,
+    "loaded_km_share": 0.5,
+    "payloads_m3": [
+      45.0,
+      52.5,
+      60.0
+    ],
+    "price_year": 2026,
+    "return_leg": "empty"
+  },
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "comparison_arithmetic": true,
+      "cost_component_sum": true,
+      "cost_scenario_order": true,
+      "crossing_finite_non_negative": true,
+      "grid_complete": true,
+      "labels": true,
+      "mass_limit_not_binding": true,
+      "mass_limit_screen_present": true,
+      "no_assignment_change": true,
+      "no_nan_or_negative": true,
+      "no_official_osecan_change": true,
+      "parameter_bounds": true,
+      "unit_arithmetic": true
+    }
+  }
+}
