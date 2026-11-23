@@ -1,0 +1,504 @@
+{
+  "artifact": "national_bucking_pilot_v2",
+  "checks": [
+    {
+      "check_id": "bc_empirical_provenance",
+      "detail": "347 BC tree rows carry measured FAIB PSP provenance",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_expansion_preserved",
+      "detail": "BC PHF total 1188462.589136 preserved",
+      "status": "PASS"
+    },
+    {
+      "check_id": "thirteen_jurisdictions",
+      "detail": "13 jurisdictions present",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_empirical_count",
+      "detail": "BC tree count 347 equals measured list",
+      "status": "PASS"
+    },
+    {
+      "check_id": "other_provinces_unchanged",
+      "detail": "AB=10; SK=10; MB=10; ON=10; QC=10; NB=10; NS=10; PE=10; NL=10; YT=10; NT=10; NU=10",
+      "status": "PASS"
+    },
+    {
+      "check_id": "volume_balance",
+      "detail": "national v2 balance error 0 m3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "net_defect_balance",
+      "detail": "national v2 net+defect error 0 m3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_tipsy_conservation",
+      "detail": "347 BC TIPSY stems balance",
+      "status": "PASS"
+    },
+    {
+      "check_id": "no_nan",
+      "detail": "numeric columns contain no NaN",
+      "status": "PASS"
+    },
+    {
+      "check_id": "no_negative",
+      "detail": "numeric columns are non-negative except explicit delta columns",
+      "status": "PASS"
+    },
+    {
+      "check_id": "grade_not_assigned",
+      "detail": "1426 national and 621 BC TIPSY log rows grade=not_assigned",
+      "status": "PASS"
+    },
+    {
+      "check_id": "taper_evidence",
+      "detail": "all national v2 taper rows are published_table",
+      "status": "PASS"
+    },
+    {
+      "check_id": "comparison_rows",
+      "detail": "13 facility rows, 15 v1-v2 rows, 4 BC facility variants, 4 population metrics",
+      "status": "PASS"
+    },
+    {
+      "check_id": "labels",
+      "detail": "BC tree rows measured; other trees synthetic; observed/policy_grade/national_claim false",
+      "status": "PASS"
+    },
+    {
+      "check_id": "national_claim",
+      "detail": "no national claim on any row",
+      "status": "PASS"
+    },
+    {
+      "check_id": "repository_hygiene",
+      "detail": "no unexpected D in parent or data git status before run",
+      "status": "PASS"
+    }
+  ],
+  "code": [
+    "workflows/national/bucking/national_bucking_pilot_v2.py",
+    "workflows/national/bucking/national_bucking_pilot_v1.py",
+    "workflows/national/bucking/pilot_schema.py",
+    "workflows/national/bucking/schneider2013.py",
+    "workflows/national/bucking/taper.py",
+    "workflows/national/bucking/bucking.py",
+    "workflows/national/bucking/schema.py",
+    "workflows/national/bucking/rules/national_pilot_sorts.csv",
+    "workflows/national/bucking/rules/bc_interior.yaml",
+    "workflows/national/bucking/rules/bc_basic_density.csv",
+    "workflows/national/bucking/rules/qc_schneider2013_taper.csv"
+  ],
+  "command": ".venv/bin/python -m workflows.national.bucking.national_bucking_pilot_v2 --out-dir data/derived/national/bucking/national_bucking_pilot_v2",
+  "config": {
+    "basic_density_odt_m3": {
+      "AC": 0.49,
+      "AT": 0.35,
+      "B": 0.34,
+      "BA": 0.32,
+      "BL": 0.32,
+      "BOP": 0.5,
+      "C": 0.33,
+      "CW": 0.309797,
+      "EP": 0.5,
+      "EPB": 0.37,
+      "EPN": 0.42,
+      "EPR": 0.38,
+      "FD": 0.45,
+      "HM": 0.42,
+      "HW": 0.42,
+      "L": 0.49,
+      "MB": 0.45,
+      "PA": 0.35,
+      "PEG": 0.35,
+      "PET": 0.35,
+      "PL": 0.43,
+      "PW": 0.35,
+      "PY": 0.379798,
+      "S": 0.37,
+      "SAB": 0.34,
+      "SB": 0.379798,
+      "SE": 0.36,
+      "SW": 0.37,
+      "THO": 0.29
+    },
+    "bc_dbh_breaks_cm": [
+      7.5,
+      10.0,
+      12.5,
+      15.0,
+      17.5,
+      20.0,
+      22.5,
+      25.0,
+      27.5,
+      30.0,
+      32.5,
+      35.0,
+      37.5,
+      40.0,
+      42.5,
+      45.0,
+      47.5,
+      50.0
+    ],
+    "bc_selection": "one PHF-weighted median measured stem per species x BEC zone x 2.5 cm DBH stratum; expansion = stratum PHF",
+    "bc_sort_rule_set_tipsy": "bc_interior_tipsy_sorts",
+    "bc_source": "bc_psp_validation_v0/selected_trees.csv",
+    "bec_anchor": {
+      "AC": "SBS",
+      "AT": "BWBS",
+      "B": "BWBS",
+      "BA": "SBS",
+      "BL": "ESSF",
+      "C": "CWH",
+      "EP": "BWBS",
+      "FD": "IDF",
+      "HW": "CWH",
+      "L": "BWBS",
+      "PL": "SBS",
+      "PW": "SBS",
+      "S": "SBS",
+      "SE": "ESSF",
+      "SW": "SBS"
+    },
+    "bucker": "value-maximising dynamic program over national pilot target lengths; BC TIPSY uses the reference nemora sorted bucker",
+    "chip_yield_fraction": 0.85,
+    "donor_policy": {
+      "AB": "BC",
+      "MB": "BC",
+      "NB": "QC",
+      "NL": "QC",
+      "NS": "QC",
+      "NT": "BC",
+      "NU": "BC",
+      "ON": "QC",
+      "PE": "QC",
+      "SK": "BC",
+      "YT": "BC"
+    },
+    "hog_yield_fraction": 0.1,
+    "moisture_wet_basis": 0.45,
+    "national_sort_rule_set": "national_pilot_sorts",
+    "other_trees_per_province": 10,
+    "price_deck_id": "NAT-PILOT-2026",
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "PE",
+      "NL",
+      "YT",
+      "NT",
+      "NU"
+    ],
+    "stump_height_m": 0.3
+  },
+  "counts": {
+    "bc_facility_comparison_rows": 4,
+    "bc_population_reconciliation_rows": 4,
+    "bc_tipsy_logs": 621,
+    "bc_tipsy_residue_rows": 347,
+    "coefficient_comparison_rows": 13,
+    "jurisdictions": 13,
+    "logs": 1426,
+    "measured_bc_trees": 347,
+    "province_summary_rows": 13,
+    "reconciliation_rows": 467,
+    "residue_rows": 467,
+    "synthetic_other_trees": 120,
+    "trees": 467,
+    "v1_v2_comparison_rows": 15
+  },
+  "evidence_tiers": [
+    "measured_taper",
+    "published_table",
+    "assumption"
+  ],
+  "generated_at_utc": "2026-11-23T00:39:05.846105+00:00",
+  "inputs": {
+    "bc_basic_density": {
+      "path": "workflows/national/bucking/rules/bc_basic_density.csv",
+      "sha256": "6584fb93a50cb6c1bd080515db780dd635aa9859e25b6867afed07a00c3198b6"
+    },
+    "bc_price_profile": {
+      "path": "nemora/config/log_prices/bc_interior_2026q3.yaml",
+      "sha256": "58674b7409ffc6cfd60292e04a7a753aff095a07788b2c1abbeed727bae86ce9"
+    },
+    "bc_psp_selected_trees": {
+      "path": "data/derived/national/bucking/bc_psp_validation_v0/selected_trees.csv",
+      "sha256": "1901c6a78f895338c54900b690c7f7cdb70e91f3695202f372458d09aa54bb0c"
+    },
+    "bc_psp_tree_ledger": {
+      "path": "data/derived/national/bucking/bc_psp_validation_v0/tree_ledger.csv",
+      "sha256": "6b7216f966016eaf583d89389c25feb23aae1368b1be56a8329cda5be375a47a"
+    },
+    "bc_psp_validation_summary": {
+      "path": "data/derived/national/bucking/bc_psp_validation_v0/validation_summary.json",
+      "sha256": "8755207196bcd3bbf7f43df8219ac66c091bad4c3c4816f17ddaed01b28d5f1b"
+    },
+    "bc_tipsy_sort_rules_snapshot": {
+      "note": "The exact BC TIPSY rule file used by this run is copied into the artifact; the source path is recorded separately because the live rule set is versioned independently.",
+      "path": "data/derived/national/bucking/national_bucking_pilot_v2/bc_tipsy_sort_rules.yaml",
+      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392",
+      "source_path": "tmp/bc_interior_head_2026-11-15.yaml",
+      "source_sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392"
+    },
+    "facility_product_chain": {
+      "path": "data/derived/national/facilities/facility_product_chain_v1/province_product_chain.csv",
+      "sha256": "4b6d2c87f2c4d45e688faa457bffc92ee96866e1408d48c3a31a7708a11185bf"
+    },
+    "kozak_parameters": {
+      "path": "nemora/config/kozak/kozak_parameters_v94.csv",
+      "sha256": "36a916991b00ddc3ea0bbd35bf7a305e8cb13f7056af10283ffb8668f9fc00a5"
+    },
+    "national_sort_rules": {
+      "path": "workflows/national/bucking/rules/national_pilot_sorts.csv",
+      "sha256": "b03184644a857ef20caef14b97526d0c9ab792ae009b5518a748d030b7282c19"
+    },
+    "nfi_coverage": {
+      "path": "data/derived/national/assortments/national_coverage/coverage.csv",
+      "sha256": "12f85f85a8c803d1c841d5e817881c7277628ee69a170c45100076633b08fd5d"
+    },
+    "nfi_height_models": {
+      "path": "data/derived/national/assortments/national_fit/national_height_models.csv",
+      "sha256": "f9bb0dffc256833f089684808f2674116ffbb7a0267fc10ffb6739aa5dbfd77f"
+    },
+    "pilot_v1_province_summary": {
+      "path": "data/derived/national/bucking/national_bucking_pilot_v1/province_summary.csv",
+      "sha256": "6d3c08d9e190a02a93d4b1ee3e96bb112ce325181c465f6f32adf28fc44d2725"
+    },
+    "qc_taper_registry": {
+      "path": "workflows/national/bucking/rules/qc_schneider2013_taper.csv",
+      "sha256": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc"
+    }
+  },
+  "labels": {
+    "bc_product_model_estimate": true,
+    "bc_tree_geometry_model_estimate": false,
+    "bc_tree_geometry_synthetic": false,
+    "bc_tree_list": "measured_tree_list",
+    "national_claim": false,
+    "observed": false,
+    "other_tree_geometry_model_estimate": true,
+    "other_tree_geometry_synthetic": true,
+    "other_tree_lists": "representative_synthetic",
+    "policy_grade": false,
+    "ui_or_public_osecan_changed": false
+  },
+  "limitations": [
+    "The BC empirical list is a post-stratified measured aggregate, not the full PSP tree list and not an inventory expansion.",
+    "The other 12 jurisdictions remain representative synthetic lists from pilot v1.",
+    "Absolute volumes are not comparable between expansion-weighted BC and unit-weight synthetic provinces.",
+    "BC TIPSY dimension sorts and national pilot sorts are different rule sets; both are reported.",
+    "Dimension-only pilot sorts are not official federal or provincial log grades; grade=not_assigned.",
+    "Prices, density, moisture, chip and hog yields are pilot assumptions.",
+    "Facility coefficient comparison is screening only; harvest residue and facility process residue are different streams.",
+    "No national, operational, policy-grade, AAC, or investment claim is made.",
+    "No UI or public OSeCAN surface was changed."
+  ],
+  "national_claim": false,
+  "outputs": [
+    {
+      "bytes": 2229,
+      "path": "README.md",
+      "sha256": "0b8b4368dce4d5df42e368d7e42bb9f3bd22dcc7f62b69e2b0bfd5b04a306249"
+    },
+    {
+      "bytes": 2839,
+      "path": "schema.md",
+      "sha256": "2e51f73ab6064bc7261110b71e06d7b9ea020d29a83844f85a1593bac421a0cc"
+    },
+    {
+      "bytes": 458224,
+      "path": "tree_list.csv",
+      "sha256": "c42f4619c4a2f53955ce7f69b1031731a1fec0b7bf8354929229d344041125bb"
+    },
+    {
+      "bytes": 91551,
+      "path": "bc_tree_list_selection.csv",
+      "sha256": "b7b5cc945880abbc75570e45195c482bbf859946417414a02771c28b3794e85a"
+    },
+    {
+      "bytes": 1481573,
+      "path": "bucked_logs.csv",
+      "sha256": "2b52f9acdf37f866a2798eecaf512fb446343da496609abf80a7b3507adc5245"
+    },
+    {
+      "bytes": 614929,
+      "path": "residue_ledger.csv",
+      "sha256": "7003a830a8077630ed8bedbd48c21c6d75ceed7a1dfb91685e03cc784df7d798"
+    },
+    {
+      "bytes": 212153,
+      "path": "reconciliation.csv",
+      "sha256": "3a817cc8b82c992782a918c43b4cf0f4c60a4a59c8d63ab8135ae027a3f8394e"
+    },
+    {
+      "bytes": 267222,
+      "path": "bc_tipsy_logs.csv",
+      "sha256": "4b30540bf2a21cdbb5a94d5103f8dd86600b33cc565229efe844c95ddf396223"
+    },
+    {
+      "bytes": 279882,
+      "path": "bc_tipsy_residue.csv",
+      "sha256": "a1c8c81a300a51e54e62f34e136c1a13abf208ba0493376a673c5c20055e349b"
+    },
+    {
+      "bytes": 93080,
+      "path": "bc_tipsy_reconciliation.csv",
+      "sha256": "17d383cb8fbced924b1ccef30a1df265b7458d69d79876bfe9e3e6caf2950dfd"
+    },
+    {
+      "bytes": 11166,
+      "path": "province_summary.csv",
+      "sha256": "0378077dfda13c2f438006eaf5ccb3f72f39f231965e3a6840c99aafeec9b551"
+    },
+    {
+      "bytes": 10215,
+      "path": "coefficient_comparison.csv",
+      "sha256": "787b89ee3c173a5403f36b55c52b008aeb0109bcee7794bf53c743270dfa52c6"
+    },
+    {
+      "bytes": 9241,
+      "path": "v1_v2_comparison.csv",
+      "sha256": "7818dd1bc6654bff9ca18c1692c462b3c5505b5dc504ad885dd7db5d9ea0f1b3"
+    },
+    {
+      "bytes": 2604,
+      "path": "bc_facility_comparison.csv",
+      "sha256": "4d99dd5ebce2c4a436c0280286925d09e38d1a0f3f5c529ad555deef3aa2f8e4"
+    },
+    {
+      "bytes": 1734,
+      "path": "bc_population_reconciliation.csv",
+      "sha256": "84d82ef0467f7c5ed99a4afed3320ce2879e4201a2364d1538bf1ab0caada245"
+    },
+    {
+      "bytes": 76394,
+      "path": "summary.json",
+      "sha256": "463cf6914b4f8b50bcb695fb3996ec560ca2f86a5252e336f1994a90fccfda33"
+    },
+    {
+      "bytes": 6058,
+      "path": "report.md",
+      "sha256": "ff5aa3a228db30dc9ada8f088fd52799f0bfc0f0edd1d5b01dabffce011aa50b"
+    },
+    {
+      "bytes": 120768,
+      "path": "taper_dispatch.csv",
+      "sha256": "bcc41cd4441f99ac74ae718fde6a52c655a0db392ec2fe080fe927bbc0fdf33e"
+    },
+    {
+      "bytes": 4825,
+      "path": "sort_rules.csv",
+      "sha256": "748e4f48daffe5cec596bdcf07513e57c26a9511ae003ce454b449eb6525a683"
+    },
+    {
+      "bytes": 4336,
+      "path": "bc_tipsy_sort_rules.yaml",
+      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392"
+    },
+    {
+      "bytes": 1143,
+      "path": "bc_tipsy_sort_rules.csv",
+      "sha256": "eb55f214d1a097d2deb44d2b8cbbc8e0b1ceadecfe83b71f67cf6976f7a43e2f"
+    },
+    {
+      "bytes": 350443,
+      "path": "tree_lists/BC.csv",
+      "sha256": "66a92d528d2c8decc8abe0af362200b83f97f85c627b80f35806009d8b8da552"
+    },
+    {
+      "bytes": 9253,
+      "path": "tree_lists/AB.csv",
+      "sha256": "bacf454eeda9360607089c198e18d725d83d6d4b2769a741bb4a3830d8564cc5"
+    },
+    {
+      "bytes": 9619,
+      "path": "tree_lists/SK.csv",
+      "sha256": "ce1e983b88fbcadaed70d7844ea9fe358182e45516fbca20a0c91c06b4d1280b"
+    },
+    {
+      "bytes": 9617,
+      "path": "tree_lists/MB.csv",
+      "sha256": "1e46d7467f888a998a14a9ba3d3f4c6abf617c798cf53034839773eda2595672"
+    },
+    {
+      "bytes": 9816,
+      "path": "tree_lists/ON.csv",
+      "sha256": "24bf20e82a1550e3aa690fa57afc2aba78469d82fa130156dc2ef32968e51b58"
+    },
+    {
+      "bytes": 9583,
+      "path": "tree_lists/QC.csv",
+      "sha256": "1028a45681200f96a295054ba91261a45d433fbb87821ac4902749bb828b2a1f"
+    },
+    {
+      "bytes": 9622,
+      "path": "tree_lists/NB.csv",
+      "sha256": "cc086b81c54ef3a38f96f46a11819965e542239c4577dee347ec1a703088ee49"
+    },
+    {
+      "bytes": 9705,
+      "path": "tree_lists/NS.csv",
+      "sha256": "4be1815b952d02e0667dde893516dfc3986e6917f993da769cc5758115f1eeae"
+    },
+    {
+      "bytes": 9632,
+      "path": "tree_lists/PE.csv",
+      "sha256": "851786af3f8016a6f82061a80b9ef644a642fbd0f7efbb357a9c8c05b6389174"
+    },
+    {
+      "bytes": 9630,
+      "path": "tree_lists/NL.csv",
+      "sha256": "d7f0d2ae260ba69090d37324ce79bd15d60bd7328e619b157046de2825c212fd"
+    },
+    {
+      "bytes": 9640,
+      "path": "tree_lists/YT.csv",
+      "sha256": "50454fa6c9aa1d95e153f12025f3d401a29904cf21e960672cf88766ce07157c"
+    },
+    {
+      "bytes": 9614,
+      "path": "tree_lists/NT.csv",
+      "sha256": "7d7b4755ee11f3cb4e0476c7ae8179cf68274713b785e4e92dc9ca5b56b1b4ce"
+    },
+    {
+      "bytes": 9490,
+      "path": "tree_lists/NU.csv",
+      "sha256": "8eeafa61778ef4ed5b585b2534c827f23757d190b19028157ef288914799eddd"
+    }
+  ],
+  "schema_version": "national_bucking_pilot_v2",
+  "scope": "pilot_measured_bc_plus_representative_synthetic_others",
+  "totals": {
+    "balance_error_m3": 0.0,
+    "defect_m3_expanded": 0.7157987871309248,
+    "max_balance_error_m3": 0.0,
+    "n_logs": 1426,
+    "n_measured_bc_trees": 347,
+    "n_synthetic_other_trees": 120,
+    "n_trees": 467,
+    "net_plus_defect_error_m3": 0.0,
+    "other_m3_expanded": 1644.1111310661295,
+    "pulpwood_m3_expanded": 48680.744904657666,
+    "recovered_gross_m3_expanded": 165141.2914411099,
+    "recovered_net_m3_expanded": 165140.57564232277,
+    "residue_m3_expanded": 17509.261002653784,
+    "residue_odt_expanded": 6701.452156730816,
+    "sawlog_m3_expanded": 114816.43540538604,
+    "taper_total_m3_expanded": 182650.55244376368
+  }
+}
