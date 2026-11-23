@@ -1,0 +1,273 @@
+{
+  "artifact_count": 9,
+  "artifacts": [
+    {
+      "bytes": 5260091,
+      "label": "tree_list.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/tree_list.csv",
+      "sha256": "6754bf37720de91f185730f24d04dd33b7719355185f0a4b340140458ed0a558"
+    },
+    {
+      "bytes": 7998320,
+      "label": "bucked_logs.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/bucked_logs.csv",
+      "sha256": "ca16aea340064a63c2c7098f596f2bdb52077f8077231986168804430fcc4a1a"
+    },
+    {
+      "bytes": 7227254,
+      "label": "residue.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/residue.csv",
+      "sha256": "8aa1991afdaf0a047902a318f76f8047e28f98fef21fbdc4f6dbb5726cd19fc9"
+    },
+    {
+      "bytes": 431874,
+      "label": "plot_summary.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/plot_summary.csv",
+      "sha256": "0f842a21e6fb5c9ac97b1a659b9415fb75c4eabb704d6936c40e76d645a3e38e"
+    },
+    {
+      "bytes": 4513,
+      "label": "species_summary.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/species_summary.csv",
+      "sha256": "28bf8ef6e2ffa51efd4df0f1f0012a78ee5adbb93b912449858791a46d54a79a"
+    },
+    {
+      "bytes": 6173,
+      "label": "comparison.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/comparison.csv",
+      "sha256": "3b45306b7a90ffc975970e16a5a712b557b4c9169695354f007468509419c47c"
+    },
+    {
+      "bytes": 1669,
+      "label": "source_schema.csv",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/source_schema.csv",
+      "sha256": "eb1e6a06187d410dd8c6f68f74663aa87aebcdc10b62889800ec4cd337531d55"
+    },
+    {
+      "bytes": 35653,
+      "label": "summary.json",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/summary.json",
+      "sha256": "325da24b2a983490dcf12d2888c67f7c7e19640213ad2fec712fd38c6c3a7407"
+    },
+    {
+      "bytes": 10679,
+      "label": "report.md",
+      "path": "data/derived/national/bucking/qc_pep_validation_v0/report.md",
+      "sha256": "8deab16454758a5f248b67a13e07f8c22f6affeda18186f90722a0c3b622beb3"
+    }
+  ],
+  "checks": {
+    "checks": [
+      {
+        "detail": "tree_missing=[], log_missing=[], residue_missing=[]",
+        "name": "schema_columns",
+        "passed": true
+      },
+      {
+        "detail": "trees=7767, unique=7767",
+        "name": "unique_tree_ids",
+        "passed": true
+      },
+      {
+        "detail": "residue=7767, trees=7767",
+        "name": "residue_covers_every_tree",
+        "passed": true
+      },
+      {
+        "detail": "log_trees=5873",
+        "name": "logs_are_subset_of_trees",
+        "passed": true
+      },
+      {
+        "detail": "max |expansion * inclusion_area - 1| = 0.000e+00",
+        "name": "expansion_identity",
+        "passed": true
+      },
+      {
+        "detail": "max tree balance error = 2.220e-16 m3",
+        "name": "tree_volume_residue_balance",
+        "passed": true
+      },
+      {
+        "detail": "max ledger balance error = 6.939e-18 m3",
+        "name": "residue_ledger_balance",
+        "passed": true
+      },
+      {
+        "detail": "max |sum logs - recovered| = 0.000e+00 m3",
+        "name": "log_sum_matches_tree_recovered",
+        "passed": true
+      },
+      {
+        "detail": "max errors={'n_trees': 0.0, 'taper_total_m3': 8.881784197001252e-16, 'recovered_gross_m3': 8.881784197001252e-16, 'residue_m3': 1.1102230246251565e-16, 'taper_total_m3_per_ha': 2.842170943040401e-14}",
+        "name": "plot_summary_reconciles",
+        "passed": true
+      },
+      {
+        "detail": "max errors={'n_trees': 0.0, 'taper_total_m3': 1.1368683772161603e-13, 'recovered_gross_m3': 5.684341886080802e-14, 'residue_m3': 0.0}",
+        "name": "species_summary_reconciles",
+        "passed": true
+      },
+      {
+        "detail": "all_rows=1",
+        "name": "comparison_all_row",
+        "passed": true
+      },
+      {
+        "detail": "published_table taper; assumption logs/residue",
+        "name": "evidence_tiers",
+        "passed": true
+      },
+      {
+        "detail": "grade=not_assigned and policy_grade=false",
+        "name": "no_policy_grade",
+        "passed": true
+      },
+      {
+        "detail": "{'measured_tree_list': True, 'open_data': True, 'model_estimate': True, 'observed': False, 'policy_grade': False, 'national_claim': False, 'synthetic': False}",
+        "name": "labels",
+        "passed": true
+      },
+      {
+        "detail": "nan=0, negative=0, rows=7767",
+        "name": "tree_numeric_finite_non_negative",
+        "passed": true
+      },
+      {
+        "detail": "nan=0, negative=0, rows=12599",
+        "name": "log_numeric_finite_non_negative",
+        "passed": true
+      },
+      {
+        "detail": "nan=0, negative=0, rows=7767",
+        "name": "residue_numeric_finite_non_negative",
+        "passed": true
+      },
+      {
+        "detail": "nan=0, negative=0, rows=1000",
+        "name": "plot_numeric_finite_non_negative",
+        "passed": true
+      },
+      {
+        "detail": "nan=0, negative=0, rows=8",
+        "name": "species_numeric_finite_non_negative",
+        "passed": true
+      },
+      {
+        "detail": "nan=0, negative=0, rows=9",
+        "name": "comparison_numeric_finite_non_negative",
+        "passed": true
+      },
+      {
+        "detail": "no populated PEP vmb_tige/vmb_ha or biomass fields; taper-only comparison",
+        "name": "compiled_volume_fields_absent",
+        "passed": true
+      },
+      {
+        "detail": "national_claim=false on every row",
+        "name": "no_national_claim",
+        "passed": true
+      },
+      {
+        "detail": "trees=7767, logs=12599, plots=1000",
+        "name": "summary_counts",
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "elapsed_seconds": 86.1608907438349,
+  "environment": {
+    "numpy": "2.5.0",
+    "pandas": "3.0.3",
+    "python": "3.12.3"
+  },
+  "generated_utc": "2026-11-23T00:21:14Z",
+  "inputs": {
+    "acquisition_record": {
+      "bytes": 7433,
+      "label": "ACQUISITION.md",
+      "path": "data/raw/qc_pep/ACQUISITION.md",
+      "sha256": "23099ff7941fca90d52444f42e769bfb961681e875ec5ebfd4b55cf5a4ed4115"
+    },
+    "provenance_record": {
+      "bytes": 1505,
+      "label": "PROVENANCE.csv",
+      "path": "data/raw/qc_pep/PROVENANCE.csv",
+      "sha256": "d3f3408613b06edf9d4bb36f1ebcfc3e4335bcd699ff946ff3b0cb90f3dc6996"
+    },
+    "script": {
+      "bytes": 87911,
+      "label": "qc_pep_validation.py",
+      "path": "workflows/national/bucking/qc_pep_validation.py",
+      "sha256": "af02afaf1c526283df1ee44d9090596ef29af08c6a30b703c3e15fbe737a6907"
+    },
+    "sort_rules": {
+      "bytes": 3282,
+      "label": "qc_pilot_sorts.csv",
+      "path": "workflows/national/bucking/rules/qc_pilot_sorts.csv",
+      "sha256": "7b18e8f76d61d0c41ba5d25080d1853c566d91e4df02cac559bf3d532d4d0ec6"
+    },
+    "taper_registry": {
+      "bytes": 2545,
+      "label": "qc_schneider2013_taper.csv",
+      "path": "workflows/national/bucking/rules/qc_schneider2013_taper.csv",
+      "sha256": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc"
+    }
+  },
+  "labels": {
+    "measured_tree_list": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "open_data": true,
+    "policy_grade": false,
+    "synthetic": false
+  },
+  "schema_counts": {
+    "dic_non_null": 230524,
+    "first_visit": "1970-05-10T00:00:00.000Z",
+    "haut_arbre_non_null": 372225,
+    "hauteurdef_non_null": 43559,
+    "hauteurdic_non_null": 127194,
+    "last_visit": "2025-10-02T00:00:00.000Z",
+    "live_trees": 1660115,
+    "networks": 7,
+    "plots": 12834,
+    "study_rows": 442560,
+    "trees": 2210417,
+    "visits": 53632,
+    "vmb_ha_non_null": 0,
+    "vmb_tige_non_null": 0
+  },
+  "selection": {
+    "date_max": "2025-10-02",
+    "date_min": "2024-06-28",
+    "rule": "Latest eligible visit per PEP plot (exclude visit status AB, DE, NT), ordered by measurement date descending and id_pe ascending; first 1000 plots; every eligible tree in those plots; deterministic hash cap at 12000 trees if needed.",
+    "selected_plots": 1000,
+    "selected_trees": 7767
+  },
+  "source": {
+    "acquisition_record": "data/raw/qc_pep/ACQUISITION.md",
+    "dataset_id": "placettes-echantillons-permanentes-1970-a-aujourd-hui",
+    "dataset_url": "https://www.donneesquebec.ca/recherche/dataset/placettes-echantillons-permanentes-1970-a-aujourd-hui",
+    "expected_gpkg_sha256": "6d53e90a23799d681d050e13a433bc6e7ede6549b0733c8cc9c01fc8f94348c9",
+    "expected_zip_sha256": "a5deb82b8e05c3226f83eb8daa4842900b6564e31b30915d9215f8a031faa5e5",
+    "gpkg_bytes": 739045376,
+    "gpkg_hash_matches_record": true,
+    "gpkg_member": "PEP.gpkg",
+    "gpkg_path": "PEP.gpkg",
+    "gpkg_sha256": "6d53e90a23799d681d050e13a433bc6e7ede6549b0733c8cc9c01fc8f94348c9",
+    "licence": "CC BY 4.0",
+    "provenance_record": "data/raw/qc_pep/PROVENANCE.csv",
+    "publisher": "Ministere des Ressources naturelles et des Forets du Quebec (MRNF), Direction des inventaires forestiers",
+    "retrieved_utc": "2026-11-23T00:20:39Z",
+    "source_url": "https://diffusion.mffp.gouv.qc.ca/Diffusion/DonneeGratuite/Foret/DONNEES_FOR_ECO_SUD/Placettes_permanentes/02-Donnees/PROV/PEP_GPKG.zip",
+    "zip_bytes": 128568617,
+    "zip_hash_matches_record": true,
+    "zip_path": "PEP_GPKG.zip",
+    "zip_sha256": "a5deb82b8e05c3226f83eb8daa4842900b6564e31b30915d9215f8a031faa5e5",
+    "zip_source": "download"
+  },
+  "validation": "qc_pep_bucking_validation_v0"
+}
