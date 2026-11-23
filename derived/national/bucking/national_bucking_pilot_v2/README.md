@@ -20,7 +20,16 @@ BC is bucked twice:
 
 The other 12 jurisdictions use the v1 local/donor taper dispatch and national
 pilot sorts.  `grade=not_assigned`; no official grade, policy grade, or market
-price is claimed.  Residue is taper total minus recovered gross logs per stem.
+price is claimed.  Stem residue is taper total minus recovered gross logs per
+stem.
+
+BC branch and foliage biomass is added as a separate ODT component from the
+public CFS tree-level DBH + height equations (Open Government Licence - Canada;
+Lambert et al. 2005 and Ung et al. 2008).  `total_residue_odt` is gross stem +
+branch + foliage and `recoverable_residue_odt` applies the existing 0.60 pilot
+recovery factor.  Both are reported; the factor is not calibrated to the
+facility coefficient.  Non-BC synthetic rows keep stem residue only and do not
+claim zero branch/foliage biomass.
 
 ## Files
 
@@ -29,6 +38,8 @@ price is claimed.  Residue is taper total minus recovered gross logs per stem.
 | `bc_tree_list_selection.csv` | BC stratum selection and source provenance |
 | `tree_lists/BC.csv` | BC measured aggregate tree list |
 | `bc_tipsy_logs.csv`, `bc_tipsy_residue.csv` | BC TIPSY dimension-sort rerun |
+| `bc_residue_allometry.csv` | BC per-stem branch/foliage and total residue |
+| `bc_residue_allometry_summary.csv` | Gross/recoverable comparison to facility and prior stem-only |
 | `bc_tipsy_sort_rules.yaml`, `bc_tipsy_sort_rules.csv` | Exact BC TIPSY rule file used |
 | `bucked_logs.csv`, `residue_ledger.csv` | National-sort pilot |
 | `province_summary.csv` | Per-province unweighted and expanded metrics |

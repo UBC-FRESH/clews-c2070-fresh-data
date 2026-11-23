@@ -43,12 +43,37 @@
     },
     {
       "check_id": "no_nan",
-      "detail": "numeric columns contain no NaN",
+      "detail": "numeric core columns contain no NaN; optional branch/foliage fields are populated for every BC measured stem",
       "status": "PASS"
     },
     {
       "check_id": "no_negative",
       "detail": "numeric columns are non-negative except explicit delta columns",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_allometry_complete",
+      "detail": "694 BC component rows for 347 stems across two sort rule sets; branch and foliage are positive",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_allometry_conservation",
+      "detail": "branch+foliage, stem+branch+foliage, 0.60 recoverable and expansion identities hold for every BC component row",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_allometry_non_bc_not_estimated",
+      "detail": "non-BC synthetic rows keep stem residue only and do not claim zero branch/foliage biomass",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_allometry_labels",
+      "detail": "BC branch/foliage estimates are model_estimate=true, observed=false, policy_grade=false, national_claim=false",
+      "status": "PASS"
+    },
+    {
+      "check_id": "bc_allometry_comparison",
+      "detail": "gross total and 0.60-recoverable totals are reported separately against facility 0.076226 and prior stem-only 0.040577",
       "status": "PASS"
     },
     {
@@ -85,6 +110,7 @@
   "code": [
     "workflows/national/bucking/national_bucking_pilot_v2.py",
     "workflows/national/bucking/national_bucking_pilot_v1.py",
+    "workflows/national/bucking/bc_biomass_allometry.py",
     "workflows/national/bucking/pilot_schema.py",
     "workflows/national/bucking/schneider2013.py",
     "workflows/national/bucking/taper.py",
@@ -93,6 +119,10 @@
     "workflows/national/bucking/rules/national_pilot_sorts.csv",
     "workflows/national/bucking/rules/bc_interior.yaml",
     "workflows/national/bucking/rules/bc_basic_density.csv",
+    "workflows/national/bucking/rules/bc_biomass_allometry_map.csv",
+    "workflows/national/bucking/rules/cfs_biomass/README.md",
+    "workflows/national/bucking/rules/cfs_biomass/tree_level_allometric_equations_dbh_height.csv",
+    "workflows/national/bucking/rules/cfs_biomass/tree_level_allometric_equations_dbh.csv",
     "workflows/national/bucking/rules/qc_schneider2013_taper.csv"
   ],
   "command": ".venv/bin/python -m workflows.national.bucking.national_bucking_pilot_v2 --out-dir data/derived/national/bucking/national_bucking_pilot_v2",
@@ -127,6 +157,21 @@
       "SE": 0.36,
       "SW": 0.37,
       "THO": 0.29
+    },
+    "bc_branch_foliage_allometry": {
+      "components": [
+        "Branches",
+        "Foliage"
+      ],
+      "equation_form": "Biomass_kg = a * DBH_cm^b * Height_m^c",
+      "equations": [
+        "Lambert et al. 2005, Can. J. For. Res. 35:1996-2018",
+        "Ung et al. 2008, Can. J. For. Res. 38:1123-1132"
+      ],
+      "licence": "Open Government Licence - Canada",
+      "recovery_factor": 0.6,
+      "recovery_factor_basis": "existing pilot DEFAULT_RECOVERY_FACTOR; not calibrated to the facility coefficient",
+      "source": "CFS Biomass and Nutrients Calculator tree-level DBH + height table"
     },
     "bc_dbh_breaks_cm": [
       7.5,
@@ -208,6 +253,8 @@
   "counts": {
     "bc_facility_comparison_rows": 4,
     "bc_population_reconciliation_rows": 4,
+    "bc_residue_allometry_rows": 694,
+    "bc_residue_allometry_summary_rows": 8,
     "bc_tipsy_logs": 613,
     "bc_tipsy_residue_rows": 347,
     "coefficient_comparison_rows": 13,
@@ -226,11 +273,15 @@
     "published_table",
     "assumption"
   ],
-  "generated_at_utc": "2026-11-23T00:46:02.027531+00:00",
+  "generated_at_utc": "2026-11-23T01:26:51.876197+00:00",
   "inputs": {
     "bc_basic_density": {
       "path": "workflows/national/bucking/rules/bc_basic_density.csv",
       "sha256": "6584fb93a50cb6c1bd080515db780dd635aa9859e25b6867afed07a00c3198b6"
+    },
+    "bc_biomass_allometry_map": {
+      "path": "workflows/national/bucking/rules/bc_biomass_allometry_map.csv",
+      "sha256": "85e51031ea8a96445af5f5d2e9b50de67c3611c04ad0a4f0cb2d10f5a12956ab"
     },
     "bc_price_profile": {
       "path": "nemora/config/log_prices/bc_interior_2026q3.yaml",
@@ -254,6 +305,22 @@
       "sha256": "b14807ca8b887b13dd8c74afb90984b0eb01913eea7b50dd6b0ba5d2088eb8fe",
       "source_path": "workflows/national/bucking/rules/bc_interior.yaml",
       "source_sha256": "b14807ca8b887b13dd8c74afb90984b0eb01913eea7b50dd6b0ba5d2088eb8fe"
+    },
+    "cfs_biomass_equations_dbh": {
+      "licence": "Open Government Licence - Canada",
+      "path": "workflows/national/bucking/rules/cfs_biomass/tree_level_allometric_equations_dbh.csv",
+      "sha256": "f902e8bb0236d49e27458cb430523c51b440e196bb4a5bd5469e3e36a4485d49",
+      "source_url": "https://apps-scf-cfs.rncan.gc.ca/calc/static/files/data/Tree-level%20allometric%20equations%20dbh.csv"
+    },
+    "cfs_biomass_equations_dbh_height": {
+      "licence": "Open Government Licence - Canada",
+      "path": "workflows/national/bucking/rules/cfs_biomass/tree_level_allometric_equations_dbh_height.csv",
+      "sha256": "020675c63cb6ef5dbdb20fd76fc0b9180679b3ad7d0d64aee5ee57af9ea7175c",
+      "source_url": "https://apps-scf-cfs.rncan.gc.ca/calc/static/files/data/Tree-level%20allometric%20equations%20dbh-height.csv"
+    },
+    "cfs_biomass_readme": {
+      "path": "workflows/national/bucking/rules/cfs_biomass/README.md",
+      "sha256": "c8b482c7443cc4ff9df201924d9db6494720cfe42bc531d7c00191d73b9e940c"
     },
     "facility_product_chain": {
       "path": "data/derived/national/facilities/facility_product_chain_v1/province_product_chain.csv",
@@ -285,7 +352,11 @@
     }
   },
   "labels": {
+    "bc_allometry_recovery_factor": 0.6,
+    "bc_branch_foliage_evidence": "published_table",
+    "bc_branch_foliage_model_estimate": true,
     "bc_product_model_estimate": true,
+    "bc_stem_residue_separate": true,
     "bc_tree_geometry_model_estimate": false,
     "bc_tree_geometry_synthetic": false,
     "bc_tree_list": "measured_tree_list",
@@ -305,20 +376,24 @@
     "Dimension-only pilot sorts are not official federal or provincial log grades; grade=not_assigned.",
     "Prices, density, moisture, chip and hog yields are pilot assumptions.",
     "Facility coefficient comparison is screening only; harvest residue and facility process residue are different streams.",
+    "BC branch and foliage biomass is a published allometric model estimate, not measured slash. It is added to stem taper residue for gross and recoverable totals but remains a separate component.",
+    "Some BC source heights are DBH-estimated; branch and foliage inherit that height basis and the tree-list height evidence is not upgraded.",
+    "Gross harvest residue and 0.60-recoverable residue are both reported; the 0.60 recovery factor is the existing pilot default and is not calibrated to the facility coefficient.",
+    "Mountain hemlock (one stem) uses the published conifer group equation; black cottonwood uses the published red alder + black cottonwood group equation. Both are flagged as non-species-specific.",
     "No national, operational, policy-grade, AAC, or investment claim is made.",
     "No UI or public OSeCAN surface was changed."
   ],
   "national_claim": false,
   "outputs": [
     {
-      "bytes": 2229,
+      "bytes": 2916,
       "path": "README.md",
-      "sha256": "0b8b4368dce4d5df42e368d7e42bb9f3bd22dcc7f62b69e2b0bfd5b04a306249"
+      "sha256": "47b6df854af5fbfa70862db3838fd57f84025f6be8e1e66075d6d62f2c4c8e5c"
     },
     {
-      "bytes": 2839,
+      "bytes": 4327,
       "path": "schema.md",
-      "sha256": "2e51f73ab6064bc7261110b71e06d7b9ea020d29a83844f85a1593bac421a0cc"
+      "sha256": "6a4364a360ff14189139f8b42d6e6c066f3702110a4dc5bef7d15e6c49a1105e"
     },
     {
       "bytes": 458224,
@@ -336,9 +411,9 @@
       "sha256": "2b52f9acdf37f866a2798eecaf512fb446343da496609abf80a7b3507adc5245"
     },
     {
-      "bytes": 614929,
+      "bytes": 791026,
       "path": "residue_ledger.csv",
-      "sha256": "7003a830a8077630ed8bedbd48c21c6d75ceed7a1dfb91685e03cc784df7d798"
+      "sha256": "8e92e6de0777958538c5aa552a9dd5e69063ca14c26e7ccf5b94256dc1bfe640"
     },
     {
       "bytes": 212153,
@@ -351,9 +426,9 @@
       "sha256": "2870d3a23bf88a7c3e0d64d7369628401033ce4a88402874da8653c3291a89ee"
     },
     {
-      "bytes": 279813,
+      "bytes": 440194,
       "path": "bc_tipsy_residue.csv",
-      "sha256": "4f81828a6187af8833fd6be90a598effb734cdbc9bec4554686c8739c7473a76"
+      "sha256": "707bca6077105d327be595ad4b956b1dd3b65424183c87dc7b6fa2540f21f29f"
     },
     {
       "bytes": 93057,
@@ -381,19 +456,29 @@
       "sha256": "dffa5ca2e23cf9dde8c1f7f9ec6a08f9a95c72a5c72f24b76c0d1718bf1e7f11"
     },
     {
+      "bytes": 433524,
+      "path": "bc_residue_allometry.csv",
+      "sha256": "3ec8578c3531c7510a0e137b86409694d283fcc95509356a816cf0baef331a1e"
+    },
+    {
+      "bytes": 4545,
+      "path": "bc_residue_allometry_summary.csv",
+      "sha256": "db45254b2d38b7dd1d4b10594e3ff3637284463dcb6e97762d65dc28861e86dc"
+    },
+    {
       "bytes": 1735,
       "path": "bc_population_reconciliation.csv",
       "sha256": "d3ce52d92ef4ba65ecf8a28beee6e73ca1c19953105705a6010657cf25ab08c3"
     },
     {
-      "bytes": 76433,
+      "bytes": 93375,
       "path": "summary.json",
-      "sha256": "7b87762fb513833a36034a1929f637db4d0a2b02b48d557b266ddb8795c1af3b"
+      "sha256": "139ba7504cd11e0e5ba6b4bcdeef86d6fd735d41251ceeee68bd6ddc19428082"
     },
     {
-      "bytes": 6058,
+      "bytes": 10036,
       "path": "report.md",
-      "sha256": "4b0362fdbec2d924a50ed7c17d636d3e9ed92a4ee93727cb33adf6bb4137677e"
+      "sha256": "3e0905cf727b109395444e0259db33bb3853d58d5b2afe18b1cdae51c2d52e2f"
     },
     {
       "bytes": 120768,
