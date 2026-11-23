@@ -55,8 +55,8 @@
     "volume_balance_m3": 2.9103830456733704e-11
   },
   "bc_tipsy": {
-    "chip_green_tonnes_expanded": 22543.618894421204,
-    "green_tonnes_expanded": 25048.465438245785,
+    "chip_green_tonnes_expanded": 22782.849682825126,
+    "green_tonnes_expanded": 25314.27742536125,
     "labels": {
       "measured_tree_list": true,
       "model_estimate": true,
@@ -67,23 +67,23 @@
       "tree_list_label": "measured_tree_list"
     },
     "max_balance_error_m3": 0.0,
-    "n_logs": 621,
+    "n_logs": 613,
     "n_trees": 347,
-    "other_m3_expanded": 12639.790765968683,
-    "other_share_of_recovered": 0.08650547364295881,
+    "other_m3_expanded": 12249.87612197752,
+    "other_share_of_recovered": 0.08406125709985744,
     "pulpwood_m3_expanded": 0.0,
     "pulpwood_share_of_recovered": 0.0,
-    "recovered_gross_m3_expanded": 146115.50268065042,
-    "residue_m3_expanded": 36955.33847012927,
-    "residue_m3_per_recovered_m3": 0.2529186690812592,
-    "residue_odt_expanded": 13776.655991035183,
-    "residue_odt_per_recovered_m3": 0.09428606642202367,
+    "recovered_gross_m3_expanded": 145725.58803665923,
+    "residue_m3_expanded": 37345.25311412043,
+    "residue_m3_per_recovered_m3": 0.2562710750889249,
+    "residue_odt_expanded": 13922.85258394869,
+    "residue_odt_per_recovered_m3": 0.09554157764281047,
     "sawlog_m3_expanded": 133475.71191468174,
-    "sawlog_share_of_recovered": 0.9134945263570412,
-    "solid_share_of_recovered": 1.0,
+    "sawlog_share_of_recovered": 0.9159387429001428,
+    "solid_share_of_recovered": 1.0000000000000002,
     "sort_rule_set": "bc_interior_tipsy_sorts",
-    "sort_rules_path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/tmp/bc_interior_head_2026-11-15.yaml",
-    "sort_rules_version": "2026-11-15",
+    "sort_rules_path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/workflows/national/bucking/rules/bc_interior.yaml",
+    "sort_rules_version": "2026-11-23",
     "taper": "BC Kozak (2004) Version 6, actual measured BEC zone",
     "taper_total_m3_expanded": 183070.84115077968,
     "taper_warnings": [
@@ -197,7 +197,7 @@
     },
     {
       "check_id": "grade_not_assigned",
-      "detail": "1426 national and 621 BC TIPSY log rows grade=not_assigned",
+      "detail": "1426 national and 613 BC TIPSY log rows grade=not_assigned",
       "status": "PASS"
     },
     {
@@ -262,21 +262,21 @@
         "facility_sawlog_feedstock_share": 0.5922464002383077,
         "facility_solid_feedstock_share": 0.6891929514729851,
         "model_estimate": true,
-        "n_logs": 621,
+        "n_logs": 613,
         "n_trees": 347,
         "national_claim": false,
         "notes": "Facility feedstock classes are mill receipts, not TIPSY dimension sorts.  Solid share is sawlog + other for model rows and sawlog + panel for the facility row.  Harvest residue is a separate stream from mill process residue.",
         "observed": false,
-        "other_share": 0.08650547364295881,
+        "other_share": 0.08406125709985744,
         "policy_grade": false,
         "pulpwood_share": 0.0,
-        "recovered_m3": 146115.50268065042,
-        "residue_odt_model_over_facility": 1.2369357882118706,
-        "residue_odt_per_recovered_m3": 0.09428606642202367,
-        "sawlog_share": 0.9134945263570412,
-        "sawlog_share_model_over_facility": 1.542423096180019,
-        "solid_share": 1.0,
-        "solid_share_model_over_facility": 1.4509724712981165,
+        "recovered_m3": 145725.58803665923,
+        "residue_odt_model_over_facility": 1.253406798409089,
+        "residue_odt_per_recovered_m3": 0.09554157764281047,
+        "sawlog_share": 0.9159387429001428,
+        "sawlog_share_model_over_facility": 1.54655012260368,
+        "solid_share": 1.0000000000000002,
+        "solid_share_model_over_facility": 1.4509724712981167,
         "synthetic": false,
         "variant": "BC_V2_MEASURED_TIPSY_SORTS"
       },
@@ -351,36 +351,36 @@
         "national_sorts_ratio_to_v0": 1.119147932686267,
         "national_sorts_relative_difference": 0.11914793268626693,
         "note": "The BC empirical list is a post-stratified measured aggregate.  Differences are sampling and sort-rule effects, not a new inventory estimate.",
-        "tipsy_ratio_to_v0": 0.9902950459731826,
-        "tipsy_relative_difference": -0.00970495402681732,
+        "tipsy_ratio_to_v0": 0.9876524068745732,
+        "tipsy_relative_difference": -0.012347593125426822,
         "v0_full_population_expanded": 147547.44383989097,
         "v0_population": "bc_psp_validation_v0/tree_ledger.csv bucked rows; PHF_TREE expansion applied",
         "v2_bc_national_sorts_expanded": 165127.41674655705,
-        "v2_bc_tipsy_expanded": 146115.50268065042
+        "v2_bc_tipsy_expanded": 145725.58803665923
       },
       {
         "metric": "residue_m3_expanded",
         "national_sorts_ratio_to_v0": 0.460353458011203,
         "national_sorts_relative_difference": -0.539646541988797,
         "note": "The BC empirical list is a post-stratified measured aggregate.  Differences are sampling and sort-rule effects, not a new inventory estimate.",
-        "tipsy_ratio_to_v0": 0.9717875468720171,
-        "tipsy_relative_difference": -0.02821245312798292,
+        "tipsy_ratio_to_v0": 0.9820408475062387,
+        "tipsy_relative_difference": -0.017959152493761357,
         "v0_full_population_expanded": 38028.20749152513,
         "v0_population": "bc_psp_validation_v0/tree_ledger.csv bucked rows; PHF_TREE expansion applied",
         "v2_bc_national_sorts_expanded": 17506.416820691127,
-        "v2_bc_tipsy_expanded": 36955.33847012927
+        "v2_bc_tipsy_expanded": 37345.25311412043
       },
       {
         "metric": "residue_odt_expanded",
         "national_sorts_ratio_to_v0": 0.47464883878654324,
         "national_sorts_relative_difference": -0.5253511612134568,
         "note": "The BC empirical list is a post-stratified measured aggregate.  Differences are sampling and sort-rule effects, not a new inventory estimate.",
-        "tipsy_ratio_to_v0": 0.9759291136986863,
-        "tipsy_relative_difference": -0.024070886301313734,
+        "tipsy_ratio_to_v0": 0.9862855827460872,
+        "tipsy_relative_difference": -0.013714417253912753,
         "v0_full_population_expanded": 14116.451489824765,
         "v0_population": "bc_psp_validation_v0/tree_ledger.csv bucked rows; PHF_TREE expansion applied",
         "v2_bc_national_sorts_expanded": 6700.357307431893,
-        "v2_bc_tipsy_expanded": 13776.655991035183
+        "v2_bc_tipsy_expanded": 13922.85258394869
       }
     ],
     "v1_v2": [
@@ -974,7 +974,7 @@
   "counts": {
     "bc_facility_comparison_rows": 4,
     "bc_population_reconciliation_rows": 4,
-    "bc_tipsy_logs": 621,
+    "bc_tipsy_logs": 613,
     "bc_tipsy_residue_rows": 347,
     "coefficient_comparison_rows": 13,
     "jurisdictions": 13,
@@ -987,8 +987,8 @@
     "trees": 467,
     "v1_v2_comparison_rows": 15
   },
-  "created_utc": "2026-11-23T00:39:05+00:00",
-  "elapsed_seconds": 304.79600201989524,
+  "created_utc": "2026-11-23T00:46:02+00:00",
+  "elapsed_seconds": 243.43764019897208,
   "evidence": {
     "bc_tree_tiers": [
       "published_table"

@@ -22,7 +22,7 @@
 ## BC bucking results
 | Rule set | Trees | Logs | Recovered m3 (expanded) | Residue m3 | Residue odt | Sawlog share | Pulpwood share | Other share | Solid share | Residue odt/m3 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| BC interior TIPSY | 347 | 621 | 146115.503 | 36955.338 | 13776.656 | 0.913 | 0.000 | 0.087 | 1.000 | 0.0943 |
+| BC interior TIPSY | 347 | 613 | 145725.588 | 37345.253 | 13922.853 | 0.916 | 0.000 | 0.084 | 1.000 | 0.0955 |
 | National pilot sorts | 347 | 1238 | 165127.417 | 17506.417 | 6700.357 | 0.695 | 0.295 | 0.010 | 0.705 | 0.0406 |
 
 ## v1→v2 comparison
@@ -38,7 +38,7 @@ Only BC changes; the other 12 province rows are the v1 trees and sort rules.  Ab
 | Variant | Sawlog share | Solid share | Residue odt/m3 | Solid/facility | Residue/facility | Status |
 |---|---:|---:|---:|---:|---:|---|
 | BC_V1_SYNTHETIC_NATIONAL_SORTS | 0.941 | 0.946 | 0.0158 | 1.373 | 0.208 | outside_20pct |
-| BC_V2_MEASURED_TIPSY_SORTS | 0.913 | 1.000 | 0.0943 | 1.451 | 1.237 | outside_20pct |
+| BC_V2_MEASURED_TIPSY_SORTS | 0.916 | 1.000 | 0.0955 | 1.451 | 1.253 | outside_20pct |
 | BC_V2_MEASURED_NATIONAL_SORTS | 0.695 | 0.705 | 0.0406 | 1.023 | 0.532 | outside_20pct |
 | BC_FACILITY_FEEDSTOCK | 0.592 | 0.689 | 0.0762 | 1.000 | 1.000 | reference |
 
@@ -48,9 +48,9 @@ Facility feedstock shares are mill receipts from `facility_product_chain_v1`, no
 | Metric | v0 full population | v2 TIPSY | TIPSY/v0 | v2 national | National/v0 |
 |---|---:|---:|---:|---:|---:|
 | taper_total_m3_expanded | 185575.651 | 183070.841 | 0.9865 | 182633.834 | 0.9841 |
-| recovered_gross_m3_expanded | 147547.444 | 146115.503 | 0.9903 | 165127.417 | 1.1191 |
-| residue_m3_expanded | 38028.207 | 36955.338 | 0.9718 | 17506.417 | 0.4604 |
-| residue_odt_expanded | 14116.451 | 13776.656 | 0.9759 | 6700.357 | 0.4746 |
+| recovered_gross_m3_expanded | 147547.444 | 145725.588 | 0.9877 | 165127.417 | 1.1191 |
+| residue_m3_expanded | 38028.207 | 37345.253 | 0.9820 | 17506.417 | 0.4604 |
+| residue_odt_expanded | 14116.451 | 13922.853 | 0.9863 | 6700.357 | 0.4746 |
 
 ## Checks
 - `bc_empirical_provenance`: **PASS** — 347 BC tree rows carry measured FAIB PSP provenance
@@ -63,7 +63,7 @@ Facility feedstock shares are mill receipts from `facility_product_chain_v1`, no
 - `bc_tipsy_conservation`: **PASS** — 347 BC TIPSY stems balance
 - `no_nan`: **PASS** — numeric columns contain no NaN
 - `no_negative`: **PASS** — numeric columns are non-negative except explicit delta columns
-- `grade_not_assigned`: **PASS** — 1426 national and 621 BC TIPSY log rows grade=not_assigned
+- `grade_not_assigned`: **PASS** — 1426 national and 613 BC TIPSY log rows grade=not_assigned
 - `taper_evidence`: **PASS** — all national v2 taper rows are published_table
 - `comparison_rows`: **PASS** — 13 facility rows, 15 v1-v2 rows, 4 BC facility variants, 4 population metrics
 - `labels`: **PASS** — BC tree rows measured; other trees synthetic; observed/policy_grade/national_claim false

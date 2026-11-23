@@ -53,7 +53,7 @@
     },
     {
       "check_id": "grade_not_assigned",
-      "detail": "1426 national and 621 BC TIPSY log rows grade=not_assigned",
+      "detail": "1426 national and 613 BC TIPSY log rows grade=not_assigned",
       "status": "PASS"
     },
     {
@@ -208,7 +208,7 @@
   "counts": {
     "bc_facility_comparison_rows": 4,
     "bc_population_reconciliation_rows": 4,
-    "bc_tipsy_logs": 621,
+    "bc_tipsy_logs": 613,
     "bc_tipsy_residue_rows": 347,
     "coefficient_comparison_rows": 13,
     "jurisdictions": 13,
@@ -226,7 +226,7 @@
     "published_table",
     "assumption"
   ],
-  "generated_at_utc": "2026-11-23T00:39:05.846105+00:00",
+  "generated_at_utc": "2026-11-23T00:46:02.027531+00:00",
   "inputs": {
     "bc_basic_density": {
       "path": "workflows/national/bucking/rules/bc_basic_density.csv",
@@ -251,9 +251,9 @@
     "bc_tipsy_sort_rules_snapshot": {
       "note": "The exact BC TIPSY rule file used by this run is copied into the artifact; the source path is recorded separately because the live rule set is versioned independently.",
       "path": "data/derived/national/bucking/national_bucking_pilot_v2/bc_tipsy_sort_rules.yaml",
-      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392",
-      "source_path": "tmp/bc_interior_head_2026-11-15.yaml",
-      "source_sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392"
+      "sha256": "b14807ca8b887b13dd8c74afb90984b0eb01913eea7b50dd6b0ba5d2088eb8fe",
+      "source_path": "workflows/national/bucking/rules/bc_interior.yaml",
+      "source_sha256": "b14807ca8b887b13dd8c74afb90984b0eb01913eea7b50dd6b0ba5d2088eb8fe"
     },
     "facility_product_chain": {
       "path": "data/derived/national/facilities/facility_product_chain_v1/province_product_chain.csv",
@@ -346,19 +346,19 @@
       "sha256": "3a817cc8b82c992782a918c43b4cf0f4c60a4a59c8d63ab8135ae027a3f8394e"
     },
     {
-      "bytes": 267222,
+      "bytes": 261717,
       "path": "bc_tipsy_logs.csv",
-      "sha256": "4b30540bf2a21cdbb5a94d5103f8dd86600b33cc565229efe844c95ddf396223"
+      "sha256": "2870d3a23bf88a7c3e0d64d7369628401033ce4a88402874da8653c3291a89ee"
     },
     {
-      "bytes": 279882,
+      "bytes": 279813,
       "path": "bc_tipsy_residue.csv",
-      "sha256": "a1c8c81a300a51e54e62f34e136c1a13abf208ba0493376a673c5c20055e349b"
+      "sha256": "4f81828a6187af8833fd6be90a598effb734cdbc9bec4554686c8739c7473a76"
     },
     {
-      "bytes": 93080,
+      "bytes": 93057,
       "path": "bc_tipsy_reconciliation.csv",
-      "sha256": "17d383cb8fbced924b1ccef30a1df265b7458d69d79876bfe9e3e6caf2950dfd"
+      "sha256": "a255ed5f87482b0e59aab29a5b84c1ae6c8e5f69fd87be0c69b3d2ee966c66bc"
     },
     {
       "bytes": 11166,
@@ -376,24 +376,24 @@
       "sha256": "7818dd1bc6654bff9ca18c1692c462b3c5505b5dc504ad885dd7db5d9ea0f1b3"
     },
     {
-      "bytes": 2604,
+      "bytes": 2617,
       "path": "bc_facility_comparison.csv",
-      "sha256": "4d99dd5ebce2c4a436c0280286925d09e38d1a0f3f5c529ad555deef3aa2f8e4"
+      "sha256": "dffa5ca2e23cf9dde8c1f7f9ec6a08f9a95c72a5c72f24b76c0d1718bf1e7f11"
     },
     {
-      "bytes": 1734,
+      "bytes": 1735,
       "path": "bc_population_reconciliation.csv",
-      "sha256": "84d82ef0467f7c5ed99a4afed3320ce2879e4201a2364d1538bf1ab0caada245"
+      "sha256": "d3ce52d92ef4ba65ecf8a28beee6e73ca1c19953105705a6010657cf25ab08c3"
     },
     {
-      "bytes": 76394,
+      "bytes": 76433,
       "path": "summary.json",
-      "sha256": "463cf6914b4f8b50bcb695fb3996ec560ca2f86a5252e336f1994a90fccfda33"
+      "sha256": "7b87762fb513833a36034a1929f637db4d0a2b02b48d557b266ddb8795c1af3b"
     },
     {
       "bytes": 6058,
       "path": "report.md",
-      "sha256": "ff5aa3a228db30dc9ada8f088fd52799f0bfc0f0edd1d5b01dabffce011aa50b"
+      "sha256": "4b0362fdbec2d924a50ed7c17d636d3e9ed92a4ee93727cb33adf6bb4137677e"
     },
     {
       "bytes": 120768,
@@ -406,14 +406,14 @@
       "sha256": "748e4f48daffe5cec596bdcf07513e57c26a9511ae003ce454b449eb6525a683"
     },
     {
-      "bytes": 4336,
+      "bytes": 5791,
       "path": "bc_tipsy_sort_rules.yaml",
-      "sha256": "b1ffedbf39477e5a69d2ff8c18db26e0c1d4106235f99dc1eb8df403ed809392"
+      "sha256": "b14807ca8b887b13dd8c74afb90984b0eb01913eea7b50dd6b0ba5d2088eb8fe"
     },
     {
-      "bytes": 1143,
+      "bytes": 1378,
       "path": "bc_tipsy_sort_rules.csv",
-      "sha256": "eb55f214d1a097d2deb44d2b8cbbc8e0b1ceadecfe83b71f67cf6976f7a43e2f"
+      "sha256": "885ed3c67cffd0ed4abea0d1421857ca231f4e1763bde2a5a1a866c8ac9e02b5"
     },
     {
       "bytes": 350443,
