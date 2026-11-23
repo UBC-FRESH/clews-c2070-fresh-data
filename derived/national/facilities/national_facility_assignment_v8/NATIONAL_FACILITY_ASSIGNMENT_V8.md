@@ -33,6 +33,16 @@ Assignment v8 is the distance-only rerun of assignment v6. Capacity v3, the 1.2x
 
 Local candidates in one province all receive the same province factor, so the local-first order is invariant. Any assignment change is confined to the cross-border residual. In this run the cross-border recipient did not switch, so all assignment-composition metrics are unchanged.
 
+## Scenario assignment comparison
+
+| Scenario | V6 rows | V8 rows | Moved m3 | Changed provinces | Proxy share v6/v8 | Facilities v6/v8 | HHI v6/v8 |
+|---|---:|---:|---:|---|---:|---:|---:|
+| province_capacity_floor | 208 | 208 | 0 | none | 0.398929/0.398929 | 208/208 | 0.01287/0.01287 |
+| published_plus_proxy | 265 | 265 | 36376 | NT | 0.33888/0.33888 | 263/264 | 0.007546/0.007546 |
+| published_only | 269 | 264 | 1113697.338461 | MB | 0/0 | 264/259 | 0.008552/0.008672 |
+
+The primary 119 Mm3 floor scenario is composition-identical to v6. The reference scenarios change only cross-border destinations; their local and cross-border totals are unchanged.
+
 ## Province factors
 
 | Province | Factor v6 | Factor v8 | Delta % | n | IQR | 90% CI | Flags |
