@@ -1,0 +1,78 @@
+{
+  "artifact": "national_facility_assignment_v10",
+  "artifact_version": "10.0.0",
+  "generated_utc": "2026-11-23T15:43:24+00:00",
+  "inputs": {
+    "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332",
+    "data/derived/national/facilities/national_facility_assignment_v9/summary.json": "a8d08cda638ae15699ccf3a21ec266244d8442fd3775e1bbdbac7add755991e8",
+    "data/derived/national/facilities/national_facility_assignment_v9/v9_facility_assignment.csv": "fa2f6a215904c1c5bbf79264e0c2c6387dca17789be23065037b3011d98a7a5a",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/supply_node_distance_v1/band_comparison.csv": "a1371179a802095405731fe9652329287eaaecb26b4fdfc7a91d43a3cc05537c",
+    "data/derived/national/facilities/supply_node_distance_v1/summary.json": "58b9ee1c40287666ca9d291c72413c85892d0ed3f5b15d2a11eb1f143bdbe7a9",
+    "data/derived/national/facilities/supply_node_distance_v1/supply_nodes.csv": "275aeb38087fe568ff14e81a54058a3a26775a6ebb4b69d4fd9654dd1c9ae034",
+    "data/derived/national/facilities/transport_cost_v1/curves.csv": "22036a52bbe16420385bcbcf18661db862ba606ed6b7d7fb299cca743bd7e13d",
+    "data/derived/national/facilities/transport_cost_v1/parameters.csv": "285ae8854da089175a5929f38db704512a539098a260a9fac391356b34ef7867",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "assignment_change_vs_v9": true,
+    "capacity_change": false,
+    "evidence_label": "model_estimate",
+    "floor_change": false,
+    "greenfield_siting": false,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "product_change": false,
+    "residue_change": false,
+    "siting_optimization": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "NODE_ASSIGNMENT_V10.md": {
+      "bytes": 6856,
+      "sha256": "47418ab10dc6d63eac6901264db6b00e58a706a06c622cc3fd9a6731c175b89b"
+    },
+    "distance_distribution.csv": {
+      "bytes": 1239,
+      "sha256": "76cb9e44949bf307af42e5e7e1eb8b2aa545ec13f27f8323960e97d99ec451ae"
+    },
+    "local_preference_cases.csv": {
+      "bytes": 1280,
+      "sha256": "ea53e2398e66bb2f6e2c7dd3630525e293c1df1cfaa80ff7be97b2b93d66baf5"
+    },
+    "summary.json": {
+      "bytes": 44908,
+      "sha256": "0148b284ebf32b18c13bcd9f6de2477f92a94103de59e1903c53e59adcf60144"
+    },
+    "v10_facility_utilization.csv": {
+      "bytes": 192476,
+      "sha256": "3e0d06425e5b58f6a8b187538aced2385aeb225f1916567839647c418b8e9f1c"
+    },
+    "v10_node_assignment.csv": {
+      "bytes": 402872,
+      "sha256": "54ed079b13e94ac20aa93509b914c64f4dcdece8b67eb92cc54a7a987a26acf2"
+    },
+    "v10_province_summary.csv": {
+      "bytes": 4906,
+      "sha256": "092ec7bfce6b54e60211637728d22b69ee6bebd8341fefc6bbf877b2fcc16156"
+    },
+    "v9_node_fixed_rows.csv": {
+      "bytes": 4454474,
+      "sha256": "891caf62c8313743811cf61c092dc9a6d46d5b23d16d06290ac87d7789262683"
+    },
+    "v9_v10_comparison.csv": {
+      "bytes": 3626,
+      "sha256": "5e403cdf4127516ddd84481887512d762b742a4125efd32c0bbc073c83149318"
+    },
+    "v9_v10_province_comparison.csv": {
+      "bytes": 3934,
+      "sha256": "72bc13c53379c658b9f9051556511ef2b054dd7c95510b102b9b2aba85bffca0"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment_v10",
+  "status": "complete"
+}
