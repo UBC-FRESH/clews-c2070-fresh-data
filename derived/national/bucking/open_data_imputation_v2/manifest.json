@@ -1,0 +1,80 @@
+{
+  "artifact": "open_data_imputation_v2",
+  "checks": {
+    "ab_dbh_inferred": true,
+    "coefficient_scenarios": true,
+    "comparison_nine_rows": true,
+    "comparison_numeric": true,
+    "distribution_labels_present": true,
+    "donor_only_provinces_labelled": true,
+    "e2b_provenance": true,
+    "expansion_totals_1000": true,
+    "imputed_not_measured": true,
+    "inventory_informed_flags": true,
+    "nine_provinces": true,
+    "no_dua_dependency": true,
+    "no_national_claim": true,
+    "no_official_osecan_change": true,
+    "ns_local_joint": true,
+    "numeric_summary_not_nan": true,
+    "numeric_tree_non_negative": true,
+    "numeric_tree_not_nan": true,
+    "pe_dbh_inferred": true,
+    "residue_balance": true,
+    "sk_paired_marginals": true,
+    "summary_non_negative": true,
+    "thirty_six_trees_each": true,
+    "volume_balance": true
+  },
+  "generated_utc": "2026-11-23T05:08:56Z",
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/tree_list.csv": "e4369ee7da6589142afa0681eee339eef7c9df75c7dc286b54385d0630a79a72",
+    "data/derived/national/bucking/open_data_imputation_v1/province_summary.csv": "5306e2ade133cfb9ae116849814bb51283714357c384f5e546349db1ca02c747",
+    "data/derived/national/bucking/open_data_imputation_v1/tree_list.csv": "0c1a44cb62c7d6e7d49cf335ca68126a73dd386dc82ebd39d501874b5483f989",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/attribute_quantiles.csv": "743429d2fa6c4796f892c5511435eba6b3421b57d5d42baa08d8d025e3781559",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/joint_quantiles.csv": "7820d09a48e3e9f7afd102c3df4f90422c500d0892d9ed17a86a0558c140201c",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/province_summary.csv": "cd65f061981fea2a395361109c3a9f4f38838ce0f1e0af1b43cad722ec80b1b5",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/source_provenance.csv": "4d1f1d64d4043e59a40a7cfcdbee3dd611d125f710a7a30a708284a08b34a276",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/species_composition.csv": "394196d5260caebc53fe57c989c40daf988f9f30cdd3dbae16979b7a98c36463",
+    "workflows/national/bucking/rules/cfs_biomass/tree_level_allometric_equations_dbh_height.csv": "020675c63cb6ef5dbdb20fd76fc0b9180679b3ad7d0d64aee5ee57af9ea7175c",
+    "workflows/national/bucking/rules/e2_biomass_allometry_map.csv": "783d8667ce501429ec8361d89c7072b647e371fb5c957e4e13c60f9f001c6678",
+    "workflows/national/bucking/rules/qc_schneider2013_taper.csv": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc"
+  },
+  "labels": {
+    "donor_only_provinces": [
+      "ON",
+      "NL",
+      "NT",
+      "NU"
+    ],
+    "inventory_informed_provinces": [
+      "AB",
+      "SK",
+      "MB",
+      "NS",
+      "PE"
+    ],
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false,
+    "provenance_tier": "E2b_open_inventory_informed"
+  },
+  "no_dua_dependency": true,
+  "no_official_osecan_change": true,
+  "outputs": {
+    "data/derived/national/bucking/open_data_imputation_v2/bucked_logs.csv": "13e7fd2be1c90531c3082b072cdc8aa5f854ad4a09a5e02c953b241800d23dcc",
+    "data/derived/national/bucking/open_data_imputation_v2/comparison_v1_v2.csv": "8c46179efe23bdee857fa104e5fa1c0b8d28d5d3441a1b55e2a05e98357c06b0",
+    "data/derived/national/bucking/open_data_imputation_v2/dbh_inference_equations.csv": "46034f7e4a2fba7ae730ba650c562e442503a96a06b922c91cc529e2a42e1783",
+    "data/derived/national/bucking/open_data_imputation_v2/distribution_labels.csv": "6daa5dacc2cc0c61064f9de98baca647322c5b9ce0e4570ab6411132b3ce4591",
+    "data/derived/national/bucking/open_data_imputation_v2/product_coefficients.csv": "375647f03b2b43ce075b95687e3f376b630d6802da1873377f3395f56bd8d0dc",
+    "data/derived/national/bucking/open_data_imputation_v2/province_summary.csv": "c460b8bd044edc71baa3512bb8bbbfa7827ff76c35a196518b0cae344c7ec35a",
+    "data/derived/national/bucking/open_data_imputation_v2/report.md": "adb23f9416d36d62e7c1af23a2d947ef36d2708d54acc231476a98b416e7e69a",
+    "data/derived/national/bucking/open_data_imputation_v2/residue_ledger.csv": "539f60cf8eb6bce84270cab4f00eda906e802d2aa22035af6968fa46784799be",
+    "data/derived/national/bucking/open_data_imputation_v2/species_comparison_v1_v2.csv": "d9f5ab45a709dbf4a31b455a95688407b45726b4593fd6c3441dc6be5efc821c",
+    "data/derived/national/bucking/open_data_imputation_v2/summary.json": "0cad2685a7b6a37b68487d87cf47e536be6e2a7ac26a736f2808a890006a4884",
+    "data/derived/national/bucking/open_data_imputation_v2/tree_list.csv": "4f2272077ee3a983311b2af9ac61535fef4c8519a273eacc4d96a6e6b04886dd",
+    "data/derived/national/bucking/open_data_imputation_v2/volume_context.csv": "c307007399eaa1e49c4736240d05a3f6bd83d37217173c729ec46fb233aa6923"
+  },
+  "runtime_seconds": 27.608
+}
