@@ -1,0 +1,143 @@
+{
+  "artifact": "national_taper_coverage_v1",
+  "schema_version": "national_taper_coverage_v1",
+  "generated_at_utc": "2026-11-23T03:43:56.226181+00:00",
+  "command": "python -m workflows.national.bucking.national_taper_coverage",
+  "inputs": {
+    "nfi_coverage": {
+      "path": "data/derived/national/assortments/national_coverage/coverage.csv",
+      "sha256": "12f85f85a8c803d1c841d5e817881c7277628ee69a170c45100076633b08fd5d"
+    },
+    "scanfi_rsyc_curve_library": {
+      "path": "data/derived/national/assortments/rsyc_backbone/rsyc_curve_library.csv",
+      "sha256": "dbd20841bde8bc0d92e4f46788329f722fab7e25d414d96b9508de727ad3ea29"
+    },
+    "four_province_taper_coverage": {
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/taper_coverage.csv",
+      "sha256": "9b666196eab216ee6158efb0c1c61fa2c304844160e1e727dd336bddf334c572"
+    },
+    "national_bucking_pilot_v2_taper_dispatch": {
+      "path": "data/derived/national/bucking/national_bucking_pilot_v2/taper_dispatch.csv",
+      "sha256": "bcc41cd4441f99ac74ae718fde6a52c655a0db392ec2fe080fe927bbc0fdf33e"
+    },
+    "qc_schneider2013_taper_registry": {
+      "path": "workflows/national/bucking/rules/qc_schneider2013_taper.csv",
+      "sha256": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc"
+    }
+  },
+  "code": [
+    {
+      "path": "workflows/national/bucking/national_taper_coverage.py",
+      "sha256": "992348be24225977014e24153cc8cc56836fb87f10a76f4431119cb80e15208c"
+    },
+    {
+      "path": "workflows/national/bucking/national_bucking_pilot_v1.py",
+      "sha256": "7a0cab3b9243c5d14aea9f3f2820e71534adad52e444dedcdd7f0068e8195ef8"
+    },
+    {
+      "path": "workflows/national/bucking/schneider2013.py",
+      "sha256": "d784209b59ba8a6382beb3039c011f63fb380979e68db95b7800b29a551c0030"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "coverage.csv",
+      "bytes": 85681,
+      "sha256": "90904c06df3867874e3411a1b1c2f6fd8aaf6b419283be54283cc40522e54433"
+    },
+    {
+      "path": "province_summary.csv",
+      "bytes": 6368,
+      "sha256": "f4a03711c1b3951b157f5486aee5fd49b9f74174596ad59b53fbbffb5140ada5"
+    },
+    {
+      "path": "gaps.csv",
+      "bytes": 18029,
+      "sha256": "c82fa4b560e5aa6bb0c2a5f5c70b9d333a53cf0ffa8332ee07cb861eeb7bd76c"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 54405,
+      "sha256": "3b753d1f6fecd142e18285347d49c34324145037e6ebc696af61d3dedcbb7ed2"
+    },
+    {
+      "path": "report.md",
+      "bytes": 4893,
+      "sha256": "6742af98834449a8637b4cf44e82fff7177adb2ba99234c967ce3871d63520a5"
+    }
+  ],
+  "labels": {
+    "model_estimate": true,
+    "observed": false,
+    "policy_grade": false,
+    "national_claim": false,
+    "restricted_data": false,
+    "request_dependency": false,
+    "ui_or_public_osecan_changed": false
+  },
+  "source_licenses": {
+    "nfi_coverage": "Open derived NFI/FAIB/MAGPlot/QC PEP/NL FAL coverage table",
+    "scanfi_rsyc_curve_library": "Open SCANFI v2 and RSYC derived curve library",
+    "four_province_taper_coverage": "Open derived four-province measured pilot",
+    "national_bucking_pilot_v2_taper_dispatch": "Open derived national bucking pilot v2",
+    "qc_schneider2013_taper_registry": "LGPL-3.0 CFSForestTools parameter distribution; published equation",
+    "bc_kozak2004": "Published Kozak (2004) parameter table; UBC Research Forests implementation"
+  },
+  "counts": {
+    "jurisdictions": 13,
+    "coverage_rows": 165,
+    "gaps": 62,
+    "local_rows": 25,
+    "donor_rows": 78,
+    "proxy_rows": 35
+  },
+  "checks": [
+    {
+      "check": "13_jurisdictions",
+      "status": "pass",
+      "value": 13
+    },
+    {
+      "check": "province_stem_share_sums",
+      "status": "pass"
+    },
+    {
+      "check": "province_volume_share_sums",
+      "status": "pass"
+    },
+    {
+      "check": "no_negative_numeric_values",
+      "status": "pass"
+    },
+    {
+      "check": "no_nan_output_values",
+      "status": "pass"
+    },
+    {
+      "check": "mapped_rows_have_taper_ids",
+      "status": "pass"
+    },
+    {
+      "check": "unmapped_rows_have_gap_reason",
+      "status": "pass"
+    },
+    {
+      "check": "local_donor_source_consistency",
+      "status": "pass"
+    },
+    {
+      "check": "model_estimate_labels",
+      "status": "pass"
+    },
+    {
+      "check": "national_claim_false",
+      "status": "pass"
+    },
+    {
+      "check": "unexpected_git_deletions",
+      "status": "pass",
+      "value": "none"
+    }
+  ],
+  "unexpected_git_deletions": "none"
+}
