@@ -1,0 +1,71 @@
+{
+  "as_of": "2026-11-23",
+  "coverage": {
+    "documented_end_uses": [
+      "pulpwood",
+      "sawlog"
+    ],
+    "documented_market_groups": [
+      "Cedar",
+      "Deciduous",
+      "Df-Larch",
+      "Hem-Bal",
+      "Other",
+      "SPF",
+      "White Pine",
+      "Yellow Pine"
+    ],
+    "n_coast_gap_series": 97,
+    "n_documented_cells": 13,
+    "n_gap_cells": 3,
+    "n_sort_codes": 20,
+    "n_surface_cells": 16,
+    "n_tipsy_groups": 7
+  },
+  "created_utc": "2026-11-23T07:38:59+00:00",
+  "grade_status": "not_assigned",
+  "inputs": [
+    {
+      "label": "bc_log_market_prices",
+      "path": "data/derived/national/harvest_basis/bc_log_market/bc_log_market_prices.csv",
+      "rows": 15705,
+      "sha256": "e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f"
+    },
+    {
+      "label": "pilot_sort_rules_baseline",
+      "path": "workflows/national/bucking/rules/bc_interior.yaml",
+      "sha256": "b14807ca8b887b13dd8c74afb90984b0eb01913eea7b50dd6b0ba5d2088eb8fe"
+    },
+    {
+      "label": "pilot_sort_rules_surface",
+      "path": "workflows/national/bucking/rules/bc_interior_log_market.yaml",
+      "sha256": "ae2f638f8066b990cd158c27e1e38b5e2d9b17828a3a74e272db0cb0807bf7f1"
+    }
+  ],
+  "label": "industrial_sort_validation",
+  "mapping": {
+    "coast_grade_policy": "unmapped_no_sort_crosswalk",
+    "peeler_policy": "unmapped_quality_not_represented",
+    "period_policy": "latest reported observation per region/log_class/species/grade/end_use; same-period tie prefers 3_month over 1_month",
+    "sort_group_end_use": {
+      "Chip'n'saw": "sawlog",
+      "Deciduous Pulp": "pulpwood",
+      "Deciduous Sawlog/Peeler": "sawlog",
+      "Large Gang": "sawlog",
+      "Pulp": "pulpwood",
+      "Sawlog/Peeler": "sawlog",
+      "Small Gang": "sawlog"
+    },
+    "species_mapping": "nemora.workflows.bucking.market_group_for"
+  },
+  "official_grade_validation": false,
+  "outputs": [
+    "tipsy_group_map.csv",
+    "sort_code_map.csv",
+    "price_surface.csv",
+    "map_gaps.csv",
+    "coast_gaps.csv",
+    "price_profile.yaml"
+  ],
+  "schema": "bc_log_market_sort_price_surface_v1"
+}

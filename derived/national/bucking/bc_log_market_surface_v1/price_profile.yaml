@@ -1,0 +1,45 @@
+schema: bc_log_market_sort_price_surface_v1
+source: BC Interior Log Market Report, latest reported observation per species x end
+  use in bc_log_market_prices.csv
+url: https://www2.gov.bc.ca/gov/content/industry/forestry/forestry-revenues/timber-pricing/interior-timber-pricing/interior-log-market-reports
+period: latest_observation_through_2026-11-23
+observed_periods:
+- '2019-09-30'
+- '2022-11-30'
+- '2023-01-31'
+- '2023-04-30'
+- '2025-09-30'
+- '2025-11-30'
+- '2025-12-31'
+- '2026-09-30'
+units: CAD/m3
+price_basis: mill_delivered
+observation_type: reported_market_average
+market_region: interior
+source_table_sha256: e915d6108150188da327631bde1372a863b25a130ffe45fd88a9f7458c09ba7f
+note: Published species x product averages only. Coast grade letters are not mapped
+  because no coast-grade to TIPSY-sort crosswalk is documented. Peeler prices are
+  not assigned because peeler quality is not represented by the dimension bucker.
+  Missing cells are gaps, not substituted values.
+prices:
+  SPF:
+    pulpwood: 53.46
+    sawlog: 115.64
+  Df-Larch:
+    pulpwood: 52.32
+    sawlog: 134.31
+  Hem-Bal:
+    pulpwood: 60.47
+    sawlog: 108.01
+  Cedar:
+    pulpwood: 66.93
+    sawlog: 191.33
+  White Pine:
+    sawlog: 96.41
+  Yellow Pine:
+    pulpwood: 55.45
+  Deciduous:
+    pulpwood: 47.28
+    sawlog: 154.09
+  Other:
+    sawlog: 70.16
