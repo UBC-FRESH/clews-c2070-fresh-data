@@ -1,0 +1,587 @@
+{
+  "artifact": "facility_residue_supply_v7_trade",
+  "artifact_version": "7.0.0",
+  "assignment_v5": {
+    "assigned_m3": 118977339.10000001,
+    "assigned_share": 1.0000000000000002,
+    "cross_border_share": 0.18408495093640065,
+    "facilities_used": 263,
+    "hhi": 0.007546365634659652,
+    "max_facility_share": 0.018179281698593643,
+    "proxy_m3": 40318991.203272,
+    "proxy_share_of_assigned": 0.3388795841986686,
+    "published_m3": 78658347.89672801,
+    "scaled_provinces": [
+      "AB",
+      "SK",
+      "MB",
+      "ON"
+    ],
+    "scaled_proxy_records": 47,
+    "scenario": "published_plus_proxy",
+    "top5_share": 0.07978889576454648,
+    "unassigned_m3": -1.4901161193847656e-08
+  },
+  "calibrated_recovery_factor": false,
+  "caveats": [
+    "All values are model estimates; observed=false and policy_grade=false.",
+    "Proxy facility capacity is a BC class-median fill, not an observed capacity; proxy and scaled-proxy shares are reported explicitly.",
+    "Class matching prohibits class feedstock mixing and forces province class streams to assigned facilities of the same class.",
+    "Provinces without a local assigned facility of a class use the national class fallback; this is not a transport or market model.",
+    "Facility feedstock is product-chain class feedstock allocated by assignment v5 weight, not a re-measured facility infeed.",
+    "Process residue is facility-assigned and separate from provincial harvest residue; harvest residue is never facility-assigned.",
+    "The RSYC comparison is a screening check on recoverable harvest residue, not a calibration; process residue is not added to it without the combined label.",
+    "The 129.6709 PJ figure is the documented RSYC 100 Mm3 base, not the 119 Mm3 value.",
+    "Conversion uses the documented dry LHV; no moisture, bark, or heat-rate adjustment is applied.",
+    "No transport, cost, revenue, capacity-expansion, tenure, AAC, or policy claim is made.",
+    "No UI or public OSeCAN surface is changed.",
+    "This artifact uses the assignment-v5 published-plus-proxy trade sensitivity, not the assignment-v6 provincial-floor base. Cross-border volume is a screening counterfactual, not a trade forecast.",
+    "E2c density calibration is extensive: it changes the expanded reference volume and density evidence, not the per-m3 product or residue coefficients."
+  ],
+  "concentration": {
+    "by_class": {
+      "BIO": {
+        "facilities": 26,
+        "proxy_residue_share": 0.0,
+        "residue_odt": 0.0,
+        "share_of_process_residue": 0.0
+      },
+      "PANEL": {
+        "facilities": 14,
+        "proxy_residue_share": 0.027790856906523168,
+        "residue_odt": 1289723.007322238,
+        "share_of_process_residue": 0.04783926169556718
+      },
+      "PELLET": {
+        "facilities": 40,
+        "proxy_residue_share": 0.0,
+        "residue_odt": 773993.5526929119,
+        "share_of_process_residue": 0.028709482507282814
+      },
+      "PULP": {
+        "facilities": 20,
+        "proxy_residue_share": 0.4529531498468228,
+        "residue_odt": 12082011.58506657,
+        "share_of_process_residue": 0.4481539917838046
+      },
+      "SAW": {
+        "facilities": 163,
+        "proxy_residue_share": 0.27637121756070976,
+        "residue_odt": 12813780.87764521,
+        "share_of_process_residue": 0.4752972640133455
+      }
+    },
+    "effective_facility_count": 58.43821345143339,
+    "facilities_used": 263,
+    "facilities_with_positive_residue": 237,
+    "hhi": 0.01711209054724228,
+    "process_residue_odt": 26959509.022726927,
+    "proxy_residue_share": 0.3356807398298391,
+    "published_residue_share": 0.664319260170161,
+    "scaled_proxy_residue_share": 0.0,
+    "top1_share": 0.05457407206829103,
+    "top5_share": 0.21731065618232234
+  },
+  "facility_assignment": true,
+  "generated_utc": "2026-11-23T06:10:10+00:00",
+  "inputs": {
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/facilities/national_facility_assignment_v5/facility_assignment.csv": "30e5985ce624a89c432fde90d5e305c55bc68846ea832c5a5736ab7072799c8e",
+    "data/derived/national/facilities/national_facility_assignment_v5/facility_utilization.csv": "906e5efcf7587fba674e9dad40a298357ec7148289982d5c1a59e6f3f383412e",
+    "data/derived/national/facilities/national_facility_assignment_v5/summary.json": "3c914ec96d717cf065ef60860719360e303fdb97585042863c28dcb3ed20b154",
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/facilities/national_product_chain_v5/summary.json": "a5d4876997bac9af0cbc7f11f34073a8a635391ee8c6b51cf4d03df837bbb7c5"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "lhv": {
+    "source": "national RSYC residue factor summary",
+    "source_path": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "value_gj_per_odt": 18.5
+  },
+  "method": {
+    "allocation": "per origin province and class, proportional to assignment v5 published_plus_proxy assigned volume among same-class facilities",
+    "class_mixing": "prohibited",
+    "conversion": "national_product_chain_v5 E1 measured + E2c density-calibrated coefficients effective province/class product and process-residue ratios applied to facility feedstock",
+    "fallback": "national same-class assigned facilities when no province-local assigned facility of that class exists",
+    "harvest_residue": "province-level gross/recoverable/unrecovered; not facility-assigned",
+    "lhv_gj_per_odt": 18.5,
+    "lhv_source": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "local_first": true,
+    "process_residue": "facility-level; odt and PJ",
+    "residue_density_odt_m3": 0.45,
+    "rsyc_base_recovery": 0.6
+  },
+  "model_estimate": true,
+  "national_totals": {
+    "combined_process_plus_harvest_gross_odt": 50981712.594421685,
+    "combined_process_plus_harvest_gross_pj": 943.1616829968011,
+    "combined_process_plus_harvest_recoverable_odt": 41372831.165754184,
+    "combined_process_plus_harvest_recoverable_pj": 765.3973765664524,
+    "cross_border_residue_odt": 5319273.199239497,
+    "cross_border_residue_share": 0.19730601157296068,
+    "facilities_used": 263.0,
+    "facilities_with_positive_residue": 237.0,
+    "fallback_residue_odt": 1264329.02079176,
+    "fallback_residue_share": 0.0468973310947884,
+    "harvest_residue_gross_odt": 24022203.57169476,
+    "harvest_residue_gross_pj": 444.41076607635307,
+    "harvest_residue_recoverable_odt": 14413322.14302726,
+    "harvest_residue_recoverable_pj": 266.6464596460043,
+    "harvest_residue_unrecovered_odt": 9608881.42866604,
+    "harvest_residue_unrecovered_pj": 177.76430643032177,
+    "hhi_process_residue": 0.01711209054724228,
+    "model_recoverable_odt": 14413322.14302726,
+    "model_recoverable_pj": 266.6464596460043,
+    "process_residue_odt": 26959509.022726927,
+    "process_residue_odt_per_m3_feedstock": 0.20441864803113607,
+    "process_residue_pj": 498.75091692044816,
+    "proxy_residue_share": 0.3356807398298391,
+    "published_residue_share": 0.664319260170161,
+    "rsyc_base_100m_recoverable_odt": 7009238.195978076,
+    "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+    "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+    "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+    "rsyc_ratio": 2.0357621116733324,
+    "rsyc_status": "model_above_rsyc",
+    "scaled_proxy_residue_share": 0.0,
+    "top1_process_residue_share": 0.05457407206829103,
+    "top5_process_residue_share": 0.21731065618232234,
+    "total_feedstock_m3": 131883804.54713008
+  },
+  "observed": false,
+  "outputs": {
+    "FACILITY_RESIDUE_SUPPLY_V7_TRADE.md": {
+      "bytes": 9803,
+      "sha256": "f34a1ef966b078a5fbd25f230e84110186568b8248fbce405b8e99765e9bab57"
+    },
+    "facility_residue_supply.csv": {
+      "bytes": 677746,
+      "sha256": "39a1a9af580e65a107c5d75e2c5d8174f58248ffbe62e03271c27fa6ae16710e"
+    },
+    "national_residue_summary.csv": {
+      "bytes": 4504,
+      "sha256": "604788faa92e2f0a3ce6d565d774ce693c4faa60285002eab8852b5bd47a0ae9"
+    },
+    "province_residue_supply.csv": {
+      "bytes": 19404,
+      "sha256": "a8ae49a045f65b0aae5afbb6d4dd101f898a54f4228d0c786e4a1edc29316c87"
+    },
+    "summary.json": {
+      "bytes": 22346,
+      "sha256": "3885812283810beceb3a12f6d56b0e8401f87b2fb5b4fb6f710256418482a76c"
+    }
+  },
+  "policy_grade": false,
+  "product_chain": {
+    "artifact": "national_product_chain_v5",
+    "density_calibrated_provinces": [
+      "AB",
+      "MB",
+      "NL",
+      "NS",
+      "NT",
+      "NU",
+      "ON",
+      "PE",
+      "SK"
+    ],
+    "donor_product_provinces": [],
+    "label": "national_product_chain_v5 E1 measured + E2c density-calibrated coefficients",
+    "measured_provinces": [
+      "BC",
+      "NB",
+      "QC",
+      "YT"
+    ]
+  },
+  "province_totals": [
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 90,
+      "facility_count_positive_residue": 81,
+      "harvest_residue_gross_odt": 6461416.62033,
+      "harvest_residue_gross_pj": 119.536207476105,
+      "harvest_residue_recoverable_odt": 3876849.9722,
+      "harvest_residue_recoverable_pj": 71.7217244857,
+      "origin_process_residue_odt": 9429742.669418,
+      "origin_process_residue_pj": 174.450239384233,
+      "process_residue_odt": 13687268.118003845,
+      "process_residue_pj": 253.21446018307114,
+      "province": "BC",
+      "province_name": "British Columbia",
+      "proxy_residue_share": 0.22399945375495775,
+      "rsyc_base_recoverable_odt": 2397037.88419,
+      "rsyc_ratio": 1.61735031297,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 20,
+      "facility_count_positive_residue": 18,
+      "harvest_residue_gross_odt": 3657250.87728,
+      "harvest_residue_gross_pj": 67.65914122968,
+      "harvest_residue_recoverable_odt": 2194350.52638,
+      "harvest_residue_recoverable_pj": 40.59548473803,
+      "origin_process_residue_odt": 5102524.5809399,
+      "origin_process_residue_pj": 94.39670474738814,
+      "process_residue_odt": 1620274.0268099096,
+      "process_residue_pj": 29.975069495983327,
+      "province": "AB",
+      "province_name": "Alberta",
+      "proxy_residue_share": 0.8618525267841868,
+      "rsyc_base_recoverable_odt": 1352343.08639,
+      "rsyc_ratio": 1.62262856849,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 3,
+      "facility_count_positive_residue": 3,
+      "harvest_residue_gross_odt": 2758445.82812,
+      "harvest_residue_gross_pj": 51.03124782022,
+      "harvest_residue_recoverable_odt": 1655067.49687,
+      "harvest_residue_recoverable_pj": 30.618748692094996,
+      "origin_process_residue_odt": 792440.248724,
+      "origin_process_residue_pj": 14.660144601393998,
+      "process_residue_odt": 1869.3681188533262,
+      "process_residue_pj": 0.034583310198786535,
+      "province": "SK",
+      "province_name": "Saskatchewan",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 456305.029453,
+      "rsyc_ratio": 3.6271077241,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 5,
+      "facility_count_positive_residue": 5,
+      "harvest_residue_gross_odt": 220191.13462,
+      "harvest_residue_gross_pj": 4.07353599047,
+      "harvest_residue_recoverable_odt": 132114.680772,
+      "harvest_residue_recoverable_pj": 2.444121594282,
+      "origin_process_residue_odt": 255475.01760664,
+      "origin_process_residue_pj": 4.7262878257228405,
+      "process_residue_odt": 75606.97207848079,
+      "process_residue_pj": 1.3987289834518946,
+      "province": "MB",
+      "province_name": "Manitoba",
+      "proxy_residue_share": 0.8597878038373964,
+      "rsyc_base_recoverable_odt": 129637.740193,
+      "rsyc_ratio": 1.01910663187,
+      "rsyc_status": "within_rsyc_range",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 37,
+      "facility_count_positive_residue": 34,
+      "harvest_residue_gross_odt": 2836136.67893,
+      "harvest_residue_gross_pj": 52.468528560204994,
+      "harvest_residue_recoverable_odt": 1701682.00736,
+      "harvest_residue_recoverable_pj": 31.481117136159998,
+      "origin_process_residue_odt": 3048963.4317849996,
+      "origin_process_residue_pj": 56.40582348802249,
+      "process_residue_odt": 2700477.7760820575,
+      "process_residue_pj": 49.95883885751807,
+      "province": "ON",
+      "province_name": "Ontario",
+      "proxy_residue_share": 0.8736339702306808,
+      "rsyc_base_recoverable_odt": 747713.365355,
+      "rsyc_ratio": 2.27584805383,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 73,
+      "facility_count_positive_residue": 62,
+      "harvest_residue_gross_odt": 5801854.85892,
+      "harvest_residue_gross_pj": 107.33431489002,
+      "harvest_residue_recoverable_odt": 3481112.91535,
+      "harvest_residue_recoverable_pj": 64.400588933975,
+      "origin_process_residue_odt": 5947725.3859399995,
+      "origin_process_residue_pj": 110.03291963989,
+      "process_residue_odt": 6675104.61200321,
+      "process_residue_pj": 123.48943532205938,
+      "province": "QC",
+      "province_name": "Quebec",
+      "proxy_residue_share": 0.005783585845684558,
+      "rsyc_base_recoverable_odt": 1326608.52215,
+      "rsyc_ratio": 2.62406946528,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 22,
+      "facility_count_positive_residue": 22,
+      "harvest_residue_gross_odt": 1168545.93225,
+      "harvest_residue_gross_pj": 21.618099746625003,
+      "harvest_residue_recoverable_odt": 701127.559349,
+      "harvest_residue_recoverable_pj": 12.970859847956499,
+      "origin_process_residue_odt": 1425462.3453067,
+      "origin_process_residue_pj": 26.371053388173948,
+      "process_residue_odt": 1427058.9029790724,
+      "process_residue_pj": 26.40058970511284,
+      "province": "NB",
+      "province_name": "New Brunswick",
+      "proxy_residue_share": 0.9750021168521709,
+      "rsyc_base_recoverable_odt": 239252.442333,
+      "rsyc_ratio": 2.93049279879,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 8,
+      "facility_count_positive_residue": 7,
+      "harvest_residue_gross_odt": 708021.307939,
+      "harvest_residue_gross_pj": 13.0983941968715,
+      "harvest_residue_recoverable_odt": 424812.784763,
+      "harvest_residue_recoverable_pj": 7.8590365181155,
+      "origin_process_residue_odt": 534896.0816833,
+      "origin_process_residue_pj": 9.89557751114105,
+      "process_residue_odt": 547622.9421165121,
+      "process_residue_pj": 10.131024429155474,
+      "province": "NS",
+      "province_name": "Nova Scotia",
+      "proxy_residue_share": 0.9417057835471889,
+      "rsyc_base_recoverable_odt": 97869.2803086,
+      "rsyc_ratio": 4.34061416845,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 2,
+      "facility_count_positive_residue": 2,
+      "harvest_residue_gross_odt": 71917.4277187,
+      "harvest_residue_gross_pj": 1.33047241279595,
+      "harvest_residue_recoverable_odt": 43150.4566312,
+      "harvest_residue_recoverable_pj": 0.7982834476772,
+      "origin_process_residue_odt": 66329.0818089,
+      "origin_process_residue_pj": 1.22708801346465,
+      "process_residue_odt": 17910.075205987883,
+      "process_residue_pj": 0.33133639131077586,
+      "province": "PE",
+      "province_name": "Prince Edward Island",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 24868.682945,
+      "rsyc_ratio": 1.73513236413,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 2,
+      "facility_count_positive_residue": 2,
+      "harvest_residue_gross_odt": 320137.285337,
+      "harvest_residue_gross_pj": 5.9225397787344995,
+      "harvest_residue_recoverable_odt": 192082.371202,
+      "harvest_residue_recoverable_pj": 3.553523867237,
+      "origin_process_residue_odt": 337209.01939406,
+      "origin_process_residue_pj": 6.238366858790111,
+      "process_residue_odt": 196880.20531906633,
+      "process_residue_pj": 3.642283798402727,
+      "province": "NL",
+      "province_name": "Newfoundland and Labrador",
+      "proxy_residue_share": 0.9562584694506449,
+      "rsyc_base_recoverable_odt": 299162.602212,
+      "rsyc_ratio": 0.642066788367,
+      "rsyc_status": "model_below_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "measured_bucking_pilot",
+      "facility_count": 1,
+      "facility_count_positive_residue": 1,
+      "harvest_residue_gross_odt": 11846.2932353,
+      "harvest_residue_gross_pj": 0.21915642485305,
+      "harvest_residue_recoverable_odt": 7107.7759412,
+      "harvest_residue_recoverable_pj": 0.13149385491219998,
+      "origin_process_residue_odt": 10199.887509318,
+      "origin_process_residue_pj": 0.188697918922383,
+      "process_residue_odt": 9436.024009932353,
+      "process_residue_pj": 0.17456644418374853,
+      "province": "YT",
+      "province_name": "Yukon",
+      "proxy_residue_share": 1.0,
+      "rsyc_base_recoverable_odt": 3744.89591911,
+      "rsyc_ratio": 1.89799024986,
+      "rsyc_status": "model_above_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 0,
+      "facility_count_positive_residue": 0,
+      "harvest_residue_gross_odt": 6439.32701476,
+      "harvest_residue_gross_pj": 0.11912754977305999,
+      "harvest_residue_recoverable_odt": 3863.59620886,
+      "harvest_residue_recoverable_pj": 0.07147652986391,
+      "origin_process_residue_odt": 8541.272611112001,
+      "origin_process_residue_pj": 0.15801354330557202,
+      "process_residue_odt": 0.0,
+      "process_residue_pj": 0.0,
+      "province": "NT",
+      "province_name": "Northwest Territories",
+      "proxy_residue_share": 0.0,
+      "rsyc_base_recoverable_odt": 5518.55457762,
+      "rsyc_ratio": 0.700110174596,
+      "rsyc_status": "model_below_rsyc",
+      "scaled_proxy_residue_share": 0.0
+    },
+    {
+      "evidence_tier": "E2c_open_inventory_density_calibrated",
+      "facility_count": 0,
+      "facility_count_positive_residue": 0,
+      "harvest_residue_gross_odt": 0.0,
+      "harvest_residue_gross_pj": 0.0,
+      "harvest_residue_recoverable_odt": 0.0,
+      "harvest_residue_recoverable_pj": 0.0,
+      "origin_process_residue_odt": 0.0,
+      "origin_process_residue_pj": 0.0,
+      "process_residue_odt": 0.0,
+      "process_residue_pj": 0.0,
+      "province": "NU",
+      "province_name": "Nunavut",
+      "proxy_residue_share": 0.0,
+      "rsyc_base_recoverable_odt": 0.0,
+      "rsyc_ratio": 0.0,
+      "rsyc_status": "zero_harvest",
+      "scaled_proxy_residue_share": 0.0
+    }
+  ],
+  "recovery_scenarios": [
+    0.35,
+    0.6,
+    0.75
+  ],
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_residue_supply_v7_trade",
+  "residue_components": "E1_measured_plus_E2c_density_calibrated",
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "basis": "RSYC province recoverable_odt_per_m3_base x provincial harvest; model gross harvest residue x 0.60",
+    "combined_process_plus_harvest_recoverable_odt": 41372831.165754184,
+    "combined_process_plus_harvest_recoverable_pj": 765.3973765664524,
+    "lhv_gj_per_odt": 18.5,
+    "lhv_source": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "model_recoverable_odt": 14413322.14302726,
+    "model_recoverable_pj": 266.6464596460043,
+    "note": "The RSYC comparison applies to recoverable harvest residue only. Process residue is shown separately and is never added to the RSYC stream without the combined label. The 129.6709 PJ figure is the documented RSYC 100 Mm3 base; the 119 Mm3 base is derived with the same factors and the documented LHV.",
+    "process_residue_odt": 26959509.022726927,
+    "process_residue_pj": 498.75091692044816,
+    "ratio": 2.0357621116733324,
+    "rsyc_base_100m_recoverable_odt": 7009238.195978076,
+    "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+    "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+    "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+    "status": "model_above_rsyc"
+  },
+  "scenario": "published_plus_proxy",
+  "scope": "Facility-level process residue on assignment v5 published_plus_proxy, plus separate provincial harvest residue and an RSYC 119 Mm3 comparison.",
+  "status": "pass",
+  "trade_sensitivity": {
+    "assignment_artifact": "national_facility_assignment_v5",
+    "enabled": true,
+    "note": "Facility process residue follows the trade-permissive assignment v5 distribution; national process residue matches the local v4 chain and BC process residue changes with facility location.",
+    "scenario": "published_plus_proxy"
+  },
+  "ui_or_public_osecan_changed": false,
+  "validation": {
+    "checks": [
+      {
+        "allocation_rows": 954,
+        "check_id": "class_matching",
+        "detail": "0 class-mismatched allocation rows",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_product_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_process_residue_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "product_chain_summary_crosscheck",
+        "detail": "facility totals reproduce product-chain summary national totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "finite_nonnegative",
+        "detail": "0 non-finite or negative values",
+        "status": "PASS"
+      },
+      {
+        "check_id": "odt_pj_conversion",
+        "detail": "failed: []",
+        "lhv_gj_per_odt": 18.5,
+        "status": "PASS"
+      },
+      {
+        "check_id": "harvest_residue_separate",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rsyc_comparison",
+        "detail": "RSYC 119m base and model recoverable harvest residue reproduce",
+        "model_recoverable_odt": 14413322.14302726,
+        "ratio": 2.0357621116733324,
+        "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+        "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+        "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+        "status": "PASS"
+      },
+      {
+        "check_id": "assignment_v5_scenario",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "proxy_share",
+        "detail": "proxy share 0.335681",
+        "proxy_residue_share": 0.3356807398298391,
+        "scaled_proxy_residue_share": 0.0,
+        "status": "PASS"
+      },
+      {
+        "check_id": "national_summary",
+        "detail": "national summary rows match computed totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "evidence_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "repository_hygiene",
+        "detail": "no unexpected D in parent or data git status",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

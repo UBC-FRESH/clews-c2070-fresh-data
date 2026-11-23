@@ -1,0 +1,8 @@
+factor_key,factor_label,pb_low,pb_high,documented_levels,unit,source_note
+capacity_assignment,Capacity / assignment,local_v6,trade_v5,local_v6;trade_v5,case,local v6 province_capacity_floor vs trade v5 published_plus_proxy; both levels use the same E2c or donor coefficient source
+product_coefficients,Product coefficients,donor_v1,e2c,donor_v1;e2c,case,"donor product chain v1 vs E1 measured + E2c product chain v5 (nine density-calibrated provinces, four measured provinces)"
+residue_basis,Residue basis,stem_only,stem_plus_branch_foliage,stem_only;stem_plus_branch_foliage,case,stem-only harvest residue vs stem + branch/foliage; donor-total adds only the measured four-province branch/foliage increment
+harvest_recovery,Harvest recovery,0.35,0.75,0.35;0.6;0.75,fraction,"documented 0.35/0.60/0.75 recovery scenarios; 0.60 is a reference value, not a calibrated factor"
+process_availability,Process availability,0,0.75,0.0;0.25;0.5;0.75,fraction,documented 0/25/50/75% process-availability screening cases
+price_scenario,Price scenario,donor_flat,stumpage_scaled,donor_flat;stumpage_scaled,case,national_economics_v2_3 donor_flat base vs stumpage_scaled sensitivity (same v2.3 margin totals as v1)
+zone_weights,Zone weights,osecan_supply_dispatch,equal_split,osecan_supply_dispatch;equal_split,case,OSeCAN handoff v8 supply/dispatch weights vs equal split for multi-zone provinces; sub-provincial allocation only

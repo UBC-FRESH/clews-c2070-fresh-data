@@ -1,0 +1,681 @@
+{
+  "artifact": "national_chain_global_sensitivity_v2",
+  "artifact_version": "1.0.0",
+  "design": {
+    "factor_columns_hadamard": [
+      1,
+      2,
+      4,
+      7,
+      9,
+      10,
+      12
+    ],
+    "factors": 7,
+    "foldover": false,
+    "main_effect_aliasing": "none with two-factor interactions",
+    "material_effect_threshold_normalized": 0.0001,
+    "multi_level_handling": "PB uses extreme levels; intermediate documented levels are reported in the one-at-a-time level sweep",
+    "resolution": "IV_for_the_seven_factors",
+    "runs": 16,
+    "two_factor_aliasing": "triplets; see alias_structure.csv",
+    "type": "plackett_burman_hadamard_16_run"
+  },
+  "factors": [
+    {
+      "documented_levels": [
+        "local_v6",
+        "trade_v5"
+      ],
+      "key": "capacity_assignment",
+      "label": "Capacity / assignment",
+      "pb_high": "trade_v5",
+      "pb_low": "local_v6",
+      "short_label": "assignment",
+      "source_note": "local v6 province_capacity_floor vs trade v5 published_plus_proxy; both levels use the same E2c or donor coefficient source",
+      "unit": "case"
+    },
+    {
+      "documented_levels": [
+        "donor_v1",
+        "e2c"
+      ],
+      "key": "product_coefficients",
+      "label": "Product coefficients",
+      "pb_high": "e2c",
+      "pb_low": "donor_v1",
+      "short_label": "coefficients",
+      "source_note": "donor product chain v1 vs E1 measured + E2c product chain v5 (nine density-calibrated provinces, four measured provinces)",
+      "unit": "case"
+    },
+    {
+      "documented_levels": [
+        "stem_only",
+        "stem_plus_branch_foliage"
+      ],
+      "key": "residue_basis",
+      "label": "Residue basis",
+      "pb_high": "stem_plus_branch_foliage",
+      "pb_low": "stem_only",
+      "short_label": "residue",
+      "source_note": "stem-only harvest residue vs stem + branch/foliage; donor-total adds only the measured four-province branch/foliage increment",
+      "unit": "case"
+    },
+    {
+      "documented_levels": [
+        0.35,
+        0.6,
+        0.75
+      ],
+      "key": "harvest_recovery",
+      "label": "Harvest recovery",
+      "pb_high": 0.75,
+      "pb_low": 0.35,
+      "short_label": "recovery",
+      "source_note": "documented 0.35/0.60/0.75 recovery scenarios; 0.60 is a reference value, not a calibrated factor",
+      "unit": "fraction"
+    },
+    {
+      "documented_levels": [
+        0.0,
+        0.25,
+        0.5,
+        0.75
+      ],
+      "key": "process_availability",
+      "label": "Process availability",
+      "pb_high": 0.75,
+      "pb_low": 0.0,
+      "short_label": "availability",
+      "source_note": "documented 0/25/50/75% process-availability screening cases",
+      "unit": "fraction"
+    },
+    {
+      "documented_levels": [
+        "donor_flat",
+        "stumpage_scaled"
+      ],
+      "key": "price_scenario",
+      "label": "Price scenario",
+      "pb_high": "stumpage_scaled",
+      "pb_low": "donor_flat",
+      "short_label": "price",
+      "source_note": "national_economics_v2_3 donor_flat base vs stumpage_scaled sensitivity (same v2.3 margin totals as v1)",
+      "unit": "case"
+    },
+    {
+      "documented_levels": [
+        "osecan_supply_dispatch",
+        "equal_split"
+      ],
+      "key": "zone_weights",
+      "label": "Zone weights",
+      "pb_high": "equal_split",
+      "pb_low": "osecan_supply_dispatch",
+      "short_label": "zone",
+      "source_note": "OSeCAN handoff v8 supply/dispatch weights vs equal split for multi-zone provinces; sub-provincial allocation only",
+      "unit": "case"
+    }
+  ],
+  "generated_utc": "2026-11-23T06:17:42+00:00",
+  "inputs": {
+    "data/derived/national/facilities/facility_residue_supply_v2/province_residue_supply.csv": "0c82aaec66e35cbfeb3894278950bda5494cb38e3e0a7a4e39f9e2e818466df4",
+    "data/derived/national/facilities/facility_residue_supply_v2/summary.json": "3b2b93dfaa29148db84ada293ec42171468f8d7260be85576e6a3e68e0d31484",
+    "data/derived/national/facilities/facility_residue_supply_v3/province_residue_supply.csv": "5a1d60fa4cc973a2b66abfb0127e16019f01fe9320941c1e868b72402276f45b",
+    "data/derived/national/facilities/facility_residue_supply_v3/summary.json": "73f561b376dbb8bd0933566d658bdc1caff0fc8cbedefc92dfbf7dd0f85ebca1",
+    "data/derived/national/facilities/facility_residue_supply_v7/province_residue_supply.csv": "5fc7dc9851cdb41925d48eb3fac1798689cad8016d12c02132e82809aa46e491",
+    "data/derived/national/facilities/facility_residue_supply_v7/summary.json": "f49a6409216c85853c812f94eefaf0ff7de7fa50425c130b9d0a23eafe51975a",
+    "data/derived/national/facilities/facility_residue_supply_v7_trade/province_residue_supply.csv": "a8ae49a045f65b0aae5afbb6d4dd101f898a54f4228d0c786e4a1edc29316c87",
+    "data/derived/national/facilities/facility_residue_supply_v7_trade/summary.json": "b275c2c0fea398e065f611de7c4f3e9673cf8bca3c25bd87243b4ec587eff2e0",
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/zone_allocation_weights.csv": "d889858f9dbf1a68a36d7acac86b88a6957c7578b720d8d896594b55dd41c117",
+    "data/derived/national/facilities/national_chain_global_sensitivity_v1/main_effects.csv": "7782bfd1139102db0e4b75f36c4bad3484993836101cb27ca8dbf92b6ceed88c",
+    "data/derived/national/facilities/national_chain_global_sensitivity_v1/overall_ranking.csv": "7a7c8bc5af5e05ffb0ccedcd14e368e6679eeabe8888683abfedd915f76519ac",
+    "data/derived/national/facilities/national_chain_global_sensitivity_v1/summary.json": "c7500da5049d678f21024ab6794fbd8038eff93cc9360d4038392f6011367f95",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v2/summary.json": "8bfb9b507c633b049acc443465e513026f7ec189a500e25d84fc8d72ddb12e0e",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v3/summary.json": "2b18ce0987fa8035f40c180530223bd9a611d0e69bd4fd694f4a665c08d811c4",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/summary.json": "d1847d9fa4ec0614bcb2d408b84eb66b97eeead5d7bcc62e45e588ff05384a13",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04",
+    "data/derived/national/facilities/national_product_chain_v2/product_chain_by_province.csv": "2e8dc528a99b5a0404d44e8640c24e2927cb4def8c3ac93fd9dcff8d08bb7c9c",
+    "data/derived/national/facilities/national_product_chain_v3/product_chain_by_province.csv": "1f950c290156dc206d5783cd29d25f60ef94256d39ae5754618d4058d8ddb430",
+    "data/derived/national/facilities/national_product_chain_v3/summary.json": "9cec3197b140f3e955f01f8c105314087b5e4c8f30d8cb1243c649ca3ce012e1",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/facilities/national_product_chain_v5/summary.json": "a5d4876997bac9af0cbc7f11f34073a8a635391ee8c6b51cf4d03df837bbb7c5",
+    "data/derived/national/harvest_basis/national_margin_totals/national_margin_totals.json": "dad15e44fb4d520d6a7773ed0eaba1848d9e09ae9eca722338aae308924e0467"
+  },
+  "labels": {
+    "evidence_label": "model_estimate",
+    "model_estimate": true,
+    "national_claim": false,
+    "not_policy": true,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "screening_only": true
+  },
+  "outputs": {
+    "NATIONAL_CHAIN_GLOBAL_SENSITIVITY_V2.md": {
+      "bytes": 16747,
+      "sha256": "3e071bad834e23cf23b6f044c2c8a5a7cc19d6a981de9f3968e4b623aa97f946"
+    },
+    "alias_structure.csv": {
+      "bytes": 1338,
+      "sha256": "ed755e40be3cb0d32804329072acd4bab5eaee98f6d21b96513e43683bf0ddc7"
+    },
+    "bf_component_by_province.csv": {
+      "bytes": 1315,
+      "sha256": "8a9591cf1c804407e07d0d5f0a019b46560a3c04264ea277a368c48afa934096"
+    },
+    "design_matrix.csv": {
+      "bytes": 2345,
+      "sha256": "d98f8e4f4556b9b9ffa21a9e4d4c1555430bb0ac0a2bca1607af31351819e771"
+    },
+    "factor_levels.csv": {
+      "bytes": 1424,
+      "sha256": "5050ab08be787a9c7180e4e8e309933643c58e71b6bec292cfdbf137121dcf77"
+    },
+    "level_sweep.csv": {
+      "bytes": 16996,
+      "sha256": "0862b3d8059a558f9f955f51e95756a5d5b1fefd3f71687c246f39b2fe1aab3a"
+    },
+    "main_effects.csv": {
+      "bytes": 13228,
+      "sha256": "74100dde9b47891e467e6dbe5464ebb3cfb78e3fb3f216906b95ecd3ee2250c6"
+    },
+    "overall_ranking.csv": {
+      "bytes": 1461,
+      "sha256": "698365cf538a06001ea0aa4e101212f2851c33f7d7bac0206b1425b98b00e743"
+    },
+    "responses.csv": {
+      "bytes": 14661,
+      "sha256": "a7c2257cb8eb36c1c1e8c5ad33c8d9e20dc35205b6d2c30c55e6409ef242f7e3"
+    },
+    "v1_v2_comparison.csv": {
+      "bytes": 879,
+      "sha256": "a0f1fee85eb4bad8157c859d8b2dda2bfb7ce64f3100787c69afe2c7423cc44e"
+    },
+    "v1_v2_response_comparison.csv": {
+      "bytes": 6507,
+      "sha256": "823ad60d9d5eb9df7223421156fbc448f9f61c06306c0bf86a9acd86e2118270"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_chain_global_sensitivity_v2",
+  "responses": [
+    {
+      "definition": "facility process residue base x process availability fraction",
+      "key": "national_process_residue_pj",
+      "label": "National process residue",
+      "role": "required",
+      "unit": "PJ"
+    },
+    {
+      "definition": "gross harvest residue before recovery; residue-basis dependent",
+      "key": "harvest_gross_pj",
+      "label": "Harvest gross residue",
+      "role": "required",
+      "unit": "PJ"
+    },
+    {
+      "definition": "harvest gross residue x harvest recovery fraction",
+      "key": "harvest_recoverable_pj",
+      "label": "Harvest recoverable residue",
+      "role": "required",
+      "unit": "PJ"
+    },
+    {
+      "definition": "national process residue at availability + harvest gross residue",
+      "key": "total_gross_pj",
+      "label": "Total gross residue",
+      "role": "required",
+      "unit": "PJ"
+    },
+    {
+      "definition": "national_margin_totals national_total_base_m_cad for the selected price scenario at the 119 Mm3 allocation",
+      "key": "national_margin_m_cad",
+      "label": "National modeled margin",
+      "role": "required",
+      "unit": "M CAD"
+    },
+    {
+      "definition": "BC facility process residue base x process availability fraction",
+      "key": "bc_process_pj",
+      "label": "BC process residue",
+      "role": "required",
+      "unit": "PJ"
+    },
+    {
+      "definition": "BC process residue x BC zone-B2 allocation weight; diagnostic for the zone-weight factor",
+      "key": "bc_b2_process_pj",
+      "label": "BC B2 process residue (auxiliary)",
+      "role": "auxiliary",
+      "unit": "PJ"
+    },
+    {
+      "definition": "national process residue at availability + harvest recoverable residue",
+      "key": "national_total_recoverable_pj",
+      "label": "Total recoverable residue (auxiliary)",
+      "role": "auxiliary",
+      "unit": "PJ"
+    }
+  ],
+  "source_values": {
+    "chain_sources": {
+      "local_donor_stem": {
+        "assignment": "local_v6",
+        "bc_process_base_pj": 182.719922613,
+        "bf_increment_pj": 0.0,
+        "coefficients": "donor_v1",
+        "derived": false,
+        "harvest_gross_pj": 167.77851362533755,
+        "process_base_pj": 526.0055671091687,
+        "residue_basis": "stem_only",
+        "residue_basis_complete": true
+      },
+      "local_donor_total": {
+        "assignment": "local_v6",
+        "bc_process_base_pj": 182.719922613,
+        "bf_increment_pj": 185.78004855316485,
+        "coefficients": "donor_v1",
+        "derived": true,
+        "harvest_gross_pj": 353.55856217850237,
+        "process_base_pj": 526.0055671091687,
+        "residue_basis": "stem_plus_branch_foliage_partial_donor",
+        "residue_basis_complete": false
+      },
+      "local_e2c_stem": {
+        "assignment": "local_v6",
+        "bc_process_base_pj": 181.409448285,
+        "bf_increment_pj": 0.0,
+        "coefficients": "e2c",
+        "derived": true,
+        "harvest_gross_pj": 127.83191034137693,
+        "process_base_pj": 498.7509169204482,
+        "residue_basis": "stem_only",
+        "residue_basis_complete": true
+      },
+      "local_e2c_total": {
+        "assignment": "local_v6",
+        "bc_process_base_pj": 181.409448285,
+        "bf_increment_pj": 316.57885573516353,
+        "coefficients": "e2c",
+        "derived": false,
+        "harvest_gross_pj": 444.41076607635307,
+        "process_base_pj": 498.7509169204482,
+        "residue_basis": "stem_plus_branch_foliage",
+        "residue_basis_complete": true
+      },
+      "trade_donor_stem": {
+        "assignment": "trade_v5",
+        "bc_process_base_pj": 257.398007333,
+        "bf_increment_pj": 0.0,
+        "coefficients": "donor_v1",
+        "derived": false,
+        "harvest_gross_pj": 167.77851362533755,
+        "process_base_pj": 526.0055671091687,
+        "residue_basis": "stem_only",
+        "residue_basis_complete": true
+      },
+      "trade_donor_total": {
+        "assignment": "trade_v5",
+        "bc_process_base_pj": 257.398007333,
+        "bf_increment_pj": 185.78004855316485,
+        "coefficients": "donor_v1",
+        "derived": true,
+        "harvest_gross_pj": 353.55856217850237,
+        "process_base_pj": 526.0055671091687,
+        "residue_basis": "stem_plus_branch_foliage_partial_donor",
+        "residue_basis_complete": false
+      },
+      "trade_e2c_stem": {
+        "assignment": "trade_v5",
+        "bc_process_base_pj": 253.214460183,
+        "bf_increment_pj": 0.0,
+        "coefficients": "e2c",
+        "derived": true,
+        "harvest_gross_pj": 127.83191034137693,
+        "process_base_pj": 498.7509169204482,
+        "residue_basis": "stem_only",
+        "residue_basis_complete": true
+      },
+      "trade_e2c_total": {
+        "assignment": "trade_v5",
+        "bc_process_base_pj": 253.214460183,
+        "bf_increment_pj": 316.57885573516353,
+        "coefficients": "e2c",
+        "derived": true,
+        "harvest_gross_pj": 444.41076607635307,
+        "process_base_pj": 498.7509169204482,
+        "residue_basis": "stem_plus_branch_foliage",
+        "residue_basis_complete": true
+      }
+    },
+    "components": {
+      "donor_stem_odt": 9069108.84461284,
+      "donor_stem_pj": 167.77851362533755,
+      "e2c_bf_odt": 17112370.580279108,
+      "e2c_bf_pj": 316.57885573516353,
+      "e2c_provinces": [
+        "AB",
+        "MB",
+        "NL",
+        "NS",
+        "NT",
+        "NU",
+        "ON",
+        "PE",
+        "SK"
+      ],
+      "e2c_stem_odt": 6909832.99142578,
+      "e2c_stem_pj": 127.83191034137693,
+      "e2c_total_odt": 24022203.57169476,
+      "e2c_total_pj": 444.41076607635307,
+      "measured_bf_odt": 10042164.786657559,
+      "measured_bf_pj": 185.78004855316485,
+      "measured_provinces": [
+        "BC",
+        "NB",
+        "QC",
+        "YT"
+      ]
+    },
+    "harvest_case": "119m",
+    "harvest_m3": 118977339.1,
+    "lhv_gj_per_odt": 18.5,
+    "margin_values_m_cad": {
+      "donor_flat": 5205.328748,
+      "stumpage_scaled": -655.319124
+    },
+    "process_sources": {
+      "local_donor": {
+        "assignment": "local_v6",
+        "bc_process_base_pj": 182.719922613,
+        "chain_version": "3",
+        "coefficients": "donor_v1",
+        "derived": false,
+        "harvest_gross_pj": 167.77851362533755,
+        "process_base_pj": 526.0055671091687,
+        "supply_version": "3"
+      },
+      "local_e2c": {
+        "assignment": "local_v6",
+        "bc_process_base_pj": 181.409448285,
+        "chain_version": "7",
+        "coefficients": "e2c",
+        "derived": false,
+        "harvest_gross_pj": 444.41076607635307,
+        "process_base_pj": 498.7509169204482,
+        "supply_version": "7"
+      },
+      "trade_donor": {
+        "assignment": "trade_v5",
+        "bc_process_base_pj": 257.398007333,
+        "chain_version": "2",
+        "coefficients": "donor_v1",
+        "derived": false,
+        "harvest_gross_pj": 167.77851362533755,
+        "process_base_pj": 526.0055671091687,
+        "supply_version": "2"
+      },
+      "trade_e2c": {
+        "assignment": "trade_v5",
+        "bc_process_base_pj": 253.214460183,
+        "chain_version": "7_trade_derived",
+        "coefficients": "e2c",
+        "derived": true,
+        "harvest_gross_pj": 444.41076607635307,
+        "process_base_pj": 498.7509169204482,
+        "supply_version": "7_trade"
+      }
+    },
+    "v1": {
+      "artifact": "national_chain_global_sensitivity_v1",
+      "overall_ranking": {
+        "capacity_assignment": {
+          "mean_normalized_abs_effect": 0.0284393200765,
+          "rank": 6
+        },
+        "harvest_recovery": {
+          "mean_normalized_abs_effect": 0.157050753418,
+          "rank": 4
+        },
+        "price_scenario": {
+          "mean_normalized_abs_effect": 0.166668427368,
+          "rank": 3
+        },
+        "process_availability": {
+          "mean_normalized_abs_effect": 0.5,
+          "rank": 1
+        },
+        "product_coefficients": {
+          "mean_normalized_abs_effect": 0.0932518327101,
+          "rank": 5
+        },
+        "residue_basis": {
+          "mean_normalized_abs_effect": 0.412679245987,
+          "rank": 2
+        },
+        "zone_weights": {
+          "mean_normalized_abs_effect": 0.0,
+          "rank": 7
+        }
+      }
+    },
+    "zone_weights": {
+      "equal_split": {
+        "BC_B1": 0.5,
+        "BC_B2": 0.5,
+        "method": "equal_split"
+      },
+      "osecan_supply_dispatch": {
+        "BC_B1": 0.0828391014841,
+        "BC_B2": 0.917160898516,
+        "method": "osecan_zonal_supply_dispatch"
+      }
+    }
+  },
+  "test_command": ".venv/bin/python -m pytest tests/test_national_chain_global_sensitivity_v2.py",
+  "v1_v2_comparison": [
+    {
+      "comparison_note": "",
+      "factor_key": "process_availability",
+      "factor_label": "Process availability",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": 0.0,
+      "v1_mean_normalized_abs_effect": 0.5,
+      "v1_rank": 1,
+      "v2_mean_normalized_abs_effect": 0.5,
+      "v2_rank": 1
+    },
+    {
+      "comparison_note": "",
+      "factor_key": "residue_basis",
+      "factor_label": "Residue basis",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": 0.02959246812637134,
+      "v1_mean_normalized_abs_effect": 0.412679245987,
+      "v1_rank": 2,
+      "v2_mean_normalized_abs_effect": 0.44227171411337135,
+      "v2_rank": 2
+    },
+    {
+      "comparison_note": "",
+      "factor_key": "price_scenario",
+      "factor_label": "Price scenario",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": 0.0005456527746260653,
+      "v1_mean_normalized_abs_effect": 0.166668427368,
+      "v1_rank": 3,
+      "v2_mean_normalized_abs_effect": 0.16721408014262606,
+      "v2_rank": 3
+    },
+    {
+      "comparison_note": "",
+      "factor_key": "harvest_recovery",
+      "factor_label": "Harvest recovery",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": -0.025118065105012494,
+      "v1_mean_normalized_abs_effect": 0.157050753418,
+      "v1_rank": 4,
+      "v2_mean_normalized_abs_effect": 0.13193268831298752,
+      "v2_rank": 4
+    },
+    {
+      "comparison_note": "level definition changed: v1 measured_v4 was the E1 four-province chain v4; v2 e2c is E1 measured + E2c for 13 provinces",
+      "factor_key": "product_coefficients",
+      "factor_label": "Product coefficients",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": -0.04738826607634032,
+      "v1_mean_normalized_abs_effect": 0.0932518327101,
+      "v1_rank": 5,
+      "v2_mean_normalized_abs_effect": 0.04586356663375968,
+      "v2_rank": 5
+    },
+    {
+      "comparison_note": "",
+      "factor_key": "capacity_assignment",
+      "factor_label": "Capacity / assignment",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": 0.015250410755465089,
+      "v1_mean_normalized_abs_effect": 0.0284393200765,
+      "v1_rank": 6,
+      "v2_mean_normalized_abs_effect": 0.04368973083196509,
+      "v2_rank": 6
+    },
+    {
+      "comparison_note": "same OSeCAN BC weights in handoff v6 and v8",
+      "factor_key": "zone_weights",
+      "factor_label": "Zone weights",
+      "rank_delta_v2_minus_v1": 0,
+      "score_delta_v2_minus_v1": 0.0,
+      "v1_mean_normalized_abs_effect": 0.0,
+      "v1_rank": 7,
+      "v2_mean_normalized_abs_effect": 0.0,
+      "v2_rank": 7
+    }
+  ],
+  "validation": {
+    "checks": [
+      {
+        "detail": "no D in parent or data repository git status at build start",
+        "name": "no_unexpected_deletions",
+        "status": "PASS"
+      },
+      {
+        "detail": "runs=16",
+        "name": "design_run_count",
+        "status": "PASS"
+      },
+      {
+        "detail": "every factor has eight low and eight high runs",
+        "name": "design_balance",
+        "status": "PASS"
+      },
+      {
+        "detail": "all factor-column pairwise dot products are zero",
+        "name": "design_orthogonality",
+        "status": "PASS"
+      },
+      {
+        "detail": "no two-factor interaction among the seven factors equals a main effect",
+        "name": "no_two_factor_main_effect_alias",
+        "status": "PASS"
+      },
+      {
+        "detail": "paired=21, covered=21",
+        "name": "two_factor_alias_coverage",
+        "status": "PASS"
+      },
+      {
+        "detail": "factors=7",
+        "name": "main_effect_count",
+        "status": "PASS"
+      },
+      {
+        "detail": "resolution IV for the seven factors: main effects are clear of all two-factor interactions; 2FIs alias in triplets",
+        "name": "design_resolution",
+        "status": "PASS"
+      },
+      {
+        "detail": "sources=8",
+        "name": "source_combination_count",
+        "status": "PASS"
+      },
+      {
+        "detail": "stem=127.831910 PJ, branch/foliage=316.578856 PJ, total=444.410766 PJ",
+        "name": "e2c_residue_basis_arithmetic",
+        "status": "PASS"
+      },
+      {
+        "detail": "donor-total adds the measured four-province branch/foliage increment and is flagged incomplete",
+        "name": "donor_total_hybrid",
+        "status": "PASS"
+      },
+      {
+        "detail": "trade E2c national process and harvest totals equal local v4",
+        "name": "trade_e2c_national_invariance",
+        "status": "PASS"
+      },
+      {
+        "detail": "BC process 181.409448 -> 253.214460 PJ",
+        "name": "trade_e2c_bc_reallocation",
+        "status": "PASS"
+      },
+      {
+        "detail": "process = base x availability; recoverable = gross x recovery; total = process + gross; BC and B2 arithmetic match",
+        "name": "response_arithmetic",
+        "status": "PASS"
+      },
+      {
+        "detail": "margin equals the national_margin_totals v2.3 scenario value",
+        "name": "margin_matches_source",
+        "status": "PASS"
+      },
+      {
+        "detail": "all physical responses are finite and non-negative; margin is finite and may be negative by documented scenario",
+        "name": "physical_nonnegative",
+        "status": "PASS"
+      },
+      {
+        "detail": "stem rows have zero BF increment; total rows have positive BF; donor-total rows are flagged partial",
+        "name": "residue_basis_flags",
+        "status": "PASS"
+      },
+      {
+        "detail": "each response has ranks 1..7 exactly once; effects and normalized effects are finite",
+        "name": "response_ranking_permutation",
+        "status": "PASS"
+      },
+      {
+        "detail": "ranks=[1, 2, 3, 4, 5, 6, 7]",
+        "name": "overall_ranking_permutation",
+        "status": "PASS"
+      },
+      {
+        "detail": "mean normalized effects are in [0,1]",
+        "name": "overall_score_bounds",
+        "status": "PASS"
+      },
+      {
+        "detail": "all PB response rows carry screening labels",
+        "name": "response_labels",
+        "status": "PASS"
+      },
+      {
+        "detail": "all level-sweep rows carry screening labels",
+        "name": "sweep_labels",
+        "status": "PASS"
+      },
+      {
+        "detail": "v1 and v2 overall ranks are complete permutations",
+        "name": "v1_v2_overall_coverage",
+        "status": "PASS"
+      },
+      {
+        "detail": "response-factor rows=56",
+        "name": "v1_v2_response_coverage",
+        "status": "PASS"
+      }
+    ],
+    "failed": [],
+    "passed": true
+  }
+}
