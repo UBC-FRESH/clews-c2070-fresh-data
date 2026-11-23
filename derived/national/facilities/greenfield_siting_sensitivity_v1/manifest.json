@@ -1,0 +1,71 @@
+{
+  "artifact": "greenfield_siting_sensitivity_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-23T17:59:55+00:00",
+  "inputs": {
+    "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332",
+    "data/derived/national/facilities/facility_road_distance_audit_v2/summary.json": "bd1854056dce2db3bf67e9f93309dd94ca17b167aa85328bf02b5e175ba29814",
+    "data/derived/national/facilities/national_facility_assignment_v10/summary.json": "2761da22e5cb5bd4bd013ff982aa72ebdae57202c467595a3cb98df69a88f9a1",
+    "data/derived/national/facilities/national_facility_assignment_v10/v10_node_assignment.csv": "54ed079b13e94ac20aa93509b914c64f4dcdece8b67eb92cc54a7a987a26acf2",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/national_facility_capacity_v3/summary.json": "69bae448b119393f3167e64364ac14da4b20584ca716b84cd30df63308c83c80",
+    "data/derived/national/facilities/supply_node_distance_v1/summary.json": "58b9ee1c40287666ca9d291c72413c85892d0ed3f5b15d2a11eb1f143bdbe7a9",
+    "data/derived/national/facilities/supply_node_distance_v1/supply_nodes.csv": "275aeb38087fe568ff14e81a54058a3a26775a6ebb4b69d4fd9654dd1c9ae034",
+    "data/derived/national/facilities/transport_cost_v1/curves.csv": "22036a52bbe16420385bcbcf18661db862ba606ed6b7d7fb299cca743bd7e13d",
+    "data/derived/national/facilities/transport_cost_v1/parameters.csv": "285ae8854da089175a5929f38db704512a539098a260a9fac391356b34ef7867",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "capital_cost_claim": false,
+    "class_specific_capacity_claim": false,
+    "evidence_label": "model_estimate",
+    "greenfield_siting": true,
+    "investment_advice": false,
+    "investment_advice_label": "not_investment_advice",
+    "landbase_claim": false,
+    "module_capacity": "unlimited_screen",
+    "module_class": "GENERIC_MODULE",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "permitting_claim": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "sensitivity_label": "transport_only_siting_screen",
+    "siting_optimization": "screening_heuristic",
+    "ui_changed": false
+  },
+  "outputs": {
+    "GREENFIELD_SITING_SENSITIVITY_V1.md": {
+      "bytes": 7992,
+      "sha256": "f0ca1ac658f3df19b9472dbeca743dc6d888569011bf71f3e7fb02d1d0a1346a"
+    },
+    "existing_capacity_service_k0_k20.csv": {
+      "bytes": 216178,
+      "sha256": "41694d8a6b01256f7d64f8b70b4df88373135bc1d7719b9f5939ef112eaa5800"
+    },
+    "k_tradeoff.csv": {
+      "bytes": 16368,
+      "sha256": "804dc54977c6a2f4b9abeea5885b8d3d3b6fe35333ddc77d2a8fda95948ee434"
+    },
+    "module_locations.csv": {
+      "bytes": 61475,
+      "sha256": "f9b320d4d9fce3e24cf7355168606b7a393074be1c7a1943b8c2d5880c3f4d66"
+    },
+    "node_assignment_k0.csv": {
+      "bytes": 290233,
+      "sha256": "7252a57c819ab108a2e8d49464a87d5d70771bc35038c7d234ed5b5d53b934dd"
+    },
+    "node_assignment_k20.csv": {
+      "bytes": 269407,
+      "sha256": "a4000cc1387d1f65d10d51b625743e9b3b5a3629973dd2c5c692e95d61e535fe"
+    },
+    "summary.json": {
+      "bytes": 276382,
+      "sha256": "0265db35a1ed76b29f0bc12e99ebeffe02167471309a8d9fbb85ea4edea9ebc2"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.greenfield_siting_sensitivity_v1",
+  "status": "complete"
+}
