@@ -333,12 +333,16 @@
   "grade_status": "not_assigned",
   "join": {
     "basis": "FAIB plot -> BEC + supported leading species -> managed FEMIC AU stratum (including combined-species strata) -> FEMIC site-index class -> managed AU -> TIPSY industrial-log curve interpolated at the FAIB stand age. This is the pilot benchmark join, not an operational AU assignment.",
+    "fail_closed_on_unexpected_codes": true,
     "fallbacks": [
       "pilot grade_benchmark.csv AU/stratum/SI/age when the primary join does not resolve a plot",
       "species-mean TIPSY industrial curve when no AU is available but the leading species has a TIPSY curve; reported separately"
     ],
     "no_age_imputation": true,
-    "no_threshold_tuning": true
+    "no_threshold_tuning": true,
+    "sort_alias": {
+      "D125L50": "D125L5"
+    }
   },
   "label": "industrial_sort_validation",
   "labels": [

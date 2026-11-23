@@ -3,7 +3,7 @@
 |---|---|
 | Validation | `industrial_sort_validation` |
 | TSA | 24 — Prince George |
-| Generated (UTC) | 2026-11-23T00:12:57+00:00 |
+| Generated (UTC) | 2026-11-23T00:15:56+00:00 |
 | Grade status | `not_assigned` |
 | Evidence label | `industrial_sort_validation` |
 | Sample | 558 plots, 38,287 logs, 20,074 bucked trees |
@@ -21,6 +21,7 @@ Documented fallbacks:
 - species-mean TIPSY industrial curve when no AU is available but the leading species has a TIPSY curve. This is reported separately and never mixed into the primary AU-matched metrics.
 
 - TIPSY industrial-sort source: `/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/bucking/tsa24_sort_validation_v0/tipsy_industrial_sorts.csv` (`regenerated_btc_industrial_logs`).
+- Sort-code contract: 20 TIPSY industrial codes; the only accepted spelling difference is `D125L50` -> `D125L5`. Any other unexpected code fails closed.
 
 ### Plot status
 
