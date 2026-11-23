@@ -1,0 +1,43 @@
+{
+  "artifact": "greenfield_breakeven_capital_threshold_v1_cases",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-23T18:29:00+00:00",
+  "inputs": {
+    "data/derived/national/facilities/greenfield_breakeven_capital_threshold_v1/breakeven_thresholds.csv": "8b59014750575595bb8cccac7940fb352376daa6955ffbfdc09c537d96004efe",
+    "data/derived/national/facilities/greenfield_breakeven_capital_threshold_v1/summary.json": "3ac1e81d30ed514c4c0d767bcc9c03365ffdab0fad0cbfa0d918ed3c960a926f",
+    "data/derived/national/facilities/greenfield_siting_sensitivity_v1_cases/k_tradeoff.csv": "27cdb095bf2ee72bcbcfb435bc6f766741ee891119a20d9a064c4204d1cded01",
+    "data/derived/national/facilities/greenfield_siting_sensitivity_v1_cases/manifest.json": "8e3b96bec0d75525ff8d01b230cfb9dab11e8732c7fd1bd92cd39c785262746d",
+    "data/derived/national/facilities/greenfield_siting_sensitivity_v1_cases/summary.json": "cff52441827ef340bb9462aa4360b212ba2e9e273b003dfcbed37547dffce3be"
+  },
+  "labels": {
+    "capital_cost_claim": false,
+    "case_extension": true,
+    "evidence_label": "model_estimate",
+    "investment_advice": false,
+    "investment_advice_label": "not_investment_advice",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "sensitivity_label": "transport_only",
+    "transport_only": true,
+    "ui_changed": false
+  },
+  "outputs": {
+    "GREENFIELD_BREAKEVEN_CAPITAL_THRESHOLD_V1_CASES.md": {
+      "bytes": 9229,
+      "sha256": "ac12b553c261adc1fe113946b91e0d77c97d674148237e93f58e6abcd637d890"
+    },
+    "breakeven_thresholds.csv": {
+      "bytes": 17446,
+      "sha256": "18bab0a7f1517ef7449e1c7365a7dc57cbcea551fa71da54f65430e0e12c96e2"
+    },
+    "summary.json": {
+      "bytes": 92052,
+      "sha256": "a3aef74d98b669a822ff8a96f88366901c73c5dafa99b797e7cf69ca972fe0df"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.greenfield_breakeven_capital_threshold_v1_cases",
+  "status": "complete"
+}
