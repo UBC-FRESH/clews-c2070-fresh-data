@@ -1,0 +1,176 @@
+{
+  "artifact": "four_province_bucking_pilot_v0",
+  "checks": {
+    "all_measured": true,
+    "all_residue_balances_within_1e8_m3": true,
+    "all_taper_evidence_published_table": true,
+    "exactly_four_provinces": true,
+    "expansion_conservation": true,
+    "no_national_claim": true,
+    "no_negative_or_nan_outputs": true,
+    "no_synthetic": true
+  },
+  "command": "python -m workflows.national.bucking.four_province_bucking_pilot",
+  "config": {
+    "chip_yield_fraction": 0.85,
+    "dbh_stratum_width_cm": 5.0,
+    "density_odt_m3": {
+      "AC": 0.49,
+      "AT": 0.35,
+      "B": 0.34,
+      "BA": 0.32,
+      "BL": 0.32,
+      "BOP": 0.5,
+      "C": 0.33,
+      "CW": 0.309797,
+      "EP": 0.5,
+      "EPB": 0.37,
+      "EPN": 0.42,
+      "EPR": 0.38,
+      "FD": 0.45,
+      "HM": 0.42,
+      "HW": 0.42,
+      "L": 0.49,
+      "MB": 0.45,
+      "PA": 0.35,
+      "PEG": 0.35,
+      "PET": 0.35,
+      "PL": 0.43,
+      "PW": 0.35,
+      "PY": 0.379798,
+      "S": 0.37,
+      "SAB": 0.34,
+      "SB": 0.379798,
+      "SE": 0.36,
+      "SW": 0.37,
+      "THO": 0.29
+    },
+    "facility_chain_hash": "4b6d2c87f2c4d45e688faa457bffc92ee96866e1408d48c3a31a7708a11185bf",
+    "facility_chain_path": "data/derived/national/facilities/facility_product_chain_v1/province_product_chain.csv",
+    "hog_yield_fraction": 0.1,
+    "kozak_parameters_hash": "36a916991b00ddc3ea0bbd35bf7a305e8cb13f7056af10283ffb8668f9fc00a5",
+    "kozak_parameters_path": "/srv/shared-data/gep/ws4/nemora/config/kozak/kozak_parameters_v94.csv",
+    "moisture_wet_basis": 0.45,
+    "qc_taper_hash": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc",
+    "qc_taper_path": "workflows/national/bucking/rules/qc_schneider2013_taper.csv",
+    "sort_rule_set": "national_pilot_sorts",
+    "sort_rules_hash": "b03184644a857ef20caef14b97526d0c9ab792ae009b5518a748d030b7282c19",
+    "sort_rules_path": "workflows/national/bucking/rules/national_pilot_sorts.csv",
+    "stump_height_m": 0.3
+  },
+  "counts": {
+    "logs": 2097,
+    "provinces": 4,
+    "residues": 591,
+    "trees": 591,
+    "trees_by_province": {
+      "BC": 347,
+      "NB": 106,
+      "QC": 85,
+      "YT": 53
+    }
+  },
+  "elapsed_s": 239.968,
+  "generated_at": "2026-11-23T01:20:08.964457+00:00",
+  "inputs": [
+    {
+      "path": "data/derived/national/bucking/national_bucking_pilot_v2/tree_lists/BC.csv",
+      "sha256": "66a92d528d2c8decc8abe0af362200b83f97f85c627b80f35806009d8b8da552"
+    },
+    {
+      "path": "data/derived/national/bucking/magplot_tier1_v0/qc_tree_list.csv.gz",
+      "sha256": "42405490fb2a49dc7f9385252d84604e04a8d175e4aa7af233a14960f073fd37"
+    },
+    {
+      "path": "data/derived/national/bucking/magplot_tier1_v0/nb_tree_list.csv.gz",
+      "sha256": "af286898a11d9cff4de7aec9580bee1de0ac3ec828fef1a15ee3d57e8d475d50"
+    },
+    {
+      "path": "data/derived/national/bucking/magplot_tier1_v0/yt_tree_list.csv.gz",
+      "sha256": "554a9321b9a4aafce608b48546414e926b8c2334c83af667d1dacc29d8de42b2"
+    }
+  ],
+  "labels": {
+    "grade_status": "not_assigned",
+    "measured_tree_list": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false,
+    "sort_basis": "dimension_only",
+    "synthetic": false,
+    "tree_list_label": "measured_tree_list"
+  },
+  "outputs": {
+    "bucked_logs": {
+      "bytes": 2078479,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/bucked_logs.csv",
+      "sha256": "3dec38fb414949862ae385df7c6cffca6fa85c7c6618fa8efe454ae50cfc50d4"
+    },
+    "coefficient_comparison": {
+      "bytes": 4400,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/coefficient_comparison.csv",
+      "sha256": "2fd98295bc5b1b022c5a3a531e4212396d394c52993b6884c89907fb26ab9afb"
+    },
+    "province_summary": {
+      "bytes": 4189,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/province_summary.csv",
+      "sha256": "8a28277aed56491b2268483a13f0fb612a210ef6e46f1f69865a255e01743e4f"
+    },
+    "residue_ledger": {
+      "bytes": 754937,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/residue_ledger.csv",
+      "sha256": "1659f917709cf2e6ca167bafe96935809236bd7d6a2a407fadd4d9a6a81e86bc"
+    },
+    "sample_audit": {
+      "bytes": 1780,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/sample_audit.csv",
+      "sha256": "c9da87869880a683794775f7c83eb8d5dee1b16eb26b5d3e70aaad9ebb420c32"
+    },
+    "sample_selection": {
+      "bytes": 103906,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/sample_selection.csv",
+      "sha256": "b88ed5af5094d758f75b2bf2faddc6b38fd2c09ae3ce59b08738d919cb709618"
+    },
+    "sort_rules": {
+      "bytes": 2072,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/sort_rules.csv",
+      "sha256": "a7e02ff3fc77ee4e08c4c1fd01a776c4c7e00c097e002f550441209b1edf8982"
+    },
+    "taper_coverage": {
+      "bytes": 4344,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/taper_coverage.csv",
+      "sha256": "9b666196eab216ee6158efb0c1c61fa2c304844160e1e727dd336bddf334c572"
+    },
+    "taper_dispatch": {
+      "bytes": 157712,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/taper_dispatch.csv",
+      "sha256": "7bc698c607ba4d881ba9472a63685b06ede41f8447fddb5b915e0f63d5ff6201"
+    },
+    "tree_list": {
+      "bytes": 460274,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/tree_list.csv",
+      "sha256": "e4369ee7da6589142afa0681eee339eef7c9df75c7dc286b54385d0630a79a72"
+    },
+    "tree_summary": {
+      "bytes": 108983,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/tree_summary.csv",
+      "sha256": "531358a3993343272ecb098f50fb5bf8fc54ed584ff8b0ae2caf42099961a43e"
+    }
+  },
+  "provinces": [
+    "BC",
+    "QC",
+    "NB",
+    "YT"
+  ],
+  "report": {
+    "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/report.md",
+    "sha256": "f5e5763b5b1e8f67aa9f8e0466ac734cd7a94c87b3a60b25abc73258ece1d35d"
+  },
+  "summary": {
+    "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/summary.json",
+    "sha256": "32c9f82b9427052e9336595cba1055c3f93b747aa4979e79621aa2df37c1e459"
+  },
+  "unexpected_git_deletions": "none"
+}
