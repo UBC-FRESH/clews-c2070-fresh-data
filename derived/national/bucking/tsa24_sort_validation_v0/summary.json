@@ -1,0 +1,115 @@
+{
+  "caveats": [
+    "Industrial sort recovery is not official BC log grade. The bucker is dimension-only; defect, sweep, knot, rot, and product quality are absent.",
+    "TIPSY industrial-log curves are model output, not field measurements.",
+    "Multiple PSP plots can share one managed AU curve; per-plot RMSE is therefore not an independent model-error estimate.",
+    "Bucked volume is expanded with FAIB PHF_TREE to m3/ha and compared with the TIPSY industrial total at the same AU/age. Plot sums are m3/ha sums, not absolute volume.",
+    "The canonical managed_au_industrial_sorts.csv in tsa24_grade_curves is empty because the refreshed BTC run did not request the industrial-logs indicator bank; this validation records the separately compiled table it used and fails closed when no table is available."
+  ],
+  "evidence_tiers": {
+    "comparison": "derived",
+    "pilot_sorts": "dimension_only",
+    "tipsy_industrial_sorts": "model_output"
+  },
+  "extended_with_species_fallback": {
+    "n_plots": 356,
+    "plot_tvd": {
+      "max_tvd": 1.0,
+      "mean_overlap": 0.49169647879972667,
+      "mean_tvd": 0.5083035212002733,
+      "median_tvd": 0.4849477708150927,
+      "min_tvd": 0.1927676537585421,
+      "n": 356,
+      "volume_weighted_overlap": 0.5060458246760084,
+      "volume_weighted_tvd": 0.4939541753239916
+    },
+    "pooled_overlap": 0.5639240146771148,
+    "pooled_tvd": 0.43607598532288533
+  },
+  "generated_utc": "2026-11-23T00:12:57+00:00",
+  "grade_status": "not_assigned",
+  "join": {
+    "basis": "FAIB plot -> BEC + supported leading species -> managed FEMIC AU stratum (including combined-species strata) -> FEMIC site-index class -> managed AU -> TIPSY industrial-log curve interpolated at the FAIB stand age. This is the pilot benchmark join, not an operational AU assignment.",
+    "fallbacks": [
+      "pilot grade_benchmark.csv AU/stratum/SI/age when the primary join does not resolve a plot",
+      "species-mean TIPSY industrial curve when no AU is available but the leading species has a TIPSY curve; reported separately"
+    ],
+    "no_age_imputation": true,
+    "no_threshold_tuning": true
+  },
+  "label": "industrial_sort_validation",
+  "labels": [
+    "industrial_sort_validation"
+  ],
+  "official_grade_validation": false,
+  "pass_fail": "not_assessed_no_pre_registered_tolerance",
+  "primary_au_match": {
+    "n_au": 14,
+    "n_plots": 341,
+    "plot_tvd": {
+      "max_tvd": 1.0,
+      "mean_overlap": 0.49446476116325677,
+      "mean_tvd": 0.5055352388367432,
+      "median_tvd": 0.4800628250139671,
+      "min_tvd": 0.1927676537585421,
+      "n": 341,
+      "volume_weighted_overlap": 0.5086371222127061,
+      "volume_weighted_tvd": 0.4913628777872939
+    },
+    "pooled_overlap": 0.5667007487724759,
+    "pooled_tvd": 0.43329925122752416,
+    "volume": {
+      "bias_sum_m3ha": 2420.28448173627,
+      "mae_m3ha": 105.28829346732996,
+      "mean_bias_m3ha": 7.097608450839502,
+      "mean_ratio": 3.1701444772067395,
+      "median_ratio": 1.0769358208809277,
+      "n": 341,
+      "observed_sum_m3ha": 90999.38551826373,
+      "predicted_sum_m3ha": 93419.67,
+      "ratio_predicted_observed": 1.0265967123618709,
+      "relative_bias": 0.026596712361871003,
+      "rmse_m3ha": 137.60464551333888
+    }
+  },
+  "sample": {
+    "bucked_log_m3_comparable_au": 7892.411246473201,
+    "bucked_log_m3_comparable_total": 8155.194309883816,
+    "bucked_log_m3_excluded": 3593.473851124553,
+    "bucked_log_m3_total": 11748.668161008369,
+    "bucked_log_m3ha_comparable_au": 90999.38551826373,
+    "n_au_comparable": 14,
+    "n_au_tipsy_curves": 16,
+    "n_au_total": 14,
+    "n_logs_comparable_au": 24080,
+    "n_logs_comparable_total": 24816,
+    "n_logs_excluded": 13471,
+    "n_logs_total": 38287,
+    "n_plots_comparable_au": 341,
+    "n_plots_comparable_species": 15,
+    "n_plots_comparable_total": 356,
+    "n_plots_status": {
+      "comparable_au": 341,
+      "comparable_species": 15,
+      "no_age": 71,
+      "no_au_match": 22,
+      "no_logs": 44,
+      "zero_pilot_volume": 0,
+      "zero_tipsy_volume": 65
+    },
+    "n_plots_total": 558,
+    "n_plots_with_logs": 514,
+    "n_trees_comparable_au": 12963,
+    "n_trees_comparable_total": 13427,
+    "n_trees_excluded": 6647,
+    "n_trees_total": 20074,
+    "tipsy_industrial_total_m3ha_comparable_au": 93419.67
+  },
+  "status": "reported",
+  "tipsy_source": {
+    "path": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/national/bucking/tsa24_sort_validation_v0/tipsy_industrial_sorts.csv",
+    "role": "regenerated_btc_industrial_logs"
+  },
+  "tolerance": null,
+  "validation": "industrial_sort_validation"
+}

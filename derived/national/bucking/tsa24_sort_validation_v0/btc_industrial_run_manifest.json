@@ -1,0 +1,71 @@
+{
+  "artifacts": {
+    "error_csv": {
+      "exists": true,
+      "path": "/tmp/tsa24_industrial_gep/error.csv"
+    },
+    "output_csv": {
+      "exists": true,
+      "path": "/tmp/tsa24_industrial_gep/output.csv"
+    },
+    "stderr_log": {
+      "exists": true,
+      "path": "/tmp/tsa24_industrial_gep/logs/btc_stderr-tsa24_industrial_probe.log"
+    },
+    "stdout_log": {
+      "exists": true,
+      "path": "/tmp/tsa24_industrial_gep/logs/btc_stdout-tsa24_industrial_probe.log"
+    }
+  },
+  "command": [
+    "/tmp/tsa24_industrial_gep/scratch/btc_install/TIPSYbtc.exe",
+    "/TSR",
+    "input.csv",
+    "output.csv",
+    "error.csv"
+  ],
+  "copied_install": true,
+  "discovery_source": "explicit",
+  "duration_sec": 13.404,
+  "error_csv": "/tmp/tsa24_industrial_gep/error.csv",
+  "error_message": null,
+  "executable_path": "/tmp/tsa24_industrial_gep/scratch/btc_install/TIPSYbtc.exe",
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-23T00:03:00.838187+00:00",
+  "indicator_bank_names": [
+    "industrial-logs",
+    "log-grades",
+    "residual-fibre"
+  ],
+  "input_csv": "/tmp/tsa24_industrial_gep/input.csv",
+  "install_root": "/tmp/tsa24_industrial_gep/scratch/btc_install",
+  "log_dir": "/tmp/tsa24_industrial_gep/logs",
+  "mode": "TSR",
+  "output_csv": "/tmp/tsa24_industrial_gep/output.csv",
+  "report_template_path": "/tmp/tsa24_industrial_gep/scratch/btc_install/TimberSupply.rpt",
+  "run_id": "tsa24_industrial_probe",
+  "runtime_versions": {
+    "femic": "0.2.0a1",
+    "packages": {
+      "geopandas": "1.1.4",
+      "numpy": "2.5.0",
+      "pandas": "3.0.3",
+      "rasterio": "1.5.0",
+      "rich": "15.0.0",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2",
+      "typer": "0.26.8"
+    },
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "staged_error_csv": "/tmp/tsa24_industrial_gep/scratch/work/error.csv",
+  "staged_input_csv": "/tmp/tsa24_industrial_gep/scratch/work/input.csv",
+  "staged_output_csv": "/tmp/tsa24_industrial_gep/scratch/work/output.csv",
+  "started_at_utc": "2026-11-23T00:02:47.432814+00:00",
+  "status": "ok",
+  "stderr_log_path": "/tmp/tsa24_industrial_gep/logs/btc_stderr-tsa24_industrial_probe.log",
+  "stdout_log_path": "/tmp/tsa24_industrial_gep/logs/btc_stdout-tsa24_industrial_probe.log",
+  "uses_live_overlay": false,
+  "windows_dialog_cleanup": null
+}

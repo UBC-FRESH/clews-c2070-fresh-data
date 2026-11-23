@@ -1,0 +1,20 @@
+{
+  "label": "tsa24_tipsy_industrial_sorts",
+  "source": "TSA24 FEMIC BTC /TSR run with industrial-logs + log-grades + residual-fibre indicator banks",
+  "source_model": "TIPSY 4.7 BTC /TSR via FEMIC",
+  "source_run_manifest": "data/derived/national/bucking/tsa24_sort_validation_v0/btc_industrial_run_manifest.json",
+  "source_wide_output": "/tmp/tsa24_industrial_gep/output.csv",
+  "source_wide_output_sha256": "6ef586e855c622641f5bdd98df48becdaa9dc0abcaf2f6f2c6ad8bd8f7871844",
+  "source_input": "femic-tsa24-instance/data/03_input-tsa24.csv",
+  "source_input_sha256": "e3c518bdad74a7b7897d44da6d36d93f513bcbfc29495123a7a91b5b24566042",
+  "rows": 576,
+  "au_count": 16,
+  "age_count": 36,
+  "age_min": 0.0,
+  "age_max": 350.0,
+  "transformation": "Wide BTC /TSR transposed output (Industrial_Logs_<code>_<age>) pivoted to long AU x age; total = sum of industrial log columns; age_extrapolated=False because the run covers the 0-350 age grid.",
+  "limitation": "Industrial log volumes are TIPSY model output, not official BC grade; no defect, sweep, knot, or rot.",
+  "created_utc": "2026-11-23T00:03:00+00:00",
+  "source_run_manifest_sha256": "e9b9b33b22d19655d121250682f086ffb90f2a2b93c85b7b4b71a0bbb6381dc9",
+  "source_wide_output_note": "Temporary wide BTC output; the committed long table is the derived artifact. The raw-output SHA-256 is recorded for audit."
+}
