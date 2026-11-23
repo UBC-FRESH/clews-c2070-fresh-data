@@ -1,0 +1,106 @@
+{
+  "artifact": "national_product_chain_v3",
+  "artifact_version": "3.0.0",
+  "generated_utc": "2026-11-23T01:53:46+00:00",
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/coefficient_comparison.csv": "35eae724d2a6371abdfa52453ece1c9a1a258961d4f7d4d94bdc19c9cf4fdb12",
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/summary.json": "7f08b65aadbfc178e91e81ad6b519554c6f7d27365767cf49e0fd2b02c30d1e7",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04",
+    "data/derived/national/facilities/national_product_chain_v1/summary.json": "bf708e142c7245796d87dade855b9475ad1243c1b30da7a36e751d8873ef2441",
+    "data/derived/national/facilities/national_product_chain_v3/residue_scenario_coefficients.csv": "01687723186bb560243ea4a4fed96ca362a347aac5ca2d581f40cc64980cace9"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_PRODUCT_CHAIN_V3.md": {
+      "bytes": 6735,
+      "sha256": "6e1d0e7b3e8e57fb03c42e04db8f27eee25c4ebef8340c7d47657ac9c296d53d"
+    },
+    "coefficients.csv": {
+      "bytes": 9786,
+      "sha256": "efbb6375ac728d8ef14d998298f6fcd80be8256d01530216f23f1197c5433260"
+    },
+    "measured_coefficient_replacement.csv": {
+      "bytes": 4239,
+      "sha256": "5f1ab181834114fc803a4c9da9554fe09ec26208a4ff209f7c5023bdb8c8f3c6"
+    },
+    "product_chain_by_province.csv": {
+      "bytes": 16703,
+      "sha256": "1f950c290156dc206d5783cd29d25f60ef94256d39ae5754618d4058d8ddb430"
+    },
+    "residue_scenario_coefficients.csv": {
+      "bytes": 786,
+      "sha256": "01687723186bb560243ea4a4fed96ca362a347aac5ca2d581f40cc64980cace9"
+    },
+    "summary.json": {
+      "bytes": 21613,
+      "sha256": "9cec3197b140f3e955f01f8c105314087b5e4c8f30d8cb1243c649ca3ce012e1"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_product_chain_v3",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "measured_province_set",
+        "detail": "measured=['BC', 'NB', 'QC', 'YT']",
+        "status": "PASS"
+      },
+      {
+        "check_id": "donor_province_count",
+        "detail": "donor rows=9",
+        "status": "PASS"
+      },
+      {
+        "check_id": "grade_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_consistency",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "measured_share_sum",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "replacement_measured_values",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "products_unchanged_from_v2",
+        "detail": "all product and process fields equal v2",
+        "status": "PASS"
+      },
+      {
+        "check_id": "total_residue_conservation",
+        "detail": "stem + branch/foliage = total; scenarios = gross * factor",
+        "status": "PASS"
+      },
+      {
+        "check_id": "no_calibrated_recovery_factor",
+        "detail": "0.35/0.60/0.75 carried; 0.60 is reference only",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

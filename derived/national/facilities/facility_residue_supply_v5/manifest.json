@@ -1,0 +1,156 @@
+{
+  "artifact": "facility_residue_supply_v5",
+  "artifact_version": "5.0.0",
+  "generated_utc": "2026-11-23T01:55:04+00:00",
+  "inputs": {
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06",
+    "data/derived/national/facilities/national_facility_assignment_v6/facility_utilization.csv": "6486bef178e2f617348f211a553b18322b498e748796305466256fde38eecfba",
+    "data/derived/national/facilities/national_facility_assignment_v6/summary.json": "db4de65fe9d85365dffbc17503098520ff48d89a341ac58e2e9ae40dcd3062d4",
+    "data/derived/national/facilities/national_product_chain_v3/coefficients.csv": "efbb6375ac728d8ef14d998298f6fcd80be8256d01530216f23f1197c5433260",
+    "data/derived/national/facilities/national_product_chain_v3/product_chain_by_province.csv": "1f950c290156dc206d5783cd29d25f60ef94256d39ae5754618d4058d8ddb430",
+    "data/derived/national/facilities/national_product_chain_v3/summary.json": "9cec3197b140f3e955f01f8c105314087b5e4c8f30d8cb1243c649ca3ce012e1"
+  },
+  "labels": {
+    "facility_assignment": true,
+    "model_estimate": true,
+    "observed": false,
+    "policy_grade": false,
+    "ui_or_public_osecan_changed": false
+  },
+  "outputs": {
+    "FACILITY_RESIDUE_SUPPLY_V5.md": {
+      "bytes": 9895,
+      "sha256": "8862b4cb2171542745b25aa361bd4076a55c90457361bf2487d6c56bdaa6d624"
+    },
+    "facility_residue_supply.csv": {
+      "bytes": 570579,
+      "sha256": "1c994fba5684528672dfe0292cd58ce09a8d99ded840725004a1d41a8d8c83ec"
+    },
+    "national_residue_summary.csv": {
+      "bytes": 4521,
+      "sha256": "833efb0a3897fd8839772fc8658df59546ae61af33b4ac6a7d25e501a84f3473"
+    },
+    "province_residue_supply.csv": {
+      "bytes": 18729,
+      "sha256": "250f185efa51303c06f47f5440afd80e8c1e69b125a1a829fb82d7b10bbb46b3"
+    },
+    "summary.json": {
+      "bytes": 22178,
+      "sha256": "0f89ced35cf8b989ef1c7dfb568f6f303c8bb344a84ffa5d59ace182e80575f3"
+    }
+  },
+  "record_counts": {
+    "facilities_used": 208,
+    "facilities_with_positive_residue": 186,
+    "facility_rows": 809,
+    "national_summary_rows": 34,
+    "province_rows": 52
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_residue_supply_v5",
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "basis": "RSYC province recoverable_odt_per_m3_base x provincial harvest; model gross harvest residue x 0.60",
+    "combined_process_plus_harvest_recoverable_odt": 38380916.96251328,
+    "combined_process_plus_harvest_recoverable_pj": 710.0469638064958,
+    "lhv_gj_per_odt": 18.5,
+    "lhv_source": "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json",
+    "model_recoverable_odt": 10172117.19558384,
+    "model_recoverable_pj": 188.18416811830107,
+    "note": "The RSYC comparison applies to recoverable harvest residue only. Process residue is shown separately and is never added to the RSYC stream without the combined label. The 129.6709 PJ figure is the documented RSYC 100 Mm3 base; the 119 Mm3 base is derived with the same factors and the documented LHV.",
+    "process_residue_odt": 27816973.78408348,
+    "process_residue_pj": 514.6140150055444,
+    "ratio": 1.4367271179246,
+    "rsyc_base_100m_recoverable_odt": 7009238.195978076,
+    "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+    "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+    "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+    "status": "model_above_rsyc"
+  },
+  "scenario": "province_capacity_floor",
+  "validation": {
+    "checks": [
+      {
+        "allocation_rows": 809,
+        "check_id": "class_matching",
+        "detail": "0 class-mismatched allocation rows",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_product_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_class_process_residue_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "product_chain_summary_crosscheck",
+        "detail": "facility totals reproduce product-chain summary national totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "finite_nonnegative",
+        "detail": "0 non-finite or negative values",
+        "status": "PASS"
+      },
+      {
+        "check_id": "odt_pj_conversion",
+        "detail": "failed: []",
+        "lhv_gj_per_odt": 18.5,
+        "status": "PASS"
+      },
+      {
+        "check_id": "harvest_residue_separate",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rsyc_comparison",
+        "detail": "RSYC 119m base and model recoverable harvest residue reproduce",
+        "model_recoverable_odt": 10172117.19558384,
+        "ratio": 1.4367271179246,
+        "rsyc_base_100m_recoverable_pj": 129.6709066255944,
+        "rsyc_base_119m_recoverable_odt": 7080062.0860263305,
+        "rsyc_base_119m_recoverable_pj": 130.9811485914871,
+        "status": "PASS"
+      },
+      {
+        "check_id": "assignment_v6_scenario",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "proxy_share",
+        "detail": "proxy share 0.394083",
+        "proxy_residue_share": 0.39408346796206845,
+        "scaled_proxy_residue_share": 0.3195552761595214,
+        "status": "PASS"
+      },
+      {
+        "check_id": "national_summary",
+        "detail": "national summary rows match computed totals",
+        "status": "PASS"
+      },
+      {
+        "check_id": "evidence_labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "repository_hygiene",
+        "detail": "no unexpected D in parent or data git status",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

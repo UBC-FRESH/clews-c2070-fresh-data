@@ -1,0 +1,539 @@
+{
+  "artifact": "national_product_chain_v3",
+  "artifact_version": "3.0.0",
+  "caveats": [
+    "All values are model estimates; observed=false and policy_grade=false.",
+    "Measured product shares are expansion-weighted recovered-log shares from the four-province pilot, not mill receipts or a provincial supply estimate.",
+    "Solid is the measured sawlog share and replaces SAW+PANEL feedstock. The SAW/PANEL split remains a donor split because the pilot does not measure panel logs separately.",
+    "Other roundwood is routed to PELLET/BIO because the facility chain has no OTHER class. That routing and the pellet/bio split are donor assumptions, not measured coefficients.",
+    "Taper coverage is local for BC and QC, donor for NB (QC Schneider) and YT (BC Kozak). Unsupported species and out-of-domain stems are excluded and not imputed; hardwood coverage is limited by the mapped taper species.",
+    "The recoverable share of gross harvest residue and all mill conversion ratios remain donor assumptions from national_product_chain_v1.",
+    "No UI or public OSeCAN surface is changed by this artifact.",
+    "Branch and foliage are model-estimated dry mass from published CFS equations, not measured component weights. They are never added to stem taper volume.",
+    "The 0.60 recovery value is the existing reference scenario; it is not a calibrated or policy recovery factor. 0.35 and 0.75 are carried with equal status.",
+    "m3 feedstock routing remains stem-residue m3 because branch and foliage volume was not measured. Products and process residue are therefore unchanged from product-chain v2."
+  ],
+  "coefficient_tiers": {
+    "donor_coefficient": 9,
+    "measured_bucking_pilot": 4
+  },
+  "donor_provinces": [
+    "AB",
+    "SK",
+    "MB",
+    "ON",
+    "NS",
+    "PE",
+    "NL",
+    "NT",
+    "NU"
+  ],
+  "facility_assignment": false,
+  "generated_utc": "2026-11-23T01:53:46+00:00",
+  "harvest_total_m3": 118977339.1,
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/coefficient_comparison.csv": "35eae724d2a6371abdfa52453ece1c9a1a258961d4f7d4d94bdc19c9cf4fdb12",
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/summary.json": "7f08b65aadbfc178e91e81ad6b519554c6f7d27365767cf49e0fd2b02c30d1e7",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04",
+    "data/derived/national/facilities/national_product_chain_v1/summary.json": "bf708e142c7245796d87dade855b9475ad1243c1b30da7a36e751d8873ef2441",
+    "data/derived/national/facilities/national_product_chain_v3/residue_scenario_coefficients.csv": "01687723186bb560243ea4a4fed96ca362a347aac5ca2d581f40cc64980cace9"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "measured_provinces": [
+    "BC",
+    "QC",
+    "NB",
+    "YT"
+  ],
+  "measured_replacement": [
+    {
+      "coefficient_name": "solid_share",
+      "delta": 0.006088058421979237,
+      "donor_value": 0.6891929514729851,
+      "measured_value": 0.6952810098949643,
+      "notes": "SAW+PANEL feedstock; measured sawlog share for four provinces",
+      "province": "BC",
+      "ratio_measured_over_donor": 1.0088336051739466,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "pulp_share",
+      "delta": -0.013469311127133954,
+      "donor_value": 0.30823363107696405,
+      "measured_value": 0.2947643199498301,
+      "notes": "PULP feedstock",
+      "province": "BC",
+      "ratio_measured_over_donor": 0.9563016174449479,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "other_share",
+      "delta": -0.07014073308288367,
+      "donor_value": 0.08009540323808924,
+      "measured_value": 0.009954670155205575,
+      "notes": "other-roundwood feedstock; routed to PELLET/BIO",
+      "province": "BC",
+      "ratio_measured_over_donor": 0.12428516185397825,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "harvest_residue_odt_per_m3",
+      "delta": -0.03564862243747362,
+      "donor_value": 0.07622551414598874,
+      "measured_value": 0.040576891708515125,
+      "notes": "gross harvest residue per m3 harvest",
+      "province": "BC",
+      "ratio_measured_over_donor": 0.5323269008169809,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "odt/m3"
+    },
+    {
+      "coefficient_name": "solid_share",
+      "delta": -0.3471997043502028,
+      "donor_value": 0.6891929514708783,
+      "measured_value": 0.3419932471206755,
+      "notes": "SAW+PANEL feedstock; measured sawlog share for four provinces",
+      "province": "QC",
+      "ratio_measured_over_donor": 0.4962227869434709,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "pulp_share",
+      "delta": 0.33342150103634083,
+      "donor_value": 0.3082336310762248,
+      "measured_value": 0.6416551321125656,
+      "notes": "PULP feedstock",
+      "province": "QC",
+      "ratio_measured_over_donor": 2.081716812899911,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "other_share",
+      "delta": -0.06374378247142529,
+      "donor_value": 0.08009540323818394,
+      "measured_value": 0.01635162076675865,
+      "notes": "other-roundwood feedstock; routed to PELLET/BIO",
+      "province": "QC",
+      "ratio_measured_over_donor": 0.20415180029911292,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "harvest_residue_odt_per_m3",
+      "delta": -0.01681563917004865,
+      "donor_value": 0.07622551414592019,
+      "measured_value": 0.05940987497587154,
+      "notes": "gross harvest residue per m3 harvest",
+      "province": "QC",
+      "ratio_measured_over_donor": 0.7793961856674643,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "odt/m3"
+    },
+    {
+      "coefficient_name": "solid_share",
+      "delta": -0.16540074200343613,
+      "donor_value": 0.6891929514719232,
+      "measured_value": 0.523792209468487,
+      "notes": "SAW+PANEL feedstock; measured sawlog share for four provinces",
+      "province": "NB",
+      "ratio_measured_over_donor": 0.7600080766203623,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "pulp_share",
+      "delta": 0.15895124498387575,
+      "donor_value": 0.3082336310760742,
+      "measured_value": 0.46718487605994996,
+      "notes": "PULP feedstock",
+      "province": "NB",
+      "ratio_measured_over_donor": 1.5156843022903153,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "other_share",
+      "delta": -0.07107248876644379,
+      "donor_value": 0.08009540323800664,
+      "measured_value": 0.009022914471562856,
+      "notes": "other-roundwood feedstock; routed to PELLET/BIO",
+      "province": "NB",
+      "ratio_measured_over_donor": 0.1126520887191355,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "harvest_residue_odt_per_m3",
+      "delta": -0.045884235222827585,
+      "donor_value": 0.07622551414582898,
+      "measured_value": 0.0303412789230014,
+      "notes": "gross harvest residue per m3 harvest",
+      "province": "NB",
+      "ratio_measured_over_donor": 0.3980462350828454,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "odt/m3"
+    },
+    {
+      "coefficient_name": "solid_share",
+      "delta": -0.2645757900374128,
+      "donor_value": 0.6891929514731661,
+      "measured_value": 0.4246171614357533,
+      "notes": "SAW+PANEL feedstock; measured sawlog share for four provinces",
+      "province": "YT",
+      "ratio_measured_over_donor": 0.6161078120838644,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "pulp_share",
+      "delta": 0.2542977633082817,
+      "donor_value": 0.30823363107558654,
+      "measured_value": 0.5625313943838682,
+      "notes": "PULP feedstock",
+      "province": "YT",
+      "ratio_measured_over_donor": 1.8250162787912054,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "other_share",
+      "delta": -0.06724395905780955,
+      "donor_value": 0.08009540323818803,
+      "measured_value": 0.01285144418037848,
+      "notes": "other-roundwood feedstock; routed to PELLET/BIO",
+      "province": "YT",
+      "ratio_measured_over_donor": 0.16045170709935505,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "fraction of harvest"
+    },
+    {
+      "coefficient_name": "harvest_residue_odt_per_m3",
+      "delta": 0.04682082278450325,
+      "donor_value": 0.07622551414590058,
+      "measured_value": 0.12304633693040383,
+      "notes": "gross harvest residue per m3 harvest",
+      "province": "YT",
+      "ratio_measured_over_donor": 1.6142408261738341,
+      "source": "four_province_bucking_pilot_v0 expansion-weighted recovered-log shares; donor within-group splits",
+      "tier": "measured_bucking_pilot",
+      "unit": "odt/m3"
+    }
+  ],
+  "method": {
+    "class_conversion": "v1 donor product and process-residue ratios",
+    "grade_status": "measured dimension-only bucking, not official grade",
+    "harvest_residue": "measured stem + branch + foliage gross residue for BC/QC/NB/YT; 0.35/0.60/0.75 scenarios with 0.60 reference and no calibrated factor",
+    "product_coefficients": "measured solid/pulp/other shares for four provinces; v1 donor coefficients for the other nine",
+    "within_group_splits": "donor SAW/PANEL split of solid, donor PELLET/BIO split of other, donor recoverable share of gross harvest residue"
+  },
+  "model_estimate": true,
+  "national_totals": {
+    "bio_feedstock_m3": 2228366.212954305,
+    "bio_product_mwh": 742724.743544652,
+    "bio_residue_m3": 0.0,
+    "bio_residue_odt": 0.0,
+    "donor_province_count": 9.0,
+    "harvest_m3": 118977339.1,
+    "harvest_residue_gross_m3": 16670041.97852419,
+    "harvest_residue_gross_odt": 16953528.659309402,
+    "harvest_residue_gross_odt_per_m3_harvest": 0.14249376215297627,
+    "harvest_residue_recoverable_m3": 11862995.81329193,
+    "harvest_residue_recoverable_odt": 10563943.1784281,
+    "harvest_residue_unrecovered_m3": 4807046.16523414,
+    "harvest_residue_unrecovered_odt": 6389585.48087689,
+    "measured_province_count": 4.0,
+    "model_recoverable_odt_base": 10172117.19558214,
+    "other_log_m3": 4579018.918547868,
+    "panel_feedstock_m3": 10119225.95278505,
+    "panel_product_m3": 4653886.71362307,
+    "panel_residue_m3": 3588802.506633696,
+    "panel_residue_odt": 1614961.127988402,
+    "pellet_feedstock_m3": 10644086.487457309,
+    "pellet_product_odt": 4172333.55344058,
+    "pellet_residue_m3": 1372234.146466501,
+    "pellet_residue_odt": 617505.3659099389,
+    "primary_feedstock_m3": 118977339.1,
+    "process_residue_m3": 61815497.2979837,
+    "process_residue_odt": 27816973.78410092,
+    "process_residue_odt_per_m3_feedstock": 0.21260243488789216,
+    "province_count": 13.0,
+    "pulp_feedstock_m3": 46030313.3958354,
+    "pulp_product_odt": 9526992.91842865,
+    "pulp_residue_m3": 21198642.5566611,
+    "pulp_residue_odt": 9539389.15049844,
+    "pulpwood_m3": 31852386.174654376,
+    "residue_feedstock_m3": 11862995.81329193,
+    "rsyc_base_recoverable_odt": 7080062.0860263305,
+    "rsyc_ratio": 1.4367271179243597,
+    "sawlog_feedstock_m3": 61818342.8642838,
+    "sawlog_m3": 82545934.00685039,
+    "sawlog_product_m3": 42520151.7613431,
+    "sawlog_residue_m3": 35655818.088233866,
+    "sawlog_residue_odt": 16045118.1396867,
+    "total_feedstock_m3": 130840334.9132344,
+    "total_residue_gross_m3": 78485539.2764557,
+    "total_residue_gross_odt": 44770502.443402536,
+    "total_residue_gross_odt_per_m3_harvest": 0.3762943664908584,
+    "total_residue_recoverable_m3": 73678493.1113311,
+    "total_residue_recoverable_odt": 38380916.9625215
+  },
+  "observed": false,
+  "policy_grade": false,
+  "province_count": 13,
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_product_chain_v3",
+  "residue_components": {
+    "calibrated_recovery_factor": false,
+    "measured_provinces": [
+      "BC",
+      "QC",
+      "NB",
+      "YT"
+    ],
+    "province_rows": [
+      {
+        "branch_foliage_odt_per_m3": 0.12104508448957221,
+        "calibrated_recovery_factor": "false",
+        "model_estimate": "true",
+        "national_claim": "false",
+        "observed": "false",
+        "policy_grade": "false",
+        "province": "BC",
+        "recoverable_odt_per_m3_r035": 0.056567691669330566,
+        "recoverable_odt_per_m3_r060": 0.0969731857188524,
+        "recoverable_odt_per_m3_r075": 0.1212164821485655,
+        "reference_recovery_factor": 0.6,
+        "stem_residue_odt_per_m3": 0.040576891708515125,
+        "total_residue_gross_odt_per_m3": 0.16162197619808732
+      },
+      {
+        "branch_foliage_odt_per_m3": 0.15809714352812929,
+        "calibrated_recovery_factor": "false",
+        "model_estimate": "true",
+        "national_claim": "false",
+        "observed": "false",
+        "policy_grade": "false",
+        "province": "QC",
+        "recoverable_odt_per_m3_r035": 0.07612745647640029,
+        "recoverable_odt_per_m3_r060": 0.13050421110240049,
+        "recoverable_odt_per_m3_r075": 0.16313026387800061,
+        "reference_recovery_factor": 0.6,
+        "stem_residue_odt_per_m3": 0.05940987497587154,
+        "total_residue_gross_odt_per_m3": 0.2175070185040008
+      },
+      {
+        "branch_foliage_odt_per_m3": 0.15708488949700347,
+        "calibrated_recovery_factor": "false",
+        "model_estimate": "true",
+        "national_claim": "false",
+        "observed": "false",
+        "policy_grade": "false",
+        "province": "NB",
+        "recoverable_odt_per_m3_r035": 0.0655991589470017,
+        "recoverable_odt_per_m3_r060": 0.11245570105200292,
+        "recoverable_odt_per_m3_r075": 0.14056962631500367,
+        "reference_recovery_factor": 0.6,
+        "stem_residue_odt_per_m3": 0.0303412789230014,
+        "total_residue_gross_odt_per_m3": 0.18742616842000487
+      },
+      {
+        "branch_foliage_odt_per_m3": 0.1466423935043005,
+        "calibrated_recovery_factor": "false",
+        "model_estimate": "true",
+        "national_claim": "false",
+        "observed": "false",
+        "policy_grade": "false",
+        "province": "YT",
+        "recoverable_odt_per_m3_r035": 0.09439105565214652,
+        "recoverable_odt_per_m3_r060": 0.1618132382608226,
+        "recoverable_odt_per_m3_r075": 0.20226654782602826,
+        "reference_recovery_factor": 0.6,
+        "stem_residue_odt_per_m3": 0.12304633693040383,
+        "total_residue_gross_odt_per_m3": 0.26968873043470437
+      }
+    ],
+    "recovery_scenarios": [
+      0.35,
+      0.6,
+      0.75
+    ],
+    "reference_recovery_factor": 0.6,
+    "scope": "measured_total_residue",
+    "stem_only_baseline_artifact": "national_product_chain_v2",
+    "stem_plus_branch_foliage": true
+  },
+  "rsyc_comparison": {
+    "base_recovery_fraction": 0.6,
+    "model_recoverable_odt": 10172117.19558214,
+    "ratio": 1.4367271179243597,
+    "rsyc_base_recoverable_odt": 7080062.0860263305,
+    "status": "model_above_rsyc"
+  },
+  "scope": "Provincial product, feedstock and total harvest-residue totals from the 119 Mm3 allocation; measured total residue (stem + branch + foliage) for BC/QC/NB/YT and donor stem residue for the other nine.",
+  "status": "pass",
+  "stem_vs_total_residue": {
+    "measured_rows": [
+      {
+        "delta_odt": 4839210.230737868,
+        "province": "BC",
+        "ratio_total_over_stem": 3.9831039143929967,
+        "recoverable_odt_r035": 2261495.8171145907,
+        "recoverable_odt_r060": 3876849.972196441,
+        "recoverable_odt_r075": 4846062.465245551,
+        "stem_gross_odt": 1622206.3895895334,
+        "total_gross_odt": 6461416.620327401
+      },
+      {
+        "delta_odt": 4217136.010915259,
+        "province": "QC",
+        "ratio_total_over_stem": 3.661125673001974,
+        "recoverable_odt_r035": 2030649.2006219644,
+        "recoverable_odt_r060": 3481112.915351939,
+        "recoverable_odt_r075": 4351391.144189924,
+        "stem_gross_odt": 1584718.8480046394,
+        "total_gross_odt": 5801854.858919898
+      },
+      {
+        "delta_odt": 979377.1605469674,
+        "province": "NB",
+        "ratio_total_over_stem": 6.177266584432572,
+        "recoverable_odt_r035": 408991.0762868715,
+        "recoverable_odt_r060": 701127.5593489226,
+        "recoverable_odt_r075": 876409.4491861534,
+        "stem_gross_odt": 189168.77170123684,
+        "total_gross_odt": 1168545.9322482042
+      },
+      {
+        "delta_odt": 6441.384448591205,
+        "province": "YT",
+        "ratio_total_over_stem": 2.1917656158040923,
+        "recoverable_odt_r035": 4146.202632365058,
+        "recoverable_odt_r060": 7107.775941197242,
+        "recoverable_odt_r075": 8884.719926496553,
+        "stem_gross_odt": 5404.908786737533,
+        "total_gross_odt": 11846.293235328738
+      }
+    ],
+    "products_unchanged": true
+  },
+  "taper_coverage": [
+    {
+      "expansion_share_of_eligible_frame": 1.0,
+      "n_trees": 347,
+      "province": "BC",
+      "proxy_species": "BL, EP, HM, SB, SE, SW",
+      "taper_jurisdictions": "BC",
+      "taper_status": "local_published"
+    },
+    {
+      "expansion_share_of_eligible_frame": 0.7436364164397415,
+      "n_trees": 85,
+      "province": "QC",
+      "proxy_species": "",
+      "taper_jurisdictions": "QC",
+      "taper_status": "local_published"
+    },
+    {
+      "expansion_share_of_eligible_frame": 0.36998097107363836,
+      "n_trees": 106,
+      "province": "NB",
+      "proxy_species": "",
+      "taper_jurisdictions": "QC",
+      "taper_status": "donor_published"
+    },
+    {
+      "expansion_share_of_eligible_frame": 0.988641425389755,
+      "n_trees": 53,
+      "province": "YT",
+      "proxy_species": "AT, B, BL, L, PL, S, SW",
+      "taper_jurisdictions": "BC",
+      "taper_status": "donor_published"
+    }
+  ],
+  "ui_or_public_osecan_changed": false,
+  "validation": {
+    "checks": [
+      {
+        "check_id": "measured_province_set",
+        "detail": "measured=['BC', 'NB', 'QC', 'YT']",
+        "status": "PASS"
+      },
+      {
+        "check_id": "donor_province_count",
+        "detail": "donor rows=9",
+        "status": "PASS"
+      },
+      {
+        "check_id": "grade_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "feedstock_conservation",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_consistency",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "labels",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "measured_share_sum",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "replacement_measured_values",
+        "detail": "failed: []",
+        "status": "PASS"
+      },
+      {
+        "check_id": "products_unchanged_from_v2",
+        "detail": "all product and process fields equal v2",
+        "status": "PASS"
+      },
+      {
+        "check_id": "total_residue_conservation",
+        "detail": "stem + branch/foliage = total; scenarios = gross * factor",
+        "status": "PASS"
+      },
+      {
+        "check_id": "no_calibrated_recovery_factor",
+        "detail": "0.35/0.60/0.75 carried; 0.60 is reference only",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

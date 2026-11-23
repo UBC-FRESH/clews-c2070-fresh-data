@@ -2,8 +2,11 @@
   "artifact": "four_province_bucking_pilot_v0",
   "checks": {
     "all_measured": true,
+    "all_measured_trees_have_allometry": true,
     "all_residue_balances_within_1e8_m3": true,
     "all_taper_evidence_published_table": true,
+    "allometry_conservation": true,
+    "allometry_recovery_scenarios": true,
     "exactly_four_provinces": true,
     "expansion_conservation": true,
     "no_national_claim": true,
@@ -70,8 +73,8 @@
       "YT": 53
     }
   },
-  "elapsed_s": 239.968,
-  "generated_at": "2026-11-23T01:20:08.964457+00:00",
+  "elapsed_s": 229.551,
+  "generated_at": "2026-11-23T01:48:13.419763+00:00",
   "inputs": [
     {
       "path": "data/derived/national/bucking/national_bucking_pilot_v2/tree_lists/BC.csv",
@@ -102,25 +105,35 @@
     "tree_list_label": "measured_tree_list"
   },
   "outputs": {
+    "allometry_coverage": {
+      "bytes": 13551,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/allometry_coverage.csv",
+      "sha256": "5092b4941414735acebfea95b61199b61e2525036fca46d37b5df7d4061e8cf3"
+    },
     "bucked_logs": {
       "bytes": 2078479,
       "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/bucked_logs.csv",
       "sha256": "3dec38fb414949862ae385df7c6cffca6fa85c7c6618fa8efe454ae50cfc50d4"
     },
     "coefficient_comparison": {
-      "bytes": 4400,
+      "bytes": 5660,
       "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/coefficient_comparison.csv",
-      "sha256": "2fd98295bc5b1b022c5a3a531e4212396d394c52993b6884c89907fb26ab9afb"
+      "sha256": "35eae724d2a6371abdfa52453ece1c9a1a258961d4f7d4d94bdc19c9cf4fdb12"
     },
     "province_summary": {
-      "bytes": 4189,
+      "bytes": 5717,
       "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/province_summary.csv",
-      "sha256": "8a28277aed56491b2268483a13f0fb612a210ef6e46f1f69865a255e01743e4f"
+      "sha256": "d1327a70d73a5031438d1633943e1da6718b5509c88c457f51ff47c6bd99c8fc"
     },
     "residue_ledger": {
-      "bytes": 754937,
+      "bytes": 1118917,
       "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/residue_ledger.csv",
-      "sha256": "1659f917709cf2e6ca167bafe96935809236bd7d6a2a407fadd4d9a6a81e86bc"
+      "sha256": "f116b828ab60a3f492a58b85583881c51d08192eeee9d137794b1ecb418727bf"
+    },
+    "residue_recovery_scenarios": {
+      "bytes": 2065,
+      "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/residue_recovery_scenarios.csv",
+      "sha256": "6233daa8735652d859c8bdb012d75d799021f2474306f7b40064b483ecbf3eef"
     },
     "sample_audit": {
       "bytes": 1780,
@@ -170,7 +183,7 @@
   },
   "summary": {
     "path": "data/derived/national/bucking/four_province_bucking_pilot_v0/summary.json",
-    "sha256": "32c9f82b9427052e9336595cba1055c3f93b747aa4979e79621aa2df37c1e459"
+    "sha256": "7f08b65aadbfc178e91e81ad6b519554c6f7d27365767cf49e0fd2b02c30d1e7"
   },
   "unexpected_git_deletions": "none"
 }
