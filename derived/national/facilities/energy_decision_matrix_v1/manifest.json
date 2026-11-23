@@ -1,0 +1,121 @@
+{
+  "artifact": "energy_decision_matrix_v1",
+  "artifact_version": "1.0.0",
+  "docs": "docs/energy-decision-matrix.md",
+  "generated_utc": "2026-11-23T06:46:49+00:00",
+  "input_roles": {
+    "docs/energy-handoff-v4.md": "decision definitions and non-claims",
+    "forestry_osecan_handoff_v8/manifest.json": "handoff provenance",
+    "forestry_osecan_handoff_v8/summary.json": "D1/D2 values and tiers",
+    "national_economics_v2_3/summary.json": "economics context only; no ranking input",
+    "national_facility_chain_scenarios_v7/summary.json": "119 Mm3 harvest reference",
+    "national_residue_curve_v7/summary.json": "harvest gross consistency"
+  },
+  "inputs": {
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/manifest.json": "c3820a6a8e7566183e0cd8a175cca9c30858d4946f4d3779d7e743eeaa8af111",
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/summary.json": "e9afff3f0b693dbe43026ed2098a107241a602aca29c82de5999f8d823b0d96d",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/summary.json": "d1847d9fa4ec0614bcb2d408b84eb66b97eeead5d7bcc62e45e588ff05384a13",
+    "data/derived/national/facilities/national_residue_curve_v7/summary.json": "9989166cf6087c251e82a48570e0258763929ce2f3b0ed50fd9b1a4b30fe86b2",
+    "data/derived/national/harvest_basis/national_economics_v2_3/summary.json": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc",
+    "docs/energy-handoff-v4.md": "5499c1457111aba0b4cbcfeae90b869e5aafb8da43a2ec0e6f1d30478f2e54cf"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "ENERGY_DECISION_MATRIX_V1.md": {
+      "bytes": 7169,
+      "sha256": "cdaa41e1088aca7b7fc071498ed74f261d3bf6a7ac0ac366644f39015e679992"
+    },
+    "decision_matrix.csv": {
+      "bytes": 7742,
+      "sha256": "f0f1a97e6451e893b6c7a723d0271960307ad47cd8b1ed91937b7db5cdf476e4"
+    },
+    "summary.json": {
+      "bytes": 14873,
+      "sha256": "477b1f727a496afbb2a846c525f1fe1279e91a9db57e712fc2c11fd8b71ed269"
+    }
+  },
+  "record_counts": {
+    "decisions": 4,
+    "matrix_rows": 9,
+    "numeric_decisions": 2,
+    "numeric_rows": 7,
+    "qualitative_decisions": 2,
+    "qualitative_rows": 2
+  },
+  "reference_case": {
+    "harvest_m3": 118977339.1,
+    "label": "119 Mm3 planning allocation",
+    "scenario_key": "119m"
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.energy_decision_matrix_v1",
+  "status": "pass",
+  "test": ".venv/bin/python -m pytest tests/test_energy_decision_matrix_v1.py -q",
+  "title": "Energy Decision-Impact Matrix V1 (v4 119 Mm3)",
+  "validation": {
+    "checks": [
+      {
+        "check": "handoff_source_labels",
+        "detail": "model_estimate=true, observed=false, policy_grade=false, national_claim=false, official_osecan_changed=false",
+        "passed": true
+      },
+      {
+        "check": "handoff_totals_reconcile_v4",
+        "detail": "harvest 0.35/0.60/0.75 and process 0/25/50/75%",
+        "passed": true
+      },
+      {
+        "check": "osecan_tier_positions_reconcile_v4",
+        "detail": "seven stream/case tier positions",
+        "passed": true
+      },
+      {
+        "check": "reference_harvest_119m",
+        "detail": "harvest_m3=118977339.1",
+        "passed": true
+      },
+      {
+        "check": "curve_handoff_harvest_gross_consistency",
+        "detail": "harvest gross = 60% recoverable / 0.60",
+        "passed": true
+      },
+      {
+        "check": "economics_context_read_only",
+        "detail": "economics v2.3 is context, not a ranking input",
+        "passed": true
+      },
+      {
+        "check": "matrix_row_counts",
+        "detail": "rows=9 numeric=7 qualitative=2",
+        "passed": true
+      },
+      {
+        "check": "matrix_row_labels",
+        "detail": "model_estimate=true; observed/policy/national=false",
+        "passed": true
+      },
+      {
+        "check": "numeric_rows_reconcile",
+        "detail": "D1 and D2 values and tiers match handoff v8",
+        "passed": true
+      },
+      {
+        "check": "qualitative_rows_carry_no_numbers",
+        "detail": "D3 and D4 have no PJ value or tier and no invented number",
+        "passed": true
+      },
+      {
+        "check": "handoff_status_and_case_counts",
+        "detail": "handoff v8 status pass; 3 harvest and 4 process cases",
+        "passed": true
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

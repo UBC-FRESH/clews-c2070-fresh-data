@@ -1,0 +1,287 @@
+{
+  "artifact": "energy_decision_matrix_v1",
+  "artifact_dir": "data/derived/national/facilities/energy_decision_matrix_v1",
+  "artifact_version": "1.0.0",
+  "caveats": [
+    "The 119 Mm3 case is a planning allocation, not a legal AAC.",
+    "0.60 recovery is a reference value, not a calibrated recovery factor.",
+    "Process availability 0/25/50/75% is a screening range, not an OSeCAN parameter.",
+    "Process and harvest streams remain separate and are never summed in the matrix.",
+    "Tier positions compare the quantity with adopted national supply-curve T1-T4 thresholds; above_T4 does not mean undeliverable.",
+    "D3/D4 must be re-read once OSeCAN feedstock, technology, and demand boundaries are supplied."
+  ],
+  "decisions": [
+    {
+      "cases": [
+        {
+          "case_key": "harvest_recovery_035",
+          "interpretation": "Lower screening case. Within T4 after the v3.2-to-v4 move from T3; the change is a coefficient effect, not a new recovery measurement.",
+          "option_id": "harvest_recovery_035",
+          "option_label": "35% recovery",
+          "osecan_tier": "T4",
+          "screening_default": false,
+          "tier_relation": "Within the adopted T4 band.",
+          "value_pj": 155.5437681267482
+        },
+        {
+          "case_key": "harvest_recovery_060",
+          "interpretation": "Reference case only. Exceeds the T4 upper bound; 0.60 is not a calibrated recovery factor and has no measured provenance.",
+          "option_id": "harvest_recovery_060",
+          "option_label": "60% recovery",
+          "osecan_tier": "above_T4",
+          "screening_default": true,
+          "tier_relation": "Exceeds T4 upper bound (213.538 PJ) by 53.108 PJ.",
+          "value_pj": 266.6464596457938
+        },
+        {
+          "case_key": "harvest_recovery_075",
+          "interpretation": "Upper screening case. Exceeds T4 by the widest margin; useful to show how much the branch/foliage and recovery definition can move the interface value.",
+          "option_id": "harvest_recovery_075",
+          "option_label": "75% recovery",
+          "osecan_tier": "above_T4",
+          "screening_default": false,
+          "tier_relation": "Exceeds T4 upper bound (213.538 PJ) by 119.770 PJ.",
+          "value_pj": 333.3080745574168
+        }
+      ],
+      "context_reference": "",
+      "decision": "Recovery basis for branch and foliage",
+      "decision_id": "D1",
+      "default_case": "harvest_recovery_060",
+      "default_role": "screening_reference_not_policy",
+      "no_numbers_invented": true,
+      "qualitative_implication": "",
+      "question": "Should branch and foliage count as energy feedstock, and on what uniform recovery basis (0.35 / 0.60 / 0.75)?",
+      "recommended_default": "Report the full 0.35/0.60/0.75 range. If a single screening case is required, label 0.60 as reference-only; it is not calibrated and not preferred.",
+      "short_label": "Harvest recovery basis",
+      "stream": "harvest",
+      "unit": "PJ"
+    },
+    {
+      "cases": [
+        {
+          "case_key": "process_availability_000",
+          "interpretation": "Degenerate zero case. It is not a physical process-residue estimate and only anchors the availability sweep at T1.",
+          "option_id": "process_availability_000",
+          "option_label": "0% availability",
+          "osecan_tier": "T1",
+          "screening_default": false,
+          "tier_relation": "Within the adopted T1 band.",
+          "value_pj": 0.0
+        },
+        {
+          "case_key": "process_availability_025",
+          "interpretation": "Lowest non-zero case and the only non-zero process case inside the adopted T1-T4 range (T3).",
+          "option_id": "process_availability_025",
+          "option_label": "25% availability",
+          "osecan_tier": "T3",
+          "screening_default": true,
+          "tier_relation": "Within the adopted T3 band.",
+          "value_pj": 124.6877292302247
+        },
+        {
+          "case_key": "process_availability_050",
+          "interpretation": "Midpoint screening case. Exceeds the T4 upper bound; one availability assumption dominates the comparison with the 2050 energy context.",
+          "option_id": "process_availability_050",
+          "option_label": "50% availability",
+          "osecan_tier": "above_T4",
+          "screening_default": false,
+          "tier_relation": "Exceeds T4 upper bound (213.538 PJ) by 35.837 PJ.",
+          "value_pj": 249.3754584602354
+        },
+        {
+          "case_key": "process_availability_075",
+          "interpretation": "Upper screening case. Exceeds T4 by the widest margin; the quantity is a model estimate, not observed mill availability.",
+          "option_id": "process_availability_075",
+          "option_label": "75% availability",
+          "osecan_tier": "above_T4",
+          "screening_default": false,
+          "tier_relation": "Exceeds T4 upper bound (213.538 PJ) by 160.525 PJ.",
+          "value_pj": 374.0631876904527
+        }
+      ],
+      "context_reference": "",
+      "decision": "Process-residue availability",
+      "decision_id": "D2",
+      "default_case": "process_availability_025",
+      "default_role": "screening_conservative_not_policy",
+      "no_numbers_invented": true,
+      "qualitative_implication": "",
+      "question": "What fraction of mill process residue is available to the energy system in the OSeCAN 2050 context?",
+      "recommended_default": "Report the full 0/25/50/75% range. If a single screening case is required, use 25%, the lowest non-zero case, as a conservative screening point; it is not an availability estimate.",
+      "short_label": "Process availability",
+      "stream": "process",
+      "unit": "PJ"
+    },
+    {
+      "cases": [
+        {
+          "case_key": "",
+          "interpretation": "If municipal solid waste, agricultural residue, construction and demolition wood, or black liquor share the same combustion or storage capacity, the forestry tier positions are not directly comparable. Adding those feedstocks can change the storage mix and dilute forestry residue's share; counting mill process residue both as supply and as internal mill energy would double count. No quantity is assigned here because the OSeCAN feedstock and technology denominators are not in the handoff.",
+          "option_id": "qualitative_only",
+          "option_label": "Qualitative implication; no quantity assigned",
+          "osecan_tier": null,
+          "screening_default": false,
+          "tier_relation": "not_quantified",
+          "value_pj": null
+        }
+      ],
+      "context_reference": "Rubino context: storage mix",
+      "decision": "Biomass and waste incineration assumptions",
+      "decision_id": "D3",
+      "default_case": "",
+      "default_role": "qualitative_boundary_not_policy",
+      "no_numbers_invented": true,
+      "qualitative_implication": "If municipal solid waste, agricultural residue, construction and demolition wood, or black liquor share the same combustion or storage capacity, the forestry tier positions are not directly comparable. Adding those feedstocks can change the storage mix and dilute forestry residue's share; counting mill process residue both as supply and as internal mill energy would double count. No quantity is assigned here because the OSeCAN feedstock and technology denominators are not in the handoff.",
+      "question": "Does OSeCAN include biomass or waste incineration beyond forestry residue, and does forestry residue compete for the same combustion capacity?",
+      "recommended_default": "Keep non-forestry feedstocks outside the forestry matrix until the OSeCAN biomass/waste technology list, feedstock definitions, and internal mill-use boundary are supplied. Do not add a forestry tier to a mixed biomass/waste stack.",
+      "short_label": "Biomass/waste incineration",
+      "stream": "qualitative",
+      "unit": ""
+    },
+    {
+      "cases": [
+        {
+          "case_key": "",
+          "interpretation": "Chemicals, pulp, panel, pellet, liquid fuels, and other industrial demands can compete with energy for the same residue. The facility chain assigns process residue by class and province but does not net out internal mill consumption or existing industrial/chemical contracts. If OSeCAN treats those volumes as committed, available energy residue is lower than the handoff total; if OSeCAN adds new chemical or biofuel demand, the same residue may be counted twice. No quantity is assigned here.",
+          "option_id": "qualitative_only",
+          "option_label": "Qualitative implication; no quantity assigned",
+          "osecan_tier": null,
+          "screening_default": false,
+          "tier_relation": "not_quantified",
+          "value_pj": null
+        }
+      ],
+      "context_reference": "Pehl context: industrial feedstock competition",
+      "decision": "Industrial feedstock demand versus energy",
+      "decision_id": "D4",
+      "default_case": "",
+      "default_role": "qualitative_boundary_not_policy",
+      "no_numbers_invented": true,
+      "qualitative_implication": "Chemicals, pulp, panel, pellet, liquid fuels, and other industrial demands can compete with energy for the same residue. The facility chain assigns process residue by class and province but does not net out internal mill consumption or existing industrial/chemical contracts. If OSeCAN treats those volumes as committed, available energy residue is lower than the handoff total; if OSeCAN adds new chemical or biofuel demand, the same residue may be counted twice. No quantity is assigned here.",
+      "question": "Which industrial demands are in the OSeCAN demand stack, and do they compete with the energy system for the same residue?",
+      "recommended_default": "Report process residue gross and flag industrial/chemical demand as un-netted until the OSeCAN demand stack and mill self-use boundary are supplied. Do not double count the same residue as both industrial feedstock and energy supply.",
+      "short_label": "Industrial feedstock",
+      "stream": "qualitative",
+      "unit": ""
+    }
+  ],
+  "docs": "docs/energy-decision-matrix.md",
+  "evidence_label": "model_estimate",
+  "generated_utc": "2026-11-23T06:46:49+00:00",
+  "input_roles": {
+    "docs/energy-handoff-v4.md": "decision definitions and non-claims",
+    "forestry_osecan_handoff_v8/manifest.json": "handoff provenance",
+    "forestry_osecan_handoff_v8/summary.json": "D1/D2 values and tiers",
+    "national_economics_v2_3/summary.json": "economics context only; no ranking input",
+    "national_facility_chain_scenarios_v7/summary.json": "119 Mm3 harvest reference",
+    "national_residue_curve_v7/summary.json": "harvest gross consistency"
+  },
+  "inputs": {
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/manifest.json": "c3820a6a8e7566183e0cd8a175cca9c30858d4946f4d3779d7e743eeaa8af111",
+    "data/derived/national/facilities/forestry_osecan_handoff_v8/summary.json": "e9afff3f0b693dbe43026ed2098a107241a602aca29c82de5999f8d823b0d96d",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v7/summary.json": "d1847d9fa4ec0614bcb2d408b84eb66b97eeead5d7bcc62e45e588ff05384a13",
+    "data/derived/national/facilities/national_residue_curve_v7/summary.json": "9989166cf6087c251e82a48570e0258763929ce2f3b0ed50fd9b1a4b30fe86b2",
+    "data/derived/national/harvest_basis/national_economics_v2_3/summary.json": "0484f13d993ccc9626cc3fa1c7e94c12836c185e6e380482ff000ae76b7e54fc",
+    "docs/energy-handoff-v4.md": "5499c1457111aba0b4cbcfeae90b869e5aafb8da43a2ec0e6f1d30478f2e54cf"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "non_claims": [
+    "Not observed and not policy grade: observed=false, policy_grade=false.",
+    "Not a national supply estimate, forecast, legal AAC, sustainable harvest level, tenure decision, or operating plan.",
+    "Not an official OSeCAN result; no official OSeCAN file or public surface was changed.",
+    "D1 and D2 are equal-status screening cases; the screening defaults are not preferred cases.",
+    "D3 and D4 are qualitative; no non-forestry feedstock or industrial demand quantity is invented.",
+    "No cost, margin, investment, or policy ranking is applied; economics v2.3 is context only."
+  ],
+  "record_counts": {
+    "decisions": 4,
+    "matrix_rows": 9,
+    "numeric_decisions": 2,
+    "numeric_rows": 7,
+    "qualitative_decisions": 2,
+    "qualitative_rows": 2
+  },
+  "reference_case": {
+    "harvest_m3": 118977339.1,
+    "label": "119 Mm3 planning allocation",
+    "scenario_key": "119m"
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.energy_decision_matrix_v1",
+  "status": "pass",
+  "test": ".venv/bin/python -m pytest tests/test_energy_decision_matrix_v1.py -q",
+  "tier_thresholds": {
+    "T1": 85.007113,
+    "T2": 109.398863,
+    "T3": 149.272577,
+    "T4": 213.538041
+  },
+  "title": "Energy Decision-Impact Matrix V1 (v4 119 Mm3)",
+  "validation": {
+    "checks": [
+      {
+        "check": "handoff_source_labels",
+        "detail": "model_estimate=true, observed=false, policy_grade=false, national_claim=false, official_osecan_changed=false",
+        "passed": true
+      },
+      {
+        "check": "handoff_totals_reconcile_v4",
+        "detail": "harvest 0.35/0.60/0.75 and process 0/25/50/75%",
+        "passed": true
+      },
+      {
+        "check": "osecan_tier_positions_reconcile_v4",
+        "detail": "seven stream/case tier positions",
+        "passed": true
+      },
+      {
+        "check": "reference_harvest_119m",
+        "detail": "harvest_m3=118977339.1",
+        "passed": true
+      },
+      {
+        "check": "curve_handoff_harvest_gross_consistency",
+        "detail": "harvest gross = 60% recoverable / 0.60",
+        "passed": true
+      },
+      {
+        "check": "economics_context_read_only",
+        "detail": "economics v2.3 is context, not a ranking input",
+        "passed": true
+      },
+      {
+        "check": "matrix_row_counts",
+        "detail": "rows=9 numeric=7 qualitative=2",
+        "passed": true
+      },
+      {
+        "check": "matrix_row_labels",
+        "detail": "model_estimate=true; observed/policy/national=false",
+        "passed": true
+      },
+      {
+        "check": "numeric_rows_reconcile",
+        "detail": "D1 and D2 values and tiers match handoff v8",
+        "passed": true
+      },
+      {
+        "check": "qualitative_rows_carry_no_numbers",
+        "detail": "D3 and D4 have no PJ value or tier and no invented number",
+        "passed": true
+      },
+      {
+        "check": "handoff_status_and_case_counts",
+        "detail": "handoff v8 status pass; 3 harvest and 4 process cases",
+        "passed": true
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}
