@@ -1,0 +1,3811 @@
+{
+  "artifact": "forestry_osecan_scenarios_v9",
+  "artifact_version": "9.0.0",
+  "assignment": "assignment v10 node transport-aware at 100m, 119m and 150m",
+  "calibrated_recovery_factor": false,
+  "candidate_activity_limits": {
+    "applied_to_osecan": false,
+    "columns": {
+      "candidate_activity_limit_pj": "model-estimate zone PJ",
+      "candidate_headroom_pj": "official limit - candidate PJ",
+      "candidate_ratio_to_official_limit": "candidate PJ / official limit",
+      "official_limit_reference": "official 2050 limit reference or none",
+      "technology_suggestion": "candidate SUPBCW string, not an assignment"
+    },
+    "grain": [
+      "scenario",
+      "stream",
+      "availability_case",
+      "zone_id"
+    ],
+    "official_zone_limits": {
+      "B1": {
+        "limit_pj": 3.605474907,
+        "technology": "SUPBCWB1"
+      },
+      "B2": {
+        "limit_pj": 39.918341125,
+        "technology": "SUPBCWB2"
+      }
+    },
+    "row_count": 273,
+    "status": "read_only_candidate_not_applied"
+  },
+  "case_zone_summary": {
+    "cases": [
+      "100m",
+      "119m",
+      "150m"
+    ],
+    "csv": "case_zone_summary.csv",
+    "note": "Handoff v10 supplies the explicit all-case zone summary; this artifact keeps the scenario/stream/availability table and tier positions.",
+    "source": "forestry_osecan_handoff_v10/case_zone_summary.csv"
+  },
+  "caveats": [
+    "All values are model estimates; observed=false and policy_grade=false.",
+    "The 100/119/150 Mm3 cases are planning allocations, not legal AACs, sustainable-supply determinations, or observed harvest outcomes.",
+    "Zone splits are explicit forestry_osecan_handoff_v10 proxy weights; no observed sub-provincial residue split exists.",
+    "BC zone weights are proportional to the 2050 SUPBCWB1/SUPBCWB2 zonal supply limits, so B1 and B2 candidate ratios to their own limits are identical by construction.",
+    "The national supply-curve tier caps are rest-of-Canada RSYC-only; national comparisons that include BC are a context screen, not a like-for-like capacity test.",
+    "Process residue is facility-assigned by receiving facility province; its provincial distribution differs from the province-basis national residue curve even though the national 119m totals reconcile.",
+    "Harvest residue is province-only gross residue multiplied by a recovery fraction; it is never facility-assigned.",
+    "Process and harvest residue are separate streams and are never summed.",
+    "Candidate activity limits are read-only screening values; they are not applied to any OSeCAN technology, region, or input file.",
+    "Official zone-specific limits exist only for SUPBCWB1 and SUPBCWB2; other zones have no official zone-specific activity limit in the adopted curve.",
+    "Supply-curve and 2050 OSeCAN values are context, not policy targets, and the comparison is not a capacity-adequacy or sustainability test.",
+    "No UI or public OSeCAN surface is changed by this artifact.",
+    "E2c product coefficients replace the frozen v3.2 chain E2 v1 coefficients for nine jurisdictions. Harvest residue includes CFS branch and foliage dry mass; products and process residue do not.",
+    "0.35/0.60/0.75 recovery cases are carried; no single calibrated recovery factor is adopted.",
+    "Transport cost is reported only in the facility chain; it is not included in OSeCAN official tiers or any OSeCAN input.",
+    "Assignment v10 changes some facility-province process residues; national process PJ and the OSeCAN tier positions are unchanged.",
+    "All three harvest cases now use assignment v10 node transport-aware flows; national process and harvest PJ are invariant to assignment.",
+    "Transport cost is reported only in the facility chain; it is not included in OSeCAN official tiers or any OSeCAN input."
+  ],
+  "comparison": {
+    "bc": {
+      "100m|harvest|harvest_recovery_035": {
+        "bc_zonal_headroom_pj": 8.728846427150003,
+        "bc_zonal_ratio": 0.7994466656891414,
+        "case_pj": 34.794969604849996,
+        "osecan_2050_bc_headroom_pj": 8.728800395150003,
+        "osecan_2050_bc_ratio": 0.7994475112070943
+      },
+      "100m|harvest|harvest_recovery_060": {
+        "bc_zonal_headroom_pj": -16.124703290599996,
+        "bc_zonal_ratio": 1.3704799983242424,
+        "case_pj": 59.648519322599995,
+        "osecan_2050_bc_headroom_pj": -16.124749322599996,
+        "osecan_2050_bc_ratio": 1.3704814477835903
+      },
+      "100m|harvest|harvest_recovery_075": {
+        "bc_zonal_headroom_pj": -31.036833121249998,
+        "bc_zonal_ratio": 1.7130999979053032,
+        "case_pj": 74.56064915325,
+        "osecan_2050_bc_headroom_pj": -31.03687915325,
+        "osecan_2050_bc_ratio": 1.7131018097294881
+      },
+      "100m|process|process_availability_000": {
+        "bc_zonal_headroom_pj": 43.523816032,
+        "bc_zonal_ratio": 0.0,
+        "case_pj": 0.0,
+        "osecan_2050_bc_headroom_pj": 43.52377,
+        "osecan_2050_bc_ratio": 0.0
+      },
+      "100m|process|process_availability_025": {
+        "bc_zonal_headroom_pj": 7.2527330745,
+        "bc_zonal_ratio": 0.8333617376480138,
+        "case_pj": 36.2710829575,
+        "osecan_2050_bc_headroom_pj": 7.2526870425,
+        "osecan_2050_bc_ratio": 0.8333626190355293
+      },
+      "100m|process|process_availability_050": {
+        "bc_zonal_headroom_pj": -29.018349883,
+        "bc_zonal_ratio": 1.6667234752960276,
+        "case_pj": 72.542165915,
+        "osecan_2050_bc_headroom_pj": -29.018395915,
+        "osecan_2050_bc_ratio": 1.6667252380710587
+      },
+      "100m|process|process_availability_075": {
+        "bc_zonal_headroom_pj": -65.2894328405,
+        "bc_zonal_ratio": 2.5000852129440414,
+        "case_pj": 108.8132488725,
+        "osecan_2050_bc_headroom_pj": -65.2894788725,
+        "osecan_2050_bc_ratio": 2.500087857106588
+      },
+      "119m|harvest|harvest_recovery_035": {
+        "bc_zonal_headroom_pj": 1.6861434154000037,
+        "bc_zonal_ratio": 0.9612592927476694,
+        "case_pj": 41.837672616599995,
+        "osecan_2050_bc_headroom_pj": 1.6860973834000035,
+        "osecan_2050_bc_ratio": 0.9612603094033444
+      },
+      "119m|harvest|harvest_recovery_060": {
+        "bc_zonal_headroom_pj": -28.197908453599993,
+        "bc_zonal_ratio": 1.647873073281719,
+        "case_pj": 71.72172448559999,
+        "osecan_2050_bc_headroom_pj": -28.197954485599993,
+        "osecan_2050_bc_ratio": 1.647874816120019
+      },
+      "119m|harvest|harvest_recovery_075": {
+        "bc_zonal_headroom_pj": -46.128339575,
+        "bc_zonal_ratio": 2.059841341602149,
+        "case_pj": 89.652155607,
+        "osecan_2050_bc_headroom_pj": -46.128385607,
+        "osecan_2050_bc_ratio": 2.059843520150024
+      },
+      "119m|process|process_availability_000": {
+        "bc_zonal_headroom_pj": 43.523816032,
+        "bc_zonal_ratio": 0.0,
+        "case_pj": 0.0,
+        "osecan_2050_bc_headroom_pj": 43.52377,
+        "osecan_2050_bc_ratio": 0.0
+      },
+      "119m|process|process_availability_025": {
+        "bc_zonal_headroom_pj": -0.0887438140000043,
+        "bc_zonal_ratio": 1.0020389713515643,
+        "case_pj": 43.612559846,
+        "osecan_2050_bc_headroom_pj": -0.0887898460000045,
+        "osecan_2050_bc_ratio": 1.0020400311370088
+      },
+      "119m|process|process_availability_050": {
+        "bc_zonal_headroom_pj": -43.70130366000001,
+        "bc_zonal_ratio": 2.0040779427031286,
+        "case_pj": 87.225119692,
+        "osecan_2050_bc_headroom_pj": -43.70134969200001,
+        "osecan_2050_bc_ratio": 2.0040800622740176
+      },
+      "119m|process|process_availability_075": {
+        "bc_zonal_headroom_pj": -87.313863506,
+        "bc_zonal_ratio": 3.006116914054693,
+        "case_pj": 130.837679538,
+        "osecan_2050_bc_headroom_pj": -87.313909538,
+        "osecan_2050_bc_ratio": 3.0061200934110257
+      },
+      "150m|harvest|harvest_recovery_035": {
+        "bc_zonal_headroom_pj": -3.8030761238999986,
+        "bc_zonal_ratio": 1.087379197658217,
+        "case_pj": 47.3268921559,
+        "osecan_2050_bc_headroom_pj": -3.803122155899999,
+        "osecan_2050_bc_ratio": 1.0873803477019568
+      },
+      "150m|harvest|harvest_recovery_060": {
+        "bc_zonal_headroom_pj": -37.60799909240001,
+        "bc_zonal_ratio": 1.8640786245569436,
+        "case_pj": 81.1318151244,
+        "osecan_2050_bc_headroom_pj": -37.60804512440001,
+        "osecan_2050_bc_ratio": 1.8640805960604978
+      },
+      "150m|harvest|harvest_recovery_075": {
+        "bc_zonal_headroom_pj": -57.89095287350001,
+        "bc_zonal_ratio": 2.3300982806961796,
+        "case_pj": 101.41476890550001,
+        "osecan_2050_bc_headroom_pj": -57.89099890550001,
+        "osecan_2050_bc_ratio": 2.3301007450756224
+      },
+      "150m|process|process_availability_000": {
+        "bc_zonal_headroom_pj": 43.523816032,
+        "bc_zonal_ratio": 0.0,
+        "case_pj": 0.0,
+        "osecan_2050_bc_headroom_pj": 43.52377,
+        "osecan_2050_bc_ratio": 0.0
+      },
+      "150m|process|process_availability_025": {
+        "bc_zonal_headroom_pj": -5.810833516250007,
+        "bc_zonal_ratio": 1.1335092840199883,
+        "case_pj": 49.334649548250006,
+        "osecan_2050_bc_headroom_pj": -5.810879548250007,
+        "osecan_2050_bc_ratio": 1.133510482852244
+      },
+      "150m|process|process_availability_050": {
+        "bc_zonal_headroom_pj": -55.14548306450001,
+        "bc_zonal_ratio": 2.2670185680399766,
+        "case_pj": 98.66929909650001,
+        "osecan_2050_bc_headroom_pj": -55.14552909650001,
+        "osecan_2050_bc_ratio": 2.267020965704488
+      },
+      "150m|process|process_availability_075": {
+        "bc_zonal_headroom_pj": -104.48013261275001,
+        "bc_zonal_ratio": 3.4005278520599647,
+        "case_pj": 148.00394864475,
+        "osecan_2050_bc_headroom_pj": -104.48017864475001,
+        "osecan_2050_bc_ratio": 3.4005314485567317
+      }
+    },
+    "national": {
+      "100m|harvest|harvest_recovery_035": {
+        "case_pj": 130.63537315534998,
+        "case_tier": "T3",
+        "osecan_2050_national_headroom_pj": 22.287396844650033,
+        "osecan_2050_national_ratio": 0.8542571727895719,
+        "t4_headroom_pj": 82.90266784465001,
+        "t4_ratio": 0.6117662808162129
+      },
+      "100m|harvest|harvest_recovery_060": {
+        "case_pj": 223.9463539806,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -71.0235839806,
+        "osecan_2050_national_ratio": 1.4644408676392664,
+        "t4_headroom_pj": -10.408312980600016,
+        "t4_ratio": 1.0487421956849365
+      },
+      "100m|harvest|harvest_recovery_075": {
+        "case_pj": 279.93294247575,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -127.01017247574998,
+        "osecan_2050_national_ratio": 1.8305510845490829,
+        "t4_headroom_pj": -66.39490147575,
+        "t4_ratio": 1.3109277446061707
+      },
+      "100m|process|process_availability_000": {
+        "case_pj": 0.0,
+        "case_tier": "",
+        "osecan_2050_national_headroom_pj": 152.92277,
+        "osecan_2050_national_ratio": 0.0,
+        "t4_headroom_pj": 213.538041,
+        "t4_ratio": 0.0
+      },
+      "100m|process|process_availability_025": {
+        "case_pj": 104.809504566,
+        "case_tier": "T2",
+        "osecan_2050_national_headroom_pj": 48.11326543400001,
+        "osecan_2050_national_ratio": 0.6853753993993177,
+        "t4_headroom_pj": 108.72853643399999,
+        "t4_ratio": 0.4908235744562254
+      },
+      "100m|process|process_availability_050": {
+        "case_pj": 209.619009132,
+        "case_tier": "T4",
+        "osecan_2050_national_headroom_pj": -56.69623913199999,
+        "osecan_2050_national_ratio": 1.3707507987986354,
+        "t4_headroom_pj": 3.9190318679999905,
+        "t4_ratio": 0.9816471489124508
+      },
+      "100m|process|process_availability_075": {
+        "case_pj": 314.428513698,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -161.505743698,
+        "osecan_2050_national_ratio": 2.056126198197953,
+        "t4_headroom_pj": -100.89047269800002,
+        "t4_ratio": 1.4724707233686762
+      },
+      "119m|harvest|harvest_recovery_035": {
+        "case_pj": 155.54376812695,
+        "case_tier": "T4",
+        "osecan_2050_national_headroom_pj": -2.620998126949985,
+        "osecan_2050_national_ratio": 1.0171393581671977,
+        "t4_headroom_pj": 57.994272873049994,
+        "t4_ratio": 0.7284124524067822
+      },
+      "119m|harvest|harvest_recovery_060": {
+        "case_pj": 266.6464596462,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -113.7236896462,
+        "osecan_2050_national_ratio": 1.7436674711437674,
+        "t4_headroom_pj": -53.10841864620002,
+        "t4_ratio": 1.2487070612687696
+      },
+      "119m|harvest|harvest_recovery_075": {
+        "case_pj": 333.30807455775,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -180.38530455774998,
+        "osecan_2050_national_ratio": 2.1795843389297094,
+        "t4_headroom_pj": -119.77003355775,
+        "t4_ratio": 1.5608838265859617
+      },
+      "119m|process|process_availability_000": {
+        "case_pj": 0.0,
+        "case_tier": "",
+        "osecan_2050_national_headroom_pj": 152.92277,
+        "osecan_2050_national_ratio": 0.0,
+        "t4_headroom_pj": 213.538041,
+        "t4_ratio": 0.0
+      },
+      "119m|process|process_availability_025": {
+        "case_pj": 124.68772922975,
+        "case_tier": "T3",
+        "osecan_2050_national_headroom_pj": 28.23504077025001,
+        "osecan_2050_national_ratio": 0.8153640509503588,
+        "t4_headroom_pj": 88.85031177024999,
+        "t4_ratio": 0.5839134265999472
+      },
+      "119m|process|process_availability_050": {
+        "case_pj": 249.3754584595,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -96.4526884595,
+        "osecan_2050_national_ratio": 1.6307281019007176,
+        "t4_headroom_pj": -35.83741745950002,
+        "t4_ratio": 1.1678268531998943
+      },
+      "119m|process|process_availability_075": {
+        "case_pj": 374.06318768925,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -221.14041768925,
+        "osecan_2050_national_ratio": 2.4460921528510764,
+        "t4_headroom_pj": -160.52514668925002,
+        "t4_ratio": 1.7517402797998416
+      },
+      "150m|harvest|harvest_recovery_035": {
+        "case_pj": 200.59389455245,
+        "case_tier": "T4",
+        "osecan_2050_national_headroom_pj": -47.67112455244998,
+        "osecan_2050_national_ratio": 1.3117333314878483,
+        "t4_headroom_pj": 12.944146447549997,
+        "t4_ratio": 0.9393824801101833
+      },
+      "150m|harvest|harvest_recovery_060": {
+        "case_pj": 343.8752478042,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -190.9524778042,
+        "osecan_2050_national_ratio": 2.2486857111220258,
+        "t4_headroom_pj": -130.3372068042,
+        "t4_ratio": 1.6103699659031714
+      },
+      "150m|harvest|harvest_recovery_075": {
+        "case_pj": 429.84405975525,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -276.92128975525,
+        "osecan_2050_national_ratio": 2.810857138902532,
+        "t4_headroom_pj": -216.30601875525,
+        "t4_ratio": 2.012962457378964
+      },
+      "150m|process|process_availability_000": {
+        "case_pj": 0.0,
+        "case_tier": "",
+        "osecan_2050_national_headroom_pj": 152.92277,
+        "osecan_2050_national_ratio": 0.0,
+        "t4_headroom_pj": 213.538041,
+        "t4_ratio": 0.0
+      },
+      "150m|process|process_availability_025": {
+        "case_pj": 156.7163048595,
+        "case_tier": "T4",
+        "osecan_2050_national_headroom_pj": -3.7935348594999994,
+        "osecan_2050_national_ratio": 1.024806867280131,
+        "t4_headroom_pj": 56.82173614049998,
+        "t4_ratio": 0.7339034493601073
+      },
+      "150m|process|process_availability_050": {
+        "case_pj": 313.432609719,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -160.509839719,
+        "osecan_2050_national_ratio": 2.049613734560262,
+        "t4_headroom_pj": -99.89456871900003,
+        "t4_ratio": 1.4678068987202146
+      },
+      "150m|process|process_availability_075": {
+        "case_pj": 470.1489145785,
+        "case_tier": "above_T4",
+        "osecan_2050_national_headroom_pj": -317.2261445785,
+        "osecan_2050_national_ratio": 3.074420601840393,
+        "t4_headroom_pj": -256.6108735785,
+        "t4_ratio": 2.2017103480803217
+      }
+    },
+    "zone": {
+      "100m|harvest|harvest_recovery_035|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.679161885333254,
+        "headroom_pj": -5.519065885333254,
+        "ratio": 1.7708089228598687,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|harvest|harvest_recovery_035|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 7.015270274166745,
+        "headroom_pj": -3.0536512741667456,
+        "ratio": 1.770808922858747,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|harvest|harvest_recovery_035|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 2.8823840182323437,
+        "headroom_pj": 0.7230908887676564,
+        "ratio": 0.7994464231705561,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|harvest|harvest_recovery_035|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.8823840182323437,
+        "headroom_pj": -1.9131720182323437,
+        "ratio": 2.973945863477076,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|harvest|harvest_recovery_035|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 31.912585586617652,
+        "headroom_pj": 8.005755538382346,
+        "ratio": 0.7994466875937258,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|harvest|harvest_recovery_035|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 31.912585586617652,
+        "headroom_pj": -21.18185958661765,
+        "ratio": 2.973944688049779,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|harvest|harvest_recovery_035|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.7239513077499997,
+        "headroom_pj": -1.2227953077499998,
+        "ratio": 3.4399494523661285,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|harvest|harvest_recovery_035|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.18573746305,
+        "headroom_pj": 0.19966553695,
+        "ratio": 0.8558790929787217,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|harvest|harvest_recovery_035|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.09970760484999999,
+        "headroom_pj": -0.09970760484999999,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|harvest|harvest_recovery_035|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.725601653274698,
+        "headroom_pj": -11.634255653274698,
+        "ratio": 11.660464832669657,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|harvest|harvest_recovery_035|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.5471002775753018,
+        "headroom_pj": -2.3286612775753017,
+        "ratio": 11.660464832632002,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|harvest|harvest_recovery_035|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 19.080307265711415,
+        "headroom_pj": -15.698719265711414,
+        "ratio": 5.642410389944433,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|harvest|harvest_recovery_035|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.162898327188586,
+        "headroom_pj": -10.007277327188586,
+        "ratio": 5.642410389947298,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|harvest|harvest_recovery_035|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 14.854333507299998,
+        "headroom_pj": -8.995247507299998,
+        "ratio": 2.535264631258186,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|harvest|harvest_recovery_035|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 11.7663339843,
+        "headroom_pj": -8.072354984299999,
+        "ratio": 3.185273653234087,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "100m|harvest|harvest_recovery_060|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 21.735706089142724,
+        "headroom_pj": -14.575610089142724,
+        "ratio": 3.0356724391883465,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|harvest|harvest_recovery_060|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.026177612857275,
+        "headroom_pj": -8.064558612857276,
+        "ratio": 3.0356724391864223,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|harvest|harvest_recovery_060|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 4.94122974554116,
+        "headroom_pj": -1.3357548385411602,
+        "ratio": 1.3704795825780962,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|harvest|harvest_recovery_060|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.94122974554116,
+        "headroom_pj": -3.9720177455411605,
+        "ratio": 5.098192908817844,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|harvest|harvest_recovery_060|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 54.70728957705884,
+        "headroom_pj": -14.78894845205884,
+        "ratio": 1.3704800358749587,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|harvest|harvest_recovery_060|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 54.70728957705884,
+        "headroom_pj": -43.97656357705884,
+        "ratio": 5.098190893799622,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|harvest|harvest_recovery_060|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.9553450989999996,
+        "headroom_pj": -2.4541890989999997,
+        "ratio": 5.897056204056221,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|harvest|harvest_recovery_060|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.0326927938,
+        "headroom_pj": -0.6472897938,
+        "ratio": 1.4672213022492373,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|harvest|harvest_recovery_060|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.1709273226,
+        "headroom_pj": -0.1709273226,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|harvest|harvest_recovery_060|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 21.815317119899483,
+        "headroom_pj": -20.72397111989948,
+        "ratio": 19.989368284576553,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|harvest|harvest_recovery_060|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.366457618700519,
+        "headroom_pj": -4.148018618700519,
+        "ratio": 19.98936828451201,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|harvest|harvest_recovery_060|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.709098169791,
+        "headroom_pj": -29.327510169790997,
+        "ratio": 9.67270352561903,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|harvest|harvest_recovery_060|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 20.850682846609004,
+        "headroom_pj": -18.695061846609004,
+        "ratio": 9.672703525623941,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|harvest|harvest_recovery_060|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 25.4645717268,
+        "headroom_pj": -19.605485726799998,
+        "ratio": 4.346167939299748,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|harvest|harvest_recovery_060|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 20.1708582588,
+        "headroom_pj": -16.4768792588,
+        "ratio": 5.460469119829863,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "100m|harvest|harvest_recovery_075|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 27.169632611428405,
+        "headroom_pj": -20.009536611428405,
+        "ratio": 3.794590548985433,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|harvest|harvest_recovery_075|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 15.032722016071595,
+        "headroom_pj": -11.071103016071596,
+        "ratio": 3.7945905489830283,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|harvest|harvest_recovery_075|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 6.1765371819264505,
+        "headroom_pj": -2.5710622749264505,
+        "ratio": 1.7130994782226203,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|harvest|harvest_recovery_075|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.1765371819264505,
+        "headroom_pj": -5.207325181926451,
+        "ratio": 6.372741136022306,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|harvest|harvest_recovery_075|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 68.38411197132355,
+        "headroom_pj": -28.46577084632355,
+        "ratio": 1.7131000448436984,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|harvest|harvest_recovery_075|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 68.38411197132355,
+        "headroom_pj": -57.653385971323544,
+        "ratio": 6.372738617249527,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|harvest|harvest_recovery_075|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.6941813737499998,
+        "headroom_pj": -3.19302537375,
+        "ratio": 7.371320255070277,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|harvest|harvest_recovery_075|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.5408659922499996,
+        "headroom_pj": -1.1554629922499997,
+        "ratio": 1.8340266278115465,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|harvest|harvest_recovery_075|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.21365915324999998,
+        "headroom_pj": -0.21365915324999998,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|harvest|harvest_recovery_075|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 27.26914639987435,
+        "headroom_pj": -26.17780039987435,
+        "ratio": 24.986710355720692,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|harvest|harvest_recovery_075|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 5.4580720233756495,
+        "headroom_pj": -5.239633023375649,
+        "ratio": 24.986710355640017,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|harvest|harvest_recovery_075|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 40.88637271223875,
+        "headroom_pj": -37.50478471223875,
+        "ratio": 12.090879407023788,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|harvest|harvest_recovery_075|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 26.063353558261255,
+        "headroom_pj": -23.907732558261255,
+        "ratio": 12.090879407029925,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|harvest|harvest_recovery_075|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 31.8307146585,
+        "headroom_pj": -25.971628658500002,
+        "ratio": 5.432709924124684,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|harvest|harvest_recovery_075|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 25.213572823499998,
+        "headroom_pj": -21.5195938235,
+        "ratio": 6.825586399787329,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "100m|process|process_availability_000|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 7.160096,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|process|process_availability_000|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.961619,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|process|process_availability_000|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.605474907,
+        "ratio": 0.0,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|process|process_availability_000|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.969212,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|process|process_availability_000|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 0.0,
+        "headroom_pj": 39.918341125,
+        "ratio": 0.0,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|process|process_availability_000|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 10.730726,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|process|process_availability_000|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.501156,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|process|process_availability_000|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 1.385403,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|process|process_availability_000|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.0,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|process|process_availability_000|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 1.091346,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|process|process_availability_000|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.218439,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|process|process_availability_000|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.381588,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|process|process_availability_000|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 2.155621,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|process|process_availability_000|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 5.859086,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|process|process_availability_000|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.693979,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "100m|process|process_availability_025|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.635512566672377,
+        "headroom_pj": -5.475416566672377,
+        "ratio": 1.7647127310405302,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|process|process_availability_025|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.991119484827623,
+        "headroom_pj": -3.029500484827623,
+        "ratio": 1.7647127310394117,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|process|process_availability_025|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 3.004663922054552,
+        "headroom_pj": 0.6008109849454479,
+        "ratio": 0.8333614848410182,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|process|process_availability_025|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.004663922054552,
+        "headroom_pj": -2.035451922054552,
+        "ratio": 3.100110112188615,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|process|process_availability_025|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 33.266419035445445,
+        "headroom_pj": 6.651922089554553,
+        "ratio": 0.8333617604818604,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|process|process_availability_025|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 33.266419035445445,
+        "headroom_pj": -22.535693035445444,
+        "ratio": 3.100108886895951,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|process|process_availability_025|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.297059455,
+        "headroom_pj": -0.795903455,
+        "ratio": 2.58813514155273,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|process|process_availability_025|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.98267320525,
+        "headroom_pj": 0.4027297947499999,
+        "ratio": 0.7093049497149927,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|process|process_availability_025|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.07326077924999999,
+        "headroom_pj": -0.07326077924999999,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|process|process_availability_025|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 9.771817511267223,
+        "headroom_pj": -8.680471511267223,
+        "ratio": 8.953913343034403,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|process|process_availability_025|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.955883876732777,
+        "headroom_pj": -1.737444876732777,
+        "ratio": 8.953913343005494,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|process|process_availability_025|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 13.971446651237919,
+        "headroom_pj": -10.589858651237918,
+        "ratio": 4.131622968628325,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|process|process_availability_025|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 8.90621323526208,
+        "headroom_pj": -6.750592235262079,
+        "ratio": 4.131622968630422,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|process|process_availability_025|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.0480858925,
+        "headroom_pj": 2.8110001074999995,
+        "ratio": 0.5202323182318881,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|process|process_availability_025|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 8.9053489505,
+        "headroom_pj": -5.2113699505,
+        "ratio": 2.410774113902651,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "100m|process|process_availability_050|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 25.271025133344754,
+        "headroom_pj": -18.110929133344754,
+        "ratio": 3.5294254620810603,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|process|process_availability_050|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 13.982238969655246,
+        "headroom_pj": -10.020619969655247,
+        "ratio": 3.5294254620788235,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|process|process_availability_050|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 6.009327844109104,
+        "headroom_pj": -2.403852937109104,
+        "ratio": 1.6667229696820365,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|process|process_availability_050|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.009327844109104,
+        "headroom_pj": -5.0401158441091045,
+        "ratio": 6.20022022437723,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|process|process_availability_050|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 66.53283807089089,
+        "headroom_pj": -26.61449694589089,
+        "ratio": 1.6667235209637208,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|process|process_availability_050|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 66.53283807089089,
+        "headroom_pj": -55.802112070890885,
+        "ratio": 6.200217773791902,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|process|process_availability_050|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.59411891,
+        "headroom_pj": -2.0929629100000002,
+        "ratio": 5.17627028310546,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|process|process_availability_050|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.9653464105,
+        "headroom_pj": -0.5799434105000001,
+        "ratio": 1.4186098994299854,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|process|process_availability_050|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.14652155849999998,
+        "headroom_pj": -0.14652155849999998,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|process|process_availability_050|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 19.543635022534446,
+        "headroom_pj": -18.452289022534444,
+        "ratio": 17.907826686068805,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|process|process_availability_050|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.911767753465554,
+        "headroom_pj": -3.693328753465554,
+        "ratio": 17.90782668601099,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|process|process_availability_050|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 27.942893302475838,
+        "headroom_pj": -24.561305302475837,
+        "ratio": 8.26324593725665,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|process|process_availability_050|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 17.81242647052416,
+        "headroom_pj": -15.656805470524159,
+        "ratio": 8.263245937260844,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|process|process_availability_050|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.096171785,
+        "headroom_pj": -0.23708578500000055,
+        "ratio": 1.0404646364637762,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|process|process_availability_050|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 17.810697901,
+        "headroom_pj": -14.116718901,
+        "ratio": 4.821548227805302,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "100m|process|process_availability_075|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 37.90653770001713,
+        "headroom_pj": -30.746441700017133,
+        "ratio": 5.294138193121591,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "100m|process|process_availability_075|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 20.97335845448287,
+        "headroom_pj": -17.01173945448287,
+        "ratio": 5.294138193118235,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "100m|process|process_availability_075|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 9.013991766163656,
+        "headroom_pj": -5.408516859163656,
+        "ratio": 2.5000844545230545,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "100m|process|process_availability_075|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 9.013991766163656,
+        "headroom_pj": -8.044779766163655,
+        "ratio": 9.300330336565846,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "100m|process|process_availability_075|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 99.79925710633634,
+        "headroom_pj": -59.880915981336344,
+        "ratio": 2.5000852814455814,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "100m|process|process_availability_075|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 99.79925710633634,
+        "headroom_pj": -89.06853110633634,
+        "ratio": 9.300326660687855,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "100m|process|process_availability_075|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.891178365,
+        "headroom_pj": -3.390022365,
+        "ratio": 7.7644054246581895,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "100m|process|process_availability_075|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.94801961575,
+        "headroom_pj": -1.5626166157499999,
+        "ratio": 2.127914849144978,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "100m|process|process_availability_075|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.21978233775,
+        "headroom_pj": -0.21978233775,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "100m|process|process_availability_075|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 29.315452533801672,
+        "headroom_pj": -28.22410653380167,
+        "ratio": 26.861740029103213,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "100m|process|process_availability_075|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 5.867651630198328,
+        "headroom_pj": -5.649212630198328,
+        "ratio": 26.861740029016467,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "100m|process|process_availability_075|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 41.91433995371376,
+        "headroom_pj": -38.532751953713756,
+        "ratio": 12.394868905884975,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "100m|process|process_availability_075|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 26.718639705786238,
+        "headroom_pj": -24.563018705786238,
+        "ratio": 12.394868905891267,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "100m|process|process_availability_075|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 9.1442576775,
+        "headroom_pj": -3.285171677500001,
+        "ratio": 1.5606969546956644,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "100m|process|process_availability_075|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 26.7160468515,
+        "headroom_pj": -23.0220678515,
+        "ratio": 7.232322341707952,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|harvest|harvest_recovery_035|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 15.245497773460622,
+        "headroom_pj": -8.085401773460621,
+        "ratio": 2.1292309172196324,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|harvest|harvest_recovery_035|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 8.435201657039377,
+        "headroom_pj": -4.473582657039377,
+        "ratio": 2.1292309172182833,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|harvest|harvest_recovery_035|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 3.4657952077450784,
+        "headroom_pj": 0.13967969925492163,
+        "ratio": 0.9612590011419204,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|harvest|harvest_recovery_035|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.4657952077450784,
+        "headroom_pj": -2.4965832077450782,
+        "ratio": 3.5758896998232363,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|harvest|harvest_recovery_035|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 38.371877408854914,
+        "headroom_pj": 1.5464637161450838,
+        "ratio": 0.9612593190858684,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|harvest|harvest_recovery_035|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 38.371877408854914,
+        "headroom_pj": -27.641151408854913,
+        "ratio": 3.5758882864826584,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|harvest|harvest_recovery_035|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.07288892265,
+        "headroom_pj": -1.5717329226499999,
+        "ratio": 4.136214916413252,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|harvest|harvest_recovery_035|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.4257375964999999,
+        "headroom_pj": -0.04033459649999993,
+        "ratio": 1.0291139809138568,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|harvest|harvest_recovery_035|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.11839939124999999,
+        "headroom_pj": -0.11839939124999999,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|harvest|harvest_recovery_035|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 15.301336913657897,
+        "headroom_pj": -14.209990913657897,
+        "ratio": 14.020610249781368,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|harvest|harvest_recovery_035|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.0626480823421023,
+        "headroom_pj": -2.8442090823421022,
+        "ratio": 14.020610249736093,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|harvest|harvest_recovery_035|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 22.94227126464989,
+        "headroom_pj": -19.56068326464989,
+        "ratio": 6.784466725292937,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|harvest|harvest_recovery_035|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 14.624738946850108,
+        "headroom_pj": -12.469117946850108,
+        "ratio": 6.78446672529638,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|harvest|harvest_recovery_035|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 17.860936737,
+        "headroom_pj": -12.001850737,
+        "ratio": 3.04841689249825,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|harvest|harvest_recovery_035|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.616438224949999,
+        "headroom_pj": -8.922459224949998,
+        "ratio": 3.4154060499396444,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|harvest|harvest_recovery_060|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 26.135139040218213,
+        "headroom_pj": -18.975043040218214,
+        "ratio": 3.650110143805085,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|harvest|harvest_recovery_060|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 14.46034569778179,
+        "headroom_pj": -10.498726697781791,
+        "ratio": 3.650110143802771,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|harvest|harvest_recovery_060|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 5.941363213277278,
+        "headroom_pj": -2.3358883062772775,
+        "ratio": 1.6478725733861492,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|harvest|harvest_recovery_060|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 5.941363213277278,
+        "headroom_pj": -4.972151213277278,
+        "ratio": 6.130096628268405,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|harvest|harvest_recovery_060|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 65.78036127232272,
+        "headroom_pj": -25.862020147322724,
+        "ratio": 1.6478731184329174,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|harvest|harvest_recovery_060|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 65.78036127232272,
+        "headroom_pj": -55.04963527232272,
+        "ratio": 6.130094205398844,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|harvest|harvest_recovery_060|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.5535238674,
+        "headroom_pj": -3.0523678674,
+        "ratio": 7.090654142422718,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|harvest|harvest_recovery_060|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.444121594,
+        "headroom_pj": -1.058718594,
+        "ratio": 1.764195395852326,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|harvest|harvest_recovery_060|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.20297038499999998,
+        "headroom_pj": -0.20297038499999998,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|harvest|harvest_recovery_060|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 26.230863280556395,
+        "headroom_pj": -25.139517280556394,
+        "ratio": 24.03533185676806,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|harvest|harvest_recovery_060|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 5.2502538554436065,
+        "headroom_pj": -5.031814855443606,
+        "ratio": 24.035331856690455,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|harvest|harvest_recovery_060|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 39.32960788225695,
+        "headroom_pj": -35.94801988225695,
+        "ratio": 11.630514386216461,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|harvest|harvest_recovery_060|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 25.070981051743047,
+        "headroom_pj": -22.915360051743047,
+        "ratio": 11.630514386222368,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|harvest|harvest_recovery_060|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 30.618748691999997,
+        "headroom_pj": -24.759662692,
+        "ratio": 5.225857529997,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|harvest|harvest_recovery_060|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 21.628179814199996,
+        "headroom_pj": -17.934200814199997,
+        "ratio": 5.854981799896533,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|harvest|harvest_recovery_075|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.668923800272765,
+        "headroom_pj": -25.508827800272766,
+        "ratio": 4.562637679756356,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|harvest|harvest_recovery_075|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 18.07543212222724,
+        "headroom_pj": -14.113813122227242,
+        "ratio": 4.562637679753465,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|harvest|harvest_recovery_075|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 7.426704016596597,
+        "headroom_pj": -3.821229109596597,
+        "ratio": 2.059840716732687,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|harvest|harvest_recovery_075|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 7.426704016596597,
+        "headroom_pj": -6.457492016596597,
+        "ratio": 7.662620785335506,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|harvest|harvest_recovery_075|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 82.2254515904034,
+        "headroom_pj": -42.3071104654034,
+        "ratio": 2.0598413980411467,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|harvest|harvest_recovery_075|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 82.2254515904034,
+        "headroom_pj": -71.49472559040339,
+        "ratio": 7.6626177567485545,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|harvest|harvest_recovery_075|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.44190483425,
+        "headroom_pj": -3.94074883425,
+        "ratio": 8.863317678028396,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|harvest|harvest_recovery_075|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.0551519925,
+        "headroom_pj": -1.6697489925,
+        "ratio": 2.2052442448154075,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|harvest|harvest_recovery_075|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.25371298124999997,
+        "headroom_pj": -0.25371298124999997,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|harvest|harvest_recovery_075|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.78857910069549,
+        "headroom_pj": -31.69723310069549,
+        "ratio": 30.044164820960077,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|harvest|harvest_recovery_075|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.562817319304507,
+        "headroom_pj": -6.344378319304507,
+        "ratio": 30.044164820863067,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|harvest|harvest_recovery_075|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 49.1620098528212,
+        "headroom_pj": -45.7804218528212,
+        "ratio": 14.53814298277058,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|harvest|harvest_recovery_075|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 31.33872631467881,
+        "headroom_pj": -29.18310531467881,
+        "ratio": 14.53814298277796,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|harvest|harvest_recovery_075|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 38.273435864999996,
+        "headroom_pj": -32.414349865,
+        "ratio": 6.532321912496249,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|harvest|harvest_recovery_075|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 27.035224767749998,
+        "headroom_pj": -23.34124576775,
+        "ratio": 7.318727249870667,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|process|process_availability_000|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 7.160096,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|process|process_availability_000|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.961619,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|process|process_availability_000|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.605474907,
+        "ratio": 0.0,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|process|process_availability_000|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.969212,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|process|process_availability_000|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 0.0,
+        "headroom_pj": 39.918341125,
+        "ratio": 0.0,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|process|process_availability_000|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 10.730726,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|process|process_availability_000|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.501156,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|process|process_availability_000|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 1.385403,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|process|process_availability_000|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.0,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|process|process_availability_000|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 1.091346,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|process|process_availability_000|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.218439,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|process|process_availability_000|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.381588,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|process|process_availability_000|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 2.155621,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|process|process_availability_000|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 5.859086,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|process|process_availability_000|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.693979,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|process|process_availability_025|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 15.193013579279105,
+        "headroom_pj": -8.032917579279104,
+        "ratio": 2.1219008207821664,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|process|process_availability_025|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 8.406162607720896,
+        "headroom_pj": -4.444543607720896,
+        "ratio": 2.121900820780821,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|process|process_availability_025|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 3.6128252710641786,
+        "headroom_pj": -0.0073503640641785495,
+        "ratio": 1.0020386673749713,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|process|process_availability_025|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.6128252710641786,
+        "headroom_pj": -2.6436132710641784,
+        "ratio": 3.727590321894672,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|process|process_availability_025|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 39.99973457493582,
+        "headroom_pj": -0.08139344993582398,
+        "ratio": 1.0020389988071134,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|process|process_availability_025|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 39.99973457493582,
+        "headroom_pj": -29.26900857493582,
+        "ratio": 3.7275888485956887,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|process|process_availability_025|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.55959171475,
+        "headroom_pj": -1.0584357147499999,
+        "ratio": 3.1119885120601167,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|process|process_availability_025|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.1815719565,
+        "headroom_pj": 0.20383104349999992,
+        "ratio": 0.8528723818989854,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|process|process_availability_025|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.08667786525,
+        "headroom_pj": -0.08667786525,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|process|process_availability_025|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 11.74968980412205,
+        "headroom_pj": -10.658343804122051,
+        "ratio": 10.766237109149666,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|process|process_availability_025|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.35176606787795,
+        "headroom_pj": -2.13332706787795,
+        "ratio": 10.766237109114902,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|process|process_availability_025|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 16.799347860064284,
+        "headroom_pj": -13.417759860064283,
+        "ratio": 4.967887235246956,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|process|process_availability_025|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 10.708882049935717,
+        "headroom_pj": -8.553261049935717,
+        "ratio": 4.967887235249479,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|process|process_availability_025|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.66503615025,
+        "headroom_pj": 2.1940498497499994,
+        "ratio": 0.6255303558012292,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|process|process_availability_025|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 9.373429728000001,
+        "headroom_pj": -5.679450728000001,
+        "ratio": 2.5374886343425342,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|process|process_availability_050|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 30.38602715855821,
+        "headroom_pj": -23.22593115855821,
+        "ratio": 4.243801641564333,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|process|process_availability_050|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 16.812325215441792,
+        "headroom_pj": -12.850706215441793,
+        "ratio": 4.243801641561642,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|process|process_availability_050|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 7.225650542128357,
+        "headroom_pj": -3.620175635128357,
+        "ratio": 2.0040773347499425,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|process|process_availability_050|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 7.225650542128357,
+        "headroom_pj": -6.2564385421283575,
+        "ratio": 7.455180643789344,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|process|process_availability_050|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 79.99946914987164,
+        "headroom_pj": -40.081128024871646,
+        "ratio": 2.004077997614227,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|process|process_availability_050|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 79.99946914987164,
+        "headroom_pj": -69.26874314987164,
+        "ratio": 7.4551776971913775,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|process|process_availability_050|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.1191834295,
+        "headroom_pj": -2.6180274295,
+        "ratio": 6.2239770241202335,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|process|process_availability_050|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.363143913,
+        "headroom_pj": -0.9777409130000001,
+        "ratio": 1.7057447637979708,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|process|process_availability_050|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.1733557305,
+        "headroom_pj": -0.1733557305,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|process|process_availability_050|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 23.4993796082441,
+        "headroom_pj": -22.4080336082441,
+        "ratio": 21.53247421829933,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|process|process_availability_050|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.7035321357559,
+        "headroom_pj": -4.4850931357559,
+        "ratio": 21.532474218229805,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|process|process_availability_050|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 33.59869572012857,
+        "headroom_pj": -30.217107720128567,
+        "ratio": 9.935774470493913,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|process|process_availability_050|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 21.417764099871434,
+        "headroom_pj": -19.262143099871434,
+        "ratio": 9.935774470498957,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|process|process_availability_050|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 7.3300723005,
+        "headroom_pj": -1.4709863005000008,
+        "ratio": 1.2510607116024584,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|process|process_availability_050|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 18.746859456000003,
+        "headroom_pj": -15.052880456000002,
+        "ratio": 5.0749772686850685,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "119m|process|process_availability_075|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 45.57904073783732,
+        "headroom_pj": -38.418944737837315,
+        "ratio": 6.365702462346499,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "119m|process|process_availability_075|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 25.21848782316269,
+        "headroom_pj": -21.25686882316269,
+        "ratio": 6.3657024623424645,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "119m|process|process_availability_075|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 10.838475813192536,
+        "headroom_pj": -7.233000906192537,
+        "ratio": 3.006116002124914,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "119m|process|process_availability_075|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 10.838475813192536,
+        "headroom_pj": -9.869263813192536,
+        "ratio": 11.182770965684016,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "119m|process|process_availability_075|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 119.99920372480747,
+        "headroom_pj": -80.08086259980747,
+        "ratio": 3.0061169964213406,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "119m|process|process_availability_075|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 119.99920372480747,
+        "headroom_pj": -109.26847772480747,
+        "ratio": 11.182766545787066,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "119m|process|process_availability_075|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.67877514425,
+        "headroom_pj": -4.17761914425,
+        "ratio": 9.335965536180352,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "119m|process|process_availability_075|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.5447158695,
+        "headroom_pj": -2.1593128695,
+        "ratio": 2.558617145696956,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "119m|process|process_availability_075|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.26003359574999996,
+        "headroom_pj": -0.26003359574999996,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "119m|process|process_availability_075|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 35.249069412366154,
+        "headroom_pj": -34.15772341236615,
+        "ratio": 32.298711327449,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "119m|process|process_availability_075|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 7.055298203633846,
+        "headroom_pj": -6.836859203633846,
+        "ratio": 32.29871132734469,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "119m|process|process_availability_075|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 50.398043580192855,
+        "headroom_pj": -47.016455580192854,
+        "ratio": 14.90366170574087,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "119m|process|process_availability_075|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.12664614980715,
+        "headroom_pj": -29.97102514980715,
+        "ratio": 14.903661705748437,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "119m|process|process_availability_075|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 10.995108450750001,
+        "headroom_pj": -5.136022450750001,
+        "ratio": 1.8765910674036874,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "119m|process|process_availability_075|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 28.120289184,
+        "headroom_pj": -24.426310184000002,
+        "ratio": 7.612465903027602,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|harvest|harvest_recovery_035|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 20.046366879963358,
+        "headroom_pj": -12.886270879963359,
+        "ratio": 2.7997343722714554,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|harvest|harvest_recovery_035|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 11.09148088413664,
+        "headroom_pj": -7.12986188413664,
+        "ratio": 2.799734372269681,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|harvest|harvest_recovery_035|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 3.920517222229656,
+        "headroom_pj": -0.31504231522965576,
+        "ratio": 1.0873788677929788,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|harvest|harvest_recovery_035|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.920517222229656,
+        "headroom_pj": -2.9513052222296556,
+        "ratio": 4.045056419266018,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|harvest|harvest_recovery_035|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 43.40637493367034,
+        "headroom_pj": -3.4880338086703446,
+        "ratio": 1.0873792274520613,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|harvest|harvest_recovery_035|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 43.40637493367034,
+        "headroom_pj": -32.675648933670345,
+        "ratio": 4.045054820491208,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|harvest|harvest_recovery_035|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.868657442,
+        "headroom_pj": -2.367501442,
+        "ratio": 5.7240808091692,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|harvest|harvest_recovery_035|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.11993713085,
+        "headroom_pj": -0.73453413085,
+        "ratio": 1.5301952795323817,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|harvest|harvest_recovery_035|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.15574733159999998,
+        "headroom_pj": -0.15574733159999998,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|harvest|harvest_recovery_035|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 22.751643026873094,
+        "headroom_pj": -21.660297026873092,
+        "ratio": 20.847323421603317,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|harvest|harvest_recovery_035|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.553868480876904,
+        "headroom_pj": -4.335429480876904,
+        "ratio": 20.847323421536007,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|harvest|harvest_recovery_035|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 29.342069895681682,
+        "headroom_pj": -25.96048189568168,
+        "ratio": 8.677009113967072,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|harvest|harvest_recovery_035|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 18.70434306326831,
+        "headroom_pj": -16.54872206326831,
+        "ratio": 8.677009113971478,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|harvest|harvest_recovery_035|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 26.55752647835,
+        "headroom_pj": -20.69844047835,
+        "ratio": 4.532708084221669,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|harvest|harvest_recovery_035|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 15.075361782949999,
+        "headroom_pj": -11.381382782949999,
+        "ratio": 4.081063206626242,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|harvest|harvest_recovery_060|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 34.365200365651475,
+        "headroom_pj": -27.205104365651476,
+        "ratio": 4.799544638179638,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|harvest|harvest_recovery_060|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 19.013967229948527,
+        "headroom_pj": -15.052348229948528,
+        "ratio": 4.799544638176596,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|harvest|harvest_recovery_060|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 6.720886666679411,
+        "headroom_pj": -3.1154117596794113,
+        "ratio": 1.8640780590736785,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|harvest|harvest_recovery_060|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.720886666679411,
+        "headroom_pj": -5.751674666679412,
+        "ratio": 6.934382433027461,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|harvest|harvest_recovery_060|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 74.4109284577206,
+        "headroom_pj": -34.4925873327206,
+        "ratio": 1.8640786756321053,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|harvest|harvest_recovery_060|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 74.4109284577206,
+        "headroom_pj": -63.6802024577206,
+        "ratio": 6.934379692270644,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|harvest|harvest_recovery_060|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.9176984720000005,
+        "headroom_pj": -4.416542472000001,
+        "ratio": 9.812709958575773,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|harvest|harvest_recovery_060|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.6341779385999997,
+        "headroom_pj": -2.2487749385999996,
+        "ratio": 2.623191907769797,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|harvest|harvest_recovery_060|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.2669954256,
+        "headroom_pj": -0.2669954256,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|harvest|harvest_recovery_060|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 39.002816617496734,
+        "headroom_pj": -37.91147061749673,
+        "ratio": 35.73826872274855,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|harvest|harvest_recovery_060|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 7.806631681503262,
+        "headroom_pj": -7.588192681503262,
+        "ratio": 35.73826872263315,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|harvest|harvest_recovery_060|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 50.300691249740034,
+        "headroom_pj": -46.91910324974003,
+        "ratio": 14.874872766800697,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|harvest|harvest_recovery_060|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.064588108459965,
+        "headroom_pj": -29.908967108459965,
+        "ratio": 14.874872766808249,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|harvest|harvest_recovery_060|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 45.5271882486,
+        "headroom_pj": -39.6681022486,
+        "ratio": 7.770356715808576,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|harvest|harvest_recovery_060|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 25.843477342199996,
+        "headroom_pj": -22.149498342199998,
+        "ratio": 6.996108354216414,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|harvest|harvest_recovery_075|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 42.956500457064344,
+        "headroom_pj": -35.79640445706434,
+        "ratio": 5.999430797724548,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|harvest|harvest_recovery_075|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 23.767459037435664,
+        "headroom_pj": -19.805840037435665,
+        "ratio": 5.999430797720747,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|harvest|harvest_recovery_075|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 8.401108333349264,
+        "headroom_pj": -4.795633426349264,
+        "ratio": 2.3300975738420977,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|harvest|harvest_recovery_075|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 8.401108333349264,
+        "headroom_pj": -7.431896333349264,
+        "ratio": 8.667978041284325,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|harvest|harvest_recovery_075|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 93.01366057215074,
+        "headroom_pj": -53.09531944715074,
+        "ratio": 2.3300983445401315,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|harvest|harvest_recovery_075|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 93.01366057215074,
+        "headroom_pj": -82.28293457215074,
+        "ratio": 8.667974615338304,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|harvest|harvest_recovery_075|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.147123090000001,
+        "headroom_pj": -5.645967090000001,
+        "ratio": 12.265887448219717,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|harvest|harvest_recovery_075|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.54272242325,
+        "headroom_pj": -3.1573194232499997,
+        "ratio": 3.2789898847122463,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|harvest|harvest_recovery_075|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.333744282,
+        "headroom_pj": -0.333744282,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|harvest|harvest_recovery_075|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 48.75352077187092,
+        "headroom_pj": -47.662174771870916,
+        "ratio": 44.67283590343568,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|harvest|harvest_recovery_075|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 9.758289601879078,
+        "headroom_pj": -9.539850601879078,
+        "ratio": 44.672835903291435,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|harvest|harvest_recovery_075|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 62.87586406217504,
+        "headroom_pj": -59.49427606217504,
+        "ratio": 18.593590958500872,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|harvest|harvest_recovery_075|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 40.080735135574955,
+        "headroom_pj": -37.92511413557496,
+        "ratio": 18.593590958510312,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|harvest|harvest_recovery_075|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 56.90898531075,
+        "headroom_pj": -51.04989931075,
+        "ratio": 9.712945894760718,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|harvest|harvest_recovery_075|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.30434667775,
+        "headroom_pj": -28.61036767775,
+        "ratio": 8.745135442770518,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|process|process_availability_000|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 7.160096,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|process|process_availability_000|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.961619,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|process|process_availability_000|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.605474907,
+        "ratio": 0.0,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|process|process_availability_000|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.969212,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|process|process_availability_000|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 0.0,
+        "headroom_pj": 39.918341125,
+        "ratio": 0.0,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|process|process_availability_000|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 10.730726,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|process|process_availability_000|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.501156,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|process|process_availability_000|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 1.385403,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|process|process_availability_000|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.0,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|process|process_availability_000|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 1.091346,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|process|process_availability_000|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 0.218439,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|process|process_availability_000|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.381588,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|process|process_availability_000|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 2.155621,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|process|process_availability_000|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 5.859086,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|process|process_availability_000|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.0,
+        "headroom_pj": 3.693979,
+        "ratio": 0.0,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|process|process_availability_025|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 19.97735519995631,
+        "headroom_pj": -12.817259199956311,
+        "ratio": 2.7900959987067644,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|process|process_availability_025|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 11.05329732029369,
+        "headroom_pj": -7.091678320293691,
+        "ratio": 2.790095998704997,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|process|process_availability_025|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 4.08683804060999,
+        "headroom_pj": -0.48136313360999017,
+        "ratio": 1.133508940160817,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|process|process_availability_025|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.08683804060999,
+        "headroom_pj": -3.1176260406099905,
+        "ratio": 4.216660586755004,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|process|process_availability_025|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 45.247811507640016,
+        "headroom_pj": -5.329470382640018,
+        "ratio": 1.1335093150777822,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|process|process_availability_025|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 45.247811507640016,
+        "headroom_pj": -34.51708550764002,
+        "ratio": 4.216658920155077,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|process|process_availability_025|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 2.1583087882500003,
+        "headroom_pj": -1.6571527882500003,
+        "ratio": 4.306660577245409,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|process|process_availability_025|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 1.75688588775,
+        "headroom_pj": -0.37148288775000005,
+        "ratio": 1.2681406693575805,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|process|process_availability_025|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.10964736424999999,
+        "headroom_pj": -0.10964736424999999,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|process|process_availability_025|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 17.470679170372133,
+        "headroom_pj": -16.37933317037213,
+        "ratio": 16.00837788416518,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|process|process_availability_025|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.4968540566278676,
+        "headroom_pj": -3.2784150566278676,
+        "ratio": 16.008377884113496,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|process|process_availability_025|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 21.4855640675828,
+        "headroom_pj": -18.1039760675828,
+        "ratio": 6.353690652907096,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|process|process_availability_025|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 13.696148998917202,
+        "headroom_pj": -11.540527998917202,
+        "ratio": 6.3536906529103225,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|process|process_availability_025|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 5.44956269875,
+        "headroom_pj": 0.40952330124999925,
+        "ratio": 0.9301045758246254,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|process|process_availability_025|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 10.727351758500001,
+        "headroom_pj": -7.0333727585000005,
+        "ratio": 2.904009946591467,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|process|process_availability_050|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 39.95471039991262,
+        "headroom_pj": -32.79461439991262,
+        "ratio": 5.580191997413529,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|process|process_availability_050|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 22.10659464058738,
+        "headroom_pj": -18.144975640587383,
+        "ratio": 5.580191997409994,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|process|process_availability_050|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 8.17367608121998,
+        "headroom_pj": -4.568201174219981,
+        "ratio": 2.267017880321634,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|process|process_availability_050|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 8.17367608121998,
+        "headroom_pj": -7.204464081219981,
+        "ratio": 8.433321173510008,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|process|process_availability_050|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 90.49562301528003,
+        "headroom_pj": -50.577281890280034,
+        "ratio": 2.2670186301555644,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|process|process_availability_050|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 90.49562301528003,
+        "headroom_pj": -79.76489701528003,
+        "ratio": 8.433317840310155,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|process|process_availability_050|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 4.3166175765000006,
+        "headroom_pj": -3.8154615765000006,
+        "ratio": 8.613321154490817,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|process|process_availability_050|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 3.5137717755,
+        "headroom_pj": -2.1283687755000003,
+        "ratio": 2.536281338715161,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|process|process_availability_050|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.21929472849999998,
+        "headroom_pj": -0.21929472849999998,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|process|process_availability_050|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 34.941358340744266,
+        "headroom_pj": -33.850012340744264,
+        "ratio": 32.01675576833036,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|process|process_availability_050|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.993708113255735,
+        "headroom_pj": -6.775269113255735,
+        "ratio": 32.01675576822699,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|process|process_availability_050|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 42.9711281351656,
+        "headroom_pj": -39.5895401351656,
+        "ratio": 12.707381305814192,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|process|process_availability_050|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 27.392297997834405,
+        "headroom_pj": -25.236676997834405,
+        "ratio": 12.707381305820645,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|process|process_availability_050|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 10.8991253975,
+        "headroom_pj": -5.040039397500001,
+        "ratio": 1.8602091516492507,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|process|process_availability_050|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 21.454703517000002,
+        "headroom_pj": -17.760724517000003,
+        "ratio": 5.808019893182934,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      },
+      "150m|process|process_availability_075|A1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 59.932065599868935,
+        "headroom_pj": -52.77196959986893,
+        "ratio": 8.370287996120293,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 7.160096
+      },
+      "150m|process|process_availability_075|A2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 33.15989196088107,
+        "headroom_pj": -29.19827296088107,
+        "ratio": 8.37028799611499,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.961619
+      },
+      "150m|process|process_availability_075|B1|bc_zonal_limit_supbcwb1_2050": {
+        "case_pj": 12.26051412182997,
+        "headroom_pj": -8.655039214829971,
+        "ratio": 3.400526820482451,
+        "reference": "bc_zonal_limit_supbcwb1_2050",
+        "reference_pj": 3.605474907
+      },
+      "150m|process|process_availability_075|B1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 12.26051412182997,
+        "headroom_pj": -11.29130212182997,
+        "ratio": 12.64998176026501,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.969212
+      },
+      "150m|process|process_availability_075|B2|bc_zonal_limit_supbcwb2_2050": {
+        "case_pj": 135.74343452292004,
+        "headroom_pj": -95.82509339792004,
+        "ratio": 3.4005279452333466,
+        "reference": "bc_zonal_limit_supbcwb2_2050",
+        "reference_pj": 39.918341125
+      },
+      "150m|process|process_availability_075|B2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 135.74343452292004,
+        "headroom_pj": -125.01270852292004,
+        "ratio": 12.649976760465231,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 10.730726
+      },
+      "150m|process|process_availability_075|L1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 6.474926364750001,
+        "headroom_pj": -5.973770364750001,
+        "ratio": 12.919981731736227,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.501156
+      },
+      "150m|process|process_availability_075|M1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 5.27065766325,
+        "headroom_pj": -3.8852546632499996,
+        "ratio": 3.8044220080727413,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.385403
+      },
+      "150m|process|process_availability_075|N1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 0.32894209274999997,
+        "headroom_pj": -0.32894209274999997,
+        "ratio": "",
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.0
+      },
+      "150m|process|process_availability_075|O1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 52.412037511116395,
+        "headroom_pj": -51.320691511116394,
+        "ratio": 48.02513365249554,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 1.091346
+      },
+      "150m|process|process_availability_075|O2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 10.490562169883603,
+        "headroom_pj": -10.272123169883603,
+        "ratio": 48.025133652340486,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 0.218439
+      },
+      "150m|process|process_availability_075|Q1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 64.4566922027484,
+        "headroom_pj": -61.0751042027484,
+        "ratio": 19.06107195872129,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.381588
+      },
+      "150m|process|process_availability_075|Q2|osecan_2050_zone_dispatch_context": {
+        "case_pj": 41.0884469967516,
+        "headroom_pj": -38.9328259967516,
+        "ratio": 19.061071958730963,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 2.155621
+      },
+      "150m|process|process_availability_075|S1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 16.34868809625,
+        "headroom_pj": -10.489602096250001,
+        "ratio": 2.790313727473876,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 5.859086
+      },
+      "150m|process|process_availability_075|T1|osecan_2050_zone_dispatch_context": {
+        "case_pj": 32.1820552755,
+        "headroom_pj": -28.4880762755,
+        "ratio": 8.7120298397744,
+        "reference": "osecan_2050_zone_dispatch_context",
+        "reference_pj": 3.693979
+      }
+    }
+  },
+  "generated_utc": "2026-11-23T16:18:22+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
+    "data/derived/national/clews/osecan/national_base_119m/manifest.json": "90eb5c8a4f1ae9e9f21401dfcd55e8faacc80e143b3f07e58e4559699a96966c",
+    "data/derived/national/clews/osecan/national_supply_curve/bc_zonal_activity_limits.csv": "c6ffe5f99461b5731cd16095b36f4850403864c31bf3a00ad2871f3e0f17abf3",
+    "data/derived/national/clews/osecan/national_supply_curve/supply_curve_definition.json": "01aab658fe29ac97d736c0bb06d2702782f07d6fd45a050143acaad039c11f6e",
+    "data/derived/national/clews/osecan/national_supply_curve/tier_activity_limits.csv": "a3cf68e32c350e3aeeb9b91ec9bb124ceea7598f5df900c8d6ee7cc3e78a0374",
+    "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f",
+    "data/derived/national/clews/osecan/zone_crosswalk.csv": "a0d75077f8c00f7dc5692c87685b27885159c95ac0e7fc8954a1e9123189538b",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/manifest.json": "27fc83f1892dcb3eeb45f2a5bd96e0b25e300e870b094bd4e492f3a2705714e9",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/summary.json": "7c1fc23161dd23508e3ea8c5310e82dd123e7176b5e18691e38c39196cfc42d1",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/zone_allocation_weights.csv": "d889858f9dbf1a68a36d7acac86b88a6957c7578b720d8d896594b55dd41c117",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/manifest.json": "52367cae6830eacd7972404147b819e4025fb095a51c954886a721eb0fa400b0",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/scenario_product_residue.csv": "d86440414e184de5ab6b7ecc7678b762008eec066a2265d56c3bd7928778fbeb",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/scenario_summary.csv": "da4481765c26a1de240431e8bc825d6424be1f78d9dd1ee583daef0cd55a8458",
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/summary.json": "c8fe188f874f2685814d54e5827bbfe16c00cb53ddcc38729df4c1bcdadeef35",
+    "data/derived/national/facilities/national_residue_curve_v9/national_residue_curve.csv": "92e3f12f34a0d4d2a349e3e6c956055029632d2e9a20ca276cfad10daa517443",
+    "data/derived/national/facilities/national_residue_curve_v9/province_residue_curve.csv": "5c454771aa63fa808984e12e6b08747ede3ae4b6c982953a066427fd9bc68587",
+    "data/derived/national/facilities/national_residue_curve_v9/summary.json": "5b95fe3f5da321fca9d904e1d21d92a1e28274d0dc384525d11d8760d240d5cb"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false
+  },
+  "national_case_totals": {
+    "100m": {
+      "harvest": {
+        "harvest_recovery_035": {
+          "availability_fraction": 0.35,
+          "odt": 7061371.521912361,
+          "pj": 130.63537315534998
+        },
+        "harvest_recovery_060": {
+          "availability_fraction": 0.6,
+          "odt": 12105208.323278332,
+          "pj": 223.9463539806
+        },
+        "harvest_recovery_075": {
+          "availability_fraction": 0.75,
+          "odt": 15131510.404097917,
+          "pj": 279.93294247575
+        }
+      },
+      "process": {
+        "process_availability_000": {
+          "availability_fraction": 0.0,
+          "odt": 0.0,
+          "pj": 0.0
+        },
+        "process_availability_025": {
+          "availability_fraction": 0.25,
+          "odt": 5665378.625168053,
+          "pj": 104.809504566
+        },
+        "process_availability_050": {
+          "availability_fraction": 0.5,
+          "odt": 11330757.250336107,
+          "pj": 209.619009132
+        },
+        "process_availability_075": {
+          "availability_fraction": 0.75,
+          "odt": 16996135.87550416,
+          "pj": 314.428513698
+        }
+      }
+    },
+    "119m": {
+      "harvest": {
+        "harvest_recovery_035": {
+          "availability_fraction": 0.35,
+          "odt": 8407771.250093166,
+          "pj": 155.54376812695
+        },
+        "harvest_recovery_060": {
+          "availability_fraction": 0.6,
+          "odt": 14413322.143016856,
+          "pj": 266.6464596462
+        },
+        "harvest_recovery_075": {
+          "availability_fraction": 0.75,
+          "odt": 18016652.67877107,
+          "pj": 333.30807455775
+        }
+      },
+      "process": {
+        "process_availability_000": {
+          "availability_fraction": 0.0,
+          "odt": 0.0,
+          "pj": 0.0
+        },
+        "process_availability_025": {
+          "availability_fraction": 0.25,
+          "odt": 6739877.255681732,
+          "pj": 124.68772922975
+        },
+        "process_availability_050": {
+          "availability_fraction": 0.5,
+          "odt": 13479754.511363463,
+          "pj": 249.3754584595
+        },
+        "process_availability_075": {
+          "availability_fraction": 0.75,
+          "odt": 20219631.767045196,
+          "pj": 374.06318768925
+        }
+      }
+    },
+    "150m": {
+      "harvest": {
+        "harvest_recovery_035": {
+          "availability_fraction": 0.35,
+          "odt": 10842913.219006576,
+          "pj": 200.59389455245
+        },
+        "harvest_recovery_060": {
+          "availability_fraction": 0.6,
+          "odt": 18587851.232582703,
+          "pj": 343.8752478042
+        },
+        "harvest_recovery_075": {
+          "availability_fraction": 0.75,
+          "odt": 23234814.04072838,
+          "pj": 429.84405975525
+        }
+      },
+      "process": {
+        "process_availability_000": {
+          "availability_fraction": 0.0,
+          "odt": 0.0,
+          "pj": 0.0
+        },
+        "process_availability_025": {
+          "availability_fraction": 0.25,
+          "odt": 8471151.614077747,
+          "pj": 156.7163048595
+        },
+        "process_availability_050": {
+          "availability_fraction": 0.5,
+          "odt": 16942303.228155494,
+          "pj": 313.432609719
+        },
+        "process_availability_075": {
+          "availability_fraction": 0.75,
+          "odt": 25413454.842233237,
+          "pj": 470.1489145785
+        }
+      }
+    }
+  },
+  "osecan_context": {
+    "bc_supply_pj": 43.52377,
+    "bc_zonal_upper_pj": 43.523816032,
+    "context_is_policy_target": false,
+    "dispatch_sha256": "f3d65707324c28a4d30366c05bf30401bf716a3b2c58a2bf39bf5318edb62888",
+    "dispatch_source": "data/derived/national/clews/osecan/national_base_119m/dispatch_by_zone.csv",
+    "manifest_status": "fresh_side_provisional_not_c2070_official",
+    "national_supply_pj": 152.92277,
+    "run": "stress_119m",
+    "year": 2050,
+    "zone_dispatch_context_pj": {
+      "A1": 7.160096,
+      "A2": 3.961619,
+      "B1": 0.969212,
+      "B2": 10.730726,
+      "L1": 0.501156,
+      "M1": 1.385403,
+      "N1": 0.0,
+      "O1": 1.091346,
+      "O2": 0.218439,
+      "Q1": 3.381588,
+      "Q2": 2.155621,
+      "S1": 5.859086,
+      "T1": 3.693979
+    }
+  },
+  "osecan_integrity": {
+    "changed_files": [],
+    "file_count_after": 146,
+    "file_count_before": 146,
+    "root": "data/derived/national/clews/osecan",
+    "tree_sha256_after": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a",
+    "tree_sha256_before": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a",
+    "unchanged": true
+  },
+  "outputs": {
+    "FORESTRY_OSECAN_SCENARIOS_V9.md": {
+      "bytes": 11272,
+      "sha256": "27910887641aaaea8817294568326775196e126bf773331706e6afa304e1cfce"
+    },
+    "candidate_activity_limits.csv": {
+      "bytes": 179639,
+      "sha256": "d112a6a9450d8e73b9ae8fcbdbbff4fe1120604336d408cf2d92f3cb9b2e0330"
+    },
+    "forestry_residue_scenarios.csv": {
+      "bytes": 315236,
+      "sha256": "513299ce24d7030b6b689e00e025518469c315abfe421caf159cd84511fada2f"
+    },
+    "scenario_zone_summary.csv": {
+      "bytes": 130774,
+      "sha256": "7d4094d7f20d870628f25b9aabc55aa58ab514a02accad333ff5ead75941d6f7"
+    },
+    "summary.json": {
+      "bytes": 124813,
+      "sha256": "696bc4d553ce15d5c8407f11668816eb3de7100525035eceb95176b91ebfb021"
+    },
+    "supply_curve_comparison.csv": {
+      "bytes": 141481,
+      "sha256": "8ea90c82b434626f4a06aec0038e3d5598804d9c5c0ef16f1cf415c37d35adf6"
+    }
+  },
+  "primary_scenario": "119m",
+  "record_counts": {
+    "candidate_activity_limit_rows": 273,
+    "comparison_rows": 462,
+    "harvest_cases": 3,
+    "process_cases": 4,
+    "province_zone_allocation_rows": 17,
+    "provinces": 13,
+    "residue_rows": 357,
+    "scenarios": 3,
+    "zone_summary_rows": 273,
+    "zones": 13
+  },
+  "recovery_scenarios": [
+    0.35,
+    0.6,
+    0.75
+  ],
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.forestry_osecan_scenarios_v9",
+  "residue_components": "E1_measured_plus_E2c_density_calibrated_stem_branch_foliage",
+  "scenario_order": [
+    "100m",
+    "119m",
+    "150m"
+  ],
+  "scenarios": {
+    "100m": {
+      "evidence_label": "model_estimate",
+      "harvest_gross_odt": 20175347.20546389,
+      "harvest_gross_pj": 373.243923301,
+      "harvest_m3": 100000000.0,
+      "harvest_recoverable_odt": 12105208.323286818,
+      "harvest_recoverable_pj": 223.946353981,
+      "process_base_odt": 22661514.500672214,
+      "process_base_pj": 419.238018262
+    },
+    "119m": {
+      "evidence_label": "model_estimate",
+      "harvest_gross_odt": 24022203.57169476,
+      "harvest_gross_pj": 444.410766076,
+      "harvest_m3": 118977339.1,
+      "harvest_recoverable_odt": 14413322.14302726,
+      "harvest_recoverable_pj": 266.646459646,
+      "process_base_odt": 26959509.02272693,
+      "process_base_pj": 498.75091692
+    },
+    "150m": {
+      "evidence_label": "model_estimate",
+      "harvest_gross_odt": 30979752.054304503,
+      "harvest_gross_pj": 573.125413005,
+      "harvest_m3": 150000000.0,
+      "harvest_recoverable_odt": 18587851.23259632,
+      "harvest_recoverable_pj": 343.875247803,
+      "process_base_odt": 33884606.45631098,
+      "process_base_pj": 626.865219442
+    }
+  },
+  "status": "pass",
+  "supply_curve": {
+    "bc_zonal_limits_pj": {
+      "SUPBCWB1": 3.605474907,
+      "SUPBCWB2": 39.918341125
+    },
+    "bc_zonal_upper_pj": 43.523816032,
+    "tiers": {
+      "T1": {
+        "incremental_cap_pj": 85.007113,
+        "lower_pj": 0.0,
+        "technology": "SUPBCWT1",
+        "upper_pj": 85.007113
+      },
+      "T2": {
+        "incremental_cap_pj": 24.39175,
+        "lower_pj": 85.007113,
+        "technology": "SUPBCWT2",
+        "upper_pj": 109.398863
+      },
+      "T3": {
+        "incremental_cap_pj": 39.873714,
+        "lower_pj": 109.398863,
+        "technology": "SUPBCWT3",
+        "upper_pj": 149.272577
+      },
+      "T4": {
+        "incremental_cap_pj": 64.265464,
+        "lower_pj": 149.272577,
+        "technology": "SUPBCWT4",
+        "upper_pj": 213.538041
+      }
+    },
+    "upper_pj": 213.538041
+  },
+  "tier_positions_v3_2_vs_v4": [
+    {
+      "case": "process_availability_000",
+      "delta_pj": 0.0,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 0.0,
+      "v3_2_v7_tier": "T1",
+      "v4_e2c_pj": 0.0,
+      "v4_e2c_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": -1.368514089499996,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 106.1780186555,
+      "v3_2_v7_tier": "T2",
+      "v4_e2c_pj": 104.809504566,
+      "v4_e2c_tier": "T2"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": -2.737028178999992,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 212.356037311,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 209.619009132,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": -4.10554226849996,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 318.5340559665,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 314.428513698,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": 15.716471482949984,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 114.9189016724,
+      "v3_2_v7_tier": "T3",
+      "v4_e2c_pj": 130.63537315534998,
+      "v4_e2c_tier": "T3"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": 26.94252254220001,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": true,
+      "v3_2_v7_pj": 197.0038314384,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 223.9463539806,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": 33.67815317774998,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 246.25478929800002,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 279.93294247575,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_000",
+      "delta_pj": 0.0,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 0.0,
+      "v3_2_v7_tier": "T1",
+      "v4_e2c_pj": 0.0,
+      "v4_e2c_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": -1.6455102577500043,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 126.33323948750001,
+      "v3_2_v7_tier": "T3",
+      "v4_e2c_pj": 124.68772922975,
+      "v4_e2c_tier": "T3"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": -3.2910205155000085,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 252.66647897500002,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 249.3754584595,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": -4.936530773250013,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 378.9997184625,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 374.06318768925,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": 18.897550028350025,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": true,
+      "v3_2_v7_pj": 136.64621809859997,
+      "v3_2_v7_tier": "T3",
+      "v4_e2c_pj": 155.54376812695,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": 32.39580004860002,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 234.2506595976,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 266.6464596462,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": 40.49475006074999,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 292.813324497,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 333.30807455775,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_000",
+      "delta_pj": 0.0,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 0.0,
+      "v3_2_v7_tier": "T1",
+      "v4_e2c_pj": 0.0,
+      "v4_e2c_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": -2.3183709029999875,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 159.0346757625,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 156.7163048595,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": -4.636741805999975,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 318.069351525,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 313.432609719,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": -6.955112708999991,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": false,
+      "v3_2_v7_pj": 477.1040272875,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 470.1489145785,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": 27.403379902500006,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 173.19051464995,
+      "v3_2_v7_tier": "T4",
+      "v4_e2c_pj": 200.59389455245,
+      "v4_e2c_tier": "T4"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": 46.97722269000002,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 296.8980251142,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 343.8752478042,
+      "v4_e2c_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": 58.72152836250001,
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": false,
+      "v3_2_v7_pj": 371.12253139275,
+      "v3_2_v7_tier": "above_T4",
+      "v4_e2c_pj": 429.84405975525,
+      "v4_e2c_tier": "above_T4"
+    }
+  ],
+  "transport_cost_in_osecan": false,
+  "v4_v5_tier_comparison": [
+    {
+      "case": "process_availability_000",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "0.000000000",
+      "v4_tier": "T1",
+      "v5_pj": "0.000000000",
+      "v5_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "104.809504566",
+      "v4_tier": "T2",
+      "v5_pj": "104.809504566",
+      "v5_tier": "T2"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "209.619009132",
+      "v4_tier": "T4",
+      "v5_pj": "209.619009132",
+      "v5_tier": "T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "314.428513698",
+      "v4_tier": "above_T4",
+      "v5_pj": "314.428513698",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "130.635373155",
+      "v4_tier": "T3",
+      "v5_pj": "130.635373155",
+      "v5_tier": "T3"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "223.946353981",
+      "v4_tier": "above_T4",
+      "v5_pj": "223.946353981",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "100m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "279.932942476",
+      "v4_tier": "above_T4",
+      "v5_pj": "279.932942476",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_000",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "0.000000000",
+      "v4_tier": "T1",
+      "v5_pj": "0.000000000",
+      "v5_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "124.687729230",
+      "v4_tier": "T3",
+      "v5_pj": "124.687729230",
+      "v5_tier": "T3"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "249.375458460",
+      "v4_tier": "above_T4",
+      "v5_pj": "249.375458460",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "374.063187689",
+      "v4_tier": "above_T4",
+      "v5_pj": "374.063187689",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "155.543768127",
+      "v4_tier": "T4",
+      "v5_pj": "155.543768127",
+      "v5_tier": "T4"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "266.646459646",
+      "v4_tier": "above_T4",
+      "v5_pj": "266.646459646",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "119m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "333.308074558",
+      "v4_tier": "above_T4",
+      "v5_pj": "333.308074558",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_000",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "0.000000000",
+      "v4_tier": "T1",
+      "v5_pj": "0.000000000",
+      "v5_tier": "T1"
+    },
+    {
+      "case": "process_availability_025",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "156.716304860",
+      "v4_tier": "T4",
+      "v5_pj": "156.716304860",
+      "v5_tier": "T4"
+    },
+    {
+      "case": "process_availability_050",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "313.432609719",
+      "v4_tier": "above_T4",
+      "v5_pj": "313.432609719",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "process_availability_075",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "process",
+      "tier_changed": "false",
+      "v4_pj": "470.148914579",
+      "v4_tier": "above_T4",
+      "v5_pj": "470.148914579",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_035",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "200.593894552",
+      "v4_tier": "T4",
+      "v5_pj": "200.593894552",
+      "v5_tier": "T4"
+    },
+    {
+      "case": "harvest_recovery_060",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "343.875247804",
+      "v4_tier": "above_T4",
+      "v5_pj": "343.875247804",
+      "v5_tier": "above_T4"
+    },
+    {
+      "case": "harvest_recovery_075",
+      "delta_pj": "0.000000000",
+      "model_estimate": "true",
+      "national_claim": "false",
+      "observed": "false",
+      "policy_grade": "false",
+      "scenario": "150m",
+      "stream": "harvest",
+      "tier_changed": "false",
+      "v4_pj": "429.844059755",
+      "v4_tier": "above_T4",
+      "v5_pj": "429.844059755",
+      "v5_tier": "above_T4"
+    }
+  ],
+  "validation": {
+    "checks": [
+      {
+        "check": "scenario_order",
+        "detail": "scenario definitions are ordered 100m/119m/150m with positive harvest",
+        "passed": true
+      },
+      {
+        "check": "scenario_national_ordering",
+        "detail": "national process and harvest gross PJ increase across scenarios",
+        "passed": true
+      },
+      {
+        "check": "scenario_province_nondecreasing",
+        "detail": "province process and harvest gross PJ are non-decreasing across scenarios",
+        "passed": true
+      },
+      {
+        "check": "zone_coverage",
+        "detail": "all 13 OSeCAN zones receive at least one province allocation",
+        "passed": true
+      },
+      {
+        "check": "province_zone_weight_sum",
+        "detail": "every province zone weight sums to 1",
+        "passed": true
+      },
+      {
+        "check": "weight_row_count",
+        "detail": "17 province/zone weight rows",
+        "passed": true
+      },
+      {
+        "check": "no_unmapped",
+        "detail": "no empty or UNMAPPED zone id",
+        "passed": true
+      },
+      {
+        "check": "residue_row_count",
+        "detail": "357 residue rows (expected 357)",
+        "passed": true
+      },
+      {
+        "check": "residue_row_uniqueness",
+        "detail": "scenario/stream/case/province/zone rows are unique",
+        "passed": true
+      },
+      {
+        "check": "residue_labels",
+        "detail": "every residue row carries the four required labels",
+        "passed": true
+      },
+      {
+        "check": "pj_conversion",
+        "detail": "every row satisfies pj = odt * 18.5 / 1e6 within 1e-6",
+        "passed": true
+      },
+      {
+        "check": "zero_process_case",
+        "detail": "process_availability_000 rows are exactly zero",
+        "passed": true
+      },
+      {
+        "check": "scenario_conservation",
+        "detail": "scenario/stream/case totals conserved",
+        "passed": true
+      },
+      {
+        "check": "zone_summary_conservation",
+        "detail": "zone summary sums match scenario/case totals",
+        "passed": true
+      },
+      {
+        "check": "zone_summary_row_count",
+        "detail": "273 zone summary rows",
+        "passed": true
+      },
+      {
+        "check": "candidate_row_count",
+        "detail": "273 candidate rows",
+        "passed": true
+      },
+      {
+        "check": "candidate_conservation",
+        "detail": "candidate activity limits sum to scenario/case totals",
+        "passed": true
+      },
+      {
+        "check": "candidate_labels",
+        "detail": "candidate rows are labelled read-only and not applied",
+        "passed": true
+      },
+      {
+        "check": "curve_119_reconciliation",
+        "detail": "119m reproduces the national residue curve at all cases",
+        "passed": true
+      },
+      {
+        "check": "comparison_row_count",
+        "detail": "462 comparison rows",
+        "passed": true
+      },
+      {
+        "check": "comparison_arithmetic",
+        "detail": "ratio and headroom arithmetic is consistent and not policy",
+        "passed": true
+      },
+      {
+        "check": "comparison_labels",
+        "detail": "every comparison row carries the four required labels",
+        "passed": true
+      },
+      {
+        "check": "tier_references",
+        "detail": "adopted tier and 2050 context references match the official curve",
+        "passed": true
+      },
+      {
+        "check": "bc_zonal_limits",
+        "detail": "SUPBCWB1/SUPBCWB2 2050 activity limits are read exactly",
+        "passed": true
+      },
+      {
+        "check": "zone_dispatch_context",
+        "detail": "2050 zone dispatch context covers all 13 zones",
+        "passed": true
+      },
+      {
+        "check": "labels_summary_contract",
+        "detail": "all output families carry model_estimate/observed/policy_grade/official_osecan_changed labels",
+        "passed": true
+      },
+      {
+        "check": "official_osecan_unchanged",
+        "detail": "official OSeCAN tree hash is unchanged",
+        "passed": true
+      },
+      {
+        "check": "output_outside_osecan",
+        "detail": "artifact output directory is outside the official OSeCAN tree",
+        "passed": true
+      },
+      {
+        "check": "nonnegative_values",
+        "detail": "residue, zone, and candidate values are non-negative",
+        "passed": true
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  },
+  "zone_mapping": {
+    "multi_zone_provinces": [
+      "BC",
+      "AB",
+      "ON",
+      "QC"
+    ],
+    "province_count": 13,
+    "province_zone_allocation_rows": 17,
+    "proxy_share_provinces": [
+      "AB",
+      "BC",
+      "ON",
+      "QC"
+    ],
+    "unmapped_province_count": 0,
+    "unmapped_zone_present": false,
+    "weight_evidence_tiers": [
+      "tier_0_crosswalk_membership",
+      "tier_1_osecan_zonal_supply_model",
+      "tier_2_osecan_zonal_dispatch_model"
+    ],
+    "weight_methods": [
+      "osecan_zonal_dispatch_proxy",
+      "osecan_zonal_supply_dispatch",
+      "single_zone_crosswalk"
+    ],
+    "zone_count": 13,
+    "zones": [
+      {
+        "provinces": [
+          "BC"
+        ],
+        "zone_id": "B1",
+        "zone_name": "South Coast / Lower Mainland"
+      },
+      {
+        "provinces": [
+          "BC"
+        ],
+        "zone_id": "B2",
+        "zone_name": "Interior & North"
+      },
+      {
+        "provinces": [
+          "AB"
+        ],
+        "zone_id": "A1",
+        "zone_name": "Calgary\u2013Edmonton corridor"
+      },
+      {
+        "provinces": [
+          "AB"
+        ],
+        "zone_id": "A2",
+        "zone_name": "North (oil sands)"
+      },
+      {
+        "provinces": [
+          "SK"
+        ],
+        "zone_id": "S1",
+        "zone_name": "Saskatchewan"
+      },
+      {
+        "provinces": [
+          "MB"
+        ],
+        "zone_id": "M1",
+        "zone_name": "Manitoba"
+      },
+      {
+        "provinces": [
+          "ON"
+        ],
+        "zone_id": "O1",
+        "zone_name": "Southern Ontario"
+      },
+      {
+        "provinces": [
+          "ON"
+        ],
+        "zone_id": "O2",
+        "zone_name": "Northern Ontario"
+      },
+      {
+        "provinces": [
+          "QC"
+        ],
+        "zone_id": "Q1",
+        "zone_name": "Southern Quebec"
+      },
+      {
+        "provinces": [
+          "QC"
+        ],
+        "zone_id": "Q2",
+        "zone_name": "Northern Quebec (hydro)"
+      },
+      {
+        "provinces": [
+          "NB",
+          "NS",
+          "PE"
+        ],
+        "zone_id": "T1",
+        "zone_name": "Atlantic"
+      },
+      {
+        "provinces": [
+          "NL"
+        ],
+        "zone_id": "L1",
+        "zone_name": "Newfoundland & Labrador"
+      },
+      {
+        "provinces": [
+          "NT",
+          "NU",
+          "YT"
+        ],
+        "zone_id": "N1",
+        "zone_name": "North (territories)"
+      }
+    ]
+  }
+}

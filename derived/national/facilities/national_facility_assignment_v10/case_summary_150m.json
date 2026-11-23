@@ -1,0 +1,79 @@
+{
+  "artifact": "national_facility_assignment_v10",
+  "artifact_version": "10.1.0",
+  "harvest_case": "150m",
+  "harvest_case_m3": 150000000.2,
+  "labels": {
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "ui_changed": false
+  },
+  "scenario": "node_transport_aware",
+  "scenarios": {
+    "node_transport_aware": {
+      "assigned_m3": 150000000.20000002,
+      "assignments": 761.0,
+      "binding_facilities": 275.0,
+      "binding_volume_m3": 126554541.32609601,
+      "cross_border_m3": 11035938.683332562,
+      "cross_border_share": 0.07357292445745317,
+      "facilities_used": 333.0,
+      "hhi": 0.008579581181090328,
+      "local_m3": 138964061.51666746,
+      "local_share": 0.9264270755425468,
+      "max_road_distance_km": 2354.373231653,
+      "mean_road_distance_km": 319.79027766904045,
+      "median_road_distance_km": 168.263820582,
+      "p90_road_distance_km": 775.996325258,
+      "proxy_m3": 79459519.77587157,
+      "proxy_share_of_assigned": 0.529730131132837,
+      "published_m3": 70540480.42412844,
+      "scenario": "node_transport_aware",
+      "share_ge_150_km": 0.5597010153976162,
+      "share_ge_300_km": 0.3398730971256654,
+      "total_volume_distance_m3_km": 47968541714.314125,
+      "transport_cost_cad": 5018080790.875671,
+      "transport_cost_cad_gj": 8.219624544119217,
+      "transport_cost_cad_m3": 33.45387189456598
+    }
+  },
+  "v10_primary": {
+    "assigned_m3": 150000000.20000002,
+    "assignments": 761.0,
+    "binding_facilities": 275.0,
+    "binding_volume_m3": 126554541.32609601,
+    "cross_border_m3": 11035938.683332562,
+    "cross_border_share": 0.07357292445745317,
+    "facilities_used": 333.0,
+    "hhi": 0.008579581181090328,
+    "local_m3": 138964061.51666746,
+    "local_share": 0.9264270755425468,
+    "max_road_distance_km": 2354.373231653,
+    "mean_road_distance_km": 319.79027766904045,
+    "median_road_distance_km": 168.263820582,
+    "p90_road_distance_km": 775.996325258,
+    "proxy_m3": 79459519.77587157,
+    "proxy_share_of_assigned": 0.529730131132837,
+    "published_m3": 70540480.42412844,
+    "share_ge_150_km": 0.5597010153976162,
+    "share_ge_300_km": 0.3398730971256654,
+    "total_volume_distance_m3_km": 47968541714.314125,
+    "transport_cost_cad": 5018080790.875671,
+    "transport_cost_cad_gj": 8.219624544119217,
+    "transport_cost_cad_m3": 33.45387189456598
+  },
+  "validation": {
+    "all_passed": true,
+    "checks": [
+      {
+        "detail": "same nodes, capacity and transport curve",
+        "name": "150m_node_transport_lp",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "artifact": "national_residue_curve_v9",
+  "artifact_version": "9.0.0",
+  "assignment": {
+    "100m": "v10_node_transport_aware",
+    "119m": "v10_node_transport_aware",
+    "150m": "v10_node_transport_aware"
+  },
+  "caveats": [
+    "The 119 Mm3 national and province curve files are inherited unchanged from frozen national_residue_curve_v8.",
+    "The 100/150 Mm3 scenario curve applies the same 0/25/50/75% process and 35/60/75% harvest cases to case-specific facility-province process residue.",
+    "Process residue is facility-assigned; harvest residue is origin-province only.",
+    "All values are model estimates; observed=false and policy_grade=false."
+  ],
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false
+  },
+  "national_119_reproduction_max_pj_gap": 0.0,
+  "primary_scenario": "119m",
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_residue_curve_v9",
+  "residue_components": "E1_measured_plus_E2c_density_calibrated_stem_branch_foliage",
+  "scenario_order": [
+    "100m",
+    "119m",
+    "150m"
+  ],
+  "scenario_totals": {
+    "100m": {
+      "harvest": {
+        "harvest_recovery_035": 130.635373155,
+        "harvest_recovery_060": 223.946353981,
+        "harvest_recovery_075": 279.932942476
+      },
+      "process": {
+        "process_availability_000": 0.0,
+        "process_availability_025": 104.809504566,
+        "process_availability_050": 209.619009131,
+        "process_availability_075": 314.428513697
+      }
+    },
+    "119m": {
+      "harvest": {
+        "harvest_recovery_035": 155.543768127,
+        "harvest_recovery_060": 266.646459646,
+        "harvest_recovery_075": 333.308074557
+      },
+      "process": {
+        "process_availability_000": 0.0,
+        "process_availability_025": 124.68772923,
+        "process_availability_050": 249.37545846,
+        "process_availability_075": 374.06318769
+      }
+    },
+    "150m": {
+      "harvest": {
+        "harvest_recovery_035": 200.593894552,
+        "harvest_recovery_060": 343.875247803,
+        "harvest_recovery_075": 429.844059753
+      },
+      "process": {
+        "process_availability_000": 0.0,
+        "process_availability_025": 156.71630486,
+        "process_availability_050": 313.432609721,
+        "process_availability_075": 470.148914581
+      }
+    }
+  },
+  "status": "complete"
+}

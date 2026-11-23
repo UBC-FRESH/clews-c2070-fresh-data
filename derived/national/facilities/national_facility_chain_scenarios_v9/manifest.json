@@ -1,0 +1,961 @@
+{
+  "artifact": "national_facility_chain_scenarios_v9",
+  "artifact_version": "9.0.0",
+  "assignment": {
+    "case_extension": "national_facility_assignment_v10 case extension",
+    "scenario": "node_transport_aware",
+    "scenario_coverage": {
+      "100m": "assignment_v10_node_transport_aware",
+      "119m": "assignment_v10_node_transport_aware",
+      "150m": "assignment_v10_node_transport_aware"
+    },
+    "transport_cost_note": "Transport cost is a separate summary and is not added to OSeCAN official supply-curve tiers.",
+    "v10_primary": {
+      "assigned_m3": 118977339.10000001,
+      "assignments": 709.0,
+      "binding_facilities": 223.0,
+      "binding_volume_m3": 89297365.40071353,
+      "cross_border_m3": 2325349.7654170394,
+      "cross_border_share": 0.019544476141482636,
+      "facilities_used": 296.0,
+      "local_m3": 116651989.33458297,
+      "local_share": 0.9804555238585173,
+      "max_road_distance_km": 2354.373231653,
+      "mean_road_distance_km": 270.28940905138364,
+      "median_road_distance_km": 147.21704839,
+      "p90_road_distance_km": 635.737453852,
+      "proxy_m3": 64339745.32913723,
+      "proxy_share_of_assigned": 0.5407731070120833,
+      "published_m3": 54637593.77086278,
+      "share_ge_150_km": 0.48618864230021475,
+      "share_ge_300_km": 0.30163075276602663,
+      "total_volume_distance_m3_km": 32158314675.845085,
+      "transport_cost_cad": 3392104138.709088,
+      "transport_cost_cad_gj": 7.005038326005203,
+      "transport_cost_cad_m3": 28.51050598684206
+    }
+  },
+  "coefficient_tiers": {
+    "E2c_open_inventory_density_calibrated": 9,
+    "donor_product_coefficients": 0,
+    "measured_bucking_pilot": 4
+  },
+  "comparison": [
+    {
+      "assigned_m3": "100000000.099999994",
+      "bio_product_mwh": "778318.974605927",
+      "capacity_utilization": "0.377341953",
+      "cross_border_m3": "1160530.029593304",
+      "cross_border_share": "0.011605300",
+      "delta_assigned_m3_vs_119m": "-18977339.000000015",
+      "delta_bio_product_mwh_vs_119m": "-152627.045729015",
+      "delta_capacity_utilization_vs_119m": "-0.057726063",
+      "delta_harvest_m3_vs_119m": "-18977339",
+      "delta_panel_product_m3_vs_119m": "-590029.130812867",
+      "delta_pellet_product_odt_vs_119m": "-857398.315584566",
+      "delta_process_residue_pj_vs_119m": "-79.512898658",
+      "delta_pulp_product_odt_vs_119m": "-1929608.405639661",
+      "delta_sawlog_product_m3_vs_119m": "-5390790.478921112",
+      "delta_total_residue_gross_pj_vs_119m": "-150.679741433",
+      "delta_total_residue_recoverable_pj_vs_119m": "-122.213004323",
+      "evidence_label": "model_estimate",
+      "facilities_used": "270",
+      "harvest_m3": "100000000.099999994",
+      "harvest_residue_gross_pj": "373.243923301",
+      "harvest_residue_recoverable_pj": "223.946353981",
+      "hhi": "0.008742083",
+      "max_facility_share": "0.028646706",
+      "observed": "false",
+      "panel_product_m3": "3126608.170239124",
+      "pellet_product_odt": "4372287.851260155",
+      "policy_grade": "false",
+      "process_residue_pj": "419.238018262",
+      "proxy_share_of_assigned": "0.541342527",
+      "pulp_product_odt": "10136702.86391734",
+      "sawlog_product_m3": "28566198.981094491",
+      "scenario": "100m",
+      "top5_share": "0.122221955",
+      "total_residue_gross_pj": "792.481941564",
+      "total_residue_recoverable_pj": "643.184372243",
+      "unassigned_m3": "0"
+    },
+    {
+      "assigned_m3": "118977339.100000009",
+      "bio_product_mwh": "930946.020334943",
+      "capacity_utilization": "0.435068016",
+      "cross_border_m3": "2325349.765417041",
+      "cross_border_share": "0.019544476",
+      "delta_assigned_m3_vs_119m": "0",
+      "delta_bio_product_mwh_vs_119m": "0",
+      "delta_capacity_utilization_vs_119m": "0",
+      "delta_harvest_m3_vs_119m": "0",
+      "delta_panel_product_m3_vs_119m": "0",
+      "delta_pellet_product_odt_vs_119m": "0",
+      "delta_process_residue_pj_vs_119m": "0",
+      "delta_pulp_product_odt_vs_119m": "0",
+      "delta_sawlog_product_m3_vs_119m": "0",
+      "delta_total_residue_gross_pj_vs_119m": "0",
+      "delta_total_residue_recoverable_pj_vs_119m": "0",
+      "evidence_label": "model_estimate",
+      "facilities_used": 296,
+      "harvest_m3": "118977339.099999994",
+      "harvest_residue_gross_pj": "444.410766076",
+      "harvest_residue_recoverable_pj": "266.646459646",
+      "hhi": "0.008868046",
+      "max_facility_share": "0.043070156",
+      "observed": "false",
+      "panel_product_m3": "3716637.30105199",
+      "pellet_product_odt": "5229686.16684472",
+      "policy_grade": "false",
+      "process_residue_pj": "498.75091692",
+      "proxy_share_of_assigned": "0.540773107",
+      "pulp_product_odt": "12066311.269557001",
+      "sawlog_product_m3": "33956989.460015602",
+      "scenario": "119m",
+      "total_residue_gross_pj": "943.161682997",
+      "total_residue_recoverable_pj": "765.397376566",
+      "unassigned_m3": "0"
+    },
+    {
+      "assigned_m3": "150000000.200000018",
+      "bio_product_mwh": "1253014.284903777",
+      "capacity_utilization": "0.511471368",
+      "cross_border_m3": "11035938.683332562",
+      "cross_border_share": "0.073572924",
+      "delta_assigned_m3_vs_119m": "31022661.100000009",
+      "delta_bio_product_mwh_vs_119m": "322068.264568834",
+      "delta_capacity_utilization_vs_119m": "0.076403351",
+      "delta_harvest_m3_vs_119m": "31022661.099999994",
+      "delta_panel_product_m3_vs_119m": "834908.899742217",
+      "delta_pellet_product_odt_vs_119m": "1809251.998724557",
+      "delta_process_residue_pj_vs_119m": "128.114302521",
+      "delta_pulp_product_odt_vs_119m": "3484569.741488066",
+      "delta_sawlog_product_m3_vs_119m": "7628130.057403147",
+      "delta_total_residue_gross_pj_vs_119m": "256.82894945",
+      "delta_total_residue_recoverable_pj_vs_119m": "205.343090678",
+      "evidence_label": "model_estimate",
+      "facilities_used": "333",
+      "harvest_m3": "150000000.199999988",
+      "harvest_residue_gross_pj": "573.125413005",
+      "harvest_residue_recoverable_pj": "343.875247803",
+      "hhi": "0.008579581",
+      "max_facility_share": "0.053954031",
+      "observed": "false",
+      "panel_product_m3": "4551546.200794207",
+      "pellet_product_odt": "7038938.165569277",
+      "policy_grade": "false",
+      "process_residue_pj": "626.865219442",
+      "proxy_share_of_assigned": "0.529730131",
+      "pulp_product_odt": "15550881.011045067",
+      "sawlog_product_m3": "41585119.51741875",
+      "scenario": "150m",
+      "top5_share": "0.122454589",
+      "total_residue_gross_pj": "1199.990632446",
+      "total_residue_recoverable_pj": "970.740467245",
+      "unassigned_m3": "0"
+    }
+  ],
+  "generated_utc": "2026-11-23T16:18:55+00:00",
+  "inputs": {
+    "data/derived/national/clews_supply/rsyc_backbone/national_residue_factor_summary.json": "6970b0ec6cce938364f6a6d790a86c6c035952a7edb89aa6cd770fb6c32e8a32",
+    "data/derived/national/facilities/facility_residue_supply_v8/facility_transport.csv": "301de25874ee2d794a6af9789a3cfa389c34c089974ff17afd1274fb1a101779",
+    "data/derived/national/facilities/facility_residue_supply_v8/summary.json": "b7813eba5d7ca6b5b628598434fb509c07984b24656077ca8261471f6ef83a18",
+    "data/derived/national/facilities/national_facility_assignment_v10/summary.json": "e5c51c4a20c4544ecf8c94709344a2c6410cee6a71956488b9ae396e6fa2f9bc",
+    "data/derived/national/facilities/national_facility_assignment_v10/v10_facility_utilization.csv": "3e0d06425e5b58f6a8b187538aced2385aeb225f1916567839647c418b8e9f1c",
+    "data/derived/national/facilities/national_facility_assignment_v10/v10_node_assignment.csv": "54ed079b13e94ac20aa93509b914c64f4dcdece8b67eb92cc54a7a987a26acf2",
+    "data/derived/national/facilities/national_facility_assignment_v10/v10_province_summary.csv": "092ec7bfce6b54e60211637728d22b69ee6bebd8341fefc6bbf877b2fcc16156",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/national_product_chain_v2/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/facilities/national_product_chain_v5/summary.json": "a5d4876997bac9af0cbc7f11f34073a8a635391ee8c6b51cf4d03df837bbb7c5",
+    "data/derived/national/facilities/national_product_chain_v5/v3_2_vs_v4_comparison.csv": "b3b94311aa8082c87384878583b9db968f596268e5a59ab233d5c7c09c4e9210",
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/national/harvest_basis/provincial_allocation/150m.csv": "3675cdc5e0723b453924b9dc6b8e13f19578f02a01086eb95f88f7bf750ceee1",
+    "data/derived/national/harvest_basis/provincial_allocation/intensity_1.0/provincial_allocation_summary.json": "14a4007d19ad4480c2a9f319b4934672126a1289e4bcef6bdc1b513c1e44fa4d",
+    "data/derived/national/harvest_basis/provincial_allocation/intensity_1.2/provincial_allocation_summary.json": "b875c135995441fad8dcf9c7c5ea7c958f2010ff3666f6a1f8a10630fbef4494",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "intensity_note": {
+    "conflation_warning": "The 1.0 and 1.2 m3/ha/yr operable-proxy screens are infeasible at 150 Mm3. They are separate sensitivity results and must not be used to relabel or reject the documented 150m ceiling case.",
+    "documented_ceiling_note": "The 150m scenario uses the documented provincial ceiling table. It is not an operable-proxy intensity screen.",
+    "documented_ceiling_scenario": "150m",
+    "documented_ceiling_source": "data/derived/national/harvest_basis/provincial_allocation/150m.csv",
+    "intensity_screens": [
+      {
+        "capacity_m3_y": 133703648.14137518,
+        "deficit_m3": 16296351.858624816,
+        "feasible": false,
+        "intensity_m3_per_ha_yr": 1.0,
+        "national_total_m3": 150000000.0,
+        "source": "data/derived/national/harvest_basis/provincial_allocation/intensity_1.0/provincial_allocation_summary.json",
+        "status": "infeasible"
+      },
+      {
+        "capacity_m3_y": 145508127.0096502,
+        "deficit_m3": 4491872.990349799,
+        "feasible": false,
+        "intensity_m3_per_ha_yr": 1.2,
+        "national_total_m3": 150000000.0,
+        "source": "data/derived/national/harvest_basis/provincial_allocation/intensity_1.2/provincial_allocation_summary.json",
+        "status": "infeasible"
+      }
+    ]
+  },
+  "labels": {
+    "assignment_change_vs_v8": true,
+    "capacity_change": false,
+    "case_extension": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "product_change": false,
+    "residue_change": false,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_CHAIN_SCENARIOS_V9.md": {
+      "bytes": 14343,
+      "sha256": "257bdc81dd671ea710393030759c312516eee944f57f1568fe425fa9f4c519e4"
+    },
+    "measured_vs_donor_comparison.csv": {
+      "bytes": 51193,
+      "sha256": "7cdc8156654ba083c363b05f26676c3a7d51e43c5cfa4a89e427e029551b853e"
+    },
+    "scenario_assignment.csv": {
+      "bytes": 379805,
+      "sha256": "10e6bce17b82b52d1ec52feb65e2b48279e2d5e83aa28f12d5491b421179bc60"
+    },
+    "scenario_comparison.csv": {
+      "bytes": 2101,
+      "sha256": "2e7a07d4976f29e0353627b2d21369446d49ae299522af454045c91737adad56"
+    },
+    "scenario_product_residue.csv": {
+      "bytes": 65192,
+      "sha256": "d86440414e184de5ab6b7ecc7678b762008eec066a2265d56c3bd7928778fbeb"
+    },
+    "scenario_summary.csv": {
+      "bytes": 3454,
+      "sha256": "da4481765c26a1de240431e8bc825d6424be1f78d9dd1ee583daef0cd55a8458"
+    },
+    "summary.json": {
+      "bytes": 112804,
+      "sha256": "4dcc925438fcc6d59c65be07051252e6479d3b8696c070508b51c961a83fac85"
+    },
+    "transport_cost_summary.csv": {
+      "bytes": 36825,
+      "sha256": "cca01d9b60856dd1ac264ea89b3917864bf10e461b8c4b88167af322a6125034"
+    },
+    "v3_2_vs_v4_comparison.csv": {
+      "bytes": 51186,
+      "sha256": "58e50ad1c56782446fea38e46900480ffe03c7bb847a2612d3dfd9151351c9d1"
+    },
+    "v4_v5_chain_comparison.csv": {
+      "bytes": 6574,
+      "sha256": "751eb14ff7f279a7f395b96222444f69974b0f1a885aaa08b053d33cb2d3b316"
+    },
+    "v4_v5_facility_comparison.csv": {
+      "bytes": 1741,
+      "sha256": "4a6c942cfccaacc88f12d5c9329df0670a1bb6089c4d6fca5ea16a5f08619c18"
+    },
+    "v4_v5_facility_distribution.csv": {
+      "bytes": 92883,
+      "sha256": "e0865fae7600eb575cb8785ef8e2309d055bece9e2ed01b8f7def6ba4f44fe9c"
+    },
+    "v4_v5_transport_comparison.csv": {
+      "bytes": 2686,
+      "sha256": "0b0e39c4f5aca850c92534b6e22c2974d7bfbdd7cd0db8ba1c84f6569c1fcfba"
+    },
+    "v5_v6_product_residue_invariance.csv": {
+      "bytes": 3273,
+      "sha256": "67afe8857e7093ba62107575ace6578190375a3ce31789b5d96d84622ab17d3f"
+    },
+    "v5_v6_transport_comparison.csv": {
+      "bytes": 1992,
+      "sha256": "921d0054e2045b8137de149ae21495f5c432fed985e1ebb6c90560d2e3b1ca45"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_chain_scenarios_v9",
+  "scenarios": [
+    "100m",
+    "119m",
+    "150m"
+  ],
+  "transport": {
+    "comparison": {
+      "assigned_m3": {
+        "delta": 1.04e-07,
+        "delta_pct": 0.0,
+        "unit": "m3/yr",
+        "v4_value": 118977339.09999998,
+        "v5_value": 118977339.10000008
+      },
+      "cross_border_m3": {
+        "delta": 2288973.765417041,
+        "delta_pct": 6292.538391844,
+        "unit": "m3/yr",
+        "v4_value": 36376.0,
+        "v5_value": 2325349.765417041
+      },
+      "cross_border_share": {
+        "delta": 0.019238737,
+        "delta_pct": 6292.538391844,
+        "unit": "share",
+        "v4_value": 0.000305739,
+        "v5_value": 0.019544476
+      },
+      "facilities_used": {
+        "delta": 88.0,
+        "delta_pct": 42.307692308,
+        "unit": "count",
+        "v4_value": 208.0,
+        "v5_value": 296.0
+      },
+      "hhi": {
+        "delta": -0.00400233,
+        "delta_pct": -31.097227635,
+        "unit": "index_0_1",
+        "v4_value": 0.012870376,
+        "v5_value": 0.008868046
+      },
+      "mean_road_distance_km": {
+        "delta": -131.833442052,
+        "delta_pct": -32.784369675,
+        "unit": "km",
+        "v4_value": 402.122851104,
+        "v5_value": 270.289409051
+      },
+      "p90_road_distance_km": {
+        "delta": -126.77958415,
+        "delta_pct": -16.626459191,
+        "unit": "km",
+        "v4_value": 762.517038002,
+        "v5_value": 635.737453852
+      },
+      "proxy_m3": {
+        "delta": 16876289.536832325,
+        "delta_pct": 35.556385971,
+        "unit": "m3/yr",
+        "v4_value": 47463455.79230498,
+        "v5_value": 64339745.3291373
+      },
+      "published_m3": {
+        "delta": -16876289.53683222,
+        "delta_pct": -23.598619955,
+        "unit": "m3/yr",
+        "v4_value": 71513883.307695,
+        "v5_value": 54637593.77086278
+      },
+      "share_ge_150_km": {
+        "delta": -0.352103535,
+        "delta_pct": -42.002483697,
+        "unit": "share",
+        "v4_value": 0.838292177,
+        "v5_value": 0.486188642
+      },
+      "share_ge_300_km": {
+        "delta": -0.224879243,
+        "delta_pct": -42.711296025,
+        "unit": "share",
+        "v4_value": 0.526509996,
+        "v5_value": 0.301630753
+      },
+      "top5_share": {
+        "delta": -0.02803205,
+        "delta_pct": -17.802208312,
+        "unit": "share",
+        "v4_value": 0.157463893,
+        "v5_value": 0.129431842
+      },
+      "transport_cost_cad": {
+        "delta": -1566389565.381174,
+        "delta_pct": -31.59002832,
+        "unit": "CAD/yr",
+        "v4_value": 4958493704.090264,
+        "v5_value": 3392104138.70909
+      },
+      "transport_cost_cad_gj": {
+        "delta": -3.234752971,
+        "delta_pct": -31.59002832,
+        "unit": "CAD/GJ",
+        "v4_value": 10.239791297,
+        "v5_value": 7.005038326
+      },
+      "transport_cost_cad_m3": {
+        "delta": -13.16544459,
+        "delta_pct": -31.59002832,
+        "unit": "CAD/m3",
+        "v4_value": 41.675950577,
+        "v5_value": 28.510505987
+      },
+      "weighted_median_road_distance_km": {
+        "delta": -198.458183685,
+        "delta_pct": -57.411745266,
+        "unit": "km",
+        "v4_value": 345.675232075,
+        "v5_value": 147.21704839
+      }
+    },
+    "note": "Transport is a separate truck-cost summary. It is not added to OSeCAN supply-curve tiers and is not an OSeCAN official input.",
+    "v4": {
+      "assigned_m3": 118977339.09999998,
+      "cross_border_m3": 36376.0,
+      "cross_border_share": 0.00030573889343269074,
+      "distance_bands": {
+        "gt_100_le_150_km": 0.09913202054556021,
+        "gt_150_le_300_km": 0.3117821819048068,
+        "gt_300_km": 0.5265099955809792,
+        "gt_50_le_100_km": 0.05390532798696622,
+        "le_50_km": 0.008670473981687828
+      },
+      "facilities_used": 208,
+      "hhi": 0.01287037617184876,
+      "max_facility_share": 0.0680222363910337,
+      "mean_road_distance_km": 402.1228511038554,
+      "p90_road_distance_km": 762.517038002,
+      "province": {
+        "AB": {
+          "assigned_m3": 22891404.000000004,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 232.17794019956665,
+          "transport_cost_cad": 565521460.7804396,
+          "transport_cost_cad_gj": 6.069909991650833,
+          "transport_cost_cad_m3": 24.704533666018893,
+          "transport_energy_gj": 93168014.28000003,
+          "volume_distance_m3_km": 5314879028.996121
+        },
+        "BC": {
+          "assigned_m3": 39978576.99999999,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 273.9127707203027,
+          "transport_cost_cad": 1154275475.3911726,
+          "transport_cost_cad_gj": 7.093943536544059,
+          "transport_cost_cad_m3": 28.87235019373433,
+          "transport_energy_gj": 162712808.39000002,
+          "volume_distance_m3_km": 10950642795.524965
+        },
+        "MB": {
+          "assigned_m3": 1135235.8,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 703.9683631315563,
+          "transport_cost_cad": 81532088.9556113,
+          "transport_cost_cad_gj": 17.64607343148268,
+          "transport_cost_cad_m3": 71.8195188661345,
+          "transport_energy_gj": 4620409.706,
+          "volume_distance_m3_km": 799170087.8943429
+        },
+        "NB": {
+          "assigned_m3": 6234700.0,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 138.88929151400214,
+          "transport_cost_cad": 95941652.31172326,
+          "transport_cost_cad_gj": 3.7809176938550286,
+          "transport_cost_cad_m3": 15.38833501398997,
+          "transport_energy_gj": 25375229.000000004,
+          "volume_distance_m3_km": 865933065.8023491
+        },
+        "NL": {
+          "assigned_m3": 1454037.5,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 616.0067127447155,
+          "transport_cost_cad": 91655685.33247927,
+          "transport_cost_cad_gj": 15.487787905067481,
+          "transport_cost_cad_m3": 63.03529677362466,
+          "transport_energy_gj": 5917932.625000001,
+          "volume_distance_m3_km": 895696860.5825442
+        },
+        "NS": {
+          "assigned_m3": 2388245.0,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 61.11727504274625,
+          "transport_cost_cad": 18202469.771116044,
+          "transport_cost_cad_gj": 1.8726517987536904,
+          "transport_cost_cad_m3": 7.62169282092752,
+          "transport_energy_gj": 9720157.15,
+          "volume_distance_m3_km": 145963026.53446352
+        },
+        "NT": {
+          "assigned_m3": 36376.0,
+          "cross_border_m3": 36376.0,
+          "cross_border_share": 1.0,
+          "mean_road_distance_km": 1201.811124768,
+          "transport_cost_cad": 4421000.836455885,
+          "transport_cost_cad_gj": 29.861474372064073,
+          "transport_cost_cad_m3": 121.53620069430079,
+          "transport_energy_gj": 148050.32,
+          "volume_distance_m3_km": 43717081.47456077
+        },
+        "ON": {
+          "assigned_m3": 13493595.999999998,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 670.3458630172761,
+          "transport_cost_cad": 923796328.4938525,
+          "transport_cost_cad_gj": 16.821089418115424,
+          "transport_cost_cad_m3": 68.46183393172973,
+          "transport_energy_gj": 54918935.71999996,
+          "volume_distance_m3_km": 9045376255.826464
+        },
+        "PE": {
+          "assigned_m3": 302210.4,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 77.40359210700898,
+          "transport_cost_cad": 2794876.0079546683,
+          "transport_cost_cad_gj": 2.2722637005747774,
+          "transport_cost_cad_m3": 9.248113261339345,
+          "transport_energy_gj": 1229996.3280000002,
+          "volume_distance_m3_km": 23392170.53209603
+        },
+        "QC": {
+          "assigned_m3": 26674333.999999996,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 694.2494096324502,
+          "transport_cost_cad": 1889848371.8484752,
+          "transport_cost_cad_gj": 17.40760272775244,
+          "transport_cost_cad_m3": 70.84894310195244,
+          "transport_energy_gj": 108564539.38,
+          "volume_distance_m3_km": 18518640631.83879
+        },
+        "SK": {
+          "assigned_m3": 4344697.6,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 281.2396493302,
+          "transport_cost_cad": 128620615.66590503,
+          "transport_cost_cad_gj": 7.2737207006604425,
+          "transport_cost_cad_m3": 29.604043251687997,
+          "transport_energy_gj": 17682919.231999997,
+          "volume_distance_m3_km": 1221901229.4697614
+        },
+        "YT": {
+          "assigned_m3": 43925.8,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 414.211719894,
+          "transport_cost_cad": 1883678.6950779296,
+          "transport_cost_cad_gj": 10.536411817222804,
+          "transport_cost_cad_m3": 42.88319609609682,
+          "transport_energy_gj": 178778.00600000002,
+          "volume_distance_m3_km": 18194581.165719867
+        }
+      },
+      "proxy_m3": 47463455.79230498,
+      "published_m3": 71513883.307695,
+      "share_ge_150_km": 0.838292177485786,
+      "share_ge_300_km": 0.5265099955809792,
+      "top5_share": 0.15746389255989904,
+      "transport_cost_cad": 4958493704.090264,
+      "transport_cost_cad_gj": 10.239791296509992,
+      "transport_cost_cad_high": 8179794857.723784,
+      "transport_cost_cad_low": 3015445228.7191954,
+      "transport_cost_cad_m3": 41.67595057679572,
+      "transport_energy_gj": 484237770.13700056,
+      "volume_distance_m3_km": 47843506815.642204,
+      "weighted_median_road_distance_km": 345.675232075
+    },
+    "v5": {
+      "assigned_m3": 118977339.10000008,
+      "cross_border_m3": 2325349.765417041,
+      "cross_border_share": 0.019544476141482636,
+      "distance_bands": {
+        "gt_100_le_150_km": 0.14749154780941975,
+        "gt_150_le_300_km": 0.18455788953418803,
+        "gt_300_km": 0.3016307527660268,
+        "gt_50_le_100_km": 0.2425078248437757,
+        "le_50_km": 0.12381198504658988
+      },
+      "facilities_used": 296,
+      "hhi": 0.008868045996237322,
+      "max_facility_share": 0.0430701556178253,
+      "mean_road_distance_km": 270.2894090513835,
+      "p90_road_distance_km": 635.737453852,
+      "province": {
+        "AB": {
+          "assigned_m3": 22891404.000000015,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 220.04873674226377,
+          "transport_cost_cad": 537793709.5177941,
+          "transport_cost_cad_gj": 5.772299792732807,
+          "transport_cost_cad_m3": 23.49326015642351,
+          "transport_energy_gj": 93168014.28000398,
+          "volume_distance_m3_km": 5037224532.456807
+        },
+        "BC": {
+          "assigned_m3": 39978577.00000001,
+          "cross_border_m3": 182193.06737861302,
+          "cross_border_share": 0.004557267442976096,
+          "mean_road_distance_km": 203.07051725838616,
+          "transport_cost_cad": 871442763.6120409,
+          "transport_cost_cad_gj": 5.355710913201633,
+          "transport_cost_cad_m3": 21.797743416731432,
+          "transport_energy_gj": 162712808.39000592,
+          "volume_distance_m3_km": 8118470310.644221
+        },
+        "MB": {
+          "assigned_m3": 1135235.800000003,
+          "cross_border_m3": 111891.751372363,
+          "cross_border_share": 0.09856256415835608,
+          "mean_road_distance_km": 693.9865141631486,
+          "transport_cost_cad": 80400452.28833002,
+          "transport_cost_cad_gj": 17.401152149755397,
+          "transport_cost_cad_m3": 70.82268924951961,
+          "transport_energy_gj": 4620409.7060010005,
+          "volume_distance_m3_km": 787838335.5952154
+        },
+        "NB": {
+          "assigned_m3": 6234700.000000001,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 89.7357695786916,
+          "transport_cost_cad": 65337515.089315996,
+          "transport_cost_cad_gj": 2.5748542048355905,
+          "transport_cost_cad_m3": 10.479656613680849,
+          "transport_energy_gj": 25375228.999999993,
+          "volume_distance_m3_km": 559475602.5922686
+        },
+        "NL": {
+          "assigned_m3": 1454037.5,
+          "cross_border_m3": 59324.80184219401,
+          "cross_border_share": 0.04080004940876285,
+          "mean_road_distance_km": 805.2335386016913,
+          "transport_cost_cad": 119132618.03206398,
+          "transport_cost_cad_gj": 20.13078309286496,
+          "transport_cost_cad_m3": 81.9322871879604,
+          "transport_energy_gj": 5917932.625000001,
+          "volume_distance_m3_km": 1170839761.3845568
+        },
+        "NS": {
+          "assigned_m3": 2388244.9999999995,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 47.85586757628332,
+          "transport_cost_cad": 15039620.943390997,
+          "transport_cost_cad_gj": 1.5472610896408656,
+          "transport_cost_cad_m3": 6.297352634838972,
+          "transport_energy_gj": 9720157.150000999,
+          "volume_distance_m3_km": 114291536.45972075
+        },
+        "NT": {
+          "assigned_m3": 36376.000000004,
+          "cross_border_m3": 36376.000000004,
+          "cross_border_share": 1.0,
+          "mean_road_distance_km": 973.871292734525,
+          "transport_cost_cad": 3592972.6827860004,
+          "transport_cost_cad_gj": 24.268591129288936,
+          "transport_cost_cad_m3": 98.77316590019808,
+          "transport_energy_gj": 148050.32000600002,
+          "volume_distance_m3_km": 35425542.14451498
+        },
+        "ON": {
+          "assigned_m3": 13493595.999999989,
+          "cross_border_m3": 558818.3809182879,
+          "cross_border_share": 0.04141359952664126,
+          "mean_road_distance_km": 337.88004641304093,
+          "transport_cost_cad": 475789493.0890021,
+          "transport_cost_cad_gj": 8.663487135198448,
+          "transport_cost_cad_m3": 35.26039264025709,
+          "transport_energy_gj": 54918935.71999902,
+          "volume_distance_m3_km": 4559216842.75882
+        },
+        "PE": {
+          "assigned_m3": 302210.40000000095,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 71.84563594756924,
+          "transport_cost_cad": 2627136.849132,
+          "transport_cost_cad_gj": 2.135889993595278,
+          "transport_cost_cad_m3": 8.693072273925688,
+          "transport_energy_gj": 1229996.327999,
+          "volume_distance_m3_km": 21712498.377969347
+        },
+        "QC": {
+          "assigned_m3": 26674334.00000001,
+          "cross_border_m3": 1376745.763905579,
+          "cross_border_share": 0.05161312608238235,
+          "mean_road_distance_km": 375.2485120494971,
+          "transport_cost_cad": 1040090046.4748242,
+          "transport_cost_cad_gj": 9.580384648750439,
+          "transport_cost_cad_m3": 38.99216552041463,
+          "transport_energy_gj": 108564539.38000101,
+          "volume_distance_m3_km": 10009504143.411314
+        },
+        "SK": {
+          "assigned_m3": 4344697.599999998,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 395.0716166256883,
+          "transport_cost_cad": 178010013.81340995,
+          "transport_cost_cad_gj": 10.066777520042232,
+          "transport_cost_cad_m3": 40.971784506569584,
+          "transport_energy_gj": 17682919.231999,
+          "volume_distance_m3_km": 1716466704.5817473
+        },
+        "YT": {
+          "assigned_m3": 43925.800000003015,
+          "cross_border_m3": 0.0,
+          "cross_border_share": 0.0,
+          "mean_road_distance_km": 633.9979109755998,
+          "transport_cost_cad": 2847796.3169980003,
+          "transport_cost_cad_gj": 15.929231904588582,
+          "transport_cost_cad_m3": 64.83197385130845,
+          "transport_energy_gj": 178778.00599900004,
+          "volume_distance_m3_km": 27848865.437933914
+        }
+      },
+      "proxy_m3": 64339745.3291373,
+      "published_m3": 54637593.77086278,
+      "share_ge_150_km": 0.48618864230021486,
+      "share_ge_300_km": 0.3016307527660268,
+      "top5_share": 0.1294318423906697,
+      "transport_cost_cad": 3392104138.70909,
+      "transport_cost_cad_gj": 7.005038326005199,
+      "transport_cost_cad_high": 5612177966.15524,
+      "transport_cost_cad_low": 2054957526.0094287,
+      "transport_cost_cad_m3": 28.51050598684206,
+      "transport_energy_gj": 484237770.13701564,
+      "volume_distance_m3_km": 32158314675.845085,
+      "weighted_median_road_distance_km": 147.21704839
+    }
+  },
+  "transport_cases": [
+    {
+      "assigned_m3": "100000000.1",
+      "assignment": "v6_centroid_local_first",
+      "cross_border_m3": "31333.500000000",
+      "cross_border_share": "0.000313335",
+      "evidence_label": "model_estimate",
+      "facilities_used": "185.000000000",
+      "hhi": "0.013539086",
+      "max_road_distance_km": "1201.811124768",
+      "mean_road_distance_km": "375.327185520",
+      "median_road_distance_km": "293.487154400",
+      "observed": "false",
+      "p90_road_distance_km": "719.174775170",
+      "policy_grade": "false",
+      "proxy_share_of_assigned": "0.397060678",
+      "scenario": "100m",
+      "share_ge_150_km": "0.820187028",
+      "share_ge_300_km": "0.477368802",
+      "top5_share": "0.156921384",
+      "transport_cost_cad": "3900002222.461255074",
+      "transport_cost_cad_gj": "9.582315033",
+      "transport_cost_cad_m3": "39.000022186"
+    },
+    {
+      "assigned_m3": "100000000.1",
+      "assignment": "v10_node_transport_aware",
+      "cross_border_m3": "1160530.029593304",
+      "cross_border_share": "0.011605300",
+      "evidence_label": "model_estimate",
+      "facilities_used": "270.000000000",
+      "hhi": "0.008742083",
+      "max_road_distance_km": "2354.373231653",
+      "mean_road_distance_km": "255.328366274",
+      "median_road_distance_km": "138.680484803",
+      "observed": "false",
+      "p90_road_distance_km": "611.709434325",
+      "policy_grade": "false",
+      "proxy_share_of_assigned": "0.541342527",
+      "scenario": "100m",
+      "share_ge_150_km": "0.456701832",
+      "share_ge_300_km": "0.273629432",
+      "top5_share": "0.122221955",
+      "transport_cost_cad": "2701643306.369927883",
+      "transport_cost_cad_gj": "6.637944235",
+      "transport_cost_cad_m3": "27.016433037"
+    },
+    {
+      "assigned_m3": "118977339.1",
+      "assignment": "v6_centroid_local_first",
+      "cross_border_m3": "36376.000000000",
+      "cross_border_share": "0.000305739",
+      "evidence_label": "model_estimate",
+      "facilities_used": "208.000000000",
+      "hhi": "0.012870376",
+      "max_road_distance_km": "1201.811124768",
+      "mean_road_distance_km": "402.122851104",
+      "median_road_distance_km": "345.675232075",
+      "observed": "false",
+      "p90_road_distance_km": "762.517038002",
+      "policy_grade": "false",
+      "proxy_share_of_assigned": "0.398928537",
+      "scenario": "119m",
+      "share_ge_150_km": "0.838292177",
+      "share_ge_300_km": "0.526509996",
+      "top5_share": "0.157463893",
+      "transport_cost_cad": "4958493704.090264320",
+      "transport_cost_cad_gj": "10.239791297",
+      "transport_cost_cad_m3": "41.675950577"
+    },
+    {
+      "assigned_m3": "118977339.1",
+      "assignment": "v10_node_transport_aware",
+      "cross_border_m3": "2325349.765417039",
+      "cross_border_share": "0.019544476",
+      "evidence_label": "model_estimate",
+      "facilities_used": "296.000000000",
+      "hhi": "0.008868046",
+      "max_road_distance_km": "2354.373231653",
+      "mean_road_distance_km": "270.289409051",
+      "median_road_distance_km": "147.217048390",
+      "observed": "false",
+      "p90_road_distance_km": "635.737453852",
+      "policy_grade": "false",
+      "proxy_share_of_assigned": "0.540773107",
+      "scenario": "119m",
+      "share_ge_150_km": "0.486188642",
+      "share_ge_300_km": "0.301630753",
+      "top5_share": "0.129431842",
+      "transport_cost_cad": "3392104138.709087849",
+      "transport_cost_cad_gj": "7.005038326",
+      "transport_cost_cad_m3": "28.510505987"
+    },
+    {
+      "assigned_m3": "150000000.2",
+      "assignment": "v6_centroid_local_first",
+      "cross_border_m3": "36376.000000000",
+      "cross_border_share": "0.000242507",
+      "evidence_label": "model_estimate",
+      "facilities_used": "242.000000000",
+      "hhi": "0.013504168",
+      "max_road_distance_km": "1201.811124768",
+      "mean_road_distance_km": "438.283497348",
+      "median_road_distance_km": "389.925655431",
+      "observed": "false",
+      "p90_road_distance_km": "831.606019450",
+      "policy_grade": "false",
+      "proxy_share_of_assigned": "0.438666332",
+      "scenario": "150m",
+      "share_ge_150_km": "0.850965981",
+      "share_ge_300_km": "0.567309812",
+      "top5_share": "0.175410549",
+      "transport_cost_cad": "6793065835.377274513",
+      "transport_cost_cad_gj": "11.127052951",
+      "transport_cost_cad_m3": "45.287105509"
+    },
+    {
+      "assigned_m3": "150000000.2",
+      "assignment": "v10_node_transport_aware",
+      "cross_border_m3": "11035938.683332562",
+      "cross_border_share": "0.073572924",
+      "evidence_label": "model_estimate",
+      "facilities_used": "333.000000000",
+      "hhi": "0.008579581",
+      "max_road_distance_km": "2354.373231653",
+      "mean_road_distance_km": "319.790277669",
+      "median_road_distance_km": "168.263820582",
+      "observed": "false",
+      "p90_road_distance_km": "775.996325258",
+      "policy_grade": "false",
+      "proxy_share_of_assigned": "0.529730131",
+      "scenario": "150m",
+      "share_ge_150_km": "0.559701015",
+      "share_ge_300_km": "0.339873097",
+      "top5_share": "0.122454589",
+      "transport_cost_cad": "5018080790.875671387",
+      "transport_cost_cad_gj": "8.219624544",
+      "transport_cost_cad_m3": "33.453871895"
+    }
+  ],
+  "v4_v5_comparison": {
+    "chain_comparison_csv": "v4_v5_chain_comparison.csv",
+    "facility_distribution_csv": "v4_v5_facility_distribution.csv",
+    "products_residue_invariant": true,
+    "transport_summary_csv": "transport_cost_summary.csv",
+    "v4_assignment": "assignment v6 centroid local-first",
+    "v5_assignment": "assignment v10 node transport-aware"
+  },
+  "validation": {
+    "checks": [
+      {
+        "detail": "assignment scenarios=['100m', '119m', '150m']",
+        "name": "scenario_coverage",
+        "status": "PASS"
+      },
+      {
+        "detail": "assigned + unassigned equals harvest in every scenario",
+        "name": "assignment_conservation",
+        "status": "PASS"
+      },
+      {
+        "detail": "every assignment row has finite capacity and assigned <= capacity",
+        "name": "capacity_bounds",
+        "status": "PASS"
+      },
+      {
+        "detail": "class feedstock and process residue conserve in every scenario",
+        "name": "product_residue_conservation",
+        "status": "PASS"
+      },
+      {
+        "detail": "100m < 119m < 150m for assigned volume, residue, products, and utilization",
+        "name": "scenario_ordering",
+        "status": "PASS"
+      },
+      {
+        "detail": "proxy share equals proxy volume / assigned volume and is in [0,1]",
+        "name": "proxy_share",
+        "status": "PASS"
+      },
+      {
+        "detail": "no assignment above capacity or offer; unassigned only with binding capacity",
+        "name": "no_overflow_unless_true",
+        "status": "PASS"
+      },
+      {
+        "detail": "all assignment and product/residue rows carry screening labels",
+        "name": "labels",
+        "status": "PASS"
+      },
+      {
+        "detail": "150m documented ceiling retained; 1.0/1.2 intensity screens infeasible and separate",
+        "name": "intensity_150m_separate",
+        "status": "PASS"
+      },
+      {
+        "detail": "119m rows are assignment v10 node transport-aware",
+        "name": "assignment_v10_119m",
+        "status": "PASS"
+      },
+      {
+        "detail": "v4 and v5 national products and residue are identical",
+        "name": "products_residue_invariant",
+        "status": "PASS"
+      },
+      {
+        "detail": "transport cost is separate from OSeCAN tiers",
+        "name": "transport_cost_summary",
+        "status": "PASS"
+      },
+      {
+        "detail": "100/119/150 rows use assignment v10 node transport-aware",
+        "name": "assignment_v10_all_cases",
+        "status": "PASS"
+      },
+      {
+        "detail": "119 rows are unchanged from frozen chain v8",
+        "name": "119_invariant_from_v8",
+        "status": "PASS"
+      },
+      {
+        "detail": "v6 and v9 products/residue are identical at each case",
+        "name": "products_residue_invariant_all_cases",
+        "status": "PASS"
+      }
+    ],
+    "failed_check_count": 0,
+    "passed": true
+  }
+}

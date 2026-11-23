@@ -2,6 +2,111 @@
   "artifact": "national_facility_assignment_v10",
   "artifact_version": "10.0.0",
   "can_assignment_reduce_677_km_node_mean": true,
+  "case_comparison_csv": "v10_case_comparison.csv",
+  "case_coverage": {
+    "capacity_change": false,
+    "cases": [
+      "100m",
+      "119m",
+      "150m"
+    ],
+    "method": "119 Mm3 node harvest vector scaled to each documented provincial allocation; same eligible facilities, capacity v3 bounds, 1.2x floor and transport cost v1 curve; node transport LP re-solved",
+    "primary_case": "119m",
+    "products_residue": "unchanged; assignment-only extension",
+    "transport_curve_change": false
+  },
+  "cases": {
+    "100m": {
+      "harvest_case_m3": 100000000.1,
+      "metrics": {
+        "assigned_m3": 100000000.1,
+        "assignments": 668.0,
+        "binding_facilities": 182.0,
+        "binding_volume_m3": 69281058.39882672,
+        "cross_border_m3": 1160530.0295933038,
+        "cross_border_share": 0.011605300284327739,
+        "facilities_used": 270.0,
+        "hhi": 0.008742083172767192,
+        "local_m3": 98839470.07040669,
+        "local_share": 0.9883946997156723,
+        "max_facility_share": 0.028646705510674556,
+        "max_road_distance_km": 2354.373231653,
+        "mean_road_distance_km": 255.32836627374957,
+        "median_road_distance_km": 138.680484803,
+        "p90_road_distance_km": 611.709434325,
+        "proxy_m3": 54134252.71820132,
+        "proxy_share_of_assigned": 0.5413425266406707,
+        "published_m3": 45865747.38179868,
+        "share_ge_150_km": 0.4567018322664644,
+        "share_ge_300_km": 0.2736294318456339,
+        "top5_share": 0.12222195462468143,
+        "total_volume_distance_m3_km": 25532836652.90779,
+        "transport_cost_cad": 2701643306.369928,
+        "transport_cost_cad_gj": 6.637944235057161,
+        "transport_cost_cad_m3": 27.016433036682848
+      }
+    },
+    "119m": {
+      "harvest_case_m3": 118977339.1,
+      "metrics": {
+        "assigned_m3": 118977339.10000001,
+        "assignments": 709.0,
+        "binding_facilities": 223.0,
+        "binding_volume_m3": 89297365.40071353,
+        "cross_border_m3": 2325349.7654170394,
+        "cross_border_share": 0.019544476141482636,
+        "facilities_used": 296.0,
+        "hhi": 0.008868045996237322,
+        "local_m3": 116651989.33458297,
+        "local_share": 0.9804555238585173,
+        "max_facility_share": 0.04307015561782529,
+        "max_road_distance_km": 2354.373231653,
+        "mean_road_distance_km": 270.28940905138364,
+        "median_road_distance_km": 147.21704839,
+        "p90_road_distance_km": 635.737453852,
+        "proxy_m3": 64339745.32913723,
+        "proxy_share_of_assigned": 0.5407731070120833,
+        "published_m3": 54637593.77086278,
+        "share_ge_150_km": 0.48618864230021475,
+        "share_ge_300_km": 0.30163075276602663,
+        "top5_share": 0.1294318423906697,
+        "total_volume_distance_m3_km": 32158314675.845085,
+        "transport_cost_cad": 3392104138.709088,
+        "transport_cost_cad_gj": 7.005038326005203,
+        "transport_cost_cad_m3": 28.51050598684206
+      }
+    },
+    "150m": {
+      "harvest_case_m3": 150000000.2,
+      "metrics": {
+        "assigned_m3": 150000000.20000002,
+        "assignments": 761.0,
+        "binding_facilities": 275.0,
+        "binding_volume_m3": 126554541.32609601,
+        "cross_border_m3": 11035938.683332562,
+        "cross_border_share": 0.07357292445745317,
+        "facilities_used": 333.0,
+        "hhi": 0.008579581181090328,
+        "local_m3": 138964061.51666746,
+        "local_share": 0.9264270755425468,
+        "max_facility_share": 0.0539540311643038,
+        "max_road_distance_km": 2354.373231653,
+        "mean_road_distance_km": 319.79027766904045,
+        "median_road_distance_km": 168.263820582,
+        "p90_road_distance_km": 775.996325258,
+        "proxy_m3": 79459519.77587157,
+        "proxy_share_of_assigned": 0.529730131132837,
+        "published_m3": 70540480.42412844,
+        "share_ge_150_km": 0.5597010153976162,
+        "share_ge_300_km": 0.3398730971256654,
+        "top5_share": 0.12245458902244107,
+        "total_volume_distance_m3_km": 47968541714.314125,
+        "transport_cost_cad": 5018080790.875671,
+        "transport_cost_cad_gj": 8.219624544119217,
+        "transport_cost_cad_m3": 33.45387189456598
+      }
+    }
+  },
   "caveats": [
     "Distances are haversine x facility-province factor screening distances, not observed routes for every node-facility pair.",
     "The 81-pair OSRM sample is an external check only; it does not route the 287k candidate node-facility pairs.",
@@ -10,7 +115,11 @@
     "The local-preference penalty is a soft 500 km cross-border cost penalty, not a legal or policy restriction.",
     "Capacity v3 and the 1.2x provincial floor are unchanged; no greenfield facility is added and no facility location is optimized.",
     "Products and residue are unchanged; this is an assignment-only screening rerun.",
-    "No national claim, policy claim, UI change, or official OSeCAN change is made."
+    "No national claim, policy claim, UI change, or official OSeCAN change is made.",
+    "The 100 and 150 Mm3 cases scale each province's node harvest vector from the 119 Mm3 allocation; within-province node shares are unchanged.",
+    "The 100/150 cases keep the 119 Mm3 eligible facility set, capacity bounds and 1.2x floor; no capacity or siting change is introduced.",
+    "The 100 and 150 Mm3 cases scale each province's node harvest vector from the 119 Mm3 allocation; within-province node shares are unchanged.",
+    "The 100/150 cases keep the 119 Mm3 eligible facility set, capacity bounds and 1.2x floor; no capacity or siting change is introduced."
   ],
   "comparison": [
     {
@@ -386,6 +495,7 @@
   "labels": {
     "assignment_change_vs_v9": true,
     "capacity_change": false,
+    "case_extension": true,
     "evidence_label": "model_estimate",
     "floor_change": false,
     "greenfield_siting": false,

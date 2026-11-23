@@ -1,6 +1,110 @@
 {
   "artifact": "national_facility_assignment_v10",
   "artifact_version": "10.0.0",
+  "case_coverage": {
+    "capacity_change": false,
+    "cases": [
+      "100m",
+      "119m",
+      "150m"
+    ],
+    "method": "119 Mm3 node harvest vector scaled to each documented provincial allocation; same eligible facilities, capacity v3 bounds, 1.2x floor and transport cost v1 curve; node transport LP re-solved",
+    "primary_case": "119m",
+    "products_residue": "unchanged; assignment-only extension",
+    "transport_curve_change": false
+  },
+  "cases": {
+    "100m": {
+      "harvest_case_m3": 100000000.1,
+      "metrics": {
+        "assigned_m3": 100000000.1,
+        "assignments": 668.0,
+        "binding_facilities": 182.0,
+        "binding_volume_m3": 69281058.39882672,
+        "cross_border_m3": 1160530.0295933038,
+        "cross_border_share": 0.011605300284327739,
+        "facilities_used": 270.0,
+        "hhi": 0.008742083172767192,
+        "local_m3": 98839470.07040669,
+        "local_share": 0.9883946997156723,
+        "max_facility_share": 0.028646705510674556,
+        "max_road_distance_km": 2354.373231653,
+        "mean_road_distance_km": 255.32836627374957,
+        "median_road_distance_km": 138.680484803,
+        "p90_road_distance_km": 611.709434325,
+        "proxy_m3": 54134252.71820132,
+        "proxy_share_of_assigned": 0.5413425266406707,
+        "published_m3": 45865747.38179868,
+        "share_ge_150_km": 0.4567018322664644,
+        "share_ge_300_km": 0.2736294318456339,
+        "top5_share": 0.12222195462468143,
+        "total_volume_distance_m3_km": 25532836652.90779,
+        "transport_cost_cad": 2701643306.369928,
+        "transport_cost_cad_gj": 6.637944235057161,
+        "transport_cost_cad_m3": 27.016433036682848
+      }
+    },
+    "119m": {
+      "harvest_case_m3": 118977339.1,
+      "metrics": {
+        "assigned_m3": 118977339.10000001,
+        "assignments": 709.0,
+        "binding_facilities": 223.0,
+        "binding_volume_m3": 89297365.40071353,
+        "cross_border_m3": 2325349.7654170394,
+        "cross_border_share": 0.019544476141482636,
+        "facilities_used": 296.0,
+        "hhi": 0.008868045996237322,
+        "local_m3": 116651989.33458297,
+        "local_share": 0.9804555238585173,
+        "max_facility_share": 0.04307015561782529,
+        "max_road_distance_km": 2354.373231653,
+        "mean_road_distance_km": 270.28940905138364,
+        "median_road_distance_km": 147.21704839,
+        "p90_road_distance_km": 635.737453852,
+        "proxy_m3": 64339745.32913723,
+        "proxy_share_of_assigned": 0.5407731070120833,
+        "published_m3": 54637593.77086278,
+        "share_ge_150_km": 0.48618864230021475,
+        "share_ge_300_km": 0.30163075276602663,
+        "top5_share": 0.1294318423906697,
+        "total_volume_distance_m3_km": 32158314675.845085,
+        "transport_cost_cad": 3392104138.709088,
+        "transport_cost_cad_gj": 7.005038326005203,
+        "transport_cost_cad_m3": 28.51050598684206
+      }
+    },
+    "150m": {
+      "harvest_case_m3": 150000000.2,
+      "metrics": {
+        "assigned_m3": 150000000.20000002,
+        "assignments": 761.0,
+        "binding_facilities": 275.0,
+        "binding_volume_m3": 126554541.32609601,
+        "cross_border_m3": 11035938.683332562,
+        "cross_border_share": 0.07357292445745317,
+        "facilities_used": 333.0,
+        "hhi": 0.008579581181090328,
+        "local_m3": 138964061.51666746,
+        "local_share": 0.9264270755425468,
+        "max_facility_share": 0.0539540311643038,
+        "max_road_distance_km": 2354.373231653,
+        "mean_road_distance_km": 319.79027766904045,
+        "median_road_distance_km": 168.263820582,
+        "p90_road_distance_km": 775.996325258,
+        "proxy_m3": 79459519.77587157,
+        "proxy_share_of_assigned": 0.529730131132837,
+        "published_m3": 70540480.42412844,
+        "share_ge_150_km": 0.5597010153976162,
+        "share_ge_300_km": 0.3398730971256654,
+        "top5_share": 0.12245458902244107,
+        "total_volume_distance_m3_km": 47968541714.314125,
+        "transport_cost_cad": 5018080790.875671,
+        "transport_cost_cad_gj": 8.219624544119217,
+        "transport_cost_cad_m3": 33.45387189456598
+      }
+    }
+  },
   "generated_utc": "2026-11-23T15:43:24+00:00",
   "inputs": {
     "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332",
@@ -18,6 +122,7 @@
   "labels": {
     "assignment_change_vs_v9": true,
     "capacity_change": false,
+    "case_extension": true,
     "evidence_label": "model_estimate",
     "floor_change": false,
     "greenfield_siting": false,
@@ -36,6 +141,14 @@
       "bytes": 6856,
       "sha256": "47418ab10dc6d63eac6901264db6b00e58a706a06c622cc3fd9a6731c175b89b"
     },
+    "case_summary_100m.json": {
+      "bytes": 2698,
+      "sha256": "7f8e5c4f80670c20fff1b9736ad902999d9b033071f2be1e0b567a3249d6995d"
+    },
+    "case_summary_150m.json": {
+      "bytes": 2712,
+      "sha256": "bd8b67e1e44714974dc235ef1836bf27e5894526584245a38f7a2fdd7ee17716"
+    },
     "distance_distribution.csv": {
       "bytes": 1239,
       "sha256": "76cb9e44949bf307af42e5e7e1eb8b2aa545ec13f27f8323960e97d99ec451ae"
@@ -45,20 +158,52 @@
       "sha256": "ea53e2398e66bb2f6e2c7dd3630525e293c1df1cfaa80ff7be97b2b93d66baf5"
     },
     "summary.json": {
-      "bytes": 44908,
-      "sha256": "0148b284ebf32b18c13bcd9f6de2477f92a94103de59e1903c53e59adcf60144"
+      "bytes": 49720,
+      "sha256": "2761da22e5cb5bd4bd013ff982aa72ebdae57202c467595a3cb98df69a88f9a1"
+    },
+    "v10_case_comparison.csv": {
+      "bytes": 3029,
+      "sha256": "a3052ba94e513c6d9122bd8523b97b9d89f24edf0e7e8d5985437cabd85490e0"
+    },
+    "v10_case_summary.csv": {
+      "bytes": 1298,
+      "sha256": "0b08542ad0b50483630c026c2db6fc4b5d24f136dd9ab5ce42c4e093cdad84bb"
     },
     "v10_facility_utilization.csv": {
       "bytes": 192476,
       "sha256": "3e0d06425e5b58f6a8b187538aced2385aeb225f1916567839647c418b8e9f1c"
     },
+    "v10_facility_utilization_100m.csv": {
+      "bytes": 192144,
+      "sha256": "9e1030a2b28bdc81ec2329f7a0f2b7f32a338a04f1fccc2d53c64884729a84f6"
+    },
+    "v10_facility_utilization_150m.csv": {
+      "bytes": 193091,
+      "sha256": "269f3628b066abdf42d0633daaf3b0b48877e1eba47c1d856d6bd8f70328f037"
+    },
     "v10_node_assignment.csv": {
       "bytes": 402872,
       "sha256": "54ed079b13e94ac20aa93509b914c64f4dcdece8b67eb92cc54a7a987a26acf2"
     },
+    "v10_node_assignment_100m.csv": {
+      "bytes": 379763,
+      "sha256": "ad1819591f702d742e45682092f2e31fe59b1e01a9cf2b013d3594876a21ef7e"
+    },
+    "v10_node_assignment_150m.csv": {
+      "bytes": 431976,
+      "sha256": "0929510c3b09c849a34784793ebc9c227fdb4addac0aa87f399ea490cee393b6"
+    },
     "v10_province_summary.csv": {
       "bytes": 4906,
       "sha256": "092ec7bfce6b54e60211637728d22b69ee6bebd8341fefc6bbf877b2fcc16156"
+    },
+    "v10_province_summary_100m.csv": {
+      "bytes": 4872,
+      "sha256": "c544a2acbfc74ae8ab02998746e511558f0ccb3a4515c3da0b6646322993c378"
+    },
+    "v10_province_summary_150m.csv": {
+      "bytes": 4942,
+      "sha256": "4fa2856dcd54b61d87d6445dd8ba503de6777f5b511b218ed9222c8fd15244a1"
     },
     "v9_node_fixed_rows.csv": {
       "bytes": 4454474,

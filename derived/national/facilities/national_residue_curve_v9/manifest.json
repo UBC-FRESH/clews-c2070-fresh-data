@@ -1,0 +1,51 @@
+{
+  "artifact": "national_residue_curve_v9",
+  "artifact_version": "9.0.0",
+  "assignment": {
+    "100m": "v10_node_transport_aware",
+    "119m": "v10_node_transport_aware",
+    "150m": "v10_node_transport_aware"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "NATIONAL_RESIDUE_CURVE_V9.md": {
+      "bytes": 457,
+      "sha256": "0a50eff230a60da16e7568ee4a7cbbad796a70d6d93b2c4e20c92b1507366737"
+    },
+    "national_residue_curve.csv": {
+      "bytes": 19853,
+      "sha256": "92e3f12f34a0d4d2a349e3e6c956055029632d2e9a20ca276cfad10daa517443"
+    },
+    "osecan_demand_context.csv": {
+      "bytes": 2867,
+      "sha256": "35fe3efe12984cb50c96930f42b4a502a3cfe906373a539de06751e05d1ec9c4"
+    },
+    "province_residue_curve.csv": {
+      "bytes": 184032,
+      "sha256": "5c454771aa63fa808984e12e6b08747ede3ae4b6c982953a066427fd9bc68587"
+    },
+    "scenario_residue_curve.csv": {
+      "bytes": 83765,
+      "sha256": "20ecc8caf5fc748e0e46f8c66c68b6f8fdf91c9df0ca308ad52fa0a138b17ada"
+    },
+    "summary.json": {
+      "bytes": 2494,
+      "sha256": "5b95fe3f5da321fca9d904e1d21d92a1e28274d0dc384525d11d8760d240d5cb"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_residue_curve_v9",
+  "scenario_order": [
+    "100m",
+    "119m",
+    "150m"
+  ],
+  "status": "complete"
+}

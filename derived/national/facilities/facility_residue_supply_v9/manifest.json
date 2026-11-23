@@ -1,0 +1,60 @@
+{
+  "artifact": "facility_residue_supply_v9",
+  "artifact_version": "9.0.0",
+  "assignment": {
+    "100m": "v10_node_transport_aware",
+    "119m": "v10_node_transport_aware",
+    "150m": "v10_node_transport_aware",
+    "baseline": "v6_centroid_local_first"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "FACILITY_RESIDUE_SUPPLY_V9.md": {
+      "bytes": 394,
+      "sha256": "a3db5000b200674f916c39f1bcfc913b80b381b42cc9bf8d359bf7d04f23137a"
+    },
+    "facility_residue_supply.csv": {
+      "bytes": 734458,
+      "sha256": "ef8a8526da8dd10bcbde81a783e2cdd8cb16a0810c1444f5f4c20c657ff2829b"
+    },
+    "facility_transport.csv": {
+      "bytes": 506515,
+      "sha256": "45066b23cde38868f675c600806726eaa62b50d38141aabff3f0f9468233c0b9"
+    },
+    "national_residue_summary.csv": {
+      "bytes": 7331,
+      "sha256": "ce850ab3d5c78c4f59eff55e3e50b34683773ce89f1bdc11f609af587f3e79a8"
+    },
+    "province_residue_supply.csv": {
+      "bytes": 7511,
+      "sha256": "1923592aea9d3b00340d6206b3101eecdb11c21745b90fa0f4af9bfcfc26bd74"
+    },
+    "summary.json": {
+      "bytes": 7303,
+      "sha256": "d8c5e87f4403f460e566ef5dda08d79377b6b7c1c9c79f040d75e4f1819aa927"
+    },
+    "transport_cost_summary.csv": {
+      "bytes": 11982,
+      "sha256": "f70eb5cd2b2fab7a8436d66e3f11e0a799c83b058697924a475109aad849df52"
+    },
+    "v6_v10_case_comparison.csv": {
+      "bytes": 6418,
+      "sha256": "a532554bf8a1b20be702566d38a4513b5e78ff1dc433e665be15056dd0d76dd5"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_residue_supply_v9",
+  "scenario_order": [
+    "100m",
+    "119m",
+    "150m"
+  ],
+  "status": "complete"
+}
