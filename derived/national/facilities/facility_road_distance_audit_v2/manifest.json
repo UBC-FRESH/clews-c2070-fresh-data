@@ -1,0 +1,122 @@
+{
+  "artifact": "facility_road_distance_audit_v2",
+  "artifact_version": "2.0.0",
+  "factors_fitted": 11,
+  "generated_utc": "2026-11-23T13:48:32+00:00",
+  "inputs": {
+    "canada_adm1_geoboundaries_simplified": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "role": "input",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "national_facility_assignment_v6": {
+      "path": "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv",
+      "role": "context",
+      "sha256": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06"
+    },
+    "national_facility_capacity_v3": {
+      "path": "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv",
+      "role": "input",
+      "sha256": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f"
+    }
+  },
+  "labels": {
+    "assignment_change": false,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "FACILITY_ROAD_DISTANCE_AUDIT_V2.md": {
+      "bytes": 4973,
+      "sha256": "9a4d796893cd310b9d5adc66905a020383d786314a9bc0be2a26928aff155604"
+    },
+    "facility_road_distance_sample.csv": {
+      "bytes": 26598,
+      "sha256": "92a5f1d768a1da0c7049e77225550e88d7f2bfff39fa80c8abcec48266bbff90"
+    },
+    "osrm_routes.json": {
+      "bytes": 97084,
+      "sha256": "f9efcdc6a4b0d6440e9e9a1bf6535bf3eea5254aa4a7c44224892aa705b48808"
+    },
+    "provenance.csv": {
+      "bytes": 1707,
+      "sha256": "481cc6978e0e27e7b3d4ebb31a4c9e4caf0856559af9aafdacd42839af67a90e"
+    },
+    "province_road_factors.csv": {
+      "bytes": 6194,
+      "sha256": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332"
+    },
+    "summary.json": {
+      "bytes": 25048,
+      "sha256": "bd1854056dce2db3bf67e9f93309dd94ca17b167aa85328bf02b5e175ba29814"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_road_distance_audit_v2",
+  "routing": {
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "base_url": "https://router.project-osrm.org",
+    "licence": "ODbL-1.0",
+    "profile": "driving",
+    "provider": "OSRM public demo server",
+    "rate_limit_seconds": 1.2,
+    "requests_attempted": 81,
+    "requests_failed": 0,
+    "requests_ok": 81
+  },
+  "sample": {
+    "n_pairs": 81,
+    "per_province_counts": {
+      "AB": 10,
+      "BC": 10,
+      "MB": 5,
+      "NB": 10,
+      "NL": 10,
+      "NS": 10,
+      "NT": 0,
+      "NU": 0,
+      "ON": 10,
+      "PE": 2,
+      "QC": 10,
+      "SK": 3,
+      "YT": 1
+    },
+    "per_province_target": 10,
+    "provinces": [
+      "BC",
+      "AB",
+      "SK",
+      "MB",
+      "ON",
+      "QC",
+      "NB",
+      "NS",
+      "PE",
+      "NL",
+      "YT",
+      "NT",
+      "NU"
+    ]
+  },
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "facility_census": true,
+      "factor_arithmetic": true,
+      "factor_bounds": true,
+      "factor_finite": true,
+      "labels": true,
+      "no_assignment_change": true,
+      "no_nan_or_negative": true,
+      "per_province_count": true,
+      "positive_haversine": true,
+      "province_factor_coverage": true,
+      "ratio_arithmetic": true,
+      "repository_hygiene": true,
+      "sample_pair_count": true,
+      "sample_provinces": true,
+      "unique_facilities": true
+    }
+  }
+}

@@ -1,0 +1,534 @@
+{
+  "artifact": "national_facility_assignment_v8",
+  "artifact_version": "8.0.0",
+  "coverage": {
+    "after": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 104733008.0,
+      "proxy_records": 241,
+      "proxy_share_of_capacity": 0.3859818436002548,
+      "proxy_share_of_records": 0.3497822931785196,
+      "published_capacity_m3_y": 166608791.456421,
+      "published_records": 433,
+      "published_share_of_capacity": 0.6140181563997451,
+      "published_share_of_records": 0.6284470246734397,
+      "records_by_class": {
+        "BIO": 47,
+        "OTHER": 15,
+        "PANEL": 39,
+        "PELLET": 59,
+        "PULP": 62,
+        "SAW": 467
+      },
+      "records_by_province": {
+        "AB": 20,
+        "BC": 276,
+        "MB": 5,
+        "NB": 24,
+        "NL": 12,
+        "NS": 20,
+        "NT": 0,
+        "NU": 0,
+        "ON": 38,
+        "PE": 2,
+        "QC": 288,
+        "SK": 3,
+        "YT": 1
+      },
+      "records_total": 689,
+      "total_capacity_m3_y": 271341799.456421
+    },
+    "before": {
+      "not_published_records": 15,
+      "proxy_capacity_m3_y": 120240586.0,
+      "proxy_records": 292,
+      "proxy_share_of_capacity": 0.5452450705539271,
+      "proxy_share_of_records": 0.5626204238921002,
+      "published_capacity_m3_y": 100285178.456421,
+      "published_records": 212,
+      "published_share_of_capacity": 0.45475492944607276,
+      "published_share_of_records": 0.40847784200385356,
+      "records_by_class": {
+        "BIO": 27,
+        "OTHER": 15,
+        "PANEL": 22,
+        "PELLET": 47,
+        "PULP": 45,
+        "SAW": 363
+      },
+      "records_total": 519,
+      "total_capacity_m3_y": 220525764.45642102
+    }
+  },
+  "distance_comparison": {
+    "assignment_changed": false,
+    "changed_provinces": [],
+    "moved_volume_m3": 0.0,
+    "n_distance_changed": 208,
+    "n_rows_added": 0,
+    "n_rows_common": 208,
+    "n_rows_removed": 0,
+    "n_rows_v6": 208,
+    "n_rows_v8": 208
+  },
+  "generated_utc": "2026-11-23T13:59:03+00:00",
+  "inputs": {
+    "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332",
+    "data/derived/national/facilities/facility_road_distance_audit_v2/summary.json": "bd1854056dce2db3bf67e9f93309dd94ca17b167aa85328bf02b5e175ba29814",
+    "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06",
+    "data/derived/national/facilities/national_facility_assignment_v6/summary.json": "db4de65fe9d85365dffbc17503098520ff48d89a341ac58e2e9ae40dcd3062d4",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/national_facility_capacity_v3/summary.json": "69bae448b119393f3167e64364ac14da4b20584ca716b84cd30df63308c83c80",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "assignment_change_vs_v6": false,
+    "capacity_change": false,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "product_change": false,
+    "residue_change": false
+  },
+  "outputs": {
+    "NATIONAL_FACILITY_ASSIGNMENT_V8.md": {
+      "bytes": 6588,
+      "sha256": "b7c233e4209d21cdefca6bb230cf5616598910381bc0a812dcf1622883b499ab"
+    },
+    "capacity_floor.csv": {
+      "bytes": 2206,
+      "sha256": "30dbf5e6e4a7c03a62b652c757b99f86088b0ffce343c9a0188a5857b7e772e5"
+    },
+    "capacity_floor_facilities.csv": {
+      "bytes": 170722,
+      "sha256": "6318b705225f3dd8f1fd4d08bdabe6c44e52e0f90bec4188b5668e1bc0e001f1"
+    },
+    "concentration.csv": {
+      "bytes": 114605,
+      "sha256": "9d670d0010666f1af14ae6cdd2fbdfedc72aa398142c4f60a20eb2ccedba0570"
+    },
+    "facility_assignment.csv": {
+      "bytes": 342551,
+      "sha256": "2f3584d84d08784a48eab51aa255455682aa46d938f3e98339f208d6dec344c5"
+    },
+    "facility_distance_comparison.csv": {
+      "bytes": 43304,
+      "sha256": "39420cedfd9cb4fd64d8ee2e946233a99be8784402a6ef363233a96971cd17a3"
+    },
+    "facility_utilization.csv": {
+      "bytes": 709718,
+      "sha256": "bf430a43a847f22967e65bc1a374ba5a7de4da1896648b62fa84c02f817f3fb9"
+    },
+    "province_capacity_comparison.csv": {
+      "bytes": 2031,
+      "sha256": "8c89308d0e09dd194411757c7c414a62ba896080408cbdd706a135f1858a2bde"
+    },
+    "province_class_totals.csv": {
+      "bytes": 7232,
+      "sha256": "57aab6abca25283a904e5684abf5212c6f6bccb48a27929f591bab0830f0065f"
+    },
+    "province_distance_comparison.csv": {
+      "bytes": 1874,
+      "sha256": "ee70c74491cbec5df58e586f858e37465e79c1e78248f0503ba869232e738f8e"
+    },
+    "province_factor_comparison.csv": {
+      "bytes": 2061,
+      "sha256": "78d52bbeb7069432a3bf44f140a44544b6045363759b01ca357e9850cbf0a878"
+    },
+    "province_summary.csv": {
+      "bytes": 6480,
+      "sha256": "28073ce62cfca39aacec46456cb7460c00e1cb421fdf8f54319c3dfbd3191b3f"
+    },
+    "scenario_comparison.csv": {
+      "bytes": 963,
+      "sha256": "f6e5c376a11e67b3497049192bc067e0b0a79b5b10fb786547bd891a469a7824"
+    },
+    "summary.json": {
+      "bytes": 629271,
+      "sha256": "c80e8cae9dec2b91141bee6b8bd1b4a5f85a1eac3a5cc837f8e5bd9e4874ddf4"
+    },
+    "unassigned.csv": {
+      "bytes": 198,
+      "sha256": "a9769295b8219509ef6bfcb8e011ba2810419debe1b203aafde6f8fa44f13f9a"
+    },
+    "v6_v8_comparison.csv": {
+      "bytes": 1641,
+      "sha256": "4fee732e6a26712ed3c9071ffbd75695314ffa37c501a9aa048a970bba8ef694"
+    }
+  },
+  "province_distance_comparison": [
+    {
+      "delta_total_volume_distance_m3_km": "1467778644.380371",
+      "delta_volume_weighted_mean_road_distance_km": "36.714129",
+      "delta_volume_weighted_mean_road_distance_pct": "13.403584",
+      "n_distance_changed": 53,
+      "n_rows_common": 53,
+      "n_rows_v6": 53,
+      "n_rows_v8": 53,
+      "province": "BC",
+      "v6_assigned_m3": "39978577",
+      "v6_total_volume_distance_m3_km": "10950642795.524963",
+      "v6_volume_weighted_mean_road_distance_km": "273.912771",
+      "v8_assigned_m3": "39978577",
+      "v8_total_volume_distance_m3_km": "12418421439.905334",
+      "v8_volume_weighted_mean_road_distance_km": "310.6269"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "18670268.012825",
+      "delta_volume_weighted_mean_road_distance_km": "0.815602",
+      "delta_volume_weighted_mean_road_distance_pct": "0.351283",
+      "n_distance_changed": 16,
+      "n_rows_common": 16,
+      "n_rows_v6": 16,
+      "n_rows_v8": 16,
+      "province": "AB",
+      "v6_assigned_m3": "22891403.999999",
+      "v6_total_volume_distance_m3_km": "5314879028.99591",
+      "v6_volume_weighted_mean_road_distance_km": "232.17794",
+      "v8_assigned_m3": "22891403.999999",
+      "v8_total_volume_distance_m3_km": "5333549297.008735",
+      "v8_volume_weighted_mean_road_distance_km": "232.993542"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "90706371.238617",
+      "delta_volume_weighted_mean_road_distance_km": "20.877488",
+      "delta_volume_weighted_mean_road_distance_pct": "7.42338",
+      "n_distance_changed": 3,
+      "n_rows_common": 3,
+      "n_rows_v6": 3,
+      "n_rows_v8": 3,
+      "province": "SK",
+      "v6_assigned_m3": "4344697.6",
+      "v6_total_volume_distance_m3_km": "1221901229.469762",
+      "v6_volume_weighted_mean_road_distance_km": "281.239649",
+      "v8_assigned_m3": "4344697.6",
+      "v8_total_volume_distance_m3_km": "1312607600.708379",
+      "v8_volume_weighted_mean_road_distance_km": "302.117137"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "96122111.406486",
+      "delta_volume_weighted_mean_road_distance_km": "84.671494",
+      "delta_volume_weighted_mean_road_distance_pct": "12.027741",
+      "n_distance_changed": 5,
+      "n_rows_common": 5,
+      "n_rows_v6": 5,
+      "n_rows_v8": 5,
+      "province": "MB",
+      "v6_assigned_m3": "1135235.799999",
+      "v6_total_volume_distance_m3_km": "799170087.893639",
+      "v6_volume_weighted_mean_road_distance_km": "703.968363",
+      "v8_assigned_m3": "1135235.799999",
+      "v8_total_volume_distance_m3_km": "895292199.300125",
+      "v8_volume_weighted_mean_road_distance_km": "788.639857"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "410360276.200302",
+      "delta_volume_weighted_mean_road_distance_km": "30.411484",
+      "delta_volume_weighted_mean_road_distance_pct": "4.536686",
+      "n_distance_changed": 30,
+      "n_rows_common": 30,
+      "n_rows_v6": 30,
+      "n_rows_v8": 30,
+      "province": "ON",
+      "v6_assigned_m3": "13493595.999996",
+      "v6_total_volume_distance_m3_km": "9045376255.821836",
+      "v6_volume_weighted_mean_road_distance_km": "670.345863",
+      "v8_assigned_m3": "13493595.999996",
+      "v8_total_volume_distance_m3_km": "9455736532.022139",
+      "v8_volume_weighted_mean_road_distance_km": "700.757347"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "15923651135.891476",
+      "delta_volume_weighted_mean_road_distance_km": "596.965275",
+      "delta_volume_weighted_mean_road_distance_pct": "85.987149",
+      "n_distance_changed": 65,
+      "n_rows_common": 65,
+      "n_rows_v6": 65,
+      "n_rows_v8": 65,
+      "province": "QC",
+      "v6_assigned_m3": "26674334",
+      "v6_total_volume_distance_m3_km": "18518640631.838795",
+      "v6_volume_weighted_mean_road_distance_km": "694.24941",
+      "v8_assigned_m3": "26674334",
+      "v8_total_volume_distance_m3_km": "34442291767.73027",
+      "v8_volume_weighted_mean_road_distance_km": "1291.214685"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "125277020.702836",
+      "delta_volume_weighted_mean_road_distance_km": "20.093512",
+      "delta_volume_weighted_mean_road_distance_pct": "14.467287",
+      "n_distance_changed": 22,
+      "n_rows_common": 22,
+      "n_rows_v6": 22,
+      "n_rows_v8": 22,
+      "province": "NB",
+      "v6_assigned_m3": "6234700",
+      "v6_total_volume_distance_m3_km": "865933065.802349",
+      "v6_volume_weighted_mean_road_distance_km": "138.889292",
+      "v8_assigned_m3": "6234700",
+      "v8_total_volume_distance_m3_km": "991210086.505185",
+      "v8_volume_weighted_mean_road_distance_km": "158.982804"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "-10774150.419269",
+      "delta_volume_weighted_mean_road_distance_km": "-4.511325",
+      "delta_volume_weighted_mean_road_distance_pct": "-7.381424",
+      "n_distance_changed": 8,
+      "n_rows_common": 8,
+      "n_rows_v6": 8,
+      "n_rows_v8": 8,
+      "province": "NS",
+      "v6_assigned_m3": "2388245",
+      "v6_total_volume_distance_m3_km": "145963026.534464",
+      "v6_volume_weighted_mean_road_distance_km": "61.117275",
+      "v8_assigned_m3": "2388245",
+      "v8_total_volume_distance_m3_km": "135188876.115195",
+      "v8_volume_weighted_mean_road_distance_km": "56.60595"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "-3415770.814384",
+      "delta_volume_weighted_mean_road_distance_km": "-11.302625",
+      "delta_volume_weighted_mean_road_distance_pct": "-14.602197",
+      "n_distance_changed": 2,
+      "n_rows_common": 2,
+      "n_rows_v6": 2,
+      "n_rows_v8": 2,
+      "province": "PE",
+      "v6_assigned_m3": "302210.4",
+      "v6_total_volume_distance_m3_km": "23392170.532096",
+      "v6_volume_weighted_mean_road_distance_km": "77.403592",
+      "v8_assigned_m3": "302210.4",
+      "v8_total_volume_distance_m3_km": "19976399.717712",
+      "v8_volume_weighted_mean_road_distance_km": "66.100967"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "485158473.552365",
+      "delta_volume_weighted_mean_road_distance_km": "333.662972",
+      "delta_volume_weighted_mean_road_distance_pct": "54.165477",
+      "n_distance_changed": 2,
+      "n_rows_common": 2,
+      "n_rows_v6": 2,
+      "n_rows_v8": 2,
+      "province": "NL",
+      "v6_assigned_m3": "1454037.5",
+      "v6_total_volume_distance_m3_km": "895696860.582544",
+      "v6_volume_weighted_mean_road_distance_km": "616.006713",
+      "v8_assigned_m3": "1454037.5",
+      "v8_total_volume_distance_m3_km": "1380855334.13491",
+      "v8_volume_weighted_mean_road_distance_km": "949.669685"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "5950838.089831",
+      "delta_volume_weighted_mean_road_distance_km": "135.47478",
+      "delta_volume_weighted_mean_road_distance_pct": "32.706651",
+      "n_distance_changed": 1,
+      "n_rows_common": 1,
+      "n_rows_v6": 1,
+      "n_rows_v8": 1,
+      "province": "YT",
+      "v6_assigned_m3": "43925.8",
+      "v6_total_volume_distance_m3_km": "18194581.16572",
+      "v6_volume_weighted_mean_road_distance_km": "414.21172",
+      "v8_assigned_m3": "43925.8",
+      "v8_total_volume_distance_m3_km": "24145419.25555",
+      "v8_volume_weighted_mean_road_distance_km": "549.6865"
+    },
+    {
+      "delta_total_volume_distance_m3_km": "153570.687742",
+      "delta_volume_weighted_mean_road_distance_km": "4.221759",
+      "delta_volume_weighted_mean_road_distance_pct": "0.351283",
+      "n_distance_changed": 1,
+      "n_rows_common": 1,
+      "n_rows_v6": 1,
+      "n_rows_v8": 1,
+      "province": "NT",
+      "v6_assigned_m3": "36376",
+      "v6_total_volume_distance_m3_km": "43717081.474561",
+      "v6_volume_weighted_mean_road_distance_km": "1201.811125",
+      "v8_assigned_m3": "36376",
+      "v8_total_volume_distance_m3_km": "43870652.162302",
+      "v8_volume_weighted_mean_road_distance_km": "1206.032883"
+    }
+  ],
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_facility_assignment_v8",
+  "scenarios": {
+    "province_capacity_floor": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 208,
+      "cross_border_m3": 36376.0,
+      "cross_border_share": 0.00030573889343269063,
+      "facilities_used": 208,
+      "hhi": 0.01287037617184876,
+      "local_m3": 118940963.10000001,
+      "local_share": 0.9996942611065673,
+      "max_facility_m3": 8093104.685436377,
+      "max_facility_share": 0.0680222363910337,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 47463455.79230501,
+      "proxy_share_of_assigned": 0.39892853673935463,
+      "published_m3": 71513883.307695,
+      "published_share": 0.6010714632606453,
+      "scaled_proxy_m3": 38034798.630767,
+      "scenario": "province_capacity_floor",
+      "top5_share": 0.15746389255989904,
+      "unassigned_m3": 0.0,
+      "unassigned_provinces": 0
+    },
+    "published_only": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 264,
+      "cross_border_m3": 47463455.792305,
+      "cross_border_share": 0.3989285367393546,
+      "facilities_used": 259,
+      "hhi": 0.008671584465293957,
+      "local_m3": 71513883.307695,
+      "local_share": 0.6010714632606454,
+      "max_facility_m3": 3498279.5,
+      "max_facility_share": 0.02940290585133787,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 0.0,
+      "proxy_share_of_assigned": 0.0,
+      "published_m3": 118977339.10000001,
+      "published_share": 1.0,
+      "scaled_proxy_m3": 0.0,
+      "scenario": "published_only",
+      "top5_share": 0.11543785915151634,
+      "unassigned_m3": 0.0,
+      "unassigned_provinces": 0
+    },
+    "published_plus_proxy": {
+      "assigned_m3": 118977339.10000001,
+      "assigned_share": 1.0000000000000002,
+      "assignment_rows": 265,
+      "cross_border_m3": 21901937.630767003,
+      "cross_border_share": 0.18408495093640065,
+      "facilities_used": 264,
+      "hhi": 0.007546139880317074,
+      "local_m3": 97075401.469233,
+      "local_share": 0.8159150490635994,
+      "max_facility_m3": 2162922.563248,
+      "max_facility_share": 0.018179281698593643,
+      "offer_m3": 118977339.1,
+      "province_rows": 13,
+      "proxy_m3": 40318991.203272,
+      "proxy_share_of_assigned": 0.3388795841986686,
+      "published_m3": 78658347.89672801,
+      "published_share": 0.6611204158013314,
+      "scaled_proxy_m3": 0.0,
+      "scenario": "published_plus_proxy",
+      "top5_share": 0.07978889576454648,
+      "unassigned_m3": 0.0,
+      "unassigned_provinces": 0
+    }
+  },
+  "v6_v8_comparison": {
+    "assigned_m3": {
+      "delta": "0",
+      "v6": "118977339.1",
+      "v8": "118977339.1"
+    },
+    "cross_border_m3": {
+      "delta": "0",
+      "v6": "36376",
+      "v8": "36376"
+    },
+    "cross_border_share": {
+      "delta": "0",
+      "v6": "0.000306",
+      "v8": "0.000306"
+    },
+    "facilities_used": {
+      "delta": "0",
+      "v6": "208",
+      "v8": "208"
+    },
+    "hhi": {
+      "delta": "0",
+      "v6": "0.01287",
+      "v8": "0.01287"
+    },
+    "local_m3": {
+      "delta": "0",
+      "v6": "118940963.1",
+      "v8": "118940963.1"
+    },
+    "local_share": {
+      "delta": "0",
+      "v6": "0.999694",
+      "v8": "0.999694"
+    },
+    "max_facility_m3": {
+      "delta": "0",
+      "v6": "8093104.685436",
+      "v8": "8093104.685436"
+    },
+    "max_facility_share": {
+      "delta": "0",
+      "v6": "0.068022",
+      "v8": "0.068022"
+    },
+    "max_row_road_distance_km": {
+      "delta": "325.214032",
+      "v6": "1201.811125",
+      "v8": "1527.025157"
+    },
+    "median_row_road_distance_km": {
+      "delta": "16.95391",
+      "v6": "525.318549",
+      "v8": "542.272459"
+    },
+    "proxy_m3": {
+      "delta": "0",
+      "v6": "47463455.792305",
+      "v8": "47463455.792305"
+    },
+    "proxy_share_of_assigned": {
+      "delta": "0",
+      "v6": "0.398929",
+      "v8": "0.398929"
+    },
+    "published_m3": {
+      "delta": "0",
+      "v6": "71513883.307695",
+      "v8": "71513883.307695"
+    },
+    "top5_share": {
+      "delta": "0",
+      "v6": "0.157464",
+      "v8": "0.157464"
+    },
+    "total_volume_distance_m3_km": {
+      "delta": "18609638788.929497",
+      "v6": "47843506815.642181",
+      "v8": "66453145604.571678"
+    },
+    "unassigned_m3": {
+      "delta": "0",
+      "v6": "0",
+      "v8": "0"
+    },
+    "volume_weighted_mean_road_distance_km": {
+      "delta": "156.413305",
+      "v6": "402.122851",
+      "v8": "558.536156"
+    }
+  },
+  "validation": {
+    "assignment_conservation": true,
+    "capacity_bounds": true,
+    "capacity_floor_unchanged": true,
+    "conservation_gap_m3": true,
+    "distance_comparison_rows": true,
+    "factor_coverage": true,
+    "local_first": true,
+    "local_plus_cross_equals_assigned": true,
+    "no_nan_or_negative": true
+  }
+}
