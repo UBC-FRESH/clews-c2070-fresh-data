@@ -1,0 +1,40 @@
+column,dtype,unit,description,source_field,nullable,constraint
+tree_record_id,string,none,Deterministic MAGPlot measurement key.,magp_site_id:plot_type_id:meas_num:tree_num,always,
+jurisdiction,string,none,Province or territory code.,province,always,"QC, NB or YT"
+source_program,string,none,Tier-1 MAGPlot source program.,sources,always,"QC_PSP, NB_CLI or YT_PSP"
+magp_site_id,string,none,MAGPlot site identifier.,magp_site_id,always,
+source_plot,string,none,Contributor plot identifier.,source_plot,always,PEP id_pe for QC_PSP
+plot_id,string,none,MAGPlot plot identifier (constant across visits).,plot_id,always,
+plot_type_id,string,none,MAGPlot plot type.,plot_type_id,always,"L1_I, L2_I, S1_I"
+plot_type_group,string,none,Large or small tree plot.,derived from plot_type_id,always,large or small
+meas_num,integer,none,"MAGPlot measurement number, 0 at establishment.",meas_num,always,
+meas_year,integer,year,Measurement year.,meas_year,always,
+meas_month,integer,month,Measurement month; missing sentinel removed.,meas_month,nullable,
+plot_area_ha,number,ha,Fixed-area plot size.,meas_plot_size,always,positive
+tree_num,integer,none,MAGPlot tree number within plot type.,tree_num,always,positive
+tracked_tree,boolean,none,"True when tree_num < 8,000,000.",derived from tree_num,always,
+species_gsv,string,none,"Genus, species and variety code.",species_gsv,always,
+species_g,string,none,Genus code.,species_g,always,
+species_s,string,none,Species code.,species_s,always,
+species_v,string,none,Variety code.,species_v,always,
+dbh_cm,number,cm,Diameter at breast height; non-positive sentinels excluded.,dbh,always,positive
+dbh_basis,string,none,Measured or estimated DBH.,meas_est_dbh,always,"measured, estimated or unknown"
+height_m,number,m,Total tree height; -1 and -9 sentinels become empty.,height,nullable,positive when present
+height_basis,string,none,"Measured, estimated or calculated height.",meas_est_height,always,"measured, estimated, calculated or missing"
+crown_class,string,none,Crown class label.,crown_class,always,code label or unknown
+stem_cond,string,none,Stem condition label.,stem_cond,always,code label or unknown
+tree_status,string,none,Tree status label.,tree_status,always,"live_standing, live, live_fallen, dead_standing or unknown"
+live_standing,boolean,none,True for tree_status LS or L (live standing/unspecified).,derived from tree_status,always,
+expansion_factor_stems_ha,number,stems/ha,Per-tree expansion supplied by MAGPlot.,stem_ha,always,positive
+basal_area_m2,number,m2,Derived individual basal area from DBH.,pi*(dbh_cm/200)^2,always,non-negative
+basal_area_m2_ha,number,m2/ha,Expanded basal area.,basal_area_m2*stem_ha,always,non-negative
+expansion_area_mismatch,boolean,none,True when stem_ha differs from 1/plot_area_ha by more than 1%.,derived,always,
+taglimit_dbh_cm,number,cm,Plot DBH tagging limit.,taglimit_dbh,nullable,non-negative when present
+taglimit_height_m,number,m,Plot height tagging limit.,taglimit_height,nullable,non-negative when present
+provenance_id,string,none,Short provenance key resolved in sources.csv and manifest.json.,constant,always,
+licence,string,none,Source licence short code.,constant,always,OGL-Canada
+access_tier,integer,none,MAGPlot access tier.,constant,always,1
+measured_tree_list,boolean,none,"Row is a measured tree record, not a model output.",constant,always,true
+open_data,boolean,none,Row comes from an open Tier-1 source.,constant,always,true
+model_estimate,boolean,none,Row contains no model estimate.,constant,always,false
+national_claim,boolean,none,Row supports no national claim.,constant,always,false
