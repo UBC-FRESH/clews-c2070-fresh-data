@@ -1,0 +1,83 @@
+{
+  "artifact": "open_data_imputation_v3",
+  "checks": {
+    "coefficients_conserved": true,
+    "density_labels_present": true,
+    "density_targets_positive": true,
+    "expansion_totals_match_density": true,
+    "labels_not_national_claim": true,
+    "nine_provinces": true,
+    "no_dua_dependency": true,
+    "no_measured_or_national_claim": true,
+    "no_official_osecan_change": true,
+    "numeric_summary_non_negative": true,
+    "numeric_summary_not_nan": true,
+    "numeric_tree_non_negative": true,
+    "numeric_tree_not_nan": true,
+    "open_inventory_density_sk_ns_pe": true,
+    "open_volume_comparison": true,
+    "provenance_e2c": true,
+    "proxy_donor_gaps_labelled": true,
+    "residue_balance": true,
+    "thirty_six_trees_each": true,
+    "volume_balance": true,
+    "volume_scales_with_density": true
+  },
+  "generated_utc": "2026-11-23T05:22:23Z",
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/tree_list.csv": "e4369ee7da6589142afa0681eee339eef7c9df75c7dc286b54385d0630a79a72",
+    "data/derived/national/bucking/open_data_imputation_v2/province_summary.csv": "c460b8bd044edc71baa3512bb8bbbfa7827ff76c35a196518b0cae344c7ec35a",
+    "data/derived/national/bucking/open_data_imputation_v2/tree_list.csv": "4f2272077ee3a983311b2af9ac61535fef4c8519a273eacc4d96a6e6b04886dd",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/ab_density_structure.csv": "537364a1f4d31734c944c6f2962017d0aa325904f8bf6f583a7ce147d559d27c",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/density_quantiles.csv": "5f2aee0a9b76b52e51c3467b214bc7e193a174218999194faa1e9cd511751453",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/density_targets.csv": "c290bc5579ea8cfeba74ef5bdddf06c5e21d4090e761936fe74990d1bda1a391",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/attribute_quantiles.csv": "743429d2fa6c4796f892c5511435eba6b3421b57d5d42baa08d8d025e3781559",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/joint_quantiles.csv": "7820d09a48e3e9f7afd102c3df4f90422c500d0892d9ed17a86a0558c140201c",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/province_summary.csv": "cd65f061981fea2a395361109c3a9f4f38838ce0f1e0af1b43cad722ec80b1b5",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/source_provenance.csv": "4d1f1d64d4043e59a40a7cfcdbee3dd611d125f710a7a30a708284a08b34a276",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/species_composition.csv": "394196d5260caebc53fe57c989c40daf988f9f30cdd3dbae16979b7a98c36463",
+    "workflows/national/bucking/rules/cfs_biomass/tree_level_allometric_equations_dbh_height.csv": "020675c63cb6ef5dbdb20fd76fc0b9180679b3ad7d0d64aee5ee57af9ea7175c",
+    "workflows/national/bucking/rules/e2_biomass_allometry_map.csv": "783d8667ce501429ec8361d89c7072b647e371fb5c957e4e13c60f9f001c6678",
+    "workflows/national/bucking/rules/qc_schneider2013_taper.csv": "22845e87a124298fef87ca6a65cd1dc8f5b6e0ea297493b1e564c45f5b8c32dc"
+  },
+  "labels": {
+    "density_calibrated": true,
+    "donor_density_provinces": [
+      "MB"
+    ],
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "open_inventory_density_provinces": [
+      "SK",
+      "NS",
+      "PE"
+    ],
+    "policy_grade": false,
+    "provenance_tier": "E2c_open_inventory_density_calibrated",
+    "proxy_density_provinces": [
+      "AB",
+      "ON",
+      "NL",
+      "NT",
+      "NU"
+    ],
+    "tree_list_label": "open_inventory_density_calibrated"
+  },
+  "no_dua_dependency": true,
+  "no_official_osecan_change": true,
+  "outputs": {
+    "data/derived/national/bucking/open_data_imputation_v3/bucked_logs.csv": "04058a90a18a20ff8b4123452023fa763cd04dc723b1b6c4d2b2fd87e847a94c",
+    "data/derived/national/bucking/open_data_imputation_v3/comparison_v2_v3.csv": "89fa32f8475d2d6088e2ae8cd13808117313c53f44ac0b2d7d3a08c419a96ce1",
+    "data/derived/national/bucking/open_data_imputation_v3/density_calibration.csv": "ef0754e5c491bdb21a53df3ba03b77db869cd192d61c46eb2e9e61a08ef75adb",
+    "data/derived/national/bucking/open_data_imputation_v3/distribution_labels.csv": "6281cc798c307ce90694d62da98d7f41f3a2347a3d9c3f8cdd0cece3900c0ad0",
+    "data/derived/national/bucking/open_data_imputation_v3/product_coefficients.csv": "a56e7ac76031ea6c0c8db11e05abd88761831e36cade05f8f72d6960bbc0cc3d",
+    "data/derived/national/bucking/open_data_imputation_v3/province_summary.csv": "d3ffd49e3c9e436acc6db9a6f50bd25833318134ceb3f7ae70b57eb82886d17d",
+    "data/derived/national/bucking/open_data_imputation_v3/report.md": "d9cbe0abc059cdbcc7e4487b5debc838805788023b63a738b87e19e9fcf14c80",
+    "data/derived/national/bucking/open_data_imputation_v3/residue_ledger.csv": "6da696ccb23c116e3722b00dff5df36e78317c0f830a77f702d25c2e765c4a77",
+    "data/derived/national/bucking/open_data_imputation_v3/summary.json": "c9d30c29dc85fbd4ad1a4b9c26335aebfd40ee80126b564bb2578e7c47677280",
+    "data/derived/national/bucking/open_data_imputation_v3/tree_list.csv": "bea2f6c4dd914dc536caa5ab05f9337bf2381b04ac08f629096875adf0198447",
+    "data/derived/national/bucking/open_data_imputation_v3/volume_context.csv": "c307007399eaa1e49c4736240d05a3f6bd83d37217173c729ec46fb233aa6923"
+  },
+  "runtime_seconds": 25.988
+}

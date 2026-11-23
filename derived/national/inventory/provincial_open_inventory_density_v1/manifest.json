@@ -1,0 +1,33 @@
+{
+  "artifact": "provincial_open_inventory_density_v1",
+  "checks": {
+    "nine_provinces": true,
+    "open_inventory_density_sk_ns_pe": true,
+    "positive_density": true,
+    "proxy_or_donor_gaps_labelled": true
+  },
+  "generated_utc": "2026-11-23T05:19:27Z",
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/tree_list.csv": "e4369ee7da6589142afa0681eee339eef7c9df75c7dc286b54385d0630a79a72",
+    "data/derived/national/inventory/provincial_open_inventory_audit_v1/samples/pe_efi_2020_sample.csv": "d7b521eca529158eb99b89598b845bed702fd9bdfc386db5eb4a7f991fd306e3",
+    "data/derived/national/inventory/provincial_open_inventory_audit_v1/samples/sk_fri_forest_stands_sample.csv": "0fdb7f2f2bd99e3c10e338abd8284e310ec559a4a4e49db1eca8e87c75f453c0",
+    "data/derived/national/inventory/provincial_open_inventory_distributions_v1/attribute_quantiles.csv": "743429d2fa6c4796f892c5511435eba6b3421b57d5d42baa08d8d025e3781559"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false,
+    "provenance_tier": "E2c_open_inventory_density_calibrated"
+  },
+  "no_dua_dependency": true,
+  "no_official_osecan_change": true,
+  "outputs": {
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/README.md": "cfccb9a7e34042ec64a23b61ce1139bdd966e8130ff72213d05ce519df012233",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/ab_density_structure.csv": "537364a1f4d31734c944c6f2962017d0aa325904f8bf6f583a7ce147d559d27c",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/density_quantiles.csv": "5f2aee0a9b76b52e51c3467b214bc7e193a174218999194faa1e9cd511751453",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/density_targets.csv": "c290bc5579ea8cfeba74ef5bdddf06c5e21d4090e761936fe74990d1bda1a391",
+    "data/derived/national/inventory/provincial_open_inventory_density_v1/source_provenance.csv": "07cbdf1b0d59b949001ce5dd60bbfa65071652ceb3ae7d634812d3d5a398172e"
+  },
+  "runtime_seconds": 20.04
+}
