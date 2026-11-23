@@ -1,0 +1,64 @@
+{
+  "artifact": "transport_capacity_gap_v1",
+  "artifact_version": "1.0.0",
+  "counts": {
+    "band_rows": 350,
+    "classes": 5,
+    "priority_rows": 57,
+    "province_class_cells": 70,
+    "province_rows": 24,
+    "provinces_with_assignment": 12,
+    "scenarios": 2
+  },
+  "generated_utc": "2026-11-23T14:43:18+00:00",
+  "inputs": {
+    "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332",
+    "data/derived/national/facilities/national_facility_assignment_v8/facility_assignment.csv": "2f3584d84d08784a48eab51aa255455682aa46d938f3e98339f208d6dec344c5",
+    "data/derived/national/facilities/national_facility_assignment_v9/v9_facility_assignment.csv": "fa2f6a215904c1c5bbf79264e0c2c6387dca17789be23065037b3011d98a7a5a",
+    "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+    "data/derived/national/facilities/national_facility_inventory_v1/national_facilities.csv": "87c9aec8197d7fa4562a61f907ef0387bdb8dbb7197713dd3e5c54fdfda10c1b",
+    "data/derived/national/facilities/transport_cost_v1/parameters.csv": "285ae8854da089175a5929f38db704512a539098a260a9fac391356b34ef7867",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+  },
+  "labels": {
+    "assignment_change": false,
+    "capacity_change": false,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "siting_optimization": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "TRANSPORT_CAPACITY_GAP_V1.md": {
+      "bytes": 10586,
+      "sha256": "f2743f8f11f194d1eeeb7dae42fbf6a939bd847b6413695737df5c9f750d64e7"
+    },
+    "greenfield_local_capacity_priority.csv": {
+      "bytes": 14593,
+      "sha256": "da77565da4d357d7fb6fc8844fc5ce0f40ca20dd4343a6b4e91aaa2abb29c0cb"
+    },
+    "province_class_capacity_gap.csv": {
+      "bytes": 27635,
+      "sha256": "61fe79cf71b1cbca3f873d40bcdaf47f524adf3c93c68898e3aada65aa558ff1"
+    },
+    "province_class_distance_bands.csv": {
+      "bytes": 51284,
+      "sha256": "5a3447e10a3553b5d9c5257fa198fdfe1dd4204891e5f65172b0a289878e1426"
+    },
+    "province_summary.csv": {
+      "bytes": 8740,
+      "sha256": "7b35316500bc562fe0d4f1e0b37d1973a3809791735c3e591f0d901a672458a1"
+    },
+    "summary.json": {
+      "bytes": 41632,
+      "sha256": "b629b9e8ed0aa9496ae64f51758173d50cfdb937287e5a9662758c3546413f81"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.transport_capacity_gap_v1",
+  "status": "complete"
+}
