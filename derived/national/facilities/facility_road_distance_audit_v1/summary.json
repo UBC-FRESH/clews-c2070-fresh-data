@@ -1,0 +1,364 @@
+{
+  "artifact": "facility_road_distance_audit_v1",
+  "artifact_version": "1.0.0",
+  "caveats": [
+    "All values are model estimates (`model_estimate`); `observed=false` and `policy_grade=false`.",
+    "The 24-pair sample is distance-stratified and province-stratified; it is not a random national sample and does not support a national mean or a replacement road factor.",
+    "OSRM demo is a public best-effort service; results are not a production routing service or a guarantee of current road conditions.",
+    "Distances are car-road distances. Resource roads, winter roads, ferries, weight limits, and log-truck restrictions are not validated.",
+    "OSRM may route through the United States where that is the shortest road path; no border delay or customs cost is modelled.",
+    "Endpoint snap distances are reported; large snaps indicate that the province centroid or facility coordinate is not on the road network. OSRM routes omit the off-road connector from the requested coordinate to the snapped road point, so the routed distance is a lower-bound comparison for these centroid-to-facility pairs.",
+    "No facility assignment is changed and no UI or public OSeCAN surface is touched."
+  ],
+  "comparison": {
+    "by_province": [
+      {
+        "haversine_km_total": 2040.229581,
+        "mean_abs_proxy_error_pct": 14.688545,
+        "mean_speed_kmh": 63.556536,
+        "median_proxy_road_ratio": 0.888436971,
+        "median_road_haversine_ratio": 1.470516792,
+        "n_failed": 0,
+        "n_ok": 4,
+        "n_pairs": 4,
+        "province": "BC",
+        "province_name": "British Columbia",
+        "proxy_km_total": 2652.298454,
+        "road_km_total": 3292.6663,
+        "sample_fitted_road_factor": 1.61387,
+        "share_proxy_underestimates": 1.0,
+        "share_within_10_percent": 0.5
+      },
+      {
+        "haversine_km_total": 1077.411404,
+        "mean_abs_proxy_error_pct": 17.061328,
+        "mean_speed_kmh": 75.638131,
+        "median_proxy_road_ratio": 0.861547865,
+        "median_road_haversine_ratio": 1.522141717,
+        "n_failed": 0,
+        "n_ok": 4,
+        "n_pairs": 4,
+        "province": "AB",
+        "province_name": "Alberta",
+        "proxy_km_total": 1400.634825,
+        "road_km_total": 1562.0846,
+        "sample_fitted_road_factor": 1.44985,
+        "share_proxy_underestimates": 0.75,
+        "share_within_10_percent": 0.5
+      },
+      {
+        "haversine_km_total": 2721.002995,
+        "mean_abs_proxy_error_pct": 6.630746,
+        "mean_speed_kmh": 56.843821,
+        "median_proxy_road_ratio": 0.936364494,
+        "median_road_haversine_ratio": 1.388660127,
+        "n_failed": 0,
+        "n_ok": 4,
+        "n_pairs": 4,
+        "province": "ON",
+        "province_name": "Ontario",
+        "proxy_km_total": 3537.303894,
+        "road_km_total": 3776.4045,
+        "sample_fitted_road_factor": 1.387872,
+        "share_proxy_underestimates": 0.75,
+        "share_within_10_percent": 0.75
+      },
+      {
+        "haversine_km_total": 2918.02005,
+        "mean_abs_proxy_error_pct": 49.180748,
+        "mean_speed_kmh": 60.755872,
+        "median_proxy_road_ratio": 0.502433176,
+        "median_road_haversine_ratio": 2.642536628,
+        "n_failed": 0,
+        "n_ok": 4,
+        "n_pairs": 4,
+        "province": "QC",
+        "province_name": "Quebec",
+        "proxy_km_total": 3793.426067,
+        "road_km_total": 7463.0637,
+        "sample_fitted_road_factor": 2.557578,
+        "share_proxy_underestimates": 1.0,
+        "share_within_10_percent": 0.0
+      },
+      {
+        "haversine_km_total": 380.65728,
+        "mean_abs_proxy_error_pct": 10.120319,
+        "mean_speed_kmh": 64.804746,
+        "median_proxy_road_ratio": 0.993128869,
+        "median_road_haversine_ratio": 1.319755057,
+        "n_failed": 0,
+        "n_ok": 4,
+        "n_pairs": 4,
+        "province": "NS",
+        "province_name": "Nova Scotia",
+        "proxy_km_total": 494.854464,
+        "road_km_total": 478.5678,
+        "sample_fitted_road_factor": 1.257214,
+        "share_proxy_underestimates": 0.5,
+        "share_within_10_percent": 0.75
+      },
+      {
+        "haversine_km_total": 2515.440783,
+        "mean_abs_proxy_error_pct": 36.027828,
+        "mean_speed_kmh": 74.568903,
+        "median_proxy_road_ratio": 0.645780897,
+        "median_road_haversine_ratio": 2.013333802,
+        "n_failed": 0,
+        "n_ok": 4,
+        "n_pairs": 4,
+        "province": "NL",
+        "province_name": "Newfoundland and Labrador",
+        "proxy_km_total": 3270.073019,
+        "road_km_total": 5104.0181,
+        "sample_fitted_road_factor": 2.029075,
+        "share_proxy_underestimates": 1.0,
+        "share_within_10_percent": 0.0
+      }
+    ],
+    "overall": {
+      "abs_proxy_error_pct": {
+        "max": 57.598647,
+        "mean": 22.284919125000002,
+        "median": 15.184633,
+        "min": 3.160981,
+        "n": 24,
+        "p25": 7.2784155,
+        "p75": 36.199172000000004
+      },
+      "duration_h": {
+        "max": 33.905139,
+        "mean": 13.923870375,
+        "median": 15.638361,
+        "min": 0.861083,
+        "n": 24,
+        "p25": 3.8280070000000004,
+        "p75": 19.35558325
+      },
+      "haversine_km_total": 11652.762093,
+      "n_failed": 0,
+      "n_ok": 24,
+      "proxy_error_pct": {
+        "max": 9.580968,
+        "mean": -20.178416208333335,
+        "median": -15.184633,
+        "min": -57.598647,
+        "n": 24,
+        "p25": -36.199172000000004,
+        "p75": -4.947269
+      },
+      "proxy_km_total": 15148.590723,
+      "proxy_road_ratio": {
+        "max": 1.095809676,
+        "mean": 0.7982158377499999,
+        "median": 0.8481536695,
+        "min": 0.424013531,
+        "n": 24,
+        "p25": 0.6380082775,
+        "p75": 0.95052730825
+      },
+      "road_haversine_ratio": {
+        "max": 3.065939894,
+        "mean": 1.7500386744166667,
+        "median": 1.533791656,
+        "min": 1.186337398,
+        "n": 24,
+        "p25": 1.3676619939999999,
+        "p75": 2.03759279625
+      },
+      "road_km_total": 21676.805,
+      "sample_fitted_road_factor": 1.8602289162860026,
+      "share_proxy_underestimates": 0.8333333333333334,
+      "share_within_10_percent": 0.4166666666666667,
+      "speed_kmh": {
+        "max": 79.096184,
+        "mean": 66.028001375,
+        "median": 65.9208865,
+        "min": 47.235498,
+        "n": 24,
+        "p25": 59.28332325,
+        "p75": 74.63224575
+      }
+    },
+    "road_factor": 1.3
+  },
+  "generated_utc": "2026-11-23T13:34:13+00:00",
+  "inputs": {
+    "canada_adm1_geoboundaries_simplified": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "role": "input",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "national_facility_assignment_v6": {
+      "path": "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv",
+      "role": "context",
+      "sha256": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06"
+    },
+    "national_facility_capacity_v3": {
+      "path": "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv",
+      "role": "input",
+      "sha256": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f"
+    }
+  },
+  "labels": {
+    "assignment_change": false,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "provenance": {
+    "sources": [
+      {
+        "licence": "project-derived; see source metadata",
+        "name": "National facility capacity v3",
+        "notes": "Facility coordinates and eligibility fields",
+        "path": "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv",
+        "retrieved_utc": "2026-11-23T13:34:13+00:00",
+        "role": "input",
+        "sha256": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f",
+        "source_id": "national_facility_capacity_v3",
+        "url": "https://github.com/UBC-FRESH/clews-c2070-fresh-data"
+      },
+      {
+        "licence": "CC BY 4.0",
+        "name": "GeoBoundaries Canada ADM1 simplified",
+        "notes": "Province ADM1 centroids for origins",
+        "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+        "retrieved_utc": "2026-11-23T13:34:13+00:00",
+        "role": "input",
+        "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449",
+        "source_id": "canada_adm1_geoboundaries_simplified",
+        "url": "https://github.com/UBC-FRESH/clews-c2070-fresh-data"
+      },
+      {
+        "licence": "project-derived; see source metadata",
+        "name": "National facility assignment v6",
+        "notes": "Context only: marks facilities used in the v6 primary run",
+        "path": "data/derived/national/facilities/national_facility_assignment_v6/facility_assignment.csv",
+        "retrieved_utc": "2026-11-23T13:34:13+00:00",
+        "role": "context",
+        "sha256": "2755e69729099ee687a94694f580ff34c8d7b6aa19c0ca29b0e84cef51cfaa06",
+        "source_id": "national_facility_assignment_v6",
+        "url": "https://github.com/UBC-FRESH/clews-c2070-fresh"
+      },
+      {
+        "licence": "ODbL-1.0",
+        "name": "OSRM public demo server",
+        "notes": "Route distance and duration for the sample; raw responses stored in osrm_routes.json",
+        "path": "osrm_routes.json",
+        "retrieved_utc": "2026-11-23T13:34:13+00:00",
+        "role": "routing",
+        "sha256": "f049088f9bf4c7556477cfa06699adce9cb667d92e26b44a879a45c75dee5219",
+        "source_id": "osrm_demo",
+        "url": "https://router.project-osrm.org/route/v1/driving"
+      },
+      {
+        "licence": "ODbL-1.0",
+        "name": "OpenStreetMap contributors",
+        "notes": "Road network used by the OSRM demo server; attribution \u00a9 OpenStreetMap contributors",
+        "path": "",
+        "retrieved_utc": "2026-11-23T13:34:13+00:00",
+        "role": "road_data",
+        "sha256": "",
+        "source_id": "openstreetmap",
+        "url": "https://www.openstreetmap.org/copyright"
+      }
+    ]
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.facility_road_distance_audit",
+  "routing": {
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "base_url": "https://router.project-osrm.org",
+    "failures": [],
+    "licence": "ODbL-1.0",
+    "max_attempts": 3,
+    "osm_data": "OpenStreetMap road network",
+    "profile": "driving",
+    "provider": "OSRM public demo server",
+    "rate_limit_seconds": 1.2,
+    "requests_attempted": 24,
+    "requests_failed": 0,
+    "requests_ok": 24,
+    "snap": {
+      "destination_snap_km": {
+        "max": 0.388956,
+        "mean": 0.06666879166666667,
+        "median": 0.047553,
+        "min": 0.001682,
+        "n": 24,
+        "p25": 0.018129,
+        "p75": 0.08704925
+      },
+      "origin_snap_km": {
+        "max": 67.273078,
+        "mean": 16.187909166666667,
+        "median": 7.065214,
+        "min": 0.088061,
+        "n": 24,
+        "p25": 0.110532,
+        "p75": 15.525356
+      },
+      "pairs_over_warning_threshold": 16,
+      "warning_threshold_km": 5.0
+    },
+    "usage_policy": "Public demo server, best-effort; 24 low-rate requests for this audit only. No paid API key.",
+    "user_agent": "clews-c2070-fresh-road-distance-audit/1.0"
+  },
+  "sample": {
+    "centroid_methods": {
+      "AB": "polygon_centroid",
+      "BC": "polygon_centroid",
+      "MB": "polygon_centroid",
+      "NB": "polygon_centroid",
+      "NL": "polygon_centroid",
+      "NS": "polygon_centroid",
+      "NT": "polygon_centroid",
+      "NU": "polygon_centroid",
+      "ON": "polygon_centroid",
+      "PE": "polygon_centroid",
+      "QC": "polygon_centroid",
+      "SK": "polygon_centroid",
+      "YT": "polygon_centroid"
+    },
+    "eligible_filter": "facility_class in ['SAW', 'PULP', 'PANEL', 'PELLET', 'BIO'] and status not in ['abandoned', 'construction', 'disused', 'proposed', 'temporarily_closed']",
+    "n_pairs": 24,
+    "per_province": 4,
+    "per_province_counts": {
+      "AB": 4,
+      "BC": 4,
+      "NL": 4,
+      "NS": 4,
+      "ON": 4,
+      "QC": 4
+    },
+    "provinces": [
+      "BC",
+      "AB",
+      "ON",
+      "QC",
+      "NS",
+      "NL"
+    ],
+    "selection": "deterministic eligible-facility distance quantiles [0.125, 0.375, 0.625, 0.875] per province",
+    "universe_mapped_records": 608,
+    "universe_records": 689,
+    "universe_unmapped_records": 81
+  },
+  "status": "complete",
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "facility_census": true,
+      "labels": true,
+      "no_assignment_change": true,
+      "no_nan_or_negative": true,
+      "per_province_count": true,
+      "positive_haversine": true,
+      "ratio_arithmetic": true,
+      "repository_hygiene": true,
+      "sample_pair_count": true,
+      "sample_provinces": true,
+      "unique_facilities": true
+    }
+  }
+}
