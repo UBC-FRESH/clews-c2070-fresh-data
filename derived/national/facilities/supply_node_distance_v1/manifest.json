@@ -1,0 +1,137 @@
+{
+  "artifact": "supply_node_distance_v1",
+  "artifact_version": "1.0.0",
+  "counts": {
+    "assignments": 203,
+    "band_rows": 165,
+    "facilities": 591,
+    "gap_rows": 33,
+    "nodes": 525,
+    "osrm_sample_rows": 81,
+    "province_rows": 12,
+    "sensitivity_rows": 26
+  },
+  "generated_utc": "2026-11-23T15:23:21+00:00",
+  "inputs": {
+    "canada_adm1_geoboundaries_simplified": {
+      "path": "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson",
+      "role": "province geometry and centroids",
+      "sha256": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449"
+    },
+    "facility_road_distance_audit_v2_factors": {
+      "path": "data/derived/national/facilities/facility_road_distance_audit_v2/province_road_factors.csv",
+      "role": "province road factors",
+      "sha256": "3ec04bf19613eec5883143517ed48a71448401428b5151cf1e5f1b2475dad332"
+    },
+    "facility_road_distance_audit_v2_sample": {
+      "path": "data/derived/national/facilities/facility_road_distance_audit_v2/facility_road_distance_sample.csv",
+      "role": "paired centroid OSRM sample for node re-origin",
+      "sha256": "92a5f1d768a1da0c7049e77225550e88d7f2bfff39fa80c8abcec48266bbff90"
+    },
+    "national_facility_assignment_v9": {
+      "path": "data/derived/national/facilities/national_facility_assignment_v9/v9_facility_assignment.csv",
+      "role": "unchanged assignment context",
+      "sha256": "fa2f6a215904c1c5bbf79264e0c2c6387dca17789be23065037b3011d98a7a5a"
+    },
+    "national_facility_capacity_v3": {
+      "path": "data/derived/national/facilities/national_facility_capacity_v3/national_facility_capacity_v3.csv",
+      "role": "eligible facility coordinates, class and capacity",
+      "sha256": "4aab5ef98b1c5817b3107c83d1f38af408b9436399b6799912d765560307be7f"
+    },
+    "provincial_harvest_119m": {
+      "path": "data/derived/national/harvest_basis/provincial_allocation/119m.csv",
+      "role": "119 Mm3 provincial harvest control",
+      "sha256": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42"
+    },
+    "rsyc_tile_production_library": {
+      "path": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
+      "role": "node production weight and RSYC age-100 volume",
+      "sha256": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256"
+    },
+    "rsyc_tiles": {
+      "path": "data/raw/national/rsyc/RSYC_tiles.gpkg",
+      "role": "tile geometry for node location",
+      "sha256": "f61e0ec06b29146264ff676c98fcfa1e431d6ddd5f1d97d17e957d4d9e77308b"
+    },
+    "scanfi_ecodistrict_area_weights": {
+      "path": "data/derived/national/assortments/national_area_weights/national_area_weights_ecodistrict.csv",
+      "role": "SCANFI forest-area transparency weight",
+      "sha256": "1fa20bc69469519e603348e96480b3e8f180794da41afacd3973ef4ebd28b09c"
+    },
+    "tile_ecodistrict_province_weights": {
+      "path": "data/derived/national/assortments/rsyc_tile_production/tile_ecodistrict_province_weights.csv",
+      "role": "tile x ecodistrict x province area crosswalk",
+      "sha256": "a702d077f9c09fd474a94a3d7e1072bca08e15fc47f8e598ce814152e5d788ed"
+    },
+    "transport_cost_v1_parameters": {
+      "path": "data/derived/national/facilities/transport_cost_v1/parameters.csv",
+      "role": "base transport cost curve parameters",
+      "sha256": "285ae8854da089175a5929f38db704512a539098a260a9fac391356b34ef7867"
+    }
+  },
+  "labels": {
+    "assignment_change": false,
+    "capacity_change": false,
+    "evidence_label": "model_estimate",
+    "greenfield_optimization": false,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_claim": false,
+    "policy_grade": false,
+    "siting_optimization": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "SUPPLY_NODE_DISTANCE_V1.md": {
+      "bytes": 12521,
+      "sha256": "2b1e2da26e1c19d53a8f146aec46427bca7c71ffd62f969b9ae89c289dc9296c"
+    },
+    "band_comparison.csv": {
+      "bytes": 29260,
+      "sha256": "a1371179a802095405731fe9652329287eaaecb26b4fdfc7a91d43a3cc05537c"
+    },
+    "distance_distribution_comparison.csv": {
+      "bytes": 2630,
+      "sha256": "48ae4c1b42a33d982dcbc030b7b2971aa166937baa6ab3593967ae34936b259e"
+    },
+    "distance_sample.csv": {
+      "bytes": 31493,
+      "sha256": "34251e4f41ef287cd99df4ad275342fc1ff84c5fc49f6b4a9bf952d1750d7bce"
+    },
+    "distance_sample_routes.json": {
+      "bytes": 99438,
+      "sha256": "ce04a216b44a14b3f861365308364ee787b69281800d82e447fc4c26902b0fc8"
+    },
+    "provenance.csv": {
+      "bytes": 4504,
+      "sha256": "c8b9dc07920ac534c88f748f46204965204647f6b8c6ccef63c6ab9999d3921b"
+    },
+    "province_node_weights.csv": {
+      "bytes": 2235,
+      "sha256": "3bd6a0e944f78e3d534a90ac578ad9905ba7b6a3184bf64699ac113a13470745"
+    },
+    "province_transport_gap.csv": {
+      "bytes": 6150,
+      "sha256": "3152097000064205c911d7f5fa382bce3d8347cc0907595f304a1179b476c75c"
+    },
+    "summary.json": {
+      "bytes": 92966,
+      "sha256": "58b9ee1c40287666ca9d291c72413c85892d0ed3f5b15d2a11eb1f143bdbe7a9"
+    },
+    "supply_nodes.csv": {
+      "bytes": 138258,
+      "sha256": "275aeb38087fe568ff14e81a54058a3a26775a6ebb4b69d4fd9654dd1c9ae034"
+    },
+    "transport_gap_comparison.csv": {
+      "bytes": 19462,
+      "sha256": "59a283e766ae2df93f8d2f95bdd31a7e0f82a3081e0fc05d29d9070e606bb6ea"
+    },
+    "weight_sensitivity.csv": {
+      "bytes": 5756,
+      "sha256": "f7a70eed7cd1121b4f40b7c047965ace8bdb9bbb9bbd672660824c5230cb37fe"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.supply_node_distance_v1",
+  "status": "complete"
+}
