@@ -1,0 +1,81 @@
+{
+  "artifact": "national_product_chain_v4",
+  "artifact_version": "4.0.0",
+  "generated_utc": "2026-11-23T04:04:22+00:00",
+  "inputs": {
+    "data/derived/national/bucking/open_data_imputation_v1/product_coefficients.csv": "c63cce025d2fb5be657ccf1d002ccf7f86a9f9cee03dcc07eab61acf1800ab95",
+    "data/derived/national/facilities/national_product_chain_v1/product_chain_by_province.csv": "ebe0e5d1b3efb11167ae3c542e3825bdbeaf09577a6670dd56d758964cb4da04",
+    "data/derived/national/facilities/national_product_chain_v3/product_chain_by_province.csv": "1f950c290156dc206d5783cd29d25f60ef94256d39ae5754618d4058d8ddb430"
+  },
+  "labels": {
+    "facility_assignment": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "NATIONAL_PRODUCT_CHAIN_V4.md": {
+      "bytes": 5349,
+      "sha256": "54f06a9845de23035ecc5c838f10e64b64c6eff90d7cecae1b06ba7b69ba610c"
+    },
+    "coefficients.csv": {
+      "bytes": 8486,
+      "sha256": "d34c565dedab28930178c8aee007e9855d6530d086ddc319f4d5a03ef55880fb"
+    },
+    "donor_vs_e2_coefficients.csv": {
+      "bytes": 6175,
+      "sha256": "b0cb3b644a75483d173d6ae23b7d1c9ebff736dc98db0016d0a5403e09a314ea"
+    },
+    "e1_coefficient_replacement.csv": {
+      "bytes": 3095,
+      "sha256": "284fd263a18608e247d509d752ff8114c55b6741e179649c233f206b0b07acd7"
+    },
+    "e1_e2_coefficient_replacement.csv": {
+      "bytes": 9174,
+      "sha256": "d9e55f4326cbb4578ef555c10f37450516c2e28a85e7983c6dad5ff36d46fa53"
+    },
+    "product_chain_by_province.csv": {
+      "bytes": 19688,
+      "sha256": "02a49dd71a96771b37a3217c05b77244ed62bdb33bc826daf7d6596bb2f394ec"
+    },
+    "residue_scenario_coefficients.csv": {
+      "bytes": 2260,
+      "sha256": "d5152f62ed5280b1ae7e87f8f0d36d39893ede19b81d41b3fa9e353b3beff497"
+    },
+    "summary.json": {
+      "bytes": 50457,
+      "sha256": "e3d69ec578b08773e1551f5e925f3c79687581810cdea6af262aaab98a5ae875"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.national_product_chain_v4",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "thirteen_provinces",
+        "detail": "13 province rows with E1/E2 tiers",
+        "status": "PASS"
+      },
+      {
+        "check_id": "e1_e2_coefficient_source",
+        "detail": "4 measured + 9 E2 imputed; 0 donor product shares",
+        "status": "PASS"
+      },
+      {
+        "check_id": "grade_conservation",
+        "detail": "sawlog + pulp + other = harvest",
+        "status": "PASS"
+      },
+      {
+        "check_id": "residue_conservation",
+        "detail": "stem + branch/foliage = total; scenarios = gross * factor",
+        "status": "PASS"
+      },
+      {
+        "check_id": "no_negative_or_nan",
+        "detail": "all numeric fields finite and nonnegative",
+        "status": "PASS"
+      }
+    ]
+  }
+}
