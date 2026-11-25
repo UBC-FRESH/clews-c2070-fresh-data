@@ -1,0 +1,53 @@
+{
+  "artifact": "harvest_residue_component_breakdown_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-25T19:40:04+00:00",
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/province_summary.csv": "d1327a70d73a5031438d1633943e1da6718b5509c88c457f51ff47c6bd99c8fc",
+    "data/derived/national/bucking/open_data_imputation_v3/province_summary.csv": "d3ffd49e3c9e436acc6db9a6f50bd25833318134ceb3f7ae70b57eb82886d17d",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "docs/model-card-national-facility-chain.md": "bbfcf07dc8b436dc878384dfd548cfeec747d9d694f9a2f511c2d1b135da1032"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "ui_changed": false
+  },
+  "outputs": {
+    "HARVEST_RESIDUE_COMPONENT_BREAKDOWN_V1.md": {
+      "bytes": 6282,
+      "sha256": "09ac694fc6bce7df0106c32b6742f068cd7810612816f76e81b80e7d2c0bfbc6"
+    },
+    "component_by_province.csv": {
+      "bytes": 6051,
+      "sha256": "fd590bb180bdf749ccac086395c013951343def90905ae7616ae22addfbce36d"
+    },
+    "provenance.csv": {
+      "bytes": 3639,
+      "sha256": "b67ef7b6dac23ebff418c4d75d4a3952c1765077196651a13a4cc3129e111079"
+    },
+    "summary.json": {
+      "bytes": 7289,
+      "sha256": "246d50cdf8cb6bc5334a0f0a5cdf9441178a4496d604a1b58d5ca0285b5ab975"
+    }
+  },
+  "status": "complete",
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "component_conservation_all_provinces": true,
+      "labels_complete": true,
+      "model_card_5_3_cross_check": true,
+      "national_branch_foliage_matches_expected": true,
+      "national_recoverable_060_matches_expected": true,
+      "national_total_matches_expected": true,
+      "province_set_matches_chain": true,
+      "row_count_13": true,
+      "shares_sum_to_one": true,
+      "tier_mapping_matches": true
+    }
+  }
+}

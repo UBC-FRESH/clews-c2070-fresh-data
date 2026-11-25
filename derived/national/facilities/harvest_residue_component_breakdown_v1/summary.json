@@ -1,0 +1,191 @@
+{
+  "artifact": "harvest_residue_component_breakdown_v1",
+  "artifact_version": "1.0.0",
+  "caveats": [
+    "E2c branch/foliage ratios come from 36-tree synthetic open-data imputation lists, not measured provincial components.",
+    "E1 branch/foliage ratios use measured tree lists, but dry mass comes from published CFS equations, not weighed components.",
+    "Tops are not separately modelled; no tops number is reported. Stem residue includes stump, top and unmerchantable sections.",
+    "No environmental, operational, technical, economic or accessibility recovery constraint is modelled.",
+    "0.60 is a reference recovery scenario, not calibrated.",
+    "No UI or official OSeCAN change is made."
+  ],
+  "generated_utc": "2026-11-25T19:40:04+00:00",
+  "inputs": {
+    "data/derived/national/bucking/four_province_bucking_pilot_v0/province_summary.csv": "d1327a70d73a5031438d1633943e1da6718b5509c88c457f51ff47c6bd99c8fc",
+    "data/derived/national/bucking/open_data_imputation_v3/province_summary.csv": "d3ffd49e3c9e436acc6db9a6f50bd25833318134ceb3f7ae70b57eb82886d17d",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "docs/model-card-national-facility-chain.md": "bbfcf07dc8b436dc878384dfd548cfeec747d9d694f9a2f511c2d1b135da1032"
+  },
+  "labels": {
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "ui_changed": false
+  },
+  "method": {
+    "branch_foliage": "chain harvest_residue_branch_foliage_odt",
+    "branch_split": "province branch_odt_expanded / (branch_odt_expanded + foliage_odt_expanded); foliage is the remainder",
+    "conversion": "PJ = ODT * 18.5 / 1e6",
+    "stem": "chain harvest_residue_stem_gross_odt",
+    "tops": "not separately modelled; stem residue is taper total minus recovered logs and includes stump, top and unmerchantable sections"
+  },
+  "model_card_cross_check": {
+    "all_within_tolerance": true,
+    "max_abs_delta_pj": 0.0004724127959498947,
+    "provinces": [
+      {
+        "component_total_pj": 119.536207476105,
+        "delta_pj": 0.0002074761050039342,
+        "model_card_harvest_gross_pj": 119.536,
+        "province": "BC",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 67.65914122968,
+        "delta_pj": 0.00014122967999696812,
+        "model_card_harvest_gross_pj": 67.659,
+        "province": "AB",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 51.031247820219996,
+        "delta_pj": 0.00024782021999669723,
+        "model_card_harvest_gross_pj": 51.031,
+        "province": "SK",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 4.07353599047,
+        "delta_pj": -0.0004640095299999203,
+        "model_card_harvest_gross_pj": 4.074,
+        "province": "MB",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 52.468528560204994,
+        "delta_pj": -0.00047143979500674504,
+        "model_card_harvest_gross_pj": 52.469,
+        "province": "ON",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 107.33431489002,
+        "delta_pj": 0.0003148900199931859,
+        "model_card_harvest_gross_pj": 107.334,
+        "province": "QC",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 21.618099746625003,
+        "delta_pj": 9.974662500411569e-05,
+        "model_card_harvest_gross_pj": 21.618,
+        "province": "NB",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 13.098394196871498,
+        "delta_pj": 0.000394196871496888,
+        "model_card_harvest_gross_pj": 13.098,
+        "province": "NS",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 1.33047241279595,
+        "delta_pj": 0.0004724127959498947,
+        "model_card_harvest_gross_pj": 1.33,
+        "province": "PE",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 5.9225397787344995,
+        "delta_pj": -0.00046022126550049336,
+        "model_card_harvest_gross_pj": 5.923,
+        "province": "NL",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 0.21915642485305,
+        "delta_pj": 0.00015642485305000786,
+        "model_card_harvest_gross_pj": 0.219,
+        "province": "YT",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 0.11912754977305999,
+        "delta_pj": 0.0001275497730599956,
+        "model_card_harvest_gross_pj": 0.119,
+        "province": "NT",
+        "within_tolerance": true
+      },
+      {
+        "component_total_pj": 0.0,
+        "delta_pj": 0.0,
+        "model_card_harvest_gross_pj": 0.0,
+        "province": "NU",
+        "within_tolerance": true
+      }
+    ],
+    "source": "docs/model-card-national-facility-chain.md \u00a75.3",
+    "tolerance_pj": 0.001
+  },
+  "national_totals": {
+    "branch_foliage_pj": 316.57885573516353,
+    "branch_foliage_pj_display": 316.579,
+    "branch_foliage_share": 0.7123564051568745,
+    "branch_odt": 11669976.957431832,
+    "branch_pj": 215.8945737124889,
+    "branch_share": 0.4857996029632563,
+    "foliage_odt": 5442393.622847278,
+    "foliage_pj": 100.68428202267464,
+    "foliage_share": 0.22655680219361818,
+    "stem_odt": 6909832.99142578,
+    "stem_pj": 127.83191034137693,
+    "stem_share": 0.2876435948435472,
+    "total_odt": 24022203.57169476,
+    "total_pj": 444.41076607635307,
+    "total_pj_display": 444.411
+  },
+  "recovery": {
+    "basis": "uniform_fraction_of_gross_total_residue",
+    "calibrated": false,
+    "denominator": "harvest_residue_total_gross_odt",
+    "denominator_odt": 24022203.57169476,
+    "denominator_pj": 444.41076607635307,
+    "environmental_or_technical_constraint_modeled": false,
+    "notes": "0.35/0.60/0.75 are uniform arithmetic scenarios applied to gross total residue. No environmental, operational, technical, economic or accessibility recovery constraint is modelled; 0.60 is a reference scenario, not a calibrated recovery factor.",
+    "recoverable_pj": {
+      "0.35": 155.54376812672356,
+      "0.60": 266.64645964581183,
+      "0.75": 333.30807455726483
+    },
+    "recoverable_pj_display": {
+      "0.35": 155.544,
+      "0.60": 266.646,
+      "0.75": 333.308
+    },
+    "reference_fraction": 0.6
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.harvest_residue_component_breakdown_v1",
+  "scope": "119 Mm3 gross harvest residue split into stem, branch and foliage; provenance only",
+  "status": "pass",
+  "validation": {
+    "all_passed": true,
+    "checks": {
+      "component_conservation_all_provinces": true,
+      "labels_complete": true,
+      "model_card_5_3_cross_check": true,
+      "national_branch_foliage_matches_expected": true,
+      "national_recoverable_060_matches_expected": true,
+      "national_total_matches_expected": true,
+      "province_set_matches_chain": true,
+      "row_count_13": true,
+      "shares_sum_to_one": true,
+      "tier_mapping_matches": true
+    },
+    "failures": [],
+    "max_component_conservation_error_odt": 1.00000761449337e-05,
+    "national_total_pj_unrounded": 444.41076607635307
+  }
+}
