@@ -17,7 +17,7 @@ policy-grade supply forecast, and does not change chain v5.1 or the UI.
 - Forest fragments: 6,807,192
 - Blocks: 1,984,017
 - Forest area: 411,250,630.32 ha
-- Tracks: 1,866
+- Tracks: 2,799
 - Used curves: 718
 - Schedule rows: 33,284
 - Scheduled area: 7,514,902.98 ha

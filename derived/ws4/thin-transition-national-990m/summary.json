@@ -1,0 +1,82 @@
+{
+  "artifact": "ws4_thin_transition",
+  "dataset": "data/derived/ws4/scanfi-national-990m/dataset",
+  "evidence": {
+    "expected_cc_volume_m3": 671252.422391416,
+    "expected_thin_volume_m3": 588608.208020163,
+    "final_managed_value": 195071.52201626232,
+    "final_offset": 19,
+    "final_thinned_value": 0.0,
+    "retained_thinned_value_at_offset_0": 588608.2080201627,
+    "scheduled_area_ha": 6273.540000000002,
+    "thin_harvested_volume_m3": 588608.2080201628,
+    "thin_treated_area_ha": 6273.540000000001,
+    "thinned_cc_harvested_volume_m3": 671252.422391416,
+    "thinned_cc_treated_area_ha": 6273.540000000001,
+    "years": 20
+  },
+  "expected": {
+    "expected_cc_volume_m3": 671252.422391416,
+    "expected_thin_volume_m3": 588608.208020163,
+    "scheduled_area_ha": 6273.540000000002,
+    "selected_blocks": 40,
+    "selected_fragments": 127
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "planting_yield_response": false,
+    "policy_grade": false,
+    "thinning_yield_response": false
+  },
+  "run": "data/derived/ws4/thin-transition-national-990m/run",
+  "schedule": "data/derived/ws4/thin-transition-national-990m/schedule_thin_then_cc.csv",
+  "selection": {
+    "area_ha": 6273.539999999999,
+    "blocks": 40,
+    "cc_offset": 10,
+    "max_blocks": 40,
+    "provinces": [
+      "AB",
+      "BC",
+      "MB",
+      "NB",
+      "NL",
+      "NS",
+      "NT",
+      "NU",
+      "ON",
+      "PE",
+      "QC",
+      "SK",
+      "YT"
+    ],
+    "thin_offset": -1,
+    "thin_window": [
+      20,
+      40
+    ]
+  },
+  "simulation": {
+    "command": [
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/.venv-ws4/bin/ws4",
+      "simulate",
+      "--dataset",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m/dataset",
+      "--schedule",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/thin-transition-national-990m/schedule_thin_then_cc.csv",
+      "--years",
+      "20",
+      "--out",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/thin-transition-national-990m/run"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "Simulation complete \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/thin-transition-national-990m/run"
+  },
+  "status": "pass",
+  "summary": "data/derived/ws4/thin-transition-national-990m/summary.json"
+}

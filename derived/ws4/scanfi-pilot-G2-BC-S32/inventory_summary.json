@@ -202,7 +202,7 @@
     }
   ],
   "block_count": 932041,
-  "built_utc": "2026-11-27T00:45:06+00:00",
+  "built_utc": "2026-11-27T05:01:12+00:00",
   "clique_summary": {
     "area_ha_max": 717.39,
     "area_ha_mean": 0.2362263784533084,
@@ -263,6 +263,10 @@
       "rsyc_volume_national_tile_coniferous_g2"
     ],
     "generic_curve_key": "rsyc_volume_national_tile_generic_g2",
+    "group_curves": {
+      "BROADLEAF": "rsyc_volume_national_tile_generic_g2",
+      "CONIFEROUS": "rsyc_volume_national_tile_coniferous_g2"
+    },
     "landcover_resolution": {
       "5": {
         "curve_key": "rsyc_volume_national_tile_generic_g2",
@@ -547,6 +551,10 @@
         "value": 5915085.903537454
       },
       {
+        "account": "feature.Yield.thinned.Total",
+        "value": 0.0
+      },
+      {
         "account": "feature.Yield.unmanaged.Total",
         "value": 74542197.6050214
       }
@@ -577,12 +585,20 @@
       "track_id": 1
     },
     {
+      "name": "AU(G2)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(thinned)+CURVE(rsyc_volume_national_tile_coniferous_g2)+treatment()",
+      "track_id": 9
+    },
+    {
       "name": "AU(G2)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_coniferous_g2)+treatment()",
       "track_id": 2
     },
     {
       "name": "AU(G2)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(baseline)+CURVE(rsyc_volume_national_tile_generic_g2)+treatment()",
       "track_id": 3
+    },
+    {
+      "name": "AU(G2)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(thinned)+CURVE(rsyc_volume_national_tile_generic_g2)+treatment()",
+      "track_id": 10
     },
     {
       "name": "AU(G2)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_generic_g2)+treatment()",
@@ -593,6 +609,10 @@
       "track_id": 5
     },
     {
+      "name": "AU(G2)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(thinned)+CURVE(rsyc_volume_national_tile_pinu_con_g2)+treatment()",
+      "track_id": 11
+    },
+    {
       "name": "AU(G2)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_pinu_con_g2)+treatment()",
       "track_id": 6
     },
@@ -601,11 +621,24 @@
       "track_id": 7
     },
     {
+      "name": "AU(G2)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(thinned)+CURVE(rsyc_volume_national_tile_pseu_men_g2)+treatment()",
+      "track_id": 12
+    },
+    {
       "name": "AU(G2)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_pseu_men_g2)+treatment()",
       "track_id": 8
     }
   ],
   "treatments": [
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 9,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 1,
+      "treatment": "THIN"
+    },
     {
       "begin": 40,
       "end": 1000,
@@ -614,6 +647,33 @@
       "retain": 0,
       "track_id": 1,
       "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 9,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 9,
+      "treatment": "THIN"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 2,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 9,
+      "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 2,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 2,
+      "treatment": "THIN"
     },
     {
       "begin": 40,
@@ -625,6 +685,15 @@
       "treatment": "CC"
     },
     {
+      "begin": 20,
+      "end": 40,
+      "new_track": 10,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 3,
+      "treatment": "THIN"
+    },
+    {
       "begin": 40,
       "end": 1000,
       "new_track": 4,
@@ -632,6 +701,33 @@
       "retain": 0,
       "track_id": 3,
       "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 10,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 10,
+      "treatment": "THIN"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 4,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 10,
+      "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 4,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 4,
+      "treatment": "THIN"
     },
     {
       "begin": 40,
@@ -643,6 +739,15 @@
       "treatment": "CC"
     },
     {
+      "begin": 20,
+      "end": 40,
+      "new_track": 11,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 5,
+      "treatment": "THIN"
+    },
+    {
       "begin": 40,
       "end": 1000,
       "new_track": 6,
@@ -650,6 +755,33 @@
       "retain": 0,
       "track_id": 5,
       "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 11,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 11,
+      "treatment": "THIN"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 6,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 11,
+      "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 6,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 6,
+      "treatment": "THIN"
     },
     {
       "begin": 40,
@@ -661,6 +793,15 @@
       "treatment": "CC"
     },
     {
+      "begin": 20,
+      "end": 40,
+      "new_track": 12,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 7,
+      "treatment": "THIN"
+    },
+    {
       "begin": 40,
       "end": 1000,
       "new_track": 8,
@@ -668,6 +809,33 @@
       "retain": 0,
       "track_id": 7,
       "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 12,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 12,
+      "treatment": "THIN"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 8,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 12,
+      "treatment": "CC"
+    },
+    {
+      "begin": 20,
+      "end": 40,
+      "new_track": 8,
+      "offset": -1,
+      "retain": 0,
+      "track_id": 8,
+      "treatment": "THIN"
     },
     {
       "begin": 40,

@@ -2,7 +2,7 @@
   "metadata": {
     "area_basis": "pixel count x 0.09 ha",
     "blocks": 932041,
-    "built_utc": "2026-11-27T00:45:06+00:00",
+    "built_utc": "2026-11-27T05:01:12+00:00",
     "chain_v51_unchanged": true,
     "col": 2,
     "curve_diagnostics": {
@@ -12,6 +12,10 @@
         "rsyc_volume_national_tile_coniferous_g2"
       ],
       "generic_curve_key": "rsyc_volume_national_tile_generic_g2",
+      "group_curves": {
+        "BROADLEAF": "rsyc_volume_national_tile_generic_g2",
+        "CONIFEROUS": "rsyc_volume_national_tile_coniferous_g2"
+      },
       "landcover_resolution": {
         "5": {
           "curve_key": "rsyc_volume_national_tile_generic_g2",
@@ -226,7 +230,9 @@
     "period_length": 1,
     "planting_yield_response": "none: no data in this pilot",
     "recipe": "SCANFI_RSYC_pilot",
-    "resolution_m": 30.0
+    "resolution_m": 30.0,
+    "thinned_curve_same_as_natural": true,
+    "thinning_yield_response": "none: no data in this pilot"
   },
   "schema_version": "0.1",
   "sources": [
