@@ -1,0 +1,41 @@
+{
+  "artifact": "supply_node_50km_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-27T00:13:17+00:00",
+  "inputs": {
+    "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256",
+    "data/derived/national/facilities/supply_node_distance_v1/supply_nodes.csv": "275aeb38087fe568ff14e81a54058a3a26775a6ebb4b69d4fd9654dd1c9ae034",
+    "data/raw/boundaries/canada_adm1_geoboundaries_simplified.geojson": "0c9e4fc56c8b9ce958960ffabd1556fbe7c3ec0deeea346a2b5b7dff05e35449",
+    "data/raw/national/rsyc/RSYC_tiles.gpkg": "f61e0ec06b29146264ff676c98fcfa1e431d6ddd5f1d97d17e957d4d9e77308b"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sensitivity_only": true,
+    "ui_changed": false
+  },
+  "outputs": {
+    "SUPPLY_NODE_50KM_V1.md": {
+      "bytes": 3383,
+      "sha256": "f75790200c173fc554f1e2b6e6be90907cf5682c2854c2dc37edc7fe70e63a11"
+    },
+    "province_node_weights_50km.csv": {
+      "bytes": 3307,
+      "sha256": "e9639855ff1c2d9548ba28aac7e7ecd9989e5cc652876c46506068640cdd41f6"
+    },
+    "summary.json": {
+      "bytes": 18522,
+      "sha256": "95f773e4611240e0b389083ac73207d1c6ac76be3e85e3fc989957e156b6fd6c"
+    },
+    "supply_nodes_50km.csv": {
+      "bytes": 1750068,
+      "sha256": "ca4a2dac76927d04951a129bb81ee1f91e1f1f470d0b513e388df1fcdb254a03"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.supply_node_50km_v1",
+  "status": "complete"
+}
