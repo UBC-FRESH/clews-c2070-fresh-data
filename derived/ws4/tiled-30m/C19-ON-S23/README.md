@@ -1,0 +1,47 @@
+# WS4 tiled 30-m dataset — C19|ON|S23
+
+This is a real compiled WS4 dataset built from 30-m SCANFI pixels for
+one 50-km supply node. It is a `model_estimate` / `sensitivity_only`
+artifact, not official OSeCAN and not a chain v5.1 change.
+
+## Identity
+
+- Node: `C19|ON|S23` (parent `C19|ON`)
+- Tile / row / col: `C19` / 2 / 3
+- Province: `ON`
+- Centroid: 48.608058, -88.764649
+- Allocated harvest: 27865.893855 m3
+- Productive subcell area: 114185.385449 ha
+- Committed geometry area: 136750.500610 ha
+- Clipped inventory geometry: 136750.500610 ha
+
+## Inventory
+
+- Inventory resolution: 30 m (0.09 ha per fragment)
+- Tile resolution: 30,000 m
+- Connectivity: 8-neighbour cliques of equal `(age_class, curve_key)`
+- Forest fragments: 1395751
+- Blocks: 505005
+- Forest area: 125617.59 ha
+
+## Validation and simulation
+
+- `ws4 validate`: pass
+- Schedule rows: 46393
+- Scheduled area: 10481.67 ha
+- Eligible blocks (age class >= 40): 463925
+- Simulation: not_run_datasets_only (--datasets-only)
+
+## Storage
+
+- Dataset: 17.62 MB
+- Schedules: 0.55 MB
+- Runs: 0.00 MB
+- Total: 18.17 MB
+
+The managed track shares the natural RSYC curve: there is no
+planting yield-response data in this build. No operability, tenure,
+road, mill, or policy claim is made.
+
+See `inventory_summary.json` for exclusions, curve diagnostics,
+clique sizes, validation output, and simulation totals.
