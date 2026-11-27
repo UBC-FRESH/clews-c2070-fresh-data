@@ -1,50 +1,56 @@
-# WS4 tiled 30-m national sample
+# WS4 tiled 30-m staged national build
 
-This directory holds per-50-km-node WS4 datasets built from 30-m SCANFI
-pixels. It is a `model_estimate` / `sensitivity_only` sample, not a
-national 30-m run, not official OSeCAN, and not a chain v5.1 change.
+This directory holds real per-50-km-node WS4 datasets built from 30-m
+SCANFI pixels. Staged national coverage is in progress. It is a
+`model_estimate` / `sensitivity_only` artifact, not official OSeCAN,
+not a chain v5.1 change, and not a completed national run.
 
-## Scope
+## Stage table
 
-- Candidate tile datasets: 3,562
-- Unique 50-km rectangles: 3,164
-- Multi-province rectangles: 398
-- Selected/built tiles: 24
-- Province-top tiles: 12
-- PEI nodes: 13 across 6 parent tiles
-- Zero-harvest provinces skipped: NU
+| Stage | Provinces | Candidates | Built | Validated | Remaining | Complete |
+|---|---|---:|---:|---:|---:|---|
+| stage1 | NB, NS, PE, NL, YT, NT, NU | 1,254 | 1,042 | 1,042 | 0 | yes |
+| stage2 | BC, AB | 713 | 2 | 2 | 711 | no |
+| stage3 | SK, MB | 494 | 2 | 2 | 492 | no |
+| stage4 | ON, QC | 1,101 | 2 | 2 | 1,099 | no |
 
-## Selected totals
+- Candidates: 3,562
+- Completed stages: stage1
+- Remaining stages: stage2, stage3, stage4
+- Completed/validated tiles: 1,048
+- Remaining tiles: 2,302
+- Explicitly skipped zero-harvest tiles: 203
+- Explicitly skipped no-forest sliver tiles: 9
 
-- Fragments: 27,164,931
-- Blocks: 10,075,337
-- Forest area: 2,444,843.79 ha
-- Storage: 0.576 GB
+## Storage
 
-## Full national scale
+- Filesystem: `/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/tiled-30m`
+- `df -h`: `Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1        15T  9.8T  4.8T  68% /srv/shared-data`
+- Free: 5,173.326 GB
+- Required minimum: 120.000 GB
+- Projected full national: 96.9 GB
+- Used by built tiles: 15.364 GB
+- Projected remaining: 87.0 GB
 
-- Area-scaled fragments: 4,569,451,448
-- Area-scaled blocks: 1,694,786,681
-- Area-scaled storage: 96.9 GB
-- Scale factor: 168.2x
+## Sample simulation
 
-The full 3,562-dataset build is a distributed/storage-scale
-operation. It was **not** run here.
+- Status: pass
+- Tiles simulated: 5
+- Harvested volume: 14,064,633.471 m3
+- Treated/managed area: 72,883.710 ha
 
-## Contents
-
-- `national_tiled_manifest.json` — candidates, selection, per-tile
-  counts, validation/simulation status, totals, extrapolation,
-  provenance hashes, and the full-run command.
-- `<tile_slug>/dataset/` — 12 canonical WS4 tables + `manifest.json`.
-- `<tile_slug>/schedules/` — 10% CC schedule.
-- `<tile_slug>/runs/` — 20-year simulation outputs.
-- `<tile_slug>/inventory_summary.json` — full tile evidence.
-
-## Full-run command
+## Commands
 
 ```bash
-.venv/bin/python -m workflows.ws4_instances.build_scanfi_tiled_30m --all --workers 32 --years 20 --sample-fraction 0.1
+# One stage, resumable, datasets + validation only:
+.venv/bin/python -m workflows.ws4_instances.build_scanfi_tiled_30m \
+  --stage stage1 --resume --datasets-only --simulate-sample 5 \
+  --workers 32
+
+# Eventual full national run (all 3,562 candidates):
+.venv/bin/python -m workflows.ws4_instances.build_scanfi_tiled_30m --all --include-zero-harvest --workers 32 --years 20 --sample-fraction 0.1
 ```
 
-See `docs/ws4-tiled-30m-national.md` for architecture and limitations.
+See `docs/ws4-tiled-30m-staged-national.md` for the stage plan,
+storage basis, and remaining work.
