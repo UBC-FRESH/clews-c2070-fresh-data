@@ -1,0 +1,150 @@
+{
+  "artifact": "forestry_osecan_handoff_ws4_sustainable_cases",
+  "artifact_version": "1.0.0",
+  "cases": {
+    "100m": {
+      "chain_dir": "data/derived/national/facilities/ws4_sustainable_cases/100m",
+      "primary_basis": "sustainable_100m"
+    },
+    "150m": {
+      "chain_dir": "data/derived/national/facilities/ws4_sustainable_cases/150m",
+      "primary_basis": "sustainable_150m"
+    }
+  },
+  "chain_hashes": {
+    "data/derived/national/facilities/ws4_sustainable_cases/100m/comparison_vs_v51.csv": "16ab38b66ef20d1b4bc5eb32718a893fb04956e07c3c243e234219edebae68af",
+    "data/derived/national/facilities/ws4_sustainable_cases/100m/summary.json": "a3de5ba35304830b733a410e92ecbe6d84cfb1032cb6236f80bce9b37a23ea66",
+    "data/derived/national/facilities/ws4_sustainable_cases/100m/sustainable_harvest_by_province.csv": "d720c31dd6e13e9e24a5d7e7b8fc75ef18c2e9565f5d474730615dd379239873",
+    "data/derived/national/facilities/ws4_sustainable_cases/100m/sustainable_product_chain.csv": "da61f2358004c5ccc1108e207a46ef29148460740688d918e4e930cf0ab31d85",
+    "data/derived/national/facilities/ws4_sustainable_cases/150m/comparison_vs_v51.csv": "3b1a2eab051888c5896bc6084f826e4618f7b819dfe8d41e5834acf170bb32f9",
+    "data/derived/national/facilities/ws4_sustainable_cases/150m/summary.json": "f2c14dc89dd384eb64d28da601e73715d2637c0b3325aef9283c9364261f8487",
+    "data/derived/national/facilities/ws4_sustainable_cases/150m/sustainable_harvest_by_province.csv": "73efe218239f1c8d92ed5ffa7e4e36cd410221a56e12756709000d8cdf69dd46",
+    "data/derived/national/facilities/ws4_sustainable_cases/150m/sustainable_product_chain.csv": "37d1690505d0d4f21846558fadda51cb2d9dc0b7075e48d88efb02ed282f0b9e"
+  },
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-27T17:20:26+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/case_tier_positions.csv": "8223aa352197e6960cb42b474304026d313ebcdb0ae5d738d27e7acb3d3ab990",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/zone_allocation_weights.csv": "d889858f9dbf1a68a36d7acac86b88a6957c7578b720d8d896594b55dd41c117"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "facility_province_handoff": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sustainable_schedule": true,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "FORESTRY_OSECAN_HANDOFF_WS4_SUSTAINABLE_CASES.md": {
+      "bytes": 6881,
+      "sha256": "eb35a62197b4fb25053fd71f49147f49ed41acb21f83b99414c854cb1c1eb39c"
+    },
+    "case_tier_positions.csv": {
+      "bytes": 6193,
+      "sha256": "fb2a1ad4ce5293779654d55f714ec3fb9c111ce4e27b584df29fda3cc0a48238"
+    },
+    "case_zone_summary.csv": {
+      "bytes": 214822,
+      "sha256": "90ac1a2a2b90540393b9226836c7b674d5224c47a6ffd528d578fe8cde4077e1"
+    },
+    "summary.json": {
+      "bytes": 61029,
+      "sha256": "c7be0d7dda01324222cc5fc344388921d9eecb0047d5e90b07d9dd260eea6df2"
+    },
+    "tier_comparison_vs_v10.csv": {
+      "bytes": 7717,
+      "sha256": "952c89d1ac47bcf38ed44c6042f4224169f41b6ec951b43d62c31623e84614fe"
+    },
+    "zone_harvest_residue.csv": {
+      "bytes": 93893,
+      "sha256": "b1e33a5a8b36506158951c79e087a48be700db83f1a7b77e4275e382c75450c6"
+    },
+    "zone_process_residue.csv": {
+      "bytes": 121392,
+      "sha256": "54ac122c6b87c28b880dccdec9f9ea29c77141530bbf4e669227b63f4c8fde76"
+    }
+  },
+  "title": "Sustainable 100/150 Mm3 WS4 Forestry Residue Handoff to OSeCAN",
+  "validation": {
+    "checks": [
+      {
+        "check": "official OSeCAN tree hash unchanged",
+        "detail": "before=80caa91c3e91c890... after=80caa91c3e91c890...",
+        "passed": true
+      },
+      {
+        "check": "zone weights sum to one per province",
+        "detail": "min=1 max=1.0000000000001",
+        "passed": true
+      },
+      {
+        "check": "13 official zones and no fabricated zones",
+        "detail": "zones=13",
+        "passed": true
+      },
+      {
+        "check": "zone totals conserve national totals",
+        "detail": "max PJ gap=1.48929757415e-11",
+        "passed": true
+      },
+      {
+        "check": "province zone allocations conserve province totals",
+        "detail": "max PJ gap=1.4921397451e-11",
+        "passed": true
+      },
+      {
+        "check": "v10 reference 21/21 tier positions match frozen v5.1",
+        "detail": "matches=21/21",
+        "passed": true
+      },
+      {
+        "check": "100m primary tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "100m achieved tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "150m primary tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "150m achieved tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "row labels",
+        "detail": "all labels set",
+        "passed": true
+      },
+      {
+        "check": "no NaN or negative residue values",
+        "detail": "all residue values finite and non-negative",
+        "passed": true
+      },
+      {
+        "check": "zone rows complete for each basis/stream/case",
+        "detail": "rows=364 expected=364",
+        "passed": true
+      }
+    ]
+  }
+}
