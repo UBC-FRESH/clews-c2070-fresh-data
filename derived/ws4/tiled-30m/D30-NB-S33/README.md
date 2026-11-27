@@ -30,14 +30,16 @@ artifact, not official OSeCAN and not a chain v5.1 change.
 - Schedule rows: 75764
 - Scheduled area: 14310.81 ha
 - Eligible blocks (age class >= 40): 757639
-- Simulation: not_run_datasets_only (--datasets-only)
+- Simulated years: 20
+- Harvested volume: 2584992.326 m3
+- Treated/managed area: 14310.810 ha
 
 ## Storage
 
 - Dataset: 31.68 MB
 - Schedules: 0.90 MB
-- Runs: 0.00 MB
-- Total: 32.58 MB
+- Runs: 15.80 MB
+- Total: 48.38 MB
 
 The managed track shares the natural RSYC curve: there is no
 planting yield-response data in this build. No operability, tenure,
