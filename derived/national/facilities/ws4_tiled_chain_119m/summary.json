@@ -1,6 +1,7 @@
 {
   "artifact": "ws4_tiled_chain_119m",
   "artifact_version": "1.0.0",
+  "cc_contract_hashes_unchanged": true,
   "comparison": {
     "frozen_national_totals": {
       "bio_product_mwh": 930946.020334943,
@@ -488,6 +489,7 @@
     "tiles_scanned": 3345,
     "zero_harvest_skips": 203
   },
+  "coverage_manifest_sha256": "2f2d55a2f30eaf185c2ab50a9260a6bf2f092070cbad4eeb2b97242b003e1509",
   "d_status": {
     "checked_repositories": [
       "parent",
@@ -495,13 +497,13 @@
     ],
     "no_unexpected_deletions": true
   },
-  "generated_utc": "2026-11-27T04:49:52+00:00",
+  "generated_utc": "2026-11-27T07:11:54+00:00",
   "inputs": {
     "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
     "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
     "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
-    "data/derived/ws4/scanfi-national-990m/dataset/manifest.json": "b4638c35084b0462bdd6545a87416551d71928833a263ffd0816ee5ba469dac5",
-    "data/derived/ws4/tiled-30m/national_tiled_manifest.json": "bb1f831b7ba5814d68d457f496a72bddc9e342aa49e50730858d8a8d5ba418eb"
+    "data/derived/ws4/scanfi-national-990m/dataset/manifest.json": "a1f2dd8d0a506b056ce01a475f8adbaa26c2471bf103e8b819f81e7f0a670ee3",
+    "data/derived/ws4/tiled-30m/national_tiled_manifest.json": "2f2d55a2f30eaf185c2ab50a9260a6bf2f092070cbad4eeb2b97242b003e1509"
   },
   "labels": {
     "chain_v51_unchanged": true,
@@ -536,6 +538,14 @@
       "secondary": "ws4_achieved"
     },
     "chain_dir": "data/derived/national/facilities/ws4_tiled_chain_119m",
+    "chain_files": {
+      "data/derived/national/facilities/ws4_tiled_chain_119m/ws4_tiled_coefficients.csv": "8dcc260739248e818771d96c3da0bda80e31a4680114ac66dc6c3952e77f74a6",
+      "data/derived/national/facilities/ws4_tiled_chain_119m/ws4_tiled_harvest.csv": "d1c820c06625b89d0e8884cb54350b933be3ebe3b172a4217f6e765ffaee44f4",
+      "data/derived/national/facilities/ws4_tiled_chain_119m/ws4_tiled_product_chain.csv": "271903b6fb044168a2215ca19cc8ff9da40b2d4342f39638ecfa8e828bc6193e",
+      "data/derived/national/facilities/ws4_tiled_chain_119m/ws4_tiled_selected_blocks.csv": "aa543f7f5926a4908e80f471281b56700c605ba5dce5865934e1ab1afe36d21c",
+      "data/derived/national/facilities/ws4_tiled_chain_119m/ws4_tiled_vs_chain_v51_comparison.csv": "21aaa8b7541f29f3d735adbbc87a093bf0337624d5a653dec31996063e0a7f9a"
+    },
+    "chain_hash": "1100a8439a921b0be99ac05ec2dbde4fe0cfbada4cafb81dec0d0f78510bbbbb",
     "d_status": {
       "checked_repositories": [
         "parent",
@@ -545,7 +555,7 @@
     },
     "frozen_21_of_21": true,
     "frozen_matches": 21,
-    "generated_utc": "2026-11-27T04:49:51+00:00",
+    "generated_utc": "2026-11-27T07:11:54+00:00",
     "labels": {
       "chain_v51_unchanged": true,
       "facility_province_handoff": false,
@@ -781,6 +791,7 @@
       "zone_rows_per_case": 13
     }
   },
+  "pre_thin_results_unchanged": true,
   "product_chain": {
     "bases": [
       "ws4_achieved",
@@ -1326,7 +1337,8 @@
       "volume_m3": 0.0
     }
   ],
-  "reproduce": ".venv/bin/python -m workflows.national.facilities.ws4_tiled_chain_119m",
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.ws4_tiled_chain_119m --workers 32 --pre-thin-chain-dir tmp/ws4_tiled_chain_119m_pre_thin",
+  "rerun_utc": "2026-11-27T07:11:54+00:00",
   "sample_simulation": [
     {
       "area_delta_ha": -9.094947017729282e-13,
@@ -1402,13 +1414,47 @@
     "candidate_volume_approx_m3": 13456450246.54506,
     "eligible_blocks": 1431297895,
     "eligible_volume_approx_m3": 39140879549.12984,
+    "natural_tracks": 12892,
     "per_tile_candidate_limit": 20000,
     "pool_margin_required": 1.1,
     "province_pool_limit": 2000000,
+    "thinned_tracks_excluded": 12892,
     "tiles_scanned": 3345,
     "zero_approx_blocks": 0
   },
   "status": "pass",
+  "thin_propagated": true,
+  "thin_refresh": {
+    "cc_contract_hash_count": 3345,
+    "cc_contract_hashes_unchanged": true,
+    "cc_contract_tree_sha256": "1d03d98888483f90a499e1b8673ec5c4fa677bcd1701a3360ed2392ce2910af4",
+    "chain_totals_unchanged": true,
+    "compared_rows": 223,
+    "coverage_manifest_sha256": "2f2d55a2f30eaf185c2ab50a9260a6bf2f092070cbad4eeb2b97242b003e1509",
+    "harvest_unchanged": true,
+    "max_abs_delta": 1.4901161193847656e-08,
+    "mismatch_count": 0,
+    "mode": "full_rescan",
+    "natural_fragments_blocks_unchanged": true,
+    "osecan_tiers_unchanged": true,
+    "pre_thin_chain_dir": "tmp/ws4_tiled_chain_119m_pre_thin",
+    "pre_thin_coverage_manifest_sha256": "bb1f831b7ba5814d68d457f496a72bddc9e342aa49e50730858d8a8d5ba418eb",
+    "pre_thin_generated_utc": "2026-11-27T04:49:52+00:00",
+    "pre_thin_results_unchanged": true,
+    "pre_thin_summary_sha256": "6350ac661520692093affbd658fb8e9a3580a6f68b12b006507a18ca9fcdfc28",
+    "rerun_utc": "2026-11-27T07:11:54+00:00",
+    "selection_unchanged": true,
+    "statuses": {
+      "patched": 3345
+    },
+    "thin_patch_hashes_sha256": "f148952a60bb5363e6017431d9ba7de1e729c396aa211d53f8e0c27e5e940c39",
+    "thin_propagated": true,
+    "thin_propagated_utc": "2026-11-27T06:40:27+00:00",
+    "thin_tiles": 3345,
+    "thin_tracks_added": 12892,
+    "thinned_tracks_excluded": 12892,
+    "tiles_verified": 3345
+  },
   "title": "Tiled 30-m WS4 119 Mm3 chain and chain v5.1 comparison",
   "validation": {
     "checks": [
@@ -1460,6 +1506,31 @@
       {
         "check": "official OSeCAN unchanged",
         "detail": "146 files, 80caa91c3e91c890..., changed_files=0",
+        "passed": true
+      },
+      {
+        "check": "coverage manifest hash",
+        "detail": "2f2d55a2f30eaf185c2ab50a9260a6bf2f092070cbad4eeb2b97242b003e1509 (expected 2f2d55a2f30eaf185c2ab50a9260a6bf2f092070cbad4eeb2b97242b003e1509)",
+        "passed": true
+      },
+      {
+        "check": "THIN propagation metadata",
+        "detail": "thin_propagated=True tiles=3345",
+        "passed": true
+      },
+      {
+        "check": "CC contract hashes unchanged",
+        "detail": "3345 per-tile contracts, tree=1d03d98888483f90...",
+        "passed": true
+      },
+      {
+        "check": "thinned tracks excluded",
+        "detail": "excluded=12892 added=12892",
+        "passed": true
+      },
+      {
+        "check": "pre-THIN results unchanged",
+        "detail": "rows=223 mismatches=0 max_abs_delta=1.4901161193847656e-08",
         "passed": true
       }
     ]

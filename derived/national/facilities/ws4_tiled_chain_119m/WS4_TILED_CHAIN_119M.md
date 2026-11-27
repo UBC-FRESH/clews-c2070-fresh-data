@@ -24,6 +24,34 @@ dataset for the 217 explicitly skipped candidates. NU has a zero control target
 and all 203 NU candidates were skipped upstream as zero-harvest, so no NU
 dataset exists to scan.
 
+## 1b. THIN refresh
+
+| Refresh field | Value |
+|---|---|
+| Coverage manifest SHA-256 | 2f2d55a2f30eaf185c2ab50a9260a6bf2f092070cbad4eeb2b97242b003e1509 |
+| Prior coverage manifest SHA-256 | bb1f831b7ba5814d68d457f496a72bddc9e342aa49e50730858d8a8d5ba418eb |
+| THIN propagated | true |
+| THIN tiles | 3345 |
+| THIN tracks excluded from selection | 12892 |
+| CC contracts unchanged | true |
+| CC contract tiles | 3345 |
+| CC contract tree SHA-256 | 1d03d98888483f90a499e1b8673ec5c4fa677bcd1701a3360ed2392ce2910af4 |
+| Full rescan / cache | full_rescan |
+| Pre-THIN results unchanged | True |
+| Comparison rows / mismatches | 223 / 0 |
+| Max absolute delta | 1.4901161193847656e-08 |
+| Rerun UTC | 2026-11-27T07:11:54+00:00 |
+
+The coverage was refreshed from the metadata-only THIN-patched national tiled
+manifest. Every tile's per-tile `thin_patch.json` records an identical
+natural/managed CC contract hash before and after the patch, and the parser
+explicitly excludes `SILV_STATE(thinned)` tracks from the natural/unmanaged
+candidate pool. The refreshed scan is compared row-for-row with the pre-THIN
+artifact in `thin_refresh_comparison.csv`. `pre_thin_results_unchanged=true`
+means selection keys, selected area, harvest, chain totals and OSeCAN tier
+positions all match exactly; any difference is written to that CSV with its
+signed delta.
+
 ## 2. Two-pass method
 
 **Pass 1 - candidate scan.** For each tile, only `blocks`, `tracks`,
