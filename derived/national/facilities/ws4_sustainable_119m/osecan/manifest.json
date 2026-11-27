@@ -1,0 +1,131 @@
+{
+  "artifact": "forestry_osecan_handoff_ws4_sustainable",
+  "artifact_version": "1.0.0",
+  "chain": {
+    "dir": "data/derived/national/facilities/ws4_sustainable_119m",
+    "files": {
+      "data/derived/national/facilities/ws4_sustainable_119m/comparison_vs_v51.csv": "750cffe99b8164008ddef22edc3b6c8e2153a1a69da6acedfff0a246cd0a7b38",
+      "data/derived/national/facilities/ws4_sustainable_119m/summary.json": "a0e4ad9eba0574a9c609aec9bd71c9fa00b202ef960f19704cf785169f49b678",
+      "data/derived/national/facilities/ws4_sustainable_119m/sustainable_harvest_by_province.csv": "b1e1b2f9af7653db0ed29a5fdf24ea657e8b68d7f50057864aa64bda4d701d4f",
+      "data/derived/national/facilities/ws4_sustainable_119m/sustainable_product_chain.csv": "c1539c24c1ff62588f09bc4ce73f37c33952b3cc5729181d60e6df8e66a7410d"
+    },
+    "hash": "db89dacbbec3cea443f6439c72efc57fbb745d477566adc83b372fa67b8689dd"
+  },
+  "chain_dir": "data/derived/national/facilities/ws4_sustainable_119m",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-27T16:46:57+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/case_tier_positions.csv": "8223aa352197e6960cb42b474304026d313ebcdb0ae5d738d27e7acb3d3ab990",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/zone_allocation_weights.csv": "d889858f9dbf1a68a36d7acac86b88a6957c7578b720d8d896594b55dd41c117"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "facility_province_handoff": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sustainable_schedule": true,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "FORESTRY_OSECAN_HANDOFF_WS4_SUSTAINABLE.md": {
+      "bytes": 5315,
+      "sha256": "6d062345105098c1f94de63781de6f55be77213c189cfefe90e190e78fef07b8"
+    },
+    "case_tier_positions.csv": {
+      "bytes": 3171,
+      "sha256": "9845044277ea697ff8a552c57608ea01d157ba19caff22b78dcee4bcd7b3786d"
+    },
+    "case_zone_summary.csv": {
+      "bytes": 107788,
+      "sha256": "54b75d12480b1165c01fc907af00a6be66ee7a6cb811b815ff1715e232e71ea6"
+    },
+    "summary.json": {
+      "bytes": 7857,
+      "sha256": "60814b0303661710354fc14f7280d3abc2163c3fb5916f984f5fdd5e6046a6d8"
+    },
+    "tier_comparison_vs_v10.csv": {
+      "bytes": 7847,
+      "sha256": "7f9b6c8012d26338ed3af82a421815033f8be3d0e55e533088f26ed054d572f2"
+    },
+    "zone_harvest_residue.csv": {
+      "bytes": 47211,
+      "sha256": "47bd9d860686c97fe35290b158fbf9754e290c9afcf7ce9c428adf6066394adb"
+    },
+    "zone_process_residue.csv": {
+      "bytes": 61040,
+      "sha256": "01066c3453c3bc3a6b31058083513993f3ce1d212f0700ab1b05d6fdd44b3c98"
+    }
+  },
+  "title": "Sustainable 119 Mm3 WS4 Forestry Residue Handoff to OSeCAN",
+  "validation": {
+    "checks": [
+      {
+        "check": "official OSeCAN tree hash unchanged",
+        "detail": "before=80caa91c3e91c890... after=80caa91c3e91c890... changed_files=0",
+        "passed": true
+      },
+      {
+        "check": "zone weights sum to one per province",
+        "detail": "min=1 max=1.0000000000001",
+        "passed": true
+      },
+      {
+        "check": "13 official zones and no fabricated zones",
+        "detail": "zones=13",
+        "passed": true
+      },
+      {
+        "check": "zone totals conserve national totals",
+        "detail": "max PJ gap=1.3073986338e-11; max ODT gap=7.07805156708e-07",
+        "passed": true
+      },
+      {
+        "check": "province zone allocations conserve province totals",
+        "detail": "max PJ gap=1.31024080474e-11",
+        "passed": true
+      },
+      {
+        "check": "v10 reference 21/21 tier positions match frozen v5.1",
+        "detail": "matches=21/21",
+        "passed": true
+      },
+      {
+        "check": "sustainable 119m primary tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "sustainable 119m achieved tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "row labels",
+        "detail": "all labels set",
+        "passed": true
+      },
+      {
+        "check": "no NaN or negative residue values",
+        "detail": "all residue values finite and non-negative",
+        "passed": true
+      },
+      {
+        "check": "zone rows complete for each basis/stream/case",
+        "detail": "rows=182 expected=182 per_case=13",
+        "passed": true
+      }
+    ]
+  }
+}

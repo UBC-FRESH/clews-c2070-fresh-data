@@ -1,0 +1,91 @@
+{
+  "artifact": "ws4_sustainable_119m",
+  "artifact_version": "1.0.0",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "frozen_integrity": {
+    "chain_v51_after": {
+      "file_count": 12,
+      "root": "data/derived/national/facilities/national_product_chain_v5",
+      "tree_sha256": "b43b34ce4b52f544cc47abf5cfeb88788161060c3a829b68bb89610ddc99743f"
+    },
+    "chain_v51_before": {
+      "file_count": 12,
+      "root": "data/derived/national/facilities/national_product_chain_v5",
+      "tree_sha256": "b43b34ce4b52f544cc47abf5cfeb88788161060c3a829b68bb89610ddc99743f"
+    },
+    "chain_v51_unchanged": true,
+    "official_osecan_after": {
+      "file_count": 146,
+      "root": "data/derived/national/clews/osecan",
+      "tree_sha256": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a"
+    },
+    "official_osecan_before": {
+      "file_count": 146,
+      "root": "data/derived/national/clews/osecan",
+      "tree_sha256": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a"
+    },
+    "official_osecan_unchanged": true
+  },
+  "generated_utc": "2026-11-27T16:46:55+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/ws4/scanfi-national-990m/dataset/manifest.json": "a1f2dd8d0a506b056ce01a475f8adbaa26c2471bf103e8b819f81e7f0a670ee3",
+    "data/derived/ws4/sustainable-119m/run_100y/product_values.csv": "708abefa92b34be62d7a0a4c7e0a938d71819866918d433d4b32355fd5b84a3b",
+    "data/derived/ws4/sustainable-119m/schedule.csv": "6a7d3e27bc8f282b83787ca523912c061f2105f674ccbeff894698ce02bdf5c5"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sustainable_schedule": true,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "WS4_SUSTAINABLE_119M.md": {
+      "bytes": 8135,
+      "sha256": "127c7461cc69af8b3832ee836bad9577af8d91cf36ab671d73efd6d4a1f71627"
+    },
+    "comparison_vs_v51.csv": {
+      "bytes": 4890,
+      "sha256": "750cffe99b8164008ddef22edc3b6c8e2153a1a69da6acedfff0a246cd0a7b38"
+    },
+    "summary.json": {
+      "bytes": 37849,
+      "sha256": "a0e4ad9eba0574a9c609aec9bd71c9fa00b202ef960f19704cf785169f49b678"
+    },
+    "sustainable_harvest_by_province.csv": {
+      "bytes": 3272,
+      "sha256": "b1e1b2f9af7653db0ed29a5fdf24ea657e8b68d7f50057864aa64bda4d701d4f"
+    },
+    "sustainable_product_chain.csv": {
+      "bytes": 19466,
+      "sha256": "c1539c24c1ff62588f09bc4ce73f37c33952b3cc5729181d60e6df8e66a7410d"
+    }
+  },
+  "target": {
+    "annual_m3": 118977339.1,
+    "horizon_years": 100,
+    "period_length_years": 10,
+    "period_m3": 1189773391.0,
+    "periods": 10,
+    "province_allocation": "frozen 119 Mm3 allocated_share"
+  },
+  "title": "Sustainable 119 Mm3/yr WS4 schedule and chain",
+  "validation": {
+    "period_shortfall_m3": 0.0,
+    "run_offsets": 100,
+    "sustained_119m": true,
+    "ws4_validate": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m/dataset"
+  }
+}
