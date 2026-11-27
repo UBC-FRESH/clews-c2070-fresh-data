@@ -1,0 +1,175 @@
+{
+  "artifact": "ws4_operable_cases",
+  "artifact_version": "1.0.0",
+  "cases": {
+    "100m": {
+      "chain_dir": "data/derived/national/facilities/ws4_operable_cases/100m",
+      "max_nominal_control_m3": 68457031.31845704,
+      "schedule_dir": "data/derived/ws4/operable-100m",
+      "sustained": false,
+      "target_annual_m3": 100000000.1
+    },
+    "119m": {
+      "chain_dir": "data/derived/national/facilities/ws4_operable_cases/119m",
+      "max_nominal_control_m3": 67854263.70546874,
+      "schedule_dir": "data/derived/ws4/operable-119m",
+      "sustained": false,
+      "target_annual_m3": 118977339.1
+    },
+    "150m": {
+      "chain_dir": "data/derived/national/facilities/ws4_operable_cases/150m",
+      "max_nominal_control_m3": 61486816.48823242,
+      "schedule_dir": "data/derived/ws4/operable-150m",
+      "sustained": false,
+      "target_annual_m3": 150000000.2
+    }
+  },
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-27T18:11:10+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/scenario_summary.csv": "da4481765c26a1de240431e8bc825d6424be1f78d9dd1ee583daef0cd55a8458",
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/national/harvest_basis/provincial_allocation/150m.csv": "3675cdc5e0723b453924b9dc6b8e13f19578f02a01086eb95f88f7bf750ceee1",
+    "data/derived/national/managed_landbase/operable_proxy_v2/gaps.csv": "cfc28ee5a8abdc36e54a5a11f3a5313322ef0634eef12ea96f840a6dfef8362f",
+    "data/derived/national/managed_landbase/operable_proxy_v2/operable_proxy_v2_by_province.csv": "d64f4cb02a02210e1b18e671df33f10eddf5b9fba0b4f9760bb7aa26e6583497",
+    "data/derived/national/managed_landbase/operable_proxy_v2/road_distance_classes.csv": "dae17478f2aae2ddf33d37c12ac0952ea4668f199022ae58d637c610629e75b1",
+    "data/derived/ws4/operable-100m/run_100y/product_values.csv": "dce3b87e1fbd248c8900dc200c95775c2e6636c549afcaba50d41561b5641821",
+    "data/derived/ws4/operable-100m/schedule.csv": "96e815d99c7c616e0c0b456872d54d8d5f1b3929f50ced0834b84460d2aae891",
+    "data/derived/ws4/operable-119m/run_100y/product_values.csv": "ed49bbd40cc2fb0d1905fa7077965df95c2580ae21df1ea00fa1bc2fc7860f33",
+    "data/derived/ws4/operable-119m/schedule.csv": "813bc0343e90e60599fe0d4fcc0cd92906fffc65e20612609aec9ee6694d43b8",
+    "data/derived/ws4/operable-150m/run_100y/product_values.csv": "f295a0f65a0978740f46010bb2d74bd3b1954069f31eec39ae84351f484b0f60",
+    "data/derived/ws4/operable-150m/schedule.csv": "5b93a10b6a681dd113f5142fa850e774bcec3129775be9b367430bbdb53c048b",
+    "data/derived/ws4/operable-mask/mask_summary.json": "7b98dc80e61ab5d73cbdb846eac4ec07187294cb3aacb18f86ad8bd2c1179bd6",
+    "data/derived/ws4/scanfi-national-990m/dataset/manifest.json": "a1f2dd8d0a506b056ce01a475f8adbaa26c2471bf103e8b819f81e7f0a670ee3"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "legal_thlb": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "share_based_operable_proxy": true,
+    "slope_screen": false,
+    "sustainable_schedule": true,
+    "ws4_derived": true
+  },
+  "operable_mask": {
+    "dir": "data/derived/ws4/operable-mask",
+    "selected_area_ha": 75374046.0,
+    "selected_blocks": 370752
+  },
+  "osecan": {
+    "case_matches": {
+      "100m": {
+        "positions": 7,
+        "primary": 6,
+        "secondary": 7
+      },
+      "119m": {
+        "positions": 7,
+        "primary": 7,
+        "secondary": 6
+      },
+      "150m": {
+        "positions": 7,
+        "primary": 7,
+        "secondary": 6
+      }
+    },
+    "dir": "data/derived/national/facilities/ws4_operable_cases/osecan",
+    "frozen_21_of_21": true,
+    "frozen_matches": 21,
+    "official_detail": "146 files, 80caa91c3e91c890..., changed_files=0",
+    "official_unchanged": true,
+    "status": "pass",
+    "status_text": "Rebuilt from the operable sustainable WS4 case chains on the origin-province basis using the frozen handoff-v10 zone weights. Frozen v5.1 21/21 positions match handoff v10; 100m primary 6/7, achieved 7/7; 119m primary 7/7, achieved 6/7; 150m primary 7/7, achieved 6/7. Official OSeCAN is unchanged."
+  },
+  "outputs": {
+    "WS4_OPERABLE_CASES.md": {
+      "bytes": 7634,
+      "sha256": "5f68dbc0a862ac0b8733d20a01204d97eeed20e108d62cc4aec01e16582d3ea8"
+    },
+    "chain_comparison_vs_v51.csv": {
+      "bytes": 16440,
+      "sha256": "6cbb6ae25ad6b4862c129070f075db10849adee1164363378bbb00d7f686b7e4"
+    },
+    "full_forest_vs_operable.csv": {
+      "bytes": 1855,
+      "sha256": "f2179f56960466a96c0e5019f1be0792c3956f66dabb5073c5bc2a38dbfd936c"
+    },
+    "summary.json": {
+      "bytes": 199295,
+      "sha256": "57af0b1443a193307733e8be3ce039e1dc673c1c47e8ddf06dd99c9ed1b6b93b"
+    }
+  },
+  "title": "Sustainable WS4 cases on a share-based operable landbase",
+  "validation": {
+    "all_cases_no_under_rotation": true,
+    "all_cases_operable_only": true,
+    "case_count": 3,
+    "mask_selected_share_within_half_block": true,
+    "osecan_checks": [
+      {
+        "check": "official OSeCAN tree hash unchanged",
+        "detail": "before=80caa91c3e91c890... after=80caa91c3e91c890...",
+        "passed": true
+      },
+      {
+        "check": "zone weights sum to one per province",
+        "detail": "min=1 max=1.0000000000001",
+        "passed": true
+      },
+      {
+        "check": "13 official zones and no fabricated zones",
+        "detail": "zones=13",
+        "passed": true
+      },
+      {
+        "check": "zone totals conserve national totals",
+        "detail": "max PJ gap=1.47792889038e-11",
+        "passed": true
+      },
+      {
+        "check": "province zone allocations conserve province totals",
+        "detail": "max PJ gap=1.48077106132e-11",
+        "passed": true
+      },
+      {
+        "check": "v10 reference 21/21 tier positions match frozen v5.1",
+        "detail": "matches=21/21",
+        "passed": true
+      },
+      {
+        "check": "zone rows complete for each basis/stream/case",
+        "detail": "rows=546 expected=546",
+        "passed": true
+      },
+      {
+        "check": "tier rows complete for each case/basis/stream/case",
+        "detail": "rows=42 expected=42",
+        "passed": true
+      },
+      {
+        "check": "row labels",
+        "detail": "all labels set",
+        "passed": true
+      },
+      {
+        "check": "no NaN or negative residue values",
+        "detail": "all residue values finite and non-negative",
+        "passed": true
+      }
+    ]
+  }
+}
