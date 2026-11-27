@@ -1,0 +1,260 @@
+{
+  "artifact": "forestry_osecan_handoff_ws4_tiled",
+  "artifact_version": "1.0.0",
+  "basis": {
+    "bases": [
+      "scaled_to_119m_control",
+      "ws4_achieved"
+    ],
+    "control_total_m3": 118977339.1,
+    "facility_province_handoff": false,
+    "origin_province": true,
+    "primary": "scaled_to_119m_control",
+    "secondary": "ws4_achieved"
+  },
+  "chain_dir": "data/derived/national/facilities/ws4_tiled_chain_119m",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "frozen_21_of_21": true,
+  "frozen_matches": 21,
+  "generated_utc": "2026-11-27T04:49:51+00:00",
+  "labels": {
+    "chain_v51_unchanged": true,
+    "facility_province_handoff": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "tiled_30m": true,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false,
+    "ws4_derived": true
+  },
+  "national_totals": [
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "process_availability_000",
+      "odt": 0.0,
+      "pj": 0.0,
+      "stream": "process"
+    },
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "process_availability_025",
+      "odt": 6739869.819005655,
+      "pj": 124.68759165160462,
+      "stream": "process"
+    },
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "process_availability_050",
+      "odt": 13479739.63801131,
+      "pj": 249.37518330320924,
+      "stream": "process"
+    },
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "process_availability_075",
+      "odt": 20219609.457016967,
+      "pj": 374.0627749548139,
+      "stream": "process"
+    },
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "harvest_recovery_035",
+      "odt": 8407881.772417359,
+      "pj": 155.54581278972114,
+      "stream": "harvest"
+    },
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "harvest_recovery_060",
+      "odt": 14413511.60985369,
+      "pj": 266.6499647822933,
+      "stream": "harvest"
+    },
+    {
+      "basis": "scaled_to_119m_control",
+      "case": "harvest_recovery_075",
+      "odt": 18016889.51232661,
+      "pj": 333.3124559780423,
+      "stream": "harvest"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "process_availability_000",
+      "odt": 0.0,
+      "pj": 0.0,
+      "stream": "process"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "process_availability_025",
+      "odt": 6740523.05905447,
+      "pj": 124.6996765925077,
+      "stream": "process"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "process_availability_050",
+      "odt": 13481046.11810894,
+      "pj": 249.3993531850154,
+      "stream": "process"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "process_availability_075",
+      "odt": 20221569.17716341,
+      "pj": 374.0990297775231,
+      "stream": "process"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "harvest_recovery_035",
+      "odt": 8408696.679121336,
+      "pj": 155.56088856374473,
+      "stream": "harvest"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "harvest_recovery_060",
+      "odt": 14414908.592774795,
+      "pj": 266.6758089663337,
+      "stream": "harvest"
+    },
+    {
+      "basis": "ws4_achieved",
+      "case": "harvest_recovery_075",
+      "odt": 18018635.74097799,
+      "pj": 333.34476120809285,
+      "stream": "harvest"
+    }
+  ],
+  "official_detail": "146 files, 80caa91c3e91c890..., changed_files=0",
+  "official_unchanged": true,
+  "primary_7_of_7": true,
+  "primary_matches": 7,
+  "secondary_7_of_7": true,
+  "secondary_matches": 7,
+  "status": "pass",
+  "status_text": "Rebuilt from the tiled 30-m WS4 chain on the origin-province basis using the frozen handoff-v10 zone weights. Frozen v5.1 21/21 positions match handoff v10; the tiled 119 Mm3 primary basis matches 7/7 and the achieved basis 7/7. Official OSeCAN is unchanged.",
+  "tier_check": {
+    "frozen_v5_1_positions": 21,
+    "note": "Frozen v5.1 has 21 tier positions across 100/119/150 Mm3. The WS4 chain is the 119 Mm3 control only, so only its 7 positions per basis are like-for-like; the 100/150 reference positions are reported as not available, not fabricated.",
+    "v10_positions_matching_frozen_v5_1": 21,
+    "ws4_positions_available": 7,
+    "ws4_primary_tier_matches": 7,
+    "ws4_primary_tier_mismatches": 0,
+    "ws4_secondary_tier_matches": 7,
+    "ws4_secondary_tier_mismatches": 0
+  },
+  "title": "Tiled 30-m WS4 Forestry Residue Handoff to OSeCAN",
+  "v10_check": {
+    "differences": [],
+    "matches": 21,
+    "positions": 21
+  },
+  "validation": {
+    "checks": [
+      {
+        "check": "official OSeCAN tree hash unchanged",
+        "detail": "before=80caa91c3e91c890... after=80caa91c3e91c890... changed_files=0",
+        "passed": true
+      },
+      {
+        "check": "zone weights sum to one per province",
+        "detail": "min=1 max=1.0000000000001",
+        "passed": true
+      },
+      {
+        "check": "13 official zones and no fabricated zones",
+        "detail": "zones=13",
+        "passed": true
+      },
+      {
+        "check": "zone totals conserve national totals",
+        "detail": "max PJ gap=1.3073986338e-11; max ODT gap=7.07805156708e-07",
+        "passed": true
+      },
+      {
+        "check": "province zone allocations conserve province totals",
+        "detail": "max PJ gap=1.3073986338e-11",
+        "passed": true
+      },
+      {
+        "check": "v10 reference 21/21 tier positions match frozen v5.1",
+        "detail": "matches=21/21",
+        "passed": true
+      },
+      {
+        "check": "WS4 119m primary tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "WS4 119m achieved tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "row labels",
+        "detail": "model_estimate=true, observed=false, policy_grade=false, national_claim=false, ws4_derived=true, official_osecan_changed=false, chain_v51_unchanged=true",
+        "passed": true
+      },
+      {
+        "check": "no NaN or negative residue values",
+        "detail": "all residue values finite and non-negative",
+        "passed": true
+      },
+      {
+        "check": "zone rows complete for each basis/stream/case",
+        "detail": "rows=182 expected=182 per_case=13",
+        "passed": true
+      },
+      {
+        "check": "national case totals non-negative",
+        "detail": "all WS4 case totals non-negative",
+        "passed": true
+      }
+    ]
+  },
+  "zone_summary": {
+    "global_weight_sum": 13.0000000000001,
+    "max_province_zone_gap_pj": 1.3073986337985843e-11,
+    "max_zone_national_gap_odt": 7.078051567077637e-07,
+    "max_zone_national_gap_pj": 1.3073986337985843e-11,
+    "multi_zone_provinces": [
+      "BC",
+      "AB",
+      "ON",
+      "QC"
+    ],
+    "province_count": 13,
+    "province_weight_sum_max": 1.0000000000001,
+    "province_weight_sum_min": 1.0,
+    "zone_count": 13,
+    "zone_ids": [
+      "B1",
+      "B2",
+      "A1",
+      "A2",
+      "S1",
+      "M1",
+      "O1",
+      "O2",
+      "Q1",
+      "Q2",
+      "T1",
+      "L1",
+      "N1"
+    ],
+    "zone_rows_expected": 182,
+    "zone_rows_per_case": 13
+  }
+}

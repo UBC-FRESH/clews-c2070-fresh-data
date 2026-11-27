@@ -1,0 +1,208 @@
+{
+  "artifact": "ws4_tiled_chain_119m",
+  "artifact_version": "1.0.0",
+  "coverage": {
+    "built_tiles_by_province": {
+      "AB": 255,
+      "BC": 454,
+      "MB": 284,
+      "NB": 50,
+      "NL": 240,
+      "NS": 46,
+      "NT": 464,
+      "ON": 444,
+      "PE": 13,
+      "QC": 656,
+      "SK": 210,
+      "YT": 229
+    },
+    "built_validated_tiles": 3345,
+    "candidates_total": 3562,
+    "full_built_tile_coverage": true,
+    "no_forest_skips": 14,
+    "provinces_with_tiles": [
+      "AB",
+      "BC",
+      "MB",
+      "NB",
+      "NL",
+      "NS",
+      "NT",
+      "ON",
+      "PE",
+      "QC",
+      "SK",
+      "YT"
+    ],
+    "provinces_without_tiles": [
+      "NU"
+    ],
+    "scope_note": "All 3,345 built and validated tiled datasets are scanned. The 203 NU zero-harvest candidates and 14 no-forest slivers are explicitly skipped by the upstream tiled build and carry no dataset; they are not fabricated here.",
+    "tiles_scanned": 3345,
+    "zero_harvest_skips": 203
+  },
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-27T04:49:52+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/ws4/scanfi-national-990m/dataset/manifest.json": "b4638c35084b0462bdd6545a87416551d71928833a263ffd0816ee5ba469dac5",
+    "data/derived/ws4/tiled-30m/national_tiled_manifest.json": "bb1f831b7ba5814d68d457f496a72bddc9e342aa49e50730858d8a8d5ba418eb"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "tiled_30m": true,
+    "ws4_derived": true
+  },
+  "osecan": {
+    "frozen_21_of_21": true,
+    "official_unchanged": true,
+    "outputs": {
+      "FORESTRY_OSECAN_HANDOFF_WS4_TILED.md": {
+        "bytes": 5249,
+        "sha256": "84485dab41aef0eda1f8e3096bcb9dcc79b599dafbbbd16711a23a6caa6bd87a"
+      },
+      "case_tier_positions.csv": {
+        "bytes": 3199,
+        "sha256": "bee89a3e6d883edc9f16d4b478ad572a3c2123a14282c0bf2496ba83bbbf7e7e"
+      },
+      "case_zone_summary.csv": {
+        "bytes": 107592,
+        "sha256": "0082b24337d2d944d7b19de198e7e3d7e21ba52675eaca7a9c831d07112e5a44"
+      },
+      "manifest.json": {
+        "bytes": 4245,
+        "sha256": "05e7df0da81c366bdb00f2c3f92bdc2b52bf999ccf1359a8ce9abd3cec1068b2"
+      },
+      "summary.json": {
+        "bytes": 7324,
+        "sha256": "d77c147dfb4368a53ef8bca97c8e3a3c0c31b70e75e08651d7ae2072bbabfa20"
+      },
+      "tier_comparison_vs_v10.csv": {
+        "bytes": 7792,
+        "sha256": "1478927a88f18b7f69b3c354bbbba1d2670d2ff5fc8e538f12ac2a026976ad78"
+      },
+      "zone_harvest_residue.csv": {
+        "bytes": 47117,
+        "sha256": "4ba72f798124ac090d9089b04814c735f1758b9f2a9e08c80734def0aa67f1d4"
+      },
+      "zone_process_residue.csv": {
+        "bytes": 60927,
+        "sha256": "498d635a803131cac3bb7e2e176f0153db067ea97731220edd1aa1a85793f688"
+      }
+    },
+    "primary_7_of_7": true,
+    "root": "data/derived/national/facilities/ws4_tiled_chain_119m/osecan",
+    "secondary_7_of_7": true
+  },
+  "outputs": {
+    "WS4_TILED_CHAIN_119M.md": {
+      "bytes": 8461,
+      "sha256": "ee772320d2e576763a5f6b08c0998b960bfd59f020b3b6846ee331aa61c338e9"
+    },
+    "summary.json": {
+      "bytes": 49972,
+      "sha256": "6350ac661520692093affbd658fb8e9a3580a6f68b12b006507a18ca9fcdfc28"
+    },
+    "ws4_tiled_candidate_pool.csv": {
+      "bytes": 1476,
+      "sha256": "4ed4595492e9265862b9cce5b72b75d65af1f5e06b797a9e330fc88802e9416e"
+    },
+    "ws4_tiled_coefficients.csv": {
+      "bytes": 6377,
+      "sha256": "8dcc260739248e818771d96c3da0bda80e31a4680114ac66dc6c3952e77f74a6"
+    },
+    "ws4_tiled_harvest.csv": {
+      "bytes": 3774,
+      "sha256": "d1c820c06625b89d0e8884cb54350b933be3ebe3b172a4217f6e765ffaee44f4"
+    },
+    "ws4_tiled_product_chain.csv": {
+      "bytes": 18933,
+      "sha256": "271903b6fb044168a2215ca19cc8ff9da40b2d4342f39638ecfa8e828bc6193e"
+    },
+    "ws4_tiled_sample_simulation.csv": {
+      "bytes": 798,
+      "sha256": "c401a61c2e52b334a7a345cd78e2ea836f4fe667a6842554825c98dc6cf44feb"
+    },
+    "ws4_tiled_selected_blocks.csv": {
+      "bytes": 74737,
+      "sha256": "aa543f7f5926a4908e80f471281b56700c605ba5dce5865934e1ab1afe36d21c"
+    },
+    "ws4_tiled_tile_scan_summary.csv": {
+      "bytes": 542409,
+      "sha256": "72c4d813d72c4c947f16e2f6a094023277674d35f34cee789b28376f711c9507"
+    },
+    "ws4_tiled_vs_chain_v51_comparison.csv": {
+      "bytes": 4991,
+      "sha256": "21aaa8b7541f29f3d735adbbc87a093bf0337624d5a653dec31996063e0a7f9a"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.ws4_tiled_chain_119m",
+  "title": "Tiled 30-m WS4 119 Mm3 chain and chain v5.1 comparison",
+  "validation": {
+    "checks": [
+      {
+        "check": "block uniqueness",
+        "detail": "427 selected rows; duplicate=False",
+        "passed": true
+      },
+      {
+        "check": "block eligibility",
+        "detail": "all selected blocks are natural/unmanaged, offset >= 40, exact volume > 0",
+        "passed": true
+      },
+      {
+        "check": "exact volume conservation",
+        "detail": "max block/fragment area gap=0 ha",
+        "passed": true
+      },
+      {
+        "check": "target and overshoot arithmetic",
+        "detail": "target=118977339.100000 m3 achieved=118988870.593173 m3 delta=11531.493173 m3",
+        "passed": true
+      },
+      {
+        "check": "no NaN or negative harvest",
+        "detail": "all harvest values finite",
+        "passed": true
+      },
+      {
+        "check": "comparison arithmetic",
+        "detail": "22 metrics compared with frozen v5.1",
+        "passed": true
+      },
+      {
+        "check": "sample WS4 simulation",
+        "detail": "3 tiles simulated for one year",
+        "passed": true
+      },
+      {
+        "check": "OSeCAN 119m tier positions",
+        "detail": "primary=7/7 secondary=7/7",
+        "passed": true
+      },
+      {
+        "check": "OSeCAN frozen 21/21 reference",
+        "detail": "matches=21/21",
+        "passed": true
+      },
+      {
+        "check": "official OSeCAN unchanged",
+        "detail": "146 files, 80caa91c3e91c890..., changed_files=0",
+        "passed": true
+      }
+    ]
+  }
+}

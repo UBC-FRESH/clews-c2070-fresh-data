@@ -1,0 +1,126 @@
+{
+  "artifact": "forestry_osecan_handoff_ws4_tiled",
+  "artifact_version": "1.0.0",
+  "chain_dir": "data/derived/national/facilities/ws4_tiled_chain_119m",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-27T04:49:51+00:00",
+  "inputs": {
+    "data/derived/national/clews/osecan/national_supply_curve/tier_definitions.csv": "a99ae6dd8a678b20c9734f0e9a3bb7bcaf348550732fee5e27b9870fe8e3ea9f",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/case_tier_positions.csv": "8223aa352197e6960cb42b474304026d313ebcdb0ae5d738d27e7acb3d3ab990",
+    "data/derived/national/facilities/forestry_osecan_handoff_v10/zone_allocation_weights.csv": "d889858f9dbf1a68a36d7acac86b88a6957c7578b720d8d896594b55dd41c117"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "facility_province_handoff": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "tiled_30m": true,
+    "transport_cost_in_osecan": false,
+    "ui_changed": false,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "FORESTRY_OSECAN_HANDOFF_WS4_TILED.md": {
+      "bytes": 5249,
+      "sha256": "84485dab41aef0eda1f8e3096bcb9dcc79b599dafbbbd16711a23a6caa6bd87a"
+    },
+    "case_tier_positions.csv": {
+      "bytes": 3199,
+      "sha256": "bee89a3e6d883edc9f16d4b478ad572a3c2123a14282c0bf2496ba83bbbf7e7e"
+    },
+    "case_zone_summary.csv": {
+      "bytes": 107592,
+      "sha256": "0082b24337d2d944d7b19de198e7e3d7e21ba52675eaca7a9c831d07112e5a44"
+    },
+    "summary.json": {
+      "bytes": 7324,
+      "sha256": "d77c147dfb4368a53ef8bca97c8e3a3c0c31b70e75e08651d7ae2072bbabfa20"
+    },
+    "tier_comparison_vs_v10.csv": {
+      "bytes": 7792,
+      "sha256": "1478927a88f18b7f69b3c354bbbba1d2670d2ff5fc8e538f12ac2a026976ad78"
+    },
+    "zone_harvest_residue.csv": {
+      "bytes": 47117,
+      "sha256": "4ba72f798124ac090d9089b04814c735f1758b9f2a9e08c80734def0aa67f1d4"
+    },
+    "zone_process_residue.csv": {
+      "bytes": 60927,
+      "sha256": "498d635a803131cac3bb7e2e176f0153db067ea97731220edd1aa1a85793f688"
+    }
+  },
+  "title": "Tiled 30-m WS4 Forestry Residue Handoff to OSeCAN",
+  "validation": {
+    "checks": [
+      {
+        "check": "official OSeCAN tree hash unchanged",
+        "detail": "before=80caa91c3e91c890... after=80caa91c3e91c890... changed_files=0",
+        "passed": true
+      },
+      {
+        "check": "zone weights sum to one per province",
+        "detail": "min=1 max=1.0000000000001",
+        "passed": true
+      },
+      {
+        "check": "13 official zones and no fabricated zones",
+        "detail": "zones=13",
+        "passed": true
+      },
+      {
+        "check": "zone totals conserve national totals",
+        "detail": "max PJ gap=1.3073986338e-11; max ODT gap=7.07805156708e-07",
+        "passed": true
+      },
+      {
+        "check": "province zone allocations conserve province totals",
+        "detail": "max PJ gap=1.3073986338e-11",
+        "passed": true
+      },
+      {
+        "check": "v10 reference 21/21 tier positions match frozen v5.1",
+        "detail": "matches=21/21",
+        "passed": true
+      },
+      {
+        "check": "WS4 119m primary tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "WS4 119m achieved tier positions match v10",
+        "detail": "matches=7/7",
+        "passed": true
+      },
+      {
+        "check": "row labels",
+        "detail": "model_estimate=true, observed=false, policy_grade=false, national_claim=false, ws4_derived=true, official_osecan_changed=false, chain_v51_unchanged=true",
+        "passed": true
+      },
+      {
+        "check": "no NaN or negative residue values",
+        "detail": "all residue values finite and non-negative",
+        "passed": true
+      },
+      {
+        "check": "zone rows complete for each basis/stream/case",
+        "detail": "rows=182 expected=182 per_case=13",
+        "passed": true
+      },
+      {
+        "check": "national case totals non-negative",
+        "detail": "all WS4 case totals non-negative",
+        "passed": true
+      }
+    ]
+  }
+}
