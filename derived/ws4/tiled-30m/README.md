@@ -11,14 +11,14 @@ not a chain v5.1 change, and not a completed national run.
 |---|---|---:|---:|---:|---:|---|
 | stage1 | NB, NS, PE, NL, YT, NT, NU | 1,254 | 1,042 | 1,042 | 0 | yes |
 | stage2 | BC, AB | 713 | 709 | 709 | 0 | yes |
-| stage3 | SK, MB | 494 | 2 | 2 | 492 | no |
+| stage3 | SK, MB | 494 | 494 | 494 | 0 | yes |
 | stage4 | ON, QC | 1,101 | 2 | 2 | 1,099 | no |
 
 - Candidates: 3,562
-- Completed stages: stage1, stage2
-- Remaining stages: stage3, stage4
-- Completed/validated tiles: 1,755
-- Remaining tiles: 1,591
+- Completed stages: stage1, stage2, stage3
+- Remaining stages: stage4
+- Completed/validated tiles: 2,247
+- Remaining tiles: 1,099
 - Explicitly skipped zero-harvest tiles: 203
 - Explicitly skipped no-forest sliver tiles: 13
 
@@ -27,18 +27,18 @@ not a chain v5.1 change, and not a completed national run.
 - Filesystem: `/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/tiled-30m`
 - `df -h`: `Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda1        15T  9.8T  4.7T  68% /srv/shared-data`
-- Free: 5,157.849 GB
+- Free: 5,157.685 GB
 - Required minimum: 120.000 GB
 - Projected full national: 96.9 GB
-- Used by built tiles: 30.740 GB
-- Projected remaining: 71.7 GB
+- Used by built tiles: 37.876 GB
+- Projected remaining: 64.5 GB
 
 ## Sample simulation
 
 - Status: pass
-- Tiles simulated: 10
-- Harvested volume: 37,697,066.921 m3
-- Treated/managed area: 150,234.210 ha
+- Tiles simulated: 15
+- Harvested volume: 45,262,114.861 m3
+- Treated/managed area: 208,589.130 ha
 
 ## Commands
 

@@ -1,0 +1,496 @@
+{
+  "age_distribution": [
+    {
+      "age_class": 0,
+      "fragments": 1307
+    },
+    {
+      "age_class": 10,
+      "fragments": 1051
+    },
+    {
+      "age_class": 20,
+      "fragments": 7292
+    },
+    {
+      "age_class": 30,
+      "fragments": 9499
+    },
+    {
+      "age_class": 40,
+      "fragments": 7078
+    },
+    {
+      "age_class": 50,
+      "fragments": 7269
+    },
+    {
+      "age_class": 60,
+      "fragments": 21358
+    },
+    {
+      "age_class": 70,
+      "fragments": 56303
+    },
+    {
+      "age_class": 80,
+      "fragments": 74452
+    },
+    {
+      "age_class": 90,
+      "fragments": 55213
+    },
+    {
+      "age_class": 100,
+      "fragments": 27692
+    },
+    {
+      "age_class": 110,
+      "fragments": 10492
+    },
+    {
+      "age_class": 120,
+      "fragments": 4164
+    },
+    {
+      "age_class": 130,
+      "fragments": 1034
+    },
+    {
+      "age_class": 140,
+      "fragments": 38
+    },
+    {
+      "age_class": 150,
+      "fragments": 7
+    }
+  ],
+  "artifact": "ws4_tiled_30m_tile_v1",
+  "block_count": 122739,
+  "built_utc": "2026-11-27T03:18:43+00:00",
+  "clique_summary": {
+    "area_ha_max": 67.5,
+    "area_ha_mean": 0.20842935008432525,
+    "area_ha_median": 0.09,
+    "count": 122739,
+    "pixels_max": 750,
+    "pixels_mean": 2.3158816676036142,
+    "pixels_median": 1.0,
+    "pixels_p90": 4.0,
+    "pixels_p99": 19.0,
+    "singleton_blocks": 81408,
+    "size_histogram": [
+      {
+        "blocks": 81408,
+        "max_pixels": 1,
+        "min_pixels": 1
+      },
+      {
+        "blocks": 31053,
+        "max_pixels": 4,
+        "min_pixels": 2
+      },
+      {
+        "blocks": 6633,
+        "max_pixels": 9,
+        "min_pixels": 5
+      },
+      {
+        "blocks": 2510,
+        "max_pixels": 19,
+        "min_pixels": 10
+      },
+      {
+        "blocks": 917,
+        "max_pixels": 49,
+        "min_pixels": 20
+      },
+      {
+        "blocks": 218,
+        "max_pixels": null,
+        "min_pixels": 50
+      }
+    ]
+  },
+  "counts": {
+    "blocks": 122739,
+    "forest_area_ha": 25582.41,
+    "forest_area_km2": 255.8241,
+    "forest_fragments": 284249,
+    "pixels_with_positive_species_closure": 284249,
+    "pixels_with_zero_species_closure": 0,
+    "window_pixels": 783960
+  },
+  "curve_diagnostics": {
+    "ambiguous_model_ids": [],
+    "duplicate_curve_rows": [],
+    "duplicate_model_same_coefficients": [
+      "rsyc_volume_national_tile_coniferous_e13"
+    ],
+    "generic_curve_key": null,
+    "group_curves": {
+      "BROADLEAF": "rsyc_volume_national_tile_broadleaf_e13",
+      "CONIFEROUS": "rsyc_volume_national_tile_coniferous_e13"
+    },
+    "landcover_resolution": {
+      "5": {
+        "curve_key": "rsyc_volume_national_tile_broadleaf_e13",
+        "group": "BROADLEAF",
+        "resolution": "exact"
+      },
+      "6": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "group": "CONIFEROUS",
+        "resolution": "group"
+      },
+      "7": {
+        "curve_key": null,
+        "group": "GENERIC",
+        "resolution": "missing"
+      }
+    },
+    "library_rows": 7,
+    "model_ids": [
+      "rsyc_volume_national_tile_broadleaf_e13",
+      "rsyc_volume_national_tile_coniferous_e13",
+      "rsyc_volume_national_tile_pice_gla_e13",
+      "rsyc_volume_national_tile_pice_mar_e13"
+    ],
+    "province": "SK",
+    "species_resolution": {
+      "balsamFir": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "ABIE.BAL",
+        "resolution": "exact",
+        "rsyc_codes": [
+          "ABIE.BAL"
+        ]
+      },
+      "blackSpruce": {
+        "curve_key": "rsyc_volume_national_tile_pice_mar_e13",
+        "matched_code": "PICE.MAR",
+        "resolution": "exact",
+        "rsyc_codes": [
+          "PICE.MAR"
+        ]
+      },
+      "broadleaf": {
+        "curve_key": "rsyc_volume_national_tile_broadleaf_e13",
+        "matched_code": "BROADLEAF",
+        "resolution": "exact",
+        "rsyc_codes": [
+          "BROADLEAF"
+        ]
+      },
+      "douglasFir": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "PSEU.MEN",
+        "resolution": "group",
+        "rsyc_codes": [
+          "PSEU.MEN"
+        ]
+      },
+      "jackPine": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "PINU.BAN",
+        "resolution": "exact",
+        "rsyc_codes": [
+          "PINU.BAN"
+        ]
+      },
+      "lodgepolePine": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "PINU.CON",
+        "resolution": "exact",
+        "rsyc_codes": [
+          "PINU.CON"
+        ]
+      },
+      "otherConiferous": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "CONIFEROUS",
+        "resolution": "group",
+        "rsyc_codes": [
+          "CONIFEROUS"
+        ]
+      },
+      "ponderosaPine": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "PINU.PON",
+        "resolution": "group",
+        "rsyc_codes": [
+          "PINU.PON"
+        ]
+      },
+      "tamarack": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "LARI.LAR",
+        "resolution": "exact",
+        "rsyc_codes": [
+          "LARI.LAR"
+        ]
+      },
+      "whiteRedPine": {
+        "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+        "matched_code": "PINU.STR",
+        "resolution": "group",
+        "rsyc_codes": [
+          "PINU.STR",
+          "PINU.RES"
+        ]
+      }
+    },
+    "tile_id": "E13"
+  },
+  "curve_usage": [
+    {
+      "area_ha": 21942.72,
+      "curve_id": 2,
+      "curve_key": "rsyc_volume_national_tile_broadleaf_e13",
+      "fragments": 243808,
+      "model_id": "rsyc_volume_national_tile_broadleaf_e13",
+      "selected_level": "tile",
+      "source_species": "broadleaf",
+      "species": "BROADLEAF"
+    },
+    {
+      "area_ha": 2412.63,
+      "curve_id": 3,
+      "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+      "fragments": 26807,
+      "model_id": "rsyc_volume_national_tile_coniferous_e13",
+      "selected_level": "tile",
+      "source_species": "coniferous",
+      "species": "PINU.CON"
+    },
+    {
+      "area_ha": 1227.06,
+      "curve_id": 4,
+      "curve_key": "rsyc_volume_national_tile_pice_mar_e13",
+      "fragments": 13634,
+      "model_id": "rsyc_volume_national_tile_pice_mar_e13",
+      "selected_level": "tile",
+      "source_species": "PICE.MAR",
+      "species": "PICE.MAR"
+    }
+  ],
+  "curves": [
+    {
+      "b1": 130.493509238265,
+      "b2": 0.0380972270148237,
+      "b3": 1.65597781126116,
+      "b4": 0.0005117698505814,
+      "curve_id": 2,
+      "curve_key": "rsyc_volume_national_tile_broadleaf_e13",
+      "model_id": "rsyc_volume_national_tile_broadleaf_e13",
+      "selected_level": "tile",
+      "source_species": "broadleaf",
+      "species": "BROADLEAF",
+      "species_kind": "group"
+    },
+    {
+      "b1": 161.303147930785,
+      "b2": 0.0293094320189197,
+      "b3": 1.03423280911212,
+      "b4": 0.000638469722672,
+      "curve_id": 3,
+      "curve_key": "rsyc_volume_national_tile_coniferous_e13",
+      "model_id": "rsyc_volume_national_tile_coniferous_e13",
+      "selected_level": "tile",
+      "source_species": "coniferous",
+      "species": "PINU.CON",
+      "species_kind": "species"
+    },
+    {
+      "b1": 142.17542911977,
+      "b2": 0.0345004914700127,
+      "b3": 1.55376200681464,
+      "b4": -0.0009085827077268,
+      "curve_id": 4,
+      "curve_key": "rsyc_volume_national_tile_pice_mar_e13",
+      "model_id": "rsyc_volume_national_tile_pice_mar_e13",
+      "selected_level": "tile",
+      "source_species": "PICE.MAR",
+      "species": "PICE.MAR",
+      "species_kind": "species"
+    }
+  ],
+  "dataset_manifest_sha256": "16d313d6b8afbe5155c8a53b49cf2b59cc32243537d81e0e95e8d31b02a53a5d",
+  "exclusions": {
+    "age_nodata_in_forest_class": 0,
+    "forest_class_age_nonpositive": 341,
+    "landcover_nodata": 0,
+    "nonforest_landcover": 364306,
+    "outside_50km_rectangle": 135064
+  },
+  "fragment_count": 284249,
+  "geometry": {
+    "committed_subcell_geometry_area_ha": 58345.842157494,
+    "geometry_area_ha": 58345.84215749393,
+    "raster_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "raster_window": {
+      "col_off": 62686,
+      "height": 1668,
+      "row_off": 83425,
+      "width": 470
+    },
+    "rasterized_pixels_inside_polygon": 648896,
+    "rectangle_area_ha": 250000.0,
+    "rectangle_bounds_epsg3978": [
+      -460910.5240000002,
+      298648.10639999993,
+      -410910.5240000002,
+      348648.10639999993
+    ]
+  },
+  "inventory_resolution": "30m",
+  "inventory_resolution_m": 30.0,
+  "labels": {
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "inventory_resolution": "30m",
+    "inventory_resolution_m": 30.0,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sensitivity_only": true,
+    "tile_resolution_m": 30000.0,
+    "tiled_30m": true,
+    "ui_changed": false
+  },
+  "node": {
+    "col": 3,
+    "harvest_m3": 1765.424734587,
+    "lat": 51.723240368,
+    "lon": -101.661040072,
+    "node_id": "E13|SK|S33",
+    "parent_node_id": "E13|SK",
+    "province": "SK",
+    "row": 3,
+    "subcell_area_ha": 8023.010967833,
+    "subcell_geometry_area_ha": 58345.842157494,
+    "tile_id": "E13",
+    "tile_slug": "E13-SK-S33"
+  },
+  "schedule": {
+    "eligible_blocks": 110902,
+    "path": "data/derived/ws4/tiled-30m/E13-SK-S33/schedules/cc_10pct.csv",
+    "rows": 11091,
+    "sample_fraction": 0.1,
+    "scheduled_area_ha": 2308.41
+  },
+  "simulation": {
+    "reason": "--datasets-only",
+    "status": "not_run_datasets_only",
+    "years": 20
+  },
+  "storage_bytes": {
+    "dataset": 4540371,
+    "runs": 0,
+    "schedules": 123082,
+    "total": 4663453
+  },
+  "tile_resolution_m": 30000.0,
+  "tiled_30m": true,
+  "tracks": [
+    {
+      "name": "AU(E13)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(baseline)+CURVE(rsyc_volume_national_tile_broadleaf_e13)+treatment()",
+      "track_id": 1
+    },
+    {
+      "name": "AU(E13)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_broadleaf_e13)+treatment()",
+      "track_id": 2
+    },
+    {
+      "name": "AU(E13)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(baseline)+CURVE(rsyc_volume_national_tile_coniferous_e13)+treatment()",
+      "track_id": 3
+    },
+    {
+      "name": "AU(E13)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_coniferous_e13)+treatment()",
+      "track_id": 4
+    },
+    {
+      "name": "AU(E13)+IFM(unmanaged)+ORIGIN(natural)+SILV_STATE(baseline)+CURVE(rsyc_volume_national_tile_pice_mar_e13)+treatment()",
+      "track_id": 5
+    },
+    {
+      "name": "AU(E13)+IFM(managed)+ORIGIN(planted)+SILV_STATE(cc_pl)+CURVE(rsyc_volume_national_tile_pice_mar_e13)+treatment()",
+      "track_id": 6
+    }
+  ],
+  "treatments": [
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 2,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 1,
+      "treatment": "CC"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 2,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 2,
+      "treatment": "CC"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 4,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 3,
+      "treatment": "CC"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 4,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 4,
+      "treatment": "CC"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 6,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 5,
+      "treatment": "CC"
+    },
+    {
+      "begin": 40,
+      "end": 1000,
+      "new_track": 6,
+      "offset": 0,
+      "retain": 0,
+      "track_id": 6,
+      "treatment": "CC"
+    }
+  ],
+  "validation": {
+    "command": [
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/.venv-ws4/bin/ws4",
+      "validate",
+      "--dataset",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/tiled-30m/E13-SK-S33/dataset"
+    ],
+    "exit_code": 0,
+    "status": "pass",
+    "stderr": "",
+    "stdout": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/tiled-30m/E13-SK-S33/dataset"
+  },
+  "wall_seconds": 5.512,
+  "ws4": {
+    "editable_source_tree": "/srv/shared-data/gep/ws4/ws4-gpu",
+    "executable": "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/.venv-ws4/bin/ws4",
+    "version": "0.2.0"
+  }
+}
