@@ -1,0 +1,85 @@
+{
+  "artifact": "ws4_chain_119m",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-27T01:39:59+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/ws4/scanfi-national-990m/dataset/manifest.json": "b4638c35084b0462bdd6545a87416551d71928833a263ffd0816ee5ba469dac5",
+    "data/derived/ws4/scanfi-national-990m/runs/ws4_119m_cc_1y/product_values.csv": "a01c4bde4d1e4389cc1584797b662d89cbf005f2adf839646e1d161324caecab",
+    "data/derived/ws4/scanfi-national-990m/schedules/ws4_119m_cc.csv": "b77abcae517ed2bd7b3f6ed3237cd791985287c315ab0fc803726a24460477f9",
+    "docs/model-card-national-facility-chain.md": "bbfcf07dc8b436dc878384dfd548cfeec747d9d694f9a2f511c2d1b135da1032"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "WS4_CHAIN_119M.md": {
+      "bytes": 7674,
+      "sha256": "c21ff82d32d0259e05c30483ba85fda3130669babcb877bded022fc2343eeffc"
+    },
+    "summary.json": {
+      "bytes": 34220,
+      "sha256": "ab9e80b920daee8ad65989981fba0ef5627f1421a34db5aa9c5ec18c9b3ec49a"
+    },
+    "ws4_119m_coefficients.csv": {
+      "bytes": 6302,
+      "sha256": "c023fd8efaa4274132ee4de34123ddbb774a51059363304fbe9524619757fb60"
+    },
+    "ws4_119m_harvest.csv": {
+      "bytes": 2711,
+      "sha256": "637ed9e7dfb5e4084a6ad12a997d0c3e02de6ef6090428188efae9ad71ffed4b"
+    },
+    "ws4_119m_product_chain.csv": {
+      "bytes": 18806,
+      "sha256": "8955a74be77db6a1b42ad8a9e8112772ceb196f35dd5e4f38678e71da88531a8"
+    },
+    "ws4_vs_chain_v51_comparison.csv": {
+      "bytes": 4969,
+      "sha256": "48640e74d2ec86ed8a31d58ff108261efc93261d1d6215ac84efc511f8db165b"
+    }
+  },
+  "reproduce": ".venv/bin/python -m workflows.national.facilities.ws4_chain_119m",
+  "title": "WS4-driven 119 Mm3 harvest and chain v5.1 comparison",
+  "validation": {
+    "checks": [
+      {
+        "check_id": "schedule_nonempty",
+        "detail": "45 unique CC rows at offset 0",
+        "status": "PASS"
+      },
+      {
+        "check_id": "schedule_block_uniqueness",
+        "detail": "no block id occurs twice",
+        "status": "PASS"
+      },
+      {
+        "check_id": "harvest_nonnegative",
+        "detail": "achieved volume and treated area are finite/nonnegative",
+        "status": "PASS"
+      },
+      {
+        "check_id": "national_harvest_conservation",
+        "detail": "sum of provincial achieved harvest equals WS4 run total",
+        "status": "PASS"
+      },
+      {
+        "check_id": "province_target_overshoot",
+        "detail": "national target 118977339.100 m3; achieved 118977392.880 m3; overshoot 53.780 m3",
+        "status": "PASS"
+      },
+      {
+        "check_id": "scaled_basis_control_total",
+        "detail": "scaled harvest 118977339.100000 m3",
+        "status": "PASS"
+      }
+    ]
+  }
+}
