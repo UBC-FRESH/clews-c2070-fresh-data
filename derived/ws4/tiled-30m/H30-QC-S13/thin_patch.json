@@ -1,0 +1,155 @@
+{
+  "artifact": "ws4_tiled_30m_thin_patch_v1",
+  "cc_contract_sha256_after": "a41a8d869e72fbc38912a24ef5f426739fdeb3d0113d171e4182d8d6e6a6dbbf",
+  "cc_contract_sha256_before": "a41a8d869e72fbc38912a24ef5f426739fdeb3d0113d171e4182d8d6e6a6dbbf",
+  "changed_tables": [
+    "tracks",
+    "strata",
+    "treatments",
+    "features",
+    "products",
+    "protoaccounts",
+    "accounts"
+  ],
+  "counts_after": {
+    "accounts": 15,
+    "blocks": 516036,
+    "curves": 3005,
+    "features": 12,
+    "fragments": 1182789,
+    "groups": 516036,
+    "messages": 1,
+    "products": 48,
+    "protoaccounts": 15,
+    "strata": 12,
+    "tracks": 12,
+    "treatments": 24
+  },
+  "counts_before": {
+    "accounts": 6,
+    "blocks": 516036,
+    "curves": 3005,
+    "features": 8,
+    "fragments": 1182789,
+    "groups": 516036,
+    "messages": 1,
+    "products": 16,
+    "protoaccounts": 6,
+    "strata": 8,
+    "tracks": 8,
+    "treatments": 8
+  },
+  "dataset_path": "data/derived/ws4/tiled-30m/H30-QC-S13/dataset",
+  "deltas": {
+    "accounts": 9,
+    "features": 4,
+    "products": 32,
+    "protoaccounts": 9,
+    "strata": 4,
+    "tracks": 4,
+    "treatments": 16
+  },
+  "labels": {
+    "adoption_claimed": false,
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "mode": "metadata_only",
+  "natural_fragments_blocks_unchanged": true,
+  "node_id": "H30|QC|S13",
+  "notes": [
+    "metadata-only THIN patch; fragments, blocks, curves, groups, and messages are unchanged",
+    "natural/managed track ids and CC rows are preserved; thinned tracks are appended"
+  ],
+  "patch_sha256": "6518c1dbe1dc0b7cdc678b6b38ef8c7680d7294e981f2925f98fab5f67ff008d",
+  "patched_utc": "2026-11-27T06:35:19+00:00",
+  "status": "patched",
+  "table_fingerprints": {
+    "accounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "blocks": {
+      "bytes": 3004214,
+      "key": "MD5E-s3004214--231cfc83b82db55a16d2d8cdb3cfd8ad",
+      "kind": "annex"
+    },
+    "curves": {
+      "bytes": 30591,
+      "key": "MD5E-s30591--90b105abb3de747da17b4c77f5afc826",
+      "kind": "annex"
+    },
+    "features": {
+      "bytes": 2510,
+      "kind": "sha256",
+      "sha256": "0d284f71205e65b9aebaef77efde32b00c344fd8ce2b63475609ff18e072b676"
+    },
+    "fragments": {
+      "bytes": 10554597,
+      "key": "MD5E-s10554597--22d9706a9c4b8511e7457a7985160883",
+      "kind": "annex"
+    },
+    "groups": {
+      "bytes": 2470882,
+      "key": "MD5E-s2470882--d62b3733b2188911acaf54f418b1cbf6",
+      "kind": "annex"
+    },
+    "messages": {
+      "bytes": 2448,
+      "key": "MD5E-s2448--25e4283d10282b9e27e19091ac1e79a0",
+      "kind": "annex"
+    },
+    "products": {
+      "bytes": 3193,
+      "kind": "sha256",
+      "sha256": "dc61dd39df69e9cf8ec588d91cabbd50ab6b49b1a8a7341884a9e9a63a815dc1"
+    },
+    "protoaccounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "strata": {
+      "bytes": 2933,
+      "kind": "sha256",
+      "sha256": "7fdd1111ac773bf37cc1bb6b3d22260e217e63161d8f530b596a1456b8335521"
+    },
+    "tracks": {
+      "bytes": 2512,
+      "kind": "sha256",
+      "sha256": "6d6325e6d6e32a3fa268234cd48ef895f9cad68e3009f1c348d80e0f2a34c49d"
+    },
+    "treatments": {
+      "bytes": 4607,
+      "kind": "sha256",
+      "sha256": "5adccce7c38874f192af0e37d849a44aaaffe2aa74e8712ea888da14548c489c"
+    }
+  },
+  "table_sha256": {
+    "accounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "features": "0d284f71205e65b9aebaef77efde32b00c344fd8ce2b63475609ff18e072b676",
+    "products": "dc61dd39df69e9cf8ec588d91cabbd50ab6b49b1a8a7341884a9e9a63a815dc1",
+    "protoaccounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "strata": "7fdd1111ac773bf37cc1bb6b3d22260e217e63161d8f530b596a1456b8335521",
+    "tracks": "6d6325e6d6e32a3fa268234cd48ef895f9cad68e3009f1c348d80e0f2a34c49d",
+    "treatments": "5adccce7c38874f192af0e37d849a44aaaffe2aa74e8712ea888da14548c489c"
+  },
+  "tile_slug": "H30-QC-S13",
+  "unchanged_tables": [
+    "fragments",
+    "blocks",
+    "curves",
+    "groups",
+    "messages"
+  ],
+  "validation": {
+    "exit_code": 0,
+    "seconds": 2.755,
+    "status": "pass"
+  }
+}

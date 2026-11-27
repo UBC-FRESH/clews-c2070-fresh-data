@@ -1,0 +1,155 @@
+{
+  "artifact": "ws4_tiled_30m_thin_patch_v1",
+  "cc_contract_sha256_after": "9a2b09a3be1eb22c82be15bdb5614be3f734c527312c3106d454db56fd97c392",
+  "cc_contract_sha256_before": "9a2b09a3be1eb22c82be15bdb5614be3f734c527312c3106d454db56fd97c392",
+  "changed_tables": [
+    "tracks",
+    "strata",
+    "treatments",
+    "features",
+    "products",
+    "protoaccounts",
+    "accounts"
+  ],
+  "counts_after": {
+    "accounts": 15,
+    "blocks": 27307,
+    "curves": 3005,
+    "features": 12,
+    "fragments": 60869,
+    "groups": 27307,
+    "messages": 1,
+    "products": 48,
+    "protoaccounts": 15,
+    "strata": 12,
+    "tracks": 12,
+    "treatments": 24
+  },
+  "counts_before": {
+    "accounts": 6,
+    "blocks": 27307,
+    "curves": 3005,
+    "features": 8,
+    "fragments": 60869,
+    "groups": 27307,
+    "messages": 1,
+    "products": 16,
+    "protoaccounts": 6,
+    "strata": 8,
+    "tracks": 8,
+    "treatments": 8
+  },
+  "dataset_path": "data/derived/ws4/tiled-30m/D15-MB-S12/dataset",
+  "deltas": {
+    "accounts": 9,
+    "features": 4,
+    "products": 32,
+    "protoaccounts": 9,
+    "strata": 4,
+    "tracks": 4,
+    "treatments": 16
+  },
+  "labels": {
+    "adoption_claimed": false,
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "mode": "metadata_only",
+  "natural_fragments_blocks_unchanged": true,
+  "node_id": "D15|MB|S12",
+  "notes": [
+    "metadata-only THIN patch; fragments, blocks, curves, groups, and messages are unchanged",
+    "natural/managed track ids and CC rows are preserved; thinned tracks are appended"
+  ],
+  "patch_sha256": "2a54966686bde7189e1e127a75fb0bec7e10de29fc44fbb3e211b16d935ed563",
+  "patched_utc": "2026-11-27T06:35:14+00:00",
+  "status": "patched",
+  "table_fingerprints": {
+    "accounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "blocks": {
+      "bytes": 196661,
+      "key": "MD5E-s196661--f2e316018f46604013a64340210de5a7",
+      "kind": "annex"
+    },
+    "curves": {
+      "bytes": 30591,
+      "key": "MD5E-s30591--775e393a1db5ff4c2885689d9db5bee4",
+      "kind": "annex"
+    },
+    "features": {
+      "bytes": 2510,
+      "kind": "sha256",
+      "sha256": "0d284f71205e65b9aebaef77efde32b00c344fd8ce2b63475609ff18e072b676"
+    },
+    "fragments": {
+      "bytes": 641305,
+      "key": "MD5E-s641305--c895c7d4ec6d3f5b621d992d89de14c6",
+      "kind": "annex"
+    },
+    "groups": {
+      "bytes": 166772,
+      "key": "MD5E-s166772--bff6e7ac6d37ce2c3d8e6310d4c19567",
+      "kind": "annex"
+    },
+    "messages": {
+      "bytes": 2436,
+      "key": "MD5E-s2436--e923198e304e34260c62aa773d5f489c",
+      "kind": "annex"
+    },
+    "products": {
+      "bytes": 3193,
+      "kind": "sha256",
+      "sha256": "dc61dd39df69e9cf8ec588d91cabbd50ab6b49b1a8a7341884a9e9a63a815dc1"
+    },
+    "protoaccounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "strata": {
+      "bytes": 2933,
+      "kind": "sha256",
+      "sha256": "7fdd1111ac773bf37cc1bb6b3d22260e217e63161d8f530b596a1456b8335521"
+    },
+    "tracks": {
+      "bytes": 2507,
+      "kind": "sha256",
+      "sha256": "a5408398faf67439083c239154a37c61dd6f5daf24321cced115053737795770"
+    },
+    "treatments": {
+      "bytes": 4607,
+      "kind": "sha256",
+      "sha256": "5adccce7c38874f192af0e37d849a44aaaffe2aa74e8712ea888da14548c489c"
+    }
+  },
+  "table_sha256": {
+    "accounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "features": "0d284f71205e65b9aebaef77efde32b00c344fd8ce2b63475609ff18e072b676",
+    "products": "dc61dd39df69e9cf8ec588d91cabbd50ab6b49b1a8a7341884a9e9a63a815dc1",
+    "protoaccounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "strata": "7fdd1111ac773bf37cc1bb6b3d22260e217e63161d8f530b596a1456b8335521",
+    "tracks": "a5408398faf67439083c239154a37c61dd6f5daf24321cced115053737795770",
+    "treatments": "5adccce7c38874f192af0e37d849a44aaaffe2aa74e8712ea888da14548c489c"
+  },
+  "tile_slug": "D15-MB-S12",
+  "unchanged_tables": [
+    "fragments",
+    "blocks",
+    "curves",
+    "groups",
+    "messages"
+  ],
+  "validation": {
+    "exit_code": 0,
+    "seconds": 2.164,
+    "status": "pass"
+  }
+}

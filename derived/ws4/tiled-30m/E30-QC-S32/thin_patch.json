@@ -1,0 +1,155 @@
+{
+  "artifact": "ws4_tiled_30m_thin_patch_v1",
+  "cc_contract_sha256_after": "45ddf180fa82f31d5486bb2fa63cbed2151ddaec4080fbf97435dbe0bd58ebfd",
+  "cc_contract_sha256_before": "45ddf180fa82f31d5486bb2fa63cbed2151ddaec4080fbf97435dbe0bd58ebfd",
+  "changed_tables": [
+    "tracks",
+    "strata",
+    "treatments",
+    "features",
+    "products",
+    "protoaccounts",
+    "accounts"
+  ],
+  "counts_after": {
+    "accounts": 15,
+    "blocks": 1309,
+    "curves": 3606,
+    "features": 15,
+    "fragments": 3013,
+    "groups": 1309,
+    "messages": 1,
+    "products": 60,
+    "protoaccounts": 15,
+    "strata": 15,
+    "tracks": 15,
+    "treatments": 30
+  },
+  "counts_before": {
+    "accounts": 6,
+    "blocks": 1309,
+    "curves": 3606,
+    "features": 10,
+    "fragments": 3013,
+    "groups": 1309,
+    "messages": 1,
+    "products": 20,
+    "protoaccounts": 6,
+    "strata": 10,
+    "tracks": 10,
+    "treatments": 10
+  },
+  "dataset_path": "data/derived/ws4/tiled-30m/E30-QC-S32/dataset",
+  "deltas": {
+    "accounts": 9,
+    "features": 5,
+    "products": 40,
+    "protoaccounts": 9,
+    "strata": 5,
+    "tracks": 5,
+    "treatments": 20
+  },
+  "labels": {
+    "adoption_claimed": false,
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "mode": "metadata_only",
+  "natural_fragments_blocks_unchanged": true,
+  "node_id": "E30|QC|S32",
+  "notes": [
+    "metadata-only THIN patch; fragments, blocks, curves, groups, and messages are unchanged",
+    "natural/managed track ids and CC rows are preserved; thinned tracks are appended"
+  ],
+  "patch_sha256": "eb0758f769b367464fa9a178a928764e5a7e1b7abd706fb82fca81f1ff5404f9",
+  "patched_utc": "2026-11-27T06:35:15+00:00",
+  "status": "patched",
+  "table_fingerprints": {
+    "accounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "blocks": {
+      "bytes": 12086,
+      "key": "MD5E-s12086--6e15b494e1fb073348e6ea3746ad428a",
+      "kind": "annex"
+    },
+    "curves": {
+      "bytes": 36447,
+      "key": "MD5E-s36447--d2164d4af9097f4830d2a336ab958f19",
+      "kind": "annex"
+    },
+    "features": {
+      "bytes": 2529,
+      "kind": "sha256",
+      "sha256": "2a91ceb6dd772deefd157c1c04d0cc200e69d9b7f14d553648f17192ad986d47"
+    },
+    "fragments": {
+      "bytes": 33385,
+      "key": "MD5E-s33385--721475cdd7042fd418b76b9d1a114562",
+      "kind": "annex"
+    },
+    "groups": {
+      "bytes": 9518,
+      "key": "MD5E-s9518--fd5f40c9181d1e68f9062523923c50be",
+      "kind": "annex"
+    },
+    "messages": {
+      "bytes": 2419,
+      "key": "MD5E-s2419--f276537a70bdeb2f253ca95b796e438e",
+      "kind": "annex"
+    },
+    "products": {
+      "bytes": 3219,
+      "kind": "sha256",
+      "sha256": "f3ab3f2c6df339216f949b74a7fd221e1127b7ff83e4be045345fb71e908f492"
+    },
+    "protoaccounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "strata": {
+      "bytes": 2946,
+      "kind": "sha256",
+      "sha256": "36caf006d46193f61a8107ab238def55701084054cdb4a31ba6fbfa97030644f"
+    },
+    "tracks": {
+      "bytes": 2556,
+      "kind": "sha256",
+      "sha256": "1007ea566dc6327265d189a07657126d9722e59096b91a17289e48bd48ff647d"
+    },
+    "treatments": {
+      "bytes": 4643,
+      "kind": "sha256",
+      "sha256": "d1beeff03a16f65b483a591f4cc7f9346992d1795157fdd7abbadec591f77524"
+    }
+  },
+  "table_sha256": {
+    "accounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "features": "2a91ceb6dd772deefd157c1c04d0cc200e69d9b7f14d553648f17192ad986d47",
+    "products": "f3ab3f2c6df339216f949b74a7fd221e1127b7ff83e4be045345fb71e908f492",
+    "protoaccounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "strata": "36caf006d46193f61a8107ab238def55701084054cdb4a31ba6fbfa97030644f",
+    "tracks": "1007ea566dc6327265d189a07657126d9722e59096b91a17289e48bd48ff647d",
+    "treatments": "d1beeff03a16f65b483a591f4cc7f9346992d1795157fdd7abbadec591f77524"
+  },
+  "tile_slug": "E30-QC-S32",
+  "unchanged_tables": [
+    "fragments",
+    "blocks",
+    "curves",
+    "groups",
+    "messages"
+  ],
+  "validation": {
+    "exit_code": 0,
+    "seconds": 1.935,
+    "status": "pass"
+  }
+}

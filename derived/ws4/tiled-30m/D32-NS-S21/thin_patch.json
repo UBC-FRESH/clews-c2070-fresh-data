@@ -1,0 +1,155 @@
+{
+  "artifact": "ws4_tiled_30m_thin_patch_v1",
+  "cc_contract_sha256_after": "c28b61cbb12d92f9e657c652dc40c695d0367ed705019934705bff70612ed417",
+  "cc_contract_sha256_before": "c28b61cbb12d92f9e657c652dc40c695d0367ed705019934705bff70612ed417",
+  "changed_tables": [
+    "tracks",
+    "strata",
+    "treatments",
+    "features",
+    "products",
+    "protoaccounts",
+    "accounts"
+  ],
+  "counts_after": {
+    "accounts": 15,
+    "blocks": 270121,
+    "curves": 3606,
+    "features": 15,
+    "fragments": 753864,
+    "groups": 270121,
+    "messages": 1,
+    "products": 60,
+    "protoaccounts": 15,
+    "strata": 15,
+    "tracks": 15,
+    "treatments": 30
+  },
+  "counts_before": {
+    "accounts": 6,
+    "blocks": 270121,
+    "curves": 3606,
+    "features": 10,
+    "fragments": 753864,
+    "groups": 270121,
+    "messages": 1,
+    "products": 20,
+    "protoaccounts": 6,
+    "strata": 10,
+    "tracks": 10,
+    "treatments": 10
+  },
+  "dataset_path": "data/derived/ws4/tiled-30m/D32-NS-S21/dataset",
+  "deltas": {
+    "accounts": 9,
+    "features": 5,
+    "products": 40,
+    "protoaccounts": 9,
+    "strata": 5,
+    "tracks": 5,
+    "treatments": 20
+  },
+  "labels": {
+    "adoption_claimed": false,
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "mode": "metadata_only",
+  "natural_fragments_blocks_unchanged": true,
+  "node_id": "D32|NS|S21",
+  "notes": [
+    "metadata-only THIN patch; fragments, blocks, curves, groups, and messages are unchanged",
+    "natural/managed track ids and CC rows are preserved; thinned tracks are appended"
+  ],
+  "patch_sha256": "ac09e65e68c06da58a47d6abb98186b3301e31cdb1eecf1ef6214456ebb0244d",
+  "patched_utc": "2026-11-27T06:35:15+00:00",
+  "status": "patched",
+  "table_fingerprints": {
+    "accounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "blocks": {
+      "bytes": 1754877,
+      "key": "MD5E-s1754877--57781073a91109ef97a75f1681b4ffdf",
+      "kind": "annex"
+    },
+    "curves": {
+      "bytes": 36447,
+      "key": "MD5E-s36447--5a5a7ccd03a847b8bd63539883449556",
+      "kind": "annex"
+    },
+    "features": {
+      "bytes": 2529,
+      "kind": "sha256",
+      "sha256": "2a91ceb6dd772deefd157c1c04d0cc200e69d9b7f14d553648f17192ad986d47"
+    },
+    "fragments": {
+      "bytes": 6444333,
+      "key": "MD5E-s6444333--50995f0c7731a4b46976a478afc5b305",
+      "kind": "annex"
+    },
+    "groups": {
+      "bytes": 1456516,
+      "key": "MD5E-s1456516--7cdf5764d2642af2b124e02edf349b3b",
+      "kind": "annex"
+    },
+    "messages": {
+      "bytes": 2444,
+      "key": "MD5E-s2444--70f64599e9c64942806db56bc15537b7",
+      "kind": "annex"
+    },
+    "products": {
+      "bytes": 3219,
+      "kind": "sha256",
+      "sha256": "f3ab3f2c6df339216f949b74a7fd221e1127b7ff83e4be045345fb71e908f492"
+    },
+    "protoaccounts": {
+      "bytes": 3256,
+      "kind": "sha256",
+      "sha256": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c"
+    },
+    "strata": {
+      "bytes": 2946,
+      "kind": "sha256",
+      "sha256": "36caf006d46193f61a8107ab238def55701084054cdb4a31ba6fbfa97030644f"
+    },
+    "tracks": {
+      "bytes": 2555,
+      "kind": "sha256",
+      "sha256": "b043441eedf08c516103307003306d0412edb63c4b02e592eef5a6b85c47f06c"
+    },
+    "treatments": {
+      "bytes": 4643,
+      "kind": "sha256",
+      "sha256": "d1beeff03a16f65b483a591f4cc7f9346992d1795157fdd7abbadec591f77524"
+    }
+  },
+  "table_sha256": {
+    "accounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "features": "2a91ceb6dd772deefd157c1c04d0cc200e69d9b7f14d553648f17192ad986d47",
+    "products": "f3ab3f2c6df339216f949b74a7fd221e1127b7ff83e4be045345fb71e908f492",
+    "protoaccounts": "dd6cd06e4c993fb6bdb4c38439beffc59c83cda1bc5542851ddf7eb448850b8c",
+    "strata": "36caf006d46193f61a8107ab238def55701084054cdb4a31ba6fbfa97030644f",
+    "tracks": "b043441eedf08c516103307003306d0412edb63c4b02e592eef5a6b85c47f06c",
+    "treatments": "d1beeff03a16f65b483a591f4cc7f9346992d1795157fdd7abbadec591f77524"
+  },
+  "tile_slug": "D32-NS-S21",
+  "unchanged_tables": [
+    "fragments",
+    "blocks",
+    "curves",
+    "groups",
+    "messages"
+  ],
+  "validation": {
+    "exit_code": 0,
+    "seconds": 2.455,
+    "status": "pass"
+  }
+}

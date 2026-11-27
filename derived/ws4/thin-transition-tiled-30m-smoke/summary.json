@@ -1,0 +1,70 @@
+{
+  "artifact": "ws4_thin_transition",
+  "dataset": "data/derived/ws4/tiled-30m/A24-ON-S11/dataset",
+  "evidence": {
+    "expected_cc_volume_m3": 311.96435346035116,
+    "expected_thin_volume_m3": 261.76559335871593,
+    "final_managed_value": 66.35434824626903,
+    "final_offset": 19,
+    "final_thinned_value": 0.0,
+    "retained_thinned_value_at_offset_0": 261.76559335871593,
+    "scheduled_area_ha": 2.34,
+    "thin_harvested_volume_m3": 261.765593358716,
+    "thin_treated_area_ha": 2.34,
+    "thinned_cc_harvested_volume_m3": 311.96435346035116,
+    "thinned_cc_treated_area_ha": 2.34,
+    "years": 20
+  },
+  "expected": {
+    "expected_cc_volume_m3": 311.96435346035116,
+    "expected_thin_volume_m3": 261.76559335871593,
+    "scheduled_area_ha": 2.34,
+    "selected_blocks": 20,
+    "selected_fragments": 26
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "evidence_label": "model_estimate",
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "planting_yield_response": false,
+    "policy_grade": false,
+    "thinning_yield_response": false
+  },
+  "run": "data/derived/ws4/thin-transition-tiled-30m-smoke/run",
+  "schedule": "data/derived/ws4/thin-transition-tiled-30m-smoke/schedule_thin_then_cc.csv",
+  "selection": {
+    "area_ha": 2.3399999999999994,
+    "blocks": 20,
+    "cc_offset": 10,
+    "max_blocks": 20,
+    "provinces": [
+      "A24"
+    ],
+    "thin_offset": -1,
+    "thin_window": [
+      20,
+      40
+    ]
+  },
+  "simulation": {
+    "command": [
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/.venv-ws4/bin/ws4",
+      "simulate",
+      "--dataset",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/tiled-30m/A24-ON-S11/dataset",
+      "--schedule",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/thin-transition-tiled-30m-smoke/schedule_thin_then_cc.csv",
+      "--years",
+      "20",
+      "--out",
+      "/srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/thin-transition-tiled-30m-smoke/run"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "Simulation complete \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/thin-transition-tiled-30m-smoke/run"
+  },
+  "status": "pass",
+  "summary": "data/derived/ws4/thin-transition-tiled-30m-smoke/summary.json"
+}
