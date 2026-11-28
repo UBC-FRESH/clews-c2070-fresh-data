@@ -7,7 +7,7 @@ official OSeCAN tree, handoff v10, residue curve v9 and frozen chain v5.1 are
 unchanged.
 
 **Labels:** `model_estimate=true`, `observed=false`, `policy_grade=false`,
-`national_claim=false`, `ws4_derived=true`, `sustainable_schedule=true`,
+`national_claim=false`, `ws4_derived=true`, `sustainable_schedule=true`, `transformed_curves=true`,
 `official_osecan_changed=false`, `chain_v51_unchanged=true`.
 
 ## 1. Source
