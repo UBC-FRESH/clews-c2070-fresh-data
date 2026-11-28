@@ -1,0 +1,73 @@
+{
+  "artifact": "ws4_transformed_natural_sustainable_100m",
+  "artifact_version": "1.0.0",
+  "case": "100m",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-28T17:28:50+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/scenario_summary.csv": "da4481765c26a1de240431e8bc825d6424be1f78d9dd1ee583daef0cd55a8458",
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+    "data/derived/ws4/scanfi-national-990m-transformed-natural/dataset/manifest.json": "f69cc217faa4eb49f227165379be26de5eb7725cc28a58c152b87eb71ad28dd2",
+    "data/derived/ws4/scanfi-national-990m-transformed-natural/sustainable-100m/run_100y/product_values.csv": "cbe87d879d7e523e16ad313b45b7431cb778cb6769aba5d18d12d7cd6aaaf37a",
+    "data/derived/ws4/scanfi-national-990m-transformed-natural/sustainable-100m/schedule.csv": "773a052b062c7f41edb874d211e8af76ccf8af7bf6077f4ca7cd4d93757b107d"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "managed_basis_quarantined": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "natural_5param_only": true,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sustainable_schedule": true,
+    "transformed_curves": true,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "WS4_TRANSFORMED_NATURAL_SUSTAINABLE_100M.md": {
+      "bytes": 7361,
+      "sha256": "87a4fe2ac595f9f72839256ee52e15423e68e75baf38231a85479d689a8f8923"
+    },
+    "comparison_vs_v51.csv": {
+      "bytes": 5168,
+      "sha256": "21259fc9a7ad5e5a82f560c0a900ffbbb07edfe870cfe1585e801d482bb9c6c7"
+    },
+    "summary.json": {
+      "bytes": 42691,
+      "sha256": "adf76ea44d5d3cb105bff5ad8a46d1008ff85bbfc6889e0ddd31b598b3fce222"
+    },
+    "sustainable_harvest_by_province.csv": {
+      "bytes": 3111,
+      "sha256": "92c28832fcce171e8657f84053c3e4d27a188fdf73387cee853de977bdf38cc5"
+    },
+    "sustainable_product_chain.csv": {
+      "bytes": 18883,
+      "sha256": "7943221fcf70a4794b9789c3b6fdc55c0ddc93d54fd8024a1dc20982d7a9f3d1"
+    }
+  },
+  "target": {
+    "annual_m3": 100000000.1,
+    "horizon_years": 100,
+    "nominal_annual_m3": 100000000.1,
+    "period_length_years": 10,
+    "period_m3": 1000000001.0,
+    "periods": 10,
+    "province_allocation": "frozen 100m allocated_share"
+  },
+  "title": "Sustainable 100 Mm3/yr WS4 schedule and chain on natural-only RSYC curves",
+  "validation": {
+    "period_shortfall_m3": 0.0,
+    "run_offsets": 100,
+    "sustained": true,
+    "ws4_validate": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m/dataset"
+  }
+}

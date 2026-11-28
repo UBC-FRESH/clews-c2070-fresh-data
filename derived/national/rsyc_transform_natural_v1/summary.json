@@ -1,0 +1,500 @@
+{
+  "artifact": "national_rsyc_transform_natural_v1",
+  "artifact_version": "1.0.0",
+  "basis_policy": {
+    "managed_extended": "quarantined; not rebuilt",
+    "natural_5param": "used for every cell in this release"
+  },
+  "cmai": {
+    "by_broad_group": {
+      "conifer": {
+        "cmai_age_raw_median": 2.0,
+        "cmai_age_transformed_median": 111.0,
+        "cmai_raw_median": 2.266455319638537,
+        "cmai_transformed_median": 0.9503375110973575,
+        "n": 3393
+      },
+      "deciduous": {
+        "cmai_age_raw_median": 24.0,
+        "cmai_age_transformed_median": 119.0,
+        "cmai_raw_median": 2.1190063877174787,
+        "cmai_transformed_median": 1.1144474091170942,
+        "n": 555
+      }
+    },
+    "overall": {
+      "cmai_age_transformed": {
+        "max": 185.0,
+        "mean": 120.66489361702128,
+        "median": 111.0,
+        "min": 76.0
+      },
+      "cmai_transformed": {
+        "max": 5.510025823708008,
+        "mean": 1.1988083444595352,
+        "median": 0.9661397878092961,
+        "min": 0.25206559787633087
+      }
+    }
+  },
+  "counts": {
+    "curves": 3948,
+    "donor_classes": 34,
+    "provinces": 13,
+    "rows": 789600,
+    "source_managed_cells_rebuilt": 1926,
+    "source_natural_cells_reused": 2022,
+    "species": 12,
+    "usable_curves": 3948
+  },
+  "donor_classes": [
+    {
+      "T": 2.9578814921418317,
+      "alpha": 3.646746093103783,
+      "class_id": "BC_natural_BC_BC",
+      "fit_r2_median": 0.9986236121927022,
+      "group": "BC",
+      "n_donors": 65,
+      "r": 1.0000000000000004e-05,
+      "s": 30.78968226236172,
+      "scope": "province",
+      "scope_value": "BC"
+    },
+    {
+      "T": 2.9578814921418317,
+      "alpha": 3.646746093103783,
+      "class_id": "BC_natural_BC_conifer",
+      "fit_r2_median": 0.9986213585543764,
+      "group": "conifer",
+      "n_donors": 62,
+      "r": 1.0000000000000004e-05,
+      "s": 30.78968226236172,
+      "scope": "province",
+      "scope_value": "BC"
+    },
+    {
+      "T": 4.889774578422457,
+      "alpha": 3.230391275178949,
+      "class_id": "BC_natural_BC_conifer_mixed",
+      "fit_r2_median": 0.998608379138657,
+      "group": "conifer_mixed",
+      "n_donors": 43,
+      "r": 1.0000000000000004e-05,
+      "s": 38.777119866412775,
+      "scope": "province",
+      "scope_value": "BC"
+    },
+    {
+      "T": 3.4741512862839645,
+      "alpha": 2.908041082189566,
+      "class_id": "BC_natural_BC_deciduous",
+      "fit_r2_median": 0.9992082374185992,
+      "group": "deciduous",
+      "n_donors": 3,
+      "r": 1.0000000000000004e-05,
+      "s": 22.51345116267633,
+      "scope": "province",
+      "scope_value": "BC"
+    },
+    {
+      "T": 2.333920877407968,
+      "alpha": 3.3066620582802413,
+      "class_id": "BC_natural_BC_pine",
+      "fit_r2_median": 0.9986807226032252,
+      "group": "pine",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 29.09881014169096,
+      "scope": "province",
+      "scope_value": "BC"
+    },
+    {
+      "T": 2.957881490009836,
+      "alpha": 3.6467461000110526,
+      "class_id": "BC_natural_BC_spruce",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "spruce",
+      "n_donors": 15,
+      "r": 1.0000000000000004e-05,
+      "s": 30.789682228647862,
+      "scope": "province",
+      "scope_value": "BC"
+    },
+    {
+      "T": 4.935052895196588,
+      "alpha": 2.15077531041878,
+      "class_id": "BC_natural_Boreal_Foothills_all",
+      "fit_r2_median": 0.9985820358488556,
+      "group": "all",
+      "n_donors": 3,
+      "r": 1.0000000000000004e-05,
+      "s": 24.721421181875925,
+      "scope": "ecoprovince",
+      "scope_value": "Boreal Foothills"
+    },
+    {
+      "T": 5.076757920226697,
+      "alpha": 3.3739902704736497,
+      "class_id": "BC_natural_Central_Montane_Cordillera_all",
+      "fit_r2_median": 0.9987212299196988,
+      "group": "all",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 35.243513192180664,
+      "scope": "ecoprovince",
+      "scope_value": "Central Montane Cordillera"
+    },
+    {
+      "T": 5.076757920226697,
+      "alpha": 3.3739902704736497,
+      "class_id": "BC_natural_Central_Montane_Cordillera_conifer",
+      "fit_r2_median": 0.9987212299196988,
+      "group": "conifer",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 35.243513192180664,
+      "scope": "ecoprovince",
+      "scope_value": "Central Montane Cordillera"
+    },
+    {
+      "T": 1.2581277927340169,
+      "alpha": 4.298186136625265,
+      "class_id": "BC_natural_Central_Montane_Cordillera_pine",
+      "fit_r2_median": 0.9988320126216604,
+      "group": "pine",
+      "n_donors": 3,
+      "r": 1.0000000000000004e-05,
+      "s": 38.12455080387085,
+      "scope": "ecoprovince",
+      "scope_value": "Central Montane Cordillera"
+    },
+    {
+      "T": 5.162298289678196,
+      "alpha": 2.181425748737894,
+      "class_id": "BC_natural_Columbia_Montane_Cordillera_all",
+      "fit_r2_median": 0.998604103545034,
+      "group": "all",
+      "n_donors": 9,
+      "r": 1.0000000000000004e-05,
+      "s": 45.95216465697809,
+      "scope": "ecoprovince",
+      "scope_value": "Columbia Montane Cordillera"
+    },
+    {
+      "T": 5.162298289678196,
+      "alpha": 2.181425748737894,
+      "class_id": "BC_natural_Columbia_Montane_Cordillera_conifer",
+      "fit_r2_median": 0.998604103545034,
+      "group": "conifer",
+      "n_donors": 9,
+      "r": 1.0000000000000004e-05,
+      "s": 45.95216465697809,
+      "scope": "ecoprovince",
+      "scope_value": "Columbia Montane Cordillera"
+    },
+    {
+      "T": 5.162298289678196,
+      "alpha": 2.181425748737894,
+      "class_id": "BC_natural_Columbia_Montane_Cordillera_conifer_mixed",
+      "fit_r2_median": 0.998604103545034,
+      "group": "conifer_mixed",
+      "n_donors": 9,
+      "r": 1.0000000000000004e-05,
+      "s": 45.95216465697809,
+      "scope": "ecoprovince",
+      "scope_value": "Columbia Montane Cordillera"
+    },
+    {
+      "T": 4.705775714315244,
+      "alpha": 2.3037960156468134,
+      "class_id": "BC_natural_Hay_Slave_Lowlands_all",
+      "fit_r2_median": 0.9990542063054464,
+      "group": "all",
+      "n_donors": 4,
+      "r": 1.0000000000000013e-05,
+      "s": 22.556607671469475,
+      "scope": "ecoprovince",
+      "scope_value": "Hay-Slave Lowlands"
+    },
+    {
+      "T": 4.705775714315244,
+      "alpha": 2.3037960156468134,
+      "class_id": "BC_natural_Hay_Slave_Lowlands_conifer",
+      "fit_r2_median": 0.9990542063054464,
+      "group": "conifer",
+      "n_donors": 4,
+      "r": 1.0000000000000013e-05,
+      "s": 22.556607671469475,
+      "scope": "ecoprovince",
+      "scope_value": "Hay-Slave Lowlands"
+    },
+    {
+      "T": 4.705775714315244,
+      "alpha": 2.3037960156468134,
+      "class_id": "BC_natural_Hay_Slave_Lowlands_spruce",
+      "fit_r2_median": 0.9990542063054464,
+      "group": "spruce",
+      "n_donors": 4,
+      "r": 1.0000000000000013e-05,
+      "s": 22.556607671469475,
+      "scope": "ecoprovince",
+      "scope_value": "Hay-Slave Lowlands"
+    },
+    {
+      "T": 2.9578814743438406,
+      "alpha": 3.646746124612681,
+      "class_id": "BC_natural_Northern_Boreal_Cordillera_all",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "all",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 30.78968209504077,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Boreal Cordillera"
+    },
+    {
+      "T": 2.9578814743438406,
+      "alpha": 3.646746124612681,
+      "class_id": "BC_natural_Northern_Boreal_Cordillera_conifer",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "conifer",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 30.78968209504077,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Boreal Cordillera"
+    },
+    {
+      "T": 2.9578814743438406,
+      "alpha": 3.646746124612681,
+      "class_id": "BC_natural_Northern_Boreal_Cordillera_spruce",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "spruce",
+      "n_donors": 3,
+      "r": 1.0000000000000004e-05,
+      "s": 30.78968209504077,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Boreal Cordillera"
+    },
+    {
+      "T": 4.209837374707896,
+      "alpha": 1.7015661187652376,
+      "class_id": "BC_natural_Northern_Coastal_Mountains_all",
+      "fit_r2_median": 0.997851591987846,
+      "group": "all",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 60.47883543279548,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Coastal Mountains"
+    },
+    {
+      "T": 4.209837374707896,
+      "alpha": 1.7015661187652376,
+      "class_id": "BC_natural_Northern_Coastal_Mountains_conifer",
+      "fit_r2_median": 0.997851591987846,
+      "group": "conifer",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 60.47883543279548,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Coastal Mountains"
+    },
+    {
+      "T": 4.209837374707896,
+      "alpha": 1.7015661187652376,
+      "class_id": "BC_natural_Northern_Coastal_Mountains_conifer_mixed",
+      "fit_r2_median": 0.997851591987846,
+      "group": "conifer_mixed",
+      "n_donors": 4,
+      "r": 1.0000000000000004e-05,
+      "s": 60.47883543279548,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Coastal Mountains"
+    },
+    {
+      "T": 1.889026358745378,
+      "alpha": 4.474995804794664,
+      "class_id": "BC_natural_Northern_Montane_Cordillera_all",
+      "fit_r2_median": 0.998608379138657,
+      "group": "all",
+      "n_donors": 6,
+      "r": 1.0000000000000004e-05,
+      "s": 29.94693431409942,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Montane Cordillera"
+    },
+    {
+      "T": 1.889026358745378,
+      "alpha": 4.474995804794664,
+      "class_id": "BC_natural_Northern_Montane_Cordillera_conifer",
+      "fit_r2_median": 0.998608379138657,
+      "group": "conifer",
+      "n_donors": 6,
+      "r": 1.0000000000000004e-05,
+      "s": 29.94693431409942,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Montane Cordillera"
+    },
+    {
+      "T": 1.889026358745378,
+      "alpha": 4.474995804794664,
+      "class_id": "BC_natural_Northern_Montane_Cordillera_conifer_mixed",
+      "fit_r2_median": 0.998608379138657,
+      "group": "conifer_mixed",
+      "n_donors": 6,
+      "r": 1.0000000000000004e-05,
+      "s": 29.94693431409942,
+      "scope": "ecoprovince",
+      "scope_value": "Northern Montane Cordillera"
+    },
+    {
+      "T": 2.957881492263432,
+      "alpha": 3.646746093617113,
+      "class_id": "BC_natural_Southern_Boreal_Cordillera_all",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "all",
+      "n_donors": 9,
+      "r": 1.0000000000000004e-05,
+      "s": 30.789682252106815,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Boreal Cordillera"
+    },
+    {
+      "T": 2.957881492263432,
+      "alpha": 3.646746093617113,
+      "class_id": "BC_natural_Southern_Boreal_Cordillera_conifer",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "conifer",
+      "n_donors": 9,
+      "r": 1.0000000000000004e-05,
+      "s": 30.789682252106815,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Boreal Cordillera"
+    },
+    {
+      "T": 2.9578814905054296,
+      "alpha": 3.646746097602117,
+      "class_id": "BC_natural_Southern_Boreal_Cordillera_spruce",
+      "fit_r2_median": 0.9993577493359416,
+      "group": "spruce",
+      "n_donors": 7,
+      "r": 1.0000000000000004e-05,
+      "s": 30.78968223406094,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Boreal Cordillera"
+    },
+    {
+      "T": 2.443960703255504,
+      "alpha": 3.7571994184179234,
+      "class_id": "BC_natural_Southern_Coastal_Mountains_all",
+      "fit_r2_median": 0.9986236121927022,
+      "group": "all",
+      "n_donors": 13,
+      "r": 1.0000000000000004e-05,
+      "s": 23.371380740611176,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Coastal Mountains"
+    },
+    {
+      "T": 2.443960703255504,
+      "alpha": 3.7571994184179234,
+      "class_id": "BC_natural_Southern_Coastal_Mountains_conifer",
+      "fit_r2_median": 0.9986236121927022,
+      "group": "conifer",
+      "n_donors": 13,
+      "r": 1.0000000000000004e-05,
+      "s": 23.371380740611176,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Coastal Mountains"
+    },
+    {
+      "T": 2.443960703255504,
+      "alpha": 3.7571994184179234,
+      "class_id": "BC_natural_Southern_Coastal_Mountains_conifer_mixed",
+      "fit_r2_median": 0.9986236121927022,
+      "group": "conifer_mixed",
+      "n_donors": 13,
+      "r": 1.0000000000000004e-05,
+      "s": 23.371380740611176,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Coastal Mountains"
+    },
+    {
+      "T": 6.033294850145211,
+      "alpha": 1.8705396648886263,
+      "class_id": "BC_natural_Southern_Montane_Cordillera_all",
+      "fit_r2_median": 0.99865999722,
+      "group": "all",
+      "n_donors": 5,
+      "r": 1.0000000000000004e-05,
+      "s": 45.53220732253836,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Montane Cordillera"
+    },
+    {
+      "T": 6.033294850145211,
+      "alpha": 1.8705396648886263,
+      "class_id": "BC_natural_Southern_Montane_Cordillera_conifer",
+      "fit_r2_median": 0.99865999722,
+      "group": "conifer",
+      "n_donors": 5,
+      "r": 1.0000000000000004e-05,
+      "s": 45.53220732253836,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Montane Cordillera"
+    },
+    {
+      "T": 6.033294850145211,
+      "alpha": 1.8705396648886263,
+      "class_id": "BC_natural_Southern_Montane_Cordillera_conifer_mixed",
+      "fit_r2_median": 0.99865999722,
+      "group": "conifer_mixed",
+      "n_donors": 5,
+      "r": 1.0000000000000004e-05,
+      "s": 45.53220732253836,
+      "scope": "ecoprovince",
+      "scope_value": "Southern Montane Cordillera"
+    }
+  ],
+  "generated_utc": "2026-11-28T17:07:39+00:00",
+  "inputs": {
+    "rsyc_library": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
+    "rsyc_library_sha256": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256",
+    "source_metadata": "data/derived/national/rsyc_transform_v1/curve_metadata.csv",
+    "source_metadata_sha256": "133095a1143297404258d380a6d4538300ce50e0244de221fdf993e5232c3221",
+    "source_parameters": "data/derived/national/rsyc_transform_v1/transform_parameters.csv",
+    "source_parameters_sha256": "a7580c5983c95f472b18d4ce49486f0bb46659a811b85ecd8e8b5789fb9b7ea9"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "managed_basis_quarantined": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "natural_5param_only": true,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "method": {
+    "donor_k_policy": "donor k discarded; k solved per receiver for level preservation",
+    "level_policy": "preserve raw RSYC V100, or raw peak when V100 is not meaningful",
+    "policy": "BC natural donor for every cell",
+    "source": "reuses fitted BC natural classes from national_rsyc_transform_v1",
+    "transform_family": "V(x)=k*RSYC((x-s)/alpha) with ramp toe; natural BC donor, no post-peak decline"
+  },
+  "qc": {
+    "failed_curves": 0,
+    "status_counts": {
+      "flag": 3481,
+      "pass": 467
+    },
+    "usable_total_volume": 3948
+  },
+  "status": "pass",
+  "v100": {
+    "curves_checked": 3948,
+    "max_abs_error_m3_ha": 5.684341886080802e-14,
+    "tolerance_m3_ha": 0.01
+  }
+}

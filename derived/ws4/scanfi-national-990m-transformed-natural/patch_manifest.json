@@ -1,0 +1,95 @@
+{
+  "artifact": "ws4_transformed_natural_dataset_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-28T17:08:32+00:00",
+  "labels": {
+    "chain_v51_unchanged": true,
+    "managed_basis_quarantined": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "natural_5param_only": true,
+    "observed": false,
+    "official_osecan_changed": false,
+    "original_dataset_unchanged": true,
+    "policy_grade": false,
+    "transformed_curves": true,
+    "ws4_derived": true
+  },
+  "mapping": {
+    "aggregation": "forest-area-weighted mean of natural 5-parameter cell curves",
+    "curve_model_conflicts": 0,
+    "missing_models": 0,
+    "models_mapped": 718,
+    "source_managed_cells_rebuilt": 1926,
+    "tracks_mapped": 2799,
+    "transformed_cell_curves": 3948,
+    "unreferenced_curves": [
+      {
+        "curve_id": 1,
+        "note": "unreferenced; left unchanged"
+      }
+    ],
+    "ws4_curves_in_dataset": 719,
+    "ws4_curves_mapped": 718
+  },
+  "old_transformed_dataset": {
+    "dataset": "data/derived/ws4/scanfi-national-990m-transformed/dataset",
+    "hashes": {
+      "accounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+      "blocks.parquet": "a6eac3812fe4a857a7c39c2cb09ea329312677cb994129990f33eae630e7fabf",
+      "curves.parquet": "9a51a42c6a4825b82e709e70a4ef092db7155ca91b1540d84c0f89213e74f0a1",
+      "features.parquet": "16c807ec1b40437c9157ca78475272c79cefdc4e9ea4ced1e316351ff6882c06",
+      "fragments.parquet": "f1d3d52764f141584208d609359edf9433a70d84730853608000864a644fb6f1",
+      "groups.parquet": "d3998afba3bcdf71df6b2802a614e838b65d951b339771b1ee5cb7d8afe5340c",
+      "manifest.json": "5aedacdd5c69e42a2be8300a892a2ff02462aeaf9d2bd3a367b55cf7c09f044d",
+      "messages.parquet": "87d90eeff42be4180da463dacff47f520f100ba4830d472a3eb6c6a12ab9b509",
+      "products.parquet": "7abdeec37fd1e8089d412c8b7e567674fba5b025a0f3234eb744c33d0df79214",
+      "protoaccounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+      "strata.parquet": "25a1951f06acc6b033f2e90fbb95c8ca8953686c198afe24c5c916216514538c",
+      "tracks.parquet": "aea0422f25e62e1d2c8c60ca6513710e06da6c8c63bc42596aed4755ef30408a",
+      "treatments.parquet": "6a8e33f6202c654a53a16cd54501d59c407dfab0ffc6e26c5301f989d8741b0e"
+    }
+  },
+  "source": {
+    "dataset": "data/derived/ws4/scanfi-national-990m/dataset",
+    "hashes_before": {
+      "accounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+      "blocks.parquet": "a6eac3812fe4a857a7c39c2cb09ea329312677cb994129990f33eae630e7fabf",
+      "curves.parquet": "f28749fd02c024bc28f8721d640b094156e18d7baca658332a3f87a6e03a2364",
+      "features.parquet": "16c807ec1b40437c9157ca78475272c79cefdc4e9ea4ced1e316351ff6882c06",
+      "fragments.parquet": "f1d3d52764f141584208d609359edf9433a70d84730853608000864a644fb6f1",
+      "groups.parquet": "d3998afba3bcdf71df6b2802a614e838b65d951b339771b1ee5cb7d8afe5340c",
+      "manifest.json": "a1f2dd8d0a506b056ce01a475f8adbaa26c2471bf103e8b819f81e7f0a670ee3",
+      "messages.parquet": "87d90eeff42be4180da463dacff47f520f100ba4830d472a3eb6c6a12ab9b509",
+      "products.parquet": "7abdeec37fd1e8089d412c8b7e567674fba5b025a0f3234eb744c33d0df79214",
+      "protoaccounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+      "strata.parquet": "25a1951f06acc6b033f2e90fbb95c8ca8953686c198afe24c5c916216514538c",
+      "tracks.parquet": "aea0422f25e62e1d2c8c60ca6513710e06da6c8c63bc42596aed4755ef30408a",
+      "treatments.parquet": "6a8e33f6202c654a53a16cd54501d59c407dfab0ffc6e26c5301f989d8741b0e"
+    }
+  },
+  "target": {
+    "dataset": "data/derived/ws4/scanfi-national-990m-transformed-natural/dataset",
+    "hashes_after": {
+      "accounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+      "blocks.parquet": "a6eac3812fe4a857a7c39c2cb09ea329312677cb994129990f33eae630e7fabf",
+      "curves.parquet": "34e927b884d1705013003ef10e3c6e4f7016ffe54d2dac644f1b8512d127992b",
+      "features.parquet": "16c807ec1b40437c9157ca78475272c79cefdc4e9ea4ced1e316351ff6882c06",
+      "fragments.parquet": "f1d3d52764f141584208d609359edf9433a70d84730853608000864a644fb6f1",
+      "groups.parquet": "d3998afba3bcdf71df6b2802a614e838b65d951b339771b1ee5cb7d8afe5340c",
+      "manifest.json": "f69cc217faa4eb49f227165379be26de5eb7725cc28a58c152b87eb71ad28dd2",
+      "messages.parquet": "87d90eeff42be4180da463dacff47f520f100ba4830d472a3eb6c6a12ab9b509",
+      "products.parquet": "7abdeec37fd1e8089d412c8b7e567674fba5b025a0f3234eb744c33d0df79214",
+      "protoaccounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+      "strata.parquet": "25a1951f06acc6b033f2e90fbb95c8ca8953686c198afe24c5c916216514538c",
+      "tracks.parquet": "aea0422f25e62e1d2c8c60ca6513710e06da6c8c63bc42596aed4755ef30408a",
+      "treatments.parquet": "6a8e33f6202c654a53a16cd54501d59c407dfab0ffc6e26c5301f989d8741b0e"
+    }
+  },
+  "v100": {
+    "curves_checked": 718,
+    "max_abs_error_m3_ha": 0.0004996479186161196,
+    "tolerance_m3_ha": 0.01
+  },
+  "ws4_validate": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m-transformed-natural/dataset"
+}

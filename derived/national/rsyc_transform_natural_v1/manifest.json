@@ -1,0 +1,73 @@
+{
+  "artifact": "national_rsyc_transform_natural_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-28T17:07:39+00:00",
+  "inputs": {
+    "rsyc_library": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
+    "rsyc_library_sha256": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256",
+    "source_metadata": "data/derived/national/rsyc_transform_v1/curve_metadata.csv",
+    "source_metadata_sha256": "133095a1143297404258d380a6d4538300ce50e0244de221fdf993e5232c3221",
+    "source_parameters": "data/derived/national/rsyc_transform_v1/transform_parameters.csv",
+    "source_parameters_sha256": "a7580c5983c95f472b18d4ce49486f0bb46659a811b85ecd8e8b5789fb9b7ea9"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "managed_basis_quarantined": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "natural_5param_only": true,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false
+  },
+  "outputs": {
+    "cmai_distribution.csv": {
+      "bytes": 23880,
+      "sha256": "27d7e6c67631bbea0f52f8fcda42d1a1c27f95bd4b94c85c1e1fbd1663d777aa"
+    },
+    "curve_metadata.csv": {
+      "bytes": 2111071,
+      "sha256": "071efa831a47c90940c2a212bebe241515a871466ee257256e91847e289b5291"
+    },
+    "qc_summary.csv": {
+      "bytes": 17228,
+      "sha256": "d8e4531985132f9f2f9f4925fe702a4ab851882295868c026ba03f875a878b80"
+    },
+    "report.md": {
+      "bytes": 1460,
+      "sha256": "8d93311a1c016269f6fa9d736784a5a55fba835c90ff96ddefb4f8dc23177b53"
+    },
+    "summary.json": {
+      "bytes": 15478,
+      "sha256": "b31f292cfce3a1fc2a361489f8464fb2041de63d936a0e2942692a50f2065e7f"
+    },
+    "transform_parameters.csv": {
+      "bytes": 10397,
+      "sha256": "62799723440c0c7908e39aaea5cf39e1ba3986bd1de24c79644455becee36982"
+    },
+    "transformed_curves.csv": {
+      "bytes": 165722423,
+      "sha256": "976518d896fb8907c0473b1f17fc27b543dc7b8d5d3a5e2a6f840fda8608c3bc"
+    }
+  },
+  "qc_status_counts": {
+    "flag": 3481,
+    "pass": 467
+  },
+  "record_counts": {
+    "curves": 3948,
+    "donor_classes": 34,
+    "provinces": 13,
+    "rows": 789600,
+    "source_managed_cells_rebuilt": 1926,
+    "source_natural_cells_reused": 2022,
+    "species": 12,
+    "usable_curves": 3948
+  },
+  "status": "pass",
+  "v100": {
+    "curves_checked": 3948,
+    "max_abs_error_m3_ha": 5.684341886080802e-14,
+    "tolerance_m3_ha": 0.01
+  }
+}

@@ -210,6 +210,22 @@ CMAI bands by donor basis (soft -> flag, hard -> fail):
 
 Natural 5-parameter donors carry no forced decline; their transformed curves may still rise to age 200. Managed AAC donors start the fitted decline/plateau at the donor-basis peak age (20-32 yr in this build) and flatten at the fitted flat age (50-55 yr), so managed curves do not rise to age 200 even when the underlying RSYC b4 coefficient is negative.
 
+## Basis quarantine for managed curves
+
+All 1,926 `managed_extended` curves are quarantined as basis
+artifacts. The QC BFEC donor is a managed/AAC-like net merchantable volume, not
+a VDYP/RSYC total volume. The donor plateaus by age 45-50, its alpha (~0.15)
+maps stand age 13 to raw age ~42, and same-age volume is 2.6-3.2x the raw RSYC
+curve. In `curve_metadata.csv`, these rows carry `basis_mismatch=true`,
+`usable_total_volume=false`, and `comparable_total_volume=false`; provenance
+columns are retained. All 2,022 `natural_5param` curves remain
+usable.
+
+Use `usable_total_volume=true` rows for total-volume work: do not use
+`managed_extended` rows as total volume even where `usable=true`. The corrected
+feed is `national_rsyc_transform_natural_v1`, which rebuilds every cell with a
+`natural_5param` donor and preserves V100.
+
 ## Limitations
 
 - The transform is a shape donor transfer, not a species-specific yield model. It must not be read as a province-specific fitted curve where no BC/QC reference exists.

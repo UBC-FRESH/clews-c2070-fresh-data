@@ -1,76 +1,85 @@
 {
   "artifact": "national_rsyc_transform_v1",
-  "generated_at": "2026-11-28T07:36:13Z",
-  "status": "stable",
-  "labels": {
-    "model_estimate": true,
-    "observed": false,
-    "policy_grade": false,
-    "national_claim": false,
-    "donor_class_documented": true,
-    "official_osecan": false,
-    "ws4_change": false
+  "basis_quarantine": {
+    "applied": true,
+    "managed_basis_mismatch": 1926,
+    "managed_comparable_total_volume": 0,
+    "managed_curves": 1926,
+    "managed_usable_total_volume": 0,
+    "natural_curves": 2022,
+    "reason": "BFEC managed AAC donor is a net merchantable basis, not a total-volume basis: flat by age 45-50, alpha ~0.15 maps stand age 13 to raw age ~42, and same-age volume is 2.6-3.2x raw RSYC; excluded from total-volume use"
   },
+  "generated_at": "2026-11-28T07:36:13Z",
   "inputs": {
-    "rsyc_library": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
-    "rsyc_library_sha256": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256",
-    "similarity_mapping": "tmp/rsyc-vdyp-similarity.csv",
-    "qc_fit_input": "tmp/qc_bfec_fit_input.parquet",
+    "bc_vdyp_portal": "/srv/shared-data/gep/ws4/fresh-tsa-portal",
+    "bc_vdyp_supplemental_root": "/srv/shared-data/gep/ws4/femic/external",
     "qc_area_weighted_curves": "tmp/qc_bfec_area_weighted_curves.csv",
     "qc_curve_metrics": "tmp/qc_bfec_curve_metrics.csv",
-    "bc_vdyp_portal": "/srv/shared-data/gep/ws4/fresh-tsa-portal",
-    "bc_vdyp_supplemental_root": "/srv/shared-data/gep/ws4/femic/external"
+    "qc_fit_input": "tmp/qc_bfec_fit_input.parquet",
+    "rsyc_library": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
+    "rsyc_library_sha256": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256",
+    "similarity_mapping": "tmp/rsyc-vdyp-similarity.csv"
+  },
+  "labels": {
+    "donor_class_documented": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan": false,
+    "policy_grade": false,
+    "ws4_change": false
   },
   "outputs": {
-    "transformed_curves.csv": {
-      "sha256": "61b2d5a8ca51bc9881f3cda27b8cee75374ed3f03967210a1ecdcad14939171f",
-      "bytes": 166910756
+    "cmai_distribution.csv": {
+      "bytes": 23583,
+      "sha256": "9530c1ffbb1a2ce5d423e81b68b3674a62e75ef9cd9254b97b50e62344eeb01c"
     },
     "curve_metadata.csv": {
-      "sha256": "b21e17181bf1a3d795071856c9184811ba23923679cb27d0cd80fa99912ab883",
-      "bytes": 1912186
-    },
-    "transform_parameters.csv": {
-      "sha256": "a7580c5983c95f472b18d4ce49486f0bb46659a811b85ecd8e8b5789fb9b7ea9",
-      "bytes": 18708
+      "bytes": 2399251,
+      "sha256": "133095a1143297404258d380a6d4538300ce50e0244de221fdf993e5232c3221"
     },
     "fit_metrics.csv": {
-      "sha256": "d5c627ccc91f2dcbc2f6aca129addcd7c65076e1be27921d3659d117c22d69fd",
-      "bytes": 108990
+      "bytes": 108990,
+      "sha256": "d5c627ccc91f2dcbc2f6aca129addcd7c65076e1be27921d3659d117c22d69fd"
     },
     "qc_summary.csv": {
-      "sha256": "d34ba28eb90915a835215764024c292c72d0f1f8a6523f32c4389c935df78ffc",
-      "bytes": 19652
-    },
-    "cmai_distribution.csv": {
-      "sha256": "9530c1ffbb1a2ce5d423e81b68b3674a62e75ef9cd9254b97b50e62344eeb01c",
-      "bytes": 23583
-    },
-    "summary.json": {
-      "sha256": "2e9941cb3d167df1f8e087179ee56476641f23b102c90f8e290e4bbe222f895f",
-      "bytes": 58433
+      "bytes": 19652,
+      "sha256": "d34ba28eb90915a835215764024c292c72d0f1f8a6523f32c4389c935df78ffc"
     },
     "report.md": {
-      "sha256": "519dae2fa401dc02d2ad233e7d110441cb43f40a74201fd8ed8be4d739c9eab0",
-      "bytes": 15342
+      "bytes": 16173,
+      "sha256": "904a97818e23ce66b32a6adf4db0eb49f7c8e0651fd24b11e59c5c583007daa9"
+    },
+    "summary.json": {
+      "bytes": 59541,
+      "sha256": "8d1fdac9ee0a44c4873bf1e1da22b115e998fb236737e3dbb2e7f691226ef582"
+    },
+    "transform_parameters.csv": {
+      "bytes": 18708,
+      "sha256": "a7580c5983c95f472b18d4ce49486f0bb46659a811b85ecd8e8b5789fb9b7ea9"
+    },
+    "transformed_curves.csv": {
+      "bytes": 166910756,
+      "sha256": "61b2d5a8ca51bc9881f3cda27b8cee75374ed3f03967210a1ecdcad14939171f"
     }
+  },
+  "qc_status_counts": {
+    "flag": 1565,
+    "pass": 2383
   },
   "record_counts": {
     "curves": 3948,
-    "rows": 789600,
     "provinces": 13,
+    "rows": 789600,
     "species": 12,
     "transform_classes_used": 34,
     "usable_curves": 3948
   },
-  "qc_status_counts": {
-    "pass": 2383,
-    "flag": 1565
-  },
   "software": {
-    "python": "3.12",
     "numpy": "2.5.0",
-    "pandas": "3.0.3"
+    "pandas": "3.0.3",
+    "python": "3.12"
   },
+  "status": "stable",
   "usable_count": 3948
 }
