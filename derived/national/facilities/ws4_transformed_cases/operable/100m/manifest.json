@@ -1,0 +1,92 @@
+{
+  "artifact": "ws4_transformed_operable_100m",
+  "artifact_version": "1.0.0",
+  "case": "100m",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "generated_utc": "2026-11-28T08:31:05+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_facility_chain_scenarios_v9/scenario_summary.csv": "da4481765c26a1de240431e8bc825d6424be1f78d9dd1ee583daef0cd55a8458",
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+    "data/derived/national/managed_landbase/operable_proxy_v2/gaps.csv": "cfc28ee5a8abdc36e54a5a11f3a5313322ef0634eef12ea96f840a6dfef8362f",
+    "data/derived/national/managed_landbase/operable_proxy_v2/operable_proxy_v2_by_province.csv": "d64f4cb02a02210e1b18e671df33f10eddf5b9fba0b4f9760bb7aa26e6583497",
+    "data/derived/national/managed_landbase/operable_proxy_v2/road_distance_classes.csv": "dae17478f2aae2ddf33d37c12ac0952ea4668f199022ae58d637c610629e75b1",
+    "data/derived/ws4/scanfi-national-990m-transformed/dataset/manifest.json": "5aedacdd5c69e42a2be8300a892a2ff02462aeaf9d2bd3a367b55cf7c09f044d",
+    "data/derived/ws4/scanfi-national-990m-transformed/operable-100m/run_100y/product_values.csv": "8304b69016a083049225eebbce58222a1c981a9900643109cf2e3a728c5199f5",
+    "data/derived/ws4/scanfi-national-990m-transformed/operable-100m/schedule.csv": "3f06a90dcac5ce7f7c805ba4f516d623e72375b628d3ebcb2c9020c6563a957c",
+    "data/derived/ws4/scanfi-national-990m-transformed/operable-mask/mask_summary.json": "2bf8b5cc3944178bc8559538aaabbf9d60a753b8ab7b628b2fc940d8c8036bfb"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "legal_thlb": false,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "share_based_operable_proxy": true,
+    "slope_screen": false,
+    "sustainable_schedule": true,
+    "transformed_curves": true,
+    "ws4_derived": true
+  },
+  "operable_screen": {
+    "legal_thlb": false,
+    "mask_dir": "data/derived/ws4/scanfi-national-990m-transformed/operable-mask",
+    "mask_summary": "data/derived/ws4/scanfi-national-990m-transformed/operable-mask/mask_summary.json",
+    "published_operable_proxy_ha": 77050071.63941938,
+    "screen_case": "screen_core30",
+    "selected_area_ha": 75374046.0,
+    "selected_blocks": 370752,
+    "share_based_operable_proxy": true,
+    "slope_screen": false
+  },
+  "outputs": {
+    "WS4_TRANSFORMED_OPERABLE_100M.md": {
+      "bytes": 9014,
+      "sha256": "e097ce11637ecac65d5266608a775ddbfb2b6e0303eea2fc1e6ee9a525c20c28"
+    },
+    "comparison_vs_v51.csv": {
+      "bytes": 5282,
+      "sha256": "28aec3389f092649f1304daecdb8a3defe052fb1656bb214523ce6b89c9fd28a"
+    },
+    "summary.json": {
+      "bytes": 50317,
+      "sha256": "c2d54af5bbe35192d1e18857b8c7ac0b7cfb9be035d0bf5eaf10d789a04e3364"
+    },
+    "sustainable_harvest_by_province.csv": {
+      "bytes": 3922,
+      "sha256": "71c80233ba7479792fc2df9b259c05e7abd016e069e8f2c4172b8955a734e40f"
+    },
+    "sustainable_product_chain.csv": {
+      "bytes": 18928,
+      "sha256": "860f052d6533494c42d9e76904c9c4a06916a1633bbe3fd49e80e659f2ba21f1"
+    }
+  },
+  "target": {
+    "annual_m3": 100000000.1,
+    "horizon_years": 100,
+    "nominal_annual_m3": 100000000.1,
+    "period_length_years": 10,
+    "period_m3": 1000000001.0,
+    "periods": 10,
+    "province_allocation": "frozen 100m allocated_share"
+  },
+  "title": "Sustainable operable 100 Mm3/yr WS4 schedule and chain on transformed RSYC curves",
+  "validation": {
+    "max_nominal_control_m3": 76049804.7635498,
+    "period_shortfall_m3": 34665077.27626872,
+    "province_shortfall_m3": 67262028.2061221,
+    "run_offsets": 100,
+    "sustained": false,
+    "sustained_covered_provinces": false,
+    "ws4_validate": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m-transformed/dataset"
+  }
+}

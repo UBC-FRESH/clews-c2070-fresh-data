@@ -1,0 +1,203 @@
+{
+  "artifact": "ws4_transformed_cases",
+  "artifact_version": "1.0.0",
+  "cases": {
+    "operable": {
+      "100m": {
+        "chain_dir": "data/derived/national/facilities/ws4_transformed_cases/operable/100m",
+        "max_nominal_control_m3": 76049804.7635498,
+        "schedule_dir": "data/derived/ws4/scanfi-national-990m-transformed/operable-100m",
+        "sustained": false,
+        "target_annual_m3": 100000000.1
+      },
+      "119m": {
+        "chain_dir": "data/derived/national/facilities/ws4_transformed_cases/operable/119m",
+        "max_nominal_control_m3": 76277952.26479493,
+        "schedule_dir": "data/derived/ws4/scanfi-national-990m-transformed/operable-119m",
+        "sustained": false,
+        "target_annual_m3": 118977339.1
+      },
+      "150m": {
+        "chain_dir": "data/derived/national/facilities/ws4_transformed_cases/operable/150m",
+        "max_nominal_control_m3": 68444824.31000976,
+        "schedule_dir": "data/derived/ws4/scanfi-national-990m-transformed/operable-150m",
+        "sustained": false,
+        "target_annual_m3": 150000000.2
+      }
+    },
+    "sustainable": {
+      "100m": {
+        "chain_dir": "data/derived/national/facilities/ws4_transformed_cases/sustainable/100m",
+        "schedule_dir": "data/derived/ws4/scanfi-national-990m-transformed/sustainable-100m",
+        "sustained": true,
+        "target_annual_m3": 100000000.1
+      },
+      "150m": {
+        "chain_dir": "data/derived/national/facilities/ws4_transformed_cases/sustainable/150m",
+        "schedule_dir": "data/derived/ws4/scanfi-national-990m-transformed/sustainable-150m",
+        "sustained": true,
+        "target_annual_m3": 150000000.2
+      }
+    }
+  },
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "frozen_integrity": {
+    "chain_v51_after": {
+      "file_count": 12,
+      "root": "data/derived/national/facilities/national_product_chain_v5",
+      "tree_sha256": "b43b34ce4b52f544cc47abf5cfeb88788161060c3a829b68bb89610ddc99743f"
+    },
+    "chain_v51_before": {
+      "file_count": 12,
+      "root": "data/derived/national/facilities/national_product_chain_v5",
+      "tree_sha256": "b43b34ce4b52f544cc47abf5cfeb88788161060c3a829b68bb89610ddc99743f"
+    },
+    "chain_v51_unchanged": true,
+    "official_osecan_after": {
+      "file_count": 146,
+      "root": "data/derived/national/clews/osecan",
+      "tree_sha256": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a"
+    },
+    "official_osecan_before": {
+      "file_count": 146,
+      "root": "data/derived/national/clews/osecan",
+      "tree_sha256": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a"
+    },
+    "official_osecan_unchanged": true,
+    "original_dataset_hashes": {
+      "blocks.parquet": "a6eac3812fe4a857a7c39c2cb09ea329312677cb994129990f33eae630e7fabf",
+      "curves.parquet": "f28749fd02c024bc28f8721d640b094156e18d7baca658332a3f87a6e03a2364",
+      "fragments.parquet": "f1d3d52764f141584208d609359edf9433a70d84730853608000864a644fb6f1"
+    },
+    "original_dataset_unchanged": true
+  },
+  "generated_utc": "2026-11-28T08:33:37+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/100m.csv": "1a6e2aee5fae0fc17a6662e48b208433b46ac6b03c2358f46a2cacbf3852bc5f",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/national/harvest_basis/provincial_allocation/150m.csv": "3675cdc5e0723b453924b9dc6b8e13f19578f02a01086eb95f88f7bf750ceee1",
+    "data/derived/ws4/scanfi-national-990m-transformed/dataset/manifest.json": "5aedacdd5c69e42a2be8300a892a2ff02462aeaf9d2bd3a367b55cf7c09f044d"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sustainable_schedule": true,
+    "transformed_curves": true,
+    "ws4_derived": true
+  },
+  "operable_mask": {
+    "dir": "data/derived/ws4/scanfi-national-990m-transformed/operable-mask",
+    "selected_area_ha": 75374046.0,
+    "selected_blocks": 370752
+  },
+  "osecan": {
+    "operable": {
+      "cases": {
+        "100m": {
+          "positions": 7,
+          "primary_basis": "operable_100m",
+          "primary_matches": 6,
+          "secondary_matches": 7
+        },
+        "119m": {
+          "positions": 7,
+          "primary_basis": "operable_119m",
+          "primary_matches": 7,
+          "secondary_matches": 6
+        },
+        "150m": {
+          "positions": 7,
+          "primary_basis": "operable_150m",
+          "primary_matches": 7,
+          "secondary_matches": 6
+        }
+      },
+      "dir": "data/derived/national/facilities/ws4_transformed_cases/osecan/operable",
+      "frozen_21_of_21": true,
+      "frozen_matches": 21,
+      "official_detail": "146 files, 80caa91c3e91c890..., changed_files=0",
+      "official_unchanged": true,
+      "status": "pass",
+      "status_text": "Rebuilt from the operable sustainable WS4 case chains on the origin-province basis using the frozen handoff-v10 zone weights. Frozen v5.1 21/21 positions match handoff v10; 100m primary 6/7, achieved 7/7; 119m primary 7/7, achieved 6/7; 150m primary 7/7, achieved 6/7. Official OSeCAN is unchanged."
+    },
+    "sustainable": {
+      "cases": {
+        "100m": {
+          "positions": 7,
+          "primary_basis": "sustainable_100m",
+          "primary_matches": 7,
+          "secondary_matches": 7
+        },
+        "150m": {
+          "positions": 7,
+          "primary_basis": "sustainable_150m",
+          "primary_matches": 7,
+          "secondary_matches": 7
+        }
+      },
+      "dir": "data/derived/national/facilities/ws4_transformed_cases/osecan/sustainable",
+      "frozen_21_of_21": true,
+      "frozen_matches": 21,
+      "official_detail": "146 files, 80caa91c3e91c890..., changed_files=0",
+      "official_unchanged": true,
+      "status": "pass",
+      "status_text": "Rebuilt from the sustainable 100/150 WS4 case chains on the origin-province basis using the frozen handoff-v10 zone weights. Frozen v5.1 21/21 positions match handoff v10; 100 Mm3 primary/achieved 7/7, 7/7; 150 Mm3 7/7, 7/7. Official OSeCAN is unchanged."
+    }
+  },
+  "outputs": {
+    "WS4_TRANSFORMED_CASES.md": {
+      "bytes": 6257,
+      "sha256": "781bf45707bd45a9a68a7d3fda473ceb6258333c973c3d525c30ca66dc13b3c4"
+    },
+    "comparison_operable_chain_vs_v51.csv": {
+      "bytes": 16800,
+      "sha256": "3070ca789290426cdcc2dbe9a2acd5ba848f5c07d8605c65dd71292fb42eea78"
+    },
+    "comparison_operable_vs_original_curves.csv": {
+      "bytes": 4812,
+      "sha256": "174528cdf851af9acc45554cc9214d4e16ac1aab22018a17dfde91975bedfe01"
+    },
+    "comparison_operable_vs_transformed_full_forest.csv": {
+      "bytes": 1895,
+      "sha256": "809194c793d985976948324ddfa4b8d118f72a7ec8b8284b066557b3cc302c67"
+    },
+    "comparison_sustainable_to_original_curves.csv": {
+      "bytes": 2677,
+      "sha256": "db0dc1a7f5f8f5c030d5bcf73d61dae2a3f0fab44f2bf11f10cc009ec7cf7693"
+    },
+    "comparison_sustainable_vs_v51.csv": {
+      "bytes": 10518,
+      "sha256": "d25161c7e151d1eee23a582f20221507e4e5e853f11ff39caa86472fbf908226"
+    },
+    "summary.json": {
+      "bytes": 336086,
+      "sha256": "08ff572c7b660f8e718bcc029c6d4bb3b01ccc756f4da7f3742ffa6fb462b1be"
+    }
+  },
+  "title": "Sustainable 100/119/150 Mm3/yr and operable WS4 cases on transformed RSYC curves",
+  "validation": {
+    "mask_matches_original": true,
+    "no_under_rotation": true,
+    "operable_case_count": 3,
+    "operable_sustained_cases": [],
+    "operable_sustained_covered_cases": [],
+    "osecan_checks": {
+      "operable": 10,
+      "sustainable": 13
+    },
+    "sustainable_all_sustained": true,
+    "sustainable_case_count": 2
+  }
+}
