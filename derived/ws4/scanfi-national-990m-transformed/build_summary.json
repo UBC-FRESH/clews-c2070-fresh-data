@@ -1,0 +1,80 @@
+{
+  "artifact": "ws4_transformed_dataset_v1",
+  "artifact_version": "1.0.0",
+  "generated_utc": "2026-11-28T07:48:25+00:00",
+  "labels": {
+    "chain_v51_unchanged": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "original_dataset_unchanged": true,
+    "policy_grade": false,
+    "transformed_curves": true,
+    "ws4_derived": true
+  },
+  "mapping": {
+    "aggregation": "forest-area-weighted mean of transformed cell curves",
+    "curve_model_conflicts": 0,
+    "missing_models": 0,
+    "models_mapped": 718,
+    "tracks_mapped": 2799,
+    "transformed_cell_curves": 3948,
+    "unreferenced_curves": [
+      {
+        "curve_id": 1,
+        "note": "unreferenced; left unchanged"
+      }
+    ],
+    "ws4_curves_in_dataset": 719,
+    "ws4_curves_mapped": 718
+  },
+  "output_hashes": {
+    "accounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+    "blocks.parquet": "a6eac3812fe4a857a7c39c2cb09ea329312677cb994129990f33eae630e7fabf",
+    "curves.parquet": "9a51a42c6a4825b82e709e70a4ef092db7155ca91b1540d84c0f89213e74f0a1",
+    "features.parquet": "16c807ec1b40437c9157ca78475272c79cefdc4e9ea4ced1e316351ff6882c06",
+    "fragments.parquet": "f1d3d52764f141584208d609359edf9433a70d84730853608000864a644fb6f1",
+    "groups.parquet": "d3998afba3bcdf71df6b2802a614e838b65d951b339771b1ee5cb7d8afe5340c",
+    "manifest.json": "5aedacdd5c69e42a2be8300a892a2ff02462aeaf9d2bd3a367b55cf7c09f044d",
+    "messages.parquet": "87d90eeff42be4180da463dacff47f520f100ba4830d472a3eb6c6a12ab9b509",
+    "products.parquet": "7abdeec37fd1e8089d412c8b7e567674fba5b025a0f3234eb744c33d0df79214",
+    "protoaccounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+    "strata.parquet": "25a1951f06acc6b033f2e90fbb95c8ca8953686c198afe24c5c916216514538c",
+    "tracks.parquet": "aea0422f25e62e1d2c8c60ca6513710e06da6c8c63bc42596aed4755ef30408a",
+    "treatments.parquet": "6a8e33f6202c654a53a16cd54501d59c407dfab0ffc6e26c5301f989d8741b0e"
+  },
+  "source_dataset": "data/derived/ws4/scanfi-national-990m/dataset",
+  "source_hashes": {
+    "accounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+    "blocks.parquet": "a6eac3812fe4a857a7c39c2cb09ea329312677cb994129990f33eae630e7fabf",
+    "curves.parquet": "f28749fd02c024bc28f8721d640b094156e18d7baca658332a3f87a6e03a2364",
+    "features.parquet": "16c807ec1b40437c9157ca78475272c79cefdc4e9ea4ced1e316351ff6882c06",
+    "fragments.parquet": "f1d3d52764f141584208d609359edf9433a70d84730853608000864a644fb6f1",
+    "groups.parquet": "d3998afba3bcdf71df6b2802a614e838b65d951b339771b1ee5cb7d8afe5340c",
+    "manifest.json": "a1f2dd8d0a506b056ce01a475f8adbaa26c2471bf103e8b819f81e7f0a670ee3",
+    "messages.parquet": "87d90eeff42be4180da463dacff47f520f100ba4830d472a3eb6c6a12ab9b509",
+    "products.parquet": "7abdeec37fd1e8089d412c8b7e567674fba5b025a0f3234eb744c33d0df79214",
+    "protoaccounts.parquet": "27a716548aa5a5d3de2be4ca269c85819076ec69947aa10fa8c2cb2be318aa21",
+    "strata.parquet": "25a1951f06acc6b033f2e90fbb95c8ca8953686c198afe24c5c916216514538c",
+    "tracks.parquet": "aea0422f25e62e1d2c8c60ca6513710e06da6c8c63bc42596aed4755ef30408a",
+    "treatments.parquet": "6a8e33f6202c654a53a16cd54501d59c407dfab0ffc6e26c5301f989d8741b0e"
+  },
+  "status": "pass",
+  "target_dataset": "data/derived/ws4/scanfi-national-990m-transformed/dataset",
+  "transform_inputs": {
+    "curve_metadata": "data/derived/national/rsyc_transform_v1/curve_metadata.csv",
+    "curve_metadata_sha256": "b21e17181bf1a3d795071856c9184811ba23923679cb27d0cd80fa99912ab883",
+    "rsyc_library": "data/derived/national/assortments/rsyc_tile_production/rsyc_tile_production_library.csv",
+    "rsyc_library_sha256": "23767f1ce6b198d9842f68c68c1bdb2703a96b81804d86cfe4792c8152158256",
+    "transformed_curves": "data/derived/national/rsyc_transform_v1/transformed_curves.csv",
+    "transformed_curves_sha256": "61b2d5a8ca51bc9881f3cda27b8cee75374ed3f03967210a1ecdcad14939171f"
+  },
+  "unreferenced_curve_policy": "Curve 1 is not referenced by any Yield.Total feature; it remains the original constant 1.0 m3/ha curve so its V100 is trivially preserved.",
+  "v100": {
+    "curves_checked": 718,
+    "max_abs_error_m3_ha": 0.0004996479186161196,
+    "tolerance_m3_ha": 0.01
+  },
+  "ws4_validate": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m-transformed/dataset"
+}

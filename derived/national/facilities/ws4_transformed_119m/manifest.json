@@ -1,0 +1,104 @@
+{
+  "artifact": "ws4_transformed_119m",
+  "artifact_version": "1.0.0",
+  "d_status": {
+    "checked_repositories": [
+      "parent",
+      "data"
+    ],
+    "no_unexpected_deletions": true
+  },
+  "frozen_integrity": {
+    "chain_v51_after": {
+      "file_count": 12,
+      "root": "data/derived/national/facilities/national_product_chain_v5",
+      "tree_sha256": "b43b34ce4b52f544cc47abf5cfeb88788161060c3a829b68bb89610ddc99743f"
+    },
+    "chain_v51_before": {
+      "file_count": 12,
+      "root": "data/derived/national/facilities/national_product_chain_v5",
+      "tree_sha256": "b43b34ce4b52f544cc47abf5cfeb88788161060c3a829b68bb89610ddc99743f"
+    },
+    "chain_v51_unchanged": true,
+    "official_osecan_after": {
+      "file_count": 146,
+      "root": "data/derived/national/clews/osecan",
+      "tree_sha256": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a"
+    },
+    "official_osecan_before": {
+      "file_count": 146,
+      "root": "data/derived/national/clews/osecan",
+      "tree_sha256": "80caa91c3e91c89006b8d5e3ad78232eade70a298a83657510fffa26924bc64a"
+    },
+    "official_osecan_unchanged": true
+  },
+  "generated_utc": "2026-11-28T07:57:55+00:00",
+  "inputs": {
+    "data/derived/national/facilities/national_product_chain_v5/coefficients.csv": "281c6f7ed8c65da4747077be3ab2985868bb8076520d55bf44f51898e0df7d33",
+    "data/derived/national/facilities/national_product_chain_v5/product_chain_by_province.csv": "879e523ebf52d75508c9c9ee0e88a923bdf8d37ad70e2039b7c0991280330184",
+    "data/derived/national/harvest_basis/provincial_allocation/119m.csv": "979cda6b5c4b56b593cecc9faf3bd0483db26e821738c8da0f19d5646b5c9a42",
+    "data/derived/ws4/scanfi-national-990m-transformed/dataset/manifest.json": "5aedacdd5c69e42a2be8300a892a2ff02462aeaf9d2bd3a367b55cf7c09f044d",
+    "data/derived/ws4/scanfi-national-990m-transformed/sustainable-119m/run_100y/product_values.csv": "05c515e487f0e090b50852a9533b62a10ecf6c6c2452e88bdf7f340a1e6a9253",
+    "data/derived/ws4/scanfi-national-990m-transformed/sustainable-119m/schedule.csv": "c66148202afa0ffb8ce03e05c10f5fcd8c977b7aec643634eda6d771e2783fa2"
+  },
+  "labels": {
+    "chain_v51_unchanged": true,
+    "model_estimate": true,
+    "national_claim": false,
+    "observed": false,
+    "official_osecan_changed": false,
+    "policy_grade": false,
+    "sustainable_schedule": true,
+    "transformed_curves": true,
+    "ws4_derived": true
+  },
+  "outputs": {
+    "WS4_TRANSFORMED_119M.md": {
+      "bytes": 8972,
+      "sha256": "4fb155afc556a7476ca24dbaf180bf790edac4ee844679a3ac985daf95f2f7c8"
+    },
+    "comparison_first_period_vs_v51.csv": {
+      "bytes": 4878,
+      "sha256": "1cbe54fb3a7fbe21b7beb44790b57c6c616b77a59845fb44487b72a0c4722dc8"
+    },
+    "comparison_to_original_119m.csv": {
+      "bytes": 881,
+      "sha256": "8b20aab83188f5882b7417b3507fa7c07234c5b25aee7f2b0c653babff37ee30"
+    },
+    "comparison_vs_v51.csv": {
+      "bytes": 5027,
+      "sha256": "6dd19950bcdcedd5f2a7336497922bd7417044f850e22ffcdd5a02ac1b418782"
+    },
+    "first_period_product_chain.csv": {
+      "bytes": 18970,
+      "sha256": "0c6d78603b0af0d6ffddf03918003458e2448144c966ca1adf4dd6dc4e5d6862"
+    },
+    "summary.json": {
+      "bytes": 40429,
+      "sha256": "f539947b730edc8fc460864b5d1cad869802aebe48a154616334731613345c5e"
+    },
+    "sustainable_harvest_by_province.csv": {
+      "bytes": 3374,
+      "sha256": "05d0a8f222696e361645ebac994dec7b2d058847b5828141c1eab757758b9197"
+    },
+    "sustainable_product_chain.csv": {
+      "bytes": 19126,
+      "sha256": "b3448f2e048fc03fdc2687290cff9ddb4fb83ce0d8da2ffd7e04950901cc841b"
+    }
+  },
+  "target": {
+    "annual_m3": 118977339.1,
+    "horizon_years": 100,
+    "period_length_years": 10,
+    "period_m3": 1189773391.0,
+    "periods": 10,
+    "province_allocation": "frozen 119 Mm3 allocated_share"
+  },
+  "title": "Sustainable 119 Mm3/yr WS4 schedule and chain with transformed RSYC curves",
+  "validation": {
+    "period_shortfall_m3": 0.0,
+    "run_offsets": 100,
+    "sustained_119m": true,
+    "ws4_validate": "Dataset is valid \u2192 /srv/shared-data/gep/jupyterhub16-projects/clews-c2070-fresh/data/derived/ws4/scanfi-national-990m-transformed/dataset"
+  }
+}
